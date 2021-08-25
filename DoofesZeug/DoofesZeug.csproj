@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/ObiWanLansi/DoofesZeug</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ObiWanLansi/DoofesZeug</RepositoryUrl>
+    <PackageTags>doof, zeug, objects, world</PackageTags>
+  </PropertyGroup>
+
+</Project>
