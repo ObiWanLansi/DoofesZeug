@@ -1,9 +1,12 @@
 ﻿using System;
 
+using DoofesZeug.Attributes;
+
 
 
 namespace DoofesZeug.Models.DateAndTime
 {
+    [Builder]
     public class Time
     {
         /// <summary>
@@ -30,28 +33,32 @@ namespace DoofesZeug.Models.DateAndTime
         /// </value>
         public int Second { get; init; }
 
-        /// <summary>
-        /// Gets the millisecond.
-        /// </summary>
-        /// <value>
-        /// The millisecond.
-        /// </value>
-        public int Millisecond { get; init; }
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Time"/> class.
-        /// </summary>
-        /// <param name="dt">The dt.</param>
+        public Time()
+        {
+        }
+
+
         public Time( DateTime dt )
         {
             this.Hour = dt.Hour;
             this.Minute = dt.Minute;
             this.Second = dt.Second;
-            this.Millisecond = dt.Millisecond;
         }
+
+
+        public Time( int hour, int minute, int second )
+        {
+            this.Hour = hour;
+            this.Minute = minute;
+            this.Second = second;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        static public Time From( int hour, int minute, int second ) => new(hour, minute, second);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -62,7 +69,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <returns>
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
-        public override string ToString() => $"{this.Hour:D2}:{this.Minute:D2}:{this.Second:D2}.{this.Millisecond:D3}";
+        public override string ToString() => $"{this.Hour:D2}:{this.Minute:D2}:{this.Second:D2}";
     }
 }
 

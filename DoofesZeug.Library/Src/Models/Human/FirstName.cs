@@ -1,12 +1,14 @@
 ﻿namespace DoofesZeug.Models.Human
 {
-    public sealed class FirstName //: ModelBase
+    public sealed class FirstName : Name
     {
-        private readonly string value;
+        public FirstName() { }
 
-        public FirstName( string value ) => this.value = value;
 
-        public override string ToString() => this.value;
+        public FirstName( string value ) : base(value) { }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         public static implicit operator FirstName( string value ) => new(value);
     }

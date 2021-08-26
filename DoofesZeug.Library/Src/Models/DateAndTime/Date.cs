@@ -1,9 +1,12 @@
 ﻿using System;
 
+using DoofesZeug.Attributes;
+
 
 
 namespace DoofesZeug.Models.DateAndTime
 {
+    [Builder]
     public class Date
     {
         /// <summary>
@@ -33,16 +36,18 @@ namespace DoofesZeug.Models.DateAndTime
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Date"/> class.
-        /// </summary>
-        /// <param name="dt">The dt.</param>
+        public Date()
+        {
+        }
+
+
         public Date( DateTime dt )
         {
             this.Day = dt.Day;
             this.Month = dt.Month;
             this.Year = dt.Year;
         }
+
 
         public Date( int day, int month, int year )
         {
@@ -53,7 +58,7 @@ namespace DoofesZeug.Models.DateAndTime
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        static public Date From( int day, int month, int year ) => new(new DateTime(year, month, day));
+        static public Date From( int day, int month, int year ) => new(year, month, day);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
