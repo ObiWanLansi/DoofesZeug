@@ -5,10 +5,13 @@
     <TargetFramework>net5.0</TargetFramework>
     <ApplicationIcon />
     <StartupObject />
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/ObiWanLansi/DoofesZeug</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ObiWanLansi/DoofesZeug</RepositoryUrl>
     <PackageTags>doof, zeug, objects, world</PackageTags>
+    <Authors>ObiWanLansi</Authors>
+    <Description>An collection of some usefuel models for rapid prototyping and / or creating test for stuff.</Description>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
 
 </Project>
