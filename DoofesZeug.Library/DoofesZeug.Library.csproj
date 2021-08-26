@@ -12,6 +12,8 @@
     <Authors>ObiWanLansi</Authors>
     <Description>An collection of some usefuel models for rapid prototyping and / or creating test for stuff.</Description>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <Product>DoofesZeug</Product>
+    <PackageId>DoofesZeug</PackageId>
   </PropertyGroup>
 
 </Project>

@@ -1,12 +1,32 @@
 ﻿using System;
 
-namespace DoofesZeug.TestConsole
+using DoofesZeug.Models.Human;
+using DoofesZeug.Models.Human.Professions;
+
+using Newtonsoft.Json;
+
+
+
+namespace DoofesZeug
 {
-    class TestConsole
+    static class TestConsole
     {
+        static private readonly string DIV = new string('-', 40);
+
         static void Main( string [] args )
         {
-            Console.WriteLine("Hello World!");
+            FireFighter ff = new()
+            {
+                FirstName = "Fred",
+                LastName = "Zimmer",
+                Gender = Gender.Male,
+                DateOfBirth = (15, 10, 1974)
+            };
+
+            Console.Out.WriteLine(ff);
+            Console.Out.WriteLine(DIV);
+            Console.Out.WriteLine(JsonConvert.SerializeObject(ff, Formatting.Indented));
+            Console.Out.WriteLine(DIV);
         }
     }
 }
