@@ -8,4 +8,12 @@
     <RootNamespace>DoofesZeug</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DoofesZeug.Library\DoofesZeug.Library.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Src\Documentation\" />
+  </ItemGroup>
+
 </Project>

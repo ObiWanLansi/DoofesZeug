@@ -1,4 +1,4 @@
-﻿using System;
+﻿using DoofesZeug.SourceCode;
 
 
 
@@ -8,7 +8,7 @@ namespace DoofesZeug
     {
         static void Main( string [] args )
         {
-            Console.WriteLine("Hello World!");
+            ModelBuilderPattern.Generate();
         }
     }
 }
