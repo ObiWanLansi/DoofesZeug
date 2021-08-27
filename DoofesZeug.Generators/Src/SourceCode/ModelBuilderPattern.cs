@@ -16,7 +16,7 @@ namespace DoofesZeug.SourceCode
     {
         private static readonly Type BUILDERATTRIBUTE = typeof(BuilderAttribute);
 
-        private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\DoofesZeug.Library\Src\Generated\ModelBuilder";
+        private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\DoofesZeug.Library\Src\Generated";
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -33,10 +33,13 @@ namespace DoofesZeug.SourceCode
             Out.WriteLineAsync($"Create builder for: {type.FullName}");
 
             //foreach( FieldInfo field in type.GetFields(BindingFlags.SetField | BindingFlags.Instance | BindingFlags.NonPublic) )
-            foreach(PropertyInfo property in type.GetProperties())
+            foreach( PropertyInfo property in type.GetProperties() )
             {
                 Out.WriteLineAsync($"    Use property: {property.Name}");
             }
+
+            string strOutputFilename = $"{OUTPUTDIRECTORY}\\{type.Name}.Builder.cs";
+            File.WriteAllTextAsync(strOutputFilename, "");
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
