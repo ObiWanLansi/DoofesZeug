@@ -14,12 +14,26 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <Product>DoofesZeug</Product>
     <PackageId>DoofesZeug</PackageId>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RootNamespace>DoofesZeug</RootNamespace>
+    <AssemblyName>DoofesZeug</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.115" />
     <PackageReference Include="YamlDotNet" Version="11.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Src\Models\Geographically\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

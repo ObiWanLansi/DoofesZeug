@@ -4,8 +4,17 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>DoofesZeug</RootNamespace>
-    <StartupObject></StartupObject>
+    <StartupObject>DoofesZeug.TestConsole</StartupObject>
+    <AssemblyName>TestConsole</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Src\QuoteSurroundingEventEmitter.cs.xxx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Src\QuoteSurroundingEventEmitter.cs.xxx" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
