@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 namespace DoofesZeug.Models.DateAndTime
 {
     [Builder]
-    public class Date
+    public class Date : EntityBase
     {
         /// <summary>
         /// Gets the day.

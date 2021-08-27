@@ -8,7 +8,6 @@ namespace DoofesZeug.Models.Human
 {
     public sealed class DateOfBirth : Date
     {
-
         public DateOfBirth() : base() { }
 
 

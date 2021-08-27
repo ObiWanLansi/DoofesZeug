@@ -4,8 +4,6 @@ This is an stupid repository for some silly and stupid tests with .net core and 
 
 ## ToDo
 
-- BaseClass EntityBase
-- IdentifiableEntity : EntityBase ( die dann erst mit Guid)
 - Class Color mit allen Aufzählungen aus System.Drawing.Color, sowie ToHex, ToHtml, FromHex, FromHTML, ...
 - HairColor und EyeColor als Enumeration mit Standardfarben
 - Project DoofesZeug.Generators

@@ -1,4 +1,7 @@
-﻿namespace DoofesZeug.Models.Human
+﻿
+
+
+namespace DoofesZeug.Models.Human
 {
     public enum Gender : byte
     {

@@ -5,7 +5,7 @@
 namespace DoofesZeug.Models.Human
 {
     [Builder]
-    public class Person : ModelBase
+    public class Person : IdentifiableEntity
     {
         public DateOfBirth DateOfBirth { get; init; }
 
@@ -16,6 +16,7 @@ namespace DoofesZeug.Models.Human
         public Gender Gender { get; init; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         public override string ToString() => $"{this.LastName}, {this.FirstName}";
     }

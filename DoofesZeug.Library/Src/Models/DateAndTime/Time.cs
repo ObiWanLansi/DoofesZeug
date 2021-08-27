@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 namespace DoofesZeug.Models.DateAndTime
 {
     [Builder]
-    public class Time
+    public class Time : EntityBase
     {
         /// <summary>
         /// Gets the hour.

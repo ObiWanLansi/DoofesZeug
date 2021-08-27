@@ -1,44 +1,11 @@
-﻿using DoofesZeug.Tools;
-
+﻿
 
 
 namespace DoofesZeug.Models.Human
 {
-    public class Name
+    public class Name : EntityBase
     {
         public string Value { get; init; }
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        private string soundex = null;
-
-        public string Soundex
-        {
-            get
-            {
-                if( this.soundex == null )
-                {
-                    this.soundex = Phonetic.Soundex.Encode(this.Value);
-                }
-                return this.soundex;
-            }
-        }
-
-
-        private string metaphone = null;
-
-        public string Metaphone
-        {
-            get
-            {
-                if( this.metaphone == null )
-                {
-                    this.metaphone = Phonetic.Metaphone.Encode(this.Value);
-                }
-                return this.metaphone;
-            }
-        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

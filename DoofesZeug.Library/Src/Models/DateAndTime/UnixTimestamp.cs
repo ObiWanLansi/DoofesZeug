@@ -4,7 +4,7 @@
 
 namespace DoofesZeug.Models.DateAndTime
 {
-    public sealed class UnixTimestamp
+    public sealed class UnixTimestamp : EntityBase
     {
         /// <summary>
         /// The unix timestamp
@@ -54,32 +54,27 @@ namespace DoofesZeug.Models.DateAndTime
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="UnixTimestamp" /> to <see cref="Nullable{ulong}" />.
+        /// Performs an implicit conversion from <see cref="DoofesZeug.Models.DateAndTime.UnixTimestamp"/> to <see cref="ulong"/>.
         /// </summary>
         /// <param name="ut">The ut.</param>
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        /// <exception cref="ArgumentNullException">ut</exception>
-        public static implicit operator ulong( UnixTimestamp ut )
-        {
-            return ut.lUnixTimestamp;
-        }
+        public static implicit operator ulong( UnixTimestamp ut ) => ut.lUnixTimestamp;
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="UnixTimestamp"/> to <see cref="DateTime"/>.
+        /// Performs an implicit conversion from <see cref="DoofesZeug.Models.DateAndTime.UnixTimestamp"/> to <see cref="System.DateTime"/>.
         /// </summary>
         /// <param name="ut">The ut.</param>
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        /// <exception cref="ArgumentNullException">ut</exception>
         public static implicit operator DateTime( UnixTimestamp ut )
         {
             DateTime dtUnix = new(1970, 1, 1, 0, 0, 0, DateTimeKind.Local);
 
-            return dtUnix.AddSeconds(ut.lUnixTimestamp );
+            return dtUnix.AddSeconds(ut.lUnixTimestamp);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

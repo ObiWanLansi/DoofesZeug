@@ -62,6 +62,7 @@ namespace DoofesZeug
 
         private static string ToYaml( object o )
         {
+            //return new SerializerBuilder().WithEventEmitter(nextEmitter => new QuoteSurroundingEventEmitter(nextEmitter)).Build().Serialize(o);
             return new SerializerBuilder().Build().Serialize(o);
         }
 
