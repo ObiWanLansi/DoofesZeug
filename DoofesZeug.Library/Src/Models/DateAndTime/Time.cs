@@ -1,6 +1,7 @@
 ﻿using System;
 
 using DoofesZeug.Attributes;
+using DoofesZeug.Models.DateAndTime.Part.Time;
 
 
 
@@ -15,7 +16,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The hour.
         /// </value>
-        public int Hour { get; set; }
+        public Hour Hour { get; set; }
 
         /// <summary>
         /// Gets the minute.
@@ -23,7 +24,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The minute.
         /// </value>
-        public int Minute { get; set; }
+        public Minute Minute { get; set; }
 
         /// <summary>
         /// Gets the second.
@@ -31,7 +32,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The second.
         /// </value>
-        public int Second { get; set; }
+        public Second Second { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -49,7 +50,7 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
 
-        public Time( int hour, int minute, int second )
+        public Time( Hour hour, Minute minute, Second second )
         {
             this.Hour = hour;
             this.Minute = minute;
@@ -58,7 +59,7 @@ namespace DoofesZeug.Models.DateAndTime
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        static public Time From( int hour, int minute, int second ) => new(hour, minute, second);
+        //static public Time From( int hour, int minute, int second ) => new(hour, minute, second);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

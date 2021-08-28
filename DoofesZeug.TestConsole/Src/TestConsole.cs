@@ -4,6 +4,8 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
+using DoofesZeug.Models.DateAndTime.Part;
+using DoofesZeug.Models.DateAndTime.Part.Time;
 using DoofesZeug.Models.Human;
 using DoofesZeug.Models.Human.Professions;
 
@@ -80,25 +82,31 @@ namespace DoofesZeug
             };
 
             Console.Out.WriteLine(ff);
+            Console.Out.WriteLine(DIV);
 
             //-----------------------------------------------------------------
 
-            Console.Out.WriteLine(DIV);
             Console.Out.WriteLine(ToXml(ff));
+            Console.Out.WriteLine(DIV);
 
             //-----------------------------------------------------------------
 
-            Console.Out.WriteLine(DIV);
             Console.Out.WriteLine(ToJson(ff));
+            Console.Out.WriteLine(DIV);
 
             //-----------------------------------------------------------------
 
-            Console.Out.WriteLine(DIV);
             Console.Out.WriteLine(ToYaml(ff));
+            Console.Out.WriteLine(DIV);
 
             //-----------------------------------------------------------------
 
+            PoliceOfficer po = PoliceOfficerBuilder.New().FirstName("Hans").LastName("Schmitz").Gender(Gender.Male).DateOfBirth((25,05,1942));
+
+            Console.Out.WriteLine(ToJson(po));
             Console.Out.WriteLine(DIV);
+
+            //-----------------------------------------------------------------
         }
     }
 }

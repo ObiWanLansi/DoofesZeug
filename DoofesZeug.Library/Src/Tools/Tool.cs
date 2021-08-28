@@ -12,7 +12,7 @@ namespace DoofesZeug.Tools
     /// <summary>
     /// Klasse mit statischen Standalonefunktionen.
     /// </summary>
-    public static class Tools
+    public static class Tool
     {
         /// <summary>
         /// Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.

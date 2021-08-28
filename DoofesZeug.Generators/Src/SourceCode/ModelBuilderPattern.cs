@@ -19,7 +19,11 @@ namespace DoofesZeug.SourceCode
 
         private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\DoofesZeug.Library\Src\Generated";
 
-        //private static readonly string HEADER = @"";
+        private static readonly string HEADER = @"
+// --------------------------------------------------------------------------------------------------------------------
+// This is auto generated code. Every manually change in this code will be overwritten at the next code generation!
+// --------------------------------------------------------------------------------------------------------------------
+        ";
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -38,6 +42,10 @@ namespace DoofesZeug.SourceCode
             //---------------------------------------------------------------------------------------------------------
 
             StringBuilder sb = new(8192);
+
+            sb.AppendLine(HEADER);
+            sb.AppendLine();
+            sb.AppendLine();
 
             sb.AppendLine($"namespace {type.Namespace}");
             sb.AppendLine("{");

@@ -1,6 +1,7 @@
 ﻿using System;
 
 using DoofesZeug.Attributes;
+using DoofesZeug.Models.DateAndTime.Part.Date;
 
 
 
@@ -15,7 +16,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The day.
         /// </value>
-        public int Day { get; set; }
+        public Day Day { get; set; }
 
         /// <summary>
         /// Gets the month.
@@ -23,7 +24,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The month.
         /// </value>
-        public int Month { get; set; }
+        public Month Month { get; set; }
 
         /// <summary>
         /// Gets the year.
@@ -31,7 +32,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The year.
         /// </value>
-        public int Year { get; set; }
+        public Year Year { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -49,16 +50,25 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
 
-        public Date( int day, int month, int year )
+        //public Date( int day, int month, int year )
+        //{
+        //    this.Day = day;
+        //    this.Month = month;
+        //    this.Year = year;
+        //}
+
+
+        public Date( Day day, Month month, Year year )
         {
             this.Day = day;
             this.Month = month;
             this.Year = year;
         }
 
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        static public Date From( int day, int month, int year ) => new(year, month, day);
+        //static public Date From( int day, int month, int year ) => new(year, month, day);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
