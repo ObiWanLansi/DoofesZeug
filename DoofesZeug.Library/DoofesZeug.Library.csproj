@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Src\Generated\" />
     <Folder Include="Src\Models\Geographically\" />
   </ItemGroup>
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Text;
 
 using DoofesZeug.Attributes;
 using DoofesZeug.Extensions;
@@ -32,14 +33,29 @@ namespace DoofesZeug.SourceCode
 
             Out.WriteLineAsync($"Create builder for: {type.FullName}");
 
+            //---------------------------------------------------------------------------------------------------------
+
+            StringBuilder sb = new(8192);
+
+            sb.AppendLine($"namespace {type.Namespace}");
+            sb.AppendLine("{");
+
+            sb.AppendLine($"    public sealed class {type.Name}Builder");
+            sb.AppendLine("    {");
+
             //foreach( FieldInfo field in type.GetFields(BindingFlags.SetField | BindingFlags.Instance | BindingFlags.NonPublic) )
             foreach( PropertyInfo property in type.GetProperties() )
             {
                 Out.WriteLineAsync($"    Use property: {property.Name}");
             }
 
+            sb.AppendLine("    }");
+            sb.AppendLine("}");
+
+            //---------------------------------------------------------------------------------------------------------
+
             string strOutputFilename = $"{OUTPUTDIRECTORY}\\{type.Name}.Builder.cs";
-            File.WriteAllTextAsync(strOutputFilename, "");
+            File.WriteAllTextAsync(strOutputFilename, sb.ToString());
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
