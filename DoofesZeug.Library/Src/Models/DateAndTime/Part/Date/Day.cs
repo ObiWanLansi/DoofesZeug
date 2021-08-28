@@ -1,8 +1,10 @@
-﻿
+﻿using DoofesZeug.Attributes;
+
 
 
 namespace DoofesZeug.Models.DateAndTime.Part.Date
 {
+    [Range(1, 31)]
     public sealed class Day : DateTimePart
     {
         public Day() { }

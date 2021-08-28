@@ -1,8 +1,10 @@
-﻿
+﻿using DoofesZeug.Attributes;
+
 
 
 namespace DoofesZeug.Models.DateAndTime.Part.Date
 {
+    [Range(1, 12)]
     public sealed class Month : DateTimePart
     {
         public Month() { }
@@ -10,7 +12,7 @@ namespace DoofesZeug.Models.DateAndTime.Part.Date
         public Month( int iInitalValue ) => this.Value = iInitalValue;
 
         public static implicit operator Month( int iValue ) => new(iValue);
-        
+
         public static implicit operator int( Month value ) => value.Value;
     }
 }

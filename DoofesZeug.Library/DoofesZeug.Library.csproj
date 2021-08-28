@@ -28,6 +28,7 @@
   <ItemGroup>
     <Folder Include="Src\Generated\" />
     <Folder Include="Src\Models\Geographically\" />
+    <Folder Include="Src\Container\" />
   </ItemGroup>
 
   <ItemGroup>

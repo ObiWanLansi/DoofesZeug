@@ -6,7 +6,6 @@ namespace DoofesZeug.Extensions
 {
     public static class StringBuilderExtension
     {
-
         /// <summary>
         /// Appends the line.
         /// </summary>

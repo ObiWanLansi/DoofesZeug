@@ -6,11 +6,8 @@ This is an stupid repository for some silly and stupid tests with .net core and 
 
 - Class Color mit allen Aufzählungen aus System.Drawing.Color, sowie ToHex, ToHtml, FromHex, FromHTML, ...
 - HairColor und EyeColor als Enumeration mit Standardfarben
-- Project DoofesZeug.Generators
-- Project DoofesZeug.UnitTests
 - Enums für Religion und Nationalität
 - MilitäryStuff nach DE /US (Dienstgrade z.B.)
-- Split Soundex und Metaphone in different FIles, create interface Phonetic mit string Encode(string)
 - Hash + Crypt + Password Class
 - List<T> To DataTable
 - Object 2 ASCIITable
