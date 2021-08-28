@@ -15,7 +15,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The day.
         /// </value>
-        public int Day { get; init; }
+        public int Day { get; set; }
 
         /// <summary>
         /// Gets the month.
@@ -23,7 +23,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The month.
         /// </value>
-        public int Month { get; init; }
+        public int Month { get; set; }
 
         /// <summary>
         /// Gets the year.
@@ -31,7 +31,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The year.
         /// </value>
-        public int Year { get; init; }
+        public int Year { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

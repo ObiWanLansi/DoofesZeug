@@ -15,7 +15,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The hour.
         /// </value>
-        public int Hour { get; init; }
+        public int Hour { get; set; }
 
         /// <summary>
         /// Gets the minute.
@@ -23,7 +23,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The minute.
         /// </value>
-        public int Minute { get; init; }
+        public int Minute { get; set; }
 
         /// <summary>
         /// Gets the second.
@@ -31,7 +31,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The second.
         /// </value>
-        public int Second { get; init; }
+        public int Second { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

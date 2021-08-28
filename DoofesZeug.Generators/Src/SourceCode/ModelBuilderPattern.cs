@@ -19,6 +19,8 @@ namespace DoofesZeug.SourceCode
 
         private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\DoofesZeug.Library\Src\Generated";
 
+        //private static readonly string HEADER = @"";
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -40,13 +42,26 @@ namespace DoofesZeug.SourceCode
             sb.AppendLine($"namespace {type.Namespace}");
             sb.AppendLine("{");
 
-            sb.AppendLine($"    public sealed class {type.Name}Builder");
+            sb.AppendLine($"    public static class {type.Name}Builder");
             sb.AppendLine("    {");
+
+            sb.AppendLine($"        public static {type.Name} New() => new();");
+
 
             //foreach( FieldInfo field in type.GetFields(BindingFlags.SetField | BindingFlags.Instance | BindingFlags.NonPublic) )
             foreach( PropertyInfo property in type.GetProperties() )
             {
                 Out.WriteLineAsync($"    Use property: {property.Name}");
+
+                sb.AppendLine("");
+                sb.AppendLine("");
+                sb.AppendLine($"        public static {type.Name} {property.Name}(this {type.Name} {type.Name.ToLower()}, {property.PropertyType.Namespace}.{property.PropertyType.Name} {property.Name.ToLower()})");
+                sb.AppendLine("        {");
+                //sb.AppendLine("            return null;");
+                sb.AppendLine($"            {type.Name.ToLower()}.{property.Name} = {property.Name.ToLower()};");
+                sb.AppendLine($"            return {type.Name.ToLower()};");
+
+                sb.AppendLine("        }");
             }
 
             sb.AppendLine("    }");

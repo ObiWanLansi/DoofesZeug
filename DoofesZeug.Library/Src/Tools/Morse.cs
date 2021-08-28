@@ -56,7 +56,7 @@ namespace DoofesZeug.Src.Tools
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public static string GetSpelling( string strContent, char cLetterSplitter = ' ' )
+        public static string GetMorse( string strContent, char cLetterSplitter = ' ' )
         {
             StringBuilder sb = new(8192);
 
@@ -86,7 +86,7 @@ namespace DoofesZeug.Src.Tools
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
         /// <returns></returns>
-        public static IEnumerable<string> EnumerateSpell( string strContent )
+        public static IEnumerable<string> EnumerateMorse( string strContent )
         {
             strContent = strContent.ToLower();
 
