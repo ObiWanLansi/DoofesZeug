@@ -1,6 +1,7 @@
 ﻿using System;
 
 using DoofesZeug.Models.DateAndTime;
+using DoofesZeug.Models.DateAndTime.Part.Date;
 
 
 
@@ -10,15 +11,12 @@ namespace DoofesZeug.Models.Human
     {
         public DateOfBirth() : base() { }
 
-
         public DateOfBirth( DateTime dt ) : base(dt) { }
 
-
-        public DateOfBirth( int day, int month, int year ) : base(day, month, year) { }
+        public DateOfBirth( Day day, Month month, Year year ) : base(day, month, year) { }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-        public static implicit operator DateOfBirth( (int day, int month, int year) value ) => new(value.year, value.month, value.day);
+        public static implicit operator DateOfBirth( (Day day, Month month, Year year) value ) => new(value.day, value.month, value.year);
     }
 }

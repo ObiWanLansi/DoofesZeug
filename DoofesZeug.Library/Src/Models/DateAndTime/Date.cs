@@ -50,14 +50,6 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
 
-        //public Date( int day, int month, int year )
-        //{
-        //    this.Day = day;
-        //    this.Month = month;
-        //    this.Year = year;
-        //}
-
-
         public Date( Day day, Month month, Year year )
         {
             this.Day = day;
@@ -65,10 +57,6 @@ namespace DoofesZeug.Models.DateAndTime
             this.Year = year;
         }
 
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        //static public Date From( int day, int month, int year ) => new(year, month, day);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

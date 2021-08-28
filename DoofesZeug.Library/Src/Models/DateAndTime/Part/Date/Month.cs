@@ -3,10 +3,8 @@
 
 namespace DoofesZeug.Models.DateAndTime.Part.Date
 {
-    public sealed class Month : EntityBase
+    public sealed class Month : DateTimePart
     {
-        public int Value { get; set; }
-
         public Month() { }
 
         public Month( int iInitalValue ) => this.Value = iInitalValue;

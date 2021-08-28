@@ -3,10 +3,8 @@
 
 namespace DoofesZeug.Models.DateAndTime.Part.Time
 {
-    public sealed class Minute : EntityBase
+    public sealed class Minute : DateTimePart
     {
-        public int Value { get; set; }
-
         public Minute() { }
 
         public Minute( int iInitalValue ) => this.Value = iInitalValue;

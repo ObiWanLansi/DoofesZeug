@@ -4,6 +4,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
+using DoofesZeug.Converter;
 using DoofesZeug.Models.DateAndTime.Part;
 using DoofesZeug.Models.DateAndTime.Part.Time;
 using DoofesZeug.Models.Human;
@@ -57,6 +58,8 @@ namespace DoofesZeug
             };
 
             settings.Converters.Add(new StringEnumConverter());
+            settings.Converters.Add(new NameConverter());
+            settings.Converters.Add(new DateTimePartConverter());
 
             return JsonConvert.SerializeObject(o, settings);
         }
@@ -101,7 +104,7 @@ namespace DoofesZeug
 
             //-----------------------------------------------------------------
 
-            PoliceOfficer po = PoliceOfficerBuilder.New().FirstName("Hans").LastName("Schmitz").Gender(Gender.Male).DateOfBirth((25,05,1942));
+            PoliceOfficer po = PoliceOfficerBuilder.New().FirstName("Hans").LastName("Schmitz").Gender(Gender.Male).DateOfBirth((25, 05, 1942));
 
             Console.Out.WriteLine(ToJson(po));
             Console.Out.WriteLine(DIV);
