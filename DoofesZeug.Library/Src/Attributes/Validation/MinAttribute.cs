@@ -5,7 +5,7 @@
 namespace DoofesZeug.Attributes
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property)]
-    public sealed class MinAttribute : Attribute
+    public sealed class MinAttribute : ValidationAttribute
     {
         public int Min { get; private set; }
 

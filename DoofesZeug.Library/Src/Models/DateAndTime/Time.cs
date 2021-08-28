@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DoofesZeug.Attributes;
+using DoofesZeug.Attributes.Pattern;
 using DoofesZeug.Models.DateAndTime.Part.Time;
 
 

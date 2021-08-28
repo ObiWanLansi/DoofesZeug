@@ -13,7 +13,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Src\Documentation\" />
+    <None Update="Src\Documentation\ModelOverviewTemplate.tt.xxx">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelOverviewTemplate.tt.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Src\Documentation\ModelOverviewTemplate.tt.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ModelOverviewTemplate.tt.xxx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

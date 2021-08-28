@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-using DoofesZeug.Attributes;
+using DoofesZeug.Attributes.Pattern;
 using DoofesZeug.Extensions;
 using DoofesZeug.Models;
 
@@ -37,9 +37,9 @@ namespace DoofesZeug.SourceCode
                 return;
             }
 
-            Out.WriteLineAsync($"Create builder for: {type.FullName}");
-
             //---------------------------------------------------------------------------------------------------------
+
+            Out.WriteLineAsync($"Create builder for: {type.FullName}");
 
             StringBuilder sb = new(8192);
 
@@ -59,7 +59,7 @@ namespace DoofesZeug.SourceCode
             //foreach( FieldInfo field in type.GetFields(BindingFlags.SetField | BindingFlags.Instance | BindingFlags.NonPublic) )
             foreach( PropertyInfo property in type.GetProperties() )
             {
-                Out.WriteLineAsync($"    Use property: {property.Name}");
+                //Out.WriteLineAsync($"    Use property: {property.Name}");
 
                 sb.AppendLine("");
                 sb.AppendLine("");

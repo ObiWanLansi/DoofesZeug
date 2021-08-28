@@ -5,7 +5,7 @@
 namespace DoofesZeug.Attributes
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property)]
-    public sealed class RangeAttribute : Attribute
+    public sealed class RangeAttribute : ValidationAttribute
     {
         public int Min { get; private set; }
         public int Max { get; private set; }

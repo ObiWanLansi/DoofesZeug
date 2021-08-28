@@ -4,7 +4,7 @@
 
 namespace DoofesZeug.Models
 {
-    public abstract class IdentifiableEntity
+    public abstract class IdentifiableEntity : EntityBase
     {
         public Guid Id { get; set; } = Guid.NewGuid();
     }

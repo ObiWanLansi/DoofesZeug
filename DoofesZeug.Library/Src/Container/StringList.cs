@@ -62,6 +62,6 @@ namespace DoofesZeug.Container
         /// <typeparam name="T"></typeparam>
         /// <param name="list">The list.</param>
         /// <returns></returns>
-        public static StringList FromEnumerable<T>( IEnumerable<T> list ) => new StringList(list.Select(item => item?.ToString()));
+        public static StringList FromEnumerable<T>( IEnumerable<T> list ) => new(list.Select(item => item?.ToString()));
     }
 }

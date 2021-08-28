@@ -20,6 +20,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Src\Extensions\TypeExtension.cs.xxx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Src\Extensions\TypeExtension.cs.xxx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.115" />
     <PackageReference Include="YamlDotNet" Version="11.2.1" />

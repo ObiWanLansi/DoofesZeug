@@ -5,8 +5,6 @@ using System.Xml;
 using System.Xml.Serialization;
 
 using DoofesZeug.Converter;
-using DoofesZeug.Models.DateAndTime.Part;
-using DoofesZeug.Models.DateAndTime.Part.Time;
 using DoofesZeug.Models.Human;
 using DoofesZeug.Models.Human.Professions;
 
@@ -89,18 +87,18 @@ namespace DoofesZeug
 
             //-----------------------------------------------------------------
 
-            Console.Out.WriteLine(ToXml(ff));
-            Console.Out.WriteLine(DIV);
+            //Console.Out.WriteLine(ToXml(ff));
+            //Console.Out.WriteLine(DIV);
 
-            //-----------------------------------------------------------------
+            ////-----------------------------------------------------------------
 
-            Console.Out.WriteLine(ToJson(ff));
-            Console.Out.WriteLine(DIV);
+            //Console.Out.WriteLine(ToJson(ff));
+            //Console.Out.WriteLine(DIV);
 
-            //-----------------------------------------------------------------
+            ////-----------------------------------------------------------------
 
-            Console.Out.WriteLine(ToYaml(ff));
-            Console.Out.WriteLine(DIV);
+            //Console.Out.WriteLine(ToYaml(ff));
+            //Console.Out.WriteLine(DIV);
 
             //-----------------------------------------------------------------
 

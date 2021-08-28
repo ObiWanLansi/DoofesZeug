@@ -4,6 +4,7 @@ This is an stupid repository for some silly and stupid tests with .net core and 
 
 ## ToDo
 
+- Implement Observer Pattern in EntityBase ?
 - Class Color mit allen Aufzählungen aus System.Drawing.Color, sowie ToHex, ToHtml, FromHex, FromHTML, ...
 - HairColor und EyeColor als Enumeration mit Standardfarben
 - Enums für Religion und Nationalität
