@@ -36,14 +36,14 @@ namespace DoofesZeug.Documentation
 
             sb.AppendLine($"{type.Name}".Header(1));
             sb.AppendLine();
-            
+
             sb.AppendLine($"Generel".Header(2));
             // Namespace, BaseClass, ...
             sb.AppendLine();
-            
+
             sb.AppendLine($"Fields".Header(2));
             sb.AppendLine();
-            
+
             sb.AppendLine($"Attributes".Header(2));
             sb.AppendLine();
 
@@ -55,7 +55,13 @@ namespace DoofesZeug.Documentation
 
             //---------------------------------------------------------------------------------------------------------
 
-            string strOutputFilename = $"{OUTPUTDIRECTORY}\\{type.Name}.md";
+            string strOutputDirectory = $"{OUTPUTDIRECTORY}\\{type.Namespace}";
+            if( Directory.Exists(strOutputDirectory) == false )
+            {
+                Directory.CreateDirectory(strOutputDirectory);
+            }
+
+            string strOutputFilename = $"{strOutputDirectory}\\{type.Name}.md";
             File.WriteAllTextAsync(strOutputFilename, sb.ToString());
         }
 
@@ -69,7 +75,7 @@ namespace DoofesZeug.Documentation
             Out.WriteLineAsync($"{assembly.FullName}");
 
             new DirectoryInfo(OUTPUTDIRECTORY).DeleteDirectoryContentRecursiv(ex => Error.WriteLineAsync(ex.Message));
-            Directory.CreateDirectory(OUTPUTDIRECTORY);
+            //Directory.CreateDirectory(OUTPUTDIRECTORY);
 
             foreach( Type type in assembly.ExportedTypes )
             {
