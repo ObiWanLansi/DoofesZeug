@@ -1,4 +1,4 @@
-<h1 style="font-weight:bold; letter-spacing: 10px; border-bottom: 2px solid black;">DoofesZeug</h1>
+<h1 style="font-weight:bold; letter-spacing: 10px; border-bottom: 2px solid black;">Doofes Zeug</h1>
 
 - [Overview](#overview)
 - [Content](#content)
@@ -16,7 +16,7 @@
 
 ## Overview
 
-DoofesZeug is an collection of some useful models/entities/classes for rapid prototyping in .net core and / or creating some tests for development stuff.
+Doofes Zeug is an collection of some useful models/entities/classes for rapid prototyping in .net core and / or creating some tests for development stuff.
 
 The basic idea was to have an collection of classes and enumerations for simple daily needed stuff like:
 - Person
