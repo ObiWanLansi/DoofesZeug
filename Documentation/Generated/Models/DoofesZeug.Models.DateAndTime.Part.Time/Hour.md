@@ -1,4 +1,4 @@
-# Hour
+﻿# Hour
 
 ## Generally
 
@@ -12,6 +12,8 @@
 ## Attributes
 
 ## Diagram
+
+![Hour.png](./Hour.png "Hour")
 
 ## Example
 

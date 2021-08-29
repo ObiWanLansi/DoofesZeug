@@ -1,4 +1,4 @@
-# Date
+﻿# Date
 
 ## Generally
 
@@ -12,6 +12,8 @@
 ## Attributes
 
 ## Diagram
+
+![Date.png](./Date.png "Date")
 
 ## Example
 

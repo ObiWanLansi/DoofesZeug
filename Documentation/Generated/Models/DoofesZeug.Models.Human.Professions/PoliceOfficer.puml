@@ -1,0 +1,27 @@
+﻿@startuml
+hide empty members
+
+abstract class EntityBase {
+}
+
+EntityBase <|-- IdentifiableEntity
+
+abstract class IdentifiableEntity {
+    Id: Guid
+}
+
+IdentifiableEntity <|-- Person
+
+class Person {
+    DateOfBirth: DateOfBirth
+    FirstName: FirstName
+    LastName: LastName
+    Gender: Gender
+}
+
+Person <|-- PoliceOfficer
+
+class PoliceOfficer {
+}
+
+@enduml

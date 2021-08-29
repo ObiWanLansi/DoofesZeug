@@ -1,4 +1,4 @@
-# PoliceOfficer
+﻿# PoliceOfficer
 
 ## Generally
 
@@ -12,6 +12,8 @@
 ## Attributes
 
 ## Diagram
+
+![PoliceOfficer.png](./PoliceOfficer.png "PoliceOfficer")
 
 ## Example
 

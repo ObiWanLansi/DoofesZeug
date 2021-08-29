@@ -1,4 +1,4 @@
-# Time
+﻿# Time
 
 ## Generally
 
@@ -12,6 +12,8 @@
 ## Attributes
 
 ## Diagram
+
+![Time.png](./Time.png "Time")
 
 ## Example
 

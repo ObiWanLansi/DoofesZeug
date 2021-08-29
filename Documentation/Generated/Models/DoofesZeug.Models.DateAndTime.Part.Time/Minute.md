@@ -1,4 +1,4 @@
-# Minute
+﻿# Minute
 
 ## Generally
 
@@ -12,6 +12,8 @@
 ## Attributes
 
 ## Diagram
+
+![Minute.png](./Minute.png "Minute")
 
 ## Example
 

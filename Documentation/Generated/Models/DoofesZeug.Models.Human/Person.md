@@ -1,4 +1,4 @@
-# Person
+﻿# Person
 
 ## Generally
 
@@ -12,6 +12,8 @@
 ## Attributes
 
 ## Diagram
+
+![Person.png](./Person.png "Person")
 
 ## Example
 

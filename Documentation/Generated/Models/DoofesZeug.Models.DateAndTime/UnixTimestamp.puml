@@ -1,0 +1,12 @@
+﻿@startuml
+hide empty members
+
+abstract class EntityBase {
+}
+
+EntityBase <|-- UnixTimestamp
+
+class UnixTimestamp {
+}
+
+@enduml

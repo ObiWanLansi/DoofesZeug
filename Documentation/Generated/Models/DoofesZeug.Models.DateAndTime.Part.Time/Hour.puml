@@ -1,0 +1,18 @@
+﻿@startuml
+hide empty members
+
+abstract class EntityBase {
+}
+
+EntityBase <|-- DateTimePart
+
+abstract class DateTimePart {
+    Value: Int32
+}
+
+DateTimePart <|-- Hour
+
+class Hour {
+}
+
+@enduml

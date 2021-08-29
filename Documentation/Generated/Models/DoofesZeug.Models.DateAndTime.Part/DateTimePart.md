@@ -1,4 +1,4 @@
-# DateTimePart
+﻿# DateTimePart
 
 ## Generally
 
@@ -12,6 +12,8 @@
 ## Attributes
 
 ## Diagram
+
+![DateTimePart.png](./DateTimePart.png "DateTimePart")
 
 ## Example
 

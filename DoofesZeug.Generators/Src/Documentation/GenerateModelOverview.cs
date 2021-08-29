@@ -5,6 +5,7 @@ using System.Text;
 
 using DoofesZeug.Extensions;
 using DoofesZeug.Models;
+using DoofesZeug.Tools;
 
 using static System.Console;
 
@@ -19,6 +20,63 @@ namespace DoofesZeug.Documentation
         private static readonly Type ENTITY_BASE = typeof(EntityBase);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        private static void AppendType( Type type, StringBuilder sbPUML )
+        {
+            if( type.BaseType != typeof(object) )
+            {
+                AppendType(type.BaseType, sbPUML);
+                sbPUML.AppendLine($"{type.BaseType.Name} <|-- {type.Name}");
+            }
+
+            sbPUML.AppendLine();
+            sbPUML.Append(type.IsAbstract ? "abstract " : "");
+            sbPUML.AppendLine($"class {type.Name} {{");
+
+            foreach( PropertyInfo pi in type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance) )
+            {
+                sbPUML.AppendLine($"    {pi.Name}: {pi.PropertyType.Name}");
+            }
+
+            sbPUML.AppendLine("}");
+            sbPUML.AppendLine();
+        }
+
+
+        private static void GenerateUmlDiagramm( Type type, StringBuilder sb )
+        {
+            string strOutputDirectory = $"{OUTPUTDIRECTORY}\\{type.Namespace}";
+            string strDiagrammFilenamePng = $"{type.Name}.png";
+            string strDiagrammFilenamePuml = $"{type.Name}.puml";
+
+            //---------------------------------------------------------------------------------------------------------
+
+            sb.AppendLine();
+            sb.AppendLine($"![{strDiagrammFilenamePng}](./{strDiagrammFilenamePng} \"{type.Name}\")");
+
+            //---------------------------------------------------------------------------------------------------------
+
+            StringBuilder sbPUML = new(8192);
+            sbPUML.AppendLine("@startuml");
+            // sbPUML.AppendLine("skinparam monochrome true");
+            sbPUML.AppendLine("hide empty members");
+
+            //---------------------------------------------
+
+            AppendType(type, sbPUML);
+
+            //---------------------------------------------
+
+            sbPUML.AppendLine("@enduml");
+
+            //---------------------------------------------------------------------------------------------------------
+
+            string strOutputFilename = $"{strOutputDirectory}\\{strDiagrammFilenamePuml}";
+            File.WriteAllTextAsync(strOutputFilename, sbPUML.ToString(), Encoding.UTF8);
+            GeneratorTool.PlantUml(strOutputFilename);
+        }
+
 
         private static void AddGenerallyInformation( Type type, StringBuilder sb )
         {
@@ -37,6 +95,14 @@ namespace DoofesZeug.Documentation
             if( type.IsAssignableTo(ENTITY_BASE) == false )
             {
                 return;
+            }
+
+            //---------------------------------------------------------------------------------------------------------
+
+            string strOutputDirectory = $"{OUTPUTDIRECTORY}\\{type.Namespace}";
+            if( Directory.Exists(strOutputDirectory) == false )
+            {
+                Directory.CreateDirectory(strOutputDirectory);
             }
 
             //---------------------------------------------------------------------------------------------------------
@@ -60,6 +126,7 @@ namespace DoofesZeug.Documentation
             sb.AppendLine();
 
             sb.AppendLine($"Diagram".Header(2));
+            GenerateUmlDiagramm(type, sb);
             sb.AppendLine();
 
             sb.AppendLine($"Example".Header(2));
@@ -67,14 +134,7 @@ namespace DoofesZeug.Documentation
 
             //---------------------------------------------------------------------------------------------------------
 
-            string strOutputDirectory = $"{OUTPUTDIRECTORY}\\{type.Namespace}";
-            if( Directory.Exists(strOutputDirectory) == false )
-            {
-                Directory.CreateDirectory(strOutputDirectory);
-            }
-
-            string strOutputFilename = $"{strOutputDirectory}\\{type.Name}.md";
-            File.WriteAllTextAsync(strOutputFilename, sb.ToString());
+            File.WriteAllTextAsync($"{strOutputDirectory}\\{type.Name}.md", sb.ToString(), Encoding.UTF8);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

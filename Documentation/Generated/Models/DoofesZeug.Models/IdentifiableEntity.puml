@@ -1,0 +1,13 @@
+﻿@startuml
+hide empty members
+
+abstract class EntityBase {
+}
+
+EntityBase <|-- IdentifiableEntity
+
+abstract class IdentifiableEntity {
+    Id: Guid
+}
+
+@enduml

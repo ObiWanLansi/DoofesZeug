@@ -1,0 +1,13 @@
+﻿@startuml
+hide empty members
+
+abstract class EntityBase {
+}
+
+EntityBase <|-- Name
+
+class Name {
+    Value: String
+}
+
+@enduml

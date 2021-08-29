@@ -1,4 +1,4 @@
-# Week
+﻿# Week
 
 ## Generally
 
@@ -12,6 +12,8 @@
 ## Attributes
 
 ## Diagram
+
+![Week.png](./Week.png "Week")
 
 ## Example
 

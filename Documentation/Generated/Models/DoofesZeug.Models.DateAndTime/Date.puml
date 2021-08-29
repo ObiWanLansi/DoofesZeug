@@ -1,0 +1,15 @@
+﻿@startuml
+hide empty members
+
+abstract class EntityBase {
+}
+
+EntityBase <|-- Date
+
+class Date {
+    Day: Day
+    Month: Month
+    Year: Year
+}
+
+@enduml

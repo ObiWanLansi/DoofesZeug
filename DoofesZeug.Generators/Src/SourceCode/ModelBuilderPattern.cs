@@ -20,9 +20,9 @@ namespace DoofesZeug.SourceCode
         private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\DoofesZeug.Library\Src\Generated";
 
         private static readonly string HEADER = @"
-// --------------------------------------------------------------------------------------------------------------------
-// This is auto generated code. Every manually change in this code will be overwritten at the next code generation!
-// --------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------------------
+// This is auto generated code. Every manually change in this code will be overwritten at the next code generation! |
+// ------------------------------------------------------------------------------------------------------------------
         ";
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ namespace DoofesZeug.SourceCode
             //---------------------------------------------------------------------------------------------------------
 
             string strOutputFilename = $"{OUTPUTDIRECTORY}\\{type.Name}.Builder.cs";
-            File.WriteAllTextAsync(strOutputFilename, sb.ToString());
+            File.WriteAllTextAsync(strOutputFilename, sb.ToString(), Encoding.UTF8);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

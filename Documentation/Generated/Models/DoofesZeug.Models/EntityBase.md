@@ -1,4 +1,4 @@
-# EntityBase
+﻿# EntityBase
 
 ## Generally
 
@@ -12,6 +12,8 @@
 ## Attributes
 
 ## Diagram
+
+![EntityBase.png](./EntityBase.png "EntityBase")
 
 ## Example
 
