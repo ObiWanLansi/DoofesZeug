@@ -1,6 +1,11 @@
 # Date
 
-## Generel
+## Generally
+
+|||
+|-|-|
+|Namespace|DoofesZeug.Models.DateAndTime|
+|BaseClass|EntityBase|
 
 ## Fields
 

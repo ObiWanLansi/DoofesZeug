@@ -1,6 +1,11 @@
 # EntityBase
 
-## Generel
+## Generally
+
+|||
+|-|-|
+|Namespace|DoofesZeug.Models|
+|BaseClass|Object|
 
 ## Fields
 

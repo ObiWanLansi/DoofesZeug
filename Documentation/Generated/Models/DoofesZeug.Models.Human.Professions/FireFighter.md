@@ -1,6 +1,11 @@
 # FireFighter
 
-## Generel
+## Generally
+
+|||
+|-|-|
+|Namespace|DoofesZeug.Models.Human.Professions|
+|BaseClass|Person|
 
 ## Fields
 

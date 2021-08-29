@@ -1,6 +1,11 @@
 # IdentifiableEntity
 
-## Generel
+## Generally
+
+|||
+|-|-|
+|Namespace|DoofesZeug.Models|
+|BaseClass|EntityBase|
 
 ## Fields
 

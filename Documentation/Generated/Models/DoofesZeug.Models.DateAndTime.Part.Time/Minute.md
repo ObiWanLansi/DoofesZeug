@@ -1,6 +1,11 @@
 # Minute
 
-## Generel
+## Generally
+
+|||
+|-|-|
+|Namespace|DoofesZeug.Models.DateAndTime.Part.Time|
+|BaseClass|DateTimePart|
 
 ## Fields
 

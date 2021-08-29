@@ -1,6 +1,11 @@
 # DateTimePart
 
-## Generel
+## Generally
+
+|||
+|-|-|
+|Namespace|DoofesZeug.Models.DateAndTime.Part|
+|BaseClass|EntityBase|
 
 ## Fields
 

@@ -1,6 +1,11 @@
 # Year
 
-## Generel
+## Generally
+
+|||
+|-|-|
+|Namespace|DoofesZeug.Models.DateAndTime.Part.Date|
+|BaseClass|DateTimePart|
 
 ## Fields
 

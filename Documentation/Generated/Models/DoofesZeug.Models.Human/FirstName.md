@@ -1,6 +1,11 @@
 # FirstName
 
-## Generel
+## Generally
+
+|||
+|-|-|
+|Namespace|DoofesZeug.Models.Human|
+|BaseClass|Name|
 
 ## Fields
 

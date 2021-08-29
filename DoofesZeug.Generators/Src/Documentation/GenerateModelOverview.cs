@@ -20,6 +20,17 @@ namespace DoofesZeug.Documentation
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        private static void AddGenerallyInformation( Type type, StringBuilder sb )
+        {
+            sb.AppendLine();
+            sb.AppendLine("|||");
+            sb.AppendLine("|-|-|");
+            sb.AppendLine($"|Namespace|{type.Namespace}|");
+            sb.AppendLine($"|BaseClass|{type.BaseType.Name}|");
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         private static void GenerateModelMarkdown( Type type )
         {
@@ -37,8 +48,9 @@ namespace DoofesZeug.Documentation
             sb.AppendLine($"{type.Name}".Header(1));
             sb.AppendLine();
 
-            sb.AppendLine($"Generel".Header(2));
+            sb.AppendLine($"Generally".Header(2));
             // Namespace, BaseClass, ...
+            AddGenerallyInformation(type, sb);
             sb.AppendLine();
 
             sb.AppendLine($"Fields".Header(2));

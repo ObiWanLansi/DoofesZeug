@@ -1,6 +1,11 @@
 # Name
 
-## Generel
+## Generally
+
+|||
+|-|-|
+|Namespace|DoofesZeug.Models.Human|
+|BaseClass|EntityBase|
 
 ## Fields
 
