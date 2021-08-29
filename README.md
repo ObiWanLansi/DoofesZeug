@@ -1,35 +1,151 @@
-# DoofesZeug
+<h1 style="font-weight:bold; letter-spacing: 10px; border-bottom: 2px solid black;">DoofesZeug</h1>
 
-This is an stupid repository for some silly and stupid tests with .net core and some github features.
+- [Overview](#overview)
+- [Content](#content)
+  - [Entities & Models](#entities--models)
+  - [Enumerations](#enumerations)
+- [Features](#features)
+  - [Builder Pattern](#builder-pattern)
+  - [Validation](#validation)
+  - [Container](#container)
+  - [Formats](#formats)
+- [Status](#status)
+- [Useful Links](#useful-links)
 
-## ToDo
+---
 
-- Implement Observer Pattern in EntityBase ?
-- Class Color mit allen Aufzählungen aus System.Drawing.Color, sowie ToHex, ToHtml, FromHex, FromHTML, ...
-- HairColor und EyeColor als Enumeration mit Standardfarben
-- Enums für Religion und Nationalität
-- MilitäryStuff nach DE /US (Dienstgrade z.B.)
-- Hash + Crypt + Password Class
-- List<T> To DataTable
-- Object 2 ASCIITable
-  
-| Property  | Value                              |
-|:----------|-----------------------------------:|
-|Id         |1d0af4a6-e00e-43cb-9867-7fd102d78618|
-|Lastname   |Erika                               |
-|Firstname  |Mustermann                          |
-|DateOfBirth|xx.xx.xxxx                          |
+## Overview
 
-- DataTable To
-  -  ASCIITable
-  -  CSV
-  -  SQLite
-  -  Markdown
-- Models Categroies: Animals, Vehicles
-- Countries (aus geonames generiert)
-- Dienstgrade Fueerwehr, Polizei, Militär
-- Kontinente Enum (sind ja nicht so viele)
-- StandardValidator als Attribute für EMail, Phone, Name, aber auch ein Interface Validate um komplexere zusammenhänge validieren zu können
-- Weitere Attribute: Example[] wird, dann von Generators überprüft und ggf angelegt
-- Namespace Formats mit Json,Yaml und XML Exporter, bei Json und Yaml ein Comment in die erste Zeile mit EntityName
-- Jeder Namespace eine README.md wie bei Java die package.html ?
+DoofesZeug is an collection of some useful models/entities/classes for rapid prototyping in .net core and / or creating some tests for development stuff.
+
+The basic idea was to have an collection of classes and enumerations for simple daily needed stuff like:
+- Person
+- Jobs
+- Vehicles
+- Geodata
+- Animals
+- ~~Colors -> an enumeration lie System.Drawing.Color, but without an reference to System.Drawing.dll~~
+  > Check if we can use the original System.Drawing.Color under linux, then it make no sense to create a new implementation.
+
+---
+
+## Content 
+
+### Entities & Models
+
+All the entities / classes are listet in the generated [Model Overview](./Documentation/Generated/Models/README.md).
+
+### Enumerations
+
+*All the enumerations are listet in the generated [Enumerations Overview](./Documentation/Generated/Enumerations/README.md).*
+
+---
+
+## Features
+
+### Builder Pattern
+
+I also try to implement some features like a builder pattern. In some class i put an Attribute `Builder` to the class definition
+and an generator create an class with the builder pattern.
+
+**Example:**
+
+```cs
+[Builder]
+public class Person : IdentifiableEntity
+{
+    public DateOfBirth DateOfBirth { get; set; }
+
+    public FirstName FirstName { get; set; }
+
+    public LastName LastName { get; set; }
+    
+    public Gender Gender { get; set; }
+}
+```
+
+**Builder:**
+
+```cs
+public static class PersonBuilder
+{
+    public static Person New() => new();
+
+    public static Person DateOfBirth(this Person person, DoofesZeug.Models.Human.DateOfBirth dateofbirth)
+    {
+        person.DateOfBirth = dateofbirth;
+        return person;
+    }
+
+    public static Person FirstName(this Person person, DoofesZeug.Models.Human.FirstName firstname)
+    {
+        person.FirstName = firstname;
+        return person;
+    }
+
+    public static Person LastName(this Person person, DoofesZeug.Models.Human.LastName lastname)
+    {
+        person.LastName = lastname;
+        return person;
+    }
+
+    public static Person Gender(this Person person, DoofesZeug.Models.Human.Gender gender)
+    {
+        person.Gender = gender;
+        return person;
+    }
+
+    public static Person Id(this Person person, System.Guid id)
+    {
+        person.Id = id;
+        return person;
+    }
+}
+```
+
+**Usage:**
+
+```cs
+Person p = PersonBuilder.New().FirstName("John").LastName("Doe").Gender(Gender.Male).DateOfBirth((25, 05, 1942));
+Console.Out.WriteLine(p);
+```
+
+### Validation
+
+An small validation of the models is planed. There are two different ways:
+- Add an attribute to an property (`Min()`,`Max()`,`Range()`,`Length()`)
+- Implement an interface `IValidator` in an class, which can validate more than one property an there coherences.
+
+### Container
+
+Some often needed (IMO) container classes:
+- IntegerList
+- StringList
+- StringSet
+
+### Formats
+
+Direct/easy support for the most needed formats like:
+- Json
+- Yaml
+- Xml
+- Csv
+
+---
+
+## Status
+
+**This library is current under development, the first small models/entites are implement 
+to gather experience what i need in the future and what make sense to invest time.
+But when there is a first version avaible, i'll put it to nuget of course.**
+
+---
+
+## Useful Links
+
+Here are some useful links to helpful articles, some in english, some in german.
+
+- https://de.wikipedia.org/wiki/Entit%C3%A4t_(Informatik)
+- https://www.newtonsoft.com/json
+- https://github.com/aaubry/YamlDotNet
+- https://plantuml.com/en/

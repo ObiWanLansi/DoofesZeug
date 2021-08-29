@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -90,16 +92,10 @@ namespace DoofesZeug.Documentation
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static void GenerateModelMarkdown( Type type )
+        private static void GenerateModelFile( Type type )
         {
-            if( type.IsAssignableTo(ENTITY_BASE) == false )
-            {
-                return;
-            }
-
-            //---------------------------------------------------------------------------------------------------------
-
             string strOutputDirectory = $"{OUTPUTDIRECTORY}\\{type.Namespace}";
+
             if( Directory.Exists(strOutputDirectory) == false )
             {
                 Directory.CreateDirectory(strOutputDirectory);
@@ -126,7 +122,9 @@ namespace DoofesZeug.Documentation
             sb.AppendLine();
 
             sb.AppendLine($"Diagram".Header(2));
+            //#if RELEASE
             GenerateUmlDiagramm(type, sb);
+            //#endif
             sb.AppendLine();
 
             sb.AppendLine($"Example".Header(2));
@@ -135,6 +133,37 @@ namespace DoofesZeug.Documentation
             //---------------------------------------------------------------------------------------------------------
 
             File.WriteAllTextAsync($"{strOutputDirectory}\\{type.Name}.md", sb.ToString(), Encoding.UTF8);
+        }
+
+
+        private static void GenerateModelOverviewFile( List<Type> models )
+        {
+            StringBuilder sb = new(8192);
+            sb.AppendLine("# Entities Overview");
+            sb.AppendLine("");
+
+            foreach( IGrouping<string, Type> entities in from model in models group model by model.Namespace into ng orderby ng.Key select ng )
+            {
+                sb.AppendLine($"## Namespace `{entities.Key}`");
+                sb.AppendLine("");
+
+                sb.AppendLine("|Entity|Source|Diagram|JSON Example|");
+                sb.AppendLine("|:-----|:----:|:-----:|:----------:|");
+
+                string strPath = entities.Key[11..].Replace('.', '/');
+
+                foreach( Type entity in from type in entities orderby type.Name select type )
+                {
+                    string strLinkToMarkdown = $"[{entity.Name}](./{entities.Key}/{entity.Name}.md)";
+                    string strLinkToSource = $"[&#x273F;](../../../DoofesZeug.Library/Src/{strPath}/{entity.Name}.cs)";
+                    string strLinkToDiagram = $"[&#x273F;](./{entities.Key}/{entity.Name}.png)";
+                    string strLinkToJSONTest = $"[&#x273F;](./{entities.Key}/{entity.Name}.json)";
+
+                    sb.AppendLine($"|{strLinkToMarkdown}|{strLinkToSource}|{strLinkToDiagram}|{strLinkToJSONTest}|");
+                }
+            }
+
+            File.WriteAllTextAsync($"{OUTPUTDIRECTORY}\\README.md", sb.ToString(), Encoding.UTF8);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -147,12 +176,25 @@ namespace DoofesZeug.Documentation
             Out.WriteLineAsync($"{assembly.FullName}");
 
             new DirectoryInfo(OUTPUTDIRECTORY).DeleteDirectoryContentRecursiv(ex => Error.WriteLineAsync(ex.Message));
-            //Directory.CreateDirectory(OUTPUTDIRECTORY);
+
+            //---------------------------------------------------------------------------------------------------------
+
+            List<Type> models = new();
 
             foreach( Type type in assembly.ExportedTypes )
             {
-                GenerateModelMarkdown(type);
+                if( type.IsAssignableTo(ENTITY_BASE) == false )
+                {
+                    continue;
+                }
+                models.Add(type);
             }
+
+            //---------------------------------------------------------------------------------------------------------
+
+            models.ForEach(model => GenerateModelFile(model));
+
+            GenerateModelOverviewFile(models);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Xml;
@@ -101,6 +102,9 @@ namespace DoofesZeug
             //Console.Out.WriteLine(DIV);
 
             //-----------------------------------------------------------------
+
+            Person p = PersonBuilder.New().FirstName("John").LastName("Doe").Gender(Gender.Male).DateOfBirth((25, 05, 1942));
+            Console.Out.WriteLine(p);
 
             PoliceOfficer po = PoliceOfficerBuilder.New().FirstName("Hans").LastName("Schmitz").Gender(Gender.Male).DateOfBirth((25, 05, 1942));
 

@@ -14,39 +14,38 @@ namespace DoofesZeug.Tools
         {
             FileInfo fiPUML = new(strAbsolutePumlFilename);
 
-            using( Process p = new() )
+            using Process p = new();
+
+            p.StartInfo.FileName = @"C:\Tools\PlanetUML\puml.bat";
+            p.StartInfo.Arguments = fiPUML.Name;
+            p.StartInfo.WorkingDirectory = fiPUML.DirectoryName;
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardError = true;
+            p.StartInfo.RedirectStandardOutput = true;
+
+            try
             {
-                p.StartInfo.FileName = @"C:\Tools\PlanetUML\puml.bat";
-                p.StartInfo.Arguments = fiPUML.Name;
-                p.StartInfo.WorkingDirectory = fiPUML.DirectoryName;
-                p.StartInfo.CreateNoWindow = true;
-                p.StartInfo.UseShellExecute = false;
-                p.StartInfo.RedirectStandardError = true;
-                p.StartInfo.RedirectStandardOutput = true;
+                p.Start();
 
-                try
+                string strOutput = p.StandardOutput.ReadToEnd().Trim();
+                string strError = p.StandardError.ReadToEnd().Trim();
+
+                p.WaitForExit();
+
+                if( strOutput.IsNotEmpty() )
                 {
-                    p.Start();
-
-                    string strOutput = p.StandardOutput.ReadToEnd().Trim();
-                    string strError = p.StandardError.ReadToEnd().Trim();
-
-                    p.WaitForExit();
-
-                    if( strOutput.IsNotEmpty() )
-                    {
-                        Console.Out.WriteLineAsync(strOutput);
-                    }
-
-                    if( strError.IsNotEmpty() )
-                    {
-                        Console.Error.WriteLineAsync(strError);
-                    }
+                    Console.Out.WriteLineAsync(strOutput);
                 }
-                catch( Exception ex )
+
+                if( strError.IsNotEmpty() )
                 {
-                    Console.Error.WriteLineAsync(ex.Message);
+                    Console.Error.WriteLineAsync(strError);
                 }
+            }
+            catch( Exception ex )
+            {
+                Console.Error.WriteLineAsync(ex.Message);
             }
         }
     }
