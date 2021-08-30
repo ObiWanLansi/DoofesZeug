@@ -36,6 +36,7 @@
   <ItemGroup>
     <Folder Include="Src\Attributes\Documentation\" />
     <Folder Include="Src\Generated\" />
+    <Folder Include="Src\Interfaces\" />
     <Folder Include="Src\Models\Geographically\" />
     <Folder Include="Src\Container\" />
     <Folder Include="Src\Models\Mathematics\" />

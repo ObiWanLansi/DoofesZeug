@@ -9,9 +9,16 @@
 
 ## Fields
 
+### Declared
+
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
 |Id|Guid|&#x2713;|&#x2713;||
+
+### Inherited
+
+|Name|Type|Read|Write|DefaultValue|
+|:---|:---|:--:|:---:|:-----------|
 
 ## Attributes
 
@@ -20,4 +27,5 @@
 ![IdentifiableEntity.png](./IdentifiableEntity.png "IdentifiableEntity")
 
 ## Example
+
 

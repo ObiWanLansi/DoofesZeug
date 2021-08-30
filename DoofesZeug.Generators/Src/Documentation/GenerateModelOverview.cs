@@ -7,6 +7,7 @@ using System.Text;
 
 using DoofesZeug.Extensions;
 using DoofesZeug.Models;
+using DoofesZeug.TestData;
 using DoofesZeug.Tools;
 
 using static System.Console;
@@ -20,6 +21,45 @@ namespace DoofesZeug.Documentation
         private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\Documentation\Generated\Models";
 
         private static readonly Type ENTITY_BASE = typeof(EntityBase);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        private static void GenerateJsonExample( Type type, StringBuilder sb )
+        {
+            sb.AppendLine();
+
+            //if( type.IsAbstract )
+            //{
+            //    sb.AppendLine($"*The Entity {type.Name} is abstract, so we can't not create an json example!*");
+            //    return;
+            //}
+
+            //bool bDefaultConstructor = false;
+            //foreach( ConstructorInfo constructor in type.GetConstructors() )
+            //{
+            //    if( constructor.GetParameters().Length == 0 )
+            //    {
+            //        bDefaultConstructor = true;
+            //        break;
+            //    }
+            //}
+
+            //if( bDefaultConstructor == false )
+            //{
+            //    sb.AppendLine($"*The Entity {type.Name} have no default constructor, so we can't not create an json example!*");
+            //    return;
+            //}
+
+            object oResult = TestDataGenerator.GenerateTestData(type);
+
+            if( oResult != null )
+            {
+                sb.AppendLine("```json");
+                sb.AppendLine(oResult.ToPrettyJson());
+                sb.AppendLine("```");
+            }
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -82,14 +122,27 @@ namespace DoofesZeug.Documentation
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static void AddFields( Type type, StringBuilder sb )
+        private static void AddFields( Type type, StringBuilder sb, bool bInherited )
         {
+            sb.AppendLine();
+            sb.AppendLine($"### {( bInherited ? "Inherited" : "Declared" )}");
             sb.AppendLine();
             sb.AppendLine("|Name|Type|Read|Write|DefaultValue|");
             sb.AppendLine("|:---|:---|:--:|:---:|:-----------|");
 
-            foreach( PropertyInfo pi in type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance) )
+            //var properties = bInherited ? type.GetProperties( BindingFlags.Public | BindingFlags.Instance) : type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
+            foreach( PropertyInfo pi in type.GetProperties(BindingFlags.Public | BindingFlags.Instance) )
             {
+                if( bInherited == true && pi.DeclaringType == type )
+                {
+                    continue;
+                }
+
+                if( bInherited == false && pi.DeclaringType != type )
+                {
+                    continue;
+                }
+
                 //sbPUML.AppendLine($"    {pi.Name}: {pi.PropertyType.Name}");
                 sb.AppendLine($"|{pi.Name}|{pi.PropertyType.Name}|{( pi.CanRead ? "&#x2713;" : "&#x2717;" )}|{( pi.CanWrite ? "&#x2713;" : "&#x2717;" )}||");
             }
@@ -133,7 +186,8 @@ namespace DoofesZeug.Documentation
                 sb.AppendLine();
 
                 sb.AppendLine($"Fields".Header(2));
-                AddFields(type, sb);
+                AddFields(type, sb, false);
+                AddFields(type, sb, true);
                 sb.AppendLine();
 
                 sb.AppendLine($"Attributes".Header(2));
@@ -146,6 +200,7 @@ namespace DoofesZeug.Documentation
                 sb.AppendLine();
 
                 sb.AppendLine($"Example".Header(2));
+                GenerateJsonExample(type, sb);
                 sb.AppendLine();
             }
 

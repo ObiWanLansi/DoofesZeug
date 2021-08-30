@@ -9,6 +9,13 @@
 
 ## Fields
 
+### Declared
+
+|Name|Type|Read|Write|DefaultValue|
+|:---|:---|:--:|:---:|:-----------|
+
+### Inherited
+
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
 
@@ -19,4 +26,5 @@
 ![UnixTimestamp.png](./UnixTimestamp.png "UnixTimestamp")
 
 ## Example
+
 

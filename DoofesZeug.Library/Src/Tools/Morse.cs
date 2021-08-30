@@ -3,7 +3,7 @@ using System.Text;
 
 
 
-namespace DoofesZeug.Src.Tools
+namespace DoofesZeug.Tools
 {
     public static class Morse
     {
@@ -56,6 +56,12 @@ namespace DoofesZeug.Src.Tools
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Gets the morse.
+        /// </summary>
+        /// <param name="strContent">Content of the string.</param>
+        /// <param name="cLetterSplitter">The c letter splitter.</param>
+        /// <returns></returns>
         public static string GetMorse( string strContent, char cLetterSplitter = ' ' )
         {
             StringBuilder sb = new(8192);
@@ -82,7 +88,7 @@ namespace DoofesZeug.Src.Tools
 
 
         /// <summary>
-        /// Spells the specified string content.
+        /// Enumerates the morse.
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
         /// <returns></returns>

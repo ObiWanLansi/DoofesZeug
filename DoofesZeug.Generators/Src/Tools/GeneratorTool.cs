@@ -10,6 +10,7 @@ namespace DoofesZeug.Tools
 {
     public static class GeneratorTool
     {
+        //[Conditional("RELEASE")]
         public static void PlantUml( string strAbsolutePumlFilename )
         {
             FileInfo fiPUML = new(strAbsolutePumlFilename);

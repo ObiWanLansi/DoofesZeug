@@ -54,6 +54,11 @@ namespace DoofesZeug.Tools
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Gets the spelling.
+        /// </summary>
+        /// <param name="strContent">Content of the string.</param>
+        /// <returns></returns>
         public static string GetSpelling( string strContent )
         {
             StringBuilder sb = new(8192);
@@ -79,7 +84,7 @@ namespace DoofesZeug.Tools
 
 
         /// <summary>
-        /// Spells the specified string content.
+        /// Enumerates the spelling.
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
         /// <returns></returns>

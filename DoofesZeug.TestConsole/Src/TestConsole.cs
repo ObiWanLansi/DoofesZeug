@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Drawing;
-using System.IO;
-using System.Text;
-using System.Xml;
-using System.Xml.Serialization;
 
-using DoofesZeug.Converter;
+using DoofesZeug.Extensions;
 using DoofesZeug.Models.Human;
 using DoofesZeug.Models.Human.Professions;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-
-using YamlDotNet.Serialization;
 
 
 
@@ -25,50 +15,50 @@ namespace DoofesZeug
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static string ToXml( object o )
-        {
-            using MemoryStream ms = new();
+        //private static string ToXml( object o )
+        //{
+        //    using MemoryStream ms = new();
 
-            using( XmlTextWriter xmlwriter = new(ms, Encoding.GetEncoding("ISO-8859-1")) )
-            {
-                xmlwriter.Formatting = System.Xml.Formatting.Indented;
-                xmlwriter.Indentation = 4;
+        //    using( XmlTextWriter xmlwriter = new(ms, Encoding.GetEncoding("ISO-8859-1")) )
+        //    {
+        //        xmlwriter.Formatting = System.Xml.Formatting.Indented;
+        //        xmlwriter.Indentation = 4;
 
-                try
-                {
-                    new XmlSerializer(o.GetType()).Serialize(xmlwriter, o);
-                }
-                finally
-                {
-                    xmlwriter.Close();
-                    ms.Close();
-                }
-            }
+        //        try
+        //        {
+        //            new XmlSerializer(o.GetType()).Serialize(xmlwriter, o);
+        //        }
+        //        finally
+        //        {
+        //            xmlwriter.Close();
+        //            ms.Close();
+        //        }
+        //    }
 
-            return Encoding.Default.GetString(ms.GetBuffer());
-        }
-
-
-        private static string ToJson( object o )
-        {
-            JsonSerializerSettings settings = new()
-            {
-                Formatting = Newtonsoft.Json.Formatting.Indented
-            };
-
-            settings.Converters.Add(new StringEnumConverter());
-            settings.Converters.Add(new NameConverter());
-            settings.Converters.Add(new DateTimePartConverter());
-
-            return JsonConvert.SerializeObject(o, settings);
-        }
+        //    return Encoding.Default.GetString(ms.GetBuffer());
+        //}
 
 
-        private static string ToYaml( object o )
-        {
-            //return new SerializerBuilder().WithEventEmitter(nextEmitter => new QuoteSurroundingEventEmitter(nextEmitter)).Build().Serialize(o);
-            return new SerializerBuilder().Build().Serialize(o);
-        }
+        //private static string ToJson( object o )
+        //{
+        //    JsonSerializerSettings settings = new()
+        //    {
+        //        Formatting = Newtonsoft.Json.Formatting.Indented
+        //    };
+
+        //    settings.Converters.Add(new StringEnumConverter());
+        //    settings.Converters.Add(new NameConverter());
+        //    settings.Converters.Add(new DateTimePartConverter());
+
+        //    return JsonConvert.SerializeObject(o, settings);
+        //}
+
+
+        //private static string ToYaml( object o )
+        //{
+        //    //return new SerializerBuilder().WithEventEmitter(nextEmitter => new QuoteSurroundingEventEmitter(nextEmitter)).Build().Serialize(o);
+        //    return new SerializerBuilder().Build().Serialize(o);
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -104,11 +94,11 @@ namespace DoofesZeug
             //-----------------------------------------------------------------
 
             Person p = PersonBuilder.New().FirstName("John").LastName("Doe").Gender(Gender.Male).DateOfBirth((25, 05, 1942));
-            Console.Out.WriteLine(p);
+            Console.Out.WriteLine(p.ToPrettyJson());
 
             PoliceOfficer po = PoliceOfficerBuilder.New().FirstName("Hans").LastName("Schmitz").Gender(Gender.Male).DateOfBirth((25, 05, 1942));
 
-            Console.Out.WriteLine(ToJson(po));
+            Console.Out.WriteLine(po.ToPrettyJson());
             Console.Out.WriteLine(DIV);
 
             //-----------------------------------------------------------------

@@ -9,8 +9,16 @@
 
 ## Fields
 
+### Declared
+
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
+
+### Inherited
+
+|Name|Type|Read|Write|DefaultValue|
+|:---|:---|:--:|:---:|:-----------|
+|Value|Int32|&#x2713;|&#x2713;||
 
 ## Attributes
 
@@ -19,4 +27,5 @@
 ![Week.png](./Week.png "Week")
 
 ## Example
+
 

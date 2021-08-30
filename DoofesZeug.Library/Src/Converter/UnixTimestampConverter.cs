@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DoofesZeug.Models.DateAndTime.Part;
+using DoofesZeug.Models.DateAndTime;
 
 using Newtonsoft.Json;
 
@@ -8,9 +8,9 @@ using Newtonsoft.Json;
 
 namespace DoofesZeug.Converter
 {
-    public sealed class DateTimePartConverter : JsonConverter
+    public sealed class UnixTimestampConverter : JsonConverter
     {
-        private static readonly Type DATETIMEPART = typeof(DateTimePart);
+        private static readonly Type UNIXTIMESTAMP = typeof(UnixTimestamp);
 
         /// <summary>
         /// Determines whether this instance can convert the specified object type.
@@ -19,7 +19,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType.BaseType.IsAssignableTo(DATETIMEPART);
+        public override bool CanConvert( Type objectType ) => objectType.IsAssignableTo(UNIXTIMESTAMP);
 
         /// <summary>
         /// Reads the JSON representation of the object.
@@ -48,7 +48,7 @@ namespace DoofesZeug.Converter
                 return;
             }
 
-            writer.WriteValue(( (DateTimePart) value ).Value);
+            writer.WriteValue((ulong) (UnixTimestamp) value);
         }
     }
 }

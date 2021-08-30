@@ -5,9 +5,6 @@ using System.Text;
 
 namespace DoofesZeug.Extensions
 {
-    /// <summary>
-    /// Eine Erweiterungsklasse für System.IO.FileInfo .
-    /// </summary>
     public static class FileInfoExtension
     {
         /// <summary>
