@@ -3,11 +3,14 @@
 ## Generally
 
 |||
-|-|-|
+|:-|:-|
 |Namespace|DoofesZeug.Models.Human|
 |BaseClass|Date|
 
 ## Fields
+
+|Name|Type|Read|Write|DefaultValue|
+|:---|:---|:--:|:---:|:-----------|
 
 ## Attributes
 

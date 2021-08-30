@@ -3,6 +3,7 @@ skinparam monochrome true
 hide empty members
 
 enum Quarter {
+    Unknown
     First
     Second
     Third

@@ -79,12 +79,27 @@ namespace DoofesZeug.Documentation
             GeneratorTool.PlantUml(strOutputFilename);
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        private static void AddFields( Type type, StringBuilder sb )
+        {
+            sb.AppendLine();
+            sb.AppendLine("|Name|Type|Read|Write|DefaultValue|");
+            sb.AppendLine("|:---|:---|:--:|:---:|:-----------|");
+
+            foreach( PropertyInfo pi in type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance) )
+            {
+                //sbPUML.AppendLine($"    {pi.Name}: {pi.PropertyType.Name}");
+                sb.AppendLine($"|{pi.Name}|{pi.PropertyType.Name}|{( pi.CanRead ? "&#x2713;" : "&#x2717;" )}|{( pi.CanWrite ? "&#x2713;" : "&#x2717;" )}||");
+            }
+        }
 
         private static void AddGenerallyInformation( Type type, StringBuilder sb )
         {
             sb.AppendLine();
             sb.AppendLine("|||");
-            sb.AppendLine("|-|-|");
+            sb.AppendLine("|:-|:-|");
             sb.AppendLine($"|Namespace|{type.Namespace}|");
             sb.AppendLine($"|BaseClass|{type.BaseType.Name}|");
         }
@@ -118,6 +133,7 @@ namespace DoofesZeug.Documentation
                 sb.AppendLine();
 
                 sb.AppendLine($"Fields".Header(2));
+                AddFields(type, sb);
                 sb.AppendLine();
 
                 sb.AppendLine($"Attributes".Header(2));
