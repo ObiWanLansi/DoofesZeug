@@ -15,45 +15,23 @@ using static System.Console;
 
 namespace DoofesZeug.Documentation
 {
-    public static class GenerateModelOverview
+    public static class GenerateEnumerationsOverview
     {
-        private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\Documentation\Generated\Models";
+        private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\Documentation\Generated\Enumerations";
 
         private static readonly Type ENTITY_BASE = typeof(EntityBase);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        //private static void AppendEnum( Type type, StringBuilder sbPUML )
-        //{
-        //    sbPUML.AppendLine();
-        //    sbPUML.AppendLine($"enum {type.Name} {{");
-
-
-        //    foreach( object value in Enum.GetValues(type) )
-        //    {
-        //        sbPUML.AppendLine($"    {value}");
-        //    }
-
-        //    sbPUML.AppendLine("}");
-        //    sbPUML.AppendLine();
-        //}
-
-        private static void AppendType( Type type, StringBuilder sbPUML )
+        private static void AppendEnum( Type type, StringBuilder sbPUML )
         {
-            if( type.BaseType != typeof(object) )
-            {
-                AppendType(type.BaseType, sbPUML);
-                sbPUML.AppendLine($"{type.BaseType.Name} <|-- {type.Name}");
-            }
-
             sbPUML.AppendLine();
-            sbPUML.Append(type.IsAbstract ? "abstract " : "");
-            sbPUML.AppendLine($"class {type.Name} {{");
+            sbPUML.AppendLine($"enum {type.Name} {{");
 
-            foreach( PropertyInfo pi in type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance) )
+            foreach( object value in Enum.GetValues(type) )
             {
-                sbPUML.AppendLine($"    {pi.Name}: {pi.PropertyType.Name}");
+                sbPUML.AppendLine($"    {value}");
             }
 
             sbPUML.AppendLine("}");
@@ -81,14 +59,7 @@ namespace DoofesZeug.Documentation
 
             //---------------------------------------------
 
-            //if( type.IsEnum == false )
-            //{
-            AppendType(type, sbPUML);
-            //}
-            //else
-            //{
-            //    AppendEnum(type, sbPUML);
-            //}
+            AppendEnum(type, sbPUML);
 
             //---------------------------------------------
 
@@ -101,20 +72,10 @@ namespace DoofesZeug.Documentation
             GeneratorTool.PlantUml(strOutputFilename);
         }
 
-
-        private static void AddGenerallyInformation( Type type, StringBuilder sb )
-        {
-            sb.AppendLine();
-            sb.AppendLine("|||");
-            sb.AppendLine("|-|-|");
-            sb.AppendLine($"|Namespace|{type.Namespace}|");
-            sb.AppendLine($"|BaseClass|{type.BaseType.Name}|");
-        }
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static void GenerateModelFile( Type type )
+        private static void GenerateEnumerationFile( Type type )
         {
             string strOutputDirectory = $"{OUTPUTDIRECTORY}\\{type.Namespace}";
 
@@ -132,33 +93,8 @@ namespace DoofesZeug.Documentation
             sb.AppendLine($"{type.Name}".Header(1));
             sb.AppendLine();
 
-            //if( type.IsEnum == false )
-            {
-                sb.AppendLine($"Generally".Header(2));
-                // Namespace, BaseClass, ...
-                AddGenerallyInformation(type, sb);
-                sb.AppendLine();
-
-                sb.AppendLine($"Fields".Header(2));
-                sb.AppendLine();
-
-                sb.AppendLine($"Attributes".Header(2));
-                sb.AppendLine();
-
-                sb.AppendLine($"Diagram".Header(2));
-                //#if RELEASE
-                GenerateUmlDiagramm(type, sb);
-                //#endif
-                sb.AppendLine();
-
-                sb.AppendLine($"Example".Header(2));
-                sb.AppendLine();
-            }
-            //else
-            //{
-            //    sb.AppendLine($"Diagram".Header(2));
-            //    GenerateUmlDiagramm(type, sb);
-            //}
+            sb.AppendLine($"Diagram".Header(2));
+            GenerateUmlDiagramm(type, sb);
 
             //---------------------------------------------------------------------------------------------------------
 
@@ -166,31 +102,30 @@ namespace DoofesZeug.Documentation
         }
 
 
-        private static void GenerateModelOverviewFile( List<Type> models )
+        private static void GenerateEnumerationOverviewFile( List<Type> enumerations )
         {
             StringBuilder sb = new(8192);
-            sb.AppendLine("# Entities Overview");
+            sb.AppendLine("# Enumerations Overview");
 
-            foreach( IGrouping<string, Type> entities in from model in models group model by model.Namespace into ng orderby ng.Key select ng )
+            foreach( IGrouping<string, Type> enumerationgroup in from enumeration in enumerations group enumeration by enumeration.Namespace into ng orderby ng.Key select ng )
             {
                 sb.AppendLine("");
                 sb.AppendLine("");
-                sb.AppendLine($"## Namespace `{entities.Key}`");
+                sb.AppendLine($"## Namespace `{enumerationgroup.Key}`");
                 sb.AppendLine("");
 
-                sb.AppendLine("|Entity|Source|Diagram|JSON Example|");
-                sb.AppendLine("|:-----|:----:|:-----:|:----------:|");
+                sb.AppendLine("|Enumeration|Source|Diagram|");
+                sb.AppendLine("|:----------|:----:|:-----:|");
 
-                string strPath = entities.Key [11..].Replace('.', '/');
+                string strPath = enumerationgroup.Key [11..].Replace('.', '/');
 
-                foreach( Type entity in from type in entities orderby type.Name select type )
+                foreach( Type enumeration in from type in enumerationgroup orderby type.Name select type )
                 {
-                    string strLinkToMarkdown = $"[{entity.Name}](./{entities.Key}/{entity.Name}.md)";
-                    string strLinkToSource = $"[&#x273F;](../../../DoofesZeug.Library/Src/{strPath}/{entity.Name}.cs)";
-                    string strLinkToDiagram = $"[&#x273F;](./{entities.Key}/{entity.Name}.png)";
-                    string strLinkToJSONTest = $"[&#x273F;](./{entities.Key}/{entity.Name}.json)";
+                    string strLinkToMarkdown = $"[{enumeration.Name}](./{enumerationgroup.Key}/{enumeration.Name}.md)";
+                    string strLinkToSource = $"[&#x273F;](../../../DoofesZeug.Library/Src/{strPath}/{enumeration.Name}.cs)";
+                    string strLinkToDiagram = $"[&#x273F;](./{enumerationgroup.Key}/{enumeration.Name}.png)";
 
-                    sb.AppendLine($"|{strLinkToMarkdown}|{strLinkToSource}|{strLinkToDiagram}|{strLinkToJSONTest}|");
+                    sb.AppendLine($"|{strLinkToMarkdown}|{strLinkToSource}|{strLinkToDiagram}|");
                 }
             }
 
@@ -210,22 +145,22 @@ namespace DoofesZeug.Documentation
 
             //---------------------------------------------------------------------------------------------------------
 
-            List<Type> models = new();
+            List<Type> enumerations = new();
 
             foreach( Type type in assembly.ExportedTypes )
             {
-                if( type.IsAssignableTo(ENTITY_BASE) == false )
+                if( type.IsEnum == false )
                 {
                     continue;
                 }
-                models.Add(type);
+                enumerations.Add(type);
             }
 
             //---------------------------------------------------------------------------------------------------------
 
-            models.ForEach(model => GenerateModelFile(model));
+            enumerations.ForEach(enumeration => GenerateEnumerationFile(enumeration));
 
-            GenerateModelOverviewFile(models);
+            GenerateEnumerationOverviewFile(enumerations);
         }
     }
 }

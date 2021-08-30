@@ -11,6 +11,7 @@ namespace DoofesZeug
         {
             ModelBuilderPattern.Generate();
             GenerateModelOverview.Generate();
+            GenerateEnumerationsOverview.Generate();
         }
     }
 }
