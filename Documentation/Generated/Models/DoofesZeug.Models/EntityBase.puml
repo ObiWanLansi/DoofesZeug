@@ -1,4 +1,5 @@
 ﻿@startuml
+skinparam monochrome true
 hide empty members
 
 abstract class EntityBase {

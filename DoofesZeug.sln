@@ -10,11 +10,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CB3F4EEA-4C33-4D2A-BCF5-E5C6D207FE85}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		Documentation\Miscelleaous\ToDo.md = Documentation\Miscelleaous\ToDo.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoofesZeug.UnitTests", "DoofesZeug.UnitTests\DoofesZeug.UnitTests.csproj", "{8F0B9748-C63F-4C14-A78C-59B5EA38AE69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoofesZeug.UnitTests", "DoofesZeug.UnitTests\DoofesZeug.UnitTests.csproj", "{8F0B9748-C63F-4C14-A78C-59B5EA38AE69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoofesZeug.Generators", "DoofesZeug.Generators\DoofesZeug.Generators.csproj", "{E4D2DBAB-E563-472E-BA5A-62BDFA2B277C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoofesZeug.Generators", "DoofesZeug.Generators\DoofesZeug.Generators.csproj", "{E4D2DBAB-E563-472E-BA5A-62BDFA2B277C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

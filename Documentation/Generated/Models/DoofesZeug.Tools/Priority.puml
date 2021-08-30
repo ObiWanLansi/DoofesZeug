@@ -1,0 +1,11 @@
+﻿@startuml
+skinparam monochrome true
+hide empty members
+
+enum Priority {
+    Low
+    Normal
+    High
+}
+
+@enduml

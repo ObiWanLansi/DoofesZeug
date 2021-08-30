@@ -24,6 +24,21 @@ namespace DoofesZeug.Documentation
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        private static void AppendEnum( Type type, StringBuilder sbPUML )
+        {
+            sbPUML.AppendLine();
+            sbPUML.AppendLine($"enum {type.Name} {{");
+
+
+            foreach( object value in Enum.GetValues(type) )
+            {
+                sbPUML.AppendLine($"    {value}");
+            }
+
+            sbPUML.AppendLine("}");
+            sbPUML.AppendLine();
+        }
+
         private static void AppendType( Type type, StringBuilder sbPUML )
         {
             if( type.BaseType != typeof(object) )
@@ -61,12 +76,19 @@ namespace DoofesZeug.Documentation
 
             StringBuilder sbPUML = new(8192);
             sbPUML.AppendLine("@startuml");
-            // sbPUML.AppendLine("skinparam monochrome true");
+            sbPUML.AppendLine("skinparam monochrome true");
             sbPUML.AppendLine("hide empty members");
 
             //---------------------------------------------
 
-            AppendType(type, sbPUML);
+            if( type.IsEnum == false )
+            {
+                AppendType(type, sbPUML);
+            }
+            else
+            {
+                AppendEnum(type, sbPUML);
+            }
 
             //---------------------------------------------
 
@@ -110,25 +132,33 @@ namespace DoofesZeug.Documentation
             sb.AppendLine($"{type.Name}".Header(1));
             sb.AppendLine();
 
-            sb.AppendLine($"Generally".Header(2));
-            // Namespace, BaseClass, ...
-            AddGenerallyInformation(type, sb);
-            sb.AppendLine();
+            if( type.IsEnum == false )
+            {
+                sb.AppendLine($"Generally".Header(2));
+                // Namespace, BaseClass, ...
+                AddGenerallyInformation(type, sb);
+                sb.AppendLine();
 
-            sb.AppendLine($"Fields".Header(2));
-            sb.AppendLine();
+                sb.AppendLine($"Fields".Header(2));
+                sb.AppendLine();
 
-            sb.AppendLine($"Attributes".Header(2));
-            sb.AppendLine();
+                sb.AppendLine($"Attributes".Header(2));
+                sb.AppendLine();
 
-            sb.AppendLine($"Diagram".Header(2));
-            //#if RELEASE
-            GenerateUmlDiagramm(type, sb);
-            //#endif
-            sb.AppendLine();
+                sb.AppendLine($"Diagram".Header(2));
+                //#if RELEASE
+                GenerateUmlDiagramm(type, sb);
+                //#endif
+                sb.AppendLine();
 
-            sb.AppendLine($"Example".Header(2));
-            sb.AppendLine();
+                sb.AppendLine($"Example".Header(2));
+                sb.AppendLine();
+            }
+            else
+            {
+                sb.AppendLine($"Diagram".Header(2));
+                GenerateUmlDiagramm(type, sb);
+            }
 
             //---------------------------------------------------------------------------------------------------------
 
@@ -140,17 +170,18 @@ namespace DoofesZeug.Documentation
         {
             StringBuilder sb = new(8192);
             sb.AppendLine("# Entities Overview");
-            sb.AppendLine("");
 
-            foreach( IGrouping<string, Type> entities in from model in models group model by model.Namespace into ng orderby ng.Key select ng )
+            foreach( IGrouping<string, Type> entities in from model in models where model.IsEnum == false group model by model.Namespace into ng orderby ng.Key select ng )
             {
+                sb.AppendLine("");
+                sb.AppendLine("");
                 sb.AppendLine($"## Namespace `{entities.Key}`");
                 sb.AppendLine("");
 
                 sb.AppendLine("|Entity|Source|Diagram|JSON Example|");
                 sb.AppendLine("|:-----|:----:|:-----:|:----------:|");
 
-                string strPath = entities.Key[11..].Replace('.', '/');
+                string strPath = entities.Key [11..].Replace('.', '/');
 
                 foreach( Type entity in from type in entities orderby type.Name select type )
                 {
@@ -183,7 +214,7 @@ namespace DoofesZeug.Documentation
 
             foreach( Type type in assembly.ExportedTypes )
             {
-                if( type.IsAssignableTo(ENTITY_BASE) == false )
+                if( type.IsAssignableTo(ENTITY_BASE) == false && type.IsEnum == false )
                 {
                     continue;
                 }
