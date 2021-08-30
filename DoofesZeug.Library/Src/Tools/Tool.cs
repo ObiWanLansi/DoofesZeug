@@ -5,13 +5,12 @@ using System.Data;
 using System.Linq;
 using System.Text;
 
+using DoofesZeug.Container;
+
 
 
 namespace DoofesZeug.Tools
 {
-    /// <summary>
-    /// Klasse mit statischen Standalonefunktionen.
-    /// </summary>
     public static class Tool
     {
         /// <summary>
@@ -95,22 +94,27 @@ namespace DoofesZeug.Tools
 
 
         /// <summary>
-        /// Toes the list.
+        /// Enums to list.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="System.ArgumentException">tEnum</exception>
         public static List<T> EnumToList<T>()
         {
             Type tEnum = typeof(T);
 
-            if( tEnum.IsEnum == false )
-            {
-                throw new ArgumentException($"Bei dem Typ {tEnum.FullName} handelt es sich nicht um ein Aufzählungstyp!");
-            }
+            return tEnum.IsEnum == false ? throw new ArgumentException(nameof(tEnum)) : Enum.GetValues(tEnum).Cast<T>().ToList();
+        }
 
-            return Enum.GetValues(tEnum).Cast<T>().ToList();
+        /// <summary>
+        /// Enums to string list.
+        /// </summary>
+        /// <param name="tEnum">The t enum.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentException">tEnum</exception>
+        public static StringList EnumToStringList( Type tEnum )
+        {
+            return tEnum.IsEnum == false ? throw new ArgumentException(nameof(tEnum)) : new StringList(Enum.GetNames(tEnum));
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

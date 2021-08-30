@@ -24,21 +24,6 @@ namespace DoofesZeug.Documentation
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        //private static void AppendEnum( Type type, StringBuilder sbPUML )
-        //{
-        //    sbPUML.AppendLine();
-        //    sbPUML.AppendLine($"enum {type.Name} {{");
-
-
-        //    foreach( object value in Enum.GetValues(type) )
-        //    {
-        //        sbPUML.AppendLine($"    {value}");
-        //    }
-
-        //    sbPUML.AppendLine("}");
-        //    sbPUML.AppendLine();
-        //}
-
         private static void AppendType( Type type, StringBuilder sbPUML )
         {
             if( type.BaseType != typeof(object) )
@@ -81,14 +66,7 @@ namespace DoofesZeug.Documentation
 
             //---------------------------------------------
 
-            //if( type.IsEnum == false )
-            //{
             AppendType(type, sbPUML);
-            //}
-            //else
-            //{
-            //    AppendEnum(type, sbPUML);
-            //}
 
             //---------------------------------------------
 
@@ -154,11 +132,6 @@ namespace DoofesZeug.Documentation
                 sb.AppendLine($"Example".Header(2));
                 sb.AppendLine();
             }
-            //else
-            //{
-            //    sb.AppendLine($"Diagram".Header(2));
-            //    GenerateUmlDiagramm(type, sb);
-            //}
 
             //---------------------------------------------------------------------------------------------------------
 

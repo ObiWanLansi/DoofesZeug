@@ -114,18 +114,19 @@ namespace DoofesZeug.Documentation
                 sb.AppendLine($"## Namespace `{enumerationgroup.Key}`");
                 sb.AppendLine("");
 
-                sb.AppendLine("|Enumeration|Source|Diagram|");
-                sb.AppendLine("|:----------|:----:|:-----:|");
+                sb.AppendLine("|Enumeration|Values|Source|Diagram|");
+                sb.AppendLine("|:----------|:-----|:----:|:-----:|");
 
                 string strPath = enumerationgroup.Key [11..].Replace('.', '/');
 
                 foreach( Type enumeration in from type in enumerationgroup orderby type.Name select type )
                 {
                     string strLinkToMarkdown = $"[{enumeration.Name}](./{enumerationgroup.Key}/{enumeration.Name}.md)";
+                    string strValues = Tool.EnumToStringList(enumeration).ToFlatString();
                     string strLinkToSource = $"[&#x273F;](../../../DoofesZeug.Library/Src/{strPath}/{enumeration.Name}.cs)";
                     string strLinkToDiagram = $"[&#x273F;](./{enumerationgroup.Key}/{enumeration.Name}.png)";
 
-                    sb.AppendLine($"|{strLinkToMarkdown}|{strLinkToSource}|{strLinkToDiagram}|");
+                    sb.AppendLine($"|{strLinkToMarkdown}|{strValues}|{strLinkToSource}|{strLinkToDiagram}|");
                 }
             }
 

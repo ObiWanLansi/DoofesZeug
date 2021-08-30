@@ -37,6 +37,8 @@
     <Folder Include="Src\Generated\" />
     <Folder Include="Src\Models\Geographically\" />
     <Folder Include="Src\Container\" />
+    <Folder Include="Src\Models\Mathematics\" />
+    <Folder Include="Src\Models\Physics\" />
   </ItemGroup>
 
   <ItemGroup>
