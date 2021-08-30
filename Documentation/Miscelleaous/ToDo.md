@@ -2,6 +2,8 @@
 
 - Fill EntityOverview Files with the stuff.
 - Generic Singelton Pattern
+- Attribute for Default Value at Properties?
+  > Und dann ? dann müsste ja auch jemand da sein der das setzt (Class DefaultValueSetter)( aber zumindestens schonmal in der Doku berücksichtigen)
 - Implement Observer Pattern in EntityBase ?
 - Generate Document mit all Enumerations, too ...
 - Generate Document mit all Attributes, too ...
