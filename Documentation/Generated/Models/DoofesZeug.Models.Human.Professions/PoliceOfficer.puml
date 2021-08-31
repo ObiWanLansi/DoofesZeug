@@ -11,16 +11,12 @@ abstract class IdentifiableEntity {
     Id: Guid
 }
 
-IdentifiableEntity <|-- Person
+IdentifiableEntity <|-- Profession
 
-class Person {
-    DateOfBirth: DateOfBirth
-    FirstName: FirstName
-    LastName: LastName
-    Gender: Gender
+abstract class Profession {
 }
 
-Person <|-- PoliceOfficer
+Profession <|-- PoliceOfficer
 
 class PoliceOfficer {
 }

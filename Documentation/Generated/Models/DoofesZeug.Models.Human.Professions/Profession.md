@@ -1,11 +1,11 @@
-﻿# PoliceOfficer
+﻿# Profession
 
 ## Generally
 
 |||
 |:-|:-|
 |Namespace|DoofesZeug.Models.Human.Professions|
-|BaseClass|Profession|
+|BaseClass|IdentifiableEntity|
 
 ## Fields
 
@@ -24,7 +24,7 @@
 
 ## Diagram
 
-![PoliceOfficer.png](./PoliceOfficer.png "PoliceOfficer")
+![Profession.png](./Profession.png "Profession")
 
 ## Example
 

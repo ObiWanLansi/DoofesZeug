@@ -17,6 +17,7 @@
 |FirstName|FirstName|&#x2713;|&#x2713;||
 |LastName|LastName|&#x2713;|&#x2713;||
 |Gender|Gender|&#x2713;|&#x2713;||
+|Professions|ProfessionList|&#x2713;|&#x2713;||
 
 ### Inherited
 
@@ -42,7 +43,8 @@
   "FirstName": "John",
   "LastName": "Doe",
   "Gender": "Male",
-  "Id": "4ecc2fa2-715f-459a-a7d1-169881a4ed5f"
+  "Professions": null,
+  "Id": "315df6ec-297d-4de9-82a8-c81aabda7a72"
 }
 ```
 

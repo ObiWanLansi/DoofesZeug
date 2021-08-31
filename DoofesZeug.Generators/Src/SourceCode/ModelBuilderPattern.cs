@@ -28,6 +28,35 @@ namespace DoofesZeug.SourceCode
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        private static string GetPropertyTypeString( PropertyInfo pi )
+        {
+            string strPropertyType = pi.PropertyType.Name;
+
+            if( pi.PropertyType.IsGenericType )
+            {
+                int index = strPropertyType.IndexOf('`');
+                if( index > 0 )
+                {
+                    strPropertyType = strPropertyType.Substring(0, index);
+                }
+
+                int counter = 0;
+                strPropertyType += "<";
+                foreach( Type genty in pi.PropertyType.GenericTypeArguments )
+                {
+                    if( counter++ > 0 )
+                    {
+                        strPropertyType += ", ";
+                    }
+                    strPropertyType += genty.FullName;
+                }
+                strPropertyType += ">";
+            }
+
+            return $"{pi.PropertyType.Namespace}.{strPropertyType}";
+        }
+
+
         private static void GenerateModelBuilder( Type type )
         {
             BuilderAttribute ba = (BuilderAttribute) type.GetCustomAttribute(BUILDERATTRIBUTE);
@@ -63,7 +92,7 @@ namespace DoofesZeug.SourceCode
 
                 sb.AppendLine("");
                 sb.AppendLine("");
-                sb.AppendLine($"        public static {type.Name} {property.Name}(this {type.Name} {type.Name.ToLower()}, {property.PropertyType.Namespace}.{property.PropertyType.Name} {property.Name.ToLower()})");
+                sb.AppendLine($"        public static {type.Name} With{property.Name}(this {type.Name} {type.Name.ToLower()}, {GetPropertyTypeString(property)} {property.Name.ToLower()})");
                 sb.AppendLine("        {");
                 //sb.AppendLine("            return null;");
                 sb.AppendLine($"            {type.Name.ToLower()}.{property.Name} = {property.Name.ToLower()};");

@@ -16,9 +16,4 @@ IdentifiableEntity <|-- Profession
 abstract class Profession {
 }
 
-Profession <|-- FireFighter
-
-class FireFighter {
-}
-
 @enduml

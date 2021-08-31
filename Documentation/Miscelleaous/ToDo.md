@@ -1,8 +1,8 @@
 # ToDo
 
-- Generate Document mit all Enumerations, too ...
+- Profession: Add abstract Enumeartion Field, damit wenn als JSON wir auch eine Unterscheidung haben.
 - Generate Document mit all Attributes, too ...
-- MatheStuff, z.b geometrische Figuren Rectangle, Circle, und direkt mit ein paar Messmethoden?
+- MatheStuff, z.b geometrische Figuren Rectangle, Circle, und direkt mit ein paar Meßmethoden?
 - Fill EntityOverview Files with the stuff.
 - Generic Singelton Pattern
 - Attribute for Default Value at Properties?

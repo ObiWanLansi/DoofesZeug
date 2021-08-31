@@ -22,8 +22,8 @@ namespace DoofesZeug.TestData
 
 
             GENERATORS.Add(typeof(Person).FullName, GeneratePerson);
-            GENERATORS.Add(typeof(FireFighter).FullName, GenerateFireFighter);
-            GENERATORS.Add(typeof(PoliceOfficer).FullName, GeneratePoliceOfficer);
+            //GENERATORS.Add(typeof(FireFighter).FullName, GenerateFireFighter);
+            //GENERATORS.Add(typeof(PoliceOfficer).FullName, GeneratePoliceOfficer);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -37,10 +37,10 @@ namespace DoofesZeug.TestData
         private static Person GeneratePerson() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974) };
 
 
-        private static FireFighter GenerateFireFighter() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974) };
+        //private static FireFighter GenerateFireFighter() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974) };
 
 
-        private static PoliceOfficer GeneratePoliceOfficer() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974) };
+        //private static PoliceOfficer GeneratePoliceOfficer() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974) };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -61,3 +61,4 @@
 |:-----|:----:|:-----:|:----------:|
 |[FireFighter](./DoofesZeug.Models.Human.Professions/FireFighter.md)|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/FireFighter.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/FireFighter.png)|[&#x273F;](./DoofesZeug.Models.Human.Professions/FireFighter.json)|
 |[PoliceOfficer](./DoofesZeug.Models.Human.Professions/PoliceOfficer.md)|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/PoliceOfficer.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/PoliceOfficer.png)|[&#x273F;](./DoofesZeug.Models.Human.Professions/PoliceOfficer.json)|
+|[Profession](./DoofesZeug.Models.Human.Professions/Profession.md)|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/Profession.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/Profession.png)|[&#x273F;](./DoofesZeug.Models.Human.Professions/Profession.json)|

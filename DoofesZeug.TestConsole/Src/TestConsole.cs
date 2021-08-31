@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using DoofesZeug.Extensions;
 using DoofesZeug.Models.Human;
@@ -65,43 +66,15 @@ namespace DoofesZeug
 
         static void Main( string [] args )
         {
-            FireFighter ff = new()
-            {
-                FirstName = "Fred",
-                LastName = "Zimmer",
-                Gender = Gender.Male,
-                DateOfBirth = (15, 10, 1974)
-            };
+            Person p = PersonBuilder.New().
+                WithFirstName("John").
+                WithLastName("Doe").
+                WithGender(Gender.Male).
+                WithDateOfBirth((25, 05, 1942)).
+                WithProfessions(ProfessionList.Of(new PoliceOfficer(), new FireFighter()));
 
-            Console.Out.WriteLine(ff);
-            Console.Out.WriteLine(DIV);
-
-            //-----------------------------------------------------------------
-
-            //Console.Out.WriteLine(ToXml(ff));
-            //Console.Out.WriteLine(DIV);
-
-            ////-----------------------------------------------------------------
-
-            //Console.Out.WriteLine(ToJson(ff));
-            //Console.Out.WriteLine(DIV);
-
-            ////-----------------------------------------------------------------
-
-            //Console.Out.WriteLine(ToYaml(ff));
-            //Console.Out.WriteLine(DIV);
-
-            //-----------------------------------------------------------------
-
-            Person p = PersonBuilder.New().FirstName("John").LastName("Doe").Gender(Gender.Male).DateOfBirth((25, 05, 1942));
             Console.Out.WriteLine(p.ToPrettyJson());
-
-            PoliceOfficer po = PoliceOfficerBuilder.New().FirstName("Hans").LastName("Schmitz").Gender(Gender.Male).DateOfBirth((25, 05, 1942));
-
-            Console.Out.WriteLine(po.ToPrettyJson());
             Console.Out.WriteLine(DIV);
-
-            //-----------------------------------------------------------------
         }
     }
 }
