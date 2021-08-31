@@ -37,7 +37,7 @@ All the entities / classes are listet in the generated [Model Overview](./Docume
 
 ### Enumerations
 
-*All the enumerations are listet in the generated [Enumerations Overview](./Documentation/Generated/Enumerations/README.md).*
+All the enumerations are listet in the generated [Enumerations Overview](./Documentation/Generated/Enumerations/README.md).
 
 ---
 
