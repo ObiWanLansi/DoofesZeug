@@ -39,8 +39,9 @@
     <Folder Include="Src\Interfaces\" />
     <Folder Include="Src\Models\Geographically\" />
     <Folder Include="Src\Container\" />
-    <Folder Include="Src\Models\Mathematics\" />
-    <Folder Include="Src\Models\Physics\" />
+    <Folder Include="Src\Models\Science\Mathematics\" />
+    <Folder Include="Src\Models\Science\Chemistry\" />
+    <Folder Include="Src\Models\Science\Physics\" />
   </ItemGroup>
 
   <ItemGroup>
