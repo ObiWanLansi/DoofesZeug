@@ -1,12 +1,12 @@
 ﻿# Enumerations Overview
 
 
-## Namespace `DoofesZeug.Models.DateAndTime`
+## Namespace `DoofesZeug.Models.Datatypes.DateAndTime`
 
 |Enumeration|Values|Source|Diagram|
 |:----------|:-----|:----:|:-----:|
-|[Quarter](./DoofesZeug.Models.DateAndTime/Quarter.md)|Unknown, First, Second, Third, Fourth|[&#x273F;](../../../DoofesZeug.Library/Src/Models/DateAndTime/Quarter.cs)|[&#x273F;](./DoofesZeug.Models.DateAndTime/Quarter.png)|
-|[Season](./DoofesZeug.Models.DateAndTime/Season.md)|Unknown, Winter, Spring, Summer, Autumn|[&#x273F;](../../../DoofesZeug.Library/Src/Models/DateAndTime/Season.cs)|[&#x273F;](./DoofesZeug.Models.DateAndTime/Season.png)|
+|[Quarter](./DoofesZeug.Models.Datatypes.DateAndTime/Quarter.md)|Unknown, First, Second, Third, Fourth|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Datatypes/DateAndTime/Quarter.cs)|[&#x273F;](./DoofesZeug.Models.Datatypes.DateAndTime/Quarter.png)|
+|[Season](./DoofesZeug.Models.Datatypes.DateAndTime/Season.md)|Unknown, Winter, Spring, Summer, Autumn|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Datatypes/DateAndTime/Season.cs)|[&#x273F;](./DoofesZeug.Models.Datatypes.DateAndTime/Season.png)|
 
 
 ## Namespace `DoofesZeug.Models.Human`

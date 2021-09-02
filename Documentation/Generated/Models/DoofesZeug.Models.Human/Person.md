@@ -43,8 +43,17 @@
   "FirstName": "John",
   "LastName": "Doe",
   "Gender": "Male",
-  "Professions": null,
-  "Id": "315df6ec-297d-4de9-82a8-c81aabda7a72"
+  "Professions": [
+    {
+      "Name": "PoliceOfficer",
+      "Id": "c715c32a-c339-4963-b96d-9541049381b3"
+    },
+    {
+      "Name": "FireFighter",
+      "Id": "77d7aefa-297a-486a-9787-ac39d7a3af29"
+    }
+  ],
+  "Id": "d15b2659-8695-4075-8334-3b387c97d690"
 }
 ```
 

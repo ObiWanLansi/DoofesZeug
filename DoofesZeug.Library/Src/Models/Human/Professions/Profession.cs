@@ -1,25 +1,9 @@
-﻿using System.Collections.Generic;
-
-
-
-namespace DoofesZeug.Models.Human.Professions
+﻿namespace DoofesZeug.Models.Human.Professions
 {
     public abstract class Profession : IdentifiableEntity
     {
-    }
+        public string Name { get; private set; }
 
-
-
-    public sealed class ProfessionList : List<Profession>
-    {
-        public ProfessionList( int size ) : base(size)
-        {
-        }
-
-        public ProfessionList( Profession [] profs ) : base(profs)
-        {
-        }
-
-        public static ProfessionList Of( params Profession [] profs ) => new(profs);
+        protected Profession( string strProfessionName ) => this.Name = strProfessionName;
     }
 }

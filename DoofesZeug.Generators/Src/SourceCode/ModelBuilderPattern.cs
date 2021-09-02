@@ -73,12 +73,15 @@ namespace DoofesZeug.SourceCode
             StringBuilder sb = new(8192);
 
             sb.AppendLine(HEADER);
+            sb.AppendLine("using DoofesZeug.Attributes;");
+            sb.AppendLine();
             sb.AppendLine();
             sb.AppendLine();
 
             sb.AppendLine($"namespace {type.Namespace}");
             sb.AppendLine("{");
 
+            sb.AppendLine("    [Generated]");
             sb.AppendLine($"    public static class {type.Name}Builder");
             sb.AppendLine("    {");
 

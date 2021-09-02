@@ -7,7 +7,7 @@ using System.Text;
 
 using DoofesZeug.Container;
 
-
+using Newtonsoft.Json;
 
 namespace DoofesZeug.Tools
 {
@@ -267,6 +267,17 @@ namespace DoofesZeug.Tools
         /// <param name="iStopBit">The i stop bit.</param>
         /// <returns></returns>
         public static int GetBitValue( int iStatusWert, int iStartBit, int iStopBit ) => iStopBit < iStartBit ? -1 : ( iStatusWert & ( 1 << iStopBit + 1 ) - 1 ) >> iStartBit;
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        ///// <summary>
+        ///// Froms the json.
+        ///// </summary>
+        ///// <typeparam name="T"></typeparam>
+        ///// <param name="strJson">The string json.</param>
+        ///// <returns></returns>
+        //public static T FromJson<T>(string strJson) => (T) JsonConvert.DeserializeObject(strJson);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-using DoofesZeug.Attributes.Pattern;
+﻿using DoofesZeug.Attributes.Pattern;
 using DoofesZeug.Models.Human.Professions;
 
 

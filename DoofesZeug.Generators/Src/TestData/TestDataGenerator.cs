@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.Human;
 using DoofesZeug.Models.Human.Professions;
 
@@ -28,13 +27,13 @@ namespace DoofesZeug.TestData
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        private static UnixTimestamp GenerateUnixTimestamp() => UnixTimestamp.Now();
+        //private static UnixTimestamp GenerateUnixTimestamp() => UnixTimestamp.Now();
 
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static Person GeneratePerson() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974) };
+        private static Person GeneratePerson() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974), Professions = ProfessionList.Of(new PoliceOfficer(), new FireFighter()) };
 
 
         //private static FireFighter GenerateFireFighter() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974) };

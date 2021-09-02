@@ -7,11 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Src\Formalities\" />
     <Folder Include="Src\Functional\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DoofesZeug.Library\DoofesZeug.Library.csproj" />
   </ItemGroup>
 
 </Project>

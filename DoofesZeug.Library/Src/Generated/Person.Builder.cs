@@ -3,10 +3,13 @@
 // This is auto generated code. Every manually change in this code will be overwritten at the next code generation! |
 // ------------------------------------------------------------------------------------------------------------------
         
+using DoofesZeug.Attributes;
+
 
 
 namespace DoofesZeug.Models.Human
 {
+    [Generated]
     public static class PersonBuilder
     {
         public static Person New() => new();

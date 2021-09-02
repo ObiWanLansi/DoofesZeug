@@ -2,7 +2,7 @@
 
 
 
-namespace DoofesZeug.Attributes
+namespace DoofesZeug.Attributes.Validation
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property)]
     public sealed class RangeAttribute : ValidationAttribute

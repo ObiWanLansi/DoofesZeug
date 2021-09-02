@@ -1,6 +1,8 @@
-# ToDo
+# ToDo List
 
-- Profession: Add abstract Enumeartion Field, damit wenn als JSON wir auch eine Unterscheidung haben.
+## ToDo
+
+- Enumerations Markdown List Values
 - Generate Document mit all Attributes, too ...
 - MatheStuff, z.b geometrische Figuren Rectangle, Circle, und direkt mit ein paar Meßmethoden?
 - Fill EntityOverview Files with the stuff.
@@ -38,3 +40,8 @@
 - Weitere Attribute: Example[] wird, dann von Generators überprüft und ggf angelegt
 - Namespace Formats mit Json,Yaml und XML Exporter, bei Json und Yaml ein Comment in die erste Zeile mit EntityName
 - Jeder Namespace eine README.md wie bei Java die package.html ?
+
+
+## Done
+
+- Profession: Add abstract Enumeartion Field, damit wenn als JSON wir auch eine Unterscheidung haben.
