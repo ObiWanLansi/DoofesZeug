@@ -1,3 +1,5 @@
+[![.NET](https://github.com/ObiWanLansi/DoofesZeug/actions/workflows/dotnet.yml/badge.svg)](https://github.com/ObiWanLansi/DoofesZeug/actions/workflows/dotnet.yml)
+
 <h1 style="font-weight:bold; letter-spacing: 10px; border-bottom: 2px solid black;">Doofes Zeug</h1>
 
 - [Overview](#overview)
