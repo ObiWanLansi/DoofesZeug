@@ -27,7 +27,7 @@
 
   <ItemGroup>
     <Folder Include="Src\Generated\" />
-    <Folder Include="Src\Models\Datatypes\Geographically\" />
+    <Folder Include="Src\Models\Science\Geographically\" />
     <Folder Include="Src\Container\" />
     <Folder Include="Src\Models\Science\Chemistry\" />
     <Folder Include="Src\Models\Science\Mathematics\Geometry\" />

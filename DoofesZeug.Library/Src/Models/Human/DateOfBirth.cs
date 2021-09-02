@@ -1,7 +1,7 @@
 ﻿using System;
 
-using DoofesZeug.Models.Datatypes.DateAndTime;
-using DoofesZeug.Models.Datatypes.DateAndTime.Part.Date;
+using DoofesZeug.Models.DateAndTime;
+using DoofesZeug.Models.DateAndTime.Part.Date;
 
 
 

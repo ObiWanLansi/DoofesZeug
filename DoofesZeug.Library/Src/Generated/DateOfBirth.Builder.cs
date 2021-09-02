@@ -15,21 +15,21 @@ namespace DoofesZeug.Models.Human
         public static DateOfBirth New() => new();
 
 
-        public static DateOfBirth WithDay(this DateOfBirth dateofbirth, DoofesZeug.Models.Datatypes.DateAndTime.Part.Date.Day day)
+        public static DateOfBirth WithDay(this DateOfBirth dateofbirth, DoofesZeug.Models.DateAndTime.Part.Date.Day day)
         {
             dateofbirth.Day = day;
             return dateofbirth;
         }
 
 
-        public static DateOfBirth WithMonth(this DateOfBirth dateofbirth, DoofesZeug.Models.Datatypes.DateAndTime.Part.Date.Month month)
+        public static DateOfBirth WithMonth(this DateOfBirth dateofbirth, DoofesZeug.Models.DateAndTime.Part.Date.Month month)
         {
             dateofbirth.Month = month;
             return dateofbirth;
         }
 
 
-        public static DateOfBirth WithYear(this DateOfBirth dateofbirth, DoofesZeug.Models.Datatypes.DateAndTime.Part.Date.Year year)
+        public static DateOfBirth WithYear(this DateOfBirth dateofbirth, DoofesZeug.Models.DateAndTime.Part.Date.Year year)
         {
             dateofbirth.Year = year;
             return dateofbirth;
