@@ -8,7 +8,7 @@ abstract class EntityBase {
 EntityBase <|-- DateTimePart
 
 abstract class DateTimePart {
-    Value: Int32
+    Value: UInt32
 }
 
 DateTimePart <|-- Year

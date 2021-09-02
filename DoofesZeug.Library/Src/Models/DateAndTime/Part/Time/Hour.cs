@@ -12,13 +12,13 @@ namespace DoofesZeug.Models.DateAndTime.Part.Time
         }
 
 
-        public Hour( int iInitalValue ) : base(iInitalValue)
+        public Hour( uint iInitalValue ) : base(iInitalValue)
         {
         }
 
 
-        public static implicit operator Hour( int iValue ) => new(iValue);
+        public static implicit operator Hour( uint iValue ) => new(iValue);
 
-        public static implicit operator int( Hour value ) => value.Value;
+        public static implicit operator uint( Hour value ) => value.Value;
     }
 }

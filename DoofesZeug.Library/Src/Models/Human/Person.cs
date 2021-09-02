@@ -16,7 +16,7 @@ namespace DoofesZeug.Models.Human
 
         public Gender Gender { get; set; }
 
-        //public ProfessionList Professions { get; set; }
+        public ProfessionList Professions { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

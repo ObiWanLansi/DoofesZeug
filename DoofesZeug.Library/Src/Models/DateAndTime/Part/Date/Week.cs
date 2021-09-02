@@ -12,13 +12,13 @@ namespace DoofesZeug.Models.DateAndTime.Part.Date
         }
 
 
-        public Week( int iInitalValue ) : base(iInitalValue)
+        public Week( uint iInitalValue ) : base(iInitalValue)
         {
         }
 
 
-        public static implicit operator Week( int iValue ) => new(iValue);
+        public static implicit operator Week( uint iValue ) => new(iValue);
 
-        public static implicit operator int( Week value ) => value.Value;
+        public static implicit operator uint( Week value ) => value.Value;
     }
 }

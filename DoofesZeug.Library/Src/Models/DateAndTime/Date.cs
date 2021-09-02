@@ -44,9 +44,9 @@ namespace DoofesZeug.Models.DateAndTime
 
         public Date( DateTime dt )
         {
-            this.Day = dt.Day;
-            this.Month = dt.Month;
-            this.Year = dt.Year;
+            this.Day = (uint) dt.Day;
+            this.Month = (uint) dt.Month;
+            this.Year = (uint) dt.Year;
         }
 
 
@@ -66,7 +66,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <returns>
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
-        public override string ToString() => $"{(int) this.Day:D2}.{(int) this.Month:D2}.{(int) this.Year:D4}";
+        public override string ToString() => $"{(uint) this.Day:D2}.{(uint) this.Month:D2}.{(uint) this.Year:D4}";
     }
 }
 

@@ -44,9 +44,9 @@ namespace DoofesZeug.Models.DateAndTime
 
         public Time( DateTime dt )
         {
-            this.Hour = dt.Hour;
-            this.Minute = dt.Minute;
-            this.Second = dt.Second;
+            this.Hour = (uint) dt.Hour;
+            this.Minute = (uint) dt.Minute;
+            this.Second = (uint) dt.Second;
         }
 
 
@@ -66,7 +66,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <returns>
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
-        public override string ToString() => $"{(int) this.Hour:D2}:{(int) this.Minute:D2}:{(int) this.Second:D2}";
+        public override string ToString() => $"{(uint) this.Hour:D2}:{(uint) this.Minute:D2}:{(uint) this.Second:D2}";
     }
 }
 

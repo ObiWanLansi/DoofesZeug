@@ -259,9 +259,9 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        public static int WeekOfDate( this DateTime dt )
+        public static uint WeekOfDate( this DateTime dt )
         {
-            int week = CAL.GetWeekOfYear(dt, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            uint week = (uint) CAL.GetWeekOfYear(dt, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
 
             return week > 0 && week < 53 ? week : 1;
         }
@@ -365,7 +365,7 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        public static Year GetYear( this DateTime dt ) => new(dt.Year);
+        public static Year GetYear( this DateTime dt ) => new((uint) dt.Year);
 
 
         /// <summary>
@@ -373,7 +373,7 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        public static Month GetMonth( this DateTime dt ) => new(dt.Month);
+        public static Month GetMonth( this DateTime dt ) => new((uint) dt.Month);
 
 
         /// <summary>
@@ -381,7 +381,7 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        public static Day GetDay( this DateTime dt ) => new(dt.Day);
+        public static Day GetDay( this DateTime dt ) => new((uint) dt.Day);
 
 
         /// <summary>
@@ -389,7 +389,7 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        public static Week GetWeek( this DateTime dt ) => new(dt.WeekOfDate());
+        public static Week GetWeek( this DateTime dt ) => new((uint) dt.WeekOfDate());
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

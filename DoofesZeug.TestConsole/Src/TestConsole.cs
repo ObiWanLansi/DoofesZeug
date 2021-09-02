@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 using DoofesZeug.Extensions;
 using DoofesZeug.Models.Human;
 using DoofesZeug.Models.Human.Professions;
@@ -40,21 +42,6 @@ namespace DoofesZeug
         //}
 
 
-        //private static string ToJson( object o )
-        //{
-        //    JsonSerializerSettings settings = new()
-        //    {
-        //        Formatting = Newtonsoft.Json.Formatting.Indented
-        //    };
-
-        //    settings.Converters.Add(new StringEnumConverter());
-        //    settings.Converters.Add(new NameConverter());
-        //    settings.Converters.Add(new DateTimePartConverter());
-
-        //    return JsonConvert.SerializeObject(o, settings);
-        //}
-
-
         //private static string ToYaml( object o )
         //{
         //    //return new SerializerBuilder().WithEventEmitter(nextEmitter => new QuoteSurroundingEventEmitter(nextEmitter)).Build().Serialize(o);
@@ -76,13 +63,20 @@ namespace DoofesZeug
             Out.WriteLine(pOriginal.ToStringTable());
             Out.WriteLine(DIV);
 
-            string strJSON = pOriginal.ToPrettyJson();
-            Out.WriteLine(strJSON);
-            Out.WriteLine(DIV);
+            try
+            {
+                string strJSON = pOriginal.ToPrettyJson();
+                Out.WriteLine(strJSON);
+                Out.WriteLine(DIV);
 
-            Person pClone = strJSON.FromJson<Person>();
-            Out.WriteLine(pClone.ToStringTable());
-            Out.WriteLine(DIV);
+                Person pClone = strJSON.FromJson<Person>();
+                Out.WriteLine(pClone.ToStringTable());
+                Out.WriteLine(DIV);
+            }
+            catch( Exception ex)
+            {
+                Error.WriteLineAsync(ex.Message);
+            }
         }
     }
 }

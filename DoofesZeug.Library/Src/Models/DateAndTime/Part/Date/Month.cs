@@ -11,13 +11,13 @@ namespace DoofesZeug.Models.DateAndTime.Part.Date
         }
 
 
-        public Month( int iInitalValue ) : base(iInitalValue)
+        public Month( uint iInitalValue ) : base(iInitalValue)
         {
         }
 
 
-        public static implicit operator Month( int iValue ) => new(iValue);
+        public static implicit operator Month( uint iValue ) => new(iValue);
 
-        public static implicit operator int( Month value ) => value.Value;
+        public static implicit operator uint( Month value ) => value.Value;
     }
 }

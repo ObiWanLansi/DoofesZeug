@@ -18,6 +18,8 @@ namespace DoofesZeug.Extensions
 
             foreach( PropertyInfo pi in properties )
             {
+                string strPropertyValueString = $"{pi.GetValue(value)}";
+                int iPropertyValueString = strPropertyValueString.Length;
 
             }
 

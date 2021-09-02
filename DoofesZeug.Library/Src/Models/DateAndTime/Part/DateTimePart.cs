@@ -4,7 +4,7 @@ namespace DoofesZeug.Models.DateAndTime.Part
 {
     public abstract class DateTimePart : EntityBase
     {
-        public int Value { get; set; }
+        public uint Value { get; set; }
 
 
         protected DateTimePart()
@@ -12,6 +12,6 @@ namespace DoofesZeug.Models.DateAndTime.Part
         }
 
         
-        protected DateTimePart( int iValue ) => this.Value = iValue;
+        protected DateTimePart( uint iValue ) => this.Value = iValue;
     }
 }
