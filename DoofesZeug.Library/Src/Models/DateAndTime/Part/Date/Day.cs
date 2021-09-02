@@ -7,9 +7,14 @@ namespace DoofesZeug.Models.DateAndTime.Part.Date
     [Range(1, 31)]
     public sealed class Day : DateTimePart
     {
-        public Day() { }
+        public Day()
+        {
+        }
 
-        public Day( int iInitalValue ) => this.Value = iInitalValue;
+        public Day( int iInitalValue ) : base(iInitalValue)
+        {
+        }
+
 
         public static implicit operator Day( int iValue ) => new(iValue);
 

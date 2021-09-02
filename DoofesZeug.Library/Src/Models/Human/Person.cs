@@ -16,10 +16,10 @@ namespace DoofesZeug.Models.Human
 
         public Gender Gender { get; set; }
 
-        public ProfessionList Professions { get; set; }
+        //public ProfessionList Professions { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        public override string ToString() => $"{this.LastName}, {this.FirstName}";
+        public override string ToString() => $"{this.LastName}, {this.FirstName} ({this.DateOfBirth})";
     }
 }

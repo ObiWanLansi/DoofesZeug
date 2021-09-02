@@ -1,4 +1,7 @@
-﻿using DoofesZeug.Converter;
+﻿using System;
+using System.Linq;
+
+using DoofesZeug.Converter;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -37,5 +40,18 @@ namespace DoofesZeug.Extensions
         /// <param name="o">The o.</param>
         /// <returns></returns>
         public static string ToPrettyJson( this object o ) => JsonConvert.SerializeObject(o, settings);
+
+
+        /// <summary>
+        /// Froms the json.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="strJSON">The string json.</param>
+        /// <returns></returns>
+        public static T FromJson<T>( this string strJSON )
+        {
+            Type t = typeof(T);
+            return (T) JsonConvert.DeserializeObject(strJSON, t, settings.Converters.ToArray());
+        }
     }
 }

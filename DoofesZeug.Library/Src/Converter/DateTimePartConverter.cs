@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 using DoofesZeug.Models.DateAndTime.Part;
 
@@ -32,7 +33,12 @@ namespace DoofesZeug.Converter
         /// The object value.
         /// </returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer ) => throw new NotImplementedException();
+        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer )
+        {
+            ConstructorInfo constructor = objectType.GetConstructor(new [] { typeof(int) });
+
+            return constructor?.Invoke(new [] { (object) Convert.ToInt32(reader.Value) });
+        }
 
         /// <summary>
         /// Writes the JSON representation of the object.

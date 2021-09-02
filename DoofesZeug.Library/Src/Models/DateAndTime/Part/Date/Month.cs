@@ -7,9 +7,14 @@ namespace DoofesZeug.Models.DateAndTime.Part.Date
     [Range(1, 12)]
     public sealed class Month : DateTimePart
     {
-        public Month() { }
+        public Month() { 
+        }
 
-        public Month( int iInitalValue ) => this.Value = iInitalValue;
+
+        public Month( int iInitalValue ) : base(iInitalValue)
+        {
+        }
+
 
         public static implicit operator Month( int iValue ) => new(iValue);
 

@@ -57,7 +57,6 @@ namespace DoofesZeug.Models.DateAndTime
             this.Year = year;
         }
 
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -67,7 +66,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <returns>
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
-        public override string ToString() => $"{this.Day:D2}.{this.Month:D2}.{this.Year:D4}";
+        public override string ToString() => $"{(int) this.Day:D2}.{(int) this.Month:D2}.{(int) this.Year:D4}";
     }
 }
 

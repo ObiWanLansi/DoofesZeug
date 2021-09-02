@@ -66,7 +66,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <returns>
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
-        public override string ToString() => $"{this.Hour:D2}:{this.Minute:D2}:{this.Second:D2}";
+        public override string ToString() => $"{(int) this.Hour:D2}:{(int) this.Minute:D2}:{(int) this.Second:D2}";
     }
 }
 

@@ -19,6 +19,8 @@
 - Hash + Crypt + Password Class
 - List<T> To DataTable
 - Object 2 ASCIITable
+- ~~Colors -> an enumeration lie System.Drawing.Color, but without an reference to System.Drawing.dll~~
+  > Check if we can use the original System.Drawing.Color under linux, then it make no sense to create a new implementation.
 
 | Property  | Value                              |
 |:----------|-----------------------------------:|

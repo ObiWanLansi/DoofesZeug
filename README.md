@@ -16,7 +16,10 @@
 
 ## Overview
 
-Doofes Zeug is an collection of some useful models/entities/classes for rapid prototyping in .net core and / or creating some tests for development stuff.
+Doofes Zeug is an collection of some useful models/entities/classes for rapid prototyping in .net core
+and / or creating some tests for development stuff. Doofes Zeug is designed so that it isn't too complicated. 
+It should be easy to use. No expensive security features such as write-protected properties or lists that 
+only mean additional work.
 
 The basic idea was to have an collection of classes and enumerations for simple daily needed stuff like:
 - Person
@@ -24,8 +27,14 @@ The basic idea was to have an collection of classes and enumerations for simple 
 - Vehicles
 - Geodata
 - Animals
-- ~~Colors -> an enumeration lie System.Drawing.Color, but without an reference to System.Drawing.dll~~
-  > Check if we can use the original System.Drawing.Color under linux, then it make no sense to create a new implementation.
+
+And some easy to use feaures and tools and datatypes like:
+- IntegerList
+- StringList
+- *MD5, SHA512*
+- *AES, TDES*
+- Small And Easy Markdown Support / Conversion
+- Small And Easy Json Support / Conversion
 
 ---
 

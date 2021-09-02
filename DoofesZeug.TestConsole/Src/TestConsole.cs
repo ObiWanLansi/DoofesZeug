@@ -11,7 +11,7 @@ namespace DoofesZeug
 {
     static class TestConsole
     {
-        static private readonly string DIV = new('-', 40);
+        static private readonly string DIV = new('-', 80);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -66,20 +66,23 @@ namespace DoofesZeug
 
         static void Main( string [] args )
         {
-            //Person p = PersonBuilder.New().
-            //    WithFirstName("John").
-            //    WithLastName("Doe").
-            //    WithGender(Gender.Male).
-            //    WithDateOfBirth((25, 05, 1942)).
-            //    WithProfessions(ProfessionList.Of(new PoliceOfficer(), new FireFighter()));
+            Person pOriginal = PersonBuilder.New().
+                WithFirstName("John").
+                WithLastName("Doe").
+                WithGender(Gender.Male).
+                WithDateOfBirth((25, 05, 1942)).
+                WithProfessions(ProfessionList.Of(new PoliceOfficer(), new FireFighter()));
 
-            //string strJSON = p.ToPrettyJson();
-            //Out.WriteLine(strJSON);
-            //Out.WriteLine(DIV);
+            Out.WriteLine(pOriginal.ToStringTable());
+            Out.WriteLine(DIV);
 
-            ////TODO Implement the deserialisation from string to object, it must be implement in JsonExtension to have all the converter!
-            ////Person pClone = Tool.FromJson<Person>(strJSON);
-            ////Out.WriteLine(pClone);
+            string strJSON = pOriginal.ToPrettyJson();
+            Out.WriteLine(strJSON);
+            Out.WriteLine(DIV);
+
+            Person pClone = strJSON.FromJson<Person>();
+            Out.WriteLine(pClone.ToStringTable());
+            Out.WriteLine(DIV);
         }
     }
 }
