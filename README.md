@@ -78,37 +78,36 @@ public class Person : IdentifiableEntity
 **Builder:**
 
 ```cs
+[Generated]
 public static class PersonBuilder
 {
     public static Person New() => new();
 
-    public static Person DateOfBirth(this Person person, DoofesZeug.Models.Human.DateOfBirth dateofbirth)
+
+    public static Person WithDateOfBirth(this Person person, DoofesZeug.Models.Human.DateOfBirth dateofbirth)
     {
         person.DateOfBirth = dateofbirth;
         return person;
     }
 
-    public static Person FirstName(this Person person, DoofesZeug.Models.Human.FirstName firstname)
+
+    public static Person WithFirstName(this Person person, DoofesZeug.Models.Human.FirstName firstname)
     {
         person.FirstName = firstname;
         return person;
     }
 
-    public static Person LastName(this Person person, DoofesZeug.Models.Human.LastName lastname)
+
+    public static Person WithLastName(this Person person, DoofesZeug.Models.Human.LastName lastname)
     {
         person.LastName = lastname;
         return person;
     }
 
-    public static Person Gender(this Person person, DoofesZeug.Models.Human.Gender gender)
+
+    public static Person WithGender(this Person person, DoofesZeug.Models.Human.Gender gender)
     {
         person.Gender = gender;
-        return person;
-    }
-
-    public static Person Id(this Person person, System.Guid id)
-    {
-        person.Id = id;
         return person;
     }
 }
@@ -117,7 +116,12 @@ public static class PersonBuilder
 **Usage:**
 
 ```cs
-Person p = PersonBuilder.New().FirstName("John").LastName("Doe").Gender(Gender.Male).DateOfBirth((25, 05, 1942));
+Person p = PersonBuilder.New().
+    WithFirstName("John").
+    WithLastName("Doe").
+    WithGender(Gender.Male).
+    WithDateOfBirth((25, 05, 1942)));
+
 Console.Out.WriteLine(p);
 ```
 

@@ -48,10 +48,6 @@ namespace DoofesZeug.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="strJSON">The string json.</param>
         /// <returns></returns>
-        public static T FromJson<T>( this string strJSON )
-        {
-            Type t = typeof(T);
-            return (T) JsonConvert.DeserializeObject(strJSON, t, settings.Converters.ToArray());
-        }
+        public static T FromJson<T>( this string strJSON ) => (T) JsonConvert.DeserializeObject(strJSON, typeof(T), settings.Converters.ToArray());
     }
 }
