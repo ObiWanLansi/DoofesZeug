@@ -4,7 +4,7 @@
 
 namespace DoofesZeug.Models.DateAndTime.Part.Date
 {
-    [Range(0, 2500)]
+    [Range(0, 9999)]
     public sealed class Year : DateTimePart
     {
         public Year()

@@ -1,11 +1,11 @@
-﻿# EntityBase
+﻿# Baker
 
 ## Generally
 
 |||
 |:-|:-|
-|Namespace|DoofesZeug.Models|
-|BaseClass|Object|
+|Namespace|DoofesZeug.Models.Human.Professions|
+|BaseClass|Profession|
 
 ## Fields
 
@@ -18,12 +18,15 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
+|WellKnownProfessionType|WellKnownProfession|&#x2713;|&#x2717;||
+|Since|Date|&#x2713;|&#x2713;||
+|Id|Guid|&#x2713;|&#x2713;||
 
 ## Attributes
 
 ## Diagram
 
-![EntityBase.png](./EntityBase.png "EntityBase")
+![Baker.png](./Baker.png "Baker")
 
 ## Example
 

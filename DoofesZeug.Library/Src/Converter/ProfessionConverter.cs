@@ -1,9 +1,11 @@
 ﻿using System;
 
 using DoofesZeug.Extensions;
+using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.Human.Professions;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 
 
@@ -36,11 +38,64 @@ namespace DoofesZeug.Converter
         /// <exception cref="System.NotImplementedException"></exception>
         public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer )
         {
-            //ConstructorInfo constructor = objectType.GetConstructor(new [] { typeof(int) });
+            JObject jsonObject = JObject.Load(reader);
 
-            reader.Skip();
-            //return constructor?.Invoke(new [] { (object) Convert.ToInt32(reader.Value) });
-            return new Unknown();
+            string id = null;
+            string wkpt = null;
+            string since = null;
+
+            foreach( JProperty property in jsonObject.Properties() )
+            {
+                switch( property.Name )
+                {
+                    case nameof(Profession.Id):
+                        id = (string) property.Value;
+                        break;
+
+                    case nameof(Profession.WellKnownProfessionType):
+                        wkpt = (string) property.Value;
+                        break;
+
+                    case nameof(Profession.Since):
+                        since = (string) property.Value;
+                        break;
+
+                    default:
+                        throw new Exception($"Unknown Property: '{property.Name}'!");
+                }
+            }
+
+            if( id.IsNotEmpty() && wkpt.IsNotEmpty() )
+            {
+                Guid guid = Guid.Parse(id);
+                WellKnownProfession wkp = (WellKnownProfession) Enum.Parse(typeof(WellKnownProfession), wkpt);
+                Date date = null;
+
+                if( since.IsNotEmpty() )
+                {
+                    date = since;
+                }
+
+                // This is a little bit static, i wish to make it more dynamic ...
+                return wkp switch
+                {
+                    WellKnownProfession.Unknown => new Unknown { Id = guid, Since = date },
+                    WellKnownProfession.FireFighter => new FireFighter { Id = guid, Since = date },
+                    WellKnownProfession.PoliceOfficer => new PoliceOfficer { Id = guid, Since = date },
+                    WellKnownProfession.Nurse => new Nurse { Id = guid, Since = date },
+                    WellKnownProfession.Engineer => new Engineer { Id = guid, Since = date },
+                    WellKnownProfession.Doctor => new Doctor { Id = guid, Since = date },
+                    WellKnownProfession.HairDresser => new HairDresser { Id = guid, Since = date },
+                    WellKnownProfession.Baker => new Baker { Id = guid, Since = date },
+                    WellKnownProfession.Waiter => new Waiter { Id = guid, Since = date },
+                    WellKnownProfession.Teacher => new Teacher { Id = guid, Since = date },
+                    WellKnownProfession.Tiler => new Tiler { Id = guid, Since = date },
+                    WellKnownProfession.Carpenter => new Carpenter { Id = guid, Since = date },
+                    _ => throw new Exception($"Unimplemented Profession: '{wkp}'!"),
+                };
+            }
+
+            throw new Exception($"Can't Not Create The Profession From: '{jsonObject}'!");
         }
 
 
@@ -60,13 +115,13 @@ namespace DoofesZeug.Converter
 
             Profession profession = (Profession) value;
             writer.WriteStartObject();
-            writer.WritePropertyName(nameof(profession.Id));
+            writer.WritePropertyName(nameof(Profession.Id));
             writer.WriteValue(profession.Id);
 
-            writer.WritePropertyName(nameof(profession.WellKnownProfessionType));
+            writer.WritePropertyName(nameof(Profession.WellKnownProfessionType));
             writer.WriteValue(profession.WellKnownProfessionType.ToString());
 
-            writer.WritePropertyName(nameof(profession.Since));
+            writer.WritePropertyName(nameof(Profession.Since));
             writer.WriteValue(profession.Since.ToString());
 
             writer.WriteEndObject();

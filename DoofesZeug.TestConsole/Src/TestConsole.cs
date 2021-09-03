@@ -17,6 +17,7 @@ namespace DoofesZeug
         static private readonly string DIV = new('-', 80);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         //private static string ToXml( object o )
@@ -52,8 +53,27 @@ namespace DoofesZeug
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Handles the UnhandledException event of the CurrentDomain control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="UnhandledExceptionEventArgs"/> instance containing the event data.</param>
+        private static void CurrentDomain_UnhandledException( object sender, UnhandledExceptionEventArgs e )
+        {
+            if( e.ExceptionObject is Exception ex )
+            {
+                Error.WriteLineAsync(ex.Message);
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         static void Main( string [] args )
         {
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+
             Date d = "20.02.2020";
             Out.WriteLineAsync($"{d}");
 
@@ -67,7 +87,7 @@ namespace DoofesZeug
                 WithDateOfBirth((25, 05, 1942)).
                 WithMainProfession(new PoliceOfficer { Since = (25, 05, 1942) });
 
-            Out.WriteLine(pOriginal.ToStringTable());
+            Out.WriteLine(pOriginal.ToStringTable(bDisplayNULL: true));
             Out.WriteLine(DIV);
 
             try
@@ -77,7 +97,7 @@ namespace DoofesZeug
                 Out.WriteLine(DIV);
 
                 Person pClone = strJSON.FromJson<Person>();
-                Out.WriteLine(pClone.ToStringTable());
+                Out.WriteLine(pClone.ToStringTable(bDisplayNULL: true));
                 Out.WriteLine(DIV);
             }
             catch( Exception ex )

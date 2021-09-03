@@ -5,7 +5,7 @@ namespace DoofesZeug.Models.Human
 {
     public class Name : EntityBase
     {
-        public string Value { get; init; }
+        public string Value { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -1,11 +1,11 @@
-﻿# IdentifiableEntity
+﻿# Tiler
 
 ## Generally
 
 |||
 |:-|:-|
-|Namespace|DoofesZeug.Models|
-|BaseClass|EntityBase|
+|Namespace|DoofesZeug.Models.Human.Professions|
+|BaseClass|Profession|
 
 ## Fields
 
@@ -13,18 +13,20 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Id|Guid|&#x2713;|&#x2713;||
 
 ### Inherited
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
+|WellKnownProfessionType|WellKnownProfession|&#x2713;|&#x2717;||
+|Since|Date|&#x2713;|&#x2713;||
+|Id|Guid|&#x2713;|&#x2713;||
 
 ## Attributes
 
 ## Diagram
 
-![IdentifiableEntity.png](./IdentifiableEntity.png "IdentifiableEntity")
+![Tiler.png](./Tiler.png "Tiler")
 
 ## Example
 

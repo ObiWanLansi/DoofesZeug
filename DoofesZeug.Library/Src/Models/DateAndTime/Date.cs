@@ -16,7 +16,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The day.
         /// </value>
-        public Day Day { get; set; } = 1;
+        public Day Day { get; set; }
 
         /// <summary>
         /// Gets the month.
@@ -24,7 +24,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The month.
         /// </value>
-        public Month Month { get; set; } = 1;
+        public Month Month { get; set; }
 
         /// <summary>
         /// Gets the year.
@@ -32,7 +32,14 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The year.
         /// </value>
-        public Year Year { get; set; } = 1;
+        public Year Year { get; set; }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        public static readonly Date MIN = new((uint) 01, 01, 0001);
+
+        public static readonly Date MAX = new((uint) 31, 12, 9999);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

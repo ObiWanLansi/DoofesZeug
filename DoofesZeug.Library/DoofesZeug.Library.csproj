@@ -27,6 +27,8 @@
 
   <ItemGroup>
     <Folder Include="Src\Generated\" />
+    <Folder Include="Src\Generated\Builder\" />
+    <Folder Include="Src\Generated\Professions\" />
     <Folder Include="Src\Models\Science\Geographically\" />
     <Folder Include="Src\Container\" />
     <Folder Include="Src\Models\Science\Chemistry\" />

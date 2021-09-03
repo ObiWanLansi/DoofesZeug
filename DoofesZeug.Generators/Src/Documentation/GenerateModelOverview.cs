@@ -260,8 +260,16 @@ namespace DoofesZeug.Documentation
             {
                 if( type.IsAssignableTo(ENTITY_BASE) == false )
                 {
+                    Out.WriteLine($"Skip EntityBase: {type.FullName}");
                     continue;
                 }
+
+                if( type.IsAbstract == true )
+                {
+                    Out.WriteLine($"Skip Abstract: {type.FullName}");
+                    continue;
+                }
+
                 models.Add(type);
             }
 

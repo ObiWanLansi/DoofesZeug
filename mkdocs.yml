@@ -1,0 +1,4 @@
+site_name: Doofes Zeug
+#theme: readthedocs
+site_author: ObiWanLansi
+docs_dir: .\Documentation

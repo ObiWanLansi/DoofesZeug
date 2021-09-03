@@ -13,6 +13,9 @@ namespace DoofesZeug.Models.Human.Professions
         Doctor,
         HairDresser,
         Baker,
-        Waiter
+        Waiter,
+        Teacher,
+        Tiler,
+        Carpenter
     }
 }

@@ -16,7 +16,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The hour.
         /// </value>
-        public Hour Hour { get; set; } = 0;
+        public Hour Hour { get; set; }
 
         /// <summary>
         /// Gets the minute.
@@ -24,7 +24,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The minute.
         /// </value>
-        public Minute Minute { get; set; } = 0;
+        public Minute Minute { get; set; }
 
         /// <summary>
         /// Gets the second.
@@ -32,7 +32,14 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The second.
         /// </value>
-        public Second Second { get; set; } = 0;
+        public Second Second { get; set; }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        public static readonly Time MIN = new((uint) 00, 00, 00);
+
+        public static readonly Time MAX = new((uint) 23, 59, 59);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

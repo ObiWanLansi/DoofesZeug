@@ -11,4 +11,16 @@ abstract class IdentifiableEntity {
     Id: Guid
 }
 
+IdentifiableEntity <|-- Profession
+
+abstract class Profession {
+    WellKnownProfessionType: WellKnownProfession
+    Since: Date
+}
+
+Profession <|-- Teacher
+
+class Teacher {
+}
+
 @enduml

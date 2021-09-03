@@ -18,4 +18,9 @@ abstract class Profession {
     Since: Date
 }
 
+Profession <|-- Baker
+
+class Baker {
+}
+
 @enduml

@@ -1,0 +1,26 @@
+﻿@startuml
+skinparam monochrome true
+hide empty members
+
+abstract class EntityBase {
+}
+
+EntityBase <|-- IdentifiableEntity
+
+abstract class IdentifiableEntity {
+    Id: Guid
+}
+
+IdentifiableEntity <|-- Profession
+
+abstract class Profession {
+    WellKnownProfessionType: WellKnownProfession
+    Since: Date
+}
+
+Profession <|-- HairDresser
+
+class HairDresser {
+}
+
+@enduml

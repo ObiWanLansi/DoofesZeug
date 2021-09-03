@@ -20,7 +20,7 @@
 
 |Enumeration|Values|Source|Diagram|
 |:----------|:-----|:----:|:-----:|
-|[WellKnownProfession](./DoofesZeug.Models.Human.Professions/WellKnownProfession.md)|Unknown, FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/WellKnownProfession.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/WellKnownProfession.png)|
+|[WellKnownProfession](./DoofesZeug.Models.Human.Professions/WellKnownProfession.md)|Unknown, FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/WellKnownProfession.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/WellKnownProfession.png)|
 
 
 ## Namespace `DoofesZeug.Tools`

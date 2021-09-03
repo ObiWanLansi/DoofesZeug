@@ -8,13 +8,13 @@ namespace DoofesZeug.Models.Human
     [Builder]
     public class Person : IdentifiableEntity
     {
-        public DateOfBirth DateOfBirth { get; set; } = (1, 1, 1);
+        public DateOfBirth DateOfBirth { get; set; }
 
-        public FirstName FirstName { get; set; } = "";
+        public FirstName FirstName { get; set; } 
 
-        public LastName LastName { get; set; } = "";
+        public LastName LastName { get; set; } 
 
-        public Gender Gender { get; set; } = Gender.Unknown;
+        public Gender Gender { get; set; } 
 
         //---------------------------------------------------------------------
 

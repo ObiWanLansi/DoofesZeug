@@ -4,12 +4,14 @@
 // ------------------------------------------------------------------------------------------------------------------
         
 using DoofesZeug.Attributes;
+using DoofesZeug.Attributes.Pattern;
 
 
 
 namespace DoofesZeug.Models.Human.Professions
 {
     [Generated]
+    [Builder]
     public class Doctor : Profession
     {
         public Doctor() : base(WellKnownProfession.Doctor)

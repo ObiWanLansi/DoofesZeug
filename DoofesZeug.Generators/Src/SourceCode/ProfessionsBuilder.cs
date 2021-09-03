@@ -33,6 +33,7 @@ namespace DoofesZeug.SourceCode
 
             sb.AppendLine(HEADER);
             sb.AppendLine("using DoofesZeug.Attributes;");
+            sb.AppendLine("using DoofesZeug.Attributes.Pattern;");
             sb.AppendLine();
             sb.AppendLine();
             sb.AppendLine();
@@ -41,6 +42,7 @@ namespace DoofesZeug.SourceCode
             sb.AppendLine("{");
 
             sb.AppendLine("    [Generated]");
+            sb.AppendLine("    [Builder]");
             sb.AppendLine($"    public class {profession} : Profession");
             sb.AppendLine("    {");
 

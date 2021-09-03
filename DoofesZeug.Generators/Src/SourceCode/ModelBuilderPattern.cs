@@ -91,6 +91,10 @@ namespace DoofesZeug.SourceCode
             //foreach( FieldInfo field in type.GetFields(BindingFlags.SetField | BindingFlags.Instance | BindingFlags.NonPublic) )
             foreach( PropertyInfo property in type.GetProperties() )
             {
+                if( property.CanWrite == false )
+                {
+                    continue;
+                }
                 //Out.WriteLineAsync($"    Use property: {property.Name}");
 
                 sb.AppendLine("");
