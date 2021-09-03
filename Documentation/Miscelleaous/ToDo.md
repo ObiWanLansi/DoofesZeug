@@ -3,6 +3,7 @@
 ## ToDo
 
 - Enum Values To Enum.md
+- Und bei EntityOverview die Properties mit aufnhemen.
 - Money
   - Dollar
   - Euro
