@@ -21,6 +21,7 @@ namespace DoofesZeug.Converter
         /// </returns>
         public override bool CanConvert( Type objectType ) => objectType.IsAssignableTo(UNIXTIMESTAMP);
 
+
         /// <summary>
         /// Reads the JSON representation of the object.
         /// </summary>
@@ -33,6 +34,7 @@ namespace DoofesZeug.Converter
         /// </returns>
         /// <exception cref="System.NotImplementedException"></exception>
         public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer ) => throw new NotImplementedException();
+
 
         /// <summary>
         /// Writes the JSON representation of the object.

@@ -43,13 +43,6 @@ namespace DoofesZeug.Models.Human
         }
 
 
-        public static Person WithProfessions(this Person person, DoofesZeug.Models.Human.Professions.ProfessionList professions)
-        {
-            person.Professions = professions;
-            return person;
-        }
-
-
         public static Person WithId(this Person person, System.Guid id)
         {
             person.Id = id;

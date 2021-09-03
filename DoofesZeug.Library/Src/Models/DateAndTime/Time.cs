@@ -16,7 +16,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The hour.
         /// </value>
-        public Hour Hour { get; set; }
+        public Hour Hour { get; set; } = 0;
 
         /// <summary>
         /// Gets the minute.
@@ -24,7 +24,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The minute.
         /// </value>
-        public Minute Minute { get; set; }
+        public Minute Minute { get; set; } = 0;
 
         /// <summary>
         /// Gets the second.
@@ -32,13 +32,21 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The second.
         /// </value>
-        public Second Second { get; set; }
+        public Second Second { get; set; } = 0;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         public Time()
         {
+        }
+
+
+        public Time( Time time )
+        {
+            this.Hour = time.Hour;
+            this.Minute = time.Minute;
+            this.Second = time.Second;
         }
 
 
@@ -50,6 +58,14 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
 
+        public Time( uint hour, uint minute, uint second )
+        {
+            this.Hour = hour;
+            this.Minute = minute;
+            this.Second = second;
+        }
+
+
         public Time( Hour hour, Minute minute, Second second )
         {
             this.Hour = hour;
@@ -58,6 +74,46 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="System.ValueTuple{Hour, Minute, Second}"/> to <see cref="Time"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Time( (Hour hour, Minute minute, Second second) value ) => new(value.hour, value.minute, value.second);
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="System.String"/> to <see cref="Time"/>.
+        /// </summary>
+        /// <param name="strContent">The string time.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Time( string strContent )
+        {
+            // 0123456789
+            // 15:10:42
+
+            if( strContent.Length != 8 )
+            {
+                throw new ArgumentException("The length of the time ist not eight characters.", nameof(strContent));
+            }
+
+            if( strContent [2] == ':' == false || strContent [5] == ':' == false )
+            {
+                throw new ArgumentException("The time have not the right format 'hh.mm.ss'.", nameof(strContent));
+            }
+
+            uint hour = Convert.ToUInt32(strContent.Substring(0, 2));
+            uint minute = Convert.ToUInt32(strContent.Substring(3, 2));
+            uint second = Convert.ToUInt32(strContent.Substring(6, 2));
+
+            return new Time(hour, minute, second);
+        }
 
 
         /// <summary>

@@ -22,6 +22,7 @@ namespace DoofesZeug.Converter
         /// </returns>
         public override bool CanConvert( Type objectType ) => objectType.BaseType.IsAssignableTo(NAME);
 
+
         /// <summary>
         /// Reads the JSON representation of the object.
         /// </summary>
@@ -39,6 +40,7 @@ namespace DoofesZeug.Converter
 
             return constructor?.Invoke(new [] { (object) Convert.ToString(reader.Value) });
         }
+
 
         /// <summary>
         /// Writes the JSON representation of the object.

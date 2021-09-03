@@ -33,7 +33,8 @@ namespace DoofesZeug.TestData
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static Person GeneratePerson() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974), Professions = ProfessionList.Of(new PoliceOfficer(), new FireFighter()) };
+        private static Person GeneratePerson() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974) };
+        //private static Person GeneratePerson() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974), Professions = ProfessionList.Of(new PoliceOfficer(), new FireFighter()) };
 
 
         //private static FireFighter GenerateFireFighter() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974) };

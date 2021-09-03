@@ -2,6 +2,7 @@
 using System;
 
 using DoofesZeug.Extensions;
+using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.Human;
 using DoofesZeug.Models.Human.Professions;
 
@@ -53,12 +54,18 @@ namespace DoofesZeug
 
         static void Main( string [] args )
         {
+            Date d = "20.02.2020";
+            Out.WriteLineAsync($"{d}");
+
+            Time t = "15:10:42";
+            Out.WriteLineAsync($"{t}");
+
             Person pOriginal = PersonBuilder.New().
                 WithFirstName("John").
                 WithLastName("Doe").
                 WithGender(Gender.Male).
-                WithDateOfBirth((25, 05, 1942)).
-                WithProfessions(ProfessionList.Of(new PoliceOfficer(), new FireFighter()));
+                WithDateOfBirth((25, 05, 1942));
+            //WithProfessions(ProfessionList.Of(new PoliceOfficer(), new FireFighter()));
 
             Out.WriteLine(pOriginal.ToStringTable());
             Out.WriteLine(DIV);
@@ -73,7 +80,7 @@ namespace DoofesZeug
                 Out.WriteLine(pClone.ToStringTable());
                 Out.WriteLine(DIV);
             }
-            catch( Exception ex)
+            catch( Exception ex )
             {
                 Error.WriteLineAsync(ex.Message);
             }

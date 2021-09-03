@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Reflection;
 
-using DoofesZeug.Models.DateAndTime.Part;
+using DoofesZeug.Models.Human;
 
 using Newtonsoft.Json;
 
@@ -9,9 +8,10 @@ using Newtonsoft.Json;
 
 namespace DoofesZeug.Converter
 {
-    public sealed class DateTimePartConverter : JsonConverter
+    public sealed class DateOfBirthConverter : JsonConverter
     {
-        private static readonly Type DATETIMEPART = typeof(DateTimePart);
+        private static readonly Type DATEOFBIRTH = typeof(DateOfBirth);
+
 
         /// <summary>
         /// Determines whether this instance can convert the specified object type.
@@ -20,7 +20,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType.BaseType.IsAssignableTo(DATETIMEPART);
+        public override bool CanConvert( Type objectType ) => objectType.IsAssignableTo(DATEOFBIRTH);
 
 
         /// <summary>
@@ -33,12 +33,9 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// The object value.
         /// </returns>
-        /// <exception cref="System.NotImplementedException"></exception>
         public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer )
         {
-            ConstructorInfo constructor = objectType.GetConstructor(new [] { typeof(int) });
-
-            return constructor?.Invoke(new [] { (object) Convert.ToInt32(reader.Value) });
+            return new DateOfBirth(Convert.ToString(reader.Value));
         }
 
 
@@ -56,7 +53,7 @@ namespace DoofesZeug.Converter
                 return;
             }
 
-            writer.WriteValue(( (DateTimePart) value ).Value);
+            writer.WriteValue(value.ToString());
         }
     }
 }

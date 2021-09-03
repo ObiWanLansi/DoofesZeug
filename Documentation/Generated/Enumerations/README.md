@@ -16,6 +16,13 @@
 |[Gender](./DoofesZeug.Models.Human/Gender.md)|Unknown, Divers, Female, Male|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Gender.cs)|[&#x273F;](./DoofesZeug.Models.Human/Gender.png)|
 
 
+## Namespace `DoofesZeug.Models.Human.Professions`
+
+|Enumeration|Values|Source|Diagram|
+|:----------|:-----|:----:|:-----:|
+|[WellKnownProfession](./DoofesZeug.Models.Human.Professions/WellKnownProfession.md)|Unknown, FireFighter, PoliceOfficer, Nurse, Engineer, Doctor|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/WellKnownProfession.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/WellKnownProfession.png)|
+
+
 ## Namespace `DoofesZeug.Tools`
 
 |Enumeration|Values|Source|Diagram|

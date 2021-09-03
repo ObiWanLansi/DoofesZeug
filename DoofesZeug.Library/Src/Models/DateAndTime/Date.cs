@@ -16,7 +16,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The day.
         /// </value>
-        public Day Day { get; set; }
+        public Day Day { get; set; } = 1;
 
         /// <summary>
         /// Gets the month.
@@ -24,7 +24,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The month.
         /// </value>
-        public Month Month { get; set; }
+        public Month Month { get; set; } = 1;
 
         /// <summary>
         /// Gets the year.
@@ -32,13 +32,21 @@ namespace DoofesZeug.Models.DateAndTime
         /// <value>
         /// The year.
         /// </value>
-        public Year Year { get; set; }
+        public Year Year { get; set; } = 1;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         public Date()
         {
+        }
+
+
+        public Date( Date date )
+        {
+            this.Day = date.Day;
+            this.Month = date.Month;
+            this.Year = date.Year;
         }
 
 
@@ -50,6 +58,14 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
 
+        public Date( uint day, uint month, uint year )
+        {
+            this.Day = day;
+            this.Month = month;
+            this.Year = year;
+        }
+
+
         public Date( Day day, Month month, Year year )
         {
             this.Day = day;
@@ -58,6 +74,46 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="System.ValueTuple{Day, Month, Year}"/> to <see cref="Date"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Date( (Day day, Month month, Year year) value ) => new(value.day, value.month, value.year);
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="System.String"/> to <see cref="Date"/>.
+        /// </summary>
+        /// <param name="strContent">The string date.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Date( string strContent )
+        {
+            // 0123456789
+            // 15.10.1974
+
+            if( strContent.Length != 10 )
+            {
+                throw new ArgumentException("The length of the date ist not ten characters.", nameof(strContent));
+            }
+
+            if( strContent [2] == '.' == false || strContent [5] == '.' == false )
+            {
+                throw new ArgumentException("The date have not the right format 'dd.mm.yyyy'.", nameof(strContent));
+            }
+
+            uint day = Convert.ToUInt32(strContent.Substring(0, 2));
+            uint month = Convert.ToUInt32(strContent.Substring(3, 2));
+            uint year = Convert.ToUInt32(strContent.Substring(6, 4));
+
+            return new Date(day, month, year);
+        }
 
 
         /// <summary>

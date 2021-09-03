@@ -13,7 +13,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Name|String|&#x2713;|&#x2713;||
+|WellKnownProfessionType|WellKnownProfession|&#x2713;|&#x2713;||
 
 ### Inherited
 

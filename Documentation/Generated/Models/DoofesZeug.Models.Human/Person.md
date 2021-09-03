@@ -17,7 +17,6 @@
 |FirstName|FirstName|&#x2713;|&#x2713;||
 |LastName|LastName|&#x2713;|&#x2713;||
 |Gender|Gender|&#x2713;|&#x2713;||
-|Professions|ProfessionList|&#x2713;|&#x2713;||
 
 ### Inherited
 
@@ -35,25 +34,11 @@
 
 ```json
 {
-  "DateOfBirth": {
-    "Day": 27,
-    "Month": 9,
-    "Year": 1974
-  },
+  "DateOfBirth": "27.09.1974",
   "FirstName": "John",
   "LastName": "Doe",
   "Gender": "Male",
-  "Professions": [
-    {
-      "Name": "PoliceOfficer",
-      "Id": "5890ef68-3035-497e-a34c-787ca2990dc6"
-    },
-    {
-      "Name": "FireFighter",
-      "Id": "acf0fe29-08da-45ed-a6f4-b3e74c7aa713"
-    }
-  ],
-  "Id": "bc5e4362-141d-48a8-80b7-ec8953ea51d9"
+  "Id": "fbac05ba-4296-41f8-916e-c47e7d6fe75c"
 }
 ```
 

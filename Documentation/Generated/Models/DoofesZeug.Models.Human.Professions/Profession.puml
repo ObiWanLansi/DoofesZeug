@@ -14,7 +14,7 @@ abstract class IdentifiableEntity {
 IdentifiableEntity <|-- Profession
 
 abstract class Profession {
-    Name: String
+    WellKnownProfessionType: WellKnownProfession
 }
 
 @enduml
