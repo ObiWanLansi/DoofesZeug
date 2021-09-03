@@ -7,15 +7,15 @@
 |Namespace|DoofesZeug.Models.DateAndTime|
 |BaseClass|EntityBase|
 
-## Fields
+## Properties
 
 ### Declared
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Hour|Hour|&#x2713;|&#x2713;||
-|Minute|Minute|&#x2713;|&#x2713;||
-|Second|Second|&#x2713;|&#x2713;||
+|Hour|[Hour](../../Models/DoofesZeug.Models.DateAndTime.Part.Time\Hour.md)|&#x2713;|&#x2713;||
+|Minute|[Minute](../../Models/DoofesZeug.Models.DateAndTime.Part.Time\Minute.md)|&#x2713;|&#x2713;||
+|Second|[Second](../../Models/DoofesZeug.Models.DateAndTime.Part.Time\Second.md)|&#x2713;|&#x2713;||
 
 ### Inherited
 
@@ -24,10 +24,19 @@
 
 ## Attributes
 
-## Diagram
+**TODO**
+
+## UML Diagram
 
 ![Time.png](./Time.png "Time")
 
-## Example
+## JSON Example
 
+```json
+{
+  "Hour": 12,
+  "Minute": 43,
+  "Second": 56
+}
+```
 

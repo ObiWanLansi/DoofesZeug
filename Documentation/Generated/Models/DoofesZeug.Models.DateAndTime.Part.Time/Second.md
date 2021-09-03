@@ -7,7 +7,7 @@
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Time|
 |BaseClass|DateTimePart|
 
-## Fields
+## Properties
 
 ### Declared
 
@@ -22,10 +22,15 @@
 
 ## Attributes
 
-## Diagram
+**TODO**
+
+## UML Diagram
 
 ![Second.png](./Second.png "Second")
 
-## Example
+## JSON Example
 
+```json
+3
+```
 

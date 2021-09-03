@@ -29,28 +29,6 @@ namespace DoofesZeug.Documentation
         {
             sb.AppendLine();
 
-            //if( type.IsAbstract )
-            //{
-            //    sb.AppendLine($"*The Entity {type.Name} is abstract, so we can't not create an json example!*");
-            //    return;
-            //}
-
-            //bool bDefaultConstructor = false;
-            //foreach( ConstructorInfo constructor in type.GetConstructors() )
-            //{
-            //    if( constructor.GetParameters().Length == 0 )
-            //    {
-            //        bDefaultConstructor = true;
-            //        break;
-            //    }
-            //}
-
-            //if( bDefaultConstructor == false )
-            //{
-            //    sb.AppendLine($"*The Entity {type.Name} have no default constructor, so we can't not create an json example!*");
-            //    return;
-            //}
-
             object oResult = TestDataGenerator.GenerateTestData(type);
 
             if( oResult != null )
@@ -143,8 +121,18 @@ namespace DoofesZeug.Documentation
                     continue;
                 }
 
-                //sbPUML.AppendLine($"    {pi.Name}: {pi.PropertyType.Name}");
-                sb.AppendLine($"|{pi.Name}|{pi.PropertyType.Name}|{( pi.CanRead ? "&#x2713;" : "&#x2717;" )}|{( pi.CanWrite ? "&#x2713;" : "&#x2717;" )}||");
+                string strPropertyType = pi.PropertyType.Name;
+                if( pi.PropertyType.Namespace.StartsWith("DoofesZeug.") )
+                {
+                    //TODO: If Enumeration ..\\..\\Enumeration\\
+                    //      ansonsten ..\\..\\Models\\
+                    string strPath= $"../../{( pi.PropertyType.IsEnum ? "Enumerations" : "Models" )}/{pi.PropertyType.Namespace}";
+
+                    strPropertyType = $"[{pi.PropertyType.Name}]({strPath}\\{pi.PropertyType.Name}.md)";
+                    //strPropertyType = $"[{pi.PropertyType.Name}](..\\{pi.PropertyType.Namespace [11..]}\\{pi.PropertyType.Name}.md)";
+                }
+
+                sb.AppendLine($"|{pi.Name}|{strPropertyType}|{( pi.CanRead ? "&#x2713;" : "&#x2717;" )}|{( pi.CanWrite ? "&#x2713;" : "&#x2717;" )}||");
             }
         }
 
@@ -185,21 +173,21 @@ namespace DoofesZeug.Documentation
                 AddGenerallyInformation(type, sb);
                 sb.AppendLine();
 
-                sb.AppendLine($"Fields".Header(2));
+                sb.AppendLine($"Properties".Header(2));
                 AddFields(type, sb, false);
                 AddFields(type, sb, true);
                 sb.AppendLine();
 
                 sb.AppendLine($"Attributes".Header(2));
                 sb.AppendLine();
-
-                sb.AppendLine($"Diagram".Header(2));
-                //#if RELEASE
-                GenerateUmlDiagramm(type, sb);
-                //#endif
+                sb.AppendLine("**TODO**");
                 sb.AppendLine();
 
-                sb.AppendLine($"Example".Header(2));
+                sb.AppendLine($"UML Diagram".Header(2));
+                GenerateUmlDiagramm(type, sb);
+                sb.AppendLine();
+
+                sb.AppendLine($"JSON Example".Header(2));
                 GenerateJsonExample(type, sb);
                 sb.AppendLine();
             }
@@ -219,22 +207,25 @@ namespace DoofesZeug.Documentation
             {
                 sb.AppendLine("");
                 sb.AppendLine("");
-                sb.AppendLine($"## Namespace `{entities.Key}`");
+                sb.AppendLine($"## `{entities.Key}`");
                 sb.AppendLine("");
 
-                sb.AppendLine("|Entity|Source|Diagram|JSON Example|");
-                sb.AppendLine("|:-----|:----:|:-----:|:----------:|");
+                sb.AppendLine("|Entity|Description|");
+                sb.AppendLine("|:-----|:-|");
+                //sb.AppendLine("|Entity|Source|Diagram|JSON Example|");
+                //sb.AppendLine("|:-----|:----:|:-----:|:----------:|");
 
                 string strPath = entities.Key [11..].Replace('.', '/');
 
                 foreach( Type entity in from type in entities orderby type.Name select type )
                 {
                     string strLinkToMarkdown = $"[{entity.Name}](./{entities.Key}/{entity.Name}.md)";
-                    string strLinkToSource = $"[&#x273F;](../../../DoofesZeug.Library/Src/{strPath}/{entity.Name}.cs)";
-                    string strLinkToDiagram = $"[&#x273F;](./{entities.Key}/{entity.Name}.png)";
-                    string strLinkToJSONTest = $"[&#x273F;](./{entities.Key}/{entity.Name}.json)";
+                    //string strLinkToSource = $"[&#x273F;](../../../DoofesZeug.Library/Src/{strPath}/{entity.Name}.cs)";
+                    //string strLinkToDiagram = $"[&#x273F;](./{entities.Key}/{entity.Name}.png)";
+                    //string strLinkToJSONTest = $"[&#x273F;](./{entities.Key}/{entity.Name}.json)";
 
-                    sb.AppendLine($"|{strLinkToMarkdown}|{strLinkToSource}|{strLinkToDiagram}|{strLinkToJSONTest}|");
+                    sb.AppendLine($"|{strLinkToMarkdown}||");
+                    //sb.AppendLine($"|{strLinkToMarkdown}|{strLinkToSource}|{strLinkToDiagram}|{strLinkToJSONTest}|");
                 }
             }
 
@@ -248,6 +239,7 @@ namespace DoofesZeug.Documentation
         {
             Assembly assembly = ENTITY_BASE.Assembly;
 
+            Out.WriteLineAsync();
             Out.WriteLineAsync($"{assembly.FullName}");
 
             new DirectoryInfo(OUTPUTDIRECTORY).DeleteDirectoryContentRecursiv(ex => Error.WriteLineAsync(ex.Message));

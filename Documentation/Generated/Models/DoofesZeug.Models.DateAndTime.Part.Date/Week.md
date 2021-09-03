@@ -7,7 +7,7 @@
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Date|
 |BaseClass|DateTimePart|
 
-## Fields
+## Properties
 
 ### Declared
 
@@ -22,10 +22,15 @@
 
 ## Attributes
 
-## Diagram
+**TODO**
+
+## UML Diagram
 
 ![Week.png](./Week.png "Week")
 
-## Example
+## JSON Example
 
+```json
+3
+```
 

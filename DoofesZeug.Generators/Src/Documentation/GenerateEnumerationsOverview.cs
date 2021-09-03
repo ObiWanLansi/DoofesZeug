@@ -111,22 +111,27 @@ namespace DoofesZeug.Documentation
             {
                 sb.AppendLine("");
                 sb.AppendLine("");
-                sb.AppendLine($"## Namespace `{enumerationgroup.Key}`");
+                sb.AppendLine($"## `{enumerationgroup.Key}`");
                 sb.AppendLine("");
 
-                sb.AppendLine("|Enumeration|Values|Source|Diagram|");
-                sb.AppendLine("|:----------|:-----|:----:|:-----:|");
+                sb.AppendLine("|Enumeration|Values|");
+                sb.AppendLine("|:----------|:-----|");
+                //sb.AppendLine("|Enumeration|Values|Source|Diagram|");
+                //sb.AppendLine("|:----------|:-----|:----:|:-----:|");
 
                 string strPath = enumerationgroup.Key [11..].Replace('.', '/');
 
                 foreach( Type enumeration in from type in enumerationgroup orderby type.Name select type )
                 {
-                    string strLinkToMarkdown = $"[{enumeration.Name}](./{enumerationgroup.Key}/{enumeration.Name}.md)";
-                    string strValues = Tool.EnumToStringList(enumeration).ToFlatString();
-                    string strLinkToSource = $"[&#x273F;](../../../DoofesZeug.Library/Src/{strPath}/{enumeration.Name}.cs)";
-                    string strLinkToDiagram = $"[&#x273F;](./{enumerationgroup.Key}/{enumeration.Name}.png)";
+                    //string [] values = Enum.GetNames(enumeration);
 
-                    sb.AppendLine($"|{strLinkToMarkdown}|{strValues}|{strLinkToSource}|{strLinkToDiagram}|");
+                    string strLinkToMarkdown = $"[{enumeration.Name}](./{enumerationgroup.Key}/{enumeration.Name}.md)";
+                    //string strValues = Tool.EnumToStringList(enumeration).ToFlatString();
+                    //string strLinkToSource = $"[&#x273F;](../../../DoofesZeug.Library/Src/{strPath}/{enumeration.Name}.cs)";
+                    //string strLinkToDiagram = $"[&#x273F;](./{enumerationgroup.Key}/{enumeration.Name}.png)";
+
+                    sb.AppendLine($"|{strLinkToMarkdown}|{Enum.GetNames(enumeration).ToFlatString()}|");
+                    //sb.AppendLine($"|{strLinkToMarkdown}|{strValues}|{strLinkToSource}|{strLinkToDiagram}|");
                 }
             }
 
@@ -140,6 +145,7 @@ namespace DoofesZeug.Documentation
         {
             Assembly assembly = ENTITY_BASE.Assembly;
 
+            Out.WriteLineAsync();
             Out.WriteLineAsync($"{assembly.FullName}");
 
             new DirectoryInfo(OUTPUTDIRECTORY).DeleteDirectoryContentRecursiv(ex => Error.WriteLineAsync(ex.Message));

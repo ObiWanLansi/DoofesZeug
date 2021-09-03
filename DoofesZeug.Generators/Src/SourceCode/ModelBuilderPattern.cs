@@ -59,9 +59,7 @@ namespace DoofesZeug.SourceCode
 
         private static void GenerateModelBuilder( Type type )
         {
-            BuilderAttribute ba = (BuilderAttribute) type.GetCustomAttribute(BUILDERATTRIBUTE);
-
-            if( ba == null )
+            if( type.GetCustomAttribute(BUILDERATTRIBUTE) == null )
             {
                 return;
             }
@@ -126,6 +124,7 @@ namespace DoofesZeug.SourceCode
 
             Assembly assembly = tEntityBase.Assembly;
 
+            Out.WriteLineAsync();
             Out.WriteLineAsync($"{assembly.FullName}");
 
             new DirectoryInfo(OUTPUTDIRECTORY).DeleteDirectoryContentRecursiv(ex => Error.WriteLineAsync(ex.Message));

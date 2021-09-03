@@ -7,7 +7,7 @@ abstract class EntityBase {
 
 EntityBase <|-- Name
 
-class Name {
+abstract class Name {
     Value: String
 }
 

@@ -1,35 +1,35 @@
 ﻿# Enumerations Overview
 
 
-## Namespace `DoofesZeug.Models.DateAndTime`
+## `DoofesZeug.Models.DateAndTime`
 
-|Enumeration|Values|Source|Diagram|
-|:----------|:-----|:----:|:-----:|
-|[Quarter](./DoofesZeug.Models.DateAndTime/Quarter.md)|Unknown, First, Second, Third, Fourth|[&#x273F;](../../../DoofesZeug.Library/Src/Models/DateAndTime/Quarter.cs)|[&#x273F;](./DoofesZeug.Models.DateAndTime/Quarter.png)|
-|[Season](./DoofesZeug.Models.DateAndTime/Season.md)|Unknown, Winter, Spring, Summer, Autumn|[&#x273F;](../../../DoofesZeug.Library/Src/Models/DateAndTime/Season.cs)|[&#x273F;](./DoofesZeug.Models.DateAndTime/Season.png)|
-
-
-## Namespace `DoofesZeug.Models.Human`
-
-|Enumeration|Values|Source|Diagram|
-|:----------|:-----|:----:|:-----:|
-|[Gender](./DoofesZeug.Models.Human/Gender.md)|Unknown, Divers, Female, Male|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Gender.cs)|[&#x273F;](./DoofesZeug.Models.Human/Gender.png)|
+|Enumeration|Values|
+|:----------|:-----|
+|[Quarter](./DoofesZeug.Models.DateAndTime/Quarter.md)|Unknown, First, Second, Third, Fourth|
+|[Season](./DoofesZeug.Models.DateAndTime/Season.md)|Unknown, Winter, Spring, Summer, Autumn|
 
 
-## Namespace `DoofesZeug.Models.Human.Professions`
+## `DoofesZeug.Models.Human`
 
-|Enumeration|Values|Source|Diagram|
-|:----------|:-----|:----:|:-----:|
-|[WellKnownProfession](./DoofesZeug.Models.Human.Professions/WellKnownProfession.md)|Unknown, FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/WellKnownProfession.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/WellKnownProfession.png)|
+|Enumeration|Values|
+|:----------|:-----|
+|[Gender](./DoofesZeug.Models.Human/Gender.md)|Unknown, Divers, Female, Male|
 
 
-## Namespace `DoofesZeug.Tools`
+## `DoofesZeug.Models.Human.Professions`
 
-|Enumeration|Values|Source|Diagram|
-|:----------|:-----|:----:|:-----:|
-|[LineEnding](./DoofesZeug.Tools/LineEnding.md)|Windows, LinuxUnix|[&#x273F;](../../../DoofesZeug.Library/Src/Tools/LineEnding.cs)|[&#x273F;](./DoofesZeug.Tools/LineEnding.png)|
-|[PathStyle](./DoofesZeug.Tools/PathStyle.md)|Windows, LinuxUnix|[&#x273F;](../../../DoofesZeug.Library/Src/Tools/PathStyle.cs)|[&#x273F;](./DoofesZeug.Tools/PathStyle.png)|
-|[Priority](./DoofesZeug.Tools/Priority.md)|Low, Normal, High|[&#x273F;](../../../DoofesZeug.Library/Src/Tools/Priority.cs)|[&#x273F;](./DoofesZeug.Tools/Priority.png)|
-|[SortOrder](./DoofesZeug.Tools/SortOrder.md)|Ascending, Descending|[&#x273F;](../../../DoofesZeug.Library/Src/Tools/SortOrder.cs)|[&#x273F;](./DoofesZeug.Tools/SortOrder.png)|
-|[TextAlign](./DoofesZeug.Tools/TextAlign.md)|Left, Center, Right|[&#x273F;](../../../DoofesZeug.Library/Src/Tools/TextAlign.cs)|[&#x273F;](./DoofesZeug.Tools/TextAlign.png)|
-|[VerbosityLevel](./DoofesZeug.Tools/VerbosityLevel.md)|None, Low, Normal, High|[&#x273F;](../../../DoofesZeug.Library/Src/Tools/VerbosityLevel.cs)|[&#x273F;](./DoofesZeug.Tools/VerbosityLevel.png)|
+|Enumeration|Values|
+|:----------|:-----|
+|[WellKnownProfession](./DoofesZeug.Models.Human.Professions/WellKnownProfession.md)|Unknown, FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter|
+
+
+## `DoofesZeug.Tools`
+
+|Enumeration|Values|
+|:----------|:-----|
+|[LineEnding](./DoofesZeug.Tools/LineEnding.md)|Windows, LinuxUnix|
+|[PathStyle](./DoofesZeug.Tools/PathStyle.md)|Windows, LinuxUnix|
+|[Priority](./DoofesZeug.Tools/Priority.md)|Low, Normal, High|
+|[SortOrder](./DoofesZeug.Tools/SortOrder.md)|Ascending, Descending|
+|[TextAlign](./DoofesZeug.Tools/TextAlign.md)|Left, Center, Right|
+|[VerbosityLevel](./DoofesZeug.Tools/VerbosityLevel.md)|None, Low, Normal, High|

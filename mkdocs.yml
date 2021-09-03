@@ -1,4 +1,6 @@
 site_name: Doofes Zeug
-#theme: readthedocs
+#theme: material
+theme: readthedocs
+#theme: bootstrap386
 site_author: ObiWanLansi
 docs_dir: .\Documentation

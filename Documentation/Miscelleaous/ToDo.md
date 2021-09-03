@@ -2,7 +2,14 @@
 
 ## ToDo
 
-- Enumerations Markdown List Values
+- Enum Values To Enum.md
+- Money
+  - Dollar
+  - Euro
+- Temperature (https://de.wikipedia.org/wiki/Temperatur)
+  - Kelivin
+  - Fahrenheit
+  - Celcius
 - Generate Document mit all Attributes, too ...
 - MatheStuff, z.b geometrische Figuren Rectangle, Circle, und direkt mit ein paar Meßmethoden?
 - Fill EntityOverview Files with the stuff.
@@ -47,3 +54,4 @@
 ## Done
 
 - Profession: Add abstract Enumeartion Field, damit wenn als JSON wir auch eine Unterscheidung haben.
+- Enumerations Markdown List Values

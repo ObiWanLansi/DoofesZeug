@@ -7,7 +7,7 @@
 |Namespace|DoofesZeug.Models.Human|
 |BaseClass|Name|
 
-## Fields
+## Properties
 
 ### Declared
 
@@ -22,10 +22,15 @@
 
 ## Attributes
 
-## Diagram
+**TODO**
+
+## UML Diagram
 
 ![LastName.png](./LastName.png "LastName")
 
-## Example
+## JSON Example
 
+```json
+"Mustermann"
+```
 

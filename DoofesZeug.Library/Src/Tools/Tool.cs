@@ -114,7 +114,7 @@ namespace DoofesZeug.Tools
         /// <exception cref="System.ArgumentException">tEnum</exception>
         public static StringList EnumToStringList( Type tEnum )
         {
-            return tEnum.IsEnum == false ? throw new ArgumentException(nameof(tEnum)) : new StringList(Enum.GetNames(tEnum));
+            return tEnum.IsEnum == false ? throw new ArgumentException($"The type '{tEnum.FullName}' is not an enumeration!", nameof(tEnum)) : new StringList(Enum.GetNames(tEnum));
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

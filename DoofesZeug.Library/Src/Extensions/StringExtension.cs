@@ -243,5 +243,28 @@ namespace DoofesZeug.Extensions
         /// <param name="strContent">Content of the string.</param>
         /// <returns></returns>
         public static string ReplaceHtml( this string strContent ) => HttpUtility.HtmlEncode(strContent);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Converts to flatstring.
+        /// </summary>
+        /// <param name="values">The values.</param>
+        /// <param name="strDivider">The string divider.</param>
+        /// <returns></returns>
+        public static string ToFlatString( this string [] values, string strDivider = ", " )
+        {
+            StringBuilder sbFlatten = new(128);
+            for( int iCounter = 0 ; iCounter < values.Length ; iCounter++ )
+            {
+                if( iCounter > 0 )
+                {
+                    sbFlatten.Append(strDivider);
+                }
+                sbFlatten.Append(values [iCounter]);
+            }
+            return sbFlatten.ToString();
+        }
     }
 }

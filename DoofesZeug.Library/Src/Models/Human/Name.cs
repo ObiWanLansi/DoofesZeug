@@ -3,7 +3,7 @@
 
 namespace DoofesZeug.Models.Human
 {
-    public class Name : EntityBase
+    public abstract class Name : EntityBase
     {
         public string Value { get; set; }
 
@@ -18,7 +18,7 @@ namespace DoofesZeug.Models.Human
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public static implicit operator Name( string value ) => new(value);
+        //public static implicit operator Name( string value ) => new(value);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

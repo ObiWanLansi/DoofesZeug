@@ -7,7 +7,7 @@
 |Namespace|DoofesZeug.Models.DateAndTime|
 |BaseClass|EntityBase|
 
-## Fields
+## Properties
 
 ### Declared
 
@@ -21,10 +21,15 @@
 
 ## Attributes
 
-## Diagram
+**TODO**
+
+## UML Diagram
 
 ![UnixTimestamp.png](./UnixTimestamp.png "UnixTimestamp")
 
-## Example
+## JSON Example
 
+```json
+1630710151
+```
 
