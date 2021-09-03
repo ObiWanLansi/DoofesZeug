@@ -64,8 +64,8 @@ namespace DoofesZeug
                 WithFirstName("John").
                 WithLastName("Doe").
                 WithGender(Gender.Male).
-                WithDateOfBirth((25, 05, 1942));
-            //WithProfessions(ProfessionList.Of(new PoliceOfficer(), new FireFighter()));
+                WithDateOfBirth((25, 05, 1942)).
+                WithMainProfession(new PoliceOfficer { Since = (25, 05, 1942) });
 
             Out.WriteLine(pOriginal.ToStringTable());
             Out.WriteLine(DIV);

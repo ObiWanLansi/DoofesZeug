@@ -1,4 +1,5 @@
 ﻿using DoofesZeug.Attributes.Pattern;
+using DoofesZeug.Models.Human.Professions;
 
 
 
@@ -15,7 +16,9 @@ namespace DoofesZeug.Models.Human
 
         public Gender Gender { get; set; } = Gender.Unknown;
 
-        //public ProfessionList Professions { get; set; }
+        //---------------------------------------------------------------------
+
+        public Profession MainProfession { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

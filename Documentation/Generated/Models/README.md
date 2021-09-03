@@ -59,4 +59,10 @@
 
 |Entity|Source|Diagram|JSON Example|
 |:-----|:----:|:-----:|:----------:|
+|[Doctor](./DoofesZeug.Models.Human.Professions/Doctor.md)|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/Doctor.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/Doctor.png)|[&#x273F;](./DoofesZeug.Models.Human.Professions/Doctor.json)|
+|[Engineer](./DoofesZeug.Models.Human.Professions/Engineer.md)|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/Engineer.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/Engineer.png)|[&#x273F;](./DoofesZeug.Models.Human.Professions/Engineer.json)|
+|[FireFighter](./DoofesZeug.Models.Human.Professions/FireFighter.md)|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/FireFighter.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/FireFighter.png)|[&#x273F;](./DoofesZeug.Models.Human.Professions/FireFighter.json)|
+|[Nurse](./DoofesZeug.Models.Human.Professions/Nurse.md)|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/Nurse.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/Nurse.png)|[&#x273F;](./DoofesZeug.Models.Human.Professions/Nurse.json)|
+|[PoliceOfficer](./DoofesZeug.Models.Human.Professions/PoliceOfficer.md)|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/PoliceOfficer.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/PoliceOfficer.png)|[&#x273F;](./DoofesZeug.Models.Human.Professions/PoliceOfficer.json)|
 |[Profession](./DoofesZeug.Models.Human.Professions/Profession.md)|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/Profession.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/Profession.png)|[&#x273F;](./DoofesZeug.Models.Human.Professions/Profession.json)|
+|[Unknown](./DoofesZeug.Models.Human.Professions/Unknown.md)|[&#x273F;](../../../DoofesZeug.Library/Src/Models/Human/Professions/Unknown.cs)|[&#x273F;](./DoofesZeug.Models.Human.Professions/Unknown.png)|[&#x273F;](./DoofesZeug.Models.Human.Professions/Unknown.json)|

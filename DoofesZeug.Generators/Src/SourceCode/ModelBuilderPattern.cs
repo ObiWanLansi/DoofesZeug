@@ -17,7 +17,7 @@ namespace DoofesZeug.SourceCode
     {
         private static readonly Type BUILDERATTRIBUTE = typeof(BuilderAttribute);
 
-        private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\DoofesZeug.Library\Src\Generated";
+        private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\DoofesZeug.Library\Src\Generated\Builder";
 
         private static readonly string HEADER = @"
 // ------------------------------------------------------------------------------------------------------------------

@@ -15,6 +15,7 @@ IdentifiableEntity <|-- Profession
 
 abstract class Profession {
     WellKnownProfessionType: WellKnownProfession
+    Since: Date
 }
 
 @enduml

@@ -1,11 +1,11 @@
-﻿# Profession
+﻿# Nurse
 
 ## Generally
 
 |||
 |:-|:-|
 |Namespace|DoofesZeug.Models.Human.Professions|
-|BaseClass|IdentifiableEntity|
+|BaseClass|Profession|
 
 ## Fields
 
@@ -13,20 +13,20 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|WellKnownProfessionType|WellKnownProfession|&#x2713;|&#x2713;||
-|Since|Date|&#x2713;|&#x2713;||
 
 ### Inherited
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
+|WellKnownProfessionType|WellKnownProfession|&#x2713;|&#x2717;||
+|Since|Date|&#x2713;|&#x2713;||
 |Id|Guid|&#x2713;|&#x2713;||
 
 ## Attributes
 
 ## Diagram
 
-![Profession.png](./Profession.png "Profession")
+![Nurse.png](./Nurse.png "Nurse")
 
 ## Example
 

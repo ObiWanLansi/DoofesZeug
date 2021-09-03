@@ -1,4 +1,5 @@
-﻿
+﻿using DoofesZeug.Models.DateAndTime;
+
 
 
 namespace DoofesZeug.Models.Human.Professions
@@ -7,6 +8,14 @@ namespace DoofesZeug.Models.Human.Professions
     {
         public WellKnownProfession WellKnownProfessionType { get; private set; }
 
+        public Date Since { get; set; }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
         protected Profession( WellKnownProfession wkp ) => this.WellKnownProfessionType = wkp;
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        public override string ToString() => $"{this.WellKnownProfessionType}";
     }
 }

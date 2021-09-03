@@ -10,6 +10,9 @@ namespace DoofesZeug.Models.Human.Professions
         PoliceOfficer,
         Nurse,
         Engineer,
-        Doctor
+        Doctor,
+        HairDresser,
+        Baker,
+        Waiter
     }
 }

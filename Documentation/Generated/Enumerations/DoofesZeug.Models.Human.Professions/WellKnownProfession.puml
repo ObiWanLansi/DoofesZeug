@@ -9,6 +9,9 @@ enum WellKnownProfession {
     Nurse
     Engineer
     Doctor
+    HairDresser
+    Baker
+    Waiter
 }
 
 @enduml

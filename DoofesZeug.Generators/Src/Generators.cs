@@ -13,12 +13,8 @@ namespace DoofesZeug
         /// <param name="args">The arguments.</param>
         static void Main( string [] args )
         {
-            //if( CheckNamespaces.Execute() == false )
-            //{
-            //    return;
-            //}
-
             ModelBuilderPattern.Generate();
+            ProfessionsBuilder.Generate();
 
             GenerateModelOverview.Generate();
             GenerateEnumerationsOverview.Generate();

@@ -11,14 +11,16 @@ abstract class IdentifiableEntity {
     Id: Guid
 }
 
-IdentifiableEntity <|-- Person
+IdentifiableEntity <|-- Profession
 
-class Person {
-    DateOfBirth: DateOfBirth
-    FirstName: FirstName
-    LastName: LastName
-    Gender: Gender
-    MainProfession: Profession
+abstract class Profession {
+    WellKnownProfessionType: WellKnownProfession
+    Since: Date
+}
+
+Profession <|-- Doctor
+
+class Doctor {
 }
 
 @enduml

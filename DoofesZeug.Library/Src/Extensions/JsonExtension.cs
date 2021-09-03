@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 using DoofesZeug.Converter;
 
@@ -27,6 +26,7 @@ namespace DoofesZeug.Extensions
         {
             settings.Converters.Add(new StringEnumConverter());
             settings.Converters.Add(new NameConverter());
+            settings.Converters.Add(new ProfessionConverter());
             settings.Converters.Add(new DateOfBirthConverter());
             settings.Converters.Add(new DateTimePartConverter());
             settings.Converters.Add(new UnixTimestampConverter());
