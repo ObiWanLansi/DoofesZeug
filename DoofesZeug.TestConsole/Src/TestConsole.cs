@@ -17,7 +17,6 @@ namespace DoofesZeug
         static private readonly string DIV = new('-', 80);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         //private static string ToXml( object o )
@@ -84,8 +83,9 @@ namespace DoofesZeug
                 WithFirstName("John").
                 WithLastName("Doe").
                 WithGender(Gender.Male).
+                WithHandedness(Handedness.Both).
                 WithDateOfBirth((25, 05, 1942)).
-                WithMainProfession(new PoliceOfficer { Since = (25, 05, 1942) });
+                WithProfession(new PoliceOfficer { Since = (25, 05, 1942) });
 
             Out.WriteLine(pOriginal.ToStringTable(bDisplayNULL: true));
             Out.WriteLine(DIV);
