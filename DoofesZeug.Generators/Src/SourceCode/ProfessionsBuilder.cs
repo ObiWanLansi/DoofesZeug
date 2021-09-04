@@ -33,6 +33,7 @@ namespace DoofesZeug.SourceCode
 
             sb.AppendLine(HEADER);
             sb.AppendLine("using DoofesZeug.Attributes;");
+            sb.AppendLine("using DoofesZeug.Attributes.Documentation;");
             sb.AppendLine("using DoofesZeug.Attributes.Pattern;");
             sb.AppendLine();
             sb.AppendLine();
@@ -41,6 +42,7 @@ namespace DoofesZeug.SourceCode
             sb.AppendLine("namespace DoofesZeug.Models.Human.Professions");
             sb.AppendLine("{");
 
+            sb.AppendLine($"    [Description(\"This is an specialized entitiy for an {profession.Lower()}.\")]");
             sb.AppendLine("    [Generated]");
             sb.AppendLine("    [Builder]");
             sb.AppendLine($"    public class {profession} : Profession");

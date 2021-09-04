@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 
+using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Extensions;
 
 
@@ -10,6 +11,7 @@ namespace DoofesZeug.Tools
     /// <summary>
     /// Eine kleine Klasse um einen Lorem Ipsum Blindtext zu generiern.
     /// </summary>
+    [Description("")]
     public sealed class LoremIpsum
     {
         /// <summary>

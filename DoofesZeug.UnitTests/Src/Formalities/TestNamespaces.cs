@@ -40,6 +40,8 @@ namespace DoofesZeug.UnitTest.Formalities
                     continue;
                 }
 
+                Console.Out.WriteLineAsync(type.FullName);
+
                 string strName = type.Name;
                 string strNamespace = type.Namespace;
 
@@ -54,7 +56,7 @@ namespace DoofesZeug.UnitTest.Formalities
                 }
 
                 string strSourceFile = $"{SOURCE}\\{ strNamespace.Replace('.', '\\') }\\{strName}.cs";
-                Console.Out.WriteLineAsync(strSourceFile);
+                // Console.Out.WriteLineAsync(strSourceFile);
 
                 Assert.IsTrue(File.Exists(strSourceFile));
             }

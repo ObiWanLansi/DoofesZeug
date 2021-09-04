@@ -9,7 +9,7 @@ namespace DoofesZeug.Extensions
     {
         public static string ToFlatString<T>( this List<T> values, string strDivider = ", " )
         {
-            StringBuilder sbFlatten = new(128);
+            StringBuilder sbFlatten = new(64);
             for( int iCounter = 0 ; iCounter < values.Count ; iCounter++ )
             {
                 if( iCounter > 0 )

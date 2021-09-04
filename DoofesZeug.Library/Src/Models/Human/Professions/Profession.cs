@@ -1,9 +1,11 @@
-﻿using DoofesZeug.Models.DateAndTime;
+﻿using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Models.DateAndTime;
 
 
 
 namespace DoofesZeug.Models.Human.Professions
 {
+    [Description("")]
     public abstract class Profession : IdentifiableEntity
     {
         public WellKnownProfession WellKnownProfessionType { get; private set; }

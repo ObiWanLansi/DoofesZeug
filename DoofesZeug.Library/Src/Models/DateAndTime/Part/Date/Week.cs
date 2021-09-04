@@ -1,9 +1,11 @@
-﻿using DoofesZeug.Attributes.Validation;
+﻿using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Attributes.Validation;
 
 
 
 namespace DoofesZeug.Models.DateAndTime.Part.Date
 {
+    [Description("")]
     [Range(1, 53)]
     public sealed class Week : DateTimePart
     {

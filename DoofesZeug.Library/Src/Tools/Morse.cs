@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
+using DoofesZeug.Attributes.Documentation;
+
 
 
 namespace DoofesZeug.Tools
 {
+    [Description("")]
     public static class Morse
     {
         /// <summary>

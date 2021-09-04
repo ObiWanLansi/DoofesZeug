@@ -1,8 +1,10 @@
-﻿
+﻿using DoofesZeug.Attributes.Documentation;
+
 
 
 namespace DoofesZeug.Models.Human
 {
+    [Description("")]
     public abstract class Name : EntityBase
     {
         public string Value { get; set; }

@@ -6,11 +6,13 @@ using System.Linq;
 using System.Text;
 
 using DoofesZeug.Container;
+using DoofesZeug.Attributes.Documentation;
 
-using Newtonsoft.Json;
+
 
 namespace DoofesZeug.Tools
 {
+    [Description("")]
     public static class Tool
     {
         /// <summary>

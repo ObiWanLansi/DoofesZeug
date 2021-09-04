@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
+using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Extensions;
 using DoofesZeug.Models;
 using DoofesZeug.Tools;
@@ -114,24 +115,23 @@ namespace DoofesZeug.Documentation
                 sb.AppendLine($"## `{enumerationgroup.Key}`");
                 sb.AppendLine("");
 
-                sb.AppendLine("|Enumeration|Values|");
-                sb.AppendLine("|:----------|:-----|");
-                //sb.AppendLine("|Enumeration|Values|Source|Diagram|");
-                //sb.AppendLine("|:----------|:-----|:----:|:-----:|");
+                sb.AppendLine("|Enumeration|Description|Values|");
+                sb.AppendLine("|:----------|:----------|:-----|");
 
                 string strPath = enumerationgroup.Key [11..].Replace('.', '/');
 
                 foreach( Type enumeration in from type in enumerationgroup orderby type.Name select type )
                 {
-                    //string [] values = Enum.GetNames(enumeration);
+                    DescriptionAttribute da = (DescriptionAttribute) enumeration.GetCustomAttribute(typeof(DescriptionAttribute));
+
+                    if( da == null || da.Description.IsEmpty() )
+                    {
+                        //throw new Exception($"{enumeration.FullName} have no description!");
+                    }
 
                     string strLinkToMarkdown = $"[{enumeration.Name}](./{enumerationgroup.Key}/{enumeration.Name}.md)";
-                    //string strValues = Tool.EnumToStringList(enumeration).ToFlatString();
-                    //string strLinkToSource = $"[&#x273F;](../../../DoofesZeug.Library/Src/{strPath}/{enumeration.Name}.cs)";
-                    //string strLinkToDiagram = $"[&#x273F;](./{enumerationgroup.Key}/{enumeration.Name}.png)";
 
-                    sb.AppendLine($"|{strLinkToMarkdown}|{Enum.GetNames(enumeration).ToFlatString()}|");
-                    //sb.AppendLine($"|{strLinkToMarkdown}|{strValues}|{strLinkToSource}|{strLinkToDiagram}|");
+                    sb.AppendLine($"|{strLinkToMarkdown}|{da.Description}|{Enum.GetNames(enumeration).ToFlatString()}|");
                 }
             }
 

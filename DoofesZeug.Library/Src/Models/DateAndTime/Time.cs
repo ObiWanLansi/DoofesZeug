@@ -1,5 +1,6 @@
 ﻿using System;
 
+using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
 using DoofesZeug.Models.DateAndTime.Part.Time;
 
@@ -7,6 +8,7 @@ using DoofesZeug.Models.DateAndTime.Part.Time;
 
 namespace DoofesZeug.Models.DateAndTime
 {
+    [Description("")]
     [Builder]
     public class Time : EntityBase
     {

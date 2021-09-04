@@ -18,7 +18,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Value|UInt32|&#x2713;|&#x2713;||
+|Value|UInt32|&#x2713;|&#x2713;|0|
 
 ## Attributes
 

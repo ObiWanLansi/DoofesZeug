@@ -4,12 +4,14 @@
 // ------------------------------------------------------------------------------------------------------------------
         
 using DoofesZeug.Attributes;
+using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
 
 
 
 namespace DoofesZeug.Models.Human.Professions
 {
+    [Description("This is an specialized entitiy for an waiter.")]
     [Generated]
     [Builder]
     public class Waiter : Profession

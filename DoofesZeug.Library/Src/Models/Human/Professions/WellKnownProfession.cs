@@ -1,8 +1,10 @@
-﻿
+﻿using DoofesZeug.Attributes.Documentation;
+
 
 
 namespace DoofesZeug.Models.Human.Professions
 {
+    [Description("")]
     public enum WellKnownProfession : byte
     {
         Unknown,

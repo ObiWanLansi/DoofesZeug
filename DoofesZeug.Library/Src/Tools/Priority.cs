@@ -1,8 +1,10 @@
-﻿
+﻿using DoofesZeug.Attributes.Documentation;
+
 
 
 namespace DoofesZeug.Tools
 {
+    [Description("")]
     public enum Priority : byte
     {
         /// <summary>

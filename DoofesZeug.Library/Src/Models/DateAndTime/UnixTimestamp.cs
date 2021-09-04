@@ -1,9 +1,12 @@
 ﻿using System;
 
+using DoofesZeug.Attributes.Documentation;
+
 
 
 namespace DoofesZeug.Models.DateAndTime
 {
+    [Description("")]
     public sealed class UnixTimestamp : EntityBase
     {
         /// <summary>
@@ -17,7 +20,7 @@ namespace DoofesZeug.Models.DateAndTime
         /// <summary>
         /// Prevents a default instance of the <see cref="UnixTimestamp"/> class from being created.
         /// </summary>
-        private UnixTimestamp()
+        public UnixTimestamp() //: this(DateTime.Now)
         {
         }
 

@@ -1,9 +1,11 @@
-﻿using DoofesZeug.Attributes.Validation;
+﻿using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Attributes.Validation;
 
 
 
 namespace DoofesZeug.Models.DateAndTime.Part.Time
 {
+    [Description("")]
     [Range(0, 59)]
     public sealed class Second : DateTimePart
     {

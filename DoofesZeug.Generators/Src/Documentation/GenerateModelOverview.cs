@@ -5,6 +5,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
+using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Container;
 using DoofesZeug.Extensions;
 using DoofesZeug.Models;
 using DoofesZeug.TestData;
@@ -108,7 +110,8 @@ namespace DoofesZeug.Documentation
             sb.AppendLine("|Name|Type|Read|Write|DefaultValue|");
             sb.AppendLine("|:---|:---|:--:|:---:|:-----------|");
 
-            //var properties = bInherited ? type.GetProperties( BindingFlags.Public | BindingFlags.Instance) : type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
+            object instance = Activator.CreateInstance(type);
+
             foreach( PropertyInfo pi in type.GetProperties(BindingFlags.Public | BindingFlags.Instance) )
             {
                 if( bInherited == true && pi.DeclaringType == type )
@@ -124,15 +127,13 @@ namespace DoofesZeug.Documentation
                 string strPropertyType = pi.PropertyType.Name;
                 if( pi.PropertyType.Namespace.StartsWith("DoofesZeug.") )
                 {
-                    //TODO: If Enumeration ..\\..\\Enumeration\\
-                    //      ansonsten ..\\..\\Models\\
-                    string strPath= $"../../{( pi.PropertyType.IsEnum ? "Enumerations" : "Models" )}/{pi.PropertyType.Namespace}";
+                    string strPath = $"../../{( pi.PropertyType.IsEnum ? "Enumerations" : "Models" )}/{pi.PropertyType.Namespace}";
 
                     strPropertyType = $"[{pi.PropertyType.Name}]({strPath}\\{pi.PropertyType.Name}.md)";
-                    //strPropertyType = $"[{pi.PropertyType.Name}](..\\{pi.PropertyType.Namespace [11..]}\\{pi.PropertyType.Name}.md)";
                 }
 
-                sb.AppendLine($"|{pi.Name}|{strPropertyType}|{( pi.CanRead ? "&#x2713;" : "&#x2717;" )}|{( pi.CanWrite ? "&#x2713;" : "&#x2717;" )}||");
+                object value = pi.GetValue(instance);
+                sb.AppendLine($"|{pi.Name}|{strPropertyType}|{( pi.CanRead ? "&#x2713;" : "&#x2717;" )}|{( pi.CanWrite ? "&#x2713;" : "&#x2717;" )}|{( value != null ? value : "NULL" )}|");
             }
         }
 
@@ -210,22 +211,25 @@ namespace DoofesZeug.Documentation
                 sb.AppendLine($"## `{entities.Key}`");
                 sb.AppendLine("");
 
-                sb.AppendLine("|Entity|Description|");
-                sb.AppendLine("|:-----|:-|");
-                //sb.AppendLine("|Entity|Source|Diagram|JSON Example|");
-                //sb.AppendLine("|:-----|:----:|:-----:|:----------:|");
+                sb.AppendLine("|Entity|Description|Properties|");
+                sb.AppendLine("|:-----|:----------|:---------|");
 
                 string strPath = entities.Key [11..].Replace('.', '/');
 
                 foreach( Type entity in from type in entities orderby type.Name select type )
                 {
-                    string strLinkToMarkdown = $"[{entity.Name}](./{entities.Key}/{entity.Name}.md)";
-                    //string strLinkToSource = $"[&#x273F;](../../../DoofesZeug.Library/Src/{strPath}/{entity.Name}.cs)";
-                    //string strLinkToDiagram = $"[&#x273F;](./{entities.Key}/{entity.Name}.png)";
-                    //string strLinkToJSONTest = $"[&#x273F;](./{entities.Key}/{entity.Name}.json)";
+                    DescriptionAttribute da = (DescriptionAttribute) entity.GetCustomAttribute(typeof(DescriptionAttribute));
 
-                    sb.AppendLine($"|{strLinkToMarkdown}||");
-                    //sb.AppendLine($"|{strLinkToMarkdown}|{strLinkToSource}|{strLinkToDiagram}|{strLinkToJSONTest}|");
+                    if( da == null || da.Description.IsEmpty() )
+                    {
+                        // throw new Exception($"{entity.FullName} have no valid description!");
+                    }
+
+                    string strLinkToMarkdown = $"[{entity.Name}](./{entities.Key}/{entity.Name}.md)";
+
+                    StringList properties = new(from property in entity.GetProperties(BindingFlags.Public | BindingFlags.Instance) where property.CanWrite == true select property.Name);
+
+                    sb.AppendLine($"|{strLinkToMarkdown}|{da.Description}|{properties.ToFlatString()}|");
                 }
             }
 

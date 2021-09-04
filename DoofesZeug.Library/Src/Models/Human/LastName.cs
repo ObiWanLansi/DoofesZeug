@@ -1,8 +1,10 @@
-﻿
+﻿using DoofesZeug.Attributes.Documentation;
+
 
 
 namespace DoofesZeug.Models.Human
 {
+    [Description("")]
     public sealed class LastName : Name
     {
         public LastName() { }

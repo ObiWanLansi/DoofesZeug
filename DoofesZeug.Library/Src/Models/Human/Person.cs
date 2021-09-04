@@ -1,10 +1,13 @@
 ﻿using DoofesZeug.Attributes.Pattern;
 using DoofesZeug.Models.Human.Professions;
 
+using DoofesZeug.Attributes.Documentation;
+
 
 
 namespace DoofesZeug.Models.Human
 {
+    [Description("")]
     [Builder]
     public class Person : IdentifiableEntity
     {

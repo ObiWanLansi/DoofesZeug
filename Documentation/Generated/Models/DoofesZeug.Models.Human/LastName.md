@@ -18,7 +18,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Value|String|&#x2713;|&#x2713;||
+|Value|String|&#x2713;|&#x2713;|NULL|
 
 ## Attributes
 
