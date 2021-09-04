@@ -11,9 +11,4 @@ class Name {
     Value: String
 }
 
-Name <|-- FirstName
-
-class FirstName {
-}
-
 @enduml

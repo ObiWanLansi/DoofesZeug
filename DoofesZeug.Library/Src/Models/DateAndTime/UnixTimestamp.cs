@@ -6,7 +6,7 @@ using DoofesZeug.Attributes.Documentation;
 
 namespace DoofesZeug.Models.DateAndTime
 {
-    [Description("")]
+    [Description("An unix timestamp (seconds since 01.01.1970).")]
     public sealed class UnixTimestamp : EntityBase
     {
         /// <summary>

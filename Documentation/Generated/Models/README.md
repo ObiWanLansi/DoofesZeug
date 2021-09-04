@@ -5,38 +5,39 @@
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[Date](./DoofesZeug.Models.DateAndTime/Date.md)||Day, Month, Year|
-|[Time](./DoofesZeug.Models.DateAndTime/Time.md)||Hour, Minute, Second|
-|[UnixTimestamp](./DoofesZeug.Models.DateAndTime/UnixTimestamp.md)|||
+|[Date](./DoofesZeug.Models.DateAndTime/Date.md)|An date entity with day, month and a year (15.12.1948).|Day, Month, Year|
+|[Time](./DoofesZeug.Models.DateAndTime/Time.md)|An time entity with hours, minutes and the seconds (12:34:56).|Hour, Minute, Second|
+|[UnixTimestamp](./DoofesZeug.Models.DateAndTime/UnixTimestamp.md)|An unix timestamp (seconds since 01.01.1970).||
 
 
 ## `DoofesZeug.Models.DateAndTime.Part.Date`
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[Day](./DoofesZeug.Models.DateAndTime.Part.Date/Day.md)||Value|
-|[Month](./DoofesZeug.Models.DateAndTime.Part.Date/Month.md)||Value|
-|[Week](./DoofesZeug.Models.DateAndTime.Part.Date/Week.md)||Value|
-|[Year](./DoofesZeug.Models.DateAndTime.Part.Date/Year.md)||Value|
+|[Day](./DoofesZeug.Models.DateAndTime.Part.Date/Day.md)|The day of an date.|Value|
+|[Month](./DoofesZeug.Models.DateAndTime.Part.Date/Month.md)|The month of an date.|Value|
+|[Week](./DoofesZeug.Models.DateAndTime.Part.Date/Week.md)|The week of an date in the year.|Value|
+|[Year](./DoofesZeug.Models.DateAndTime.Part.Date/Year.md)|The year of an date.|Value|
 
 
 ## `DoofesZeug.Models.DateAndTime.Part.Time`
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[Hour](./DoofesZeug.Models.DateAndTime.Part.Time/Hour.md)||Value|
-|[Minute](./DoofesZeug.Models.DateAndTime.Part.Time/Minute.md)||Value|
-|[Second](./DoofesZeug.Models.DateAndTime.Part.Time/Second.md)||Value|
+|[Hour](./DoofesZeug.Models.DateAndTime.Part.Time/Hour.md)|The hours of an time.|Value|
+|[Minute](./DoofesZeug.Models.DateAndTime.Part.Time/Minute.md)|The minutes of an time.|Value|
+|[Second](./DoofesZeug.Models.DateAndTime.Part.Time/Second.md)|The seconds of an time.|Value|
 
 
 ## `DoofesZeug.Models.Human`
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[DateOfBirth](./DoofesZeug.Models.Human/DateOfBirth.md)||Day, Month, Year|
-|[FirstName](./DoofesZeug.Models.Human/FirstName.md)||Value|
-|[LastName](./DoofesZeug.Models.Human/LastName.md)||Value|
-|[Person](./DoofesZeug.Models.Human/Person.md)||DateOfBirth, FirstName, LastName, Gender, MainProfession, Id|
+|[DateOfBirth](./DoofesZeug.Models.Human/DateOfBirth.md)|An dateofbirth for creatures.|Day, Month, Year|
+|[FirstName](./DoofesZeug.Models.Human/FirstName.md)|An firstname for humans.|Value|
+|[LastName](./DoofesZeug.Models.Human/LastName.md)|An lastname for humans.|Value|
+|[Name](./DoofesZeug.Models.Human/Name.md)|An generic entity for names.|Value|
+|[Person](./DoofesZeug.Models.Human/Person.md)|An simplified Person with an firstname, lastname, birthday and some other optional properties.|DateOfBirth, FirstName, LastName, Gender, Handedness, Profession, Id|
 
 
 ## `DoofesZeug.Models.Human.Professions`

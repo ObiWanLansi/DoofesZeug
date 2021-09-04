@@ -18,7 +18,8 @@ class Person {
     FirstName: FirstName
     LastName: LastName
     Gender: Gender
-    MainProfession: Profession
+    Handedness: Handedness
+    Profession: Profession
 }
 
 @enduml

@@ -19,8 +19,8 @@
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
 |WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Human.Professions\WellKnownProfession.md)|&#x2713;|&#x2717;|Baker|
-|Since|[Date](../../Models/DoofesZeug.Models.DateAndTime\Date.md)|&#x2713;|&#x2713;|01.01.0001|
-|Id|Guid|&#x2713;|&#x2713;|2d2b06d5-20bf-426a-b533-c992f0da4b96|
+|Since|[Date](../../Models/DoofesZeug.Models.DateAndTime\Date.md)|&#x2713;|&#x2713;|NULL|
+|Id|Guid|&#x2713;|&#x2713;|c999d884-db41-4da3-9193-ac48214fd169|
 
 ## Attributes
 
@@ -34,7 +34,7 @@
 
 ```json
 {
-  "Id": "72ab5f64-cc32-402b-bad4-35874c98403f",
+  "Id": "0de3e1ff-7ef2-4b6d-9421-242eaba64b35",
   "WellKnownProfessionType": "Baker",
   "Since": "11.11.1942"
 }

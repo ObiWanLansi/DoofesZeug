@@ -43,9 +43,16 @@ namespace DoofesZeug.Models.Human
         }
 
 
-        public static Person WithMainProfession(this Person person, DoofesZeug.Models.Human.Professions.Profession mainprofession)
+        public static Person WithHandedness(this Person person, DoofesZeug.Models.Human.Handedness handedness)
         {
-            person.MainProfession = mainprofession;
+            person.Handedness = handedness;
+            return person;
+        }
+
+
+        public static Person WithProfession(this Person person, DoofesZeug.Models.Human.Professions.Profession profession)
+        {
+            person.Profession = profession;
             return person;
         }
 

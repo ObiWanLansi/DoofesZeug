@@ -126,7 +126,12 @@ namespace DoofesZeug.Documentation
 
                     if( da == null || da.Description.IsEmpty() )
                     {
-                        //throw new Exception($"{enumeration.FullName} have no description!");
+                        throw new Exception($"{enumeration.FullName} have no description!");
+                    }
+
+                    if( da.Description.EndsWith(".") == false )
+                    {
+                        throw new Exception($"The description from {enumeration.FullName} ends not with an point!");
                     }
 
                     string strLinkToMarkdown = $"[{enumeration.Name}](./{enumerationgroup.Key}/{enumeration.Name}.md)";

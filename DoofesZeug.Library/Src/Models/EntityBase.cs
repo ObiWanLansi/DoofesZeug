@@ -4,7 +4,7 @@
 
 namespace DoofesZeug.Models
 {
-    [Description("")]
+    [Description("The baseclass for all entites in this library.")]
     public abstract class EntityBase
     {
     }

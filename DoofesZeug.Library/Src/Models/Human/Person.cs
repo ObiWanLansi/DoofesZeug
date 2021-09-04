@@ -7,7 +7,7 @@ using DoofesZeug.Attributes.Documentation;
 
 namespace DoofesZeug.Models.Human
 {
-    [Description("")]
+    [Description("An simplified Person with an firstname, lastname, birthday and some other optional properties.")]
     [Builder]
     public class Person : IdentifiableEntity
     {
@@ -19,9 +19,9 @@ namespace DoofesZeug.Models.Human
 
         public Gender Gender { get; set; } 
 
-        //---------------------------------------------------------------------
+        public Handedness Handedness { get; set; }
 
-        public Profession MainProfession { get; set; }
+        public Profession Profession { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

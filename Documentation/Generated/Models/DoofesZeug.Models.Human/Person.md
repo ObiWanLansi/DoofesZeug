@@ -17,13 +17,14 @@
 |FirstName|[FirstName](../../Models/DoofesZeug.Models.Human\FirstName.md)|&#x2713;|&#x2713;|NULL|
 |LastName|[LastName](../../Models/DoofesZeug.Models.Human\LastName.md)|&#x2713;|&#x2713;|NULL|
 |Gender|[Gender](../../Enumerations/DoofesZeug.Models.Human\Gender.md)|&#x2713;|&#x2713;|Unknown|
-|MainProfession|[Profession](../../Models/DoofesZeug.Models.Human.Professions\Profession.md)|&#x2713;|&#x2713;|NULL|
+|Handedness|[Handedness](../../Enumerations/DoofesZeug.Models.Human\Handedness.md)|&#x2713;|&#x2713;|Unknown|
+|Profession|[Profession](../../Models/DoofesZeug.Models.Human.Professions\Profession.md)|&#x2713;|&#x2713;|NULL|
 
 ### Inherited
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Id|Guid|&#x2713;|&#x2713;|91374c75-394e-4c96-be54-0a9d3f0cf2ae|
+|Id|Guid|&#x2713;|&#x2713;|16f04bc7-1e33-484d-91b0-d9d3d3792a78|
 
 ## Attributes
 
@@ -41,12 +42,13 @@
   "FirstName": "John",
   "LastName": "Doe",
   "Gender": "Male",
-  "MainProfession": {
-    "Id": "e83c52e0-9ba6-4c79-bd14-2a28936b6f1e",
+  "Handedness": "Left",
+  "Profession": {
+    "Id": "ff3669ba-93f1-41ff-8488-541ca3c53d3f",
     "WellKnownProfessionType": "FireFighter",
     "Since": "11.11.1942"
   },
-  "Id": "bb67535a-604c-441a-89db-31246c5790fb"
+  "Id": "8e12c978-b3c2-48fa-aadb-5ec1a3607af7"
 }
 ```
 

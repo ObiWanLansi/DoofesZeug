@@ -25,6 +25,7 @@ namespace DoofesZeug.UnitTests.Functional
                 {
                     Console.Out.WriteLineAsync(type.FullName);
 
+                    //TODO: Create An Object, Serialize It To An JSON String And Deserialize It Again To An New Object.
                 }
             }
         }

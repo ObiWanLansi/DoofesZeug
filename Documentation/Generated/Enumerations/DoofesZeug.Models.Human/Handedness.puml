@@ -1,0 +1,12 @@
+﻿@startuml
+skinparam monochrome true
+hide empty members
+
+enum Handedness {
+    Unknown
+    Left
+    Right
+    Both
+}
+
+@enduml

@@ -5,12 +5,12 @@ using DoofesZeug.Models.DateAndTime;
 
 namespace DoofesZeug.Models.Human.Professions
 {
-    [Description("")]
+    [Description("The baseclass for all other professions.")]
     public abstract class Profession : IdentifiableEntity
     {
         public WellKnownProfession WellKnownProfessionType { get; private set; }
 
-        public Date Since { get; set; } = (01, 01, 0001);
+        public Date Since { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -18,6 +18,6 @@ namespace DoofesZeug.Models.Human.Professions
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        public override string ToString() => $"{this.WellKnownProfessionType} ({Since})";
+        public override string ToString() => $"{this.WellKnownProfessionType} ({this.Since})";
     }
 }

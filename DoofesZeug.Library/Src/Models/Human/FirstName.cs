@@ -4,7 +4,7 @@
 
 namespace DoofesZeug.Models.Human
 {
-    [Description("")]
+    [Description("An firstname for humans.")]
     public sealed class FirstName : Name
     {
         public FirstName() { }

@@ -4,7 +4,7 @@
 
 namespace DoofesZeug.Tools
 {
-    [Description("")]
+    [Description("An generig SortOrder to use in some mehtods for lists or datatables.")]
     public enum SortOrder : byte
     {
         /// <summary>

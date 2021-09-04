@@ -4,7 +4,7 @@
 
 namespace DoofesZeug.Models.Human
 {
-    [Description("")]
+    [Description("An enumeration for the gender of creatures.")]
     public enum Gender : byte
     {
         Unknown,

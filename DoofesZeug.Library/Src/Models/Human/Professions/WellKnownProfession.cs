@@ -4,7 +4,7 @@
 
 namespace DoofesZeug.Models.Human.Professions
 {
-    [Description("")]
+    [Description("A small enumeration of some professions, for every value an corresponding entity will be created by the generator.")]
     public enum WellKnownProfession : byte
     {
         Unknown,

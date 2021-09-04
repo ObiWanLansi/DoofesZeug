@@ -222,7 +222,12 @@ namespace DoofesZeug.Documentation
 
                     if( da == null || da.Description.IsEmpty() )
                     {
-                        // throw new Exception($"{entity.FullName} have no valid description!");
+                        throw new Exception($"{entity.FullName} have no valid description!");
+                    }
+
+                    if( da.Description.EndsWith(".") == false )
+                    {
+                        throw new Exception($"The description from {entity.FullName} ends not with an point!");
                     }
 
                     string strLinkToMarkdown = $"[{entity.Name}](./{entities.Key}/{entity.Name}.md)";

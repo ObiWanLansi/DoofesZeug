@@ -7,7 +7,7 @@ using DoofesZeug.Attributes.Documentation;
 
 namespace DoofesZeug.Tools
 {
-    [Description("")]
+    [Description("An static class to spell an word with the NATO alphabet.")]
     public static class NatoAlphabet
     {
         /// <summary>

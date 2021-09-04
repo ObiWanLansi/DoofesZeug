@@ -22,6 +22,7 @@ namespace DoofesZeug.TestData
         static TestDataGenerator()
         {
             GENERATORS.Add(typeof(UnixTimestamp).FullName, GenerateUnixTimestamp);
+            GENERATORS.Add(typeof(Name).FullName, GenerateName);
 
             GENERATORS.Add(typeof(Person).FullName, GeneratePerson);
             GENERATORS.Add(typeof(FirstName).FullName, GenerateFirstName);
@@ -51,7 +52,6 @@ namespace DoofesZeug.TestData
             GENERATORS.Add(typeof(Hour).FullName, GenerateDateTimePart<Hour>);
             GENERATORS.Add(typeof(Minute).FullName, GenerateDateTimePart<Minute>);
             GENERATORS.Add(typeof(Second).FullName, GenerateDateTimePart<Second>);
-
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -80,6 +80,8 @@ namespace DoofesZeug.TestData
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        private static Name GenerateName() => new("HurzFurz");
+
         private static LastName GenerateLastName() => "Mustermann";
 
         private static FirstName GenerateFirstName() => "Erika";
@@ -88,7 +90,15 @@ namespace DoofesZeug.TestData
 
         private static Time GenerateTime() => (12, 43, 56);
 
-        private static Person GeneratePerson() => new() { FirstName = "John", LastName = "Doe", Gender = Gender.Male, DateOfBirth = (27, 09, 1974), MainProfession = GenerateProfession<FireFighter>() };
+        private static Person GeneratePerson() => new()
+        {
+            FirstName = "John",
+            LastName = "Doe",
+            Gender = Gender.Male,
+            DateOfBirth = (27, 09, 1974),
+            Handedness = Handedness.Left,
+            Profession = GenerateProfession<FireFighter>()
+        };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@ using DoofesZeug.Models.DateAndTime.Part.Date;
 
 namespace DoofesZeug.Models.Human
 {
-    [Description("")]
+    [Description("An dateofbirth for creatures.")]
     public sealed class DateOfBirth : Date
     {
         public DateOfBirth() : base() { }

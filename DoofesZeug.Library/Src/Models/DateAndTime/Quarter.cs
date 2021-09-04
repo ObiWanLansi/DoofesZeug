@@ -4,7 +4,7 @@
 
 namespace DoofesZeug.Models.DateAndTime
 {
-    [Description("")]
+    [Description("An enumeration for our calendar quarters.")]
     public enum Quarter : byte
     {
         Unknown = 0,

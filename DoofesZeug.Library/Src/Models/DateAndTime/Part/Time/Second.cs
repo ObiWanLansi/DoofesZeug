@@ -5,7 +5,7 @@ using DoofesZeug.Attributes.Validation;
 
 namespace DoofesZeug.Models.DateAndTime.Part.Time
 {
-    [Description("")]
+    [Description("The seconds of an time.")]
     [Range(0, 59)]
     public sealed class Second : DateTimePart
     {

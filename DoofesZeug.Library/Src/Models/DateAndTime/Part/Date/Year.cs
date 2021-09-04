@@ -5,7 +5,7 @@ using DoofesZeug.Attributes.Validation;
 
 namespace DoofesZeug.Models.DateAndTime.Part.Date
 {
-    [Description("")]
+    [Description("The year of an date.")]
     [Range(0, 9999)]
     public sealed class Year : DateTimePart
     {

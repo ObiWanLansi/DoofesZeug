@@ -4,7 +4,7 @@
 
 namespace DoofesZeug.Tools
 {
-    [Description("")]
+    [Description("An generic Priority for stuff like emails, persons, tasks, appointments.")]
     public enum Priority : byte
     {
         /// <summary>

@@ -1,10 +1,10 @@
-﻿# UnixTimestamp
+﻿# Name
 
 ## Generally
 
 |||
 |:-|:-|
-|Namespace|DoofesZeug.Models.DateAndTime|
+|Namespace|DoofesZeug.Models.Human|
 |BaseClass|EntityBase|
 
 ## Properties
@@ -13,6 +13,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
+|Value|String|&#x2713;|&#x2713;|NULL|
 
 ### Inherited
 
@@ -25,11 +26,13 @@
 
 ## UML Diagram
 
-![UnixTimestamp.png](./UnixTimestamp.png "UnixTimestamp")
+![Name.png](./Name.png "Name")
 
 ## JSON Example
 
 ```json
-1630763010
+{
+  "Value": "HurzFurz"
+}
 ```
 

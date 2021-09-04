@@ -8,7 +8,7 @@ using DoofesZeug.Models.DateAndTime.Part.Time;
 
 namespace DoofesZeug.Models.DateAndTime
 {
-    [Description("")]
+    [Description("An time entity with hours, minutes and the seconds (12:34:56).")]
     [Builder]
     public class Time : EntityBase
     {

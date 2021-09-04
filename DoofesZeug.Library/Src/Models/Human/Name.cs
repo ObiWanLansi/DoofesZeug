@@ -4,8 +4,8 @@
 
 namespace DoofesZeug.Models.Human
 {
-    [Description("")]
-    public abstract class Name : EntityBase
+    [Description("An generic entity for names.")]
+    public class Name : EntityBase
     {
         public string Value { get; set; }
 

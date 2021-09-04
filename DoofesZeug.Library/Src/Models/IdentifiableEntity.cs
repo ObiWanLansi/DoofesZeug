@@ -6,7 +6,7 @@ using DoofesZeug.Attributes.Documentation;
 
 namespace DoofesZeug.Models
 {
-    [Description("")]
+    [Description("An baseclass for all other entities who should have an unique id as Guid.")]
     public abstract class IdentifiableEntity : EntityBase
     {
         public Guid Id { get; set; } = Guid.NewGuid();

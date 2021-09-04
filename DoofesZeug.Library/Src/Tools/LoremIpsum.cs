@@ -11,7 +11,7 @@ namespace DoofesZeug.Tools
     /// <summary>
     /// Eine kleine Klasse um einen Lorem Ipsum Blindtext zu generiern.
     /// </summary>
-    [Description("")]
+    [Description("An small class to generate LoremIpsum text.")]
     public sealed class LoremIpsum
     {
         /// <summary>

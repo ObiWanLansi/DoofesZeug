@@ -12,7 +12,7 @@ using DoofesZeug.Attributes.Documentation;
 
 namespace DoofesZeug.Tools
 {
-    [Description("")]
+    [Description("An static class with some static standalone methods or constants.")]
     public static class Tool
     {
         /// <summary>
@@ -242,7 +242,7 @@ namespace DoofesZeug.Tools
 
 
         /// <summary>
-        /// Liefert einen eindeutige GUID.
+        /// Returns an new guid as string.
         /// </summary>
         /// <returns></returns>
         public static string GUID() => Guid.NewGuid().ToString();
@@ -251,7 +251,7 @@ namespace DoofesZeug.Tools
 
 
         /// <summary>
-        /// Überprüft ob ein Bit in einem Wert gesetzt ist.
+        /// Determines whether [is bit set] [the specified i value].
         /// </summary>
         /// <param name="iValue">The i value.</param>
         /// <param name="iBit">The i bit.</param>
@@ -269,17 +269,6 @@ namespace DoofesZeug.Tools
         /// <param name="iStopBit">The i stop bit.</param>
         /// <returns></returns>
         public static int GetBitValue( int iStatusWert, int iStartBit, int iStopBit ) => iStopBit < iStartBit ? -1 : ( iStatusWert & ( 1 << iStopBit + 1 ) - 1 ) >> iStartBit;
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        ///// <summary>
-        ///// Froms the json.
-        ///// </summary>
-        ///// <typeparam name="T"></typeparam>
-        ///// <param name="strJson">The string json.</param>
-        ///// <returns></returns>
-        //public static T FromJson<T>(string strJson) => (T) JsonConvert.DeserializeObject(strJson);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

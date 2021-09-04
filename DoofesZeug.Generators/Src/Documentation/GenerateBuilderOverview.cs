@@ -26,7 +26,7 @@ namespace DoofesZeug.Documentation
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static void GenerateModelOverviewFile( List<Type> models )
+        private static void GenerateBuilderOverviewFile( List<Type> models )
         {
             StringBuilder sb = new(8192);
             sb.AppendLine("# Builder Overview");
@@ -85,7 +85,7 @@ namespace DoofesZeug.Documentation
 
             //---------------------------------------------------------------------------------------------------------
 
-            GenerateModelOverviewFile(models);
+            GenerateBuilderOverviewFile(models);
         }
     }
 }

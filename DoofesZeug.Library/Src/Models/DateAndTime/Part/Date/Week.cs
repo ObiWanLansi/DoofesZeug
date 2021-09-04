@@ -5,7 +5,7 @@ using DoofesZeug.Attributes.Validation;
 
 namespace DoofesZeug.Models.DateAndTime.Part.Date
 {
-    [Description("")]
+    [Description("The week of an date in the year.")]
     [Range(1, 53)]
     public sealed class Week : DateTimePart
     {

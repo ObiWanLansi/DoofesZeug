@@ -8,7 +8,7 @@ using DoofesZeug.Models.DateAndTime.Part.Date;
 
 namespace DoofesZeug.Models.DateAndTime
 {
-    [Description("")]
+    [Description("An date entity with day, month and a year (15.12.1948).")]
     [Builder]
     public class Date : EntityBase
     {
