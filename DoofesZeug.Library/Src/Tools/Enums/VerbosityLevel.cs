@@ -2,7 +2,7 @@
 
 
 
-namespace DoofesZeug.Tools
+namespace DoofesZeug.Tools.Enums
 {
     [Description("An generic VerbosityLevel for logging output.")]
     public enum VerbosityLevel : byte

@@ -2,7 +2,7 @@
 
 
 
-namespace DoofesZeug.Tools
+namespace DoofesZeug.Tools.Enums
 {
     [Description("An generic SortOrder to use in some mehtods for lists or datatables.")]
     public enum SortOrder : byte

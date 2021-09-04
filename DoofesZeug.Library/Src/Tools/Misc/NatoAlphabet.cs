@@ -5,7 +5,7 @@ using DoofesZeug.Attributes.Documentation;
 
 
 
-namespace DoofesZeug.Tools
+namespace DoofesZeug.Tools.Misc
 {
     [Description("An static class to spell an word with the NATO alphabet.")]
     public static class NatoAlphabet

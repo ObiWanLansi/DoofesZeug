@@ -2,7 +2,7 @@
 
 
 
-namespace DoofesZeug.Tools
+namespace DoofesZeug.Tools.Enums
 {
     [Description("The PathStyle for filenames (\\\\ or /).")]
     public enum PathStyle : byte

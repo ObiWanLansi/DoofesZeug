@@ -6,7 +6,7 @@ using DoofesZeug.Extensions;
 
 
 
-namespace DoofesZeug.Tools
+namespace DoofesZeug.Tools.Misc
 {
     /// <summary>
     /// Eine kleine Klasse um einen Lorem Ipsum Blindtext zu generiern.

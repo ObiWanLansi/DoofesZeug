@@ -9,13 +9,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
 
-namespace DoofesZeug.UnitTests.Functional
+namespace DoofesZeug.UnitTests.Functional.Formats
 {
     [TestClass]
-    public class TestJsonHandling
+    public class TestJson
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteJSON()
         {
             Type tEntityBase = typeof(EntityBase);
 
@@ -34,7 +34,7 @@ namespace DoofesZeug.UnitTests.Functional
                     Assert.IsNotNull(json);
                     Assert.IsTrue(json.Length > 0);
 
-                    Console.Out.WriteLineAsync(json);
+                    //Console.Out.WriteLineAsync(json);
 
                     try
                     {

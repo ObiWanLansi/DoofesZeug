@@ -2,7 +2,7 @@
 
 
 
-namespace DoofesZeug.Tools
+namespace DoofesZeug.Tools.Enums
 {
     [Description("An generic Priority for stuff like emails, persons, tasks, appointments.")]
     public enum Priority : byte

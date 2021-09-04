@@ -4,7 +4,7 @@ using System.Globalization;
 
 using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.DateAndTime.Part.Date;
-using DoofesZeug.Tools;
+using DoofesZeug.Tools.Misc;
 
 
 
@@ -389,7 +389,7 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        public static Week GetWeek( this DateTime dt ) => new((uint) dt.WeekOfDate());
+        public static Week GetWeek( this DateTime dt ) => new(dt.WeekOfDate());
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

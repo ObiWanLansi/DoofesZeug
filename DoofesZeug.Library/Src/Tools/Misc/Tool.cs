@@ -10,7 +10,7 @@ using DoofesZeug.Attributes.Documentation;
 
 
 
-namespace DoofesZeug.Tools
+namespace DoofesZeug.Tools.Misc
 {
     [Description("An static class with some static standalone methods or constants.")]
     public static class Tool

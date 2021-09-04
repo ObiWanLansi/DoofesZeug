@@ -5,7 +5,7 @@ using DoofesZeug.Attributes.Documentation;
 
 
 
-namespace DoofesZeug.Tools
+namespace DoofesZeug.Tools.Misc
 {
     [Description("An simple class to convert text to morse signs.")]
     public static class Morse

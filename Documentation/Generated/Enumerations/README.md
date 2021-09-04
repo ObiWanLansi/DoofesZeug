@@ -32,13 +32,20 @@
 |[Continent](./DoofesZeug.Models.Science.Geographically/Continent.md)|Our continents as little enumeration.|Africa, Asia, Europe, NorthAmerica, SouthAmerica, Antarctica, Australia|
 
 
-## `DoofesZeug.Tools`
+## `DoofesZeug.Tools.Crypt`
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
-|[LineEnding](./DoofesZeug.Tools/LineEnding.md)|An simple enumeration for methos or parameters which LineEnding should be used.|Windows, LinuxUnix|
-|[PathStyle](./DoofesZeug.Tools/PathStyle.md)|The PathStyle for filenames (\\ or /).|Windows, LinuxUnix|
-|[Priority](./DoofesZeug.Tools/Priority.md)|An generic Priority for stuff like emails, persons, tasks, appointments.|Low, Normal, High|
-|[SortOrder](./DoofesZeug.Tools/SortOrder.md)|An generic SortOrder to use in some mehtods for lists or datatables.|Ascending, Descending|
-|[TextAlign](./DoofesZeug.Tools/TextAlign.md)|An generic TextAlign for console output, or maybe to use in markdown/html generators.|Left, Center, Right|
-|[VerbosityLevel](./DoofesZeug.Tools/VerbosityLevel.md)|An generic VerbosityLevel for logging output.|None, Low, Normal, High|
+|[SupportedHashAlgorithm](./DoofesZeug.Tools.Crypt/SupportedHashAlgorithm.md)|All supported HashAlgorithm for the SimpleHash class.|MD5, SHA1, SHA256, SHA512|
+
+
+## `DoofesZeug.Tools.Enums`
+
+|Enumeration|Description|Values|
+|:----------|:----------|:-----|
+|[LineEnding](./DoofesZeug.Tools.Enums/LineEnding.md)|An simple enumeration for methos or parameters which LineEnding should be used.|Windows, LinuxUnix|
+|[PathStyle](./DoofesZeug.Tools.Enums/PathStyle.md)|The PathStyle for filenames (\\ or /).|Windows, LinuxUnix|
+|[Priority](./DoofesZeug.Tools.Enums/Priority.md)|An generic Priority for stuff like emails, persons, tasks, appointments.|Low, Normal, High|
+|[SortOrder](./DoofesZeug.Tools.Enums/SortOrder.md)|An generic SortOrder to use in some mehtods for lists or datatables.|Ascending, Descending|
+|[TextAlign](./DoofesZeug.Tools.Enums/TextAlign.md)|An generic TextAlign for console output, or maybe to use in markdown/html generators.|Left, Center, Right|
+|[VerbosityLevel](./DoofesZeug.Tools.Enums/VerbosityLevel.md)|An generic VerbosityLevel for logging output.|None, Low, Normal, High|

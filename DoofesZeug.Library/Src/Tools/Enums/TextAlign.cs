@@ -2,7 +2,7 @@
 
 
 
-namespace DoofesZeug.Tools
+namespace DoofesZeug.Tools.Enums
 {
     [Description("An generic TextAlign for console output, or maybe to use in markdown/html generators.")]
     public enum TextAlign : byte
