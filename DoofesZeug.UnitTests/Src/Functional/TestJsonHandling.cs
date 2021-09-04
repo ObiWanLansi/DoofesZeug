@@ -8,16 +8,12 @@ using DoofesZeug.TestData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
+
 namespace DoofesZeug.UnitTests.Functional
 {
     [TestClass]
     public class TestJsonHandling
     {
-        private static readonly string DIV = new('-', 80);
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
         [TestMethod]
         public void Execute()
         {

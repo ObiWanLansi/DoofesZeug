@@ -1,0 +1,15 @@
+﻿@startuml
+skinparam monochrome true
+hide empty members
+
+enum Continent {
+    Africa
+    Asia
+    Europe
+    NorthAmerica
+    SouthAmerica
+    Antarctica
+    Australia
+}
+
+@enduml
