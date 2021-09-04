@@ -3,9 +3,9 @@ using System;
 
 using DoofesZeug.Extensions;
 using DoofesZeug.Models.DateAndTime;
-using DoofesZeug.Models.DateAndTime.Part.Time;
 using DoofesZeug.Models.Human;
 using DoofesZeug.Models.Human.Professions;
+using DoofesZeug.TestData;
 
 using static System.Console;
 
@@ -75,14 +75,28 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            DateOfBirth dob = new("15.10.1974");
-            Out.WriteLineAsync(dob.ToString());
-            string json = dob.ToPrettyJson();
-            Out.WriteLineAsync(json);
-            DateOfBirth clone = json.FromJson<DateOfBirth>();
-            Out.WriteLineAsync(clone.ToString());
+            //FireFighter ff1 = new FireFighter { Since = (15, 10, 1942) };
+            //FireFighter ff2 = new FireFighter { Since = (16, 11, 1943) };
+            //FireFighter ff3 = new FireFighter { Since = (15, 10, 1942) };
+            //PoliceOfficer po1 = new PoliceOfficer { Since = (15, 10, 1942) };
 
-            return;
+            //Out.WriteLineAsync($"{ff1}|{ff1}:{ff1.Equals(ff1)}");
+            //Out.WriteLineAsync($"{ff1}|{ff2}:{ff1.Equals(ff2)}");
+            //Out.WriteLineAsync($"{ff1}|{ff3}:{ff1.Equals(ff3)}");
+            //Out.WriteLineAsync($"{ff3}|{po1}:{ff3.Equals(po1)}");
+
+            //-------------------------------------------------------------------------------------
+
+            //Date d = "15.10.1974";
+            //DateOfBirth dob = "15.10.1974";
+            //DateOfBirth dob = new("15.10.1974");
+            //Out.WriteLineAsync(dob.ToString());
+            //string json = dob.ToPrettyJson();
+            //Out.WriteLineAsync(json);
+            //DateOfBirth clone = json.FromJson<DateOfBirth>();
+            //Out.WriteLineAsync(clone.ToString());
+
+            //return;
 
             //DateOfBirth dob = (15, 10, 1942);
             //string json = dob.ToPrettyJson();

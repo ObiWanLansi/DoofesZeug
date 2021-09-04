@@ -43,10 +43,9 @@ namespace DoofesZeug.UnitTests.Functional
                     try
                     {
                         object oClone = json.FromJson(type);
-                        Assert.IsNotNull(oClone);
 
-                        //TODO: For the first time we ignore this because our entities have no equals method implemented.
-                        // Assert.AreEqual(oOriginal, oClone);
+                        Assert.IsNotNull(oClone);
+                        Assert.AreEqual(oOriginal, oClone);
                     }
                     catch( Exception ex )
                     {

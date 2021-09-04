@@ -9,15 +9,60 @@ namespace DoofesZeug.Models.DateAndTime.Part
     {
         public uint Value { get; set; }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DateTimePart"/> class.
+        /// </summary>
         protected DateTimePart()
         {
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DateTimePart"/> class.
+        /// </summary>
+        /// <param name="iValue">The i value.</param>
         protected DateTimePart( uint iValue ) => this.Value = iValue;
 
-        
-        public override string ToString() => $"{Value}";
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Converts to string.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString() => $"{this.Value}";
+
+
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The <see cref="System.Object" /> to compare with this instance.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+        /// </returns>
+        public override bool Equals( object obj )
+        {
+            if( obj == null )
+            {
+                return false;
+            }
+
+            if( obj is not DateTimePart other )
+            {
+                return false;
+            }
+
+            if( this.Value != other.Value )
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

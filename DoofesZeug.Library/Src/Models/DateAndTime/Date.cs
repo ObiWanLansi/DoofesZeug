@@ -43,22 +43,28 @@ namespace DoofesZeug.Models.DateAndTime
         /// <summary>
         /// The minimum
         /// </summary>
-        public static readonly Date MIN = new((uint) 01, 01, 0001);
-
+        public static readonly Date Min = new((uint) 01, 01, 0001);
 
         /// <summary>
         /// The maximum
         /// </summary>
-        public static readonly Date MAX = new((uint) 31, 12, 9999);
+        public static readonly Date Max = new((uint) 31, 12, 9999);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Date"/> class.
+        /// </summary>
         public Date()
         {
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Date"/> class.
+        /// </summary>
+        /// <param name="date">The date.</param>
         public Date( Date date )
         {
             this.Day = date.Day;
@@ -67,6 +73,10 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Date"/> class.
+        /// </summary>
+        /// <param name="dt">The dt.</param>
         public Date( DateTime dt )
         {
             this.Day = (uint) dt.Day;
@@ -75,6 +85,12 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Date"/> class.
+        /// </summary>
+        /// <param name="day">The day.</param>
+        /// <param name="month">The month.</param>
+        /// <param name="year">The year.</param>
         public Date( uint day, uint month, uint year )
         {
             this.Day = day;
@@ -83,6 +99,12 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Date"/> class.
+        /// </summary>
+        /// <param name="day">The day.</param>
+        /// <param name="month">The month.</param>
+        /// <param name="year">The year.</param>
         public Date( Day day, Month month, Year year )
         {
             this.Day = day;
@@ -160,6 +182,44 @@ namespace DoofesZeug.Models.DateAndTime
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
         public override string ToString() => $"{(uint) this.Day:D2}.{(uint) this.Month:D2}.{(uint) this.Year:D4}";
+
+
+        /// <summary>
+        /// Equalses the specified object.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns></returns>
+        public override bool Equals( object obj )
+        {
+            if( obj == null )
+            {
+                return false;
+            }
+
+            Date other = obj as Date;
+
+            if( other == null )
+            {
+                return false;
+            }
+
+            if( this.Day.Equals(other.Day) == false )
+            {
+                return false;
+            }
+
+            if( this.Month.Equals(other.Month) == false )
+            {
+                return false;
+            }
+
+            if( this.Year.Equals(other.Year) == false )
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
 

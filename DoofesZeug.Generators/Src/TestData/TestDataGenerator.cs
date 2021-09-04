@@ -105,6 +105,19 @@ namespace DoofesZeug.TestData
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Generates the test data.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static T GenerateTestData<T>() => (T) GenerateTestData(typeof(T));
+
+
+        /// <summary>
+        /// Generates the test data.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns></returns>
         public static object GenerateTestData( Type type ) => GENERATORS.ContainsKey(type.FullName)
                 ? GENERATORS [type.FullName]()
                 : throw new ArgumentException($"For the type '{type.FullName}' is no data generator avaible!", nameof(type));

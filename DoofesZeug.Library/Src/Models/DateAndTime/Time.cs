@@ -43,22 +43,28 @@ namespace DoofesZeug.Models.DateAndTime
         /// <summary>
         /// The minimum
         /// </summary>
-        public static readonly Time MIN = new((uint) 00, 00, 00);
-
+        public static readonly Time Min = new((uint) 00, 00, 00);
 
         /// <summary>
         /// The maximum
         /// </summary>
-        public static readonly Time MAX = new((uint) 23, 59, 59);
+        public static readonly Time Max = new((uint) 23, 59, 59);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Time"/> class.
+        /// </summary>
         public Time()
         {
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Time"/> class.
+        /// </summary>
+        /// <param name="time">The time.</param>
         public Time( Time time )
         {
             this.Hour = time.Hour;
@@ -67,6 +73,10 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Time"/> class.
+        /// </summary>
+        /// <param name="dt">The dt.</param>
         public Time( DateTime dt )
         {
             this.Hour = (uint) dt.Hour;
@@ -75,6 +85,12 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Time"/> class.
+        /// </summary>
+        /// <param name="hour">The hour.</param>
+        /// <param name="minute">The minute.</param>
+        /// <param name="second">The second.</param>
         public Time( uint hour, uint minute, uint second )
         {
             this.Hour = hour;
@@ -83,6 +99,12 @@ namespace DoofesZeug.Models.DateAndTime
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Time"/> class.
+        /// </summary>
+        /// <param name="hour">The hour.</param>
+        /// <param name="minute">The minute.</param>
+        /// <param name="second">The second.</param>
         public Time( Hour hour, Minute minute, Second second )
         {
             this.Hour = hour;
@@ -160,6 +182,44 @@ namespace DoofesZeug.Models.DateAndTime
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
         public override string ToString() => $"{(uint) this.Hour:D2}:{(uint) this.Minute:D2}:{(uint) this.Second:D2}";
+
+
+        /// <summary>
+        /// Equalses the specified object.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns></returns>
+        public override bool Equals( object obj )
+        {
+            if( obj == null )
+            {
+                return false;
+            }
+
+            Time other = obj as Time;
+
+            if( other == null )
+            {
+                return false;
+            }
+
+            if( this.Hour.Equals(other.Hour)==false)
+            {
+                return false;
+            }
+
+            if( this.Minute.Equals(other.Minute) == false )
+            {
+                return false;
+            }
+
+            if( this.Second.Equals(other.Second) == false )
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
 

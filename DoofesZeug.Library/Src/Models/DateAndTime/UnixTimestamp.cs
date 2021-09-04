@@ -18,9 +18,9 @@ namespace DoofesZeug.Models.DateAndTime
 
 
         /// <summary>
-        /// Prevents a default instance of the <see cref="UnixTimestamp"/> class from being created.
+        /// Initializes a new instance of the <see cref="UnixTimestamp"/> class.
         /// </summary>
-        public UnixTimestamp() //: this(DateTime.Now)
+        public UnixTimestamp()
         {
         }
 
@@ -124,5 +124,33 @@ namespace DoofesZeug.Models.DateAndTime
         /// A <see cref="string" /> that represents this instance.
         /// </returns>
         public override string ToString() => $"{this.lUnixTimestamp}";
+
+
+        /// <summary>
+        /// Equalses the specified object.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns></returns>
+        public override bool Equals( object obj )
+        {
+            if( obj == null )
+            {
+                return false;
+            }
+
+            UnixTimestamp other = obj as UnixTimestamp;
+
+            if( other == null )
+            {
+                return false;
+            }
+
+            if( this.lUnixTimestamp != other.lUnixTimestamp )
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

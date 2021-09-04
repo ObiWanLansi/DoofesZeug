@@ -4,7 +4,8 @@ using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.Human;
 
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+
+
 
 namespace DoofesZeug.Converter
 {
@@ -33,15 +34,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// The object value.
         /// </returns>
-        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer )
-        {
-            return reader.Value == null ? null : new DateOfBirth(Date.From(Convert.ToString(reader.Value)));
-
-            //JObject jsonObject = JObject.Load(reader);
-
-            //return null;
-
-        }
+        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer ) => reader.Value == null ? null : new DateOfBirth(Date.From(Convert.ToString(reader.Value)));
 
 
         /// <summary>
