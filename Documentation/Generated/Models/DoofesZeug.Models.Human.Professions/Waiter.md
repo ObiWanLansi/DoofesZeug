@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|This is an specialized entitiy for an waiter.|
 |Namespace|DoofesZeug.Models.Human.Professions|
 |BaseClass|Profession|
 
@@ -20,11 +21,13 @@
 |:---|:---|:--:|:---:|:-----------|
 |WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Human.Professions\WellKnownProfession.md)|&#x2713;|&#x2717;|Waiter|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime\Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|088adab7-b4f4-46dc-99a5-7de8daa75f2c|
+|Id|Guid|&#x2713;|&#x2713;|9e41bfae-d9d1-4f44-97d3-619a822aee74|
 
 ## Attributes
 
-**TODO**
+- Description
+- Generated
+- Builder
 
 ## UML Diagram
 
@@ -34,7 +37,7 @@
 
 ```json
 {
-  "Id": "0f5e1e2d-c529-47a6-a5c8-1e3f89e6f1f0",
+  "Id": "6cf6525c-82f2-4f2a-ab80-f61ba69c8f6c",
   "WellKnownProfessionType": "Waiter",
   "Since": "11.11.1942"
 }

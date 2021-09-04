@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|An time entity with hours, minutes and the seconds (12:34:56).|
 |Namespace|DoofesZeug.Models.DateAndTime|
 |BaseClass|EntityBase|
 
@@ -24,7 +25,8 @@
 
 ## Attributes
 
-**TODO**
+- Description
+- Builder
 
 ## UML Diagram
 

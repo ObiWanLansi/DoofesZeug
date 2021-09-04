@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 using DoofesZeug.Converter;
 
@@ -50,5 +51,14 @@ namespace DoofesZeug.Extensions
         /// <param name="strJSON">The string json.</param>
         /// <returns></returns>
         public static T FromJson<T>( this string strJSON ) => (T) JsonConvert.DeserializeObject(strJSON, typeof(T), settings.Converters.ToArray());
+
+
+        /// <summary>
+        /// Froms the json.
+        /// </summary>
+        /// <param name="strJSON">The string json.</param>
+        /// <param name="type">The type.</param>
+        /// <returns></returns>
+        public static object FromJson( this string strJSON, Type type ) => JsonConvert.DeserializeObject(strJSON, type, settings.Converters.ToArray());
     }
 }

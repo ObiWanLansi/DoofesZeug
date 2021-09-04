@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|An generic entity for names.|
 |Namespace|DoofesZeug.Models.Human|
 |BaseClass|EntityBase|
 
@@ -22,7 +23,7 @@
 
 ## Attributes
 
-**TODO**
+- Description
 
 ## UML Diagram
 

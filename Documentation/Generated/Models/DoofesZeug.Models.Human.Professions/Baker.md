@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|This is an specialized entitiy for an baker.|
 |Namespace|DoofesZeug.Models.Human.Professions|
 |BaseClass|Profession|
 
@@ -20,11 +21,13 @@
 |:---|:---|:--:|:---:|:-----------|
 |WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Human.Professions\WellKnownProfession.md)|&#x2713;|&#x2717;|Baker|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime\Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|c999d884-db41-4da3-9193-ac48214fd169|
+|Id|Guid|&#x2713;|&#x2713;|22e3d6f0-e23f-4c19-8897-1e93e61d82fe|
 
 ## Attributes
 
-**TODO**
+- Description
+- Generated
+- Builder
 
 ## UML Diagram
 
@@ -34,7 +37,7 @@
 
 ```json
 {
-  "Id": "0de3e1ff-7ef2-4b6d-9421-242eaba64b35",
+  "Id": "b400c4c4-7545-4183-a63d-5389b3cc1607",
   "WellKnownProfessionType": "Baker",
   "Since": "11.11.1942"
 }

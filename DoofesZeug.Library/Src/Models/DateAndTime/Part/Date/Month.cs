@@ -9,7 +9,8 @@ namespace DoofesZeug.Models.DateAndTime.Part.Date
     [Range(1, 12)]
     public sealed class Month : DateTimePart
     {
-        public Month() { 
+        public Month()
+        {
         }
 
 

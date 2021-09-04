@@ -41,7 +41,7 @@ namespace DoofesZeug.TestData
             GENERATORS.Add(typeof(Unknown).FullName, GenerateProfession<Unknown>);
             GENERATORS.Add(typeof(Waiter).FullName, GenerateProfession<Waiter>);
 
-            GENERATORS.Add(typeof(DateOfBirth).FullName, GenerateDate);
+            GENERATORS.Add(typeof(DateOfBirth).FullName, GenerateDateOfBirth);
             GENERATORS.Add(typeof(Date).FullName, GenerateDate);
             GENERATORS.Add(typeof(Time).FullName, GenerateTime);
 
@@ -85,6 +85,8 @@ namespace DoofesZeug.TestData
         private static LastName GenerateLastName() => "Mustermann";
 
         private static FirstName GenerateFirstName() => "Erika";
+
+        private static DateOfBirth GenerateDateOfBirth() => (24, 12, 1948);
 
         private static Date GenerateDate() => (11, 11, 1942);
 

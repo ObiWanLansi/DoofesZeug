@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Reflection;
 
+using DoofesZeug.Extensions;
 using DoofesZeug.Models;
+using DoofesZeug.TestData;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -11,6 +13,10 @@ namespace DoofesZeug.UnitTests.Functional
     [TestClass]
     public class TestJsonHandling
     {
+        private static readonly string DIV = new('-', 80);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         [TestMethod]
         public void Execute()
@@ -21,11 +27,33 @@ namespace DoofesZeug.UnitTests.Functional
 
             foreach( Type type in assembly.ExportedTypes )
             {
-                if(type.IsAssignableTo(tEntityBase))
+                if( type.IsAssignableTo(tEntityBase) && type.IsAbstract == false )
                 {
                     Console.Out.WriteLineAsync(type.FullName);
 
-                    //TODO: Create An Object, Serialize It To An JSON String And Deserialize It Again To An New Object.
+                    object oOriginal = TestDataGenerator.GenerateTestData(type);
+                    Assert.IsNotNull(oOriginal);
+
+                    string json = oOriginal.ToPrettyJson();
+                    Assert.IsNotNull(json);
+                    Assert.IsTrue(json.Length > 0);
+
+                    Console.Out.WriteLineAsync(json);
+
+                    try
+                    {
+                        object oClone = json.FromJson(type);
+                        Assert.IsNotNull(oClone);
+
+                        //TODO: For the first time we ignore this because our entities have no equals method implemented.
+                        // Assert.AreEqual(oOriginal, oClone);
+                    }
+                    catch( Exception ex )
+                    {
+                        // For debugging purpose we catch the exception so that we can set an breakpoint for debugging.
+                        Assert.Fail(ex.Message);
+                        //Console.Error.WriteLineAsync(ex.Message);
+                    }
                 }
             }
         }

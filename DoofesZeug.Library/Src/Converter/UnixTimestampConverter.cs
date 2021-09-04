@@ -33,7 +33,7 @@ namespace DoofesZeug.Converter
         /// The object value.
         /// </returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer ) => throw new NotImplementedException();
+        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer ) => reader.Value == null ? null : new UnixTimestamp(Convert.ToUInt64(reader.Value));
 
 
         /// <summary>

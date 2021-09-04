@@ -54,6 +54,7 @@ namespace DoofesZeug.Documentation
             //---------------------------------------------------------------------------------------------------------
 
             StringBuilder sbPUML = new(8192);
+
             sbPUML.AppendLine("@startuml");
             sbPUML.AppendLine("skinparam monochrome true");
             sbPUML.AppendLine("hide empty members");
@@ -124,15 +125,12 @@ namespace DoofesZeug.Documentation
                 {
                     DescriptionAttribute da = (DescriptionAttribute) enumeration.GetCustomAttribute(typeof(DescriptionAttribute));
 
-                    if( da == null || da.Description.IsEmpty() )
+                    if( da == null )
                     {
                         throw new Exception($"{enumeration.FullName} have no description!");
                     }
 
-                    if( da.Description.EndsWith(".") == false )
-                    {
-                        throw new Exception($"The description from {enumeration.FullName} ends not with an point!");
-                    }
+                    da.Validate(enumeration);
 
                     string strLinkToMarkdown = $"[{enumeration.Name}](./{enumerationgroup.Key}/{enumeration.Name}.md)";
 

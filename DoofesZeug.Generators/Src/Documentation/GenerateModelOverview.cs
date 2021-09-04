@@ -80,6 +80,7 @@ namespace DoofesZeug.Documentation
             //---------------------------------------------------------------------------------------------------------
 
             StringBuilder sbPUML = new(8192);
+
             sbPUML.AppendLine("@startuml");
             sbPUML.AppendLine("skinparam monochrome true");
             sbPUML.AppendLine("hide empty members");
@@ -100,6 +101,23 @@ namespace DoofesZeug.Documentation
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        private static void AddAttributes( Type type, StringBuilder sb )
+        {
+            sb.AppendLine();
+
+            //sb.AppendLine("|Name|Value|");
+            //sb.AppendLine("|:---|");
+            foreach( object attribute in type.GetCustomAttributes(false) )
+            {
+                string strName = attribute.GetType().Name;
+                if( strName.EndsWith("Attribute") )
+                {
+                    strName = strName.Substring(0, strName.Length - 9);
+                }
+                sb.AppendLine($"- {strName}");
+            }
+        }
 
 
         private static void AddFields( Type type, StringBuilder sb, bool bInherited )
@@ -137,11 +155,22 @@ namespace DoofesZeug.Documentation
             }
         }
 
+
         private static void AddGenerallyInformation( Type type, StringBuilder sb )
         {
+            DescriptionAttribute da = (DescriptionAttribute) type.GetCustomAttribute(typeof(DescriptionAttribute));
+
+            if( da == null )
+            {
+                throw new Exception($"{type.FullName} have no valid description!");
+            }
+
+            da.Validate(type);
+
             sb.AppendLine();
             sb.AppendLine("|||");
             sb.AppendLine("|:-|:-|");
+            sb.AppendLine($"|Description|{da.Description}|");
             sb.AppendLine($"|Namespace|{type.Namespace}|");
             sb.AppendLine($"|BaseClass|{type.BaseType.Name}|");
         }
@@ -170,7 +199,6 @@ namespace DoofesZeug.Documentation
             //if( type.IsEnum == false )
             {
                 sb.AppendLine($"Generally".Header(2));
-                // Namespace, BaseClass, ...
                 AddGenerallyInformation(type, sb);
                 sb.AppendLine();
 
@@ -180,8 +208,7 @@ namespace DoofesZeug.Documentation
                 sb.AppendLine();
 
                 sb.AppendLine($"Attributes".Header(2));
-                sb.AppendLine();
-                sb.AppendLine("**TODO**");
+                AddAttributes(type, sb);
                 sb.AppendLine();
 
                 sb.AppendLine($"UML Diagram".Header(2));
@@ -214,21 +241,18 @@ namespace DoofesZeug.Documentation
                 sb.AppendLine("|Entity|Description|Properties|");
                 sb.AppendLine("|:-----|:----------|:---------|");
 
-                string strPath = entities.Key [11..].Replace('.', '/');
+                //string strPath = entities.Key [11..].Replace('.', '/');
 
                 foreach( Type entity in from type in entities orderby type.Name select type )
                 {
                     DescriptionAttribute da = (DescriptionAttribute) entity.GetCustomAttribute(typeof(DescriptionAttribute));
 
-                    if( da == null || da.Description.IsEmpty() )
+                    if( da == null )
                     {
                         throw new Exception($"{entity.FullName} have no valid description!");
                     }
 
-                    if( da.Description.EndsWith(".") == false )
-                    {
-                        throw new Exception($"The description from {entity.FullName} ends not with an point!");
-                    }
+                    da.Validate(entity);
 
                     string strLinkToMarkdown = $"[{entity.Name}](./{entities.Key}/{entity.Name}.md)";
 

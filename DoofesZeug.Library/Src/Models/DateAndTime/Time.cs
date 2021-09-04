@@ -2,6 +2,7 @@
 
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
+using DoofesZeug.Extensions;
 using DoofesZeug.Models.DateAndTime.Part.Time;
 
 
@@ -39,8 +40,15 @@ namespace DoofesZeug.Models.DateAndTime
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// The minimum
+        /// </summary>
         public static readonly Time MIN = new((uint) 00, 00, 00);
 
+
+        /// <summary>
+        /// The maximum
+        /// </summary>
         public static readonly Time MAX = new((uint) 23, 59, 59);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -86,26 +94,24 @@ namespace DoofesZeug.Models.DateAndTime
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.ValueTuple{Hour, Minute, Second}"/> to <see cref="Time"/>.
+        /// Froms the specified string content.
         /// </summary>
-        /// <param name="value">The value.</param>
-        /// <returns>
-        /// The result of the conversion.
-        /// </returns>
-        public static implicit operator Time( (Hour hour, Minute minute, Second second) value ) => new(value.hour, value.minute, value.second);
-
-
-        /// <summary>
-        /// Performs an implicit conversion from <see cref="System.String"/> to <see cref="Time"/>.
-        /// </summary>
-        /// <param name="strContent">The string time.</param>
-        /// <returns>
-        /// The result of the conversion.
-        /// </returns>
-        public static implicit operator Time( string strContent )
+        /// <param name="strContent">Content of the string.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException">
+        /// The length of the time ist not eight characters., nameof(strContent)
+        /// or
+        /// The length of the time ist not eight characters., nameof(strContent)
+        /// </exception>
+        public static Time From( string strContent )
         {
             // 0123456789
             // 15:10:42
+
+            if( strContent.IsEmpty() || strContent.EqualsIgnoreCase("null") )
+            {
+                return null;
+            }
 
             if( strContent.Length != 8 )
             {
@@ -123,6 +129,28 @@ namespace DoofesZeug.Models.DateAndTime
 
             return new Time(hour, minute, second);
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="System.ValueTuple{Hour, Minute, Second}"/> to <see cref="Time"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Time( (Hour hour, Minute minute, Second second) value ) => new(value.hour, value.minute, value.second);
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="System.String"/> to <see cref="Time"/>.
+        /// </summary>
+        /// <param name="strContent">The string time.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Time( string strContent ) => From(strContent);
 
 
         /// <summary>

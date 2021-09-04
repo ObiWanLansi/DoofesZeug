@@ -31,6 +31,6 @@
 |[LineEnding](./DoofesZeug.Tools/LineEnding.md)|An simple enumeration for methos or parameters which LineEnding should be used.|Windows, LinuxUnix|
 |[PathStyle](./DoofesZeug.Tools/PathStyle.md)|The PathStyle for filenames (\\ or /).|Windows, LinuxUnix|
 |[Priority](./DoofesZeug.Tools/Priority.md)|An generic Priority for stuff like emails, persons, tasks, appointments.|Low, Normal, High|
-|[SortOrder](./DoofesZeug.Tools/SortOrder.md)|An generig SortOrder to use in some mehtods for lists or datatables.|Ascending, Descending|
+|[SortOrder](./DoofesZeug.Tools/SortOrder.md)|An generic SortOrder to use in some mehtods for lists or datatables.|Ascending, Descending|
 |[TextAlign](./DoofesZeug.Tools/TextAlign.md)|An generic TextAlign for console output, or maybe to use in markdown/html generators.|Left, Center, Right|
 |[VerbosityLevel](./DoofesZeug.Tools/VerbosityLevel.md)|An generic VerbosityLevel for logging output.|None, Low, Normal, High|

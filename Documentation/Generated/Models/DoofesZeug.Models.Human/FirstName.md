@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|An firstname for humans.|
 |Namespace|DoofesZeug.Models.Human|
 |BaseClass|Name|
 
@@ -22,7 +23,7 @@
 
 ## Attributes
 
-**TODO**
+- Description
 
 ## UML Diagram
 

@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|An simplified Person with an firstname, lastname, birthday and some other optional properties.|
 |Namespace|DoofesZeug.Models.Human|
 |BaseClass|IdentifiableEntity|
 
@@ -24,11 +25,12 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Id|Guid|&#x2713;|&#x2713;|16f04bc7-1e33-484d-91b0-d9d3d3792a78|
+|Id|Guid|&#x2713;|&#x2713;|062f0009-055d-4927-b025-aa62e75c4073|
 
 ## Attributes
 
-**TODO**
+- Description
+- Builder
 
 ## UML Diagram
 
@@ -44,11 +46,11 @@
   "Gender": "Male",
   "Handedness": "Left",
   "Profession": {
-    "Id": "ff3669ba-93f1-41ff-8488-541ca3c53d3f",
+    "Id": "a559a869-0583-49b1-bdba-ce3a27c2951d",
     "WellKnownProfessionType": "FireFighter",
     "Since": "11.11.1942"
   },
-  "Id": "8e12c978-b3c2-48fa-aadb-5ec1a3607af7"
+  "Id": "c63e48aa-8f8f-431d-8f7c-a8dcf21ec855"
 }
 ```
 

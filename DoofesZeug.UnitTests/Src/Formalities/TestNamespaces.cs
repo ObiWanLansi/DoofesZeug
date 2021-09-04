@@ -15,12 +15,13 @@ namespace DoofesZeug.UnitTest.Formalities
     //[TestClass]
     public class TestNamespaces
     {
-        private static readonly string DIV = new('-', 80);
+        //private static readonly string DIV = new('-', 80);
 
         //private static readonly string SOURCE = @"..\..\..\..\DoofesZeug.Library\Src";
         private static readonly string SOURCE = @"O:\DoofesZeug\DoofesZeug.Library\Src";
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Executes this instance.

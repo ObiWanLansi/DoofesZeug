@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|An date entity with day, month and a year (15.12.1948).|
 |Namespace|DoofesZeug.Models.DateAndTime|
 |BaseClass|EntityBase|
 
@@ -24,7 +25,8 @@
 
 ## Attributes
 
-**TODO**
+- Description
+- Builder
 
 ## UML Diagram
 

@@ -2,8 +2,7 @@
 
 ## ToDo
 
-- Enum Values To Enum.md
-- Und bei EntityOverview die Properties mit aufnhemen.
+- All entities should implement the equals interface ...
 - Money
   - Dollar
   - Euro
@@ -11,7 +10,6 @@
   - Kelivin
   - Fahrenheit
   - Celcius
-- Generate Document mit all Attributes, too ...
 - MatheStuff, z.b geometrische Figuren Rectangle, Circle, und direkt mit ein paar Meßmethoden?
 - Fill EntityOverview Files with the stuff.
 - Generic Singelton Pattern
@@ -29,6 +27,7 @@
 - Object 2 ASCIITable
 - ~~Colors -> an enumeration lie System.Drawing.Color, but without an reference to System.Drawing.dll~~
   > Check if we can use the original System.Drawing.Color under linux, then it make no sense to create a new implementation.
+
 
 | Property  | Value                              |
 |:----------|-----------------------------------:|
@@ -54,5 +53,11 @@
 
 ## Done
 
+- Builder Overview
+- ~~Generate Document mit all Attributes, too ...~~
+  > Currently there are not as many attributes as it would be worthwhile.
+- List Attributs in model
+- Enum Values To Enum.md
+- Und bei EntityOverview die Properties mit aufnhemen.
 - Profession: Add abstract Enumeartion Field, damit wenn als JSON wir auch eine Unterscheidung haben.
 - Enumerations Markdown List Values

@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|The month of an date.|
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Date|
 |BaseClass|DateTimePart|
 
@@ -22,7 +23,8 @@
 
 ## Attributes
 
-**TODO**
+- Description
+- Range
 
 ## UML Diagram
 

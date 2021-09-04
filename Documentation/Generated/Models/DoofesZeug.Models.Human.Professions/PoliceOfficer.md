@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|This is an specialized entitiy for an policeofficer.|
 |Namespace|DoofesZeug.Models.Human.Professions|
 |BaseClass|Profession|
 
@@ -20,11 +21,13 @@
 |:---|:---|:--:|:---:|:-----------|
 |WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Human.Professions\WellKnownProfession.md)|&#x2713;|&#x2717;|PoliceOfficer|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime\Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|0e475f10-8ea2-431b-8143-c035af526414|
+|Id|Guid|&#x2713;|&#x2713;|b76f2282-1dd9-4015-840f-2b8e6b4f4cf4|
 
 ## Attributes
 
-**TODO**
+- Description
+- Generated
+- Builder
 
 ## UML Diagram
 
@@ -34,7 +37,7 @@
 
 ```json
 {
-  "Id": "07f2905b-44d4-4c1c-aab4-dbca094b68b7",
+  "Id": "966c519e-7231-491d-b29a-c49c3116a65e",
   "WellKnownProfessionType": "PoliceOfficer",
   "Since": "11.11.1942"
 }

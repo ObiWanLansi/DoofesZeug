@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|This is an specialized entitiy for an doctor.|
 |Namespace|DoofesZeug.Models.Human.Professions|
 |BaseClass|Profession|
 
@@ -20,11 +21,13 @@
 |:---|:---|:--:|:---:|:-----------|
 |WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Human.Professions\WellKnownProfession.md)|&#x2713;|&#x2717;|Doctor|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime\Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|f9a515b5-4a89-4f67-a51c-95409cb258f1|
+|Id|Guid|&#x2713;|&#x2713;|6755667e-fdc1-4bb6-9c18-ef711359f9b7|
 
 ## Attributes
 
-**TODO**
+- Description
+- Generated
+- Builder
 
 ## UML Diagram
 
@@ -34,7 +37,7 @@
 
 ```json
 {
-  "Id": "2542735f-2576-4c9b-92e9-1bad21970346",
+  "Id": "3998d4b4-0187-4481-8915-df9f8aeabfe0",
   "WellKnownProfessionType": "Doctor",
   "Since": "11.11.1942"
 }

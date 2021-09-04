@@ -53,6 +53,16 @@ namespace DoofesZeug.Models.DateAndTime
             this.lUnixTimestamp = (ulong) ( dt - dtUnix ).TotalSeconds;
         }
 
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnixTimestamp"/> class.
+        /// </summary>
+        /// <param name="lUnixTimestamp">The l unix timestamp.</param>
+        public UnixTimestamp( ulong lUnixTimestamp )
+        {
+            this.lUnixTimestamp = lUnixTimestamp;
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

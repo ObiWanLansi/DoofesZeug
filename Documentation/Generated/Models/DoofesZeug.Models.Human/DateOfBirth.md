@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|An dateofbirth for creatures.|
 |Namespace|DoofesZeug.Models.Human|
 |BaseClass|Date|
 
@@ -24,7 +25,7 @@
 
 ## Attributes
 
-**TODO**
+- Description
 
 ## UML Diagram
 

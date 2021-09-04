@@ -13,6 +13,7 @@ namespace DoofesZeug.Models.DateAndTime.Part.Date
         {
         }
 
+
         public Day( uint iInitalValue ) : base(iInitalValue)
         {
         }

@@ -3,6 +3,7 @@ using System;
 
 using DoofesZeug.Extensions;
 using DoofesZeug.Models.DateAndTime;
+using DoofesZeug.Models.DateAndTime.Part.Time;
 using DoofesZeug.Models.Human;
 using DoofesZeug.Models.Human.Professions;
 
@@ -72,12 +73,42 @@ namespace DoofesZeug
         {
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
+            //-------------------------------------------------------------------------------------
 
-            Date d = "20.02.2020";
-            Out.WriteLineAsync($"{d}");
+            DateOfBirth dob = new("15.10.1974");
+            Out.WriteLineAsync(dob.ToString());
+            string json = dob.ToPrettyJson();
+            Out.WriteLineAsync(json);
+            DateOfBirth clone = json.FromJson<DateOfBirth>();
+            Out.WriteLineAsync(clone.ToString());
 
-            Time t = "15:10:42";
-            Out.WriteLineAsync($"{t}");
+            return;
+
+            //DateOfBirth dob = (15, 10, 1942);
+            //string json = dob.ToPrettyJson();
+            //DateOfBirth clone = json.FromJson<DateOfBirth>();
+
+            //Out.WriteLineAsync(dob.ToPrettyJson());
+
+            //-------------------------------------------------------------------------------------
+
+            //Hour org = 8;
+
+            //string json = org.ToPrettyJson();
+            //Out.WriteLineAsync(json);
+
+            //Hour clone = json.FromJson<Hour>();
+            //Out.WriteLineAsync(clone.ToString());
+
+            //-------------------------------------------------------------------------------------
+
+            //Date d = "20.02.2020";
+            //Out.WriteLineAsync($"{d}");
+
+            //Time t = "15:10:42";
+            //Out.WriteLineAsync($"{t}");
+
+            //-------------------------------------------------------------------------------------
 
             Person pOriginal = PersonBuilder.New().
                 WithFirstName("John").
@@ -85,20 +116,20 @@ namespace DoofesZeug
                 WithGender(Gender.Male).
                 WithHandedness(Handedness.Both).
                 WithDateOfBirth((25, 05, 1942)).
-                WithProfession(new PoliceOfficer { Since = (25, 05, 1942) });
+                WithProfession(new PoliceOfficer { Since = (15, 10, 1969) });
 
-            Out.WriteLine(pOriginal.ToStringTable(bDisplayNULL: true));
-            Out.WriteLine(DIV);
+            Out.WriteLineAsync(pOriginal.ToStringTable(bDisplayNULL: true));
+            Out.WriteLineAsync(DIV);
 
             try
             {
                 string strJSON = pOriginal.ToPrettyJson();
-                Out.WriteLine(strJSON);
-                Out.WriteLine(DIV);
+                Out.WriteLineAsync(strJSON);
+                Out.WriteLineAsync(DIV);
 
                 Person pClone = strJSON.FromJson<Person>();
-                Out.WriteLine(pClone.ToStringTable(bDisplayNULL: true));
-                Out.WriteLine(DIV);
+                Out.WriteLineAsync(pClone.ToStringTable(bDisplayNULL: true));
+                Out.WriteLineAsync(DIV);
             }
             catch( Exception ex )
             {

@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DoofesZeug.Generators\DoofesZeug.Generators.csproj" />
     <ProjectReference Include="..\DoofesZeug.Library\DoofesZeug.Library.csproj" />
   </ItemGroup>
 

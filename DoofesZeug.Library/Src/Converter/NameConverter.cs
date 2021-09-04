@@ -36,6 +36,11 @@ namespace DoofesZeug.Converter
         /// <exception cref="System.NotImplementedException"></exception>
         public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer )
         {
+            if( reader.Value == null )
+            {
+                return null;
+
+            }
             ConstructorInfo constructor = objectType.GetConstructor(new [] { typeof(string) });
 
             return constructor?.Invoke(new [] { (object) Convert.ToString(reader.Value) });

@@ -2,6 +2,7 @@
 
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
+using DoofesZeug.Extensions;
 using DoofesZeug.Models.DateAndTime.Part.Date;
 
 
@@ -39,8 +40,15 @@ namespace DoofesZeug.Models.DateAndTime
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// The minimum
+        /// </summary>
         public static readonly Date MIN = new((uint) 01, 01, 0001);
 
+
+        /// <summary>
+        /// The maximum
+        /// </summary>
         public static readonly Date MAX = new((uint) 31, 12, 9999);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -86,26 +94,24 @@ namespace DoofesZeug.Models.DateAndTime
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.ValueTuple{Day, Month, Year}"/> to <see cref="Date"/>.
+        /// Froms the specified string content.
         /// </summary>
-        /// <param name="value">The value.</param>
-        /// <returns>
-        /// The result of the conversion.
-        /// </returns>
-        public static implicit operator Date( (Day day, Month month, Year year) value ) => new(value.day, value.month, value.year);
-
-
-        /// <summary>
-        /// Performs an implicit conversion from <see cref="System.String"/> to <see cref="Date"/>.
-        /// </summary>
-        /// <param name="strContent">The string date.</param>
-        /// <returns>
-        /// The result of the conversion.
-        /// </returns>
-        public static implicit operator Date( string strContent )
+        /// <param name="strContent">Content of the string.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException">
+        /// The length of the date ist not ten characters., nameof(strContent)
+        /// or
+        /// The length of the date ist not ten characters., nameof(strContent)
+        /// </exception>
+        public static Date From( string strContent )
         {
             // 0123456789
             // 15.10.1974
+
+            if( strContent.IsEmpty() || strContent.EqualsIgnoreCase("null") )
+            {
+                return null;
+            }
 
             if( strContent.Length != 10 )
             {
@@ -123,6 +129,28 @@ namespace DoofesZeug.Models.DateAndTime
 
             return new Date(day, month, year);
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="System.ValueTuple{Day, Month, Year}"/> to <see cref="Date"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Date( (Day day, Month month, Year year) value ) => new(value.day, value.month, value.year);
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="System.String"/> to <see cref="Date"/>.
+        /// </summary>
+        /// <param name="strContent">The string date.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Date( string strContent ) => From(strContent);
 
 
         /// <summary>

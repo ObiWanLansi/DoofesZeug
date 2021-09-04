@@ -21,6 +21,7 @@ namespace DoofesZeug.Models.Human
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         public static implicit operator DateOfBirth( (Day day, Month month, Year year) value ) => new(value.day, value.month, value.year);
 
         //public static implicit operator DateOfBirth(string strDateOfBirth ){

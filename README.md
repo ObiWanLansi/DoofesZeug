@@ -6,6 +6,7 @@
 - [Content](#content)
   - [Entities & Models](#entities--models)
   - [Enumerations](#enumerations)
+  - [Builder](#builder)
 - [Features](#features)
   - [Builder Pattern](#builder-pattern)
   - [Validation](#validation)
@@ -49,6 +50,10 @@ All the entities / classes are listet in the generated [Model Overview](./Docume
 ### Enumerations
 
 All the enumerations are listet in the generated [Enumerations Overview](./Documentation/Generated/Enumerations/README.md).
+
+### Builder
+
+For some entities are builder avaible and listed in [Builder Overview](./Documentation/Generated/Builder/README.md).
 
 ---
 

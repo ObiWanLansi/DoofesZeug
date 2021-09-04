@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|This is an specialized entitiy for an firefighter.|
 |Namespace|DoofesZeug.Models.Human.Professions|
 |BaseClass|Profession|
 
@@ -20,11 +21,13 @@
 |:---|:---|:--:|:---:|:-----------|
 |WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Human.Professions\WellKnownProfession.md)|&#x2713;|&#x2717;|FireFighter|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime\Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|5e9293b6-2b02-453f-8b8b-11f7b38cd2b6|
+|Id|Guid|&#x2713;|&#x2713;|07388a9f-3708-4426-baf1-2f59c6505ff1|
 
 ## Attributes
 
-**TODO**
+- Description
+- Generated
+- Builder
 
 ## UML Diagram
 
@@ -34,7 +37,7 @@
 
 ```json
 {
-  "Id": "1f98c807-2934-4e9b-85c1-0320d4f9c240",
+  "Id": "b6acf059-d631-4182-91cc-bc333d6e2b34",
   "WellKnownProfessionType": "FireFighter",
   "Since": "11.11.1942"
 }

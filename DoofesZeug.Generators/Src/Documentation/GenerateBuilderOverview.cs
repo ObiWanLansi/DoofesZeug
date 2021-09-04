@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
+using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
 using DoofesZeug.Extensions;
 using DoofesZeug.Models;
@@ -35,22 +36,26 @@ namespace DoofesZeug.Documentation
             {
                 sb.AppendLine("");
                 sb.AppendLine("");
-                sb.AppendLine($"## Namespace `{entities.Key}`");
+                sb.AppendLine($"## `{entities.Key}`");
                 sb.AppendLine("");
 
-                sb.AppendLine("|Builder|Source|Entity|");
-                sb.AppendLine("|:----- |:----:|:----:|");
-
-                string strPath = entities.Key [11..].Replace('.', '/');
+                sb.AppendLine("|Entity|Builder|");
+                sb.AppendLine("|:-----|:------|");
 
                 foreach( Type entity in from type in entities orderby type.Name select type )
                 {
-                    //string strLinkToMarkdown = $"[{entity.Name}](./{entities.Key}/{entity.Name}.md)";
-                    //string strLinkToSource = $"[&#x273F;](../../../DoofesZeug.Library/Src/{strPath}/{entity.Name}.cs)";
-                    //string strLinkToDiagram = $"[&#x273F;](./{entities.Key}/{entity.Name}.png)";
-                    //string strLinkToJSONTest = $"[&#x273F;](./{entities.Key}/{entity.Name}.json)";
+                    DescriptionAttribute da = (DescriptionAttribute) entity.GetCustomAttribute(typeof(DescriptionAttribute));
 
-                    //sb.AppendLine($"|{strLinkToMarkdown}|{strLinkToSource}|{strLinkToDiagram}|{strLinkToJSONTest}|");
+                    if( da == null )
+                    {
+                        throw new Exception($"{entity.FullName} have no valid description!");
+                    }
+
+                    da.Validate(entity);
+
+                    string strLinkToMarkdown = $"[{entity.Name}](../Models/{entities.Key}/{entity.Name}.md)";
+
+                    sb.AppendLine($"|{strLinkToMarkdown}|{entity.Name}Builder|");
                 }
             }
 

@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|The minutes of an time.|
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Time|
 |BaseClass|DateTimePart|
 
@@ -22,7 +23,8 @@
 
 ## Attributes
 
-**TODO**
+- Description
+- Range
 
 ## UML Diagram
 

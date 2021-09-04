@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|An unix timestamp (seconds since 01.01.1970).|
 |Namespace|DoofesZeug.Models.DateAndTime|
 |BaseClass|EntityBase|
 
@@ -21,7 +22,7 @@
 
 ## Attributes
 
-**TODO**
+- Description
 
 ## UML Diagram
 
@@ -30,6 +31,6 @@
 ## JSON Example
 
 ```json
-1630763010
+1630776040
 ```
 

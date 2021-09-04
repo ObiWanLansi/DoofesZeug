@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|The week of an date in the year.|
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Date|
 |BaseClass|DateTimePart|
 
@@ -22,7 +23,8 @@
 
 ## Attributes
 
-**TODO**
+- Description
+- Range
 
 ## UML Diagram
 

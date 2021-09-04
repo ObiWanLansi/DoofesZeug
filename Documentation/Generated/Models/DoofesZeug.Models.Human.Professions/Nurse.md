@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|This is an specialized entitiy for an nurse.|
 |Namespace|DoofesZeug.Models.Human.Professions|
 |BaseClass|Profession|
 
@@ -20,11 +21,13 @@
 |:---|:---|:--:|:---:|:-----------|
 |WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Human.Professions\WellKnownProfession.md)|&#x2713;|&#x2717;|Nurse|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime\Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|644eb7b4-67e0-4ce2-90fd-8e03d2a27d91|
+|Id|Guid|&#x2713;|&#x2713;|c20b96c7-0cc3-463b-8ad8-dddfb495d7ab|
 
 ## Attributes
 
-**TODO**
+- Description
+- Generated
+- Builder
 
 ## UML Diagram
 
@@ -34,7 +37,7 @@
 
 ```json
 {
-  "Id": "b06ffc6b-9480-4309-98a4-f860489de713",
+  "Id": "c9c2370f-2d82-4633-8860-05c365562aa0",
   "WellKnownProfessionType": "Nurse",
   "Since": "11.11.1942"
 }

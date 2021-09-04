@@ -4,6 +4,7 @@
 
 |||
 |:-|:-|
+|Description|This is an specialized entitiy for an unknown.|
 |Namespace|DoofesZeug.Models.Human.Professions|
 |BaseClass|Profession|
 
@@ -20,11 +21,13 @@
 |:---|:---|:--:|:---:|:-----------|
 |WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Human.Professions\WellKnownProfession.md)|&#x2713;|&#x2717;|Unknown|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime\Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|b5c67489-8ef4-4177-ba18-c60f9c0bbda3|
+|Id|Guid|&#x2713;|&#x2713;|4aa336c8-e2b4-461c-b6a3-457c2f640485|
 
 ## Attributes
 
-**TODO**
+- Description
+- Generated
+- Builder
 
 ## UML Diagram
 
@@ -34,7 +37,7 @@
 
 ```json
 {
-  "Id": "2b24cf84-6f0c-4a68-b03f-ada2313c34e3",
+  "Id": "e2af0e52-7b0e-4180-b901-49db73eb3333",
   "WellKnownProfessionType": "Unknown",
   "Since": "11.11.1942"
 }

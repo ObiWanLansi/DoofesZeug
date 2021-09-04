@@ -14,7 +14,10 @@ namespace DoofesZeug.Models.DateAndTime.Part
         {
         }
 
-        
+
         protected DateTimePart( uint iValue ) => this.Value = iValue;
+
+        
+        public override string ToString() => $"{Value}";
     }
 }
