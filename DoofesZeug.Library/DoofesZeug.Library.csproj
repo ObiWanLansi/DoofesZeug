@@ -33,6 +33,7 @@
     <Folder Include="Src\Models\Science\Chemistry\" />
     <Folder Include="Src\Models\Science\Mathematics\Geometry\" />
     <Folder Include="Src\Models\Science\Physics\" />
+    <Folder Include="Src\DataSets\" />
   </ItemGroup>
 
   <ItemGroup>
