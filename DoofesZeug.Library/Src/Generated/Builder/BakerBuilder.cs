@@ -10,22 +10,15 @@ using DoofesZeug.Attributes;
 namespace DoofesZeug.Models.Human.Professions
 {
     [Generated]
-    public static class HairDresserBuilder
+    public static class BakerBuilder
     {
-        public static HairDresser New() => new();
+        public static Baker New() => new();
 
 
-        public static HairDresser WithSince(this HairDresser hairdresser, DoofesZeug.Models.DateAndTime.Date since)
+        public static Baker WithSince(this Baker baker, DoofesZeug.Models.DateAndTime.Date since)
         {
-            hairdresser.Since = since;
-            return hairdresser;
-        }
-
-
-        public static HairDresser WithId(this HairDresser hairdresser, System.Guid id)
-        {
-            hairdresser.Id = id;
-            return hairdresser;
+            baker.Since = since;
+            return baker;
         }
     }
 }

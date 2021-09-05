@@ -20,12 +20,5 @@ namespace DoofesZeug.Models.Human.Professions
             teacher.Since = since;
             return teacher;
         }
-
-
-        public static Teacher WithId(this Teacher teacher, System.Guid id)
-        {
-            teacher.Id = id;
-            return teacher;
-        }
     }
 }

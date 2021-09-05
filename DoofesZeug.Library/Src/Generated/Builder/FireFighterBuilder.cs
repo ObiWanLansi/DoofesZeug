@@ -10,22 +10,15 @@ using DoofesZeug.Attributes;
 namespace DoofesZeug.Models.Human.Professions
 {
     [Generated]
-    public static class PoliceOfficerBuilder
+    public static class FireFighterBuilder
     {
-        public static PoliceOfficer New() => new();
+        public static FireFighter New() => new();
 
 
-        public static PoliceOfficer WithSince(this PoliceOfficer policeofficer, DoofesZeug.Models.DateAndTime.Date since)
+        public static FireFighter WithSince(this FireFighter firefighter, DoofesZeug.Models.DateAndTime.Date since)
         {
-            policeofficer.Since = since;
-            return policeofficer;
-        }
-
-
-        public static PoliceOfficer WithId(this PoliceOfficer policeofficer, System.Guid id)
-        {
-            policeofficer.Id = id;
-            return policeofficer;
+            firefighter.Since = since;
+            return firefighter;
         }
     }
 }

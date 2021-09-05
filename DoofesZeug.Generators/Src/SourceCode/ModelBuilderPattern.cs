@@ -17,12 +17,37 @@ namespace DoofesZeug.SourceCode
     {
         private static readonly Type BUILDERATTRIBUTE = typeof(BuilderAttribute);
 
-        private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\DoofesZeug.Library\Src\Generated\Builder";
+        private static readonly string OUTPUTDIRECTORYBUILDER = @"O:\DoofesZeug\DoofesZeug.Library\Src\Generated\Builder";
+        private static readonly string OUTPUTDIRECTORYUNITTEST = @"O:\DoofesZeug\DoofesZeug.UnitTests\Src\Functional\Builder";
 
         private static readonly string HEADER = @"
 // ------------------------------------------------------------------------------------------------------------------
 // This is auto generated code. Every manually change in this code will be overwritten at the next code generation! |
 // ------------------------------------------------------------------------------------------------------------------
+        ";
+
+
+        private static readonly string UNITTEST_TEMPLATE = @"
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using $NAMESPACE$;
+
+
+
+namespace DoofesZeug.UnitTests.Functional.Builder
+{
+    [TestClass]
+    public class Test$BUILDER$Builder
+    {
+        [TestMethod]
+        public void Execute()
+        {
+            Assert.Fail(""Not Yet Implemented!"");
+$EXECCODE$
+        }
+    }
+}
         ";
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -59,14 +84,7 @@ namespace DoofesZeug.SourceCode
 
         private static void GenerateModelBuilder( Type type )
         {
-            if( type.GetCustomAttribute(BUILDERATTRIBUTE) == null )
-            {
-                return;
-            }
-
-            //---------------------------------------------------------------------------------------------------------
-
-            Out.WriteLineAsync($"Create builder for: {type.FullName}");
+            Out.WriteLineAsync($"Create ModelBuilder for: {type.FullName}");
 
             StringBuilder sb = new(8192);
 
@@ -89,6 +107,11 @@ namespace DoofesZeug.SourceCode
             //foreach( FieldInfo field in type.GetFields(BindingFlags.SetField | BindingFlags.Instance | BindingFlags.NonPublic) )
             foreach( PropertyInfo property in type.GetProperties() )
             {
+                if( property.Name == nameof(IdentifiableEntity.Id) )
+                {
+                    continue;
+                }
+
                 if( property.CanWrite == false )
                 {
                     continue;
@@ -111,7 +134,63 @@ namespace DoofesZeug.SourceCode
 
             //---------------------------------------------------------------------------------------------------------
 
-            string strOutputFilename = $"{OUTPUTDIRECTORY}\\{type.Name}.Builder.cs";
+            string strOutputFilename = $"{OUTPUTDIRECTORYBUILDER}\\{type.Name}Builder.cs";
+            File.WriteAllTextAsync(strOutputFilename, sb.ToString(), Encoding.UTF8);
+        }
+
+
+        private static void GenerateBuilderTestTemplate( Type type )
+        {
+            string strOutputFilename = $"{OUTPUTDIRECTORYUNITTEST}\\Test{type.Name}Builder.cs";
+
+            if( File.Exists(strOutputFilename) )
+            {
+                Out.WriteLineAsync($"Skip UnitTest for: {type.FullName}");
+                return;
+            }
+
+            //---------------------------------------------------------------------------------------------------------
+
+            Out.WriteLineAsync($"Create UnitTest for: {type.FullName}");
+
+            StringBuilder sb = new(4096);
+
+            sb.AppendLine(HEADER);
+
+            //---------------------------------------------------------------------------------------------------------
+
+            string strClassNameModel = type.Name;
+            string strInstanceName = type.Name.Lower();
+            string strClassNameBuilder = $"{type.Name}Builder";
+
+            StringBuilder sbMethods = new(2048);
+
+            foreach( PropertyInfo property in type.GetProperties() )
+            {
+                if( property.Name == nameof(IdentifiableEntity.Id) )
+                {
+                    continue;
+                }
+
+                if( property.CanWrite == false )
+                {
+                    continue;
+                }
+
+                sbMethods.Append($".With{property.Name}(null)");
+            }
+
+            //---------------------------------------------------------------------------------------------------------
+
+            StringBuilder sbCode = new(2048);
+
+            sbCode.AppendLine($"            {strClassNameModel} {strInstanceName} = {strClassNameBuilder}.New(){sbMethods};");
+            sbCode.AppendLine($"            Assert.IsNotNull({strInstanceName});");
+
+            sb.AppendLine(UNITTEST_TEMPLATE.Replace("$NAMESPACE$", type.Namespace).Replace("$BUILDER$", type.Name).Replace("$EXECCODE$", sbCode.ToString()));
+
+            //---------------------------------------------------------------------------------------------------------
+
             File.WriteAllTextAsync(strOutputFilename, sb.ToString(), Encoding.UTF8);
         }
 
@@ -127,12 +206,21 @@ namespace DoofesZeug.SourceCode
             Out.WriteLineAsync();
             Out.WriteLineAsync($"{assembly.FullName}");
 
-            new DirectoryInfo(OUTPUTDIRECTORY).DeleteDirectoryContentRecursiv(ex => Error.WriteLineAsync(ex.Message));
-            Directory.CreateDirectory(OUTPUTDIRECTORY);
+            new DirectoryInfo(OUTPUTDIRECTORYBUILDER).DeleteDirectoryContentRecursiv(ex => Error.WriteLineAsync(ex.Message));
+            Directory.CreateDirectory(OUTPUTDIRECTORYBUILDER);
+
+            //new DirectoryInfo(OUTPUTDIRECTORYUNITTEST).DeleteDirectoryContentRecursiv(ex => Error.WriteLineAsync(ex.Message));
+            //Directory.CreateDirectory(OUTPUTDIRECTORYUNITTEST);
 
             foreach( Type type in assembly.ExportedTypes )
             {
+                if( type.GetCustomAttribute(BUILDERATTRIBUTE) == null )
+                {
+                    continue;
+                }
+
                 GenerateModelBuilder(type);
+                GenerateBuilderTestTemplate(type);
             }
         }
     }

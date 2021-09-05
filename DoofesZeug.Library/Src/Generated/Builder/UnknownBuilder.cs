@@ -10,22 +10,15 @@ using DoofesZeug.Attributes;
 namespace DoofesZeug.Models.Human.Professions
 {
     [Generated]
-    public static class WaiterBuilder
+    public static class UnknownBuilder
     {
-        public static Waiter New() => new();
+        public static Unknown New() => new();
 
 
-        public static Waiter WithSince(this Waiter waiter, DoofesZeug.Models.DateAndTime.Date since)
+        public static Unknown WithSince(this Unknown unknown, DoofesZeug.Models.DateAndTime.Date since)
         {
-            waiter.Since = since;
-            return waiter;
-        }
-
-
-        public static Waiter WithId(this Waiter waiter, System.Guid id)
-        {
-            waiter.Id = id;
-            return waiter;
+            unknown.Since = since;
+            return unknown;
         }
     }
 }

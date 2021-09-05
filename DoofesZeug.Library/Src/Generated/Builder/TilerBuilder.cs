@@ -10,22 +10,15 @@ using DoofesZeug.Attributes;
 namespace DoofesZeug.Models.Human.Professions
 {
     [Generated]
-    public static class NurseBuilder
+    public static class TilerBuilder
     {
-        public static Nurse New() => new();
+        public static Tiler New() => new();
 
 
-        public static Nurse WithSince(this Nurse nurse, DoofesZeug.Models.DateAndTime.Date since)
+        public static Tiler WithSince(this Tiler tiler, DoofesZeug.Models.DateAndTime.Date since)
         {
-            nurse.Since = since;
-            return nurse;
-        }
-
-
-        public static Nurse WithId(this Nurse nurse, System.Guid id)
-        {
-            nurse.Id = id;
-            return nurse;
+            tiler.Since = since;
+            return tiler;
         }
     }
 }
