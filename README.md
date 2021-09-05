@@ -3,16 +3,12 @@
 <h1 style="font-weight:bold; letter-spacing: 10px; border-bottom: 2px solid black;">Doofes Zeug</h1>
 
 - [Overview](#overview)
-- [Content](#content)
+- [Main Content](#main-content)
   - [Entities & Models](#entities--models)
   - [Enumerations](#enumerations)
   - [Builder](#builder)
-- [Features](#features)
-  - [Builder Pattern](#builder-pattern)
-  - [Validation](#validation)
-  - [Container](#container)
-  - [Formats](#formats)
-- [Status](#status)
+- [Further Features](#further-features)
+- [Current Status](#current-status)
 - [Useful Links](#useful-links)
 
 ---
@@ -25,13 +21,15 @@ It should be easy to use. No expensive security features such as write-protected
 only mean additional work.
 
 The basic idea was to have an collection of classes and enumerations for simple daily needed stuff like:
+
 - Person
-- Jobs
+- Professions
 - Vehicles
 - Geodata
 - Animals
 
-And some easy to use feaures and tools and datatypes like:
+And some easy to use feaures, tools and datatypes like:
+
 - IntegerList
 - StringList
 - *MD5, SHA512*
@@ -41,7 +39,7 @@ And some easy to use feaures and tools and datatypes like:
 
 ---
 
-## Content 
+## Main Content 
 
 ### Entities & Models
 
@@ -57,103 +55,16 @@ For some entities are builder avaible and listed in [Builder Overview](./Documen
 
 ---
 
-## Features
+## Further Features
 
-### Builder Pattern
-
-I also try to implement some features like a builder pattern. In some class i put an Attribute `Builder` to the class definition
-and an generator create an class with the builder pattern.
-
-**Example:**
-
-```cs
-[Builder]
-public class Person : IdentifiableEntity
-{
-    public DateOfBirth DateOfBirth { get; set; }
-
-    public FirstName FirstName { get; set; }
-
-    public LastName LastName { get; set; }
-    
-    public Gender Gender { get; set; }
-}
-```
-
-**Builder:**
-
-```cs
-[Generated]
-public static class PersonBuilder
-{
-    public static Person New() => new();
-
-
-    public static Person WithDateOfBirth(this Person person, DoofesZeug.Models.Human.DateOfBirth dateofbirth)
-    {
-        person.DateOfBirth = dateofbirth;
-        return person;
-    }
-
-
-    public static Person WithFirstName(this Person person, DoofesZeug.Models.Human.FirstName firstname)
-    {
-        person.FirstName = firstname;
-        return person;
-    }
-
-
-    public static Person WithLastName(this Person person, DoofesZeug.Models.Human.LastName lastname)
-    {
-        person.LastName = lastname;
-        return person;
-    }
-
-
-    public static Person WithGender(this Person person, DoofesZeug.Models.Human.Gender gender)
-    {
-        person.Gender = gender;
-        return person;
-    }
-}
-```
-
-**Usage:**
-
-```cs
-Person p = PersonBuilder.New().
-    WithFirstName("John").
-    WithLastName("Doe").
-    WithGender(Gender.Male).
-    WithDateOfBirth((25, 05, 1942)));
-
-Console.Out.WriteLine(p);
-```
-
-### Validation
-
-An small validation of the models is planed. There are two different ways:
-- Add an attribute to an property (`Min()`,`Max()`,`Range()`,`Length()`)
-- Implement an interface `IValidator` in an class, which can validate more than one property an there coherences.
-
-### Container
-
-Some often needed (IMO) container classes:
-- IntegerList
-- StringList
-- StringSet
-
-### Formats
-
-Direct/easy support for the most needed formats like:
-- Json
-- Yaml
-- Xml
-- Csv
+- [Builder Pattern](./Documentation/Features/BuilderPattern.md)
+- [Model Validation](./Documentation/Features/ModelValidation.md)
+- [Format Extension](./Documentation/Features/FormatExtension.md)
+- [Additional Datatypes](./Documentation/Features/AdditionalDatatypes.md)
 
 ---
 
-## Status
+## Current Status
 
 **This library is current under development, the first small models/entites are implement 
 to gather experience what i need in the future and what make sense to invest time.
