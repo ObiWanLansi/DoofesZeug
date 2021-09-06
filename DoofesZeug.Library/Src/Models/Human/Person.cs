@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace DoofesZeug.Models.Human
 {
-    [Description("An simplified Person with an firstname, lastname, birthday and some other optional properties.")]
+    [Description("An simplified person with an firstname, lastname, birthday and some other optional properties.")]
     [Builder]
     public class Person : IdentifiableEntity
     {

@@ -1,6 +1,13 @@
 ﻿# Builder Overview
 
 
+## `DoofesZeug.Models.Animals`
+
+|Entity|Builder|
+|:-----|:------|
+|[Animal](../Models/DoofesZeug.Models.Animals/Animal.md)|AnimalBuilder|
+
+
 ## `DoofesZeug.Models.DateAndTime`
 
 |Entity|Builder|

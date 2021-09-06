@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using DoofesZeug.Models.Animals;
 using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.DateAndTime.Part;
 using DoofesZeug.Models.DateAndTime.Part.Date;
@@ -52,6 +53,8 @@ namespace DoofesZeug.TestData
             GENERATORS.Add(typeof(Hour).FullName, GenerateDateTimePart<Hour>);
             GENERATORS.Add(typeof(Minute).FullName, GenerateDateTimePart<Minute>);
             GENERATORS.Add(typeof(Second).FullName, GenerateDateTimePart<Second>);
+
+            GENERATORS.Add(typeof(Animal).FullName, GenerateAnimal);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -100,6 +103,17 @@ namespace DoofesZeug.TestData
             DateOfBirth = (27, 09, 1974),
             Handedness = Handedness.Left,
             Profession = GenerateProfession<FireFighter>()
+        };
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        private static Animal GenerateAnimal() => new()
+        {
+            AnimalSpecies = AnimalSpecies.Cat,
+            Name = "Garfield",
+            Gender = Gender.Male,
+            DateOfBirth = (10, 06, 1978)
         };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

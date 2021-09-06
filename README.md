@@ -2,18 +2,19 @@
 
 <h1 style="font-weight:bold; letter-spacing: 10px; border-bottom: 2px solid black;">Doofes Zeug</h1>
 
+- [The Idea](#the-idea)
 - [Overview](#overview)
-- [Main Content](#main-content)
   - [Entities & Models](#entities--models)
   - [Enumerations](#enumerations)
   - [Builder](#builder)
+  - [Examples](#examples)
 - [Further Features](#further-features)
 - [Current Status](#current-status)
 - [Useful Links](#useful-links)
 
 ---
 
-## Overview
+## The Idea
 
 Doofes Zeug is an collection of some useful models/entities/classes for rapid prototyping in .net core
 and / or creating some tests for development stuff. Doofes Zeug is designed so that it isn't too complicated. 
@@ -39,7 +40,7 @@ And some easy to use feaures, tools and datatypes like:
 
 ---
 
-## Main Content 
+## Overview
 
 ### Entities & Models
 
@@ -52,6 +53,10 @@ All the enumerations are listet in the generated [Enumerations Overview](./Docum
 ### Builder
 
 For some entities are builder avaible and listed in [Builder Overview](./Documentation/Generated/Builder/README.md).
+
+### Examples
+
+There are some [examples](./DoofesZeug.TestConsole/Src/Examples) avaible. At the moment there are not that many, but of course there are more and more.
 
 ---
 

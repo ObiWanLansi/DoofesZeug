@@ -1,6 +1,13 @@
 ﻿# Entities Overview
 
 
+## `DoofesZeug.Models.Animals`
+
+|Entity|Description|Properties|
+|:-----|:----------|:---------|
+|[Animal](./DoofesZeug.Models.Animals/Animal.md)|An simplified animal with an firstname, lastname, birthday and some other optional properties.|DateOfBirth, Name, Gender, AnimalSpecies, Id|
+
+
 ## `DoofesZeug.Models.DateAndTime`
 
 |Entity|Description|Properties|
@@ -37,7 +44,7 @@
 |[FirstName](./DoofesZeug.Models.Human/FirstName.md)|An firstname for humans.|Value|
 |[LastName](./DoofesZeug.Models.Human/LastName.md)|An lastname for humans.|Value|
 |[Name](./DoofesZeug.Models.Human/Name.md)|An generic entity for names.|Value|
-|[Person](./DoofesZeug.Models.Human/Person.md)|An simplified Person with an firstname, lastname, birthday and some other optional properties.|DateOfBirth, FirstName, LastName, Gender, Handedness, Profession, Id|
+|[Person](./DoofesZeug.Models.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|DateOfBirth, FirstName, LastName, Gender, Handedness, Profession, Id|
 
 
 ## `DoofesZeug.Models.Human.Professions`

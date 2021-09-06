@@ -1,6 +1,13 @@
 ﻿# Enumerations Overview
 
 
+## `DoofesZeug.Models.Animals`
+
+|Enumeration|Description|Values|
+|:----------|:----------|:-----|
+|[AnimalSpecies](./DoofesZeug.Models.Animals/AnimalSpecies.md)|Some animal species, mixed with subtypes for faster development.|Unknown, Cat, Dog, Horse, Cow, Pig, Donkey, Monkey, Chicken, Bird, Eagle, Shark, Dolphin, Fish, Giraffe, Elephant, Rhino, Buffalo, Hedgehog, Other|
+
+
 ## `DoofesZeug.Models.DateAndTime`
 
 |Enumeration|Description|Values|

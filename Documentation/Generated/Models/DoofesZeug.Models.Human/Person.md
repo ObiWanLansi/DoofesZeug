@@ -4,7 +4,7 @@
 
 |||
 |:-|:-|
-|Description|An simplified Person with an firstname, lastname, birthday and some other optional properties.|
+|Description|An simplified person with an firstname, lastname, birthday and some other optional properties.|
 |Namespace|DoofesZeug.Models.Human|
 |BaseClass|IdentifiableEntity|
 
@@ -25,7 +25,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Id|Guid|&#x2713;|&#x2713;|c7b1fb67-bf47-4827-8f94-a650f5e866a7|
+|Id|Guid|&#x2713;|&#x2713;|bd335e6a-9cf7-4d01-a28f-69adc4e3138d|
 
 ## Attributes
 
@@ -46,11 +46,11 @@
   "Gender": "Male",
   "Handedness": "Left",
   "Profession": {
-    "Id": "4d1cba3e-cf36-4954-87a5-664b080236a5",
+    "Id": "2bf111bb-b2cf-4e8c-8a68-2509700f6a61",
     "WellKnownProfessionType": "FireFighter",
     "Since": "11.11.1942"
   },
-  "Id": "d5c53f65-4fb6-42c1-923d-22607d1707f9"
+  "Id": "da969128-f451-42ba-a109-7dc53a7e290a"
 }
 ```
 
