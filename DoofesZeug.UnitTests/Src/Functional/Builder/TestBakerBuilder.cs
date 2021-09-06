@@ -14,7 +14,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     public class TestBakerBuilder
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteTest()
         {
             Baker baker = BakerBuilder.New().WithSince((25, 05, 1978));
             Assert.IsNotNull(baker);

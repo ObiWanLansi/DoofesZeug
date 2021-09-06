@@ -14,7 +14,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     public class TestCarpenterBuilder
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteTest()
         {
             Carpenter carpenter = CarpenterBuilder.New().WithSince((25, 05, 1978));
             Assert.IsNotNull(carpenter);

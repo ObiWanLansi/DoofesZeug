@@ -14,7 +14,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     public class TestHairDresserBuilder
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteTest()
         {
             HairDresser hairdresser = HairDresserBuilder.New().WithSince((25, 05, 1978));
             Assert.IsNotNull(hairdresser);

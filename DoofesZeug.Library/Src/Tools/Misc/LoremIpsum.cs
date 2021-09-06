@@ -8,36 +8,12 @@ using DoofesZeug.Extensions;
 
 namespace DoofesZeug.Tools.Misc
 {
-    /// <summary>
-    /// Eine kleine Klasse um einen Lorem Ipsum Blindtext zu generiern.
-    /// </summary>
-    [Description("An small class to generate LoremIpsum text.")]
-    public sealed class LoremIpsum
+    [Description("An small class to generate a LoremIpsum text.")]
+    public static class LoremIpsum
     {
-        /// <summary>
-        /// The li start
-        /// </summary>
-        private const string LI_START = "Lorem ipsum dolor sit amet,";
+        private static readonly string LI_START = "Lorem ipsum dolor sit amet,";
 
-        /// <summary>
-        /// The rand
-        /// </summary>
         private static readonly Random rand = new();
-
-        /// <summary>
-        /// Die Anzahl der Wörter pro Zeile die generiert werden sollen, default 10.
-        /// </summary>
-        public uint WordsPerLine { get; set; }
-
-        /// <summary>
-        /// Die Anzahl der Zeilen die generiert werden soll, default 5.
-        /// </summary>
-        public uint Lines { get; set; }
-
-        /// <summary>
-        /// Der String der als Zeilenende verwendet werden soll, default "\r\n".
-        /// </summary>
-        public string LineEnding { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -91,26 +67,30 @@ namespace DoofesZeug.Tools.Misc
         /// <summary>
         /// Gets the lorem ipsum.
         /// </summary>
+        /// <param name="lines">The lines.</param>
+        /// <param name="wordsperline">The wordsperline.</param>
+        /// <param name="lineending">The lineending.</param>
         /// <returns></returns>
-        public string GetLoremIpsum()
+        public static string GetLoremIpsum( uint lines = 20, uint wordsperline = 20, string lineending = null )
         {
-            if( this.WordsPerLine < 10 )
+            if( wordsperline < 10 )
             {
-                this.WordsPerLine = 10;
+                wordsperline = 10;
             }
 
-            if( this.Lines == 0 )
+            if( lines == 0 )
             {
-                this.Lines = 5;
+                lines = 5;
             }
 
-            if( this.LineEnding.IsEmpty() == true )
+            if( lineending.IsEmpty() == true )
             {
-                this.LineEnding = "\r\n";
+                lineending = "\r\n";
             }
 
             //-------------------------------------------------------------------------------------
 
+            int length = LOREM_IPSUM_WORDS.Length;
             int iPointRand = rand.Next(10) + 3;
             bool bNewLine = false;
             uint iLineCounter = 0;
@@ -118,19 +98,19 @@ namespace DoofesZeug.Tools.Misc
             uint iSentenceWordCounter = 0;
             bool bSentenceStart = false;
 
-            StringBuilder sb = new(256);
+            StringBuilder sb = new(512);
 
             sb.Append(LI_START);
 
-            while( iLineCounter++ < this.Lines )
+            while( iLineCounter++ < lines )
             {
-                while( iLineWordCounter++ < this.WordsPerLine )
+                while( iLineWordCounter++ < wordsperline )
                 {
-                    string strWord = LOREM_IPSUM_WORDS [rand.Next(LOREM_IPSUM_WORDS.Length)];
+                    string strWord = LOREM_IPSUM_WORDS [rand.Next(length)];
 
                     if( bSentenceStart == true )
                     {
-                        strWord = strWord.Capitalize();
+                        strWord = strWord.CapitalizeOnlyFirstLetter();
                         bSentenceStart = false;
                     }
 
@@ -154,16 +134,16 @@ namespace DoofesZeug.Tools.Misc
                         // Es sollten schon midenstens drei Wörter pro Satz sein, maximal also 12
                         iPointRand = rand.Next(10) + 3;
 
-                        iSentenceWordCounter = iSentenceWordCounter ^ iSentenceWordCounter;
+                        iSentenceWordCounter = 0;
                         bSentenceStart = true;
                     }
                 }
 
-                iLineWordCounter = iLineWordCounter ^ iLineWordCounter;
+                iLineWordCounter = 0;
 
-                if( iLineCounter < this.Lines )
+                if( iLineCounter < lines )
                 {
-                    sb.Append(this.LineEnding);
+                    sb.Append(lineending);
                     bNewLine = true;
                 }
                 else
@@ -176,15 +156,5 @@ namespace DoofesZeug.Tools.Misc
 
             return sb.ToString();
         }
-
-
-        /// <summary>
-        /// Gets the lorem ipsum.
-        /// </summary>
-        /// <param name="uiLines">The UI lines.</param>
-        /// <param name="uiWordPerLine">The UI word per line.</param>
-        /// <returns></returns>
-        public static string GetLoremIpsum( uint uiLines = 20, uint uiWordPerLine = 20 ) => new LoremIpsum { Lines = uiLines, WordsPerLine = uiWordPerLine }.GetLoremIpsum();
-
     }
 }

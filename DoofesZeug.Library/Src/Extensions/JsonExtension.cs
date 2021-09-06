@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using DoofesZeug.Converter;
@@ -6,15 +7,25 @@ using DoofesZeug.Converter;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-
-
 namespace DoofesZeug.Extensions
 {
     public static class JsonExtension
     {
-        private static readonly JsonSerializerSettings settings = new()
+        private static readonly JsonSerializerSettings settingsDefault = new();
+
+        private static readonly JsonSerializerSettings settingsPretty = new()
         {
             Formatting = Formatting.Indented
+        };
+
+        private static readonly List<JsonConverter> converter = new()
+        {
+            new StringEnumConverter(),
+            new NameConverter(),
+            new ProfessionConverter(),
+            new DateOfBirthConverter(),
+            new DateTimePartConverter(),
+            new UnixTimestampConverter()
         };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -25,12 +36,11 @@ namespace DoofesZeug.Extensions
         /// </summary>
         static JsonExtension()
         {
-            settings.Converters.Add(new StringEnumConverter());
-            settings.Converters.Add(new NameConverter());
-            settings.Converters.Add(new ProfessionConverter());
-            settings.Converters.Add(new DateOfBirthConverter());
-            settings.Converters.Add(new DateTimePartConverter());
-            settings.Converters.Add(new UnixTimestampConverter());
+            foreach( JsonConverter conv in converter )
+            {
+                settingsPretty.Converters.Add(conv);
+                settingsDefault.Converters.Add(conv);
+            }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -41,7 +51,14 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="o">The o.</param>
         /// <returns></returns>
-        public static string ToPrettyJson( this object o ) => JsonConvert.SerializeObject(o, settings);
+        public static string ToPrettyJson( this object o ) => JsonConvert.SerializeObject(o, settingsPretty);
+
+        /// <summary>
+        /// Converts to json.
+        /// </summary>
+        /// <param name="o">The o.</param>
+        /// <returns></returns>
+        public static string ToJson( this object o ) => JsonConvert.SerializeObject(o, settingsDefault);
 
 
         /// <summary>
@@ -50,7 +67,7 @@ namespace DoofesZeug.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="strJSON">The string json.</param>
         /// <returns></returns>
-        public static T FromJson<T>( this string strJSON ) => (T) JsonConvert.DeserializeObject(strJSON, typeof(T), settings.Converters.ToArray());
+        public static T FromJson<T>( this string strJSON ) => (T) JsonConvert.DeserializeObject(strJSON, typeof(T), settingsDefault.Converters.ToArray());
 
 
         /// <summary>
@@ -59,6 +76,18 @@ namespace DoofesZeug.Extensions
         /// <param name="strJSON">The string json.</param>
         /// <param name="type">The type.</param>
         /// <returns></returns>
-        public static object FromJson( this string strJSON, Type type ) => JsonConvert.DeserializeObject(strJSON, type, settings.Converters.ToArray());
+        public static object FromJson( this string strJSON, Type type ) => JsonConvert.DeserializeObject(strJSON, type, settingsDefault.Converters.ToArray());
+
+
+        /// <summary>
+        /// Converts to readablejson.
+        /// </summary>
+        /// <param name="strJsonOriginal">The string json original.</param>
+        /// <returns></returns>
+        public static string ToReadableJson( this string strJsonOriginal )
+        {
+            object obj = JsonConvert.DeserializeObject(strJsonOriginal);
+            return JsonConvert.SerializeObject(obj, settingsPretty);
+        }
     }
 }

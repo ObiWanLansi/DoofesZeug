@@ -14,7 +14,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     public class TestUnknownBuilder
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteTest()
         {
             Unknown unknown = UnknownBuilder.New().WithSince((25, 05, 1978));
             Assert.IsNotNull(unknown);

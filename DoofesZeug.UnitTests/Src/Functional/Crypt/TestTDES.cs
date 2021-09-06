@@ -17,7 +17,7 @@ namespace DoofesZeug.UnitTests.Functional.Crypt
 
 
         [TestMethod]
-        public void ExecuteTDES()
+        public void ExecuteTDESTest()
         {
             string strCrypted = TDES.Encrypt(CONTENT, PASSWORD, SALT);
             Assert.AreEqual("9pofFEqyRkqeXhXoXnIZyGjHcs/JVUZZ94jCrLN46OLKY01aFkw5j/rSRI0evPRwQyBmCOQXTfOx3G1VE/IIK3efQnPLEYHNNx2DWKakHlSQKkOjAAwjIw==", strCrypted);

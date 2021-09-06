@@ -14,7 +14,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     public class TestFireFighterBuilder
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteTest()
         {
             FireFighter firefighter = FireFighterBuilder.New().WithSince((25, 05, 1978));
             Assert.IsNotNull(firefighter);

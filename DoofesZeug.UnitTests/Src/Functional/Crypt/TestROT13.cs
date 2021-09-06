@@ -10,7 +10,7 @@ namespace DoofesZeug.UnitTests.Functional.Crypt
     public class TestROT13
     {
         [TestMethod]
-        public void ExecuteRO13()
+        public void ExecuteRO13Test()
         {
             string strOriginal = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             string strExcepted = "NOPQRSTUVWXYZABCDEFGHIJKLM";

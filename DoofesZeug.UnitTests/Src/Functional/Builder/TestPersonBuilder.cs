@@ -13,7 +13,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     public class TestPersonBuilder
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteTest()
         {
             Person person = PersonBuilder.New().
                 WithDateOfBirth((01, 01, 1998)).

@@ -14,7 +14,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     public class TestEngineerBuilder
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteTest()
         {
             Engineer engineer = EngineerBuilder.New().WithSince((25, 05, 1978));
             Assert.IsNotNull(engineer);

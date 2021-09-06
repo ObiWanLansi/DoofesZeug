@@ -17,7 +17,7 @@ namespace DoofesZeug.UnitTests.Functional.Crypt
 
 
         [TestMethod]
-        public void ExecuteAES()
+        public void ExecuteAESTest()
         {
             string strCrypted = AES.Encrypt(CONTENT, PASSWORD, SALT);
             Assert.AreEqual("3+oC8tdgUmJe51OLjNndoFRkK/jLtI0CzYKZZiJ8c4TJfabHQ/c5edMBZxIIB/ooPndEjBeb88ixc5T6JRpRv6fq1cXAJAFeww2mKjrKUovT8cwauuTUhEU3O/D/lm1B", strCrypted);

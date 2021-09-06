@@ -14,7 +14,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     public class TestWaiterBuilder
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteTest()
         {
             Waiter waiter = WaiterBuilder.New().WithSince((25, 05, 1978));
             Assert.IsNotNull(waiter);

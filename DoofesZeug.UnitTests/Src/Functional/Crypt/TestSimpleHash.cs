@@ -17,7 +17,7 @@ namespace DoofesZeug.UnitTests.Functional.Crypt
 
 
         [TestMethod]
-        public void ExecuteWithoutSalt()
+        public void ExecuteTestWithoutSalt()
         {
             Assert.AreEqual("8FCE54FAAD7E1B3A31D9A19FB1438B9E", SimpleHash.GetHash(CONTENT, SupportedHashAlgorithm.MD5));
             Assert.AreEqual("302940176213954F686AAFFF183A652C5E71897F", SimpleHash.GetHash(CONTENT, SupportedHashAlgorithm.SHA1));
@@ -26,7 +26,7 @@ namespace DoofesZeug.UnitTests.Functional.Crypt
         }
 
         [TestMethod]
-        public void ExecuteWithSalt()
+        public void ExecuteTestWithSalt()
         {
             Assert.AreEqual("B7A4E164AF72EEC2D3A5702425DD037A", SimpleHash.GetHash(CONTENT, SupportedHashAlgorithm.MD5, SALT));
             Assert.AreEqual("F7DEA2E24757ED773D82450F605875390CD5E531", SimpleHash.GetHash(CONTENT, SupportedHashAlgorithm.SHA1, SALT));

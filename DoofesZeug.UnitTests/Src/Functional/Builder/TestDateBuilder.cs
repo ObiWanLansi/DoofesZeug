@@ -14,7 +14,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     public class TestDateBuilder
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteTest()
         {
             Date date = DateBuilder.New().WithDay(24).WithMonth(12).WithYear(1234);
             Assert.IsNotNull(date);

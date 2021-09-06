@@ -41,7 +41,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     public class Test$BUILDER$Builder
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteTest()
         {
             Assert.Fail(""Not Yet Implemented!"");
 $EXECCODE$

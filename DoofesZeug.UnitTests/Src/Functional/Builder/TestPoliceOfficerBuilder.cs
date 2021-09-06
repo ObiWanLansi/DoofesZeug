@@ -14,7 +14,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     public class TestPoliceOfficerBuilder
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteTest()
         {
             PoliceOfficer policeofficer = PoliceOfficerBuilder.New().WithSince((25, 05, 1978));
             Assert.IsNotNull(policeofficer);

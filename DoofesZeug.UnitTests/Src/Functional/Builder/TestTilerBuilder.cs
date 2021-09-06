@@ -14,7 +14,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     public class TestTilerBuilder
     {
         [TestMethod]
-        public void Execute()
+        public void ExecuteTest()
         {
             Tiler tiler = TilerBuilder.New().WithSince((25, 05, 1978));
             Assert.IsNotNull(tiler);

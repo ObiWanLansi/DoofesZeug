@@ -1,11 +1,13 @@
 ﻿
 using System;
 
+using DoofesZeug.Examples;
 using DoofesZeug.Extensions;
 using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.Human;
 using DoofesZeug.Models.Human.Professions;
 using DoofesZeug.TestData;
+using DoofesZeug.Tools.Misc;
 
 using static System.Console;
 
@@ -75,6 +77,15 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
+            LoremIpsumExample.CreateLoremIpsum();
+
+            JsonExtensionExample.ConvertPlainJsonStringToReadableJsonString();
+            JsonExtensionExample.ConvertEntityToPlainJson();
+            JsonExtensionExample.ConvertEntityToPrettyJson();
+            JsonExtensionExample.ConvertJsonToEntity();
+
+            //-------------------------------------------------------------------------------------
+
             //FireFighter ff1 = new FireFighter { Since = (15, 10, 1942) };
             //FireFighter ff2 = new FireFighter { Since = (16, 11, 1943) };
             //FireFighter ff3 = new FireFighter { Since = (15, 10, 1942) };
@@ -124,31 +135,33 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            Person pOriginal = PersonBuilder.New().
-                WithFirstName("John").
-                WithLastName("Doe").
-                WithGender(Gender.Male).
-                WithHandedness(Handedness.Both).
-                WithDateOfBirth((25, 05, 1942)).
-                WithProfession(new PoliceOfficer { Since = (15, 10, 1969) });
+            //Person pOriginal = PersonBuilder.New().
+            //    WithFirstName("John").
+            //    WithLastName("Doe").
+            //    WithGender(Gender.Male).
+            //    WithHandedness(Handedness.Both).
+            //    WithDateOfBirth((25, 05, 1942)).
+            //    WithProfession(new PoliceOfficer { Since = (15, 10, 1969) });
 
-            Out.WriteLineAsync(pOriginal.ToStringTable(bDisplayNULL: true));
-            Out.WriteLineAsync(DIV);
+            //Out.WriteLineAsync(pOriginal.ToStringTable(bDisplayNULL: true));
+            //Out.WriteLineAsync(DIV);
 
-            try
-            {
-                string strJSON = pOriginal.ToPrettyJson();
-                Out.WriteLineAsync(strJSON);
-                Out.WriteLineAsync(DIV);
+            //try
+            //{
+            //    string strJSON = pOriginal.ToJson();
+            //    Out.WriteLineAsync(strJSON);
+            //    Out.WriteLineAsync(DIV);
 
-                Person pClone = strJSON.FromJson<Person>();
-                Out.WriteLineAsync(pClone.ToStringTable(bDisplayNULL: true));
-                Out.WriteLineAsync(DIV);
-            }
-            catch( Exception ex )
-            {
-                Error.WriteLineAsync(ex.Message);
-            }
+            //    Person pClone = strJSON.FromJson<Person>();
+            //    Out.WriteLineAsync(pClone.ToStringTable(bDisplayNULL: true));
+            //    Out.WriteLineAsync(DIV);
+
+            //    Out.WriteLineAsync(strJSON.ToReadableJson());
+            //}
+            //catch( Exception ex )
+            //{
+            //    Error.WriteLineAsync(ex.Message);
+            //}
         }
     }
 }
