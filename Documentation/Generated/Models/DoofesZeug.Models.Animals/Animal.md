@@ -14,16 +14,16 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|DateOfBirth|[DateOfBirth](../../Models/DoofesZeug.Models.Human\DateOfBirth.md)|&#x2713;|&#x2713;|NULL|
-|Name|[Name](../../Models/DoofesZeug.Models.Human\Name.md)|&#x2713;|&#x2713;|NULL|
-|Gender|[Gender](../../Enumerations/DoofesZeug.Models.Human\Gender.md)|&#x2713;|&#x2713;|Unknown|
-|AnimalSpecies|[AnimalSpecies](../../Enumerations/DoofesZeug.Models.Animals\AnimalSpecies.md)|&#x2713;|&#x2713;|Unknown|
+|DateOfBirth|[DateOfBirth](../../Models/DoofesZeug.Models.Human/DateOfBirth.md)|&#x2713;|&#x2713;|NULL|
+|Name|[Name](../../Models/DoofesZeug.Models.Human/Name.md)|&#x2713;|&#x2713;|NULL|
+|Gender|[Gender](../../Enumerations/DoofesZeug.Models.Human/Gender.md)|&#x2713;|&#x2713;|Unknown|
+|AnimalSpecies|[AnimalSpecies](../../Enumerations/DoofesZeug.Models.Animals/AnimalSpecies.md)|&#x2713;|&#x2713;|Unknown|
 
 ### Inherited
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Id|Guid|&#x2713;|&#x2713;|75bef381-a447-442b-a9f1-16831b6def7b|
+|Id|Guid|&#x2713;|&#x2713;|bfb25501-736a-40bb-9065-188785eba8dd|
 
 ## Attributes
 
@@ -39,12 +39,10 @@
 ```json
 {
   "DateOfBirth": "10.06.1978",
-  "Name": {
-    "Value": "Garfield"
-  },
+  "Name": "Garfield",
   "Gender": "Male",
   "AnimalSpecies": "Cat",
-  "Id": "9400883e-f5d4-487f-a886-9aa238123f06"
+  "Id": "0ff42c7f-c1db-42cf-be61-c8bba8afe4c8"
 }
 ```
 

@@ -147,7 +147,7 @@ namespace DoofesZeug.Documentation
                 {
                     string strPath = $"../../{( pi.PropertyType.IsEnum ? "Enumerations" : "Models" )}/{pi.PropertyType.Namespace}";
 
-                    strPropertyType = $"[{pi.PropertyType.Name}]({strPath}\\{pi.PropertyType.Name}.md)";
+                    strPropertyType = $"[{pi.PropertyType.Name}]({strPath}/{pi.PropertyType.Name}.md)";
                 }
 
                 object value = pi.GetValue(instance);

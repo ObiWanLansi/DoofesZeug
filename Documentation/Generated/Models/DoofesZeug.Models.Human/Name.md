@@ -32,8 +32,6 @@
 ## JSON Example
 
 ```json
-{
-  "Value": "HurzFurz"
-}
+"HurzFurz"
 ```
 

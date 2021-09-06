@@ -14,9 +14,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Hour|[Hour](../../Models/DoofesZeug.Models.DateAndTime.Part.Time\Hour.md)|&#x2713;|&#x2713;|NULL|
-|Minute|[Minute](../../Models/DoofesZeug.Models.DateAndTime.Part.Time\Minute.md)|&#x2713;|&#x2713;|NULL|
-|Second|[Second](../../Models/DoofesZeug.Models.DateAndTime.Part.Time\Second.md)|&#x2713;|&#x2713;|NULL|
+|Hour|[Hour](../../Models/DoofesZeug.Models.DateAndTime.Part.Time/Hour.md)|&#x2713;|&#x2713;|NULL|
+|Minute|[Minute](../../Models/DoofesZeug.Models.DateAndTime.Part.Time/Minute.md)|&#x2713;|&#x2713;|NULL|
+|Second|[Second](../../Models/DoofesZeug.Models.DateAndTime.Part.Time/Second.md)|&#x2713;|&#x2713;|NULL|
 
 ### Inherited
 
