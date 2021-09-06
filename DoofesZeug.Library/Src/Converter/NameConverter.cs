@@ -20,7 +20,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType.BaseType.IsAssignableTo(NAME);
+        public override bool CanConvert( Type objectType ) => objectType.IsAssignableTo(NAME) || objectType.BaseType.IsAssignableTo(NAME);
 
 
         /// <summary>
@@ -39,8 +39,8 @@ namespace DoofesZeug.Converter
             if( reader.Value == null )
             {
                 return null;
-
             }
+
             ConstructorInfo constructor = objectType.GetConstructor(new [] { typeof(string) });
 
             return constructor?.Invoke(new [] { (object) Convert.ToString(reader.Value) });

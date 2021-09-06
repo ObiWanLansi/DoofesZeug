@@ -3,6 +3,7 @@ using System;
 
 using DoofesZeug.Examples;
 using DoofesZeug.Extensions;
+using DoofesZeug.Models.Animals;
 using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.Human;
 using DoofesZeug.Models.Human.Professions;
@@ -77,12 +78,24 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            LoremIpsumExample.CreateLoremIpsum();
+            Animal cat = new()
+            {
+                AnimalSpecies = AnimalSpecies.Cat,
+                Name = "Garfield",
+                Gender = Gender.Male,
+                DateOfBirth = (10, 06, 1978)
+            };
 
-            JsonExtensionExample.ConvertPlainJsonStringToReadableJsonString();
-            JsonExtensionExample.ConvertEntityToPlainJson();
-            JsonExtensionExample.ConvertEntityToPrettyJson();
-            JsonExtensionExample.ConvertJsonToEntity();
+            Console.Out.WriteLineAsync(cat.ToPrettyJson());
+
+            //-------------------------------------------------------------------------------------
+
+            //LoremIpsumExample.CreateLoremIpsum();
+
+            //JsonExtensionExample.ConvertPlainJsonStringToReadableJsonString();
+            //JsonExtensionExample.ConvertEntityToPlainJson();
+            //JsonExtensionExample.ConvertEntityToPrettyJson();
+            //JsonExtensionExample.ConvertJsonToEntity();
 
             //-------------------------------------------------------------------------------------
 
