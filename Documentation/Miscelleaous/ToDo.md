@@ -2,6 +2,7 @@
 
 ## ToDo
 
+- Die Beispiele müssen schon irgendwie in den EntityModels verlinkt oder inline sein, um besser zu verstehen was ich mit dem Entity machen kann. Gerade bei Date, Time und sowas, auch mit den operatoren, ....
 - Attributes 
   - `[Example(Source="RatatuiExample.cs")]` mit Verweis auf Beispiel , kann dann in der generierten Doku direkt als inline mit ran gezogen oder einfach nur verlinkkt werden.
   - ~~`[UnitTest(Source="")]` mit Verweis auf den UnitTest. Aber warum nochmal hatte ich die Idee ?~~
@@ -34,13 +35,9 @@
   -  CSV
   -  SQLite
   -  Markdown
-- Models Categroies: Animals, Vehicles
-- Enum Nationalität?
 - Countries (aus geonames generiert)
 - Dienstgrade Feuerwehr, Polizei, Militär
 - StandardValidator als Attribute für EMail, Phone, Name, aber auch ein Interface Validate um komplexere zusammenhänge validieren zu können
-- Weitere Attribute: Example[] wird, dann von Generators überprüft und ggf angelegt
-- Namespace Formats mit Json, Yaml und XML Exporter, bei Json und Yaml ein Comment in die erste Zeile mit EntityName
 
 
 ## Done
