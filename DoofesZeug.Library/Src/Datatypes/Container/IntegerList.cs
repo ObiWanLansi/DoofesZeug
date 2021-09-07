@@ -2,7 +2,7 @@
 
 
 
-namespace DoofesZeug.Container
+namespace DoofesZeug.Datatypes.Container
 {
     public sealed class IntegerList : List<int>
     {

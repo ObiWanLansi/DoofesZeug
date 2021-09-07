@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 
 
-namespace DoofesZeug.Container
+namespace DoofesZeug.Datatypes.Container
 {
     public sealed class StringSet : SortedSet<string>
     {

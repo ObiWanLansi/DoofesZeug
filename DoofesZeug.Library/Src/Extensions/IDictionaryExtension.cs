@@ -10,12 +10,10 @@ namespace DoofesZeug.Extensions
     {
         public static void ForEach<K, V>( this IDictionary<K, V> dict, Action<K, V> action )
         {
-            using( IEnumerator<K> e = dict.Keys.GetEnumerator() )
+            using IEnumerator<K> e = dict.Keys.GetEnumerator();
+            while( e.MoveNext() )
             {
-                while( e.MoveNext() )
-                {
-                    action(e.Current, dict [e.Current]);
-                }
+                action(e.Current, dict [e.Current]);
             }
         }
 

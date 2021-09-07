@@ -1,7 +1,7 @@
 ﻿using System;
 
 using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Container;
+using DoofesZeug.Datatypes.Container;
 
 
 
@@ -11,12 +11,12 @@ namespace DoofesZeug.Validation
     public sealed class Validator
     {
         /// <summary>
-        /// Validates the specified o.
+        /// Validates the specified value.
         /// </summary>
-        /// <param name="o">The o.</param>
+        /// <param name="value">The value.</param>
         /// <param name="bStopAtFirstError">if set to <c>true</c> [b stop at first error].</param>
         /// <returns></returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        public StringList Validate( object o, bool bStopAtFirstError = false ) => throw new NotImplementedException();
+        public StringList Validate( object value, bool bStopAtFirstError = false ) => throw new NotImplementedException();
     }
 }

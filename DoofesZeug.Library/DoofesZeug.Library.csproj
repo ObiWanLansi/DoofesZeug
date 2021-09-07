@@ -20,20 +20,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\colorbrewer.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\colorbrewer.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.115" />
     <PackageReference Include="YamlDotNet" Version="11.2.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Src\Datatypes\Misc\" />
     <Folder Include="Src\Generated\" />
     <Folder Include="Src\Generated\Builder\" />
     <Folder Include="Src\Generated\Professions\" />
-    <Folder Include="Src\Container\" />
+    <Folder Include="Src\Datatypes\Container\" />
     <Folder Include="Src\Models\Science\Chemistry\" />
     <Folder Include="Src\Models\Science\Mathematics\Geometry\" />
     <Folder Include="Src\Models\Science\Physics\" />
-    <Folder Include="Src\DataSets\" />
+    <Folder Include="Src\Datasets\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +50,25 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\colorbrewer.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

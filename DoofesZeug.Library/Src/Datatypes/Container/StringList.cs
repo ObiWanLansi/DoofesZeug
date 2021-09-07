@@ -3,7 +3,7 @@ using System.Linq;
 
 
 
-namespace DoofesZeug.Container
+namespace DoofesZeug.Datatypes.Container
 {
     public sealed class StringList : List<string>
     {

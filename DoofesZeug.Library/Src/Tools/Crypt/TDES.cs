@@ -25,21 +25,17 @@ namespace DoofesZeug.Tools.Crypt
 
             using( TripleDES des = TripleDES.Create() )
             {
-                using( Rfc2898DeriveBytes pbkdf2 = new(strPassword, Encoding.Unicode.GetBytes(Salt), ITERATIONS) )
+                using Rfc2898DeriveBytes pbkdf2 = new(strPassword, Encoding.Unicode.GetBytes(Salt), ITERATIONS);
+                des.Key = pbkdf2.GetBytes(24);
+                des.IV = pbkdf2.GetBytes(8);
+
+                using MemoryStream ms = new();
+                using( CryptoStream cs = new(ms, des.CreateEncryptor(), CryptoStreamMode.Write) )
                 {
-                    des.Key = pbkdf2.GetBytes(24);
-                    des.IV = pbkdf2.GetBytes(8);
-
-                    using( MemoryStream ms = new() )
-                    {
-                        using( CryptoStream cs = new(ms, des.CreateEncryptor(), CryptoStreamMode.Write) )
-                        {
-                            cs.Write(plainBytes, 0, plainBytes.Length);
-                        }
-
-                        encryptedBytes = ms.ToArray();
-                    }
+                    cs.Write(plainBytes, 0, plainBytes.Length);
                 }
+
+                encryptedBytes = ms.ToArray();
             }
             return Convert.ToBase64String(encryptedBytes);
         }
@@ -58,21 +54,17 @@ namespace DoofesZeug.Tools.Crypt
 
             using( TripleDES des = TripleDES.Create() )
             {
-                using( Rfc2898DeriveBytes pbkdf2 = new(strPassword, Encoding.Unicode.GetBytes(Salt), ITERATIONS) )
+                using Rfc2898DeriveBytes pbkdf2 = new(strPassword, Encoding.Unicode.GetBytes(Salt), ITERATIONS);
+                des.Key = pbkdf2.GetBytes(24);
+                des.IV = pbkdf2.GetBytes(8);
+
+                using MemoryStream ms = new();
+                using( CryptoStream cs = new(ms, des.CreateDecryptor(), CryptoStreamMode.Write) )
                 {
-                    des.Key = pbkdf2.GetBytes(24);
-                    des.IV = pbkdf2.GetBytes(8);
-
-                    using( MemoryStream ms = new() )
-                    {
-                        using( CryptoStream cs = new(ms, des.CreateDecryptor(), CryptoStreamMode.Write) )
-                        {
-                            cs.Write(cryptoBytes, 0, cryptoBytes.Length);
-                        }
-
-                        plainBytes = ms.ToArray();
-                    }
+                    cs.Write(cryptoBytes, 0, cryptoBytes.Length);
                 }
+
+                plainBytes = ms.ToArray();
             }
 
             return Encoding.Unicode.GetString(plainBytes);

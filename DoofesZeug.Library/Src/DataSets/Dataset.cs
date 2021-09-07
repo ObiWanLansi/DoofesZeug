@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using DoofesZeug.Container;
+using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Extensions;
 
 
 
-namespace DoofesZeug.DataSets
+namespace DoofesZeug.Datasets
 {
     /// <summary>
     /// 

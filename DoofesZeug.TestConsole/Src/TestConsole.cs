@@ -1,13 +1,9 @@
-﻿
-using System;
+﻿using System;
+using System.Collections.Generic;
 
-using DoofesZeug.Examples;
 using DoofesZeug.Extensions;
 using DoofesZeug.Models.Animals;
-using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.Human;
-using DoofesZeug.Models.Human.Professions;
-using DoofesZeug.TestData;
 using DoofesZeug.Tools.Misc;
 
 using static System.Console;
@@ -78,15 +74,34 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            Animal cat = new()
+            foreach( string resource in ApplicationResource.GetEmbeddedResourcenNames() )
             {
-                AnimalSpecies = AnimalSpecies.Cat,
-                Name = "Garfield",
-                Gender = Gender.Male,
-                DateOfBirth = (10, 06, 1978)
-            };
+                Out.WriteLineAsync(resource);
+            }
 
-            Console.Out.WriteLineAsync(cat.ToPrettyJson());
+            string strColorBrewerJson = ApplicationResource.ReadResourceAsString("DoofesZeug.Resources.colorbrewer.json");
+
+            Dictionary<string, ColorBrewer> cb = ColorBrewer.FromJson(strColorBrewerJson);
+            cb.ForEach(( key, value ) =>
+            {
+                Out.WriteLineAsync($"{key}:");
+                foreach( string item in value.The8 )
+                {
+                    Out.WriteLineAsync($"    {item}");
+                }
+            });
+
+            //-------------------------------------------------------------------------------------
+
+            //Animal cat = new()
+            //{
+            //    AnimalSpecies = AnimalSpecies.Cat,
+            //    Name = "Garfield",
+            //    Gender = Gender.Male,
+            //    DateOfBirth = (10, 06, 1978)
+            //};
+
+            //Out.WriteLineAsync(cat.ToPrettyJson());
 
             //-------------------------------------------------------------------------------------
 

@@ -56,3 +56,10 @@
 |[SortOrder](./DoofesZeug.Tools.Enums/SortOrder.md)|An generic SortOrder to use in some mehtods for lists or datatables.|Ascending, Descending|
 |[TextAlign](./DoofesZeug.Tools.Enums/TextAlign.md)|An generic TextAlign for console output, or maybe to use in markdown/html generators.|Left, Center, Right|
 |[VerbosityLevel](./DoofesZeug.Tools.Enums/VerbosityLevel.md)|An generic VerbosityLevel for logging output.|None, Low, Normal, High|
+
+
+## `DoofesZeug.Tools.Misc`
+
+|Enumeration|Description|Values|
+|:----------|:----------|:-----|
+|[TypeEnum](./DoofesZeug.Tools.Misc/TypeEnum.md)|An unknown enumeration of the color brewer mechanism.|Div, Qual, Seq|

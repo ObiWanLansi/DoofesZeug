@@ -17,8 +17,8 @@ namespace DoofesZeug.Tools
 
             using Process p = new();
 
-            //p.StartInfo.FileName = @"C:\Lanser\Tools\PlantUML\puml.bat";
-            p.StartInfo.FileName = @"C:\Tools\PlanetUML\puml.bat";
+            p.StartInfo.FileName = @"C:\Lanser\Tools\PlantUML\puml.bat";
+            //p.StartInfo.FileName = @"C:\Tools\PlanetUML\puml.bat";
             p.StartInfo.Arguments = fiPUML.Name;
             p.StartInfo.WorkingDirectory = fiPUML.DirectoryName;
             p.StartInfo.CreateNoWindow = true;
