@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 
-using DoofesZeug.Extensions;
-using DoofesZeug.Models.Animals;
-using DoofesZeug.Models.Human;
-using DoofesZeug.Tools.Misc;
+using DoofesZeug.Examples;
 
 using static System.Console;
 
@@ -74,22 +70,32 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            foreach( string resource in ApplicationResource.GetEmbeddedResourcenNames() )
-            {
-                Out.WriteLineAsync(resource);
-            }
 
-            string strColorBrewerJson = ApplicationResource.ReadResourceAsString("DoofesZeug.Resources.colorbrewer.json");
+            //foreach( string resource in ApplicationResource.GetEmbeddedResourcenNames() )
+            //{
+            //    Out.WriteLineAsync(resource);
+            //}
 
-            Dictionary<string, ColorBrewer> cb = ColorBrewer.FromJson(strColorBrewerJson);
-            cb.ForEach(( key, value ) =>
-            {
-                Out.WriteLineAsync($"{key}:");
-                foreach( string item in value.The8 )
-                {
-                    Out.WriteLineAsync($"    {item}");
-                }
-            });
+            //-------------------------------------------------------------------------------------
+
+            ColorBrewerExample.LoadColorBrowerAndGetOnePaleteWith5Colors();
+            //string strColorBrewerJson = ApplicationResource.ReadResourceAsString("DoofesZeug.Resources.colorbrewer.json");
+
+            //ColorBrewerCatalog cbc = ColorBrewerCatalog.Instance;
+
+            //cbc.ForEach(( colorscheme, colorbrewer ) =>
+            //{
+            //    Out.WriteLineAsync($"Color scheme: {colorscheme}");
+            //    foreach( string item in colorbrewer.The8 )
+            //    {
+            //        Out.WriteLineAsync($"    {item.ToColor()}");
+            //    }
+            //});
+
+            //foreach(string colorscheme in cb.Keys)
+            //{
+            //    Out.WriteLine($"{colorscheme},");
+            //}
 
             //-------------------------------------------------------------------------------------
 

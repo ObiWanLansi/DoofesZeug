@@ -86,3 +86,9 @@ Here are some useful links to helpful articles, some in english, some in german.
 - https://www.newtonsoft.com/json
 - https://github.com/aaubry/YamlDotNet
 - https://plantuml.com/en/
+
+---
+
+## Used Data
+
+- [Color Brewer](https://colorbrewer2.org/)

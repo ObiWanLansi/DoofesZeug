@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 
 using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Extensions;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -12,6 +13,30 @@ using Newtonsoft.Json.Converters;
 
 namespace DoofesZeug.Tools.Misc
 {
+    [Description("Our known and implemented color schemes of the color brewer definition.")]
+    public enum ColorBrewerScheme : byte
+    {
+        Spectral, RdYlGn, RdBu,
+        PiYG, PRGn, RdYlBu,
+        BrBG, RdGy, PuOr,
+        Set2, Accent, Set1,
+        Set3, Dark2, Paired,
+        Pastel2, Pastel1, OrRd,
+        PuBu, BuPu, Oranges,
+        BuGn, YlOrBr, YlGn,
+        Reds, RdPu, Greens,
+        YlGnBu, Purples, GnBu,
+        Greys, YlOrRd, PuRd,
+        Blues, PuBuGn
+    }
+
+
+
+    [Description("An unknown enumeration of the color brewer mechanism.")]
+    public enum TypeEnum { Div, Qual, Seq };
+
+
+
     [Description("An stupid helper class to load and user the color brewer definition.")]
     public class ColorBrewer
     {
@@ -48,20 +73,61 @@ namespace DoofesZeug.Tools.Misc
         [JsonProperty("12", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> The12 { get; set; }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Froms the json.
+        /// </summary>
+        /// <param name="json">The json.</param>
+        /// <returns></returns>
         public static Dictionary<string, ColorBrewer> FromJson( string json ) => JsonConvert.DeserializeObject<Dictionary<string, ColorBrewer>>(json, Converter.Settings);
+
+
+        /// <summary>
+        /// Loads from resource.
+        /// </summary>
+        /// <returns></returns>
+        public static Dictionary<string, ColorBrewer> LoadFromResource()
+        {
+            string strColorBrewerJson = ApplicationResource.ReadResourceAsString("DoofesZeug.Resources.colorbrewer.json");
+            return JsonConvert.DeserializeObject<Dictionary<string, ColorBrewer>>(strColorBrewerJson, Converter.Settings);
+        }
     }
 
 
-    [Description("An unknown enumeration of the color brewer mechanism.")]
-    public enum TypeEnum { Div, Qual, Seq };
+    public sealed class ColorBrewerCatalog : Dictionary<ColorBrewerScheme, ColorBrewer>
+    {
+        private ColorBrewerCatalog()
+        {
+        }
+
+        private static ColorBrewerCatalog instance = null;
 
 
+        public static ColorBrewerCatalog Instance
+        {
+            get
+            {
+                if( instance == null )
+                {
+                    instance = LoadColorBrewerCatalog();
+                }
+                return instance;
+            }
+        }
 
-    //public static class Serialize
-    //{
-    //    public static string ToJson( this Dictionary<string, ColorBrewer> self ) => JsonConvert.SerializeObject(self, Converter.Settings);
-    //}
 
+        static private ColorBrewerCatalog LoadColorBrewerCatalog()
+        {
+            ColorBrewerCatalog cbc = new();
+            ColorBrewer.LoadFromResource().ForEach(( scheme, brewer ) => cbc.Add((ColorBrewerScheme) Enum.Parse(typeof(ColorBrewerScheme), scheme), brewer));
+            return cbc;
+        }
+    }
+
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     internal static class Converter
     {
@@ -91,45 +157,16 @@ namespace DoofesZeug.Tools.Misc
 
             string value = serializer.Deserialize<string>(reader);
 
-            switch( value )
+            return value switch
             {
-                case "div":
-                    return TypeEnum.Div;
-                case "qual":
-                    return TypeEnum.Qual;
-                case "seq":
-                    return TypeEnum.Seq;
-            }
-
-            throw new Exception("Cannot unmarshal type TypeEnum");
+                "div" => TypeEnum.Div,
+                "qual" => TypeEnum.Qual,
+                "seq" => TypeEnum.Seq,
+                _ => throw new Exception("Cannot unmarshal type TypeEnum"),
+            };
         }
 
         public override void WriteJson( JsonWriter writer, object untypedValue, JsonSerializer serializer ) => throw new NotImplementedException();
-        //public override void WriteJson( JsonWriter writer, object untypedValue, JsonSerializer serializer )
-        //{
-        //    if( untypedValue == null )
-        //    {
-        //        serializer.Serialize(writer, null);
-        //        return;
-        //    }
-
-        //    TypeEnum value = (TypeEnum) untypedValue;
-
-        //    switch( value )
-        //    {
-        //        case TypeEnum.Div:
-        //            serializer.Serialize(writer, "div");
-        //            return;
-        //        case TypeEnum.Qual:
-        //            serializer.Serialize(writer, "qual");
-        //            return;
-        //        case TypeEnum.Seq:
-        //            serializer.Serialize(writer, "seq");
-        //            return;
-        //    }
-
-        //    throw new Exception("Cannot marshal type TypeEnum");
-        //}
 
         public static readonly TypeEnumConverter Singleton = new();
     }

@@ -21,7 +21,7 @@
 |:---|:---|:--:|:---:|:-----------|
 |WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Human.Professions/WellKnownProfession.md)|&#x2713;|&#x2717;|Waiter|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|c32cf02e-2489-4c4e-901e-ab1404ab1b95|
+|Id|Guid|&#x2713;|&#x2713;|970f8989-5ca0-4f80-a94f-0ebc04383655|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "45de66ec-6859-41a0-9a27-f9676bd16bdd",
+  "Id": "b450e258-0772-4ed4-8996-ac229a615480",
   "WellKnownProfessionType": "Waiter",
   "Since": "11.11.1942"
 }

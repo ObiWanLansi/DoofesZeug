@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.Text;
 using System.Web;
 
@@ -153,6 +154,24 @@ namespace DoofesZeug.Extensions
         /// <returns></returns>
         public static bool EqualsIgnoreCase( this string strContent, string strOtherString ) => strContent.Equals(strOtherString, StringComparison.CurrentCultureIgnoreCase);
 
+
+        /// <summary>
+        /// Because we have an LastIndexOf, we also need an FirstIndexOf.
+        /// </summary>
+        /// <param name="strContent">Content of the string.</param>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        public static int FirstIndexOf( this string strContent, char value ) => strContent.IndexOf(value);
+
+
+        /// <summary>
+        /// Because we have an LastIndexOf, we also need an FirstIndexOf.
+        /// </summary>
+        /// <param name="strContent">Content of the string.</param>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        public static int FirstIndexOf( this string strContent, string value ) => strContent.IndexOf(value);
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -224,11 +243,11 @@ namespace DoofesZeug.Extensions
 
 
         /// <summary>
-        /// Removes the extension.
+        /// Removes the file extension from an filename.
         /// </summary>
         /// <param name="strFilename">The string filename.</param>
         /// <returns></returns>
-        public static string RemoveExtension( this string strFilename )
+        public static string RemoveFileExtension( this string strFilename )
         {
             int iIndex = strFilename.LastIndexOf('.');
             return iIndex > 0 ? strFilename.Substring(0, iIndex) : strFilename;
@@ -265,6 +284,63 @@ namespace DoofesZeug.Extensions
                 sbFlatten.Append(values [iCounter]);
             }
             return sbFlatten.ToString();
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Try to converts an string into a color.
+        /// </summary>
+        /// <param name="strColor">The color as string ( eg "0xFF00FF" or "#123456" or "Cyan").</param>
+        /// <param name="cDefault">The c default.</param>
+        /// <returns></returns>
+        public static Color ToColor( this string strColor, Color? cDefault = null )
+        {
+            if( string.IsNullOrEmpty(strColor) )
+            {
+                return cDefault ?? Color.Transparent;
+            }
+
+            strColor = strColor.Trim().ToLower();
+
+            // #123456
+            if( strColor [0] == '#' )
+            {
+                string strHEXValue = "FF" + strColor.Substring(1);
+                return Color.FromArgb(Convert.ToInt32(strHEXValue, 16));
+            }
+
+            // 0xFF00FF
+            if( strColor.StartsWith("0x") )
+            {
+                string strHEXValue = "FF" + strColor.Substring(2);
+                return Color.FromArgb(Convert.ToInt32(strHEXValue, 16));
+            }
+
+            // Color [Cyan]
+            if( strColor.StartsWith("Color [") && strColor.EndsWith("]") )
+            {
+                strColor = strColor.Substring(7, strColor.Length - 8);
+                return Color.FromName(strColor);
+            }
+
+            // rgb(252,141,89)
+            if( strColor.StartsWith("rgb(") && strColor.EndsWith(")") )
+            {
+                strColor = strColor [4..];
+                strColor = strColor [0..^1];
+
+                string [] strArray = strColor.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+
+                if( strArray.Length == 3 )
+                {
+                    return Color.FromArgb(Convert.ToInt32(strArray [0]), Convert.ToInt32(strArray [1]), Convert.ToInt32(strArray [2]));
+                }
+            }
+
+            // Cyan
+            return Color.FromName(strColor);
         }
     }
 }
