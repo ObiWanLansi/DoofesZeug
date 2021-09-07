@@ -1,5 +1,5 @@
 [![.NET](https://github.com/ObiWanLansi/DoofesZeug/actions/workflows/dotnet.yml/badge.svg)](https://github.com/ObiWanLansi/DoofesZeug/actions/workflows/dotnet.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ObiWanLansi/DoofesZeug/blob/main/LICENSE)
 
 <h1 style="font-weight:bold; letter-spacing: 10px; border-bottom: 2px solid black;">Doofes Zeug</h1>
 
