@@ -1,6 +1,9 @@
 ﻿using System;
 
 using DoofesZeug.Examples;
+using DoofesZeug.Extensions;
+using DoofesZeug.Models.Human;
+using DoofesZeug.Models.Human.Professions;
 
 using static System.Console;
 
@@ -169,15 +172,15 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            //Person pOriginal = PersonBuilder.New().
-            //    WithFirstName("John").
-            //    WithLastName("Doe").
-            //    WithGender(Gender.Male).
-            //    WithHandedness(Handedness.Both).
-            //    WithDateOfBirth((25, 05, 1942)).
-            //    WithProfession(new PoliceOfficer { Since = (15, 10, 1969) });
+            Person pOriginal = PersonBuilder.New().
+                WithFirstName("John").
+                WithLastName("Doe").
+                WithGender(Gender.Male).
+                WithHandedness(Handedness.Both).
+                WithDateOfBirth((25, 05, 1942)).
+                WithProfession(new PoliceOfficer { Since = (15, 10, 1969) });
 
-            //Out.WriteLineAsync(pOriginal.ToStringTable(bDisplayNULL: true));
+            Out.WriteLineAsync(pOriginal.ToStringTable(bDisplayNULL: true));
             //Out.WriteLineAsync(DIV);
 
             //try
