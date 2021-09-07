@@ -16,6 +16,7 @@
   - Fahrenheit
   - Celcius
 - Ein kleines GraphModel und erzeugung von diaggraph oder basic yed files ?
+- Add Metaphone And Soundex
 - Support für aufruf gnuplot für kleinere Diagramme zwischendurch ?
 - Feature WizardTSupportool mit fragen / antworten wie bei erstellen dotnet init, oder anderen tools ?
 - MatheStuff, z.b geometrische Figuren Rectangle, Circle, und direkt mit ein paar Meßmethoden?
