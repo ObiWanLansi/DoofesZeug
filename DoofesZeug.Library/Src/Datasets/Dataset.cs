@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Extensions;
+using DoofesZeug.Models.Human;
 
 
 
@@ -11,7 +12,7 @@ namespace DoofesZeug.Datasets
     /// <summary>
     /// 
     /// </summary>
-    public sealed class Dataset
+    public static class Dataset
     {
         /// <summary>
         /// The names female
@@ -81,7 +82,7 @@ namespace DoofesZeug.Datasets
         /// <summary>
         /// The surname
         /// </summary>
-        public static readonly StringSet SURNAME = new()
+        public static readonly StringSet SURNAMES = new()
         {
             "Meier",
             "Müller",
@@ -810,9 +811,9 @@ namespace DoofesZeug.Datasets
         /// <param name="stop">The i stop.</param>
         /// <param name="step">The step.</param>
         /// <returns></returns>
-        public static List<int> GetNumberList( int start, int stop, int step = 1 )
+        public static IntegerList GetNumberList( int start, int stop, int step = 1 )
         {
-            List<int> lValues = new(stop - start);
+            IntegerList lValues = new(stop - start);
 
             for( int iCounter = start ; iCounter <= stop ; iCounter += step )
             {
@@ -828,9 +829,9 @@ namespace DoofesZeug.Datasets
         /// </summary>
         /// <param name="iNumberCount">The i number count.</param>
         /// <returns></returns>
-        public static List<int> GetNumberList( int iNumberCount )
+        public static IntegerList GetNumberList( int iNumberCount )
         {
-            List<int> lValues = new(iNumberCount);
+            IntegerList lValues = new(iNumberCount);
 
             for( int iCounter = 0 ; iCounter < iNumberCount ; iCounter++ )
             {
@@ -848,11 +849,11 @@ namespace DoofesZeug.Datasets
         /// <param name="iMinValue">The i minimum value.</param>
         /// <param name="iMaxValue">The i maximum value.</param>
         /// <returns></returns>
-        public static List<int> GetRandomNumberList( int iNumberCount, int iMinValue, int iMaxValue )
+        public static IntegerList GetRandomNumberList( int iNumberCount, int iMinValue, int iMaxValue )
         {
             Random r = new();
 
-            List<int> lValues = new(iNumberCount);
+            IntegerList lValues = new(iNumberCount);
 
             for( int iCounter = 0 ; iCounter < iNumberCount ; iCounter++ )
             {
@@ -869,13 +870,13 @@ namespace DoofesZeug.Datasets
         /// </summary>
         /// <param name="iNumberCount">The i number count.</param>
         /// <returns></returns>
-        public static List<int> GetPrimeNumbers( int iNumberCount )
+        public static IntegerList GetPrimeNumbers( int iNumberCount )
         {
-            List<int> lValues = new(iNumberCount);
+            IntegerList lValues = new(iNumberCount);
 
             for( int iCounter = 0 ; iCounter < iNumberCount ; iCounter++ )
             {
-                if( iCounter.IsPrime() == true )
+                if( iCounter.IsPrime() )
                 {
                     lValues.Add(iCounter);
                 }
@@ -888,13 +889,9 @@ namespace DoofesZeug.Datasets
         /// <summary>
         /// Gets the fibonacci.
         /// </summary>
-        /// <param name="iNumberCount">The i number count.</param>
+        /// <param name="numbercount">The numbercount.</param>
         /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static List<int> GetFibonacci( int iNumberCount )
-        {
-            throw new NotImplementedException();
-        }
+        public static UnsignedLongList GetFibonacci( uint numbercount ) => numbercount.GetFibonacciList();
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -944,5 +941,37 @@ namespace DoofesZeug.Datasets
         /// <param name="dtStart">The dt start.</param>
         /// <returns></returns>
         public static List<DateTime> GetTimeline( DateTime dtStart ) => GetTimeline(dtStart, DateTime.Now, new TimeSpan(1, 0, 0, 0));
+
+
+        /// <summary>
+        /// Gets the persons.
+        /// </summary>
+        /// <param name="iCount">The i count.</param>
+        /// <returns></returns>
+        public static List<Person> GetPersons( uint iCount )
+        {
+            List<Person> list = new((int) iCount);
+
+            Random r = new();
+
+            for( int iCounter = 0 ; iCounter < iCount ; iCounter++ )
+            {
+                Person p = new();
+
+                Gender g = r.NextEnum<Gender>();
+
+                p.FirstName = r.NextObject(g == Gender.Female ? NAMES_FEMALE : g == Gender.Male ? NAMES_MALE : r.NextBool() ? NAMES_FEMALE : NAMES_MALE);
+                p.LastName = r.NextObject(SURNAMES);
+                p.DateOfBirth = r.NextDateTime(new DateTime(1970, 01, 01), new DateTime(2020, 12, 24));
+                p.Gender = g;
+                p.Handedness = r.NextEnum<Handedness>();
+
+                //TODO: Früher oder später kommt auch noch Profession hinzu, doch immomment haben wir noch kein Profession.GetByWellKnownProfession(WellKnownProfession wkp)
+
+                list.Add(p);
+            }
+
+            return list;
+        }
     }
 }

@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 
 
 
-namespace DoofesZeug.Models.Human
+namespace DoofesZeug.Models.DateAndTime
 {
     [Generated]
     public static class DateOfBirthBuilder

@@ -196,9 +196,7 @@ namespace DoofesZeug.Models.DateAndTime
                 return false;
             }
 
-            Time other = obj as Time;
-
-            if( other == null )
+            if( obj is not Time other )
             {
                 return false;
             }

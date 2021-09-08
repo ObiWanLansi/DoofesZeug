@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
+using DoofesZeug.Datasets;
 using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Examples.Extensions;
 using DoofesZeug.Extensions;
+using DoofesZeug.Models.Human;
 
 using static System.Console;
 
@@ -72,7 +75,17 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            MathExtensionExample.GetFibonacciList();
+            //MathExtensionExample.GetFibonacciList();
+
+            //-------------------------------------------------------------------------------------
+
+            List<Person> persons = Dataset.GetPersons(20);
+
+            int counter = 1;
+            foreach( Person person in persons )
+            {
+                Out.WriteLineAsync($"{counter++}: {person} ({person.Gender}, {person.Handedness})");
+            }
 
             //-------------------------------------------------------------------------------------
 

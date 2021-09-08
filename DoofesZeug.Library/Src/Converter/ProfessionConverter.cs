@@ -91,6 +91,10 @@ namespace DoofesZeug.Converter
                     WellKnownProfession.Teacher => new Teacher { Id = guid, Since = date },
                     WellKnownProfession.Tiler => new Tiler { Id = guid, Since = date },
                     WellKnownProfession.Carpenter => new Carpenter { Id = guid, Since = date },
+                    WellKnownProfession.Soldier => new Soldier { Id = guid, Since = date },
+                    WellKnownProfession.BusDriver => new BusDriver { Id = guid, Since = date },
+                    WellKnownProfession.TaxiDriver => new TaxiDriver { Id = guid, Since = date },
+                    WellKnownProfession.Pilot => new Pilot { Id = guid, Since = date },
                     _ => throw new Exception($"Unimplemented Profession: '{wkp}'!"),
                 };
             }

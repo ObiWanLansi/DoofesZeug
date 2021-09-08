@@ -3,6 +3,9 @@ using DoofesZeug.Models.Human.Professions;
 
 using DoofesZeug.Attributes.Documentation;
 using System.Reflection;
+using DoofesZeug.Models.DateAndTime;
+
+
 
 namespace DoofesZeug.Models.Human
 {
@@ -10,11 +13,11 @@ namespace DoofesZeug.Models.Human
     [Builder]
     public class Person : IdentifiableEntity
     {
-        public DateOfBirth DateOfBirth { get; set; }
-
         public FirstName FirstName { get; set; }
 
         public LastName LastName { get; set; }
+        
+        public DateOfBirth DateOfBirth { get; set; }
 
         public Gender Gender { get; set; }
 

@@ -4,8 +4,8 @@
 
 |||
 |:-|:-|
-|Description|An dateofbirth for creatures.|
-|Namespace|DoofesZeug.Models.Human|
+|Description|An date of birth for creatures.|
+|Namespace|DoofesZeug.Models.DateAndTime|
 |BaseClass|Date|
 
 ## Properties

@@ -1,5 +1,6 @@
 ﻿using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
+using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.Human;
 
 
@@ -11,7 +12,7 @@ namespace DoofesZeug.Models.Animals
     public class Animal : IdentifiableEntity
     {
         public DateOfBirth DateOfBirth { get; set; }
-        
+
         public Name Name { get; set; }
 
         public Gender Gender { get; set; }

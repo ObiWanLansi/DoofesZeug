@@ -15,6 +15,10 @@ enum WellKnownProfession {
     Teacher
     Tiler
     Carpenter
+    Soldier
+    BusDriver
+    TaxiDriver
+    Pilot
 }
 
 @enduml

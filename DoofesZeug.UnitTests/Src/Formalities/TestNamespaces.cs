@@ -18,9 +18,11 @@ namespace DoofesZeug.UnitTest.Formalities
     {
         private static readonly string SOURCE = @"..\..\..\..\DoofesZeug.Library\Src";
 
-        private static readonly StringSet IGNORE = new StringSet
+        private static readonly StringSet IGNORE = new()
         {
-            "DoofesZeug.Tools.Misc.TypeEnum"
+            "DoofesZeug.Tools.Misc.TypeEnum",
+            "DoofesZeug.Tools.Misc.ColorBrewerScheme",
+            "DoofesZeug.Tools.Misc.ColorBrewerCatalog",
         };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -15,13 +15,6 @@ namespace DoofesZeug.Models.Human
         public static Person New() => new();
 
 
-        public static Person WithDateOfBirth(this Person person, DoofesZeug.Models.Human.DateOfBirth dateofbirth)
-        {
-            person.DateOfBirth = dateofbirth;
-            return person;
-        }
-
-
         public static Person WithFirstName(this Person person, DoofesZeug.Models.Human.FirstName firstname)
         {
             person.FirstName = firstname;
@@ -32,6 +25,13 @@ namespace DoofesZeug.Models.Human
         public static Person WithLastName(this Person person, DoofesZeug.Models.Human.LastName lastname)
         {
             person.LastName = lastname;
+            return person;
+        }
+
+
+        public static Person WithDateOfBirth(this Person person, DoofesZeug.Models.DateAndTime.DateOfBirth dateofbirth)
+        {
+            person.DateOfBirth = dateofbirth;
             return person;
         }
 

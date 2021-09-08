@@ -18,6 +18,10 @@ namespace DoofesZeug.Models.Human.Professions
         Waiter,
         Teacher,
         Tiler,
-        Carpenter
+        Carpenter,
+        Soldier,
+        BusDriver,
+        TaxiDriver,
+        Pilot
     }
 }

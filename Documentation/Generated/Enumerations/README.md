@@ -29,7 +29,7 @@
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
-|[WellKnownProfession](./DoofesZeug.Models.Human.Professions/WellKnownProfession.md)|A small enumeration of some professions, for every value an corresponding entity will be created by the generator.|Unknown, FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter|
+|[WellKnownProfession](./DoofesZeug.Models.Human.Professions/WellKnownProfession.md)|A small enumeration of some professions, for every value an corresponding entity will be created by the generator.|Unknown, FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter, Soldier, BusDriver, TaxiDriver, Pilot|
 
 
 ## `DoofesZeug.Models.Science.Geographically`

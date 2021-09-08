@@ -156,6 +156,16 @@ namespace DoofesZeug.Models.DateAndTime
 
 
         /// <summary>
+        /// Performs an implicit conversion from <see cref="System.DateTime"/> to <see cref="DoofesZeug.Models.DateAndTime.Date"/>.
+        /// </summary>
+        /// <param name="dt">The dt.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Date( DateTime dt) => new((uint)dt.Day, (uint) dt.Month, (uint) dt.Year);
+
+
+        /// <summary>
         /// Performs an implicit conversion from <see cref="System.ValueTuple{Day, Month, Year}"/> to <see cref="Date"/>.
         /// </summary>
         /// <param name="value">The value.</param>
@@ -196,9 +206,7 @@ namespace DoofesZeug.Models.DateAndTime
                 return false;
             }
 
-            Date other = obj as Date;
-
-            if( other == null )
+            if( obj is not Date other )
             {
                 return false;
             }

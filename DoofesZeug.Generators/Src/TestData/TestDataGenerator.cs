@@ -41,6 +41,10 @@ namespace DoofesZeug.TestData
             GENERATORS.Add(typeof(Tiler).FullName, GenerateProfession<Tiler>);
             GENERATORS.Add(typeof(Unknown).FullName, GenerateProfession<Unknown>);
             GENERATORS.Add(typeof(Waiter).FullName, GenerateProfession<Waiter>);
+            GENERATORS.Add(typeof(BusDriver).FullName, GenerateProfession<BusDriver>);
+            GENERATORS.Add(typeof(TaxiDriver).FullName, GenerateProfession<TaxiDriver>);
+            GENERATORS.Add(typeof(Soldier).FullName, GenerateProfession<Soldier>);
+            GENERATORS.Add(typeof(Pilot).FullName, GenerateProfession<Pilot>);
 
             GENERATORS.Add(typeof(DateOfBirth).FullName, GenerateDateOfBirth);
             GENERATORS.Add(typeof(Date).FullName, GenerateDate);

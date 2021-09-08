@@ -15,7 +15,7 @@ namespace DoofesZeug.Models.Animals
         public static Animal New() => new();
 
 
-        public static Animal WithDateOfBirth(this Animal animal, DoofesZeug.Models.Human.DateOfBirth dateofbirth)
+        public static Animal WithDateOfBirth(this Animal animal, DoofesZeug.Models.DateAndTime.DateOfBirth dateofbirth)
         {
             animal.DateOfBirth = dateofbirth;
             return animal;

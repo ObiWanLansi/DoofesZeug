@@ -14,7 +14,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|DateOfBirth|[DateOfBirth](../../Models/DoofesZeug.Models.Human/DateOfBirth.md)|&#x2713;|&#x2713;|NULL|
+|DateOfBirth|[DateOfBirth](../../Models/DoofesZeug.Models.DateAndTime/DateOfBirth.md)|&#x2713;|&#x2713;|NULL|
 |Name|[Name](../../Models/DoofesZeug.Models.Human/Name.md)|&#x2713;|&#x2713;|NULL|
 |Gender|[Gender](../../Enumerations/DoofesZeug.Models.Human/Gender.md)|&#x2713;|&#x2713;|Unknown|
 |AnimalSpecies|[AnimalSpecies](../../Enumerations/DoofesZeug.Models.Animals/AnimalSpecies.md)|&#x2713;|&#x2713;|Unknown|
@@ -23,7 +23,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Id|Guid|&#x2713;|&#x2713;|d32494b3-0e32-4dd0-8c58-0c5cee6dad36|
+|Id|Guid|&#x2713;|&#x2713;|716c763e-5045-4c74-9474-0d7ddd88ccc0|
 
 ## Attributes
 
@@ -42,7 +42,7 @@
   "Name": "Garfield",
   "Gender": "Male",
   "AnimalSpecies": "Cat",
-  "Id": "95ebc4b5-8c65-44b1-aae8-20c1818e23ce"
+  "Id": "4e4dc69a-705c-4c7c-aa98-eb1e0443095a"
 }
 ```
 

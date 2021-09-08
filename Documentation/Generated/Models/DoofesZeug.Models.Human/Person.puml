@@ -14,9 +14,9 @@ abstract class IdentifiableEntity {
 IdentifiableEntity <|-- Person
 
 class Person {
-    DateOfBirth: DateOfBirth
     FirstName: FirstName
     LastName: LastName
+    DateOfBirth: DateOfBirth
     Gender: Gender
     Handedness: Handedness
     Profession: Profession
