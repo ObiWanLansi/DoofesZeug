@@ -38,7 +38,6 @@
     <Folder Include="Src\Generated\" />
     <Folder Include="Src\Generated\Builder\" />
     <Folder Include="Src\Generated\Professions\" />
-    <Folder Include="Src\Datatypes\Container\" />
     <Folder Include="Src\Models\Science\Chemistry\" />
     <Folder Include="Src\Models\Science\Mathematics\Geometry\" />
     <Folder Include="Src\Models\Science\Physics\" />

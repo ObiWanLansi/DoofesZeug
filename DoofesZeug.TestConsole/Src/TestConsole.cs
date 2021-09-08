@@ -1,9 +1,8 @@
 ﻿using System;
 
-using DoofesZeug.Examples;
+using DoofesZeug.Datatypes.Container;
+using DoofesZeug.Examples.Extensions;
 using DoofesZeug.Extensions;
-using DoofesZeug.Models.Human;
-using DoofesZeug.Models.Human.Professions;
 
 using static System.Console;
 
@@ -13,7 +12,7 @@ namespace DoofesZeug
 {
     static class TestConsole
     {
-        static private readonly string DIV = new('-', 80);
+        //static private readonly string DIV = new('-', 80);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -73,15 +72,12 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-
-            //foreach( string resource in ApplicationResource.GetEmbeddedResourcenNames() )
-            //{
-            //    Out.WriteLineAsync(resource);
-            //}
+            MathExtensionExample.GetFibonacciList();
 
             //-------------------------------------------------------------------------------------
 
-            ColorBrewerExample.LoadColorBrowerAndGetOnePaleteWith5Colors();
+            //ColorBrewerExample.LoadColorBrowerAndGetOnePaleteWith5Colors();
+
             //string strColorBrewerJson = ApplicationResource.ReadResourceAsString("DoofesZeug.Resources.colorbrewer.json");
 
             //ColorBrewerCatalog cbc = ColorBrewerCatalog.Instance;
@@ -172,15 +168,7 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            Person pOriginal = PersonBuilder.New().
-                WithFirstName("John").
-                WithLastName("Doe").
-                WithGender(Gender.Male).
-                WithHandedness(Handedness.Both).
-                WithDateOfBirth((25, 05, 1942)).
-                WithProfession(new PoliceOfficer { Since = (15, 10, 1969) });
 
-            Out.WriteLineAsync(pOriginal.ToStringTable(bDisplayNULL: true));
             //Out.WriteLineAsync(DIV);
 
             //try

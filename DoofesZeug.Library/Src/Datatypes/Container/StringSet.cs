@@ -36,6 +36,16 @@ namespace DoofesZeug.Datatypes.Container
 
 
         /// <summary>
+        /// Froms the specified values.
+        /// </summary>
+        /// <param name="values">The values.</param>
+        /// <returns></returns>
+        static public StringSet From( params string [] values ) => new (values);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
         /// Gets the <see cref="System.String"/> with the specified i index.
         /// </summary>
         /// <value>

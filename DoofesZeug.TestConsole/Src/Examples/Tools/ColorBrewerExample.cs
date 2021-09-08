@@ -5,7 +5,7 @@ using DoofesZeug.Tools.Misc;
 
 
 
-namespace DoofesZeug.Examples
+namespace DoofesZeug.Examples.Tools
 {
     public static class ColorBrewerExample
     {

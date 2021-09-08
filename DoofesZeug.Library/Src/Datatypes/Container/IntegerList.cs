@@ -44,6 +44,16 @@ namespace DoofesZeug.Datatypes.Container
 
 
         /// <summary>
+        /// Froms the specified values.
+        /// </summary>
+        /// <param name="values">The values.</param>
+        /// <returns></returns>
+        static public IntegerList From( params int [] values ) => new (values);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
         /// Implements the operator *.
         /// </summary>
         /// <param name="ilSource">The il source.</param>

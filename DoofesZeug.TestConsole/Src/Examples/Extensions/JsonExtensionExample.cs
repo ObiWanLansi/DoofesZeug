@@ -5,7 +5,7 @@ using DoofesZeug.Models.Human;
 
 
 
-namespace DoofesZeug.Examples
+namespace DoofesZeug.Examples.Extensions
 {
     public static class JsonExtensionExample
     {
