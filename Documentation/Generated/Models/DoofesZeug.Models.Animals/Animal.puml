@@ -16,8 +16,8 @@ IdentifiableEntity <|-- Animal
 class Animal {
     DateOfBirth: DateOfBirth
     Name: Name
-    Gender: Gender
-    AnimalSpecies: AnimalSpecies
+    Gender: Nullable`1
+    AnimalSpecies: Nullable`1
 }
 
 @enduml

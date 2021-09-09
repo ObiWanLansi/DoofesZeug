@@ -36,16 +36,23 @@ namespace DoofesZeug.Models.Human
         }
 
 
-        public static Person WithGender(this Person person, DoofesZeug.Models.Human.Gender gender)
+        public static Person WithGender(this Person person, System.Nullable<DoofesZeug.Models.Human.Gender> gender)
         {
             person.Gender = gender;
             return person;
         }
 
 
-        public static Person WithHandedness(this Person person, DoofesZeug.Models.Human.Handedness handedness)
+        public static Person WithHandedness(this Person person, System.Nullable<DoofesZeug.Models.Human.Handedness> handedness)
         {
             person.Handedness = handedness;
+            return person;
+        }
+
+
+        public static Person WithBloodGroup(this Person person, System.Nullable<DoofesZeug.Models.Species.BloodGroup> bloodgroup)
+        {
+            person.BloodGroup = bloodgroup;
             return person;
         }
 

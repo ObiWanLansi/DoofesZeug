@@ -84,7 +84,7 @@ namespace DoofesZeug
             int counter = 1;
             foreach( Person person in persons )
             {
-                Out.WriteLineAsync($"{counter++}: {person} ({person.Gender}, {person.Handedness})");
+                Out.WriteLineAsync($"{counter++}: {person} ({person.Gender}, {person.Handedness}, {person.BloodGroup})");
             }
 
             //-------------------------------------------------------------------------------------

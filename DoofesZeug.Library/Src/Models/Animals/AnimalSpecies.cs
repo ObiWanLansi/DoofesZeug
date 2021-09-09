@@ -7,8 +7,6 @@ namespace DoofesZeug.Models.Animals
     [Description("Some animal species, mixed with subtypes for faster development.")]
     public enum AnimalSpecies : byte
     {
-        Unknown,
-
         Cat,
         Dog,
         Horse,
@@ -29,8 +27,6 @@ namespace DoofesZeug.Models.Animals
         Elephant,
         Rhino,
         Buffalo,
-        Hedgehog,
-
-        Other
+        Hedgehog
     }
 }

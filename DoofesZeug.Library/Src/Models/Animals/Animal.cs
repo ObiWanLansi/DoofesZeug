@@ -15,8 +15,8 @@ namespace DoofesZeug.Models.Animals
 
         public Name Name { get; set; }
 
-        public Gender Gender { get; set; }
+        public Gender? Gender { get; set; }
 
-        public AnimalSpecies AnimalSpecies { get; set; }
+        public AnimalSpecies? AnimalSpecies { get; set; }
     }
 }

@@ -44,7 +44,7 @@
 |[FirstName](./DoofesZeug.Models.Human/FirstName.md)|An firstname for humans.|Value|
 |[LastName](./DoofesZeug.Models.Human/LastName.md)|An lastname for humans.|Value|
 |[Name](./DoofesZeug.Models.Human/Name.md)|An generic entity for names.|Value|
-|[Person](./DoofesZeug.Models.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, DateOfBirth, Gender, Handedness, Profession, Id|
+|[Person](./DoofesZeug.Models.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, DateOfBirth, Gender, Handedness, BloodGroup, Profession, Id|
 
 
 ## `DoofesZeug.Models.Human.Professions`

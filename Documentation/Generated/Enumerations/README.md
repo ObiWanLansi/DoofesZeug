@@ -5,7 +5,7 @@
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
-|[AnimalSpecies](./DoofesZeug.Models.Animals/AnimalSpecies.md)|Some animal species, mixed with subtypes for faster development.|Unknown, Cat, Dog, Horse, Cow, Pig, Donkey, Monkey, Chicken, Bird, Eagle, Shark, Dolphin, Fish, Giraffe, Elephant, Rhino, Buffalo, Hedgehog, Other|
+|[AnimalSpecies](./DoofesZeug.Models.Animals/AnimalSpecies.md)|Some animal species, mixed with subtypes for faster development.|Cat, Dog, Horse, Cow, Pig, Donkey, Monkey, Chicken, Bird, Eagle, Shark, Dolphin, Fish, Giraffe, Elephant, Rhino, Buffalo, Hedgehog|
 
 
 ## `DoofesZeug.Models.DateAndTime`

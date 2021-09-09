@@ -17,8 +17,9 @@ class Person {
     FirstName: FirstName
     LastName: LastName
     DateOfBirth: DateOfBirth
-    Gender: Gender
-    Handedness: Handedness
+    Gender: Nullable`1
+    Handedness: Nullable`1
+    BloodGroup: Nullable`1
     Profession: Profession
 }
 

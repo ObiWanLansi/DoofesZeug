@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Extensions;
 using DoofesZeug.Models.Human;
+using DoofesZeug.Models.Species;
 using DoofesZeug.Tools.Misc;
+
+
 
 namespace DoofesZeug.Datasets
 {
@@ -964,6 +967,7 @@ namespace DoofesZeug.Datasets
                 p.DateOfBirth = r.NextDateTime(new DateTime(1970, 01, 01), new DateTime(2020, 12, 24));
                 p.Gender = g;
                 p.Handedness = r.NextEnum<Handedness>();
+                p.BloodGroup= r.NextEnum<BloodGroup>();
 
                 //TODO: Früher oder später kommt auch noch Profession hinzu, doch immomment haben wir noch kein Profession.GetByWellKnownProfession(WellKnownProfession wkp)
 

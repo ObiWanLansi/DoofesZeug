@@ -21,7 +21,7 @@
 |:---|:---|:--:|:---:|:-----------|
 |WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Human.Professions/WellKnownProfession.md)|&#x2713;|&#x2717;|Soldier|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|abdec7fe-a086-4a1c-9cd5-5ba8658ef5f6|
+|Id|Guid|&#x2713;|&#x2713;|ccc589df-7e0f-487e-9171-71f70e9df916|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "93986517-494e-400e-b549-e3a73a77fa9c",
+  "Id": "b2e7967f-7a61-41fb-8934-48dbea559ce2",
   "WellKnownProfessionType": "Soldier",
   "Since": "11.11.1942"
 }

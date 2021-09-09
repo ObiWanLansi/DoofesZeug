@@ -17,15 +17,16 @@
 |FirstName|[FirstName](../../Models/DoofesZeug.Models.Human/FirstName.md)|&#x2713;|&#x2713;|NULL|
 |LastName|[LastName](../../Models/DoofesZeug.Models.Human/LastName.md)|&#x2713;|&#x2713;|NULL|
 |DateOfBirth|[DateOfBirth](../../Models/DoofesZeug.Models.DateAndTime/DateOfBirth.md)|&#x2713;|&#x2713;|NULL|
-|Gender|[Gender](../../Enumerations/DoofesZeug.Models.Human/Gender.md)|&#x2713;|&#x2713;|Divers|
-|Handedness|[Handedness](../../Enumerations/DoofesZeug.Models.Human/Handedness.md)|&#x2713;|&#x2713;|Left|
+|Gender|Nullable`1|&#x2713;|&#x2713;|NULL|
+|Handedness|Nullable`1|&#x2713;|&#x2713;|NULL|
+|BloodGroup|Nullable`1|&#x2713;|&#x2713;|NULL|
 |Profession|[Profession](../../Models/DoofesZeug.Models.Human.Professions/Profession.md)|&#x2713;|&#x2713;|NULL|
 
 ### Inherited
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Id|Guid|&#x2713;|&#x2713;|f2a41271-98bb-45c6-834c-f53d25bb2f2f|
+|Id|Guid|&#x2713;|&#x2713;|360456e8-517a-42f0-b568-5f67e9cbecbf|
 
 ## Attributes
 
@@ -45,12 +46,13 @@
   "DateOfBirth": "27.09.1974",
   "Gender": "Male",
   "Handedness": "Left",
+  "BloodGroup": null,
   "Profession": {
-    "Id": "2bde4533-28b4-426c-856f-f498d2a68d0b",
+    "Id": "ca7cf2f9-fb16-4377-b9c2-4e7abdb598a2",
     "WellKnownProfessionType": "FireFighter",
     "Since": "11.11.1942"
   },
-  "Id": "5b0a9246-d6c5-42e9-8d01-272c1409a48d"
+  "Id": "775e15d1-b454-48ec-9a0e-6b26189714c4"
 }
 ```
 
