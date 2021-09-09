@@ -1,10 +1,7 @@
-﻿// ------------------------------------------------------------------------------------------------------------------
-// This is auto generated code. Every manually change in this code will be overwritten at the next code generation! |
-// ------------------------------------------------------------------------------------------------------------------
+﻿using DoofesZeug.Models.Specieses;
+using DoofesZeug.Models.Specieses.Animals;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using DoofesZeug.Models.Animals;
 
 
 
@@ -16,7 +13,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
         [TestMethod]
         public void ExecuteTest()
         {
-            Animal animal = AnimalBuilder.New().WithDateOfBirth((10, 06, 1978)).WithName("Jacki").WithGender(Models.Human.Gender.Female).WithAnimalSpecies(AnimalSpecies.Horse);
+            Animal animal = AnimalBuilder.New().WithDateOfBirth((10, 06, 1978)).WithName("Jacki").WithGender(Gender.Female).WithAnimalSpecies(AnimalSpecies.Horse);
             Assert.IsNotNull(animal);
         }
     }

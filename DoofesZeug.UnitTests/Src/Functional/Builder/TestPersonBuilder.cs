@@ -1,11 +1,10 @@
-﻿// ------------------------------------------------------------------------------------------------------------------
-// This is auto generated code. Every manually change in this code will be overwritten at the next code generation! |
-// ------------------------------------------------------------------------------------------------------------------
+﻿using DoofesZeug.Models.Specieses;
+using DoofesZeug.Models.Specieses.Human;
+using DoofesZeug.Models.Specieses.Human.Professions;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using DoofesZeug.Models.Human;
-using DoofesZeug.Models.Human.Professions;
+
 
 namespace DoofesZeug.UnitTests.Functional.Builder
 {

@@ -1,35 +1,12 @@
 ﻿# Enumerations Overview
 
 
-## `DoofesZeug.Models.Animals`
-
-|Enumeration|Description|Values|
-|:----------|:----------|:-----|
-|[AnimalSpecies](./DoofesZeug.Models.Animals/AnimalSpecies.md)|Some animal species, mixed with subtypes for faster development.|Cat, Dog, Horse, Cow, Pig, Donkey, Monkey, Chicken, Bird, Eagle, Shark, Dolphin, Fish, Giraffe, Elephant, Rhino, Buffalo, Hedgehog|
-
-
 ## `DoofesZeug.Models.DateAndTime`
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
 |[Quarter](./DoofesZeug.Models.DateAndTime/Quarter.md)|An enumeration for our calendar quarters.|Unknown, First, Second, Third, Fourth|
 |[Season](./DoofesZeug.Models.DateAndTime/Season.md)|An enumeration for our seasons.|Unknown, Winter, Spring, Summer, Autumn|
-
-
-## `DoofesZeug.Models.Human`
-
-|Enumeration|Description|Values|
-|:----------|:----------|:-----|
-|[Gender](./DoofesZeug.Models.Human/Gender.md)|An enumeration for the gender of creatures.|Divers, Female, Male|
-|[Handedness](./DoofesZeug.Models.Human/Handedness.md)|An simple enumeration for the handedness of an human.|Left, Right, Both|
-|[MajorReligion](./DoofesZeug.Models.Human/MajorReligion.md)|The five big major religions.|Hinduism, Buddhism, Islam, Christianity, Judaism|
-
-
-## `DoofesZeug.Models.Human.Professions`
-
-|Enumeration|Description|Values|
-|:----------|:----------|:-----|
-|[WellKnownProfession](./DoofesZeug.Models.Human.Professions/WellKnownProfession.md)|A small enumeration of some professions, for every value an corresponding entity will be created by the generator.|FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter, Soldier, BusDriver, TaxiDriver, Pilot|
 
 
 ## `DoofesZeug.Models.Science.Geographically`
@@ -39,11 +16,34 @@
 |[Continent](./DoofesZeug.Models.Science.Geographically/Continent.md)|Our continents as little enumeration.|Africa, Asia, Europe, NorthAmerica, SouthAmerica, Antarctica, Australia|
 
 
-## `DoofesZeug.Models.Species`
+## `DoofesZeug.Models.Specieses`
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
-|[BloodGroup](./DoofesZeug.Models.Species/BloodGroup.md)|An simple enumeration for the bloodgroup of an human.|A, B, AB, Zero|
+|[BloodGroup](./DoofesZeug.Models.Specieses/BloodGroup.md)|An simple enumeration for the bloodgroup of an human.|A, B, AB, Zero|
+|[Gender](./DoofesZeug.Models.Specieses/Gender.md)|An enumeration for the gender of creatures.|Divers, Female, Male|
+
+
+## `DoofesZeug.Models.Specieses.Animals`
+
+|Enumeration|Description|Values|
+|:----------|:----------|:-----|
+|[AnimalSpecies](./DoofesZeug.Models.Specieses.Animals/AnimalSpecies.md)|Some animal species, mixed with subtypes for faster development.|Cat, Dog, Horse, Cow, Pig, Donkey, Monkey, Chicken, Bird, Eagle, Shark, Dolphin, Fish, Giraffe, Elephant, Rhino, Buffalo, Hedgehog|
+
+
+## `DoofesZeug.Models.Specieses.Human`
+
+|Enumeration|Description|Values|
+|:----------|:----------|:-----|
+|[Handedness](./DoofesZeug.Models.Specieses.Human/Handedness.md)|An simple enumeration for the handedness of an human.|Left, Right, Both|
+|[MajorReligion](./DoofesZeug.Models.Specieses.Human/MajorReligion.md)|The five big major religions.|Hinduism, Buddhism, Islam, Christianity, Judaism|
+
+
+## `DoofesZeug.Models.Specieses.Human.Professions`
+
+|Enumeration|Description|Values|
+|:----------|:----------|:-----|
+|[WellKnownProfession](./DoofesZeug.Models.Specieses.Human.Professions/WellKnownProfession.md)|A small enumeration of some professions, for every value an corresponding entity will be created by the generator.|FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter, Soldier, BusDriver, TaxiDriver, Pilot|
 
 
 ## `DoofesZeug.Tools.Crypt`

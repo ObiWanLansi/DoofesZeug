@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using DoofesZeug.Models.Animals;
 using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.DateAndTime.Part;
 using DoofesZeug.Models.DateAndTime.Part.Date;
 using DoofesZeug.Models.DateAndTime.Part.Time;
-using DoofesZeug.Models.Human;
-using DoofesZeug.Models.Human.Professions;
+using DoofesZeug.Models.Specieses;
+using DoofesZeug.Models.Specieses.Animals;
+using DoofesZeug.Models.Specieses.Human;
+using DoofesZeug.Models.Specieses.Human.Professions;
 
 
 
@@ -39,7 +40,6 @@ namespace DoofesZeug.TestData
             GENERATORS.Add(typeof(PoliceOfficer).FullName, GenerateProfession<PoliceOfficer>);
             GENERATORS.Add(typeof(Teacher).FullName, GenerateProfession<Teacher>);
             GENERATORS.Add(typeof(Tiler).FullName, GenerateProfession<Tiler>);
-            //GENERATORS.Add(typeof(Unknown).FullName, GenerateProfession<Unknown>);
             GENERATORS.Add(typeof(Waiter).FullName, GenerateProfession<Waiter>);
             GENERATORS.Add(typeof(BusDriver).FullName, GenerateProfession<BusDriver>);
             GENERATORS.Add(typeof(TaxiDriver).FullName, GenerateProfession<TaxiDriver>);

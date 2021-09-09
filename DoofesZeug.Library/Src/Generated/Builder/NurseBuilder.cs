@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 
 
 
-namespace DoofesZeug.Models.Human.Professions
+namespace DoofesZeug.Models.Specieses.Human.Professions
 {
     [Generated]
     public static class NurseBuilder

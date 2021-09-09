@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 
 using DoofesZeug.Datasets;
-using DoofesZeug.Datatypes.Container;
-using DoofesZeug.Examples.Extensions;
-using DoofesZeug.Extensions;
-using DoofesZeug.Models.Human;
+using DoofesZeug.Models.Specieses.Human;
 
 using static System.Console;
 

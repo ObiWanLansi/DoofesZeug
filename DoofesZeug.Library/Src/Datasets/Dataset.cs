@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Extensions;
-using DoofesZeug.Models.Human;
-using DoofesZeug.Models.Species;
-using DoofesZeug.Tools.Misc;
+using DoofesZeug.Models.Specieses;
+using DoofesZeug.Models.Specieses.Human;
 
 
 
@@ -767,138 +766,6 @@ namespace DoofesZeug.Datasets
 
 
         /// <summary>
-        /// Gets the number list.
-        /// </summary>
-        /// <param name="start">The start.</param>
-        /// <param name="stop">The stop.</param>
-        /// <param name="step">The step.</param>
-        /// <returns></returns>
-        public static List<float> GetNumberList( float start, float stop, float step = 1 )
-        {
-            List<float> lValues = new((int) ( stop - start ));
-
-            for( float fCounter = start ; fCounter <= stop ; fCounter += step )
-            {
-                lValues.Add(fCounter);
-            }
-
-            return lValues;
-        }
-
-
-        /// <summary>
-        /// Gets the number list.
-        /// </summary>
-        /// <param name="start">The start.</param>
-        /// <param name="stop">The stop.</param>
-        /// <param name="step">The step.</param>
-        /// <returns></returns>
-        public static List<double> GetNumberList( double start, double stop, double step = 1 )
-        {
-            List<double> lValues = new((int) ( stop - start ));
-
-            for( double fCounter = start ; fCounter <= stop ; fCounter += step )
-            {
-                lValues.Add(fCounter);
-            }
-
-            return lValues;
-        }
-
-
-        /// <summary>
-        /// Gets the range number list.
-        /// </summary>
-        /// <param name="start">The i start.</param>
-        /// <param name="stop">The i stop.</param>
-        /// <param name="step">The step.</param>
-        /// <returns></returns>
-        public static IntegerList GetNumberList( int start, int stop, int step = 1 )
-        {
-            IntegerList lValues = new(stop - start);
-
-            for( int iCounter = start ; iCounter <= stop ; iCounter += step )
-            {
-                lValues.Add(iCounter);
-            }
-
-            return lValues;
-        }
-
-
-        /// <summary>
-        /// Gets the ordered number list.
-        /// </summary>
-        /// <param name="iNumberCount">The i number count.</param>
-        /// <returns></returns>
-        public static IntegerList GetNumberList( int iNumberCount )
-        {
-            IntegerList lValues = new(iNumberCount);
-
-            for( int iCounter = 0 ; iCounter < iNumberCount ; iCounter++ )
-            {
-                lValues.Add(iCounter);
-            }
-
-            return lValues;
-        }
-
-
-        /// <summary>
-        /// Gets the random number list.
-        /// </summary>
-        /// <param name="iNumberCount">The i number count.</param>
-        /// <param name="iMinValue">The i minimum value.</param>
-        /// <param name="iMaxValue">The i maximum value.</param>
-        /// <returns></returns>
-        public static IntegerList GetRandomNumberList( int iNumberCount, int iMinValue, int iMaxValue )
-        {
-            Random r = new();
-
-            IntegerList lValues = new(iNumberCount);
-
-            for( int iCounter = 0 ; iCounter < iNumberCount ; iCounter++ )
-            {
-                // Bei uns ist der MaxValue inklusive ...
-                lValues.Add(r.Next(iMinValue, iMaxValue + 1));
-            }
-
-            return lValues;
-        }
-
-
-        /// <summary>
-        /// Gets the prime numbers.
-        /// </summary>
-        /// <param name="iNumberCount">The i number count.</param>
-        /// <returns></returns>
-        public static IntegerList GetPrimeNumbers( int iNumberCount )
-        {
-            IntegerList lValues = new(iNumberCount);
-
-            for( int iCounter = 0 ; iCounter < iNumberCount ; iCounter++ )
-            {
-                if( MathEx.IsPrime(iCounter) )
-                {
-                    lValues.Add(iCounter);
-                }
-            }
-
-            return lValues;
-        }
-
-
-        /// <summary>
-        /// Gets the fibonacci.
-        /// </summary>
-        /// <param name="numbercount">The numbercount.</param>
-        /// <returns></returns>
-        public static UnsignedLongList GetFibonacci( uint numbercount ) => MathEx.GetFibonacciList(numbercount);
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        /// <summary>
         /// Gets the timeline.
         /// </summary>
         /// <param name="dtStart">The dt start.</param>
@@ -944,6 +811,8 @@ namespace DoofesZeug.Datasets
         /// <returns></returns>
         public static List<DateTime> GetTimeline( DateTime dtStart ) => GetTimeline(dtStart, DateTime.Now, new TimeSpan(1, 0, 0, 0));
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Gets the persons.
@@ -967,7 +836,7 @@ namespace DoofesZeug.Datasets
                 p.DateOfBirth = r.NextDateTime(new DateTime(1970, 01, 01), new DateTime(2020, 12, 24));
                 p.Gender = g;
                 p.Handedness = r.NextEnum<Handedness>();
-                p.BloodGroup= r.NextEnum<BloodGroup>();
+                p.BloodGroup = r.NextEnum<BloodGroup>();
 
                 //TODO: Früher oder später kommt auch noch Profession hinzu, doch immomment haben wir noch kein Profession.GetByWellKnownProfession(WellKnownProfession wkp)
 

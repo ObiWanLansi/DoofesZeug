@@ -1,0 +1,31 @@
+﻿@startuml
+skinparam monochrome true
+hide empty members
+
+abstract class EntityBase {
+}
+
+EntityBase <|-- IdentifiableEntity
+
+abstract class IdentifiableEntity {
+    Id: Guid
+}
+
+IdentifiableEntity <|-- Species
+
+abstract class Species {
+}
+
+Species <|-- Person
+
+class Person {
+    FirstName: FirstName
+    LastName: LastName
+    DateOfBirth: DateOfBirth
+    Gender: Nullable`1
+    Handedness: Nullable`1
+    BloodGroup: Nullable`1
+    Profession: Profession
+}
+
+@enduml

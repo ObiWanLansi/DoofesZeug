@@ -1,13 +1,6 @@
 ﻿# Entities Overview
 
 
-## `DoofesZeug.Models.Animals`
-
-|Entity|Description|Properties|
-|:-----|:----------|:---------|
-|[Animal](./DoofesZeug.Models.Animals/Animal.md)|An simplified animal with an firstname, lastname, birthday and some other optional properties.|DateOfBirth, Name, Gender, AnimalSpecies, Id|
-
-
 ## `DoofesZeug.Models.DateAndTime`
 
 |Entity|Description|Properties|
@@ -37,32 +30,45 @@
 |[Second](./DoofesZeug.Models.DateAndTime.Part.Time/Second.md)|The seconds of an time.|Value|
 
 
-## `DoofesZeug.Models.Human`
+## `DoofesZeug.Models.Specieses`
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[FirstName](./DoofesZeug.Models.Human/FirstName.md)|An firstname for humans.|Value|
-|[LastName](./DoofesZeug.Models.Human/LastName.md)|An lastname for humans.|Value|
-|[Name](./DoofesZeug.Models.Human/Name.md)|An generic entity for names.|Value|
-|[Person](./DoofesZeug.Models.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, DateOfBirth, Gender, Handedness, BloodGroup, Profession, Id|
+|[Name](./DoofesZeug.Models.Specieses/Name.md)|An generic name for any species.|Value|
 
 
-## `DoofesZeug.Models.Human.Professions`
+## `DoofesZeug.Models.Specieses.Animals`
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[Baker](./DoofesZeug.Models.Human.Professions/Baker.md)|This is an specialized entitiy for an baker.|Since, Id|
-|[BusDriver](./DoofesZeug.Models.Human.Professions/BusDriver.md)|This is an specialized entitiy for an busdriver.|Since, Id|
-|[Carpenter](./DoofesZeug.Models.Human.Professions/Carpenter.md)|This is an specialized entitiy for an carpenter.|Since, Id|
-|[Doctor](./DoofesZeug.Models.Human.Professions/Doctor.md)|This is an specialized entitiy for an doctor.|Since, Id|
-|[Engineer](./DoofesZeug.Models.Human.Professions/Engineer.md)|This is an specialized entitiy for an engineer.|Since, Id|
-|[FireFighter](./DoofesZeug.Models.Human.Professions/FireFighter.md)|This is an specialized entitiy for an firefighter.|Since, Id|
-|[HairDresser](./DoofesZeug.Models.Human.Professions/HairDresser.md)|This is an specialized entitiy for an hairdresser.|Since, Id|
-|[Nurse](./DoofesZeug.Models.Human.Professions/Nurse.md)|This is an specialized entitiy for an nurse.|Since, Id|
-|[Pilot](./DoofesZeug.Models.Human.Professions/Pilot.md)|This is an specialized entitiy for an pilot.|Since, Id|
-|[PoliceOfficer](./DoofesZeug.Models.Human.Professions/PoliceOfficer.md)|This is an specialized entitiy for an policeofficer.|Since, Id|
-|[Soldier](./DoofesZeug.Models.Human.Professions/Soldier.md)|This is an specialized entitiy for an soldier.|Since, Id|
-|[TaxiDriver](./DoofesZeug.Models.Human.Professions/TaxiDriver.md)|This is an specialized entitiy for an taxidriver.|Since, Id|
-|[Teacher](./DoofesZeug.Models.Human.Professions/Teacher.md)|This is an specialized entitiy for an teacher.|Since, Id|
-|[Tiler](./DoofesZeug.Models.Human.Professions/Tiler.md)|This is an specialized entitiy for an tiler.|Since, Id|
-|[Waiter](./DoofesZeug.Models.Human.Professions/Waiter.md)|This is an specialized entitiy for an waiter.|Since, Id|
+|[Animal](./DoofesZeug.Models.Specieses.Animals/Animal.md)|An simplified animal with an firstname, lastname, birthday and some other optional properties.|DateOfBirth, Name, Gender, AnimalSpecies, Id|
+
+
+## `DoofesZeug.Models.Specieses.Human`
+
+|Entity|Description|Properties|
+|:-----|:----------|:---------|
+|[FirstName](./DoofesZeug.Models.Specieses.Human/FirstName.md)|An firstname for humans.|Value|
+|[LastName](./DoofesZeug.Models.Specieses.Human/LastName.md)|An lastname for humans.|Value|
+|[Person](./DoofesZeug.Models.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, DateOfBirth, Gender, Handedness, BloodGroup, Profession, Id|
+
+
+## `DoofesZeug.Models.Specieses.Human.Professions`
+
+|Entity|Description|Properties|
+|:-----|:----------|:---------|
+|[Baker](./DoofesZeug.Models.Specieses.Human.Professions/Baker.md)|This is an specialized entitiy for an baker.|Since, Id|
+|[BusDriver](./DoofesZeug.Models.Specieses.Human.Professions/BusDriver.md)|This is an specialized entitiy for an busdriver.|Since, Id|
+|[Carpenter](./DoofesZeug.Models.Specieses.Human.Professions/Carpenter.md)|This is an specialized entitiy for an carpenter.|Since, Id|
+|[Doctor](./DoofesZeug.Models.Specieses.Human.Professions/Doctor.md)|This is an specialized entitiy for an doctor.|Since, Id|
+|[Engineer](./DoofesZeug.Models.Specieses.Human.Professions/Engineer.md)|This is an specialized entitiy for an engineer.|Since, Id|
+|[FireFighter](./DoofesZeug.Models.Specieses.Human.Professions/FireFighter.md)|This is an specialized entitiy for an firefighter.|Since, Id|
+|[HairDresser](./DoofesZeug.Models.Specieses.Human.Professions/HairDresser.md)|This is an specialized entitiy for an hairdresser.|Since, Id|
+|[Nurse](./DoofesZeug.Models.Specieses.Human.Professions/Nurse.md)|This is an specialized entitiy for an nurse.|Since, Id|
+|[Pilot](./DoofesZeug.Models.Specieses.Human.Professions/Pilot.md)|This is an specialized entitiy for an pilot.|Since, Id|
+|[PoliceOfficer](./DoofesZeug.Models.Specieses.Human.Professions/PoliceOfficer.md)|This is an specialized entitiy for an policeofficer.|Since, Id|
+|[Soldier](./DoofesZeug.Models.Specieses.Human.Professions/Soldier.md)|This is an specialized entitiy for an soldier.|Since, Id|
+|[TaxiDriver](./DoofesZeug.Models.Specieses.Human.Professions/TaxiDriver.md)|This is an specialized entitiy for an taxidriver.|Since, Id|
+|[Teacher](./DoofesZeug.Models.Specieses.Human.Professions/Teacher.md)|This is an specialized entitiy for an teacher.|Since, Id|
+|[Tiler](./DoofesZeug.Models.Specieses.Human.Professions/Tiler.md)|This is an specialized entitiy for an tiler.|Since, Id|
+|[Waiter](./DoofesZeug.Models.Specieses.Human.Professions/Waiter.md)|This is an specialized entitiy for an waiter.|Since, Id|

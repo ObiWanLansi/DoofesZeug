@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 
 using DoofesZeug.Extensions;
-using DoofesZeug.Models.Human.Professions;
+using DoofesZeug.Models.Specieses.Human.Professions;
 
 using static System.Console;
 
@@ -40,7 +40,7 @@ namespace DoofesZeug.SourceCode
             sb.AppendLine();
             sb.AppendLine();
 
-            sb.AppendLine("namespace DoofesZeug.Models.Human.Professions");
+            sb.AppendLine($"namespace {typeof(Profession).Namespace}");
             sb.AppendLine("{");
 
             sb.AppendLine($"    [Description(\"This is an specialized entitiy for an {profession.Lower()}.\")]");

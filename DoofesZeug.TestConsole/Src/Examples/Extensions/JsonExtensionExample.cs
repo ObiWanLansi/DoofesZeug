@@ -1,7 +1,8 @@
 ﻿using System;
 
 using DoofesZeug.Extensions;
-using DoofesZeug.Models.Human;
+using DoofesZeug.Models.Specieses;
+using DoofesZeug.Models.Specieses.Human;
 
 
 

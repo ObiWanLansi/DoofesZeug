@@ -1,8 +1,4 @@
-﻿// ------------------------------------------------------------------------------------------------------------------
-// This is auto generated code. Every manually change in this code will be overwritten at the next code generation! |
-// ------------------------------------------------------------------------------------------------------------------
-
-using DoofesZeug.Models.DateAndTime;
+﻿using DoofesZeug.Models.DateAndTime;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

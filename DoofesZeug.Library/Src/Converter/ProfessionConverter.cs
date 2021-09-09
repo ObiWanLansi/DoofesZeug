@@ -2,7 +2,7 @@
 
 using DoofesZeug.Extensions;
 using DoofesZeug.Models.DateAndTime;
-using DoofesZeug.Models.Human.Professions;
+using DoofesZeug.Models.Specieses.Human.Professions;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -79,7 +79,6 @@ namespace DoofesZeug.Converter
                 // This is a little bit static, i wish to make it more dynamic ...
                 return wkp switch
                 {
-                    //WellKnownProfession.Unknown => new Unknown { Id = guid, Since = date },
                     WellKnownProfession.FireFighter => new FireFighter { Id = guid, Since = date },
                     WellKnownProfession.PoliceOfficer => new PoliceOfficer { Id = guid, Since = date },
                     WellKnownProfession.Nurse => new Nurse { Id = guid, Since = date },

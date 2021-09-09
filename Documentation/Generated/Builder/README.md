@@ -1,13 +1,6 @@
 ﻿# Builder Overview
 
 
-## `DoofesZeug.Models.Animals`
-
-|Entity|Builder|
-|:-----|:------|
-|[Animal](../Models/DoofesZeug.Models.Animals/Animal.md)|AnimalBuilder|
-
-
 ## `DoofesZeug.Models.DateAndTime`
 
 |Entity|Builder|
@@ -17,29 +10,36 @@
 |[Time](../Models/DoofesZeug.Models.DateAndTime/Time.md)|TimeBuilder|
 
 
-## `DoofesZeug.Models.Human`
+## `DoofesZeug.Models.Specieses.Animals`
 
 |Entity|Builder|
 |:-----|:------|
-|[Person](../Models/DoofesZeug.Models.Human/Person.md)|PersonBuilder|
+|[Animal](../Models/DoofesZeug.Models.Specieses.Animals/Animal.md)|AnimalBuilder|
 
 
-## `DoofesZeug.Models.Human.Professions`
+## `DoofesZeug.Models.Specieses.Human`
 
 |Entity|Builder|
 |:-----|:------|
-|[Baker](../Models/DoofesZeug.Models.Human.Professions/Baker.md)|BakerBuilder|
-|[BusDriver](../Models/DoofesZeug.Models.Human.Professions/BusDriver.md)|BusDriverBuilder|
-|[Carpenter](../Models/DoofesZeug.Models.Human.Professions/Carpenter.md)|CarpenterBuilder|
-|[Doctor](../Models/DoofesZeug.Models.Human.Professions/Doctor.md)|DoctorBuilder|
-|[Engineer](../Models/DoofesZeug.Models.Human.Professions/Engineer.md)|EngineerBuilder|
-|[FireFighter](../Models/DoofesZeug.Models.Human.Professions/FireFighter.md)|FireFighterBuilder|
-|[HairDresser](../Models/DoofesZeug.Models.Human.Professions/HairDresser.md)|HairDresserBuilder|
-|[Nurse](../Models/DoofesZeug.Models.Human.Professions/Nurse.md)|NurseBuilder|
-|[Pilot](../Models/DoofesZeug.Models.Human.Professions/Pilot.md)|PilotBuilder|
-|[PoliceOfficer](../Models/DoofesZeug.Models.Human.Professions/PoliceOfficer.md)|PoliceOfficerBuilder|
-|[Soldier](../Models/DoofesZeug.Models.Human.Professions/Soldier.md)|SoldierBuilder|
-|[TaxiDriver](../Models/DoofesZeug.Models.Human.Professions/TaxiDriver.md)|TaxiDriverBuilder|
-|[Teacher](../Models/DoofesZeug.Models.Human.Professions/Teacher.md)|TeacherBuilder|
-|[Tiler](../Models/DoofesZeug.Models.Human.Professions/Tiler.md)|TilerBuilder|
-|[Waiter](../Models/DoofesZeug.Models.Human.Professions/Waiter.md)|WaiterBuilder|
+|[Person](../Models/DoofesZeug.Models.Specieses.Human/Person.md)|PersonBuilder|
+
+
+## `DoofesZeug.Models.Specieses.Human.Professions`
+
+|Entity|Builder|
+|:-----|:------|
+|[Baker](../Models/DoofesZeug.Models.Specieses.Human.Professions/Baker.md)|BakerBuilder|
+|[BusDriver](../Models/DoofesZeug.Models.Specieses.Human.Professions/BusDriver.md)|BusDriverBuilder|
+|[Carpenter](../Models/DoofesZeug.Models.Specieses.Human.Professions/Carpenter.md)|CarpenterBuilder|
+|[Doctor](../Models/DoofesZeug.Models.Specieses.Human.Professions/Doctor.md)|DoctorBuilder|
+|[Engineer](../Models/DoofesZeug.Models.Specieses.Human.Professions/Engineer.md)|EngineerBuilder|
+|[FireFighter](../Models/DoofesZeug.Models.Specieses.Human.Professions/FireFighter.md)|FireFighterBuilder|
+|[HairDresser](../Models/DoofesZeug.Models.Specieses.Human.Professions/HairDresser.md)|HairDresserBuilder|
+|[Nurse](../Models/DoofesZeug.Models.Specieses.Human.Professions/Nurse.md)|NurseBuilder|
+|[Pilot](../Models/DoofesZeug.Models.Specieses.Human.Professions/Pilot.md)|PilotBuilder|
+|[PoliceOfficer](../Models/DoofesZeug.Models.Specieses.Human.Professions/PoliceOfficer.md)|PoliceOfficerBuilder|
+|[Soldier](../Models/DoofesZeug.Models.Specieses.Human.Professions/Soldier.md)|SoldierBuilder|
+|[TaxiDriver](../Models/DoofesZeug.Models.Specieses.Human.Professions/TaxiDriver.md)|TaxiDriverBuilder|
+|[Teacher](../Models/DoofesZeug.Models.Specieses.Human.Professions/Teacher.md)|TeacherBuilder|
+|[Tiler](../Models/DoofesZeug.Models.Specieses.Human.Professions/Tiler.md)|TilerBuilder|
+|[Waiter](../Models/DoofesZeug.Models.Specieses.Human.Professions/Waiter.md)|WaiterBuilder|
