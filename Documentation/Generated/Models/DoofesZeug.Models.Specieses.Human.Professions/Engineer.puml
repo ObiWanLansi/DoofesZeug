@@ -14,7 +14,7 @@ abstract class IdentifiableEntity {
 IdentifiableEntity <|-- Profession
 
 abstract class Profession {
-    WellKnownProfessionType: WellKnownProfession
+    WellKnownProfessionType: Nullable`1
     Since: Date
 }
 

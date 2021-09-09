@@ -14,6 +14,8 @@ abstract class IdentifiableEntity {
 IdentifiableEntity <|-- Species
 
 abstract class Species {
+    DateOfBirth: DateOfBirth
+    Gender: Nullable`1
 }
 
 Species <|-- Person
@@ -21,8 +23,6 @@ Species <|-- Person
 class Person {
     FirstName: FirstName
     LastName: LastName
-    DateOfBirth: DateOfBirth
-    Gender: Nullable`1
     Handedness: Nullable`1
     BloodGroup: Nullable`1
     Profession: Profession

@@ -19,9 +19,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Specieses.Human.Professions/WellKnownProfession.md)|&#x2713;|&#x2717;|PoliceOfficer|
+|WellKnownProfessionType|Nullable`1|&#x2713;|&#x2717;|PoliceOfficer|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|f880d3b5-1fa9-4b6e-91db-9e2e0be6ef73|
+|Id|Guid|&#x2713;|&#x2713;|166bcacc-0665-47bd-897d-fde6bba7a48b|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "4f1b3076-7372-4edb-b1fd-79e66c746342",
+  "Id": "a14da9aa-2da8-4b75-b9af-e3d4d4d25901",
   "WellKnownProfessionType": "PoliceOfficer",
   "Since": "11.11.1942"
 }

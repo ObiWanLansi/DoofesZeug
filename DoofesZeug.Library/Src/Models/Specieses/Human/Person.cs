@@ -2,7 +2,6 @@
 
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
-using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.Specieses.Human.Professions;
 
 
@@ -16,10 +15,6 @@ namespace DoofesZeug.Models.Specieses.Human
         public FirstName FirstName { get; set; }
 
         public LastName LastName { get; set; }
-
-        public DateOfBirth DateOfBirth { get; set; }
-
-        public Gender? Gender { get; set; }
 
         public Handedness? Handedness { get; set; }
 

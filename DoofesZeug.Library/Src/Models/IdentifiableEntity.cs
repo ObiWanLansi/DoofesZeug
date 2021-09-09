@@ -11,6 +11,8 @@ namespace DoofesZeug.Models
     {
         public Guid Id { get; set; } = Guid.NewGuid();
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.
@@ -19,6 +21,15 @@ namespace DoofesZeug.Models
         /// <returns>
         ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals( object obj ) => obj != null && ( obj is not IdentifiableEntity other ? false : this.Id.Equals(other.Id) != false );
+        public override bool Equals( object obj ) => obj != null && ( obj is IdentifiableEntity other && this.Id.Equals(other.Id) != false );
+
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        /// </returns>
+        public override int GetHashCode() => this.Id.GetHashCode();
     }
 }

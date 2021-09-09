@@ -28,9 +28,6 @@ namespace DoofesZeug.UnitTest.Formalities
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// Executes this instance.
-        /// </summary>
         [TestMethod]
         public void Execute()
         {

@@ -29,20 +29,6 @@ namespace DoofesZeug.Models.Specieses.Human
         }
 
 
-        public static Person WithDateOfBirth(this Person person, DoofesZeug.Models.DateAndTime.DateOfBirth dateofbirth)
-        {
-            person.DateOfBirth = dateofbirth;
-            return person;
-        }
-
-
-        public static Person WithGender(this Person person, System.Nullable<DoofesZeug.Models.Specieses.Gender> gender)
-        {
-            person.Gender = gender;
-            return person;
-        }
-
-
         public static Person WithHandedness(this Person person, System.Nullable<DoofesZeug.Models.Specieses.Human.Handedness> handedness)
         {
             person.Handedness = handedness;
@@ -60,6 +46,20 @@ namespace DoofesZeug.Models.Specieses.Human
         public static Person WithProfession(this Person person, DoofesZeug.Models.Specieses.Human.Professions.Profession profession)
         {
             person.Profession = profession;
+            return person;
+        }
+
+
+        public static Person WithDateOfBirth(this Person person, DoofesZeug.Models.DateAndTime.DateOfBirth dateofbirth)
+        {
+            person.DateOfBirth = dateofbirth;
+            return person;
+        }
+
+
+        public static Person WithGender(this Person person, System.Nullable<DoofesZeug.Models.Specieses.Gender> gender)
+        {
+            person.Gender = gender;
             return person;
         }
     }

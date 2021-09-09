@@ -15,9 +15,9 @@ namespace DoofesZeug.Models.Specieses.Animals
         public static Animal New() => new();
 
 
-        public static Animal WithDateOfBirth(this Animal animal, DoofesZeug.Models.DateAndTime.DateOfBirth dateofbirth)
+        public static Animal WithAnimalSpecies(this Animal animal, System.Nullable<DoofesZeug.Models.Specieses.Animals.AnimalSpecies> animalspecies)
         {
-            animal.DateOfBirth = dateofbirth;
+            animal.AnimalSpecies = animalspecies;
             return animal;
         }
 
@@ -29,16 +29,16 @@ namespace DoofesZeug.Models.Specieses.Animals
         }
 
 
-        public static Animal WithGender(this Animal animal, System.Nullable<DoofesZeug.Models.Specieses.Gender> gender)
+        public static Animal WithDateOfBirth(this Animal animal, DoofesZeug.Models.DateAndTime.DateOfBirth dateofbirth)
         {
-            animal.Gender = gender;
+            animal.DateOfBirth = dateofbirth;
             return animal;
         }
 
 
-        public static Animal WithAnimalSpecies(this Animal animal, System.Nullable<DoofesZeug.Models.Specieses.Animals.AnimalSpecies> animalspecies)
+        public static Animal WithGender(this Animal animal, System.Nullable<DoofesZeug.Models.Specieses.Gender> gender)
         {
-            animal.AnimalSpecies = animalspecies;
+            animal.Gender = gender;
             return animal;
         }
     }

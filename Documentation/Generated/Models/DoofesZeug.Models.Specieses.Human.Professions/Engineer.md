@@ -19,9 +19,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Specieses.Human.Professions/WellKnownProfession.md)|&#x2713;|&#x2717;|Engineer|
+|WellKnownProfessionType|Nullable`1|&#x2713;|&#x2717;|Engineer|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|217b9dba-9189-4ee8-b47f-e787b62ee6b2|
+|Id|Guid|&#x2713;|&#x2713;|e16f378e-8568-4920-bb5f-260874f96aeb|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "a311c759-e560-4a4e-ab26-1c228560619e",
+  "Id": "d6dbe516-5e49-4f2d-aab9-9d062ab3a96f",
   "WellKnownProfessionType": "Engineer",
   "Since": "11.11.1942"
 }

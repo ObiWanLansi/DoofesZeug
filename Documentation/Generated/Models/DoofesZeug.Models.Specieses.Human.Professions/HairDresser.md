@@ -19,9 +19,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Specieses.Human.Professions/WellKnownProfession.md)|&#x2713;|&#x2717;|HairDresser|
+|WellKnownProfessionType|Nullable`1|&#x2713;|&#x2717;|HairDresser|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|3dbde151-d086-46f3-baf2-bfc38a3d0d2d|
+|Id|Guid|&#x2713;|&#x2713;|b70d2936-dddd-48e1-9bbe-b61fcd6c02d7|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "deca7d55-d4dd-49ef-b5f5-1304c5a5675e",
+  "Id": "388d1e19-cb55-43f3-b471-20c7044fe5ed",
   "WellKnownProfessionType": "HairDresser",
   "Since": "11.11.1942"
 }

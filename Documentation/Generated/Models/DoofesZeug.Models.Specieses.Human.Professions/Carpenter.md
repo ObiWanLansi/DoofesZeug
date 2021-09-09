@@ -19,9 +19,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Specieses.Human.Professions/WellKnownProfession.md)|&#x2713;|&#x2717;|Carpenter|
+|WellKnownProfessionType|Nullable`1|&#x2713;|&#x2717;|Carpenter|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|eccc2e6d-9b8d-41a4-9a24-b89c0edea468|
+|Id|Guid|&#x2713;|&#x2713;|1726e9f8-67b9-49fd-a423-ac8c9635dfff|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "517312b9-70fb-4315-b599-044b56a20614",
+  "Id": "0bfdcbe9-43c7-4c4d-a06b-44d649b5127b",
   "WellKnownProfessionType": "Carpenter",
   "Since": "11.11.1942"
 }

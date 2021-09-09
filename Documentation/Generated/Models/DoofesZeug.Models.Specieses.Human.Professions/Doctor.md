@@ -19,9 +19,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Specieses.Human.Professions/WellKnownProfession.md)|&#x2713;|&#x2717;|Doctor|
+|WellKnownProfessionType|Nullable`1|&#x2713;|&#x2717;|Doctor|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|619b855e-f751-4639-a59e-9c4d46687376|
+|Id|Guid|&#x2713;|&#x2713;|cf7682a7-347c-4f2c-aaf3-a4f3e336aaea|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "f987fafb-b133-4b12-86eb-434882c93aed",
+  "Id": "77bc42df-1814-4c20-b35e-6ff66dbd276c",
   "WellKnownProfessionType": "Doctor",
   "Since": "11.11.1942"
 }

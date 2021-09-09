@@ -1,6 +1,5 @@
 ﻿using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
-using DoofesZeug.Models.DateAndTime;
 
 
 
@@ -10,12 +9,8 @@ namespace DoofesZeug.Models.Specieses.Animals
     [Builder]
     public class Animal : Species
     {
-        public DateOfBirth DateOfBirth { get; set; }
+        public AnimalSpecies? AnimalSpecies { get; set; }
 
         public Name Name { get; set; }
-
-        public Gender? Gender { get; set; }
-
-        public AnimalSpecies? AnimalSpecies { get; set; }
     }
 }

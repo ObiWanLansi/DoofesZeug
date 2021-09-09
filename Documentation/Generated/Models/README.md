@@ -41,7 +41,7 @@
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[Animal](./DoofesZeug.Models.Specieses.Animals/Animal.md)|An simplified animal with an firstname, lastname, birthday and some other optional properties.|DateOfBirth, Name, Gender, AnimalSpecies, Id|
+|[Animal](./DoofesZeug.Models.Specieses.Animals/Animal.md)|An simplified animal with an firstname, lastname, birthday and some other optional properties.|AnimalSpecies, Name, DateOfBirth, Gender, Id|
 
 
 ## `DoofesZeug.Models.Specieses.Human`
@@ -50,7 +50,7 @@
 |:-----|:----------|:---------|
 |[FirstName](./DoofesZeug.Models.Specieses.Human/FirstName.md)|An firstname for humans.|Value|
 |[LastName](./DoofesZeug.Models.Specieses.Human/LastName.md)|An lastname for humans.|Value|
-|[Person](./DoofesZeug.Models.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, DateOfBirth, Gender, Handedness, BloodGroup, Profession, Id|
+|[Person](./DoofesZeug.Models.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, Handedness, BloodGroup, Profession, DateOfBirth, Gender, Id|
 
 
 ## `DoofesZeug.Models.Specieses.Human.Professions`

@@ -8,7 +8,7 @@ namespace DoofesZeug.Models.Specieses.Human.Professions
     [Description("The baseclass for all other professions.")]
     public abstract class Profession : IdentifiableEntity
     {
-        public WellKnownProfession WellKnownProfessionType { get; private set; }
+        public WellKnownProfession? WellKnownProfessionType { get; private set; }
 
         public Date Since { get; set; }
 

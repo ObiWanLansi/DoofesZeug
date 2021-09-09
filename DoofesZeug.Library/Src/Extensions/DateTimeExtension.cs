@@ -456,7 +456,7 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        public static Season GetSeason( this DateTime dt )
+        public static Season? GetSeason( this DateTime dt )
         {
             // Hier eine vereinfachte Variante von der Bestimmtung der Jahreszeiten, ohne Berücksichtigung des Schaltjahres
             // https://de.wikipedia.org/wiki/Jahreszeit#Beginn_der_Jahreszeiten
@@ -483,7 +483,7 @@ namespace DoofesZeug.Extensions
                 return Season.Autumn;
             }
 
-            return Season.Unknown;
+            return null;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

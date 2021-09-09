@@ -14,15 +14,15 @@ abstract class IdentifiableEntity {
 IdentifiableEntity <|-- Species
 
 abstract class Species {
+    DateOfBirth: DateOfBirth
+    Gender: Nullable`1
 }
 
 Species <|-- Animal
 
 class Animal {
-    DateOfBirth: DateOfBirth
-    Name: Name
-    Gender: Nullable`1
     AnimalSpecies: Nullable`1
+    Name: Name
 }
 
 @enduml

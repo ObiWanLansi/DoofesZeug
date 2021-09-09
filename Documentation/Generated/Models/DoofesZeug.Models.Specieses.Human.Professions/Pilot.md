@@ -19,9 +19,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Specieses.Human.Professions/WellKnownProfession.md)|&#x2713;|&#x2717;|Pilot|
+|WellKnownProfessionType|Nullable`1|&#x2713;|&#x2717;|Pilot|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|282e7247-7850-4055-94b5-0a35bec299dc|
+|Id|Guid|&#x2713;|&#x2713;|a30f21ca-b8ce-42bd-b23d-ffa9f8ba6934|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "4ab0435c-d4b1-46c5-bfb5-195276b2cf14",
+  "Id": "4462e8de-8213-4ce2-b7ea-57805a264bc0",
   "WellKnownProfessionType": "Pilot",
   "Since": "11.11.1942"
 }

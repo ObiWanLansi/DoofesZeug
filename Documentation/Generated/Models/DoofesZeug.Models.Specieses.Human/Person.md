@@ -16,8 +16,6 @@
 |:---|:---|:--:|:---:|:-----------|
 |FirstName|[FirstName](../../Models/DoofesZeug.Models.Specieses.Human/FirstName.md)|&#x2713;|&#x2713;|NULL|
 |LastName|[LastName](../../Models/DoofesZeug.Models.Specieses.Human/LastName.md)|&#x2713;|&#x2713;|NULL|
-|DateOfBirth|[DateOfBirth](../../Models/DoofesZeug.Models.DateAndTime/DateOfBirth.md)|&#x2713;|&#x2713;|NULL|
-|Gender|Nullable`1|&#x2713;|&#x2713;|NULL|
 |Handedness|Nullable`1|&#x2713;|&#x2713;|NULL|
 |BloodGroup|Nullable`1|&#x2713;|&#x2713;|NULL|
 |Profession|[Profession](../../Models/DoofesZeug.Models.Specieses.Human.Professions/Profession.md)|&#x2713;|&#x2713;|NULL|
@@ -26,7 +24,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Id|Guid|&#x2713;|&#x2713;|1d0b3a18-9d93-4371-b30d-c1bf33b008d9|
+|DateOfBirth|[DateOfBirth](../../Models/DoofesZeug.Models.DateAndTime/DateOfBirth.md)|&#x2713;|&#x2713;|NULL|
+|Gender|Nullable`1|&#x2713;|&#x2713;|NULL|
+|Id|Guid|&#x2713;|&#x2713;|8aa3c49c-b797-4527-8b02-fb4013fa6d80|
 
 ## Attributes
 
@@ -43,16 +43,16 @@
 {
   "FirstName": "John",
   "LastName": "Doe",
-  "DateOfBirth": "27.09.1974",
-  "Gender": "Male",
   "Handedness": "Left",
   "BloodGroup": null,
   "Profession": {
-    "Id": "34b2a541-8736-4849-87f1-61e8e770852c",
+    "Id": "1c505b5b-4171-419a-b39f-d24e4a7493de",
     "WellKnownProfessionType": "FireFighter",
     "Since": "11.11.1942"
   },
-  "Id": "af1ce801-ead3-448e-8309-f310d7cdcc51"
+  "DateOfBirth": "27.09.1974",
+  "Gender": "Male",
+  "Id": "b63a7ce8-fe97-4fd2-9b74-f62cd091f887"
 }
 ```
 

@@ -5,8 +5,8 @@
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
-|[Quarter](./DoofesZeug.Models.DateAndTime/Quarter.md)|An enumeration for our calendar quarters.|Unknown, First, Second, Third, Fourth|
-|[Season](./DoofesZeug.Models.DateAndTime/Season.md)|An enumeration for our seasons.|Unknown, Winter, Spring, Summer, Autumn|
+|[Quarter](./DoofesZeug.Models.DateAndTime/Quarter.md)|An enumeration for our calendar quarters.|First, Second, Third, Fourth|
+|[Season](./DoofesZeug.Models.DateAndTime/Season.md)|An enumeration for our seasons.|Winter, Spring, Summer, Autumn|
 
 
 ## `DoofesZeug.Models.Science.Geographically`

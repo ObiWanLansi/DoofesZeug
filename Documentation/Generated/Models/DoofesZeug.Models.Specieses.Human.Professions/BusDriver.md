@@ -19,9 +19,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|WellKnownProfessionType|[WellKnownProfession](../../Enumerations/DoofesZeug.Models.Specieses.Human.Professions/WellKnownProfession.md)|&#x2713;|&#x2717;|BusDriver|
+|WellKnownProfessionType|Nullable`1|&#x2713;|&#x2717;|BusDriver|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|1f08f6b3-0b3d-48d7-a81d-054c6e1a7b81|
+|Id|Guid|&#x2713;|&#x2713;|b37f7738-2ee7-40d8-b5ac-46e18656f70e|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "1cc327ac-9412-4c0a-b393-bb327dc80b90",
+  "Id": "c8de69db-aeb1-484b-b646-7be98ebb93a9",
   "WellKnownProfessionType": "BusDriver",
   "Since": "11.11.1942"
 }
