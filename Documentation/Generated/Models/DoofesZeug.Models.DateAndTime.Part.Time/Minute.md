@@ -7,6 +7,8 @@
 |Description|The minutes of an time.|
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Time|
 |BaseClass|DateTimePart|
+|SourceCode|[Minute.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/Part/Time/Minute.cs)|
+|Example||
 
 ## Properties
 

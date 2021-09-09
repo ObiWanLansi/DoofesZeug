@@ -7,6 +7,8 @@
 |Description|An date entity with day, month and a year (15.12.1948).|
 |Namespace|DoofesZeug.Models.DateAndTime|
 |BaseClass|EntityBase|
+|SourceCode|[Date.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/Date.cs)|
+|Example||
 
 ## Properties
 

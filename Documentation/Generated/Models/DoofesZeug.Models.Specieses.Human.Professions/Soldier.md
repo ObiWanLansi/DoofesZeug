@@ -7,6 +7,8 @@
 |Description|This is an specialized entitiy for an soldier.|
 |Namespace|DoofesZeug.Models.Specieses.Human.Professions|
 |BaseClass|Profession|
+|SourceCode|[Soldier.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/Professions/Soldier.cs)|
+|Example||
 
 ## Properties
 
@@ -37,7 +39,7 @@
 
 ```json
 {
-  "Id": "0de8c3f1-5131-476b-bf74-8e52fc1d3522",
+  "Id": "fccec504-1c72-4094-9a85-0b51280cadfa",
   "WellKnownProfessionType": "Soldier",
   "Since": "11.11.1942"
 }

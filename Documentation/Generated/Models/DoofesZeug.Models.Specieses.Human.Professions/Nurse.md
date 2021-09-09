@@ -7,6 +7,8 @@
 |Description|This is an specialized entitiy for an nurse.|
 |Namespace|DoofesZeug.Models.Specieses.Human.Professions|
 |BaseClass|Profession|
+|SourceCode|[Nurse.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/Professions/Nurse.cs)|
+|Example||
 
 ## Properties
 
@@ -37,7 +39,7 @@
 
 ```json
 {
-  "Id": "ff0f5f20-98ed-4be7-8e5e-0e53934a5bc6",
+  "Id": "899df062-739c-4de7-b123-840d132bfd9d",
   "WellKnownProfessionType": "Nurse",
   "Since": "11.11.1942"
 }

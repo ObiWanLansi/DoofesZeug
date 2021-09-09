@@ -7,6 +7,8 @@
 |Description|The week of an date in the year.|
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Date|
 |BaseClass|DateTimePart|
+|SourceCode|[Week.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/Part/Date/Week.cs)|
+|Example||
 
 ## Properties
 

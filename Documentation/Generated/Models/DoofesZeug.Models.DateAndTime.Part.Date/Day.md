@@ -7,6 +7,8 @@
 |Description|The day of an date.|
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Date|
 |BaseClass|DateTimePart|
+|SourceCode|[Day.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/Part/Date/Day.cs)|
+|Example||
 
 ## Properties
 

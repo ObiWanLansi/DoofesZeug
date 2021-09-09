@@ -7,6 +7,8 @@
 |Description|The year of an date.|
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Date|
 |BaseClass|DateTimePart|
+|SourceCode|[Year.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/Part/Date/Year.cs)|
+|Example||
 
 ## Properties
 

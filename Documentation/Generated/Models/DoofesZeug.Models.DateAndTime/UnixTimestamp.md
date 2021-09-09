@@ -7,6 +7,8 @@
 |Description|An unix timestamp (seconds since 01.01.1970).|
 |Namespace|DoofesZeug.Models.DateAndTime|
 |BaseClass|EntityBase|
+|SourceCode|[UnixTimestamp.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/UnixTimestamp.cs)|
+|Example||
 
 ## Properties
 
@@ -31,6 +33,6 @@
 ## JSON Example
 
 ```json
-1631217457
+1631219251
 ```
 

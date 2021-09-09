@@ -7,6 +7,8 @@
 |Description|The month of an date.|
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Date|
 |BaseClass|DateTimePart|
+|SourceCode|[Month.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/Part/Date/Month.cs)|
+|Example||
 
 ## Properties
 

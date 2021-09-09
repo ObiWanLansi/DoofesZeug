@@ -7,6 +7,8 @@
 |Description|An date of birth for creatures.|
 |Namespace|DoofesZeug.Models.DateAndTime|
 |BaseClass|Date|
+|SourceCode|[DateOfBirth.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/DateOfBirth.cs)|
+|Example||
 
 ## Properties
 

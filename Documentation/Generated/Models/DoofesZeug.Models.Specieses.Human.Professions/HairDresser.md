@@ -7,6 +7,8 @@
 |Description|This is an specialized entitiy for an hairdresser.|
 |Namespace|DoofesZeug.Models.Specieses.Human.Professions|
 |BaseClass|Profession|
+|SourceCode|[HairDresser.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/Professions/HairDresser.cs)|
+|Example||
 
 ## Properties
 
@@ -37,7 +39,7 @@
 
 ```json
 {
-  "Id": "4418ca9b-29bf-4a13-ad35-0453a5c3add9",
+  "Id": "4f3d56af-0a43-4749-88bb-a30c5ed97460",
   "WellKnownProfessionType": "HairDresser",
   "Since": "11.11.1942"
 }

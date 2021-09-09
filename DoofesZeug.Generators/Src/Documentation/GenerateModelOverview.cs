@@ -206,12 +206,16 @@ namespace DoofesZeug.Documentation
 
             da.Validate(type);
 
+            string strSourceCode = $"../../../../DoofesZeug.Library/Src/{type.Namespace [11..].Replace('.', '/')}/{type.Name}.cs";
+
             sb.AppendLine();
             sb.AppendLine("|||");
             sb.AppendLine("|:-|:-|");
             sb.AppendLine($"|Description|{da.Description}|");
             sb.AppendLine($"|Namespace|{type.Namespace}|");
             sb.AppendLine($"|BaseClass|{type.BaseType.Name}|");
+            sb.AppendLine($"|SourceCode|[{type.Name}.cs]({strSourceCode})|");
+            sb.AppendLine($"|Example||");
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -7,6 +7,8 @@
 |Description|An time entity with hours, minutes and the seconds (12:34:56).|
 |Namespace|DoofesZeug.Models.DateAndTime|
 |BaseClass|EntityBase|
+|SourceCode|[Time.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/Time.cs)|
+|Example||
 
 ## Properties
 

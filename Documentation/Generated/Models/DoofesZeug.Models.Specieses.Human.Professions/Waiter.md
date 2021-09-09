@@ -7,6 +7,8 @@
 |Description|This is an specialized entitiy for an waiter.|
 |Namespace|DoofesZeug.Models.Specieses.Human.Professions|
 |BaseClass|Profession|
+|SourceCode|[Waiter.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/Professions/Waiter.cs)|
+|Example||
 
 ## Properties
 
@@ -37,7 +39,7 @@
 
 ```json
 {
-  "Id": "47dc587d-7fa0-4a92-9953-661ea8f2e415",
+  "Id": "cdca117d-507f-4fa0-bef4-fd65db7c9321",
   "WellKnownProfessionType": "Waiter",
   "Since": "11.11.1942"
 }

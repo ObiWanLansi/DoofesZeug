@@ -7,6 +7,8 @@
 |Description|An simplified animal with an firstname, lastname, birthday and some other optional properties.|
 |Namespace|DoofesZeug.Models.Specieses.Animals|
 |BaseClass|Species|
+|SourceCode|[Animal.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Animals/Animal.cs)|
+|Example||
 
 ## Properties
 
@@ -42,7 +44,7 @@
   "Name": "Garfield",
   "DateOfBirth": "10.06.1978",
   "Gender": "Male",
-  "Id": "0aa020f6-2e9a-458d-91a3-a54c682ca56b"
+  "Id": "d507a593-1ab1-4edf-92e2-2c5ff7ad0fce"
 }
 ```
 

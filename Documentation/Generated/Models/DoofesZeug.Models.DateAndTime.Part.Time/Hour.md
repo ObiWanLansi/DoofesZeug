@@ -7,6 +7,8 @@
 |Description|The hours of an time.|
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Time|
 |BaseClass|DateTimePart|
+|SourceCode|[Hour.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/Part/Time/Hour.cs)|
+|Example||
 
 ## Properties
 

@@ -7,6 +7,8 @@
 |Description|This is an specialized entitiy for an firefighter.|
 |Namespace|DoofesZeug.Models.Specieses.Human.Professions|
 |BaseClass|Profession|
+|SourceCode|[FireFighter.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/Professions/FireFighter.cs)|
+|Example||
 
 ## Properties
 
@@ -37,7 +39,7 @@
 
 ```json
 {
-  "Id": "2fff0c5d-e6a3-4b74-b140-3b92d870b810",
+  "Id": "2940cc29-4d12-492a-861c-7727bd5cfb5e",
   "WellKnownProfessionType": "FireFighter",
   "Since": "11.11.1942"
 }

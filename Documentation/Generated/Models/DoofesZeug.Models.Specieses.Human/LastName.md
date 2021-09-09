@@ -7,6 +7,8 @@
 |Description|An lastname for humans.|
 |Namespace|DoofesZeug.Models.Specieses.Human|
 |BaseClass|Name|
+|SourceCode|[LastName.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/LastName.cs)|
+|Example||
 
 ## Properties
 

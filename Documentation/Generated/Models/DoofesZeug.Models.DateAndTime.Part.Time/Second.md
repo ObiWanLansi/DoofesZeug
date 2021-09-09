@@ -7,6 +7,8 @@
 |Description|The seconds of an time.|
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Time|
 |BaseClass|DateTimePart|
+|SourceCode|[Second.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/Part/Time/Second.cs)|
+|Example||
 
 ## Properties
 

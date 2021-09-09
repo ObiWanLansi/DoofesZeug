@@ -7,6 +7,8 @@
 |Description|This is an specialized entitiy for an pilot.|
 |Namespace|DoofesZeug.Models.Specieses.Human.Professions|
 |BaseClass|Profession|
+|SourceCode|[Pilot.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/Professions/Pilot.cs)|
+|Example||
 
 ## Properties
 
@@ -37,7 +39,7 @@
 
 ```json
 {
-  "Id": "b097e049-bbee-4c6e-a851-2ed1e6b9213e",
+  "Id": "88434f7c-913a-460c-b09d-536a94ae4483",
   "WellKnownProfessionType": "Pilot",
   "Since": "11.11.1942"
 }
