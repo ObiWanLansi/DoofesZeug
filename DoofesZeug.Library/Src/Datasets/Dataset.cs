@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Extensions;
 using DoofesZeug.Models.Human;
-
-
+using DoofesZeug.Tools.Misc;
 
 namespace DoofesZeug.Datasets
 {
@@ -876,7 +875,7 @@ namespace DoofesZeug.Datasets
 
             for( int iCounter = 0 ; iCounter < iNumberCount ; iCounter++ )
             {
-                if( iCounter.IsPrime() )
+                if( MathEx.IsPrime(iCounter) )
                 {
                     lValues.Add(iCounter);
                 }
@@ -891,7 +890,7 @@ namespace DoofesZeug.Datasets
         /// </summary>
         /// <param name="numbercount">The numbercount.</param>
         /// <returns></returns>
-        public static UnsignedLongList GetFibonacci( uint numbercount ) => numbercount.GetFibonacciList();
+        public static UnsignedLongList GetFibonacci( uint numbercount ) => MathEx.GetFibonacciList(numbercount);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

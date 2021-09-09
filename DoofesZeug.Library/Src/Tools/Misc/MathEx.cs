@@ -1,20 +1,36 @@
 ﻿using System;
 
+using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Datatypes.Container;
 
-namespace DoofesZeug.Extensions
+
+
+namespace DoofesZeug.Tools.Misc
 {
-    public static class MathExtension
+
+    [Description("Some functiontions for extended mathematics.")]
+    public static class MathEx
     {
         /// <summary>
-        /// Determines whether this instance is prime.
+        /// The phi constant (Golden Ratio).
+        /// </summary>
+        public const double Phi = 1.6180339887498948482045868343656381177203091798057628621354486227;
+
+        /// <summary>
+        /// The pi constant (Circle Number).
+        /// </summary>
+        public const double Pi = 3.1415926535897932384626433832795028841971693993751058209749445923;
+
+
+        /// <summary>
+        /// Determines whether this value is a prime number.
         /// </summary>
         /// <param name="iValue">The i value.</param>
         /// <returns>
         ///   <c>true</c> if the specified i value is prime; otherwise, <c>false</c>.
         /// </returns>
         /// <exception cref="System.ArgumentException">The parameter is less zero.</exception>
-        public static bool IsPrime( this int iValue )
+        public static bool IsPrime( int iValue )
         {
             if( iValue < 0 )
             {
@@ -46,16 +62,16 @@ namespace DoofesZeug.Extensions
         /// <summary>
         /// Gets the fibonacci list.
         /// </summary>
-        /// <param name="iIterations">The count of iterations.</param>
+        /// <param name="iCount">The count of iterations.</param>
         /// <returns></returns>
-        public static UnsignedLongList GetFibonacciList( this uint iIterations )
+        public static UnsignedLongList GetFibonacciList( uint iCount )
         {
-            if( iIterations == 0 )
+            if( iCount == 0 )
             {
                 return new();
             }
 
-            if( iIterations == 1 )
+            if( iCount == 1 )
             {
                 return UnsignedLongList.From(0, 1);
             }
@@ -63,21 +79,21 @@ namespace DoofesZeug.Extensions
             //-----------------------------------------------------------------
 
             // If we have more than 93 iterations ulong is not big enough !
-            if( iIterations > 93 )
+            if( iCount > 93 )
             {
-                throw new ArgumentOutOfRangeException(nameof(iIterations), "To much iterations!");
+                throw new ArgumentOutOfRangeException(nameof(iCount), "To much counts!");
             }
 
             //-----------------------------------------------------------------
 
-            ulong [] values = new ulong [iIterations + 1];
+            ulong [] values = new ulong [iCount + 1];
 
             values [0] = 0;
             values [1] = 1;
 
-            if( iIterations > 1 )
+            if( iCount > 1 )
             {
-                for( int iCounter = 2 ; iCounter < iIterations + 1 ; iCounter++ )
+                for( int iCounter = 2 ; iCounter < iCount + 1 ; iCounter++ )
                 {
                     values [iCounter] = values [iCounter - 1] + values [iCounter - 2];
                 }
