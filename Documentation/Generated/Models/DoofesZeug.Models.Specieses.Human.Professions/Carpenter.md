@@ -19,9 +19,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|WellKnownProfessionType|Nullable`1|&#x2713;|&#x2717;|Carpenter|
+|WellKnownProfessionType|WellKnownProfession?|&#x2713;|&#x2717;|Carpenter|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|1726e9f8-67b9-49fd-a423-ac8c9635dfff|
+|Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "0bfdcbe9-43c7-4c4d-a06b-44d649b5127b",
+  "Id": "9500bad2-c510-4056-a42c-e03738ac2e98",
   "WellKnownProfessionType": "Carpenter",
   "Since": "11.11.1942"
 }

@@ -15,13 +15,13 @@ IdentifiableEntity <|-- Species
 
 abstract class Species {
     DateOfBirth: DateOfBirth
-    Gender: Nullable`1
+    Gender: Gender?
 }
 
 Species <|-- Animal
 
 class Animal {
-    AnimalSpecies: Nullable`1
+    AnimalSpecies: AnimalSpecies?
     Name: Name
 }
 

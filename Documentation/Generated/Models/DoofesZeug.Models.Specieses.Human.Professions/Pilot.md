@@ -19,9 +19,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|WellKnownProfessionType|Nullable`1|&#x2713;|&#x2717;|Pilot|
+|WellKnownProfessionType|WellKnownProfession?|&#x2713;|&#x2717;|Pilot|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|a30f21ca-b8ce-42bd-b23d-ffa9f8ba6934|
+|Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "4462e8de-8213-4ce2-b7ea-57805a264bc0",
+  "Id": "b097e049-bbee-4c6e-a851-2ed1e6b9213e",
   "WellKnownProfessionType": "Pilot",
   "Since": "11.11.1942"
 }

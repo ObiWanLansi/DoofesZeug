@@ -14,7 +14,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|AnimalSpecies|Nullable`1|&#x2713;|&#x2713;|NULL|
+|AnimalSpecies|AnimalSpecies?|&#x2713;|&#x2713;|NULL|
 |Name|[Name](../../Models/DoofesZeug.Models.Specieses/Name.md)|&#x2713;|&#x2713;|NULL|
 
 ### Inherited
@@ -22,8 +22,8 @@
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
 |DateOfBirth|[DateOfBirth](../../Models/DoofesZeug.Models.DateAndTime/DateOfBirth.md)|&#x2713;|&#x2713;|NULL|
-|Gender|Nullable`1|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|9b4c1bfb-a37d-4a1a-bee6-726905f85023|
+|Gender|Gender?|&#x2713;|&#x2713;|NULL|
+|Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
 ## Attributes
 
@@ -42,7 +42,7 @@
   "Name": "Garfield",
   "DateOfBirth": "10.06.1978",
   "Gender": "Male",
-  "Id": "a926a72c-1b3b-4a8e-a086-915946b3ffce"
+  "Id": "0aa020f6-2e9a-458d-91a3-a54c682ca56b"
 }
 ```
 

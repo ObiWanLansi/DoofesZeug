@@ -19,9 +19,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|WellKnownProfessionType|Nullable`1|&#x2713;|&#x2717;|TaxiDriver|
+|WellKnownProfessionType|WellKnownProfession?|&#x2713;|&#x2717;|TaxiDriver|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|c2686fff-608d-43db-89c0-3950e6ef5904|
+|Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "e7e6ea4d-c253-43f4-855b-4ec64f2b4adc",
+  "Id": "a93d7528-143e-4e1c-8440-c2ff26e96f2b",
   "WellKnownProfessionType": "TaxiDriver",
   "Since": "11.11.1942"
 }

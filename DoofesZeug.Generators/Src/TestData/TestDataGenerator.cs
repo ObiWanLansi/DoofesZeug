@@ -106,6 +106,7 @@ namespace DoofesZeug.TestData
             Gender = Gender.Male,
             DateOfBirth = (27, 09, 1974),
             Handedness = Handedness.Left,
+            BloodGroup = BloodGroup.AB,
             Profession = GenerateProfession<FireFighter>()
         };
 

@@ -44,6 +44,44 @@ namespace DoofesZeug.Documentation
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        private static string GetTypeName( Type t )
+        {
+            string strName = t.Name;
+
+            if( strName == "Nullable`1" )
+            {
+                return $"{t.GenericTypeArguments [0].Name}?";
+            }
+
+            if( t.IsGenericType == false )
+            {
+                return strName;
+            }
+
+            StringBuilder sbGenericName = new StringBuilder(32);
+
+            int iGenericParamCount = t.GetGenericArguments().Length;
+
+            int iIndex = strName.IndexOf('`');
+
+            sbGenericName.AppendFormat("{0}<", iIndex > 0 ? strName.Substring(0, iIndex) : strName);
+
+            for( int iCounter = 0 ; iCounter < iGenericParamCount ; iCounter++ )
+            {
+                if( iCounter > 0 )
+                {
+                    sbGenericName.Append(',');
+                }
+
+                sbGenericName.AppendFormat("T{0}", iCounter + 1);
+            }
+
+            sbGenericName.Append(">");
+
+            return sbGenericName.ToString();
+        }
+
+
         private static void AppendType( Type type, StringBuilder sbPUML )
         {
             if( type.BaseType != typeof(object) )
@@ -58,7 +96,8 @@ namespace DoofesZeug.Documentation
 
             foreach( PropertyInfo pi in type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance) )
             {
-                sbPUML.AppendLine($"    {pi.Name}: {pi.PropertyType.Name}");
+                sbPUML.AppendLine($"    {pi.Name}: {GetTypeName(pi.PropertyType)}");
+                //sbPUML.AppendLine($"    {pi.Name}: {pi.PropertyType.Name}");
             }
 
             sbPUML.AppendLine("}");
@@ -102,12 +141,10 @@ namespace DoofesZeug.Documentation
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         private static void AddAttributes( Type type, StringBuilder sb )
         {
             sb.AppendLine();
-
-            //sb.AppendLine("|Name|Value|");
-            //sb.AppendLine("|:---|");
             foreach( object attribute in type.GetCustomAttributes(false) )
             {
                 string strName = attribute.GetType().Name;
@@ -120,7 +157,7 @@ namespace DoofesZeug.Documentation
         }
 
 
-        private static void AddFields( Type type, StringBuilder sb, bool bInherited )
+        private static void AddProperties( Type type, StringBuilder sb, bool bInherited )
         {
             sb.AppendLine();
             sb.AppendLine($"### {( bInherited ? "Inherited" : "Declared" )}");
@@ -142,7 +179,8 @@ namespace DoofesZeug.Documentation
                     continue;
                 }
 
-                string strPropertyType = pi.PropertyType.Name;
+                //string strPropertyType = pi.PropertyType.Name;
+                string strPropertyType = GetTypeName(pi.PropertyType);
                 if( pi.PropertyType.Namespace.StartsWith("DoofesZeug.") )
                 {
                     string strPath = $"../../{( pi.PropertyType.IsEnum ? "Enumerations" : "Models" )}/{pi.PropertyType.Namespace}";
@@ -150,7 +188,8 @@ namespace DoofesZeug.Documentation
                     strPropertyType = $"[{pi.PropertyType.Name}]({strPath}/{pi.PropertyType.Name}.md)";
                 }
 
-                object value = pi.GetValue(instance);
+                object value = pi.Name.Equals(nameof(IdentifiableEntity.Id)) ? "Guid.NewGuid()" : pi.GetValue(instance);
+
                 sb.AppendLine($"|{pi.Name}|{strPropertyType}|{( pi.CanRead ? "&#x2713;" : "&#x2717;" )}|{( pi.CanWrite ? "&#x2713;" : "&#x2717;" )}|{( value != null ? value : "NULL" )}|");
             }
         }
@@ -203,8 +242,8 @@ namespace DoofesZeug.Documentation
                 sb.AppendLine();
 
                 sb.AppendLine($"Properties".Header(2));
-                AddFields(type, sb, false);
-                AddFields(type, sb, true);
+                AddProperties(type, sb, false);
+                AddProperties(type, sb, true);
                 sb.AppendLine();
 
                 sb.AppendLine($"Attributes".Header(2));

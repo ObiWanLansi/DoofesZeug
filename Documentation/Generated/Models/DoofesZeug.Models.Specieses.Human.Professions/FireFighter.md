@@ -19,9 +19,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|WellKnownProfessionType|Nullable`1|&#x2713;|&#x2717;|FireFighter|
+|WellKnownProfessionType|WellKnownProfession?|&#x2713;|&#x2717;|FireFighter|
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
-|Id|Guid|&#x2713;|&#x2713;|05922918-0216-41fe-8548-4d1d7f991338|
+|Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
 ## Attributes
 
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "Id": "bc420aae-74e3-47e1-9d4f-42f973ee744a",
+  "Id": "2fff0c5d-e6a3-4b74-b140-3b92d870b810",
   "WellKnownProfessionType": "FireFighter",
   "Since": "11.11.1942"
 }
