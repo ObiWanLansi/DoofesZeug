@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 
 using DoofesZeug.Datasets;
+using DoofesZeug.Extensions;
+using DoofesZeug.Models.Science.Geographically.Base;
 using DoofesZeug.Models.Specieses.Human;
 
 using static System.Console;
@@ -76,13 +78,22 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            List<Person> persons = Dataset.GetPersons(20);
+            //List<Person> persons = Dataset.GetPersons(20);
 
-            int counter = 1;
-            foreach( Person person in persons )
-            {
-                Out.WriteLineAsync($"{counter++}: {person} ({person.Gender}, {person.Handedness}, {person.BloodGroup})");
-            }
+            //int counter = 1;
+            //foreach( Person person in persons )
+            //{
+            //    Out.WriteLineAsync($"{counter++}: {person} ({person.Gender}, {person.Handedness}, {person.BloodGroup})");
+            //}
+
+            //-------------------------------------------------------------------------------------
+
+            var lat = TestData.TestDataGenerator.GenerateTestData<Latitude>();
+            var lon = TestData.TestDataGenerator.GenerateTestData<Longitude>();
+
+            //TODO Noch einen JSON Converter!
+            Out.WriteLineAsync($"Lat: {lat.ToJson()}");
+            Out.WriteLineAsync($"Lon: {lon.ToJson()}");
 
             //-------------------------------------------------------------------------------------
 

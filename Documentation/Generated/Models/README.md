@@ -30,6 +30,15 @@
 |[Second](./DoofesZeug.Models.DateAndTime.Part.Time/Second.md)|The seconds of an time.|Value|
 
 
+## `DoofesZeug.Models.Science.Geographically.Base`
+
+|Entity|Description|Properties|
+|:-----|:----------|:---------|
+|[Altitude](./DoofesZeug.Models.Science.Geographically.Base/Altitude.md)|An simplified altitude.|MeterOverNN|
+|[Latitude](./DoofesZeug.Models.Science.Geographically.Base/Latitude.md)|An simplified latitude (WGS84).|Value|
+|[Longitude](./DoofesZeug.Models.Science.Geographically.Base/Longitude.md)|An simplified longitude (WGS84).|Value|
+
+
 ## `DoofesZeug.Models.Specieses`
 
 |Entity|Description|Properties|

@@ -5,6 +5,7 @@ using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.DateAndTime.Part;
 using DoofesZeug.Models.DateAndTime.Part.Date;
 using DoofesZeug.Models.DateAndTime.Part.Time;
+using DoofesZeug.Models.Science.Geographically.Base;
 using DoofesZeug.Models.Specieses;
 using DoofesZeug.Models.Specieses.Animals;
 using DoofesZeug.Models.Specieses.Human;
@@ -59,12 +60,22 @@ namespace DoofesZeug.TestData
             GENERATORS.Add(typeof(Second).FullName, GenerateDateTimePart<Second>);
 
             GENERATORS.Add(typeof(Animal).FullName, GenerateAnimal);
+
+            GENERATORS.Add(typeof(Latitude).FullName, GenerateLatitude);
+            GENERATORS.Add(typeof(Longitude).FullName, GenerateLongitude);
+            GENERATORS.Add(typeof(Altitude).FullName, GenerateAltitude);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         private static UnixTimestamp GenerateUnixTimestamp() => UnixTimestamp.Now();
+
+        private static Altitude GenerateAltitude() => new(42);
+
+        private static Latitude GenerateLatitude() => new(6.644282639342397);
+
+        private static Longitude GenerateLongitude() => new(49.759646524258756);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

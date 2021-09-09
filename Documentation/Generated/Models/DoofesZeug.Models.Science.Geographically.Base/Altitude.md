@@ -1,13 +1,13 @@
-﻿# UnixTimestamp
+﻿# Altitude
 
 ## Generally
 
 |||
 |:-|:-|
-|Description|An unix timestamp (seconds since 01.01.1970).|
-|Namespace|DoofesZeug.Models.DateAndTime|
+|Description|An simplified altitude.|
+|Namespace|DoofesZeug.Models.Science.Geographically.Base|
 |BaseClass|EntityBase|
-|SourceCode|[UnixTimestamp.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/UnixTimestamp.cs)|
+|SourceCode|[Altitude.cs](../../../../DoofesZeug.Library/Src/Models/Science/Geographically/Base/Altitude.cs)|
 |Example||
 
 ## Properties
@@ -16,6 +16,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
+|MeterOverNN|UInt64|&#x2713;|&#x2713;|0|
 
 ### Inherited
 
@@ -28,11 +29,13 @@
 
 ## UML Diagram
 
-![UnixTimestamp.png](./UnixTimestamp.png "UnixTimestamp")
+![Altitude.png](./Altitude.png "Altitude")
 
 ## JSON Example
 
 ```json
-1631221520
+{
+  "MeterOverNN": 42
+}
 ```
 
