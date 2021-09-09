@@ -2,10 +2,11 @@
 skinparam monochrome true
 hide empty members
 
-enum Gender {
-    Divers
-    Female
-    Male
+enum BloodGroup {
+    A
+    B
+    AB
+    Zero
 }
 
 @enduml

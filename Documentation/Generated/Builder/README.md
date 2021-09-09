@@ -42,5 +42,4 @@
 |[TaxiDriver](../Models/DoofesZeug.Models.Human.Professions/TaxiDriver.md)|TaxiDriverBuilder|
 |[Teacher](../Models/DoofesZeug.Models.Human.Professions/Teacher.md)|TeacherBuilder|
 |[Tiler](../Models/DoofesZeug.Models.Human.Professions/Tiler.md)|TilerBuilder|
-|[Unknown](../Models/DoofesZeug.Models.Human.Professions/Unknown.md)|UnknownBuilder|
 |[Waiter](../Models/DoofesZeug.Models.Human.Professions/Waiter.md)|WaiterBuilder|

@@ -65,5 +65,4 @@
 |[TaxiDriver](./DoofesZeug.Models.Human.Professions/TaxiDriver.md)|This is an specialized entitiy for an taxidriver.|Since, Id|
 |[Teacher](./DoofesZeug.Models.Human.Professions/Teacher.md)|This is an specialized entitiy for an teacher.|Since, Id|
 |[Tiler](./DoofesZeug.Models.Human.Professions/Tiler.md)|This is an specialized entitiy for an tiler.|Since, Id|
-|[Unknown](./DoofesZeug.Models.Human.Professions/Unknown.md)|This is an specialized entitiy for an unknown.|Since, Id|
 |[Waiter](./DoofesZeug.Models.Human.Professions/Waiter.md)|This is an specialized entitiy for an waiter.|Since, Id|

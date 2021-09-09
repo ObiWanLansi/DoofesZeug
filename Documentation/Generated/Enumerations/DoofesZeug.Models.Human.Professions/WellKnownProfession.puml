@@ -3,7 +3,6 @@ skinparam monochrome true
 hide empty members
 
 enum WellKnownProfession {
-    Unknown
     FireFighter
     PoliceOfficer
     Nurse

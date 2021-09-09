@@ -20,8 +20,8 @@
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
-|[Gender](./DoofesZeug.Models.Human/Gender.md)|An enumeration for the gender of creatures.|Unknown, Divers, Female, Male|
-|[Handedness](./DoofesZeug.Models.Human/Handedness.md)|An simple enumeration for the handedness of an human.|Unknown, Left, Right, Both|
+|[Gender](./DoofesZeug.Models.Human/Gender.md)|An enumeration for the gender of creatures.|Divers, Female, Male|
+|[Handedness](./DoofesZeug.Models.Human/Handedness.md)|An simple enumeration for the handedness of an human.|Left, Right, Both|
 |[MajorReligion](./DoofesZeug.Models.Human/MajorReligion.md)|The five big major religions.|Hinduism, Buddhism, Islam, Christianity, Judaism|
 
 
@@ -29,7 +29,7 @@
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
-|[WellKnownProfession](./DoofesZeug.Models.Human.Professions/WellKnownProfession.md)|A small enumeration of some professions, for every value an corresponding entity will be created by the generator.|Unknown, FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter, Soldier, BusDriver, TaxiDriver, Pilot|
+|[WellKnownProfession](./DoofesZeug.Models.Human.Professions/WellKnownProfession.md)|A small enumeration of some professions, for every value an corresponding entity will be created by the generator.|FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter, Soldier, BusDriver, TaxiDriver, Pilot|
 
 
 ## `DoofesZeug.Models.Science.Geographically`
@@ -37,6 +37,13 @@
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
 |[Continent](./DoofesZeug.Models.Science.Geographically/Continent.md)|Our continents as little enumeration.|Africa, Asia, Europe, NorthAmerica, SouthAmerica, Antarctica, Australia|
+
+
+## `DoofesZeug.Models.Species`
+
+|Enumeration|Description|Values|
+|:----------|:----------|:-----|
+|[BloodGroup](./DoofesZeug.Models.Species/BloodGroup.md)|An simple enumeration for the bloodgroup of an human.|A, B, AB, Zero|
 
 
 ## `DoofesZeug.Tools.Crypt`

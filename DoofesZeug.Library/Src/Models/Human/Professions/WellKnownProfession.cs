@@ -7,7 +7,9 @@ namespace DoofesZeug.Models.Human.Professions
     [Description("A small enumeration of some professions, for every value an corresponding entity will be created by the generator.")]
     public enum WellKnownProfession : byte
     {
-        Unknown,
+        // When we not know, what for an profession an human have, the property should be null.
+        // Unknown,
+
         FireFighter,
         PoliceOfficer,
         Nurse,
