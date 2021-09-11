@@ -74,11 +74,11 @@ namespace DoofesZeug.TestData
 
         //private static Altitude GenerateAltitude() => new(42);
 
-        private static Latitude GenerateLatitude() => new(6.644282639342397);
+        private static Latitude GenerateLatitude() => new(49.759646524258756);
 
-        private static Longitude GenerateLongitude() => new(49.759646524258756);
+        private static Longitude GenerateLongitude() => new(6.644282639342397);
 
-        private static GeoPoint GenerateGeoPoint() => new(6.644282639342397, 49.759646524258756);
+        private static GeoPoint GenerateGeoPoint() => new(49.759646524258756, 6.644282639342397);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

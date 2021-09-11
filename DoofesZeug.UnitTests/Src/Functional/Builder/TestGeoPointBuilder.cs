@@ -1,13 +1,6 @@
-﻿
-// ------------------------------------------------------------------------------------------------------------------
-// This is auto generated code. Every manually change in this code will be overwritten at the next code generation! |
-// ------------------------------------------------------------------------------------------------------------------
-        
-
+﻿using DoofesZeug.Models.Science.Geographically.Base;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using DoofesZeug.Models.Science.Geographically.Base;
 
 
 
@@ -19,11 +12,8 @@ namespace DoofesZeug.UnitTests.Functional.Builder
         [TestMethod]
         public void ExecuteTest()
         {
-            Assert.Fail("Not Yet Implemented!");
-            GeoPoint geopoint = GeoPointBuilder.New().WithLatitude(null).WithLongitude(null);
+            GeoPoint geopoint = GeoPointBuilder.New().WithLatitude(49.759646524258756).WithLongitude(6.644282639342397);
             Assert.IsNotNull(geopoint);
-
         }
     }
 }
-        
