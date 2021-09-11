@@ -34,12 +34,10 @@ namespace DoofesZeug.UnitTests.Functional.Formats
                     Assert.IsNotNull(json);
                     Assert.IsTrue(json.Length > 0);
 
-                    //Console.Out.WriteLineAsync(json);
+                    object oClone = json.FromJson(type);
 
                     try
                     {
-                        object oClone = json.FromJson(type);
-
                         Assert.IsNotNull(oClone);
                         Assert.AreEqual(oOriginal, oClone);
                     }
@@ -47,7 +45,6 @@ namespace DoofesZeug.UnitTests.Functional.Formats
                     {
                         // For debugging purpose we catch the exception so that we can set an breakpoint for debugging.
                         Assert.Fail(ex.Message);
-                        //Console.Error.WriteLineAsync(ex.Message);
                     }
                 }
             }

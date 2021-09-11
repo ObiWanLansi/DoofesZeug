@@ -46,7 +46,7 @@
 ## Code Example
 
 ```cs
-An exmaple or code snippet follows soon.
+An example or code snippet follows soon.
 ```
 
 ---
@@ -59,7 +59,7 @@ An exmaple or code snippet follows soon.
   "Name": "Garfield",
   "DateOfBirth": "10.06.1978",
   "Gender": "Male",
-  "Id": "2b9c5013-0341-45ee-a60a-ff23b237fe42"
+  "Id": "cbff1574-22b5-4987-bcf4-1734ad25ddd4"
 }
 ```
 

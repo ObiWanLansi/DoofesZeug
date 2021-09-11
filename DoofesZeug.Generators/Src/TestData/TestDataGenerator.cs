@@ -61,9 +61,10 @@ namespace DoofesZeug.TestData
 
             GENERATORS.Add(typeof(Animal).FullName, GenerateAnimal);
 
+            //GENERATORS.Add(typeof(Altitude).FullName, GenerateAltitude);
             GENERATORS.Add(typeof(Latitude).FullName, GenerateLatitude);
             GENERATORS.Add(typeof(Longitude).FullName, GenerateLongitude);
-            GENERATORS.Add(typeof(Altitude).FullName, GenerateAltitude);
+            GENERATORS.Add(typeof(GeoPoint).FullName, GenerateGeoPoint);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -71,11 +72,13 @@ namespace DoofesZeug.TestData
 
         private static UnixTimestamp GenerateUnixTimestamp() => UnixTimestamp.Now();
 
-        private static Altitude GenerateAltitude() => new(42);
+        //private static Altitude GenerateAltitude() => new(42);
 
         private static Latitude GenerateLatitude() => new(6.644282639342397);
 
         private static Longitude GenerateLongitude() => new(49.759646524258756);
+
+        private static GeoPoint GenerateGeoPoint() => new(6.644282639342397, 49.759646524258756);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

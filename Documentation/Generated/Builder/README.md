@@ -10,6 +10,13 @@
 |[Time](../Models/DoofesZeug.Models.DateAndTime/Time.md)|TimeBuilder|
 
 
+## `DoofesZeug.Models.Science.Geographically.Base`
+
+|Entity|Builder|
+|:-----|:------|
+|[GeoPoint](../Models/DoofesZeug.Models.Science.Geographically.Base/GeoPoint.md)|GeoPointBuilder|
+
+
 ## `DoofesZeug.Models.Specieses.Animals`
 
 |Entity|Builder|

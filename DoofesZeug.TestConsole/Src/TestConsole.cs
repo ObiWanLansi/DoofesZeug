@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 
-using DoofesZeug.Datasets;
 using DoofesZeug.Extensions;
 using DoofesZeug.Models.Science.Geographically.Base;
-using DoofesZeug.Models.Specieses.Human;
 
 using static System.Console;
 
@@ -88,12 +85,21 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            Latitude lat = TestData.TestDataGenerator.GenerateTestData<Latitude>();
-            Longitude lon = TestData.TestDataGenerator.GenerateTestData<Longitude>();
+            //Latitude lat= 6.644282639342397;
+            //Longitude lon = 49.759646524258756;
 
-            //TODO Noch einen JSON Converter!
-            Out.WriteLineAsync($"Lat: {lat.ToJson()}");
-            Out.WriteLineAsync($"Lon: {lon.ToJson()}");
+            //Latitude xlat = new(lat.ToString());
+            //Longitude xlon = new(lon.ToString());
+
+            ////Latitude lat = TestData.TestDataGenerator.GenerateTestData<Latitude>();
+            ////Longitude lon = TestData.TestDataGenerator.GenerateTestData<Longitude>();
+
+            ////TODO Noch einen JSON Converter!
+            //Out.WriteLineAsync($"Lat: {lat}");
+            //Out.WriteLineAsync($"Lat: {lat.ToJson()}");
+
+            //Out.WriteLineAsync($"Lon: {lon}");
+            //Out.WriteLineAsync($"Lon: {lon.ToJson()}");
 
             //-------------------------------------------------------------------------------------
 

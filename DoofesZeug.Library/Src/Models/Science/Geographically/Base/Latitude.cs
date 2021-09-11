@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 using DoofesZeug.Attributes.Documentation;
 
@@ -7,20 +8,60 @@ using DoofesZeug.Attributes.Documentation;
 namespace DoofesZeug.Models.Science.Geographically.Base
 {
     [Description("An simplified latitude (WGS84).")]
-    // [Range()]
+    // [Range(-90,90)]
     public class Latitude : EntityBase
     {
+        protected static readonly CultureInfo CULTUREINFO = new("en-US");
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         public double Value { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Latitude"/> class.
+        /// </summary>
         public Latitude()
         {
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Latitude"/> class.
+        /// </summary>
+        /// <param name="value">The value.</param>
         public Latitude( double value ) => this.Value = value;
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Latitude"/> class.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        public Latitude( string value ) => this.Value = double.Parse(value, CULTUREINFO);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="System.Double"/> to <see cref="Latitude"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Latitude( double value ) => new(value);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Converts to string.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString() => string.Format(CULTUREINFO, "{0}", this.Value);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

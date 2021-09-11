@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DoofesZeug.Models.DateAndTime;
+using DoofesZeug.Models.Science.Geographically.Base;
 
 using Newtonsoft.Json;
 
@@ -8,9 +8,14 @@ using Newtonsoft.Json;
 
 namespace DoofesZeug.Converter
 {
-    public sealed class DateOfBirthConverter : JsonConverter
+    public sealed class GeoConverter : JsonConverter
     {
-        private static readonly Type DATEOFBIRTH = typeof(DateOfBirth);
+
+        private static readonly Type LATITUDE = typeof(Latitude);
+
+        private static readonly Type LONGITUDE = typeof(Longitude);
+
+        private static readonly Type GEOPOINT = typeof(GeoPoint);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -22,8 +27,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType == DATEOFBIRTH;
-        //public override bool CanConvert( Type objectType ) => objectType.IsAssignableTo(DATEOFBIRTH);
+        public override bool CanConvert( Type objectType ) => objectType == LATITUDE || objectType == LONGITUDE || objectType == GEOPOINT;
 
 
         /// <summary>
@@ -36,7 +40,20 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// The object value.
         /// </returns>
-        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer ) => reader.Value == null ? null : new DateOfBirth(Date.From(Convert.ToString(reader.Value)));
+        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer )
+        {
+            if( objectType == LATITUDE )
+            {
+                return new Latitude(Convert.ToString(reader.Value));
+            }
+
+            if( objectType == LONGITUDE )
+            {
+                return new Longitude(Convert.ToString(reader.Value));
+            }
+
+            return objectType == GEOPOINT ? new GeoPoint(Convert.ToString(reader.Value)) : null;
+        }
 
 
         /// <summary>

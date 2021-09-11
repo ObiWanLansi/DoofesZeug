@@ -7,6 +7,8 @@ using DoofesZeug.Converter;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
+
+
 namespace DoofesZeug.Extensions
 {
     public static class JsonExtension
@@ -25,7 +27,8 @@ namespace DoofesZeug.Extensions
             new ProfessionConverter(),
             new DateOfBirthConverter(),
             new DateTimePartConverter(),
-            new UnixTimestampConverter()
+            new UnixTimestampConverter(),
+            new GeoConverter()
         };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

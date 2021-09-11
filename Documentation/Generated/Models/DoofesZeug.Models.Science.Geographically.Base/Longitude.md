@@ -41,7 +41,7 @@
 ## Code Example
 
 ```cs
-An exmaple or code snippet follows soon.
+An example or code snippet follows soon.
 ```
 
 ---
@@ -49,9 +49,7 @@ An exmaple or code snippet follows soon.
 ## JSON Example
 
 ```json
-{
-  "Value": 49.759646524258756
-}
+"49.759646524258756"
 ```
 
 ---

@@ -12,6 +12,9 @@ namespace DoofesZeug.Converter
     public sealed class DateTimePartConverter : JsonConverter
     {
         private static readonly Type DATETIMEPART = typeof(DateTimePart);
+        
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Determines whether this instance can convert the specified object type.

@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 using DoofesZeug.Attributes.Documentation;
 
@@ -7,20 +8,60 @@ using DoofesZeug.Attributes.Documentation;
 namespace DoofesZeug.Models.Science.Geographically.Base
 {
     [Description("An simplified longitude (WGS84).")]
-    // [Range()]
+    // [Range(-180,180)]
     public class Longitude : EntityBase
     {
+        protected static readonly CultureInfo CULTUREINFO = new("en-US");
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         public double Value { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Longitude"/> class.
+        /// </summary>
         public Longitude()
         {
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Longitude"/> class.
+        /// </summary>
+        /// <param name="value">The value.</param>
         public Longitude( double value ) => this.Value = value;
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Longitude"/> class.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        public Longitude( string value ) => this.Value = double.Parse(value, CULTUREINFO);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Converts to string.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString() => string.Format(CULTUREINFO, "{0}", this.Value);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="System.Double"/> to <see cref="Longitude"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Longitude( double value ) => new(value);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

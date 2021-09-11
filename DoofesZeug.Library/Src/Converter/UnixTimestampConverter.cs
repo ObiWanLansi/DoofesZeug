@@ -12,6 +12,9 @@ namespace DoofesZeug.Converter
     {
         private static readonly Type UNIXTIMESTAMP = typeof(UnixTimestamp);
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         /// <summary>
         /// Determines whether this instance can convert the specified object type.
         /// </summary>
@@ -19,7 +22,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType.IsAssignableTo(UNIXTIMESTAMP);
+        public override bool CanConvert( Type objectType ) => objectType == UNIXTIMESTAMP;
 
 
         /// <summary>

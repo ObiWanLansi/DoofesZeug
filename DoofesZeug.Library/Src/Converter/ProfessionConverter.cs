@@ -15,6 +15,9 @@ namespace DoofesZeug.Converter
     {
         private static readonly Type PROFESSION = typeof(Profession);
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         /// <summary>
         /// Determines whether this instance can convert the specified object type.
         /// </summary>

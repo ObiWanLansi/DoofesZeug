@@ -34,7 +34,7 @@
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[Altitude](./DoofesZeug.Models.Science.Geographically.Base/Altitude.md)|An simplified altitude.|MeterOverNN|
+|[GeoPoint](./DoofesZeug.Models.Science.Geographically.Base/GeoPoint.md)|An simplified geo point with lat, lon and alt (WGS84).|Latitude, Longitude, Id|
 |[Latitude](./DoofesZeug.Models.Science.Geographically.Base/Latitude.md)|An simplified latitude (WGS84).|Value|
 |[Longitude](./DoofesZeug.Models.Science.Geographically.Base/Longitude.md)|An simplified longitude (WGS84).|Value|
 

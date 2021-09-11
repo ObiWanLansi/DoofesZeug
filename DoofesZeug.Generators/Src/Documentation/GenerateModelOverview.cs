@@ -39,7 +39,7 @@ namespace DoofesZeug.Documentation
             }
 
             sb.AppendLine("```cs");
-            sb.AppendLine("An exmaple or code snippet follows soon.");
+            sb.AppendLine("An example or code snippet follows soon.");
             sb.AppendLine("```");
 
             //throw new Exception($"{type.FullName} have no valid example source!");

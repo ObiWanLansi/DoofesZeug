@@ -13,6 +13,9 @@ namespace DoofesZeug.Converter
     {
         private static readonly Type NAME = typeof(Name);
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         /// <summary>
         /// Determines whether this instance can convert the specified object type.
         /// </summary>

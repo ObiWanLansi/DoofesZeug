@@ -45,7 +45,7 @@
 ## Code Example
 
 ```cs
-An exmaple or code snippet follows soon.
+An example or code snippet follows soon.
 ```
 
 ---
@@ -54,7 +54,7 @@ An exmaple or code snippet follows soon.
 
 ```json
 {
-  "Id": "f04150ff-5a37-48a8-8fb2-bbe81e5a57d8",
+  "Id": "d617469e-6d9c-49bd-b99e-6799f51d2f88",
   "WellKnownProfessionType": "FireFighter",
   "Since": "11.11.1942"
 }
