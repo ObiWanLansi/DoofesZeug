@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|An date entity with day, month and a year (15.12.1948).|
 |Namespace|DoofesZeug.Models.DateAndTime|
 |BaseClass|EntityBase|
 |SourceCode|[Date.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/Date.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -25,14 +26,28 @@
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
 
+---
+
 ## Attributes
 
 - Description
 - Builder
 
+---
+
 ## UML Diagram
 
 ![Date.png](./Date.png "Date")
+
+---
+
+## Code Example
+
+```cs
+An exmaple or code snippet follows soon.
+```
+
+---
 
 ## JSON Example
 
@@ -43,4 +58,6 @@
   "Year": 1942
 }
 ```
+
+---
 

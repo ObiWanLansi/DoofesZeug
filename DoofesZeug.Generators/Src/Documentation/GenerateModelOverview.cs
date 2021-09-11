@@ -27,6 +27,25 @@ namespace DoofesZeug.Documentation
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        private static void GenerateCodeExample( Type type, StringBuilder sb )
+        {
+            sb.AppendLine();
+
+            ExampleAttribute iea = type.GetCustomAttribute<ExampleAttribute>();
+            if( iea != null )
+            {
+                iea.AppendInlineExample(sb);
+                return;
+            }
+
+            sb.AppendLine("```cs");
+            sb.AppendLine("An exmaple or code snippet follows soon.");
+            sb.AppendLine("```");
+
+            //throw new Exception($"{type.FullName} have no valid example source!");
+        }
+
+
         private static void GenerateJsonExample( Type type, StringBuilder sb )
         {
             sb.AppendLine();
@@ -97,7 +116,6 @@ namespace DoofesZeug.Documentation
             foreach( PropertyInfo pi in type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance) )
             {
                 sbPUML.AppendLine($"    {pi.Name}: {GetTypeName(pi.PropertyType)}");
-                //sbPUML.AppendLine($"    {pi.Name}: {pi.PropertyType.Name}");
             }
 
             sbPUML.AppendLine("}");
@@ -179,7 +197,6 @@ namespace DoofesZeug.Documentation
                     continue;
                 }
 
-                //string strPropertyType = pi.PropertyType.Name;
                 string strPropertyType = GetTypeName(pi.PropertyType);
                 if( pi.PropertyType.Namespace.StartsWith("DoofesZeug.") )
                 {
@@ -209,13 +226,13 @@ namespace DoofesZeug.Documentation
             string strSourceCode = $"../../../../DoofesZeug.Library/Src/{type.Namespace [11..].Replace('.', '/')}/{type.Name}.cs";
 
             sb.AppendLine();
-            sb.AppendLine("|||");
+            sb.AppendLine("|Property|Value|");
             sb.AppendLine("|:-|:-|");
             sb.AppendLine($"|Description|{da.Description}|");
             sb.AppendLine($"|Namespace|{type.Namespace}|");
             sb.AppendLine($"|BaseClass|{type.BaseType.Name}|");
             sb.AppendLine($"|SourceCode|[{type.Name}.cs]({strSourceCode})|");
-            sb.AppendLine($"|Example||");
+            //sb.AppendLine($"|Example||");
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -236,32 +253,45 @@ namespace DoofesZeug.Documentation
 
             StringBuilder sb = new(8192);
 
-            sb.AppendLine($"{type.Name}".Header(1));
+            sb.AppendLine($"# {type.Name}");
             sb.AppendLine();
 
-            //if( type.IsEnum == false )
-            {
-                sb.AppendLine($"Generally".Header(2));
-                AddGenerallyInformation(type, sb);
-                sb.AppendLine();
+            sb.AppendLine("## Generally");
+            AddGenerallyInformation(type, sb);
+            sb.AppendLine();
+            sb.AppendLine("---");
+            sb.AppendLine();
 
-                sb.AppendLine($"Properties".Header(2));
-                AddProperties(type, sb, false);
-                AddProperties(type, sb, true);
-                sb.AppendLine();
+            sb.AppendLine("## Properties");
+            AddProperties(type, sb, false);
+            AddProperties(type, sb, true);
+            sb.AppendLine();
+            sb.AppendLine("---");
+            sb.AppendLine();
 
-                sb.AppendLine($"Attributes".Header(2));
-                AddAttributes(type, sb);
-                sb.AppendLine();
+            sb.AppendLine("## Attributes");
+            AddAttributes(type, sb);
+            sb.AppendLine();
+            sb.AppendLine("---");
+            sb.AppendLine();
 
-                sb.AppendLine($"UML Diagram".Header(2));
-                GenerateUmlDiagramm(type, sb);
-                sb.AppendLine();
+            sb.AppendLine("## UML Diagram");
+            GenerateUmlDiagramm(type, sb);
+            sb.AppendLine();
+            sb.AppendLine("---");
+            sb.AppendLine();
 
-                sb.AppendLine($"JSON Example".Header(2));
-                GenerateJsonExample(type, sb);
-                sb.AppendLine();
-            }
+            sb.AppendLine("## Code Example");
+            GenerateCodeExample(type, sb);
+            sb.AppendLine();
+            sb.AppendLine("---");
+            sb.AppendLine();
+
+            sb.AppendLine("## JSON Example");
+            GenerateJsonExample(type, sb);
+            sb.AppendLine();
+            sb.AppendLine("---");
+            sb.AppendLine();
 
             //---------------------------------------------------------------------------------------------------------
 

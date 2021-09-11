@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|The seconds of an time.|
 |Namespace|DoofesZeug.Models.DateAndTime.Part.Time|
 |BaseClass|DateTimePart|
 |SourceCode|[Second.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/Part/Time/Second.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -23,18 +24,34 @@
 |:---|:---|:--:|:---:|:-----------|
 |Value|UInt32|&#x2713;|&#x2713;|0|
 
+---
+
 ## Attributes
 
 - Description
 - Range
 
+---
+
 ## UML Diagram
 
 ![Second.png](./Second.png "Second")
+
+---
+
+## Code Example
+
+```cs
+An exmaple or code snippet follows soon.
+```
+
+---
 
 ## JSON Example
 
 ```json
 3
 ```
+
+---
 

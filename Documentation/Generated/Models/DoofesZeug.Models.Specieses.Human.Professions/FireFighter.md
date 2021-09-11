@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|This is an specialized entitiy for an firefighter.|
 |Namespace|DoofesZeug.Models.Specieses.Human.Professions|
 |BaseClass|Profession|
 |SourceCode|[FireFighter.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/Professions/FireFighter.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -25,23 +26,39 @@
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
 |Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
+---
+
 ## Attributes
 
 - Description
 - Generated
 - Builder
 
+---
+
 ## UML Diagram
 
 ![FireFighter.png](./FireFighter.png "FireFighter")
+
+---
+
+## Code Example
+
+```cs
+An exmaple or code snippet follows soon.
+```
+
+---
 
 ## JSON Example
 
 ```json
 {
-  "Id": "d11b635e-f914-4057-9746-444676879cdf",
+  "Id": "f04150ff-5a37-48a8-8fb2-bbe81e5a57d8",
   "WellKnownProfessionType": "FireFighter",
   "Since": "11.11.1942"
 }
 ```
+
+---
 

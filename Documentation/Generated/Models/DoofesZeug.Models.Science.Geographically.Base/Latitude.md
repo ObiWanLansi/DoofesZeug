@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|An simplified latitude (WGS84).|
 |Namespace|DoofesZeug.Models.Science.Geographically.Base|
 |BaseClass|EntityBase|
 |SourceCode|[Latitude.cs](../../../../DoofesZeug.Library/Src/Models/Science/Geographically/Base/Latitude.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -23,13 +24,27 @@
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
 
+---
+
 ## Attributes
 
 - Description
 
+---
+
 ## UML Diagram
 
 ![Latitude.png](./Latitude.png "Latitude")
+
+---
+
+## Code Example
+
+```cs
+An exmaple or code snippet follows soon.
+```
+
+---
 
 ## JSON Example
 
@@ -38,4 +53,6 @@
   "Value": 6.644282639342397
 }
 ```
+
+---
 

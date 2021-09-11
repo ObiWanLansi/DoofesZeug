@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|An simplified animal with an firstname, lastname, birthday and some other optional properties.|
 |Namespace|DoofesZeug.Models.Specieses.Animals|
 |BaseClass|Species|
 |SourceCode|[Animal.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Animals/Animal.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -27,14 +28,28 @@
 |Gender|Gender?|&#x2713;|&#x2713;|NULL|
 |Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
+---
+
 ## Attributes
 
 - Description
 - Builder
 
+---
+
 ## UML Diagram
 
 ![Animal.png](./Animal.png "Animal")
+
+---
+
+## Code Example
+
+```cs
+An exmaple or code snippet follows soon.
+```
+
+---
 
 ## JSON Example
 
@@ -44,7 +59,9 @@
   "Name": "Garfield",
   "DateOfBirth": "10.06.1978",
   "Gender": "Male",
-  "Id": "e38a9dc0-f34a-4ecc-86d5-e8559d789634"
+  "Id": "2b9c5013-0341-45ee-a60a-ff23b237fe42"
 }
 ```
+
+---
 

@@ -8,8 +8,9 @@ using DoofesZeug.Models.Specieses.Human.Professions;
 
 namespace DoofesZeug.Models.Specieses.Human
 {
-    [Description("An simplified person with an firstname, lastname, birthday and some other optional properties.")]
     [Builder]
+    [Description("An simplified person with an firstname, lastname, birthday and some other optional properties.")]
+    [Example("O:\\DoofesZeug\\DoofesZeug.UnitTests\\Src\\Functional\\Builder\\TestPersonBuilder.cs")]
     public class Person : Species
     {
         public FirstName FirstName { get; set; }

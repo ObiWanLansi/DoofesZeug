@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|An simplified person with an firstname, lastname, birthday and some other optional properties.|
 |Namespace|DoofesZeug.Models.Specieses.Human|
 |BaseClass|Species|
 |SourceCode|[Person.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/Person.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -30,14 +31,48 @@
 |Gender|Gender?|&#x2713;|&#x2713;|NULL|
 |Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
+---
+
 ## Attributes
 
-- Description
 - Builder
+- Description
+- Example
+
+---
 
 ## UML Diagram
 
 ![Person.png](./Person.png "Person")
+
+---
+
+## Code Example
+
+```cs
+namespace DoofesZeug.UnitTests.Functional.Builder
+{
+    [TestClass]
+    public class TestPersonBuilder
+    {
+        [TestMethod]
+        public void ExecuteTest()
+        {
+            Person person = PersonBuilder.New().
+                WithDateOfBirth((01, 01, 1998)).
+                WithFirstName("John").
+                WithLastName("Doe").
+                WithGender(Gender.Male).
+                WithHandedness(Handedness.Both).
+                WithProfession(new FireFighter());
+
+            Assert.IsNotNull(person);
+        }
+    }
+}
+```
+
+---
 
 ## JSON Example
 
@@ -48,13 +83,15 @@
   "Handedness": "Left",
   "BloodGroup": "AB",
   "Profession": {
-    "Id": "036f4af3-7f7c-42ef-8a0f-f73c0cd179ed",
+    "Id": "e0730666-b408-48c1-802b-90b57270f039",
     "WellKnownProfessionType": "FireFighter",
     "Since": "11.11.1942"
   },
   "DateOfBirth": "27.09.1974",
   "Gender": "Male",
-  "Id": "f7df09c1-a45e-4607-a8e6-0791e3fafbbe"
+  "Id": "2035a2c2-0c8f-4066-9fe2-d98c9d127b0a"
 }
 ```
+
+---
 

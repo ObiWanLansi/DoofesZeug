@@ -12,9 +12,12 @@ namespace DoofesZeug.UnitTests.Functional.Builder
         [TestMethod]
         public void ExecuteTest()
         {
-            DateOfBirth dateofbirth = DateOfBirthBuilder.New().WithDay(11).WithMonth(11).WithYear(1842);
+            DateOfBirth dateofbirth = DateOfBirthBuilder.New().
+                WithDay(11).
+                WithMonth(11).
+                WithYear(1842);
+
             Assert.IsNotNull(dateofbirth);
         }
     }
 }
-

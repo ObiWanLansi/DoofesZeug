@@ -13,9 +13,13 @@ namespace DoofesZeug.UnitTests.Functional.Builder
         [TestMethod]
         public void ExecuteTest()
         {
-            Animal animal = AnimalBuilder.New().WithDateOfBirth((10, 06, 1978)).WithName("Jacki").WithGender(Gender.Female).WithAnimalSpecies(AnimalSpecies.Horse);
+            Animal animal = AnimalBuilder.New().
+                WithDateOfBirth((10, 06, 1978)).
+                WithName("Jacki").
+                WithGender(Gender.Female).
+                WithAnimalSpecies(AnimalSpecies.Horse);
+
             Assert.IsNotNull(animal);
         }
     }
 }
-

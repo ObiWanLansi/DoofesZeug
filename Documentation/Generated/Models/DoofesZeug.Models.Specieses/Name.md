@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|An generic name for any species.|
 |Namespace|DoofesZeug.Models.Specieses|
 |BaseClass|EntityBase|
 |SourceCode|[Name.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Name.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -23,17 +24,33 @@
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
 
+---
+
 ## Attributes
 
 - Description
 
+---
+
 ## UML Diagram
 
 ![Name.png](./Name.png "Name")
+
+---
+
+## Code Example
+
+```cs
+An exmaple or code snippet follows soon.
+```
+
+---
 
 ## JSON Example
 
 ```json
 "HurzFurz"
 ```
+
+---
 

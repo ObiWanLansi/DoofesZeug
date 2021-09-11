@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|This is an specialized entitiy for an soldier.|
 |Namespace|DoofesZeug.Models.Specieses.Human.Professions|
 |BaseClass|Profession|
 |SourceCode|[Soldier.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/Professions/Soldier.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -25,23 +26,39 @@
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
 |Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
+---
+
 ## Attributes
 
 - Description
 - Generated
 - Builder
 
+---
+
 ## UML Diagram
 
 ![Soldier.png](./Soldier.png "Soldier")
+
+---
+
+## Code Example
+
+```cs
+An exmaple or code snippet follows soon.
+```
+
+---
 
 ## JSON Example
 
 ```json
 {
-  "Id": "ed765458-47d9-4922-a947-bf01f3d5b874",
+  "Id": "121030d3-9af9-4492-b33a-8881a0f94fb2",
   "WellKnownProfessionType": "Soldier",
   "Since": "11.11.1942"
 }
 ```
+
+---
 

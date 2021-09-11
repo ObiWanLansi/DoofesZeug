@@ -17,4 +17,3 @@ namespace DoofesZeug.UnitTests.Functional.Builder
         }
     }
 }
-

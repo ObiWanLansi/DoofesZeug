@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|This is an specialized entitiy for an hairdresser.|
 |Namespace|DoofesZeug.Models.Specieses.Human.Professions|
 |BaseClass|Profession|
 |SourceCode|[HairDresser.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/Professions/HairDresser.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -25,23 +26,39 @@
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
 |Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
+---
+
 ## Attributes
 
 - Description
 - Generated
 - Builder
 
+---
+
 ## UML Diagram
 
 ![HairDresser.png](./HairDresser.png "HairDresser")
+
+---
+
+## Code Example
+
+```cs
+An exmaple or code snippet follows soon.
+```
+
+---
 
 ## JSON Example
 
 ```json
 {
-  "Id": "6a240fa7-fb2a-4fab-8551-8762c554050c",
+  "Id": "1468327b-379d-44cd-bd28-d525028441dc",
   "WellKnownProfessionType": "HairDresser",
   "Since": "11.11.1942"
 }
 ```
+
+---
 

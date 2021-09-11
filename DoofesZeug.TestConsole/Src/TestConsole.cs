@@ -88,8 +88,8 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            var lat = TestData.TestDataGenerator.GenerateTestData<Latitude>();
-            var lon = TestData.TestDataGenerator.GenerateTestData<Longitude>();
+            Latitude lat = TestData.TestDataGenerator.GenerateTestData<Latitude>();
+            Longitude lon = TestData.TestDataGenerator.GenerateTestData<Longitude>();
 
             //TODO Noch einen JSON Converter!
             Out.WriteLineAsync($"Lat: {lat.ToJson()}");

@@ -12,9 +12,12 @@ namespace DoofesZeug.UnitTests.Functional.Builder
         [TestMethod]
         public void ExecuteTest()
         {
-            Date date = DateBuilder.New().WithDay(24).WithMonth(12).WithYear(1234);
+            Date date = DateBuilder.New().
+                WithDay(24).
+                WithMonth(12).
+                WithYear(1234);
+
             Assert.IsNotNull(date);
         }
     }
 }
-

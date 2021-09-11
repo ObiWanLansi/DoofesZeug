@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|This is an specialized entitiy for an baker.|
 |Namespace|DoofesZeug.Models.Specieses.Human.Professions|
 |BaseClass|Profession|
 |SourceCode|[Baker.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/Professions/Baker.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -25,23 +26,39 @@
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
 |Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
+---
+
 ## Attributes
 
 - Description
 - Generated
 - Builder
 
+---
+
 ## UML Diagram
 
 ![Baker.png](./Baker.png "Baker")
+
+---
+
+## Code Example
+
+```cs
+An exmaple or code snippet follows soon.
+```
+
+---
 
 ## JSON Example
 
 ```json
 {
-  "Id": "b9df29c3-eb98-4984-9e4b-6ab87d7487d3",
+  "Id": "e3fc29d9-02a6-4d1c-b50b-944e7e001c91",
   "WellKnownProfessionType": "Baker",
   "Since": "11.11.1942"
 }
 ```
+
+---
 

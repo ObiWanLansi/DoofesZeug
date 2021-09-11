@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|An time entity with hours, minutes and the seconds (12:34:56).|
 |Namespace|DoofesZeug.Models.DateAndTime|
 |BaseClass|EntityBase|
 |SourceCode|[Time.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/Time.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -25,14 +26,28 @@
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
 
+---
+
 ## Attributes
 
 - Description
 - Builder
 
+---
+
 ## UML Diagram
 
 ![Time.png](./Time.png "Time")
+
+---
+
+## Code Example
+
+```cs
+An exmaple or code snippet follows soon.
+```
+
+---
 
 ## JSON Example
 
@@ -43,4 +58,6 @@
   "Second": 56
 }
 ```
+
+---
 

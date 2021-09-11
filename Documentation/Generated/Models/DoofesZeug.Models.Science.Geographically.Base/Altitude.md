@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|An simplified altitude.|
 |Namespace|DoofesZeug.Models.Science.Geographically.Base|
 |BaseClass|EntityBase|
 |SourceCode|[Altitude.cs](../../../../DoofesZeug.Library/Src/Models/Science/Geographically/Base/Altitude.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -23,13 +24,27 @@
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
 
+---
+
 ## Attributes
 
 - Description
 
+---
+
 ## UML Diagram
 
 ![Altitude.png](./Altitude.png "Altitude")
+
+---
+
+## Code Example
+
+```cs
+An exmaple or code snippet follows soon.
+```
+
+---
 
 ## JSON Example
 
@@ -38,4 +53,6 @@
   "MeterOverNN": 42
 }
 ```
+
+---
 

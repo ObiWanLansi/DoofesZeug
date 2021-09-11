@@ -2,13 +2,14 @@
 
 ## Generally
 
-|||
+|Property|Value|
 |:-|:-|
 |Description|This is an specialized entitiy for an doctor.|
 |Namespace|DoofesZeug.Models.Specieses.Human.Professions|
 |BaseClass|Profession|
 |SourceCode|[Doctor.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Human/Professions/Doctor.cs)|
-|Example||
+
+---
 
 ## Properties
 
@@ -25,23 +26,39 @@
 |Since|[Date](../../Models/DoofesZeug.Models.DateAndTime/Date.md)|&#x2713;|&#x2713;|NULL|
 |Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
+---
+
 ## Attributes
 
 - Description
 - Generated
 - Builder
 
+---
+
 ## UML Diagram
 
 ![Doctor.png](./Doctor.png "Doctor")
+
+---
+
+## Code Example
+
+```cs
+An exmaple or code snippet follows soon.
+```
+
+---
 
 ## JSON Example
 
 ```json
 {
-  "Id": "73449dee-d319-4c87-b24c-c9b36e82fbd5",
+  "Id": "9808dbd5-f68d-4e23-9547-cacb484cb534",
   "WellKnownProfessionType": "Doctor",
   "Since": "11.11.1942"
 }
 ```
+
+---
 

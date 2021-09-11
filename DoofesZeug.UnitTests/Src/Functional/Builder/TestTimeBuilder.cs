@@ -12,9 +12,12 @@ namespace DoofesZeug.UnitTests.Functional.Builder
         [TestMethod]
         public void ExecuteTest()
         {
-            Time time = TimeBuilder.New().WithHour(12).WithMinute(34).WithSecond(56);
+            Time time = TimeBuilder.New().
+                WithHour(12).
+                WithMinute(34).
+                WithSecond(56);
+
             Assert.IsNotNull(time);
         }
     }
 }
-
