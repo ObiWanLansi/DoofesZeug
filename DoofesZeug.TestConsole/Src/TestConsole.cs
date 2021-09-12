@@ -1,7 +1,6 @@
 ﻿using System;
 
-using DoofesZeug.Extensions;
-using DoofesZeug.Models.Science.Geographically.Base;
+using DoofesZeug.Models.Science.Base.Length;
 
 using static System.Console;
 
@@ -68,6 +67,21 @@ namespace DoofesZeug
         static void Main( string [] args )
         {
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+            //-------------------------------------------------------------------------------------
+
+            //Gram weight = 82e6;
+            //Console.Out.WriteLineAsync($"Weight  : {weight}");
+
+            Meter m1 = 5.42;
+            Kilometer km1 = 5.42;
+            Kilometer km2 = 5.42;
+
+            Out.WriteLineAsync($"m1/km1 : {m1.Equals(km1)}");
+            Out.WriteLineAsync($"km1/km2: {km1.Equals(km2)}");
+
+            Out.WriteLineAsync($"Distance: {m1}");
+            Out.WriteLineAsync($"FarAway : {km1}");
 
             //-------------------------------------------------------------------------------------
 
