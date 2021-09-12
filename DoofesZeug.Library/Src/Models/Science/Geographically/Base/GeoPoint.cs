@@ -4,6 +4,8 @@ using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
 using DoofesZeug.Extensions;
 
+
+
 namespace DoofesZeug.Models.Science.Geographically.Base
 {
     [Description("An simplified geo point with lat, lon and alt (WGS84).")]
@@ -93,6 +95,15 @@ namespace DoofesZeug.Models.Science.Geographically.Base
 
             return true;
         }
+
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+        /// </returns>
+        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.Latitude, this.Longitude);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

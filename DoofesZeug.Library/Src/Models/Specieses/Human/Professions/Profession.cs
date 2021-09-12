@@ -1,4 +1,6 @@
-﻿using DoofesZeug.Attributes.Documentation;
+﻿using System;
+
+using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Models.DateAndTime;
 
 
@@ -40,8 +42,42 @@ namespace DoofesZeug.Models.Specieses.Human.Professions
         /// <returns>
         ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals( object obj ) => base.Equals(obj) != false && ( obj is not Profession other
-                ? false
-                : this.WellKnownProfessionType.Equals(other.WellKnownProfessionType) == false ? false : this.Since.Equals(other.Since) != false );
+        public override bool Equals( object obj )
+        {
+            if( obj == null )
+            {
+                return false;
+            }
+
+            if( obj is not Profession other )
+            {
+                return false;
+            }
+
+
+            if( this.WellKnownProfessionType != other.WellKnownProfessionType )
+            {
+                return false;
+            }
+
+            if( this.Since.Equals(other.Since) == false )
+            {
+                return false;
+            }
+
+            return true;
+            //            return obj is not Profession other
+            //? false
+            //: this.WellKnownProfessionType.Equals(other.WellKnownProfessionType) == false ? false : this.Since.Equals(other.Since) != false;
+        }
+
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        /// </returns>
+        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.WellKnownProfessionType, this.Since);
     }
 }

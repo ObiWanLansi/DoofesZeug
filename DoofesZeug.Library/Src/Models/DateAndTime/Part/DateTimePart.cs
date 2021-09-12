@@ -64,5 +64,14 @@ namespace DoofesZeug.Models.DateAndTime.Part
 
             return true;
         }
+
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        /// </returns>
+        public override int GetHashCode() => this.Value.GetHashCode();
     }
 }

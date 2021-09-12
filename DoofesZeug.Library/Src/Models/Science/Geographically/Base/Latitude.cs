@@ -1,14 +1,14 @@
-using System;
 using System.Globalization;
 
 using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Attributes.Validation;
 
 
 
 namespace DoofesZeug.Models.Science.Geographically.Base
 {
     [Description("An simplified latitude (WGS84).")]
-    // [Range(-90,90)]
+    [Range(-90, 90)]
     public class Latitude : EntityBase
     {
         protected static readonly CultureInfo CULTUREINFO = new("en-US");
@@ -100,6 +100,6 @@ namespace DoofesZeug.Models.Science.Geographically.Base
         /// <returns>
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
         /// </returns>
-        public override int GetHashCode() => HashCode.Combine(this.Value);
+        public override int GetHashCode() => this.Value.GetHashCode();
     }
 }

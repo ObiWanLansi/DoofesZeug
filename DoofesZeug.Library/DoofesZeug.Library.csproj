@@ -36,6 +36,8 @@
   <ItemGroup>
     <Folder Include="Src\Datatypes\Misc\" />
     <Folder Include="Src\Generated\" />
+    <Folder Include="Src\Models\Science\Base\Length\" />
+    <Folder Include="Src\Models\Science\Base\Weight\" />
     <Folder Include="Src\Models\Science\Chemistry\" />
     <Folder Include="Src\Models\Science\Mathematics\Geometry\" />
     <Folder Include="Src\Models\Science\Physics\" />

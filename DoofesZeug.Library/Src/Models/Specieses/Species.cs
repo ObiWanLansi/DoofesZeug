@@ -1,4 +1,6 @@
-﻿using DoofesZeug.Attributes.Documentation;
+﻿using System;
+
+using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Models.DateAndTime;
 
 
@@ -11,5 +13,26 @@ namespace DoofesZeug.Models.Specieses
         public DateOfBirth DateOfBirth { get; set; }
 
         public Gender? Gender { get; set; }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The <see cref="System.Object" /> to compare with this instance.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+        /// </returns>
+        public override bool Equals( object obj ) => Equals(this, obj as Species);
+
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        /// </returns>
+        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.DateOfBirth, this.Gender);
     }
 }

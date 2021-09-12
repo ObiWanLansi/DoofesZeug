@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+﻿using System;
 
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
@@ -42,43 +42,15 @@ namespace DoofesZeug.Models.Specieses.Human
         /// <returns>
         ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals( object obj )
-        {
-            if( base.Equals(obj) == false )
-            {
-                return false;
-            }
+        public override bool Equals( object obj ) => Equals(this, obj as Person);
 
-            if( obj is not Person other )
-            {
-                return false;
-            }
 
-            foreach( PropertyInfo pi in typeof(Person).GetProperties(BindingFlags.Instance | BindingFlags.DeclaredOnly) )
-            {
-                object oThis = pi.GetValue(this);
-                object oOther = pi.GetValue(other);
-
-                if( oThis == null && oOther != null )
-                {
-                    return false;
-                }
-
-                if( oThis != null && oOther == null )
-                {
-                    return false;
-                }
-
-                if( oThis != null && oOther != null )
-                {
-                    if( oThis.Equals(oOther) == false )
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
-        }
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        /// </returns>
+        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.FirstName, this.LastName, this.Handedness, this.BloodGroup, this.Profession);
     }
 }

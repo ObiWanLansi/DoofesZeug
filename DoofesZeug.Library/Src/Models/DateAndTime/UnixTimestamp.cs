@@ -138,9 +138,7 @@ namespace DoofesZeug.Models.DateAndTime
                 return false;
             }
 
-            UnixTimestamp other = obj as UnixTimestamp;
-
-            if( other == null )
+            if( obj is not UnixTimestamp other )
             {
                 return false;
             }
@@ -152,5 +150,14 @@ namespace DoofesZeug.Models.DateAndTime
 
             return true;
         }
+
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+        /// </returns>
+        public override int GetHashCode() => this.lUnixTimestamp.GetHashCode();
     }
 }

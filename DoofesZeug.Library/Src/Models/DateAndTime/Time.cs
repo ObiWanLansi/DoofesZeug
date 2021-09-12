@@ -201,7 +201,7 @@ namespace DoofesZeug.Models.DateAndTime
                 return false;
             }
 
-            if( this.Hour.Equals(other.Hour)==false)
+            if( this.Hour.Equals(other.Hour) == false )
             {
                 return false;
             }
@@ -218,6 +218,15 @@ namespace DoofesZeug.Models.DateAndTime
 
             return true;
         }
+
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+        /// </returns>
+        public override int GetHashCode() => HashCode.Combine(this.Hour, this.Minute, this.Second);
     }
 }
 
