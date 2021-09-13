@@ -17,7 +17,7 @@ namespace DoofesZeug.UnitTests.Functional.Formats
         [TestMethod]
         public void TestEntityJsonConverter()
         {
-            Type tEntityBase = typeof(EntityBase);
+            Type tEntityBase = typeof(Entity);
 
             Assembly assembly = tEntityBase.Assembly;
 

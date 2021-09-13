@@ -11,7 +11,7 @@ namespace DoofesZeug.Models.DateAndTime
 {
     [Description("An date entity with day, month and a year (15.12.1948).")]
     [Builder]
-    public class Date : EntityBase
+    public class Date : Entity
     {
         /// <summary>
         /// Gets the day.

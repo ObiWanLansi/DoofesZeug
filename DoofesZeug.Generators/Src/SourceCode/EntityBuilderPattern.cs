@@ -199,7 +199,7 @@ $EXECCODE$
 
         public static void Generate()
         {
-            Type tEntityBase = typeof(EntityBase);
+            Type tEntityBase = typeof(Entity);
 
             Assembly assembly = tEntityBase.Assembly;
 

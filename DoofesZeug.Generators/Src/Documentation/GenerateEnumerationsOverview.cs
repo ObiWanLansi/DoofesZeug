@@ -20,7 +20,7 @@ namespace DoofesZeug.Documentation
     {
         private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\Documentation\Generated\Enumerations";
 
-        private static readonly Type ENTITY_BASE = typeof(EntityBase);
+        private static readonly Type ENTITY_BASE = typeof(Entity);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

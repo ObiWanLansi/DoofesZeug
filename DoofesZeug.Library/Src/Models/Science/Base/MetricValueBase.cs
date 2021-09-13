@@ -10,7 +10,7 @@ using DoofesZeug.Extensions;
 namespace DoofesZeug.Models.Science.Base
 {
     [Description("An abstract base class for all other metric values.")]
-    public abstract class MetricValueBase<T> : EntityBase where T : unmanaged, IEquatable<T>
+    public abstract class MetricValueBase<T> : Entity where T : unmanaged, IEquatable<T>
     {
         // For floating point values it is important when we convert it to an string, that we have an point and not an comma as decimal seperator,
         // because so many other formats use an comma as value seperator.

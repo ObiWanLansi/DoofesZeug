@@ -2,10 +2,10 @@
 skinparam monochrome true
 hide empty members
 
-abstract class EntityBase {
+abstract class Entity {
 }
 
-EntityBase <|-- MetricValueBase
+Entity <|-- MetricValueBase
 
 abstract class MetricValueBase {
     Value: Double

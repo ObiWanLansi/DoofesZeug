@@ -6,7 +6,7 @@
 |:-|:-|
 |Description|An unix timestamp (seconds since 01.01.1970).|
 |Namespace|DoofesZeug.Models.DateAndTime|
-|BaseClass|EntityBase|
+|BaseClass|Entity|
 |SourceCode|[UnixTimestamp.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/UnixTimestamp.cs)|
 
 ---
@@ -48,7 +48,7 @@ An example or code snippet follows soon.
 ## JSON Example
 
 ```json
-1631537878
+1631538512
 ```
 
 ---

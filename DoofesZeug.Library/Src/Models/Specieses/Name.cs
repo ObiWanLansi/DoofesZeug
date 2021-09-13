@@ -5,7 +5,7 @@
 namespace DoofesZeug.Models.Specieses
 {
     [Description("An generic name for any species.")]
-    public class Name : EntityBase
+    public class Name : Entity
     {
         public string Value { get; set; }
 

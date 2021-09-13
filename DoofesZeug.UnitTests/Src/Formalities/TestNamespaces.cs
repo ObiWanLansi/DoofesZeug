@@ -31,7 +31,7 @@ namespace DoofesZeug.UnitTest.Formalities
         [TestMethod]
         public void Execute()
         {
-            Type tEntityBase = typeof(EntityBase);
+            Type tEntityBase = typeof(Entity);
 
             Assembly assembly = tEntityBase.Assembly;
 

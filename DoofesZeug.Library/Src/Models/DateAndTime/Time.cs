@@ -11,7 +11,7 @@ namespace DoofesZeug.Models.DateAndTime
 {
     [Description("An time entity with hours, minutes and the seconds (12:34:56).")]
     [Builder]
-    public class Time : EntityBase
+    public class Time : Entity
     {
         /// <summary>
         /// Gets the hour.

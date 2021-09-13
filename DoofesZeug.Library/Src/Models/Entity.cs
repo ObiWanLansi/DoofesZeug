@@ -7,7 +7,7 @@ using DoofesZeug.Attributes.Documentation;
 namespace DoofesZeug.Models
 {
     [Description("The baseclass for all entites in this library.")]
-    public abstract class EntityBase
+    public abstract class Entity
     {
         /// <summary>
         /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.

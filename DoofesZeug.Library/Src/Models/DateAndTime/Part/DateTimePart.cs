@@ -5,7 +5,7 @@
 namespace DoofesZeug.Models.DateAndTime.Part
 {
     [Description("An abstract base class for all other parts of an date or an time.")]
-    public abstract class DateTimePart : EntityBase
+    public abstract class DateTimePart : Entity
     {
         public uint Value { get; set; }
 

@@ -2,10 +2,10 @@
 skinparam monochrome true
 hide empty members
 
-abstract class EntityBase {
+abstract class Entity {
 }
 
-EntityBase <|-- UnixTimestamp
+Entity <|-- UnixTimestamp
 
 class UnixTimestamp {
 }

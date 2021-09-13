@@ -9,7 +9,7 @@ namespace DoofesZeug.Models.Science.Geographically.Base
 {
     [Description("An simplified longitude (WGS84).")]
     [Range(-180,180)]
-    public class Longitude : EntityBase
+    public class Longitude : Entity
     {
         protected static readonly CultureInfo CULTUREINFO = new("en-US");
 

@@ -6,7 +6,7 @@
 |:-|:-|
 |Description|An simplified longitude (WGS84).|
 |Namespace|DoofesZeug.Models.Science.Geographically.Base|
-|BaseClass|EntityBase|
+|BaseClass|Entity|
 |SourceCode|[Longitude.cs](../../../../DoofesZeug.Library/Src/Models/Science/Geographically/Base/Longitude.cs)|
 
 ---

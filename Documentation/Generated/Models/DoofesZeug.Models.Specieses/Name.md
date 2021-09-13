@@ -6,7 +6,7 @@
 |:-|:-|
 |Description|An generic name for any species.|
 |Namespace|DoofesZeug.Models.Specieses|
-|BaseClass|EntityBase|
+|BaseClass|Entity|
 |SourceCode|[Name.cs](../../../../DoofesZeug.Library/Src/Models/Specieses/Name.cs)|
 
 ---
