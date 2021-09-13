@@ -9,6 +9,13 @@
 |[Season](./DoofesZeug.Entities.DateAndTime/Season.md)|An enumeration for our seasons.|Winter, Spring, Summer, Autumn|
 
 
+## `DoofesZeug.Entities.ManMade.Vehicles`
+
+|Enumeration|Description|Values|
+|:----------|:----------|:-----|
+|[WellKnownVehicle](./DoofesZeug.Entities.ManMade.Vehicles/WellKnownVehicle.md)|A small enumeration of some vehicles, mixed with subtypes for faster development.|Bicycle, Car, Bus, Train, Airplane, Motorcycle|
+
+
 ## `DoofesZeug.Entities.Science.Geographically`
 
 |Enumeration|Description|Values|
@@ -37,6 +44,7 @@
 |:----------|:----------|:-----|
 |[Handedness](./DoofesZeug.Entities.Specieses.Human/Handedness.md)|An simple enumeration for the handedness of an human.|Left, Right, Both|
 |[MajorReligion](./DoofesZeug.Entities.Specieses.Human/MajorReligion.md)|The five big major religions.|Hinduism, Buddhism, Islam, Christianity, Judaism|
+|[WellKnownHairColor](./DoofesZeug.Entities.Specieses.Human/WellKnownHairColor.md)|A small enumeration with the natural hair colors.|White, Gray, Red, Blond, Brown, Black|
 
 
 ## `DoofesZeug.Entities.Specieses.Human.Professions`

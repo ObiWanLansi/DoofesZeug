@@ -25,6 +25,8 @@ class Person {
     LastName: LastName
     Handedness: Handedness?
     BloodGroup: BloodGroup?
+    HairColor: WellKnownHairColor?
+    Religion: MajorReligion?
     Profession: Profession
 }
 

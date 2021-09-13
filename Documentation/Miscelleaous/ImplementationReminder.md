@@ -6,7 +6,7 @@ Here are some reminders and examples when creating new entities for the library.
 
 ## DescriptionAttribute
 
-Every class should have an `Description`, for generating documentation stuff:
+Every class and enumeration should have an `Description`, for generating documentation stuff:
 
 ```cs
 using DoofesZeug.Attributes.Documentation;
@@ -19,6 +19,14 @@ namespace DoofesZeug.Models.Science.Base
         .
         .
 ```
+
+---
+
+## Enumerations
+
+- Enumerations should not have an `Unknown`, `Other` or `Undefined` value. IMO it is better
+  to make the property of an entity nullable and set it to zero when i have no idea.
+- Enumerations should be devired from `byte`.
 
 ---
 

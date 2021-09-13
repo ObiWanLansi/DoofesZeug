@@ -129,6 +129,8 @@ namespace DoofesZeug.TestData
             DateOfBirth = (27, 09, 1974),
             Handedness = Handedness.Left,
             BloodGroup = BloodGroup.AB,
+            HairColor = WellKnownHairColor.Blond,
+            Religion = MajorReligion.Buddhism,
             Profession = GenerateProfession<FireFighter>()
         };
 

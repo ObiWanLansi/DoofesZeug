@@ -21,6 +21,10 @@ namespace DoofesZeug.Entities.Specieses.Human
 
         public BloodGroup? BloodGroup { get; set; }
 
+        public WellKnownHairColor? HairColor { get; set; }
+
+        public MajorReligion? Religion { get; set; }
+
         public Profession Profession { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -51,6 +55,6 @@ namespace DoofesZeug.Entities.Specieses.Human
         /// <returns>
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
         /// </returns>
-        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.FirstName, this.LastName, this.Handedness, this.BloodGroup, this.Profession);
+        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.FirstName, this.LastName, this.Handedness, this.BloodGroup, this.HairColor, this.Religion, this.Profession);
     }
 }

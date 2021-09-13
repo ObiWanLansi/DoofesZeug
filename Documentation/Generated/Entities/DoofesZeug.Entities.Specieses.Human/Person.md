@@ -21,6 +21,8 @@
 |LastName|[LastName](../../Entities/DoofesZeug.Entities.Specieses.Human/LastName.md)|&#x2713;|&#x2713;|NULL|
 |Handedness|Handedness?|&#x2713;|&#x2713;|NULL|
 |BloodGroup|BloodGroup?|&#x2713;|&#x2713;|NULL|
+|HairColor|WellKnownHairColor?|&#x2713;|&#x2713;|NULL|
+|Religion|MajorReligion?|&#x2713;|&#x2713;|NULL|
 |Profession|[Profession](../../Entities/DoofesZeug.Entities.Specieses.Human.Professions/Profession.md)|&#x2713;|&#x2713;|NULL|
 
 ### Inherited
@@ -82,14 +84,16 @@ namespace DoofesZeug.UnitTests.Functional.Builder
   "LastName": "Doe",
   "Handedness": "Left",
   "BloodGroup": "AB",
+  "HairColor": "Blond",
+  "Religion": "Buddhism",
   "Profession": {
-    "Id": "7b3b4e39-fee5-4646-9837-ee17ccd0a450",
+    "Id": "7a8d87f3-4512-49ca-aaec-e682a3111ebf",
     "WellKnownProfessionType": "FireFighter",
     "Since": "11.11.1942"
   },
   "DateOfBirth": "27.09.1974",
   "Gender": "Male",
-  "Id": "a757240d-493b-46a6-9a4f-a7208bfb0871"
+  "Id": "4b867daa-842b-46b3-b426-14800a0ab819"
 }
 ```
 

@@ -43,6 +43,20 @@ namespace DoofesZeug.Entities.Specieses.Human
         }
 
 
+        public static Person WithHairColor(this Person person, System.Nullable<DoofesZeug.Entities.Specieses.Human.WellKnownHairColor> haircolor)
+        {
+            person.HairColor = haircolor;
+            return person;
+        }
+
+
+        public static Person WithReligion(this Person person, System.Nullable<DoofesZeug.Entities.Specieses.Human.MajorReligion> religion)
+        {
+            person.Religion = religion;
+            return person;
+        }
+
+
         public static Person WithProfession(this Person person, DoofesZeug.Entities.Specieses.Human.Professions.Profession profession)
         {
             person.Profession = profession;
