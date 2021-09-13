@@ -73,9 +73,9 @@ namespace DoofesZeug.Entities.Science.Base
         /// <returns></returns>
         public override string ToString()
         {
-            if( prefix != null && unit.IsNotEmpty() )
+            if( this.prefix != null && this.unit.IsNotEmpty() )
             {
-                return string.Format(CULTUREINFO, "{0} {1}{2}", this.Value, prefix.Symbol, unit);
+                return string.Format(CULTUREINFO, "{0} {1}{2}", this.Value, this.prefix.Symbol, this.unit);
             }
 
             return string.Format(CULTUREINFO, "{0}", this.Value);

@@ -8,7 +8,6 @@ i write down the stuff in the fastest way, mostly in note form.
 ## ToDo
 
 - Generate class overview for other classes which are not an entity.
-- Another BaseType for ValueTypes ?
 - Anfangen mit Gramm, Meter, ...
 - Erstellung und Verlinkung der Beispiele
 - Ratio Helper
@@ -49,6 +48,8 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## Done
 
+- ~~Another BaseType for ValueTypes ?~~
+  > I forgotten reason why todo this?
 - Subfolder for the extension `Format`, `Database`, ...
 - Entity vs. Model, unify, prefer Entity (don't forget to rename the namespaces, too).
 - New Attribute Link, referes to articels for further information. No Links in the Description, check in the unit tests...
