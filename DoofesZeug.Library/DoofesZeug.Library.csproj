@@ -34,6 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Src\Extensions\Database\" />
     <Folder Include="Src\Generated\" />
     <Folder Include="Src\Datasets\" />
   </ItemGroup>

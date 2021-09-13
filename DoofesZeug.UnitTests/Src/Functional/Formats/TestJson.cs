@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Reflection;
 
-using DoofesZeug.Extensions;
 using DoofesZeug.Entities;
+using DoofesZeug.Extensions.Formats;
 using DoofesZeug.TestData;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;

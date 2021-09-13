@@ -5,21 +5,13 @@ using System.Text;
 
 
 
-namespace DoofesZeug.Extensions
+namespace DoofesZeug.Extensions.Formats
 {
     /// <summary>
     /// A Extension Class For The String Class With Markdown Functions.
     /// </summary>
     public static class MarkdownExtension
     {
-        /// <summary>
-        /// The temporary StringBuilder for private use.
-        /// </summary>
-        private static readonly StringBuilder sbTemp = new(512);
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
         /// <summary>
         /// The table of content
         /// </summary>
@@ -119,7 +111,7 @@ namespace DoofesZeug.Extensions
         /// <returns></returns>
         private static string GenericList<T>( this IEnumerable<T> items, string strPrefix )
         {
-            sbTemp.Clear();
+            StringBuilder sbTemp = new(512);
 
             foreach( T item in items )
             {
@@ -171,59 +163,24 @@ namespace DoofesZeug.Extensions
         /// <returns></returns>
         public static string GetLanguage( FileInfo fiSourceFile )
         {
-            switch( fiSourceFile.Extension.ToLower() )
+            return fiSourceFile.Extension.ToLower() switch
             {
-                case ".cs":
-                    return "csharp";
-
-                case ".java":
-                    return "java";
-
-                case ".js":
-                    return "javascript";
-
-                case ".php":
-                    return "php";
-
-                case ".py":
-                case ".pyw":
-                    return "python";
-
-                case ".rb":
-                case ".rbw":
-                    return "ruby";
-
-                case ".ps1":
-                    return "powershell";
-
-                case ".xml":
-                    return "xml";
-
-                case ".sql":
-                    return "sql";
-
-                case ".r":
-                    return "r";
-
-                case ".json":
-                    return "json";
-
-                case ".yaml":
-                    return "yaml";
-
-                case ".h":
-                case ".c":
-                case ".hpp":
-                case ".cpp":
-                    return "cpp";
-
-                case ".bat":
-                case ".sh":
-                    return "bash";
-
-            }
-
-            return "";
+                ".cs" => "csharp",
+                ".java" => "java",
+                ".js" => "javascript",
+                ".php" => "php",
+                ".py" or ".pyw" => "python",
+                ".rb" or ".rbw" => "ruby",
+                ".ps1" => "powershell",
+                ".xml" => "xml",
+                ".sql" => "sql",
+                ".r" => "r",
+                ".json" => "json",
+                ".yaml" => "yaml",
+                ".h" or ".c" or ".hpp" or ".cpp" => "cpp",
+                ".bat" or ".sh" => "bash",
+                _ => "",
+            };
         }
 
 
@@ -235,7 +192,7 @@ namespace DoofesZeug.Extensions
         /// <returns></returns>
         public static string SourceCode( this string strContent, string strType = null )
         {
-            sbTemp.Clear();
+            StringBuilder sbTemp = new(512);
 
             sbTemp.AppendLine($"```{strType ?? ""}");
             sbTemp.AppendLine(strContent);
@@ -253,7 +210,7 @@ namespace DoofesZeug.Extensions
         /// <returns></returns>
         public static string SourceCode( this IEnumerable<string> lines, string strType = null )
         {
-            sbTemp.Clear();
+            StringBuilder sbTemp = new(512);
 
             sbTemp.AppendLine($"```{strType ?? ""}");
 
@@ -276,7 +233,7 @@ namespace DoofesZeug.Extensions
         /// <returns></returns>
         public static string SourceCode( this FileInfo fiSourceFile, string strType = null )
         {
-            sbTemp.Clear();
+            StringBuilder sbTemp = new(512);
 
             if( string.IsNullOrEmpty(strType) )
             {

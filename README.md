@@ -48,7 +48,7 @@ And some easy to use feaures, tools and datatypes like:
 
 ### Entities
 
-All the entities / classes are listet in the generated [Entity Overview](./Documentation/Generated/Models/README.md).
+All the entities / classes are listet in the generated [Entity Overview](./Documentation/Generated/Entities/README.md).
 
 ### Enumerations
 

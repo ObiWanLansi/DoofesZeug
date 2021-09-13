@@ -6,8 +6,8 @@ using System.Reflection;
 using System.Text;
 
 using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Extensions;
 using DoofesZeug.Entities;
+using DoofesZeug.Extensions;
 using DoofesZeug.Tools;
 
 using static System.Console;
@@ -92,10 +92,10 @@ namespace DoofesZeug.Documentation
 
             StringBuilder sb = new(8192);
 
-            sb.AppendLine($"{type.Name}".Header(1));
+            sb.AppendLine($"# {type.Name}");
             sb.AppendLine();
 
-            sb.AppendLine($"Diagram".Header(2));
+            sb.AppendLine($"## Diagram");
             GenerateUmlDiagramm(type, sb);
 
             //---------------------------------------------------------------------------------------------------------

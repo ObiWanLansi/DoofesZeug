@@ -13,11 +13,12 @@ i write down the stuff in the fastest way, mostly in note form.
 - Another BaseType for ValueTypes ?
 - Anfangen mit Gramm, Meter, ...
 - Erstellung und Verlinkung der Beispiele
-- Ratio
+- Ratio Helper
+- Aus world.sqlite die Villages, Cities and Towns extrahieren.
 - Für später: DataTypesColumnAligments als statische klasse mit einer funktion `TextAlign GetAligment(Type t)`
 - DataTable Extension mit
-  - ReAssign - convert an string column to an enumeration column, or an string colum to an user defined datetime (Func<> as parameter).
-  - ReCode - convert enumerations to there int values or strings to soundex, methaphone, md5, ...
+  - `ReAssign` - convert an string column to an enumeration column, or an string colum to an user defined datetime (Func<> as parameter).
+  - `ReCode` - convert enumerations to there int values or strings to soundex, methaphone, md5, ...
 - Money (Currency)
   - Dollar
   - Euro
@@ -26,17 +27,15 @@ i write down the stuff in the fastest way, mostly in note form.
   - Fahrenheit
   - Celcius
 - Ein kleines GraphModel und erzeugung von diaggraph oder basic yed files ?
+- Flatten JSON / XML ?
 - Support für aufruf gnuplot für kleinere Diagramme zwischendurch ?
 - Feature WizardTSupportool mit fragen / antworten wie bei erstellen dotnet init, oder anderen tools ?
 - MatheStuff, z.b geometrische Figuren Rectangle, Circle, und direkt mit ein paar Meßmethoden?
 - Generic Singelton Pattern
-- Implement Observer Pattern in EntityBase ?
-- An Attribute for an field description and one for type description?
+- Implement Observer Pattern in base class Entity?
 - VCard support ?
 - HairColor und EyeColor als Enumeration mit Standardfarben
 - List<T> To DataTable
-- ~~Colors -> an enumeration lie System.Drawing.Color, but without an reference to System.Drawing.dll~~
-  > Check if we can use the original System.Drawing.Color under linux, then it make no sense to create a new implementation.
 - DataTable To
   -  ASCIITable
   -  CSV
@@ -53,6 +52,8 @@ i write down the stuff in the fastest way, mostly in note form.
 - New Attribute Link, referes to articels for further information. No Links in the Description, check in the unit tests...
 - ~~Class Color mit allen Aufzählungen aus System.Drawing.Color, sowie ToHex, ToHtml, FromHex, FromHTML, ...~~
   > System.Drawing.Color ist unter .bet core verfügbar.
+- ~~Colors -> an enumeration lie System.Drawing.Color, but without an reference to System.Drawing.dll~~
+  > Check if we can use the original System.Drawing.Color under linux, then it make no sense to create a new implementation.
 - Die Beispiele müssen schon irgendwie in den EntityModels verlinkt oder inline sein, um besser zu verstehen was ich mit dem Entity machen kann. Gerade bei Date, Time und sowas, auch mit den operatoren, ....
 - Hash + Crypt + Password Class
 - Attributes 

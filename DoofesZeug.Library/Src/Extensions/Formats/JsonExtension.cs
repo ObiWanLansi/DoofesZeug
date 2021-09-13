@@ -9,7 +9,7 @@ using Newtonsoft.Json.Converters;
 
 
 
-namespace DoofesZeug.Extensions
+namespace DoofesZeug.Extensions.Formats
 {
     public static class JsonExtension
     {
