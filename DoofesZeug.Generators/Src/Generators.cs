@@ -13,10 +13,10 @@ namespace DoofesZeug
         /// <param name="args">The arguments.</param>
         static void Main( string [] args )
         {
-            ModelBuilderPattern.Generate();
+            EntityBuilderPattern.Generate();
             ProfessionsBuilder.Generate();
 
-            GenerateModelOverview.Generate();
+            GenerateEntityOverview.Generate();
             GenerateEnumerationsOverview.Generate();
             GenerateBuilderOverview.Generate();
         }

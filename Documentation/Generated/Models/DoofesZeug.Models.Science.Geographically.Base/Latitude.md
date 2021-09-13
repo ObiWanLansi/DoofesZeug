@@ -29,6 +29,7 @@
 ## Attributes
 
 - Description
+- Range
 
 ---
 
@@ -49,7 +50,7 @@ An example or code snippet follows soon.
 ## JSON Example
 
 ```json
-"6.644282639342397"
+"49.759646524258756"
 ```
 
 ---

@@ -13,7 +13,7 @@ using static System.Console;
 
 namespace DoofesZeug.SourceCode
 {
-    public static class ModelBuilderPattern
+    public static class EntityBuilderPattern
     {
         private static readonly Type BUILDERATTRIBUTE = typeof(BuilderAttribute);
 

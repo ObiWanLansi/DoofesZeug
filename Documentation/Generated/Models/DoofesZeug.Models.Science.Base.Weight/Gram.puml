@@ -1,0 +1,19 @@
+﻿@startuml
+skinparam monochrome true
+hide empty members
+
+abstract class EntityBase {
+}
+
+EntityBase <|-- MetricValueBase`1
+
+abstract class MetricValueBase`1 {
+    Value: Double
+}
+
+MetricValueBase`1 <|-- Gram
+
+class Gram {
+}
+
+@enduml

@@ -1,4 +1,4 @@
-# Implementation Reminder
+<h1 style="font-weight:bold; letter-spacing: 10px; border-bottom: 2px solid black;">Implementation Reminder</h1>
 
 Here are some reminders and examples when creating new entities for the library.
 

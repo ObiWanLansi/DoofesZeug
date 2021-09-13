@@ -7,13 +7,14 @@
 
 - [The Idea](#the-idea)
 - [Overview](#overview)
-  - [Entities & Models](#entities--models)
+  - [Entities](#entities)
   - [Enumerations](#enumerations)
   - [Builder](#builder)
   - [Examples](#examples)
 - [Further Features](#further-features)
 - [Current Status](#current-status)
 - [Useful Links](#useful-links)
+- [Used Data](#used-data)
 
 ---
 
@@ -45,9 +46,9 @@ And some easy to use feaures, tools and datatypes like:
 
 ## Overview
 
-### Entities & Models
+### Entities
 
-All the entities / classes are listet in the generated [Model Overview](./Documentation/Generated/Models/README.md).
+All the entities / classes are listet in the generated [Entity Overview](./Documentation/Generated/Models/README.md).
 
 ### Enumerations
 
@@ -66,7 +67,7 @@ There are some [examples](./DoofesZeug.TestConsole/Src/Examples) avaible. At the
 ## Further Features
 
 - [Builder Pattern](./Documentation/Features/BuilderPattern.md)
-- [Model Validation](./Documentation/Features/ModelValidation.md)
+- [Entity Validation](./Documentation/Features/EntityValidation.md)
 - [Format Extension](./Documentation/Features/FormatExtension.md)
 - [Additional Datatypes](./Documentation/Features/AdditionalDatatypes.md)
 

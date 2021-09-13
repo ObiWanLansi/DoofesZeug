@@ -30,6 +30,21 @@
 |[Second](./DoofesZeug.Models.DateAndTime.Part.Time/Second.md)|The seconds of an time.|Value|
 
 
+## `DoofesZeug.Models.Science.Base.Length`
+
+|Entity|Description|Properties|
+|:-----|:----------|:---------|
+|[Kilometer](./DoofesZeug.Models.Science.Base.Length/Kilometer.md)|This entity represents just a kilometer.|Value|
+|[Meter](./DoofesZeug.Models.Science.Base.Length/Meter.md)|This entity represents just a meter. For easier handling it is based on an double, so we can also set 5.2 m when needed.|Value|
+
+
+## `DoofesZeug.Models.Science.Base.Weight`
+
+|Entity|Description|Properties|
+|:-----|:----------|:---------|
+|[Gram](./DoofesZeug.Models.Science.Base.Weight/Gram.md)|This entity represents just a gram.|Value|
+
+
 ## `DoofesZeug.Models.Science.Geographically.Base`
 
 |Entity|Description|Properties|

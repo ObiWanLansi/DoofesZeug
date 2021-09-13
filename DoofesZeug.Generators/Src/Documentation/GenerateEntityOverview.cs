@@ -18,7 +18,7 @@ using static System.Console;
 
 namespace DoofesZeug.Documentation
 {
-    public static class GenerateModelOverview
+    public static class GenerateEntityOverview
     {
         private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\Documentation\Generated\Models";
 

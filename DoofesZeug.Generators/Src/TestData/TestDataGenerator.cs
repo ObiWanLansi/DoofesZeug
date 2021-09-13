@@ -5,6 +5,8 @@ using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.DateAndTime.Part;
 using DoofesZeug.Models.DateAndTime.Part.Date;
 using DoofesZeug.Models.DateAndTime.Part.Time;
+using DoofesZeug.Models.Science.Base.Length;
+using DoofesZeug.Models.Science.Base.Weight;
 using DoofesZeug.Models.Science.Geographically.Base;
 using DoofesZeug.Models.Specieses;
 using DoofesZeug.Models.Specieses.Animals;
@@ -65,12 +67,15 @@ namespace DoofesZeug.TestData
             GENERATORS.Add(typeof(Latitude).FullName, GenerateLatitude);
             GENERATORS.Add(typeof(Longitude).FullName, GenerateLongitude);
             GENERATORS.Add(typeof(GeoPoint).FullName, GenerateGeoPoint);
+
+            GENERATORS.Add(typeof(Meter).FullName, GenerateMeter);
+            GENERATORS.Add(typeof(Kilometer).FullName, GenerateKilometer);
+            GENERATORS.Add(typeof(Gram).FullName, GenerateGram);
+
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-        private static UnixTimestamp GenerateUnixTimestamp() => UnixTimestamp.Now();
 
         //private static Altitude GenerateAltitude() => new(42);
 
@@ -83,6 +88,17 @@ namespace DoofesZeug.TestData
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        private static Meter GenerateMeter() => new(42.42);
+
+        private static Kilometer GenerateKilometer() => new(12.34);
+
+        private static Gram GenerateGram() => new(1234);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        private static UnixTimestamp GenerateUnixTimestamp() => UnixTimestamp.Now();
+
         private static T GenerateDateTimePart<T>() where T : DateTimePart
         {
             DateTimePart dtp = (DateTimePart) Activator.CreateInstance(typeof(T));
@@ -90,13 +106,9 @@ namespace DoofesZeug.TestData
             return (T) dtp;
         }
 
+        private static Date GenerateDate() => (11, 11, 1942);
 
-        private static T GenerateProfession<T>() where T : Profession
-        {
-            Profession p = (Profession) Activator.CreateInstance(typeof(T));
-            p.Since = (11, 11, 1942);
-            return (T) p;
-        }
+        private static Time GenerateTime() => (12, 43, 56);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -109,10 +121,6 @@ namespace DoofesZeug.TestData
 
         private static DateOfBirth GenerateDateOfBirth() => (24, 12, 1948);
 
-        private static Date GenerateDate() => (11, 11, 1942);
-
-        private static Time GenerateTime() => (12, 43, 56);
-
         private static Person GeneratePerson() => new()
         {
             FirstName = "John",
@@ -123,6 +131,13 @@ namespace DoofesZeug.TestData
             BloodGroup = BloodGroup.AB,
             Profession = GenerateProfession<FireFighter>()
         };
+
+        private static T GenerateProfession<T>() where T : Profession
+        {
+            Profession p = (Profession) Activator.CreateInstance(typeof(T));
+            p.Since = (11, 11, 1942);
+            return (T) p;
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

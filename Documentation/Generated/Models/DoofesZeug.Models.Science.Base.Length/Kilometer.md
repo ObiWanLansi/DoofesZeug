@@ -1,13 +1,13 @@
-﻿# UnixTimestamp
+﻿# Kilometer
 
 ## Generally
 
 |Property|Value|
 |:-|:-|
-|Description|An unix timestamp (seconds since 01.01.1970).|
-|Namespace|DoofesZeug.Models.DateAndTime|
-|BaseClass|EntityBase|
-|SourceCode|[UnixTimestamp.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/UnixTimestamp.cs)|
+|Description|This entity represents just a kilometer.|
+|Namespace|DoofesZeug.Models.Science.Base.Length|
+|BaseClass|Meter|
+|SourceCode|[Kilometer.cs](../../../../DoofesZeug.Library/Src/Models/Science/Base/Length/Kilometer.cs)|
 
 ---
 
@@ -22,6 +22,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
+|Value|Double|&#x2713;|&#x2713;|0|
 
 ---
 
@@ -33,7 +34,7 @@
 
 ## UML Diagram
 
-![UnixTimestamp.png](./UnixTimestamp.png "UnixTimestamp")
+![Kilometer.png](./Kilometer.png "Kilometer")
 
 ---
 
@@ -48,7 +49,9 @@ An example or code snippet follows soon.
 ## JSON Example
 
 ```json
-1631511923
+{
+  "Value": 12.34
+}
 ```
 
 ---

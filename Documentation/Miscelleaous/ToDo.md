@@ -1,11 +1,24 @@
-# ToDo List
+<h1 style="font-weight:bold; letter-spacing: 10px; border-bottom: 2px solid black;">ToDo & Done List</h1>
+
+Don't worry about this mixed german and english stuff. Sometimes i've a brainfuck and then
+i write down the stuff in the fastest way, mostly in note form.
+
+---
 
 ## ToDo
 
+- New Attribute Link, referes to articels for further information. No Links in the Description, check in the unit tests...
+- Try to create one big class diagram with PlantUML
+- Subfolder for the extension `Format`, `Database`, ...
+- Another BaseType for ValueTypes ?
+- Entity vs. Model, unify, prefer Entity (don't forget to rename the namespaces, too).
 - Anfangen mit Gramm, Meter, ...
 - Erstellung und Verlinkung der Beispiele
 - Ratio
 - Für später: DataTypesColumnAligments als statische klasse mit einer funktion `TextAlign GetAligment(Type t)`
+- DataTable Extension mit
+  - ReAssign - convert an string column to an enumeration column, or an string colum to an user defined datetime (Func<> as parameter).
+  - ReCode - convert enumerations to there int values or strings to soundex, methaphone, md5, ...
 - Money (Currency)
   - Dollar
   - Euro

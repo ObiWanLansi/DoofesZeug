@@ -1,13 +1,13 @@
-﻿# UnixTimestamp
+﻿# Gram
 
 ## Generally
 
 |Property|Value|
 |:-|:-|
-|Description|An unix timestamp (seconds since 01.01.1970).|
-|Namespace|DoofesZeug.Models.DateAndTime|
-|BaseClass|EntityBase|
-|SourceCode|[UnixTimestamp.cs](../../../../DoofesZeug.Library/Src/Models/DateAndTime/UnixTimestamp.cs)|
+|Description|This entity represents just a gram.|
+|Namespace|DoofesZeug.Models.Science.Base.Weight|
+|BaseClass|MetricValueBase`1|
+|SourceCode|[Gram.cs](../../../../DoofesZeug.Library/Src/Models/Science/Base/Weight/Gram.cs)|
 
 ---
 
@@ -22,6 +22,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
+|Value|Double|&#x2713;|&#x2713;|0|
 
 ---
 
@@ -33,7 +34,7 @@
 
 ## UML Diagram
 
-![UnixTimestamp.png](./UnixTimestamp.png "UnixTimestamp")
+![Gram.png](./Gram.png "Gram")
 
 ---
 
@@ -48,7 +49,9 @@ An example or code snippet follows soon.
 ## JSON Example
 
 ```json
-1631511923
+{
+  "Value": 1234.0
+}
 ```
 
 ---
