@@ -104,9 +104,9 @@ namespace DoofesZeug.Documentation
         }
 
 
-        private static void AppendType( Type type, StringBuilder sbPUML )
+        public static void AppendType( Type type, StringBuilder sbPUML )
         {
-            if( type.BaseType != typeof(object) )
+            if( type.BaseType != null && type.BaseType != typeof(object) )
             {
                 AppendType(type.BaseType, sbPUML);
                 sbPUML.AppendLine($"{GetTypeName(type.BaseType, false)} <|-- {GetTypeName(type, false)}");

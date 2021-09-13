@@ -19,6 +19,7 @@ namespace DoofesZeug
             GenerateEntityOverview.Generate();
             GenerateEnumerationsOverview.Generate();
             GenerateBuilderOverview.Generate();
+            //GenerateBigPicture.Generate();
         }
     }
 }

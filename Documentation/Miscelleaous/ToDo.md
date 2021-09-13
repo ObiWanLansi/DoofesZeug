@@ -8,8 +8,6 @@ i write down the stuff in the fastest way, mostly in note form.
 ## ToDo
 
 - Generate class overview for other classes which are not an entity.
-- Try to create one big class diagram with PlantUML
-- Subfolder for the extension `Format`, `Database`, ...
 - Another BaseType for ValueTypes ?
 - Anfangen mit Gramm, Meter, ...
 - Erstellung und Verlinkung der Beispiele
@@ -44,10 +42,14 @@ i write down the stuff in the fastest way, mostly in note form.
 - Countries (aus geonames generiert)
 - Dienstgrade Feuerwehr, Polizei, Militär
 - StandardValidator als Attribute für EMail, Phone, Name, aber auch ein Interface Validate um komplexere zusammenhänge validieren zu können
+- Try to create one big class diagram with PlantUML
+  > Currently with the avaible methods it is not possible because the itereate everytime from bottom to top, so that some classes
+  > we have more than once!
 
 
 ## Done
 
+- Subfolder for the extension `Format`, `Database`, ...
 - Entity vs. Model, unify, prefer Entity (don't forget to rename the namespaces, too).
 - New Attribute Link, referes to articels for further information. No Links in the Description, check in the unit tests...
 - ~~Class Color mit allen Aufzählungen aus System.Drawing.Color, sowie ToHex, ToHtml, FromHex, FromHTML, ...~~
