@@ -9,6 +9,9 @@ i write down the stuff in the fastest way, mostly in note form.
 
 - Generate class overview for other classes which are not an entity.
 - Anfangen mit Gramm, Meter, ...
+- MarkdownExtension
+  - static public void Link(this Uri uri, string strToolTip=null) und dann wenn null WebClient.Download getTitle ?
+  - static public void Image(this string strFilename,string alt=null,string placeholder,bool footnote mit alt)?
 - Erstellung und Verlinkung der Beispiele
 - Ratio Helper
 - Aus world.sqlite die Villages, Cities and Towns extrahieren.
@@ -23,12 +26,13 @@ i write down the stuff in the fastest way, mostly in note form.
   - Kelivin
   - Fahrenheit
   - Celcius
+- EarthQuakes
 - Ein kleines GraphModel und erzeugung von diaggraph oder basic yed files ?
 - Flatten JSON / XML ?
 - Support für aufruf gnuplot für kleinere Diagramme zwischendurch ?
 - Feature WizardTSupportool mit fragen / antworten wie bei erstellen dotnet init, oder anderen tools ?
 - MatheStuff, z.b geometrische Figuren Rectangle, Circle, und direkt mit ein paar Meßmethoden?
-- Generic Singelton Pattern
+- Generic Singelton Pattern?
 - Implement Observer Pattern in base class Entity?
 - VCard support ?
 - HairColor und EyeColor als Enumeration mit Standardfarben
