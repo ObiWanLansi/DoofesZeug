@@ -144,7 +144,7 @@ namespace DoofesZeug.TestData
 
         private static Animal GenerateAnimal() => new()
         {
-            AnimalSpecies = WellKnownAnimals.Cat,
+            AnimalSpecies = WellKnownAnimal.Cat,
             Name = "Garfield",
             Gender = Gender.Male,
             DateOfBirth = (10, 06, 1978)

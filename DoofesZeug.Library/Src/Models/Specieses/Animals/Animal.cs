@@ -11,7 +11,7 @@ namespace DoofesZeug.Models.Specieses.Animals
     [Builder]
     public class Animal : Species
     {
-        public WellKnownAnimals? AnimalSpecies { get; set; }
+        public WellKnownAnimal? AnimalSpecies { get; set; }
 
         public Name Name { get; set; }
 

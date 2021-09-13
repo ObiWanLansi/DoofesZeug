@@ -233,6 +233,8 @@ namespace DoofesZeug.Documentation
             sb.AppendLine("|:-|:-|");
             sb.AppendLine($"|Description|{da.Description}|");
             sb.AppendLine($"|Namespace|{type.Namespace}|");
+            // The generated documentation is not for abstract basetypes avaible, so it make no sense to link them.
+            //sb.AppendLine($"|BaseClass|[{GetTypeName(type.BaseType, true)}](../{type.BaseType.Name})|");
             sb.AppendLine($"|BaseClass|{GetTypeName(type.BaseType, true)}|");
             sb.AppendLine($"|SourceCode|[{type.Name}.cs]({strSourceCode})|");
             //sb.AppendLine($"|Example||");

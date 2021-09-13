@@ -2,7 +2,7 @@
 skinparam monochrome true
 hide empty members
 
-enum WellKnownAnimals {
+enum WellKnownAnimal {
     Cat
     Dog
     Horse

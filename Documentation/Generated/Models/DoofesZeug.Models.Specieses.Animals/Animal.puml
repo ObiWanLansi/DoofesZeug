@@ -21,7 +21,7 @@ abstract class Species {
 Species <|-- Animal
 
 class Animal {
-    AnimalSpecies: WellKnownAnimals?
+    AnimalSpecies: WellKnownAnimal?
     Name: Name
 }
 
