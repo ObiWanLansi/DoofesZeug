@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 
 using DoofesZeug.Extensions;
-using DoofesZeug.Models.Specieses.Human.Professions;
+using DoofesZeug.Entities.Specieses.Human.Professions;
 
 using static System.Console;
 

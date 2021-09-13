@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 
 
 
-namespace DoofesZeug.Models.Specieses.Human.Professions
+namespace DoofesZeug.Entities.Specieses.Human.Professions
 {
     [Generated]
     public static class PilotBuilder
@@ -15,7 +15,7 @@ namespace DoofesZeug.Models.Specieses.Human.Professions
         public static Pilot New() => new();
 
 
-        public static Pilot WithSince(this Pilot pilot, DoofesZeug.Models.DateAndTime.Date since)
+        public static Pilot WithSince(this Pilot pilot, DoofesZeug.Entities.DateAndTime.Date since)
         {
             pilot.Since = since;
             return pilot;

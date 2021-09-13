@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 
 
 
-namespace DoofesZeug.Models.Specieses.Human.Professions
+namespace DoofesZeug.Entities.Specieses.Human.Professions
 {
     [Generated]
     public static class TilerBuilder
@@ -15,7 +15,7 @@ namespace DoofesZeug.Models.Specieses.Human.Professions
         public static Tiler New() => new();
 
 
-        public static Tiler WithSince(this Tiler tiler, DoofesZeug.Models.DateAndTime.Date since)
+        public static Tiler WithSince(this Tiler tiler, DoofesZeug.Entities.DateAndTime.Date since)
         {
             tiler.Since = since;
             return tiler;

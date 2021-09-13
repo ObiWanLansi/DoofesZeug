@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-using DoofesZeug.Models.DateAndTime.Part;
+using DoofesZeug.Entities.DateAndTime.Part;
 
 using Newtonsoft.Json;
 

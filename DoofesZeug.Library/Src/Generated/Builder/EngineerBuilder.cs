@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 
 
 
-namespace DoofesZeug.Models.Specieses.Human.Professions
+namespace DoofesZeug.Entities.Specieses.Human.Professions
 {
     [Generated]
     public static class EngineerBuilder
@@ -15,7 +15,7 @@ namespace DoofesZeug.Models.Specieses.Human.Professions
         public static Engineer New() => new();
 
 
-        public static Engineer WithSince(this Engineer engineer, DoofesZeug.Models.DateAndTime.Date since)
+        public static Engineer WithSince(this Engineer engineer, DoofesZeug.Entities.DateAndTime.Date since)
         {
             engineer.Since = since;
             return engineer;

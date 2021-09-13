@@ -2,7 +2,7 @@
 using System.Reflection;
 
 using DoofesZeug.Datatypes.Container;
-using DoofesZeug.Models;
+using DoofesZeug.Entities;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

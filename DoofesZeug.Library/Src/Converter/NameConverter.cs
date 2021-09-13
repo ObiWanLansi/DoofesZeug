@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-using DoofesZeug.Models.Specieses;
+using DoofesZeug.Entities.Specieses;
 
 using Newtonsoft.Json;
 

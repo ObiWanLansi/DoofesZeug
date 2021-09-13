@@ -7,11 +7,10 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## ToDo
 
-- New Attribute Link, referes to articels for further information. No Links in the Description, check in the unit tests...
+- Generate class overview for other classes which are not an entity.
 - Try to create one big class diagram with PlantUML
 - Subfolder for the extension `Format`, `Database`, ...
 - Another BaseType for ValueTypes ?
-- Entity vs. Model, unify, prefer Entity (don't forget to rename the namespaces, too).
 - Anfangen mit Gramm, Meter, ...
 - Erstellung und Verlinkung der Beispiele
 - Ratio
@@ -50,6 +49,8 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## Done
 
+- Entity vs. Model, unify, prefer Entity (don't forget to rename the namespaces, too).
+- New Attribute Link, referes to articels for further information. No Links in the Description, check in the unit tests...
 - ~~Class Color mit allen Aufzählungen aus System.Drawing.Color, sowie ToHex, ToHtml, FromHex, FromHTML, ...~~
   > System.Drawing.Color ist unter .bet core verfügbar.
 - Die Beispiele müssen schon irgendwie in den EntityModels verlinkt oder inline sein, um besser zu verstehen was ich mit dem Entity machen kann. Gerade bei Date, Time und sowas, auch mit den operatoren, ....

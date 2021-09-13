@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DoofesZeug.Models.DateAndTime;
+using DoofesZeug.Entities.DateAndTime;
 
 using Newtonsoft.Json;
 

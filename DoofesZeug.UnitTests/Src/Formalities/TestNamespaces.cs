@@ -5,7 +5,7 @@ using System.Reflection;
 using DoofesZeug.Attributes;
 using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Extensions;
-using DoofesZeug.Models;
+using DoofesZeug.Entities;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

@@ -1,6 +1,6 @@
-﻿using DoofesZeug.Models.Specieses;
-using DoofesZeug.Models.Specieses.Human;
-using DoofesZeug.Models.Specieses.Human.Professions;
+﻿using DoofesZeug.Entities.Specieses;
+using DoofesZeug.Entities.Specieses.Human;
+using DoofesZeug.Entities.Specieses.Human.Professions;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

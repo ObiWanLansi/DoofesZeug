@@ -9,7 +9,7 @@ using DoofesZeug.Attributes.Pattern;
 
 
 
-namespace DoofesZeug.Models.Specieses.Human.Professions
+namespace DoofesZeug.Entities.Specieses.Human.Professions
 {
     [Description("This is an specialized entitiy for an hairdresser.")]
     [Generated]

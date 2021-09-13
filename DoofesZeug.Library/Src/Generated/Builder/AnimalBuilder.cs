@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 
 
 
-namespace DoofesZeug.Models.Specieses.Animals
+namespace DoofesZeug.Entities.Specieses.Animals
 {
     [Generated]
     public static class AnimalBuilder
@@ -15,28 +15,28 @@ namespace DoofesZeug.Models.Specieses.Animals
         public static Animal New() => new();
 
 
-        public static Animal WithAnimalSpecies(this Animal animal, System.Nullable<DoofesZeug.Models.Specieses.Animals.WellKnownAnimal> animalspecies)
+        public static Animal WithAnimalSpecies(this Animal animal, System.Nullable<DoofesZeug.Entities.Specieses.Animals.WellKnownAnimal> animalspecies)
         {
             animal.AnimalSpecies = animalspecies;
             return animal;
         }
 
 
-        public static Animal WithName(this Animal animal, DoofesZeug.Models.Specieses.Name name)
+        public static Animal WithName(this Animal animal, DoofesZeug.Entities.Specieses.Name name)
         {
             animal.Name = name;
             return animal;
         }
 
 
-        public static Animal WithDateOfBirth(this Animal animal, DoofesZeug.Models.DateAndTime.DateOfBirth dateofbirth)
+        public static Animal WithDateOfBirth(this Animal animal, DoofesZeug.Entities.DateAndTime.DateOfBirth dateofbirth)
         {
             animal.DateOfBirth = dateofbirth;
             return animal;
         }
 
 
-        public static Animal WithGender(this Animal animal, System.Nullable<DoofesZeug.Models.Specieses.Gender> gender)
+        public static Animal WithGender(this Animal animal, System.Nullable<DoofesZeug.Entities.Specieses.Gender> gender)
         {
             animal.Gender = gender;
             return animal;

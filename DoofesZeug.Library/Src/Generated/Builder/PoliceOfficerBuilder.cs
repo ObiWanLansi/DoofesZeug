@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 
 
 
-namespace DoofesZeug.Models.Specieses.Human.Professions
+namespace DoofesZeug.Entities.Specieses.Human.Professions
 {
     [Generated]
     public static class PoliceOfficerBuilder
@@ -15,7 +15,7 @@ namespace DoofesZeug.Models.Specieses.Human.Professions
         public static PoliceOfficer New() => new();
 
 
-        public static PoliceOfficer WithSince(this PoliceOfficer policeofficer, DoofesZeug.Models.DateAndTime.Date since)
+        public static PoliceOfficer WithSince(this PoliceOfficer policeofficer, DoofesZeug.Entities.DateAndTime.Date since)
         {
             policeofficer.Since = since;
             return policeofficer;

@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 
 
 
-namespace DoofesZeug.Models.Specieses.Human.Professions
+namespace DoofesZeug.Entities.Specieses.Human.Professions
 {
     [Generated]
     public static class TaxiDriverBuilder
@@ -15,7 +15,7 @@ namespace DoofesZeug.Models.Specieses.Human.Professions
         public static TaxiDriver New() => new();
 
 
-        public static TaxiDriver WithSince(this TaxiDriver taxidriver, DoofesZeug.Models.DateAndTime.Date since)
+        public static TaxiDriver WithSince(this TaxiDriver taxidriver, DoofesZeug.Entities.DateAndTime.Date since)
         {
             taxidriver.Since = since;
             return taxidriver;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-using DoofesZeug.Models;
+using DoofesZeug.Entities;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

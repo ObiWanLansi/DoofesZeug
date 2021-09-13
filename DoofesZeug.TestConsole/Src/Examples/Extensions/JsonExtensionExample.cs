@@ -1,8 +1,8 @@
 ﻿using System;
 
 using DoofesZeug.Extensions;
-using DoofesZeug.Models.Specieses;
-using DoofesZeug.Models.Specieses.Human;
+using DoofesZeug.Entities.Specieses;
+using DoofesZeug.Entities.Specieses.Human;
 
 
 

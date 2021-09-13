@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DoofesZeug.Models.Science.Geographically.Base;
+using DoofesZeug.Entities.Science.Geographically.Base;
 
 using Newtonsoft.Json;
 

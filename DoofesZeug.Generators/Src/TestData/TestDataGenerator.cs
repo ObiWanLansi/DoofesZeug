@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using DoofesZeug.Models.DateAndTime;
-using DoofesZeug.Models.DateAndTime.Part;
-using DoofesZeug.Models.DateAndTime.Part.Date;
-using DoofesZeug.Models.DateAndTime.Part.Time;
-using DoofesZeug.Models.Science.Base.Length;
-using DoofesZeug.Models.Science.Base.Weight;
-using DoofesZeug.Models.Science.Geographically.Base;
-using DoofesZeug.Models.Specieses;
-using DoofesZeug.Models.Specieses.Animals;
-using DoofesZeug.Models.Specieses.Human;
-using DoofesZeug.Models.Specieses.Human.Professions;
+using DoofesZeug.Entities.DateAndTime;
+using DoofesZeug.Entities.DateAndTime.Part;
+using DoofesZeug.Entities.DateAndTime.Part.Date;
+using DoofesZeug.Entities.DateAndTime.Part.Time;
+using DoofesZeug.Entities.Science.Base.Length;
+using DoofesZeug.Entities.Science.Base.Weight;
+using DoofesZeug.Entities.Science.Geographically.Base;
+using DoofesZeug.Entities.Specieses;
+using DoofesZeug.Entities.Specieses.Animals;
+using DoofesZeug.Entities.Specieses.Human;
+using DoofesZeug.Entities.Specieses.Human.Professions;
 
 
 

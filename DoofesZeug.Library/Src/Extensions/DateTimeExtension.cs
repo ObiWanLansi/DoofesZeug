@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 
 using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Models.DateAndTime;
-using DoofesZeug.Models.DateAndTime.Part.Date;
+using DoofesZeug.Entities.DateAndTime;
+using DoofesZeug.Entities.DateAndTime.Part.Date;
 using DoofesZeug.Tools.Misc;
 
 

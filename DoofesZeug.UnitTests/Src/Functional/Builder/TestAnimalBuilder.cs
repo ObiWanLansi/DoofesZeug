@@ -1,5 +1,5 @@
-﻿using DoofesZeug.Models.Specieses;
-using DoofesZeug.Models.Specieses.Animals;
+﻿using DoofesZeug.Entities.Specieses;
+using DoofesZeug.Entities.Specieses.Animals;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

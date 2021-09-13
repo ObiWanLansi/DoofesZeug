@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 
 
 
-namespace DoofesZeug.Models.DateAndTime
+namespace DoofesZeug.Entities.DateAndTime
 {
     [Generated]
     public static class DateBuilder
@@ -15,21 +15,21 @@ namespace DoofesZeug.Models.DateAndTime
         public static Date New() => new();
 
 
-        public static Date WithDay(this Date date, DoofesZeug.Models.DateAndTime.Part.Date.Day day)
+        public static Date WithDay(this Date date, DoofesZeug.Entities.DateAndTime.Part.Date.Day day)
         {
             date.Day = day;
             return date;
         }
 
 
-        public static Date WithMonth(this Date date, DoofesZeug.Models.DateAndTime.Part.Date.Month month)
+        public static Date WithMonth(this Date date, DoofesZeug.Entities.DateAndTime.Part.Date.Month month)
         {
             date.Month = month;
             return date;
         }
 
 
-        public static Date WithYear(this Date date, DoofesZeug.Models.DateAndTime.Part.Date.Year year)
+        public static Date WithYear(this Date date, DoofesZeug.Entities.DateAndTime.Part.Date.Year year)
         {
             date.Year = year;
             return date;

@@ -1,8 +1,8 @@
 ﻿using System;
 
 using DoofesZeug.Extensions;
-using DoofesZeug.Models.DateAndTime;
-using DoofesZeug.Models.Specieses.Human.Professions;
+using DoofesZeug.Entities.DateAndTime;
+using DoofesZeug.Entities.Specieses.Human.Professions;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;

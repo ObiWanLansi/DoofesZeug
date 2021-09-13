@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 
 
 
-namespace DoofesZeug.Models.Specieses.Human.Professions
+namespace DoofesZeug.Entities.Specieses.Human.Professions
 {
     [Generated]
     public static class WaiterBuilder
@@ -15,7 +15,7 @@ namespace DoofesZeug.Models.Specieses.Human.Professions
         public static Waiter New() => new();
 
 
-        public static Waiter WithSince(this Waiter waiter, DoofesZeug.Models.DateAndTime.Date since)
+        public static Waiter WithSince(this Waiter waiter, DoofesZeug.Entities.DateAndTime.Date since)
         {
             waiter.Since = since;
             return waiter;

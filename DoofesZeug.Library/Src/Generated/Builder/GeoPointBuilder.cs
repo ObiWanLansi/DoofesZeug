@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 
 
 
-namespace DoofesZeug.Models.Science.Geographically.Base
+namespace DoofesZeug.Entities.Science.Geographically.Base
 {
     [Generated]
     public static class GeoPointBuilder
@@ -15,14 +15,14 @@ namespace DoofesZeug.Models.Science.Geographically.Base
         public static GeoPoint New() => new();
 
 
-        public static GeoPoint WithLatitude(this GeoPoint geopoint, DoofesZeug.Models.Science.Geographically.Base.Latitude latitude)
+        public static GeoPoint WithLatitude(this GeoPoint geopoint, DoofesZeug.Entities.Science.Geographically.Base.Latitude latitude)
         {
             geopoint.Latitude = latitude;
             return geopoint;
         }
 
 
-        public static GeoPoint WithLongitude(this GeoPoint geopoint, DoofesZeug.Models.Science.Geographically.Base.Longitude longitude)
+        public static GeoPoint WithLongitude(this GeoPoint geopoint, DoofesZeug.Entities.Science.Geographically.Base.Longitude longitude)
         {
             geopoint.Longitude = longitude;
             return geopoint;

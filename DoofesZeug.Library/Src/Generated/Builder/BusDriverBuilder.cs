@@ -7,7 +7,7 @@ using DoofesZeug.Attributes;
 
 
 
-namespace DoofesZeug.Models.Specieses.Human.Professions
+namespace DoofesZeug.Entities.Specieses.Human.Professions
 {
     [Generated]
     public static class BusDriverBuilder
@@ -15,7 +15,7 @@ namespace DoofesZeug.Models.Specieses.Human.Professions
         public static BusDriver New() => new();
 
 
-        public static BusDriver WithSince(this BusDriver busdriver, DoofesZeug.Models.DateAndTime.Date since)
+        public static BusDriver WithSince(this BusDriver busdriver, DoofesZeug.Entities.DateAndTime.Date since)
         {
             busdriver.Since = since;
             return busdriver;

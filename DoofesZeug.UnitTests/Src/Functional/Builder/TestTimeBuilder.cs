@@ -1,4 +1,4 @@
-﻿using DoofesZeug.Models.DateAndTime;
+﻿using DoofesZeug.Entities.DateAndTime;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

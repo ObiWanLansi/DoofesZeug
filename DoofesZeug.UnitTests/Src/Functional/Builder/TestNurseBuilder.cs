@@ -1,4 +1,4 @@
-﻿using DoofesZeug.Models.Specieses.Human.Professions;
+﻿using DoofesZeug.Entities.Specieses.Human.Professions;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

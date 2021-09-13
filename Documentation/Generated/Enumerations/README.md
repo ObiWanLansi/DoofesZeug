@@ -1,49 +1,49 @@
 ﻿# Enumerations Overview
 
 
-## `DoofesZeug.Models.DateAndTime`
+## `DoofesZeug.Entities.DateAndTime`
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
-|[Quarter](./DoofesZeug.Models.DateAndTime/Quarter.md)|An enumeration for our calendar quarters.|First, Second, Third, Fourth|
-|[Season](./DoofesZeug.Models.DateAndTime/Season.md)|An enumeration for our seasons.|Winter, Spring, Summer, Autumn|
+|[Quarter](./DoofesZeug.Entities.DateAndTime/Quarter.md)|An enumeration for our calendar quarters.|First, Second, Third, Fourth|
+|[Season](./DoofesZeug.Entities.DateAndTime/Season.md)|An enumeration for our seasons.|Winter, Spring, Summer, Autumn|
 
 
-## `DoofesZeug.Models.Science.Geographically`
-
-|Enumeration|Description|Values|
-|:----------|:----------|:-----|
-|[Continent](./DoofesZeug.Models.Science.Geographically/Continent.md)|Our continents as little enumeration.|Africa, Asia, Europe, NorthAmerica, SouthAmerica, Antarctica, Australia|
-
-
-## `DoofesZeug.Models.Specieses`
+## `DoofesZeug.Entities.Science.Geographically`
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
-|[BloodGroup](./DoofesZeug.Models.Specieses/BloodGroup.md)|An simple enumeration for the bloodgroup of an human.|A, B, AB, Zero|
-|[Gender](./DoofesZeug.Models.Specieses/Gender.md)|An enumeration for the gender of creatures.|Divers, Female, Male|
+|[Continent](./DoofesZeug.Entities.Science.Geographically/Continent.md)|Our continents as little enumeration.|Africa, Asia, Europe, NorthAmerica, SouthAmerica, Antarctica, Australia|
 
 
-## `DoofesZeug.Models.Specieses.Animals`
-
-|Enumeration|Description|Values|
-|:----------|:----------|:-----|
-|[WellKnownAnimal](./DoofesZeug.Models.Specieses.Animals/WellKnownAnimal.md)|A small enumeration of some animals, mixed with subtypes for faster development.|Cat, Dog, Horse, Cow, Pig, Donkey, Monkey, Chicken, Bird, Eagle, Shark, Dolphin, Fish, Giraffe, Elephant, Rhino, Buffalo, Hedgehog|
-
-
-## `DoofesZeug.Models.Specieses.Human`
+## `DoofesZeug.Entities.Specieses`
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
-|[Handedness](./DoofesZeug.Models.Specieses.Human/Handedness.md)|An simple enumeration for the handedness of an human.|Left, Right, Both|
-|[MajorReligion](./DoofesZeug.Models.Specieses.Human/MajorReligion.md)|The five big major religions.|Hinduism, Buddhism, Islam, Christianity, Judaism|
+|[BloodGroup](./DoofesZeug.Entities.Specieses/BloodGroup.md)|An simple enumeration for the bloodgroup of an human.|A, B, AB, Zero|
+|[Gender](./DoofesZeug.Entities.Specieses/Gender.md)|An enumeration for the gender of creatures.|Divers, Female, Male|
 
 
-## `DoofesZeug.Models.Specieses.Human.Professions`
+## `DoofesZeug.Entities.Specieses.Animals`
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
-|[WellKnownProfession](./DoofesZeug.Models.Specieses.Human.Professions/WellKnownProfession.md)|A small enumeration of some professions, for every value an corresponding entity will be created by the generator.|FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter, Soldier, BusDriver, TaxiDriver, Pilot|
+|[WellKnownAnimal](./DoofesZeug.Entities.Specieses.Animals/WellKnownAnimal.md)|A small enumeration of some animals, mixed with subtypes for faster development.|Cat, Dog, Horse, Cow, Pig, Donkey, Monkey, Chicken, Bird, Eagle, Shark, Dolphin, Fish, Giraffe, Elephant, Rhino, Buffalo, Hedgehog|
+
+
+## `DoofesZeug.Entities.Specieses.Human`
+
+|Enumeration|Description|Values|
+|:----------|:----------|:-----|
+|[Handedness](./DoofesZeug.Entities.Specieses.Human/Handedness.md)|An simple enumeration for the handedness of an human.|Left, Right, Both|
+|[MajorReligion](./DoofesZeug.Entities.Specieses.Human/MajorReligion.md)|The five big major religions.|Hinduism, Buddhism, Islam, Christianity, Judaism|
+
+
+## `DoofesZeug.Entities.Specieses.Human.Professions`
+
+|Enumeration|Description|Values|
+|:----------|:----------|:-----|
+|[WellKnownProfession](./DoofesZeug.Entities.Specieses.Human.Professions/WellKnownProfession.md)|A small enumeration of some professions, for every value an corresponding entity will be created by the generator.|FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter, Soldier, BusDriver, TaxiDriver, Pilot|
 
 
 ## `DoofesZeug.Tools.Crypt`

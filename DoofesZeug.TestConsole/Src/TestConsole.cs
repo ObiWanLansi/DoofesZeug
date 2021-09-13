@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DoofesZeug.Models.Science.Base.Length;
+using DoofesZeug.Entities.Science.Base.Length;
 
 using static System.Console;
 

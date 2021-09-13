@@ -7,7 +7,7 @@ using System.Text;
 
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Extensions;
-using DoofesZeug.Models;
+using DoofesZeug.Entities;
 using DoofesZeug.Tools;
 
 using static System.Console;

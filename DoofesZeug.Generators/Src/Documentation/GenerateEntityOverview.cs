@@ -8,7 +8,7 @@ using System.Text;
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Extensions;
-using DoofesZeug.Models;
+using DoofesZeug.Entities;
 using DoofesZeug.TestData;
 using DoofesZeug.Tools;
 
@@ -20,7 +20,7 @@ namespace DoofesZeug.Documentation
 {
     public static class GenerateEntityOverview
     {
-        private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\Documentation\Generated\Models";
+        private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\Documentation\Generated\Entities";
 
         private static readonly Type ENTITY_BASE = typeof(Entity);
 
@@ -203,7 +203,7 @@ namespace DoofesZeug.Documentation
                 string strPropertyType = GetTypeName(pi.PropertyType, true);
                 if( pi.PropertyType.Namespace.StartsWith("DoofesZeug.") )
                 {
-                    string strPath = $"../../{( pi.PropertyType.IsEnum ? "Enumerations" : "Models" )}/{pi.PropertyType.Namespace}";
+                    string strPath = $"../../{( pi.PropertyType.IsEnum ? "Enumerations" : "Entities" )}/{pi.PropertyType.Namespace}";
 
                     strPropertyType = $"[{pi.PropertyType.Name}]({strPath}/{pi.PropertyType.Name}.md)";
                 }
