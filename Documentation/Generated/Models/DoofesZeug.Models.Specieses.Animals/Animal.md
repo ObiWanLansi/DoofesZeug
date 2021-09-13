@@ -17,7 +17,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|AnimalSpecies|AnimalSpecies?|&#x2713;|&#x2713;|NULL|
+|AnimalSpecies|WellKnownAnimals?|&#x2713;|&#x2713;|NULL|
 |Name|[Name](../../Models/DoofesZeug.Models.Specieses/Name.md)|&#x2713;|&#x2713;|NULL|
 
 ### Inherited
@@ -59,7 +59,7 @@ An example or code snippet follows soon.
   "Name": "Garfield",
   "DateOfBirth": "10.06.1978",
   "Gender": "Male",
-  "Id": "07d5d314-2516-4f96-9c34-115b67b29411"
+  "Id": "58866459-decb-4463-ad2d-e3d00cf6f336"
 }
 ```
 

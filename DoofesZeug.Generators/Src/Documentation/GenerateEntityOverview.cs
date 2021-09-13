@@ -63,7 +63,7 @@ namespace DoofesZeug.Documentation
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static string GetTypeName( Type t )
+        private static string GetTypeName( Type t, bool bAddGenericType )
         {
             string strName = t.Name;
 
@@ -77,27 +77,29 @@ namespace DoofesZeug.Documentation
                 return strName;
             }
 
-            StringBuilder sbGenericName = new StringBuilder(32);
-
-            int iGenericParamCount = t.GetGenericArguments().Length;
-
             int iIndex = strName.IndexOf('`');
 
-            sbGenericName.AppendFormat("{0}<", iIndex > 0 ? strName.Substring(0, iIndex) : strName);
-
-            for( int iCounter = 0 ; iCounter < iGenericParamCount ; iCounter++ )
+            if( bAddGenericType )
             {
-                if( iCounter > 0 )
+                int iGenericParamCount = t.GetGenericArguments().Length;
+                StringBuilder sbGenericName = new(32);
+                sbGenericName.AppendFormat("{0}<", iIndex > 0 ? strName.Substring(0, iIndex) : strName);
+
+                for( int iCounter = 0 ; iCounter < iGenericParamCount ; iCounter++ )
                 {
-                    sbGenericName.Append(',');
+                    if( iCounter > 0 )
+                    {
+                        sbGenericName.Append(',');
+                    }
+
+                    sbGenericName.AppendFormat("T{0}", iCounter + 1);
                 }
 
-                sbGenericName.AppendFormat("T{0}", iCounter + 1);
+                sbGenericName.Append(">");
+                return sbGenericName.ToString();
             }
 
-            sbGenericName.Append(">");
-
-            return sbGenericName.ToString();
+            return strName.Substring(0, iIndex);
         }
 
 
@@ -106,16 +108,17 @@ namespace DoofesZeug.Documentation
             if( type.BaseType != typeof(object) )
             {
                 AppendType(type.BaseType, sbPUML);
-                sbPUML.AppendLine($"{type.BaseType.Name} <|-- {type.Name}");
+                sbPUML.AppendLine($"{GetTypeName(type.BaseType, false)} <|-- {GetTypeName(type, false)}");
+                //sbPUML.AppendLine($"{type.BaseType.Name} <|-- {type.Name}");
             }
 
             sbPUML.AppendLine();
             sbPUML.Append(type.IsAbstract ? "abstract " : "");
-            sbPUML.AppendLine($"class {type.Name} {{");
+            sbPUML.AppendLine($"class {GetTypeName(type, false)} {{");
 
             foreach( PropertyInfo pi in type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance) )
             {
-                sbPUML.AppendLine($"    {pi.Name}: {GetTypeName(pi.PropertyType)}");
+                sbPUML.AppendLine($"    {pi.Name}: {GetTypeName(pi.PropertyType, true)}");
             }
 
             sbPUML.AppendLine("}");
@@ -197,7 +200,7 @@ namespace DoofesZeug.Documentation
                     continue;
                 }
 
-                string strPropertyType = GetTypeName(pi.PropertyType);
+                string strPropertyType = GetTypeName(pi.PropertyType, true);
                 if( pi.PropertyType.Namespace.StartsWith("DoofesZeug.") )
                 {
                     string strPath = $"../../{( pi.PropertyType.IsEnum ? "Enumerations" : "Models" )}/{pi.PropertyType.Namespace}";
@@ -230,7 +233,7 @@ namespace DoofesZeug.Documentation
             sb.AppendLine("|:-|:-|");
             sb.AppendLine($"|Description|{da.Description}|");
             sb.AppendLine($"|Namespace|{type.Namespace}|");
-            sb.AppendLine($"|BaseClass|{type.BaseType.Name}|");
+            sb.AppendLine($"|BaseClass|{GetTypeName(type.BaseType, true)}|");
             sb.AppendLine($"|SourceCode|[{type.Name}.cs]({strSourceCode})|");
             //sb.AppendLine($"|Example||");
         }

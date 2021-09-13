@@ -25,28 +25,31 @@ namespace DoofesZeug.Tools
             p.StartInfo.RedirectStandardError = true;
             p.StartInfo.RedirectStandardOutput = true;
 
-            try
+            p.Start();
+
+            string strOutput = p.StandardOutput.ReadToEnd().Trim();
+            string strError = p.StandardError.ReadToEnd().Trim();
+
+            p.WaitForExit();
+
+            if( p.ExitCode != 0 )
             {
-                p.Start();
-
-                string strOutput = p.StandardOutput.ReadToEnd().Trim();
-                string strError = p.StandardError.ReadToEnd().Trim();
-
-                p.WaitForExit();
-
-                if( strOutput.IsNotEmpty() )
-                {
-                    Console.Out.WriteLineAsync(strOutput);
-                }
-
-                if( strError.IsNotEmpty() )
-                {
-                    Console.Error.WriteLineAsync(strError);
-                }
+                Console.Out.WriteLineAsync($"ExitCode: {p.ExitCode}");
             }
-            catch( Exception ex )
+
+            if( strOutput.IsNotEmpty() )
             {
-                Console.Error.WriteLineAsync(ex.Message);
+                Console.Out.WriteLineAsync(strOutput);
+            }
+
+            if( strError.IsNotEmpty() )
+            {
+                Console.Error.WriteLineAsync(strError);
+            }
+
+            if( p.ExitCode != 0 )
+            {
+                throw new Exception(strError);
             }
         }
     }

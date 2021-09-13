@@ -6,7 +6,7 @@
 |:-|:-|
 |Description|This entity represents just a meter. For easier handling it is based on an double, so we can also set 5.2 m when needed.|
 |Namespace|DoofesZeug.Models.Science.Base.Length|
-|BaseClass|MetricValueBase`1|
+|BaseClass|MetricValueBase<T1>|
 |SourceCode|[Meter.cs](../../../../DoofesZeug.Library/Src/Models/Science/Base/Length/Meter.cs)|
 
 ---

@@ -5,13 +5,13 @@ hide empty members
 abstract class EntityBase {
 }
 
-EntityBase <|-- MetricValueBase`1
+EntityBase <|-- MetricValueBase
 
-abstract class MetricValueBase`1 {
+abstract class MetricValueBase {
     Value: Double
 }
 
-MetricValueBase`1 <|-- Gram
+MetricValueBase <|-- Gram
 
 class Gram {
 }

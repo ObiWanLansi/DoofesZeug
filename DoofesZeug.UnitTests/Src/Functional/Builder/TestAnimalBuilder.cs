@@ -17,7 +17,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
                 WithDateOfBirth((10, 06, 1978)).
                 WithName("Jacki").
                 WithGender(Gender.Female).
-                WithAnimalSpecies(AnimalSpecies.Horse);
+                WithAnimalSpecies(WellKnownAnimals.Horse);
 
             Assert.IsNotNull(animal);
         }

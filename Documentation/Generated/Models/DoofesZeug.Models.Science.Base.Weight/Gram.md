@@ -6,7 +6,7 @@
 |:-|:-|
 |Description|This entity represents just a gram.|
 |Namespace|DoofesZeug.Models.Science.Base.Weight|
-|BaseClass|MetricValueBase`1|
+|BaseClass|MetricValueBase<T1>|
 |SourceCode|[Gram.cs](../../../../DoofesZeug.Library/Src/Models/Science/Base/Weight/Gram.cs)|
 
 ---

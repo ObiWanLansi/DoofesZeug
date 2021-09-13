@@ -28,7 +28,7 @@
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
-|[AnimalSpecies](./DoofesZeug.Models.Specieses.Animals/AnimalSpecies.md)|Some animal species, mixed with subtypes for faster development.|Cat, Dog, Horse, Cow, Pig, Donkey, Monkey, Chicken, Bird, Eagle, Shark, Dolphin, Fish, Giraffe, Elephant, Rhino, Buffalo, Hedgehog|
+|[WellKnownAnimals](./DoofesZeug.Models.Specieses.Animals/WellKnownAnimals.md)|Some animal, mixed with subtypes for faster development.|Cat, Dog, Horse, Cow, Pig, Donkey, Monkey, Chicken, Bird, Eagle, Shark, Dolphin, Fish, Giraffe, Elephant, Rhino, Buffalo, Hedgehog|
 
 
 ## `DoofesZeug.Models.Specieses.Human`

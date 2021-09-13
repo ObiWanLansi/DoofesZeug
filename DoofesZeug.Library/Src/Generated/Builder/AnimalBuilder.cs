@@ -15,7 +15,7 @@ namespace DoofesZeug.Models.Specieses.Animals
         public static Animal New() => new();
 
 
-        public static Animal WithAnimalSpecies(this Animal animal, System.Nullable<DoofesZeug.Models.Specieses.Animals.AnimalSpecies> animalspecies)
+        public static Animal WithAnimalSpecies(this Animal animal, System.Nullable<DoofesZeug.Models.Specieses.Animals.WellKnownAnimals> animalspecies)
         {
             animal.AnimalSpecies = animalspecies;
             return animal;

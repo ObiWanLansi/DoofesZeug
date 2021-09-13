@@ -4,8 +4,8 @@
 
 namespace DoofesZeug.Models.Specieses.Animals
 {
-    [Description("Some animal species, mixed with subtypes for faster development.")]
-    public enum AnimalSpecies : byte
+    [Description("Some animal, mixed with subtypes for faster development.")]
+    public enum WellKnownAnimals : byte
     {
         Cat,
         Dog,
