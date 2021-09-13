@@ -83,13 +83,13 @@ namespace DoofesZeug.UnitTests.Functional.Builder
   "Handedness": "Left",
   "BloodGroup": "AB",
   "Profession": {
-    "Id": "12faa2ef-220f-480f-baf5-2cd3a694e290",
+    "Id": "880dff0d-88d9-4724-a5e6-8ce3a846a1a9",
     "WellKnownProfessionType": "FireFighter",
     "Since": "11.11.1942"
   },
   "DateOfBirth": "27.09.1974",
   "Gender": "Male",
-  "Id": "742e8b87-ffca-426e-929f-5706cbfb2226"
+  "Id": "16e24c47-a2b5-4803-9520-6df37abcd706"
 }
 ```
 

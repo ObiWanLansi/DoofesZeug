@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
+using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Models.DateAndTime;
 using DoofesZeug.Models.DateAndTime.Part.Date;
 using DoofesZeug.Tools.Misc;
@@ -456,10 +457,10 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
+        [Link("https://de.wikipedia.org/wiki/Jahreszeit#Beginn_der_Jahreszeiten")]
         public static Season? GetSeason( this DateTime dt )
         {
-            // Hier eine vereinfachte Variante von der Bestimmtung der Jahreszeiten, ohne Berücksichtigung des Schaltjahres
-            // https://de.wikipedia.org/wiki/Jahreszeit#Beginn_der_Jahreszeiten
+            // Hier eine vereinfachte Variante von der Bestimmung der Jahreszeiten, ohne Berücksichtigung des Schaltjahres
 
             int doy = dt.DayOfYear;
 

@@ -52,6 +52,11 @@ namespace DoofesZeug.Attributes.Documentation
             {
                 throw new Exception($"The description from {instance.FullName} ends not with an point!");
             }
+
+            if(this.Description.Contains("https://") )
+            {
+                throw new Exception($"The description from {instance.FullName} containts an link to a webpage. Please use the LinkAttribute!!");
+            }
         }
     }
 }

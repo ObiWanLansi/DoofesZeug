@@ -54,7 +54,7 @@ An example or code snippet follows soon.
 
 ```json
 {
-  "Id": "bcb0f68e-dc89-49d5-af9a-381f9f4ff9e5",
+  "Id": "7baa4285-752f-47b3-b112-c69251d5dfe3",
   "WellKnownProfessionType": "HairDresser",
   "Since": "11.11.1942"
 }

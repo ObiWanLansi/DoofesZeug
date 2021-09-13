@@ -238,6 +238,12 @@ namespace DoofesZeug.Documentation
             sb.AppendLine($"|BaseClass|{GetTypeName(type.BaseType, true)}|");
             sb.AppendLine($"|SourceCode|[{type.Name}.cs]({strSourceCode})|");
             //sb.AppendLine($"|Example||");
+
+            foreach( LinkAttribute link in type.GetCustomAttributes<LinkAttribute>() )
+            {
+                link.Validate(type);
+                sb.AppendLine($"|See Also|{link.Destination}|");
+            }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
