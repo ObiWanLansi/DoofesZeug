@@ -46,7 +46,7 @@ namespace DoofesZeug.Entities.Science.Geographically.Base
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.Double"/> to <see cref="Latitude"/>.
+        /// Performs an implicit conversion from <see cref="double"/> to <see cref="Latitude"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>
@@ -67,11 +67,11 @@ namespace DoofesZeug.Entities.Science.Geographically.Base
 
 
         /// <summary>
-        /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.
+        /// Determines whether the specified <see cref="object" />, is equal to this instance.
         /// </summary>
-        /// <param name="obj">The <see cref="System.Object" /> to compare with this instance.</param>
+        /// <param name="obj">The <see cref="object" /> to compare with this instance.</param>
         /// <returns>
-        ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+        ///   <c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
         public override bool Equals( object obj )
         {

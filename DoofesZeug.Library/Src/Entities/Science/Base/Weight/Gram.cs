@@ -6,7 +6,8 @@ using DoofesZeug.Datatypes.Misc;
 namespace DoofesZeug.Entities.Science.Base.Weight
 {
     [Description("This entity represents just a gram.")]
-    public class Gram : MetricValueBase<double>
+    [Link("https://en.wikipedia.org/wiki/Gram")]
+    public class Gram : MetricValueBase
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Gram"/> class.
@@ -32,13 +33,12 @@ namespace DoofesZeug.Entities.Science.Base.Weight
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.Int64"/> to <see cref="Gram"/>.
+        /// Performs an implicit conversion from <see cref="double"/> to <see cref="Gram"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>
         /// The result of the conversion.
         /// </returns>
         public static implicit operator Gram( double value ) => new(value);
-
     }
 }

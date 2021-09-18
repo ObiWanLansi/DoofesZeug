@@ -156,7 +156,7 @@ namespace DoofesZeug.Entities.DateAndTime
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.ValueTuple{Hour, Minute, Second}"/> to <see cref="Time"/>.
+        /// Performs an implicit conversion from <see cref="ValueTuple{Hour, Minute, Second}"/> to <see cref="Time"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>
@@ -166,7 +166,7 @@ namespace DoofesZeug.Entities.DateAndTime
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.String"/> to <see cref="Time"/>.
+        /// Performs an implicit conversion from <see cref="string"/> to <see cref="Time"/>.
         /// </summary>
         /// <param name="strContent">The string time.</param>
         /// <returns>
@@ -176,10 +176,10 @@ namespace DoofesZeug.Entities.DateAndTime
 
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// Returns a <see cref="string" /> that represents this instance.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        /// A <see cref="string" /> that represents this instance.
         /// </returns>
         public override string ToString() => $"{(uint) this.Hour:D2}:{(uint) this.Minute:D2}:{(uint) this.Second:D2}";
 

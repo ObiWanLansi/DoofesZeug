@@ -68,9 +68,13 @@ namespace DoofesZeug.TestData
             GENERATORS.Add(typeof(Longitude).FullName, GenerateLongitude);
             GENERATORS.Add(typeof(GeoPoint).FullName, GenerateGeoPoint);
 
+            GENERATORS.Add(typeof(Centimeter).FullName, GenerateCentimeter);
             GENERATORS.Add(typeof(Meter).FullName, GenerateMeter);
             GENERATORS.Add(typeof(Kilometer).FullName, GenerateKilometer);
+
+            GENERATORS.Add(typeof(Milligram).FullName, GenerateMilligram);
             GENERATORS.Add(typeof(Gram).FullName, GenerateGram);
+            GENERATORS.Add(typeof(Kilogram).FullName, GenerateKilogram);
 
         }
 
@@ -88,11 +92,13 @@ namespace DoofesZeug.TestData
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static Meter GenerateMeter() => new(42.42);
-
+        private static Centimeter GenerateCentimeter() => new(142);
+        private static Meter GenerateMeter() => new(1.42);
         private static Kilometer GenerateKilometer() => new(12.34);
 
-        private static Gram GenerateGram() => new(1234);
+        private static Milligram GenerateMilligram() => new(123);
+        private static Gram GenerateGram() => new(42_123);
+        private static Kilogram GenerateKilogram() => new(42);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

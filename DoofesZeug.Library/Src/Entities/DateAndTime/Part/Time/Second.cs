@@ -27,7 +27,7 @@ namespace DoofesZeug.Entities.DateAndTime.Part.Time
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.UInt32"/> to <see cref="Second"/>.
+        /// Performs an implicit conversion from <see cref="uint"/> to <see cref="Second"/>.
         /// </summary>
         /// <param name="iValue">The i value.</param>
         /// <returns>
@@ -37,7 +37,7 @@ namespace DoofesZeug.Entities.DateAndTime.Part.Time
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="Second"/> to <see cref="System.UInt32"/>.
+        /// Performs an implicit conversion from <see cref="Second"/> to <see cref="uint"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>

@@ -100,7 +100,7 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        /// <exception cref="System.ArgumentException">tEnum</exception>
+        /// <exception cref="ArgumentException">tEnum</exception>
         public static List<T> EnumToList<T>()
         {
             Type tEnum = typeof(T);
@@ -113,7 +113,7 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <param name="tEnum">The t enum.</param>
         /// <returns></returns>
-        /// <exception cref="System.ArgumentException">tEnum</exception>
+        /// <exception cref="ArgumentException">tEnum</exception>
         public static StringList EnumToStringList( Type tEnum )
         {
             return tEnum.IsEnum == false ? throw new ArgumentException($"The type '{tEnum.FullName}' is not an enumeration!", nameof(tEnum)) : new StringList(Enum.GetNames(tEnum));
@@ -210,25 +210,15 @@ namespace DoofesZeug.Tools.Misc
             // Wenn eine Exception auftritt, geben wir diese ersteinmal weiter ...
             long lValue = long.Parse(sbDigits.ToString());
 
-            switch( sbFactor.ToString() )
+            return sbFactor.ToString() switch
             {
-                case "tb":
-                    throw new NotSupportedException("Die Einheit Tb wird nicht unterstützt!");
-
-                case "gb":
-                    return lValue * 1024 * 1024 * 1024;
-
-                case "mb":
-                    return lValue * 1024 * 1024;
-
-                case "kb":
-                    return lValue * 1024;
-
-                case "b":
-                    return lValue;
-            }
-
-            return lDefault;
+                "tb" => throw new NotSupportedException("Die Einheit Tb wird nicht unterstützt!"),
+                "gb" => lValue * 1024 * 1024 * 1024,
+                "mb" => lValue * 1024 * 1024,
+                "kb" => lValue * 1024,
+                "b" => lValue,
+                _ => lDefault,
+            };
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -246,29 +236,6 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <returns></returns>
         public static string GUID() => Guid.NewGuid().ToString();
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        /// <summary>
-        /// Determines whether [is bit set] [the specified i value].
-        /// </summary>
-        /// <param name="iValue">The i value.</param>
-        /// <param name="iBit">The i bit.</param>
-        /// <returns>
-        ///   <c>true</c> if [is bit set] [the specified i value]; otherwise, <c>false</c>.
-        /// </returns>
-        public static bool IsBitSet( int iValue, int iBit ) => ( iValue & 1 << iBit ) == 1 << iBit;
-
-
-        /// <summary>
-        /// Gets the bit value.
-        /// </summary>
-        /// <param name="iStatusWert">The i status wert.</param>
-        /// <param name="iStartBit">The i start bit.</param>
-        /// <param name="iStopBit">The i stop bit.</param>
-        /// <returns></returns>
-        public static int GetBitValue( int iStatusWert, int iStartBit, int iStopBit ) => iStopBit < iStartBit ? -1 : ( iStatusWert & ( 1 << iStopBit + 1 ) - 1 ) >> iStartBit;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

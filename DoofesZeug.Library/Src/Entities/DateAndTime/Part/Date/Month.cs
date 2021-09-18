@@ -27,7 +27,7 @@ namespace DoofesZeug.Entities.DateAndTime.Part.Date
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.UInt32"/> to <see cref="Month"/>.
+        /// Performs an implicit conversion from <see cref="uint"/> to <see cref="Month"/>.
         /// </summary>
         /// <param name="iValue">The i value.</param>
         /// <returns>
@@ -37,7 +37,7 @@ namespace DoofesZeug.Entities.DateAndTime.Part.Date
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="Month"/> to <see cref="System.UInt32"/>.
+        /// Performs an implicit conversion from <see cref="Month"/> to <see cref="uint"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>

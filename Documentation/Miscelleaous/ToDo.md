@@ -7,8 +7,9 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## ToDo
 
-- Generate class overview for other classes which are not an entity.
 - Anfangen mit Gramm, Meter, ...
+  > **Hier müssen wir noch den JSON Konverter machen !!!**
+- Generate class overview for other classes which are not an entity.
 - MarkdownExtension
   - static public void Link(this Uri uri, string strToolTip=null) und dann wenn null WebClient.Download getTitle ?
   - static public void Image(this string strFilename,string alt=null,string placeholder,bool footnote mit alt)?

@@ -46,10 +46,10 @@ namespace DoofesZeug.Datatypes.Container
 
 
         /// <summary>
-        /// Gets the <see cref="System.String"/> with the specified i index.
+        /// Gets the <see cref="string"/> with the specified i index.
         /// </summary>
         /// <value>
-        /// The <see cref="System.String"/>.
+        /// The <see cref="string"/>.
         /// </value>
         /// <param name="iIndex">Index of the i.</param>
         /// <returns></returns>

@@ -1,0 +1,19 @@
+﻿@startuml
+skinparam monochrome true
+hide empty members
+
+abstract class Entity {
+}
+
+Entity <|-- MetricValueBase
+
+abstract class MetricValueBase {
+    Value: Double
+}
+
+MetricValueBase <|-- Kilogram
+
+class Kilogram {
+}
+
+@enduml

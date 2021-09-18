@@ -29,7 +29,7 @@ namespace DoofesZeug.Attributes.Documentation
         /// Validates the specified instance.
         /// </summary>
         /// <param name="instance">The instance.</param>
-        /// <exception cref="System.Exception">
+        /// <exception cref="Exception">
         /// The destination from {instance.FullName} is empty!
         /// or
         /// The destination from {instance.FullName} starts not with 'https://'!

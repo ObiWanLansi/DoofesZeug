@@ -6,8 +6,9 @@
 |:-|:-|
 |Description|This entity represents just a gram.|
 |Namespace|DoofesZeug.Entities.Science.Base.Weight|
-|BaseClass|MetricValueBase<T1>|
+|BaseClass|MetricValueBase|
 |SourceCode|[Gram.cs](../../../../DoofesZeug.Library/Src/Entities/Science/Base/Weight/Gram.cs)|
+|See Also|https://en.wikipedia.org/wiki/Gram|
 
 ---
 
@@ -29,6 +30,7 @@
 ## Attributes
 
 - Description
+- Link
 
 ---
 
@@ -50,7 +52,7 @@ An example or code snippet follows soon.
 
 ```json
 {
-  "Value": 1234.0
+  "Value": 42123.0
 }
 ```
 

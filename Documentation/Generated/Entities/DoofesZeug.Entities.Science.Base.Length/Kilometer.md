@@ -6,8 +6,9 @@
 |:-|:-|
 |Description|This entity represents just a kilometer.|
 |Namespace|DoofesZeug.Entities.Science.Base.Length|
-|BaseClass|Meter|
+|BaseClass|MetricValueBase|
 |SourceCode|[Kilometer.cs](../../../../DoofesZeug.Library/Src/Entities/Science/Base/Length/Kilometer.cs)|
+|See Also|https://en.wikipedia.org/wiki/Metre|
 
 ---
 
@@ -29,6 +30,7 @@
 ## Attributes
 
 - Description
+- Link
 
 ---
 

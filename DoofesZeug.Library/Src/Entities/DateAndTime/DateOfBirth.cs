@@ -32,7 +32,7 @@ namespace DoofesZeug.Entities.DateAndTime
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="(DoofesZeug.Entities.DateAndTime.Part.Date.Day day, DoofesZeug.Entities.DateAndTime.Part.Date.Month month, DoofesZeug.Entities.DateAndTime.Part.Date.Year year)"/> to <see cref="DoofesZeug.Entities.Human.DateOfBirth"/>.
+        /// Performs an implicit conversion from <see cref="(Day day, Month month, Year year)"/> to <see cref="Entities.Human.DateOfBirth"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>

@@ -4,10 +4,11 @@
 
 |Property|Value|
 |:-|:-|
-|Description|This entity represents just a meter. For easier handling it is based on an double, so we can also set 5.2 m when needed.|
+|Description|This entity represents just a meter.|
 |Namespace|DoofesZeug.Entities.Science.Base.Length|
-|BaseClass|MetricValueBase<T1>|
+|BaseClass|MetricValueBase|
 |SourceCode|[Meter.cs](../../../../DoofesZeug.Library/Src/Entities/Science/Base/Length/Meter.cs)|
+|See Also|https://en.wikipedia.org/wiki/Metre|
 
 ---
 
@@ -29,6 +30,7 @@
 ## Attributes
 
 - Description
+- Link
 
 ---
 
@@ -50,7 +52,7 @@ An example or code snippet follows soon.
 
 ```json
 {
-  "Value": 42.42
+  "Value": 1.42
 }
 ```
 

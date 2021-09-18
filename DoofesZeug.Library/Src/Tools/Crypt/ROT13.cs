@@ -13,7 +13,7 @@ namespace DoofesZeug.Tools.Crypt
 
             foreach( char bASCII in strContent.ToUpper() )
             {
-                if( Char.IsLetter(bASCII) )
+                if( char.IsLetter(bASCII) )
                 {
                     byte bAlphabet = (byte) ( bASCII - 65 );
 

@@ -44,6 +44,11 @@ namespace DoofesZeug.Datatypes.Misc
         public static readonly UnitPrefix Base = new("Base", "", 1);
 
         /// <summary>
+        /// The centi
+        /// </summary>
+        public static readonly UnitPrefix Centi = new("Centi", "c", 1e-2);
+
+        /// <summary>
         /// The milli
         /// </summary>
         public static readonly UnitPrefix Milli = new("Milli", "m", 1e-3);

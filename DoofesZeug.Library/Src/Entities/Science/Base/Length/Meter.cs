@@ -5,8 +5,9 @@ using DoofesZeug.Datatypes.Misc;
 
 namespace DoofesZeug.Entities.Science.Base.Length
 {
-    [Description("This entity represents just a meter. For easier handling it is based on an double, so we can also set 5.2 m when needed.")]
-    public class Meter : MetricValueBase<double>
+    [Description("This entity represents just a meter.")]
+    [Link("https://en.wikipedia.org/wiki/Metre")]
+    public class Meter : MetricValueBase
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Meter"/> class.
@@ -32,12 +33,32 @@ namespace DoofesZeug.Entities.Science.Base.Length
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.Int64"/> to <see cref="Meter"/>.
+        /// Performs an implicit conversion from <see cref="double"/> to <see cref="Meter"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>
         /// The result of the conversion.
         /// </returns>
         public static implicit operator Meter( double value ) => new(value);
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="Kilometer"/> to <see cref="Meter"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Meter( Kilometer value ) => new(value.Value * 1000);
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="Centimeter"/> to <see cref="Meter"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Meter( Centimeter value ) => new(value.Value / 100);
     }
 }

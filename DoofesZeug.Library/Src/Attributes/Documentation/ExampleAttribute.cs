@@ -31,7 +31,7 @@ namespace DoofesZeug.Attributes.Documentation
         /// Validates the specified instance.
         /// </summary>
         /// <param name="instance">The instance.</param>
-        /// <exception cref="System.Exception">
+        /// <exception cref="Exception">
         /// The SourceFile from {instance.FullName} is empty!
         /// or
         /// The SourceFile from {instance.FullName} is to short!
@@ -54,7 +54,7 @@ namespace DoofesZeug.Attributes.Documentation
         /// Appends the inline example.
         /// </summary>
         /// <param name="sb">The sb.</param>
-        /// <exception cref="System.Exception"></exception>
+        /// <exception cref="Exception"></exception>
         public void AppendInlineExample( StringBuilder sb )
         {
             if( File.Exists(this.SourceFile) )

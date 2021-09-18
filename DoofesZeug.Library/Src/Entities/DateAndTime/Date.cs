@@ -156,7 +156,7 @@ namespace DoofesZeug.Entities.DateAndTime
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.DateTime"/> to <see cref="DoofesZeug.Entities.DateAndTime.Date"/>.
+        /// Performs an implicit conversion from <see cref="DateTime"/> to <see cref="Date"/>.
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns>
@@ -166,7 +166,7 @@ namespace DoofesZeug.Entities.DateAndTime
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.ValueTuple{Day, Month, Year}"/> to <see cref="Date"/>.
+        /// Performs an implicit conversion from <see cref="ValueTuple{Day, Month, Year}"/> to <see cref="Date"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>
@@ -176,7 +176,7 @@ namespace DoofesZeug.Entities.DateAndTime
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.String"/> to <see cref="Date"/>.
+        /// Performs an implicit conversion from <see cref="string"/> to <see cref="Date"/>.
         /// </summary>
         /// <param name="strContent">The string date.</param>
         /// <returns>
@@ -186,10 +186,10 @@ namespace DoofesZeug.Entities.DateAndTime
 
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// Returns a <see cref="string" /> that represents this instance.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        /// A <see cref="string" /> that represents this instance.
         /// </returns>
         public override string ToString() => $"{(uint) this.Day:D2}.{(uint) this.Month:D2}.{(uint) this.Year:D4}";
 

@@ -87,13 +87,13 @@ namespace DoofesZeug.UnitTests.Functional.Builder
   "HairColor": "Blond",
   "Religion": "Buddhism",
   "Profession": {
-    "Id": "7a8d87f3-4512-49ca-aaec-e682a3111ebf",
+    "Id": "97890885-018c-46f5-92d9-8a006bd481c0",
     "WellKnownProfessionType": "FireFighter",
     "Since": "11.11.1942"
   },
   "DateOfBirth": "27.09.1974",
   "Gender": "Male",
-  "Id": "4b867daa-842b-46b3-b426-14800a0ab819"
+  "Id": "0931538c-33e9-4432-a371-e1984bec3943"
 }
 ```
 

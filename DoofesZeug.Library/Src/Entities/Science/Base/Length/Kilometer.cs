@@ -6,7 +6,8 @@ using DoofesZeug.Datatypes.Misc;
 namespace DoofesZeug.Entities.Science.Base.Length
 {
     [Description("This entity represents just a kilometer.")]
-    public class Kilometer : Meter
+    [Link("https://en.wikipedia.org/wiki/Metre")]
+    public class Kilometer : MetricValueBase
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Kilometer"/> class.
@@ -14,6 +15,7 @@ namespace DoofesZeug.Entities.Science.Base.Length
         public Kilometer()
         {
             this.prefix = UnitPrefixes.Kilo;
+            this.unit = "m";
         }
 
 
@@ -24,18 +26,29 @@ namespace DoofesZeug.Entities.Science.Base.Length
         public Kilometer( double value ) : base(value)
         {
             this.prefix = UnitPrefixes.Kilo;
+            this.unit = "m";
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.Double"/> to <see cref="Kilometer"/>.
+        /// Performs an implicit conversion from <see cref="double"/> to <see cref="Kilometer"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>
         /// The result of the conversion.
         /// </returns>
         public static implicit operator Kilometer( double value ) => new(value);
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="Meter"/> to <see cref="Kilometer"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Kilometer( Meter value ) => new(value.Value / 1000);
     }
 }

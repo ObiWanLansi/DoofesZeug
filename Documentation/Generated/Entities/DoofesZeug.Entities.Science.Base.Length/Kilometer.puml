@@ -11,12 +11,7 @@ abstract class MetricValueBase {
     Value: Double
 }
 
-MetricValueBase <|-- Meter
-
-class Meter {
-}
-
-Meter <|-- Kilometer
+MetricValueBase <|-- Kilometer
 
 class Kilometer {
 }

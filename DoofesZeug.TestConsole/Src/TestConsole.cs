@@ -70,18 +70,30 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            //Gram weight = 82e6;
-            //Console.Out.WriteLineAsync($"Weight  : {weight}");
+            Centimeter cm = 174;
+            Meter m = 1.74;
+            Kilometer km = 450.42;
 
-            Meter m1 = 5.42;
-            Kilometer km1 = 5.42;
-            Kilometer km2 = 5.42;
+            Meter x = km;
+            Kilometer y = m;
+            Centimeter z = m;
 
-            Out.WriteLineAsync($"m1/km1 : {m1.Equals(km1)}");
-            Out.WriteLineAsync($"km1/km2: {km1.Equals(km2)}");
+            Meter size = new Centimeter(120);
 
-            Out.WriteLineAsync($"Distance: {m1}");
-            Out.WriteLineAsync($"FarAway : {km1}");
+            Out.WriteLineAsync($"Zentimeter: {cm}");
+            Out.WriteLineAsync($"Meter: {m}");
+            Out.WriteLineAsync($"Kilometer: {km}");
+
+            Out.WriteLineAsync($"X Meter: {x}");
+            Out.WriteLineAsync($"Y Kilometer: {y}");
+            Out.WriteLineAsync($"Z Zentimeter: {z}");
+
+            Out.WriteLineAsync($"Size : {size}");
+
+            Out.WriteLineAsync($"Equals: {cm.LogicallyEquals(m)}");
+
+
+
 
             //-------------------------------------------------------------------------------------
 

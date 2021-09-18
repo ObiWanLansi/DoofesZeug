@@ -45,7 +45,7 @@ namespace DoofesZeug.Datatypes.Container
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="StringList"/> to <see cref="System.String[]"/>.
+        /// Performs an implicit conversion from <see cref="StringList"/> to <see cref="string[]"/>.
         /// </summary>
         /// <param name="sl">The sl.</param>
         /// <returns>

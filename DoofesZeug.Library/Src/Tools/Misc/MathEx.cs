@@ -42,7 +42,7 @@ namespace DoofesZeug.Tools.Misc
         /// <returns>
         ///   <c>true</c> if the specified i value is prime; otherwise, <c>false</c>.
         /// </returns>
-        /// <exception cref="System.ArgumentException">The parameter is less zero.</exception>
+        /// <exception cref="ArgumentException">The parameter is less zero.</exception>
         public static bool IsPrime( ulong iValue )
         {
             if( iValue < 0 )

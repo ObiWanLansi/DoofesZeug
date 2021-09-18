@@ -34,8 +34,9 @@
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
+|[Centimeter](./DoofesZeug.Entities.Science.Base.Length/Centimeter.md)|This entity represents just a centimeter.|Value|
 |[Kilometer](./DoofesZeug.Entities.Science.Base.Length/Kilometer.md)|This entity represents just a kilometer.|Value|
-|[Meter](./DoofesZeug.Entities.Science.Base.Length/Meter.md)|This entity represents just a meter. For easier handling it is based on an double, so we can also set 5.2 m when needed.|Value|
+|[Meter](./DoofesZeug.Entities.Science.Base.Length/Meter.md)|This entity represents just a meter.|Value|
 
 
 ## `DoofesZeug.Entities.Science.Base.Weight`
@@ -43,6 +44,8 @@
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
 |[Gram](./DoofesZeug.Entities.Science.Base.Weight/Gram.md)|This entity represents just a gram.|Value|
+|[Kilogram](./DoofesZeug.Entities.Science.Base.Weight/Kilogram.md)|This entity represents just a kilogram.|Value|
+|[Milligram](./DoofesZeug.Entities.Science.Base.Weight/Milligram.md)|This entity represents just a milligram.|Value|
 
 
 ## `DoofesZeug.Entities.Science.Geographically.Base`
