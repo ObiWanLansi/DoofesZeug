@@ -137,7 +137,9 @@ namespace DoofesZeug.TestData
             BloodGroup = BloodGroup.AB,
             HairColor = WellKnownHairColor.Blond,
             Religion = MajorReligion.Buddhism,
-            Profession = GenerateProfession<FireFighter>()
+            Profession = GenerateProfession<FireFighter>(),
+            AverageHeight = 174,
+            AverageWeight = 72
         };
 
         private static T GenerateProfession<T>() where T : Profession

@@ -14,8 +14,8 @@ namespace DoofesZeug.Entities.Science.Base.Length
         /// </summary>
         public Meter()
         {
-            this.prefix = UnitPrefixes.Base;
-            this.unit = "m";
+            this.Prefix = UnitPrefixes.Base;
+            this.Unit = "m";
         }
 
 
@@ -25,8 +25,8 @@ namespace DoofesZeug.Entities.Science.Base.Length
         /// <param name="value">The value.</param>
         public Meter( double value ) : base(value)
         {
-            this.prefix = UnitPrefixes.Base;
-            this.unit = "m";
+            this.Prefix = UnitPrefixes.Base;
+            this.Unit = "m";
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

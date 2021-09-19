@@ -25,9 +25,12 @@ namespace DoofesZeug.Extensions.Formats
             new StringEnumConverter(),
             new NameConverter(),
             new ProfessionConverter(),
-            new DateOfBirthConverter(),
+
             new DateTimePartConverter(),
+            new DateOfBirthConverter(),
             new UnixTimestampConverter(),
+
+            //new MetricValueBaseConverter(),
             new GeoConverter()
         };
 

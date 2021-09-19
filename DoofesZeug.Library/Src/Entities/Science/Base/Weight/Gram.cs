@@ -14,8 +14,8 @@ namespace DoofesZeug.Entities.Science.Base.Weight
         /// </summary>
         public Gram()
         {
-            this.prefix = UnitPrefixes.Base;
-            this.unit = "g";
+            this.Prefix = UnitPrefixes.Base;
+            this.Unit = "g";
         }
 
 
@@ -25,8 +25,8 @@ namespace DoofesZeug.Entities.Science.Base.Weight
         /// <param name="value">The value.</param>
         public Gram( double value ) : base(value)
         {
-            this.prefix = UnitPrefixes.Base;
-            this.unit = "g";
+            this.Prefix = UnitPrefixes.Base;
+            this.Unit = "g";
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

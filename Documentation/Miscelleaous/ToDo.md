@@ -7,13 +7,12 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## ToDo
 
-- Anfangen mit Gramm, Meter, ...
-  > **Hier müssen wir noch den JSON Konverter machen !!!**
 - Generate class overview for other classes which are not an entity.
+- Entities: Genre,Artist, Album, Sampler, Movie,Book, EMail, Homepage, Phone, Mobil
 - MarkdownExtension
   - static public void Link(this Uri uri, string strToolTip=null) und dann wenn null WebClient.Download getTitle ?
   - static public void Image(this string strFilename,string alt=null,string placeholder,bool footnote mit alt)?
-- Erstellung und Verlinkung der Beispiele
+- Erstellung und Verlinkung der Beispiele.
 - Ratio Helper
 - Aus world.sqlite die Villages, Cities and Towns extrahieren.
 - Für später: DataTypesColumnAligments als statische klasse mit einer funktion `TextAlign GetAligment(Type t)`
@@ -53,6 +52,7 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## Done
 
+- Anfangen mit Gramm, Meter, ...
 - ~~Another BaseType for ValueTypes ?~~
   > I forgotten reason why todo this?
 - Subfolder for the extension `Format`, `Database`, ...

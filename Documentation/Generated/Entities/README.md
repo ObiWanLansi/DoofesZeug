@@ -34,18 +34,18 @@
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[Centimeter](./DoofesZeug.Entities.Science.Base.Length/Centimeter.md)|This entity represents just a centimeter.|Value|
-|[Kilometer](./DoofesZeug.Entities.Science.Base.Length/Kilometer.md)|This entity represents just a kilometer.|Value|
-|[Meter](./DoofesZeug.Entities.Science.Base.Length/Meter.md)|This entity represents just a meter.|Value|
+|[Centimeter](./DoofesZeug.Entities.Science.Base.Length/Centimeter.md)|This entity represents just a centimeter.|Prefix, Unit, Value|
+|[Kilometer](./DoofesZeug.Entities.Science.Base.Length/Kilometer.md)|This entity represents just a kilometer.|Prefix, Unit, Value|
+|[Meter](./DoofesZeug.Entities.Science.Base.Length/Meter.md)|This entity represents just a meter.|Prefix, Unit, Value|
 
 
 ## `DoofesZeug.Entities.Science.Base.Weight`
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[Gram](./DoofesZeug.Entities.Science.Base.Weight/Gram.md)|This entity represents just a gram.|Value|
-|[Kilogram](./DoofesZeug.Entities.Science.Base.Weight/Kilogram.md)|This entity represents just a kilogram.|Value|
-|[Milligram](./DoofesZeug.Entities.Science.Base.Weight/Milligram.md)|This entity represents just a milligram.|Value|
+|[Gram](./DoofesZeug.Entities.Science.Base.Weight/Gram.md)|This entity represents just a gram.|Prefix, Unit, Value|
+|[Kilogram](./DoofesZeug.Entities.Science.Base.Weight/Kilogram.md)|This entity represents just a kilogram.|Prefix, Unit, Value|
+|[Milligram](./DoofesZeug.Entities.Science.Base.Weight/Milligram.md)|This entity represents just a milligram.|Prefix, Unit, Value|
 
 
 ## `DoofesZeug.Entities.Science.Geographically.Base`
@@ -77,7 +77,7 @@
 |:-----|:----------|:---------|
 |[FirstName](./DoofesZeug.Entities.Specieses.Human/FirstName.md)|An firstname for humans.|Value|
 |[LastName](./DoofesZeug.Entities.Specieses.Human/LastName.md)|An lastname for humans.|Value|
-|[Person](./DoofesZeug.Entities.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, Handedness, BloodGroup, HairColor, Religion, Profession, DateOfBirth, Gender, Id|
+|[Person](./DoofesZeug.Entities.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, Handedness, BloodGroup, HairColor, Religion, Profession, AverageHeight, AverageWeight, DateOfBirth, Gender, Id|
 
 
 ## `DoofesZeug.Entities.Specieses.Human.Professions`

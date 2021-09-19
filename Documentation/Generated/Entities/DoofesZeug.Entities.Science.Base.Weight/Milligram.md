@@ -23,6 +23,8 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
+|Prefix|[UnitPrefix](../../Entities/DoofesZeug.Datatypes.Misc/UnitPrefix.md)|&#x2713;|&#x2713;|DoofesZeug.Datatypes.Misc.UnitPrefix|
+|Unit|String|&#x2713;|&#x2713;|g|
 |Value|Double|&#x2713;|&#x2713;|0|
 
 ---
@@ -52,6 +54,12 @@ An example or code snippet follows soon.
 
 ```json
 {
+  "Prefix": {
+    "Name": "Milli",
+    "Symbol": "m",
+    "Factor": 0.001
+  },
+  "Unit": "g",
   "Value": 123.0
 }
 ```

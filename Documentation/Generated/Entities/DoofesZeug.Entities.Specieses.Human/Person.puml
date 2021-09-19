@@ -28,6 +28,8 @@ class Person {
     HairColor: WellKnownHairColor?
     Religion: MajorReligion?
     Profession: Profession
+    AverageHeight: Centimeter
+    AverageWeight: Kilogram
 }
 
 @enduml

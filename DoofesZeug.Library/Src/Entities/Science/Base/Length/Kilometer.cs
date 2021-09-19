@@ -14,8 +14,8 @@ namespace DoofesZeug.Entities.Science.Base.Length
         /// </summary>
         public Kilometer()
         {
-            this.prefix = UnitPrefixes.Kilo;
-            this.unit = "m";
+            this.Prefix = UnitPrefixes.Kilo;
+            this.Unit = "m";
         }
 
 
@@ -25,8 +25,8 @@ namespace DoofesZeug.Entities.Science.Base.Length
         /// <param name="value">The value.</param>
         public Kilometer( double value ) : base(value)
         {
-            this.prefix = UnitPrefixes.Kilo;
-            this.unit = "m";
+            this.Prefix = UnitPrefixes.Kilo;
+            this.Unit = "m";
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

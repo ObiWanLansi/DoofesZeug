@@ -8,6 +8,8 @@ abstract class Entity {
 Entity <|-- MetricValueBase
 
 abstract class MetricValueBase {
+    Prefix: UnitPrefix
+    Unit: String
     Value: Double
 }
 

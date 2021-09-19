@@ -2,6 +2,8 @@
 
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
+using DoofesZeug.Entities.Science.Base.Length;
+using DoofesZeug.Entities.Science.Base.Weight;
 using DoofesZeug.Entities.Specieses.Human.Professions;
 
 
@@ -26,6 +28,10 @@ namespace DoofesZeug.Entities.Specieses.Human
         public MajorReligion? Religion { get; set; }
 
         public Profession Profession { get; set; }
+
+        public Centimeter AverageHeight { get; set; }
+
+        public Kilogram AverageWeight { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -55,6 +61,10 @@ namespace DoofesZeug.Entities.Specieses.Human
         /// <returns>
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
         /// </returns>
-        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.FirstName, this.LastName, this.Handedness, this.BloodGroup, this.HairColor, this.Religion, this.Profession);
+        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(),
+            HashCode.Combine(this.FirstName, this.LastName),
+            HashCode.Combine(this.Handedness, this.BloodGroup),
+            HashCode.Combine(this.HairColor, this.Religion),
+            this.Profession, AverageHeight, AverageWeight);
     }
 }

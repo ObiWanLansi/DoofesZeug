@@ -64,6 +64,20 @@ namespace DoofesZeug.Entities.Specieses.Human
         }
 
 
+        public static Person WithAverageHeight(this Person person, DoofesZeug.Entities.Science.Base.Length.Centimeter averageheight)
+        {
+            person.AverageHeight = averageheight;
+            return person;
+        }
+
+
+        public static Person WithAverageWeight(this Person person, DoofesZeug.Entities.Science.Base.Weight.Kilogram averageweight)
+        {
+            person.AverageWeight = averageweight;
+            return person;
+        }
+
+
         public static Person WithDateOfBirth(this Person person, DoofesZeug.Entities.DateAndTime.DateOfBirth dateofbirth)
         {
             person.DateOfBirth = dateofbirth;

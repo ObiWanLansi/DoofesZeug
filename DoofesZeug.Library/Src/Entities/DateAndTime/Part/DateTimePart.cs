@@ -7,6 +7,7 @@ namespace DoofesZeug.Entities.DateAndTime.Part
     [Description("An abstract base class for all other parts of an date or an time.")]
     public abstract class DateTimePart : Entity
     {
+        // Must have an public setter for JSON converting :-(
         public uint Value { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Datatypes.Misc;
@@ -22,19 +21,19 @@ namespace DoofesZeug.Entities.Science.Base
         /// <summary>
         /// The unit prefix
         /// </summary>
-        protected UnitPrefix prefix;
+        public UnitPrefix Prefix { get; protected set; }
 
 
         /// <summary>
         /// The unit (m for meter, g for gramm, ...).
         /// </summary>
-        protected string unit;
+        public string Unit { get; protected set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        //public T Value { get; set; }
-        public double Value { get; set; }
+        // Must have an public setter for JSON converting :-(
+        public double Value { get;  set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -78,13 +77,13 @@ namespace DoofesZeug.Entities.Science.Base
                 return false;
             }
 
-            if( this.unit.Equals(other.unit) == false )
+            if( this.Unit.Equals(other.Unit) == false )
             {
                 return false;
             }
 
-            double thisvalue = this.Value * this.prefix.Factor;
-            double othervalue = other.Value * other.prefix.Factor;
+            double thisvalue = this.Value * this.Prefix.Factor;
+            double othervalue = other.Value * other.Prefix.Factor;
 
             return thisvalue == othervalue;
         }
@@ -98,8 +97,8 @@ namespace DoofesZeug.Entities.Science.Base
         /// <returns></returns>
         public override string ToString()
         {
-            return this.prefix != null && this.unit.IsNotEmpty()
-                ? string.Format(CULTUREINFO, "{0} {1}{2}", this.Value, this.prefix.Symbol, this.unit)
+            return this.Prefix != null && this.Unit.IsNotEmpty()
+                ? string.Format(CULTUREINFO, "{0} {1}{2}", this.Value, this.Prefix.Symbol, this.Unit)
                 : string.Format(CULTUREINFO, "{0}", this.Value);
         }
 
@@ -123,12 +122,12 @@ namespace DoofesZeug.Entities.Science.Base
                 return false;
             }
 
-            if( this.prefix.Equals(other.prefix) == false )
+            if( this.Prefix.Equals(other.Prefix) == false )
             {
                 return false;
             }
 
-            if( this.unit.Equals(other.unit) == false )
+            if( this.Unit.Equals(other.Unit) == false )
             {
                 return false;
             }

@@ -14,8 +14,8 @@ namespace DoofesZeug.Entities.Science.Base.Weight
         /// </summary>
         public Kilogram()
         {
-            this.prefix = UnitPrefixes.Kilo;
-            this.unit = "g";
+            this.Prefix = UnitPrefixes.Kilo;
+            this.Unit = "g";
         }
 
 
@@ -25,8 +25,8 @@ namespace DoofesZeug.Entities.Science.Base.Weight
         /// <param name="value">The value.</param>
         public Kilogram( double value ) : base(value)
         {
-            this.prefix = UnitPrefixes.Kilo;
-            this.unit = "g";
+            this.Prefix = UnitPrefixes.Kilo;
+            this.Unit = "g";
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

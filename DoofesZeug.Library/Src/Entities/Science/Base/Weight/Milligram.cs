@@ -14,8 +14,8 @@ namespace DoofesZeug.Entities.Science.Base.Weight
         /// </summary>
         public Milligram()
         {
-            this.prefix = UnitPrefixes.Milli;
-            this.unit = "g";
+            this.Prefix = UnitPrefixes.Milli;
+            this.Unit = "g";
         }
 
 
@@ -25,8 +25,8 @@ namespace DoofesZeug.Entities.Science.Base.Weight
         /// <param name="value">The value.</param>
         public Milligram( double value ) : base(value)
         {
-            this.prefix = UnitPrefixes.Milli;
-            this.unit = "g";
+            this.Prefix = UnitPrefixes.Milli;
+            this.Unit = "g";
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

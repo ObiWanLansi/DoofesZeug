@@ -1,6 +1,11 @@
 ﻿using System;
 
+using DoofesZeug.Datatypes.Misc;
 using DoofesZeug.Entities.Science.Base.Length;
+using DoofesZeug.Entities.Specieses.Human;
+using DoofesZeug.Extensions;
+using DoofesZeug.Extensions.Formats;
+using DoofesZeug.TestData;
 
 using static System.Console;
 
@@ -70,30 +75,35 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            Centimeter cm = 174;
-            Meter m = 1.74;
-            Kilometer km = 450.42;
+            Person p = TestDataGenerator.GenerateTestData<Person>();
+            Out.WriteLineAsync(p.ToPrettyJson());
+            Out.WriteLineAsync(p.ToStringTable());
 
-            Meter x = km;
-            Kilometer y = m;
-            Centimeter z = m;
+            //Centimeter cm = 174;
+            //cm.prefix = UnitPrefixes.Atto;
+            //Meter m = 1.74;
+            //Kilometer km = 450.42;
 
-            Meter size = new Centimeter(120);
+            //Out.WriteLineAsync($"Zentimeter: {cm.ToPrettyJson()}");
+            //Out.WriteLineAsync($"Meter: {m.ToPrettyJson()}");
 
-            Out.WriteLineAsync($"Zentimeter: {cm}");
-            Out.WriteLineAsync($"Meter: {m}");
-            Out.WriteLineAsync($"Kilometer: {km}");
+            //Meter x = km;
+            //Kilometer y = m;
+            //Centimeter z = m;
 
-            Out.WriteLineAsync($"X Meter: {x}");
-            Out.WriteLineAsync($"Y Kilometer: {y}");
-            Out.WriteLineAsync($"Z Zentimeter: {z}");
+            //Meter size = new Centimeter(120);
 
-            Out.WriteLineAsync($"Size : {size}");
+            //Out.WriteLineAsync($"Zentimeter: {cm}");
+            //Out.WriteLineAsync($"Meter: {m}");
+            //Out.WriteLineAsync($"Kilometer: {km}");
 
-            Out.WriteLineAsync($"Equals: {cm.LogicallyEquals(m)}");
+            //Out.WriteLineAsync($"X Meter: {x}");
+            //Out.WriteLineAsync($"Y Kilometer: {y}");
+            //Out.WriteLineAsync($"Z Zentimeter: {z}");
 
+            //Out.WriteLineAsync($"Size : {size}");
 
-
+            //Out.WriteLineAsync($"Equals: {cm.LogicallyEquals(m)}");
 
             //-------------------------------------------------------------------------------------
 
