@@ -6,6 +6,7 @@ using DoofesZeug.Entities.Specieses.Human;
 using DoofesZeug.Extensions;
 using DoofesZeug.Extensions.Formats;
 using DoofesZeug.TestData;
+using DoofesZeug.Validation;
 
 using static System.Console;
 
@@ -76,8 +77,12 @@ namespace DoofesZeug
             //-------------------------------------------------------------------------------------
 
             Person p = TestDataGenerator.GenerateTestData<Person>();
+
             Out.WriteLineAsync(p.ToPrettyJson());
             Out.WriteLineAsync(p.ToStringTable());
+
+            var result = Validator.Validate(p);
+
 
             //Centimeter cm = 174;
             //cm.prefix = UnitPrefixes.Atto;

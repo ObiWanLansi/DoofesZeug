@@ -29,6 +29,7 @@ namespace DoofesZeug.Extensions.Formats
             new DateTimePartConverter(),
             new DateOfBirthConverter(),
             new UnixTimestampConverter(),
+            new UnitPrefixConverter(),
 
             //new MetricValueBaseConverter(),
             new GeoConverter()

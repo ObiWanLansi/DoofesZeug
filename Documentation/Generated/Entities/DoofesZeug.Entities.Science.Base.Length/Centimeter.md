@@ -54,11 +54,7 @@ An example or code snippet follows soon.
 
 ```json
 {
-  "Prefix": {
-    "Name": "Centi",
-    "Symbol": "c",
-    "Factor": 0.01
-  },
+  "Prefix": "Centi",
   "Unit": "m",
   "Value": 142.0
 }

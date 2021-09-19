@@ -2,6 +2,7 @@
 
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
+using DoofesZeug.Attributes.Validation;
 using DoofesZeug.Entities.Science.Base.Length;
 using DoofesZeug.Entities.Science.Base.Weight;
 using DoofesZeug.Entities.Specieses.Human.Professions;
@@ -15,8 +16,10 @@ namespace DoofesZeug.Entities.Specieses.Human
     [Example("O:\\DoofesZeug\\DoofesZeug.UnitTests\\Src\\Functional\\Builder\\TestPersonBuilder.cs")]
     public class Person : Species
     {
+        [NotNull]
         public FirstName FirstName { get; set; }
 
+        [NotNull]
         public LastName LastName { get; set; }
 
         public Handedness? Handedness { get; set; }
@@ -29,9 +32,27 @@ namespace DoofesZeug.Entities.Specieses.Human
 
         public Profession Profession { get; set; }
 
+        [Range(30, 260)]
         public Centimeter AverageHeight { get; set; }
 
+        [Range(5, 500)]
         public Kilogram AverageWeight { get; set; }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        public double? BMI
+        {
+            get
+            {
+                if( this.AverageHeight != null && this.AverageWeight != null )
+                {
+                    return (float) this.AverageWeight.Value / (float) Math.Pow(( (float) this.AverageHeight.Value ) / 100, 2);
+                }
+
+                return null;
+            }
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

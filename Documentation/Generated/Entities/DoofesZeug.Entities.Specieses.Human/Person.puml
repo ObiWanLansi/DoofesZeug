@@ -30,6 +30,7 @@ class Person {
     Profession: Profession
     AverageHeight: Centimeter
     AverageWeight: Kilogram
+    BMI: Double?
 }
 
 @enduml

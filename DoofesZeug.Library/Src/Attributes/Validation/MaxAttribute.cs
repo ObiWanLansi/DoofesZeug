@@ -13,13 +13,13 @@ namespace DoofesZeug.Attributes.Validation
         /// <value>
         /// The maximum.
         /// </value>
-        public int Max { get; private set; }
+        public double Max { get; private set; }
 
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MaxAttribute"/> class.
         /// </summary>
         /// <param name="max">The maximum.</param>
-        public MaxAttribute( int max ) => this.Max = max;
+        public MaxAttribute( double max ) => this.Max = max;
     }
 }

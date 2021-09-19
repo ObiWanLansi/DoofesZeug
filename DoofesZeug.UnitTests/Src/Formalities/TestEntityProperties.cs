@@ -32,10 +32,11 @@ namespace DoofesZeug.UnitTests.Formalities
                         Assert.IsFalse(pi.PropertyType.IsEnum, $"The Property {pi.Name} Of The Entity {type.Name} Is An Enumeration And Should Be Am Nullable Enum!");
                         Assert.IsTrue(pi.CanRead, $"The Property {pi.Name} Of The Entity {type.Name} Is Not Readable!");
 
-                        if( type.IsAbstract == false )
-                        {
-                            Assert.IsTrue(pi.CanWrite, $"The Property {pi.Name} Of The Entity {type.Name} Is Not Writeable!");
-                        }
+                        // Maybe we have autmatic calculated properties, so this check is not really good ...
+                        //if( type.IsAbstract == false )
+                        //{
+                        //    Assert.IsTrue(pi.CanWrite, $"The Property {pi.Name} Of The Entity {type.Name} Is Not Writeable!");
+                        //}
                     }
                 }
             }

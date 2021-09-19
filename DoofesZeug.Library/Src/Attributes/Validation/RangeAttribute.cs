@@ -13,7 +13,7 @@ namespace DoofesZeug.Attributes.Validation
         /// <value>
         /// The minimum.
         /// </value>
-        public int Min { get; private set; }
+        public double Min { get; private set; }
 
         /// <summary>
         /// Determines the maximum of the parameters.
@@ -21,7 +21,7 @@ namespace DoofesZeug.Attributes.Validation
         /// <value>
         /// The maximum.
         /// </value>
-        public int Max { get; private set; }
+        public double Max { get; private set; }
 
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace DoofesZeug.Attributes.Validation
         /// </summary>
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
-        public RangeAttribute( int min, int max )
+        public RangeAttribute( double min, double max )
         {
             this.Min = min;
             this.Max = max;

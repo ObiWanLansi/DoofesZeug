@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DoofesZeug.Entities.Science.Geographically.Base;
+using DoofesZeug.Datatypes.Misc;
 
 using Newtonsoft.Json;
 
@@ -8,13 +8,9 @@ using Newtonsoft.Json;
 
 namespace DoofesZeug.Converter
 {
-    public sealed class GeoConverter : JsonConverter
+    public sealed class UnitPrefixConverter : JsonConverter
     {
-        private static readonly Type LATITUDE = typeof(Latitude);
-
-        private static readonly Type LONGITUDE = typeof(Longitude);
-
-        private static readonly Type GEOPOINT = typeof(GeoPoint);
+        private static readonly Type UNITPREFIX = typeof(UnitPrefix);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -26,7 +22,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType == LATITUDE || objectType == LONGITUDE || objectType == GEOPOINT;
+        public override bool CanConvert( Type objectType ) => objectType == UNITPREFIX;
 
 
         /// <summary>
@@ -41,17 +37,24 @@ namespace DoofesZeug.Converter
         /// </returns>
         public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer )
         {
-            if( objectType == LATITUDE )
+            return Convert.ToString(reader.Value) switch
             {
-                return new Latitude(Convert.ToString(reader.Value));
-            }
-
-            if( objectType == LONGITUDE )
-            {
-                return new Longitude(Convert.ToString(reader.Value));
-            }
-
-            return objectType == GEOPOINT ? new GeoPoint(Convert.ToString(reader.Value)) : null;
+                nameof(UnitPrefixes.Exa) => UnitPrefixes.Exa,
+                nameof(UnitPrefixes.Peta) => UnitPrefixes.Peta,
+                nameof(UnitPrefixes.Tera) => UnitPrefixes.Tera,
+                nameof(UnitPrefixes.Giga) => UnitPrefixes.Giga,
+                nameof(UnitPrefixes.Mega) => UnitPrefixes.Mega,
+                nameof(UnitPrefixes.Kilo) => UnitPrefixes.Kilo,
+                nameof(UnitPrefixes.Base) => UnitPrefixes.Base,
+                nameof(UnitPrefixes.Centi) => UnitPrefixes.Centi,
+                nameof(UnitPrefixes.Milli) => UnitPrefixes.Milli,
+                nameof(UnitPrefixes.Mikro) => UnitPrefixes.Mikro,
+                nameof(UnitPrefixes.Nano) => UnitPrefixes.Nano,
+                nameof(UnitPrefixes.Piko) => UnitPrefixes.Piko,
+                nameof(UnitPrefixes.Femto) => UnitPrefixes.Femto,
+                nameof(UnitPrefixes.Atto) => UnitPrefixes.Atto,
+                _ => null,
+            };
         }
 
 
@@ -69,7 +72,7 @@ namespace DoofesZeug.Converter
                 return;
             }
 
-            writer.WriteValue(value.ToString());
+            writer.WriteValue(( value as UnitPrefix ).Name);
         }
     }
 }

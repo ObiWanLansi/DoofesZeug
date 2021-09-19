@@ -26,6 +26,7 @@
 |Profession|[Profession](../../Entities/DoofesZeug.Entities.Specieses.Human.Professions/Profession.md)|&#x2713;|&#x2713;|NULL|
 |AverageHeight|[Centimeter](../../Entities/DoofesZeug.Entities.Science.Base.Length/Centimeter.md)|&#x2713;|&#x2713;|NULL|
 |AverageWeight|[Kilogram](../../Entities/DoofesZeug.Entities.Science.Base.Weight/Kilogram.md)|&#x2713;|&#x2713;|NULL|
+|BMI|Double?|&#x2713;|&#x2717;|NULL|
 
 ### Inherited
 
@@ -89,31 +90,24 @@ namespace DoofesZeug.UnitTests.Functional.Builder
   "HairColor": "Blond",
   "Religion": "Buddhism",
   "Profession": {
-    "Id": "2edf0594-2548-497e-8f79-afb188e1651a",
+    "Id": "82823671-3845-419e-897d-f4a89ae04970",
     "WellKnownProfessionType": "FireFighter",
     "Since": "11.11.1942"
   },
   "AverageHeight": {
-    "Prefix": {
-      "Name": "Centi",
-      "Symbol": "c",
-      "Factor": 0.01
-    },
+    "Prefix": "Centi",
     "Unit": "m",
     "Value": 174.0
   },
   "AverageWeight": {
-    "Prefix": {
-      "Name": "Kilo",
-      "Symbol": "k",
-      "Factor": 1000.0
-    },
+    "Prefix": "Kilo",
     "Unit": "g",
     "Value": 72.0
   },
+  "BMI": 23.781211853027344,
   "DateOfBirth": "27.09.1974",
   "Gender": "Male",
-  "Id": "23d249a0-646a-4759-ad92-5a5a9450d972"
+  "Id": "96e84ca2-8d06-43c6-b6ea-1ba3c4757e95"
 }
 ```
 
