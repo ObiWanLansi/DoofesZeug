@@ -1,7 +1,5 @@
 ﻿using System;
 
-using DoofesZeug.Datatypes.Misc;
-using DoofesZeug.Entities.Science.Base.Length;
 using DoofesZeug.Entities.Specieses.Human;
 using DoofesZeug.Extensions;
 using DoofesZeug.Extensions.Formats;

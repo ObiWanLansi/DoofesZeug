@@ -8,7 +8,8 @@ i write down the stuff in the fastest way, mostly in note form.
 ## ToDo
 
 - Generate class overview for other classes which are not an entity.
--- **Lat + Long + Alt auch von MetricValueBase.cs ableiten.**
+- Alt von Meter ableiten , nee besser doch nicht.
+  > Erst mal schauen ob die in der Fliegerei mit Meter, Feet oder sonst was angegeben werden.
 - Entities: Genre,Artist, Album, Sampler, Movie,Book, EMail, Homepage, Phone, Mobil
 - MarkdownExtension
   - static public void Link(this Uri uri, string strToolTip=null) und dann wenn null WebClient.Download getTitle ?
