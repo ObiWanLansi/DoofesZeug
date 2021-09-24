@@ -50,6 +50,7 @@ namespace DoofesZeug.TestData
             GENERATORS.Add(typeof(Pilot).FullName, GenerateProfession<Pilot>);
 
             GENERATORS.Add(typeof(DateOfBirth).FullName, GenerateDateOfBirth);
+            GENERATORS.Add(typeof(DateOfDeath).FullName, GenerateDateOfDeath);
             GENERATORS.Add(typeof(Date).FullName, GenerateDate);
             GENERATORS.Add(typeof(Time).FullName, GenerateTime);
 
@@ -127,12 +128,15 @@ namespace DoofesZeug.TestData
 
         private static DateOfBirth GenerateDateOfBirth() => (24, 12, 1948);
 
+        private static DateOfBirth GenerateDateOfDeath() => (16, 06, 1948 + 42);
+
         private static Person GeneratePerson() => new()
         {
             FirstName = "John",
             LastName = "Doe",
             Gender = Gender.Male,
-            DateOfBirth = (27, 09, 1974),
+            DateOfBirth = (11, 02, 1942),
+            DateOfDeath = (22, 03, 1942 + 42),
             Handedness = Handedness.Left,
             BloodGroup = BloodGroup.AB,
             HairColor = WellKnownHairColor.Blond,

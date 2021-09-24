@@ -116,6 +116,13 @@ namespace DoofesZeug.Entities.DateAndTime
 
 
         /// <summary>
+        /// Nows this instance.
+        /// </summary>
+        /// <returns></returns>
+        public static Date Now => new(DateTime.Now);
+
+
+        /// <summary>
         /// Froms the specified string content.
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
@@ -162,7 +169,7 @@ namespace DoofesZeug.Entities.DateAndTime
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        public static implicit operator Date( DateTime dt) => new((uint)dt.Day, (uint) dt.Month, (uint) dt.Year);
+        public static implicit operator Date( DateTime dt ) => new(dt);
 
 
         /// <summary>
@@ -183,6 +190,27 @@ namespace DoofesZeug.Entities.DateAndTime
         /// The result of the conversion.
         /// </returns>
         public static implicit operator Date( string strContent ) => From(strContent);
+
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="DoofesZeug.Entities.DateAndTime.Date"/> to <see cref="System.DateTime"/>.
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static explicit operator DateTime( Date date ) => new((int) date.Year.Value, (int) date.Month.Value, (int) date.Day.Value);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        public int Years( Date later )
+        {
+            TimeSpan span = (DateTime) later - (DateTime) this;
+            return new DateTime(span.Ticks).Year - 1;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>

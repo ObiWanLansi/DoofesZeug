@@ -41,5 +41,12 @@ namespace DoofesZeug.Entities.Specieses.Animals
             animal.Gender = gender;
             return animal;
         }
+
+
+        public static Animal WithDateOfDeath(this Animal animal, DoofesZeug.Entities.DateAndTime.DateOfDeath dateofdeath)
+        {
+            animal.DateOfDeath = dateofdeath;
+            return animal;
+        }
     }
 }

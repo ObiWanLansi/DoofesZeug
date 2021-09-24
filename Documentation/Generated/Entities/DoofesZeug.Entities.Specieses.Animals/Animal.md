@@ -26,6 +26,9 @@
 |:---|:---|:--:|:---:|:-----------|
 |DateOfBirth|[DateOfBirth](../../Entities/DoofesZeug.Entities.DateAndTime/DateOfBirth.md)|&#x2713;|&#x2713;|NULL|
 |Gender|Gender?|&#x2713;|&#x2713;|NULL|
+|DateOfDeath|[DateOfDeath](../../Entities/DoofesZeug.Entities.DateAndTime/DateOfDeath.md)|&#x2713;|&#x2713;|NULL|
+|Age|Int32|&#x2713;|&#x2717;|-1|
+|IsAlive|Boolean|&#x2713;|&#x2717;|False|
 |Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
 ---
@@ -59,7 +62,10 @@ An example or code snippet follows soon.
   "Name": "Garfield",
   "DateOfBirth": "10.06.1978",
   "Gender": "Male",
-  "Id": "a3161e61-43ef-4d38-9310-0ea3fcb8c1c6"
+  "DateOfDeath": null,
+  "Age": 43,
+  "IsAlive": true,
+  "Id": "48ecb779-daed-4cb3-8855-0a1d25267cca"
 }
 ```
 

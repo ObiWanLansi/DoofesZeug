@@ -7,6 +7,7 @@
 |:-----|:------|
 |[Date](../Models/DoofesZeug.Entities.DateAndTime/Date.md)|DateBuilder|
 |[DateOfBirth](../Models/DoofesZeug.Entities.DateAndTime/DateOfBirth.md)|DateOfBirthBuilder|
+|[DateOfDeath](../Models/DoofesZeug.Entities.DateAndTime/DateOfDeath.md)|DateOfDeathBuilder|
 |[Time](../Models/DoofesZeug.Entities.DateAndTime/Time.md)|TimeBuilder|
 
 

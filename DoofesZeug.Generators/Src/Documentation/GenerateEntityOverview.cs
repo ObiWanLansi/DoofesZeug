@@ -64,62 +64,22 @@ namespace DoofesZeug.Documentation
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static string GetTypeName( Type t, bool bAddGenericType )
-        {
-            string strName = t.Name;
-
-            if( strName == "Nullable`1" )
-            {
-                return $"{t.GenericTypeArguments [0].Name}?";
-            }
-
-            if( t.IsGenericType == false )
-            {
-                return strName;
-            }
-
-            int iIndex = strName.IndexOf('`');
-
-            if( bAddGenericType )
-            {
-                int iGenericParamCount = t.GetGenericArguments().Length;
-                StringBuilder sbGenericName = new(32);
-                sbGenericName.AppendFormat("{0}<", iIndex > 0 ? strName.Substring(0, iIndex) : strName);
-
-                for( int iCounter = 0 ; iCounter < iGenericParamCount ; iCounter++ )
-                {
-                    if( iCounter > 0 )
-                    {
-                        sbGenericName.Append(',');
-                    }
-
-                    sbGenericName.AppendFormat("T{0}", iCounter + 1);
-                }
-
-                sbGenericName.Append(">");
-                return sbGenericName.ToString();
-            }
-
-            return strName.Substring(0, iIndex);
-        }
-
-
         public static void AppendType( Type type, StringBuilder sbPUML )
         {
             if( type.BaseType != null && type.BaseType != typeof(object) )
             {
                 AppendType(type.BaseType, sbPUML);
-                sbPUML.AppendLine($"{GetTypeName(type.BaseType, false)} <|-- {GetTypeName(type, false)}");
+                sbPUML.AppendLine($"{TypeExtension.GetTypeName(type.BaseType, false)} <|-- {TypeExtension.GetTypeName(type, false)}");
                 //sbPUML.AppendLine($"{type.BaseType.Name} <|-- {type.Name}");
             }
 
             sbPUML.AppendLine();
             sbPUML.Append(type.IsAbstract ? "abstract " : "");
-            sbPUML.AppendLine($"class {GetTypeName(type, false)} {{");
+            sbPUML.AppendLine($"class {TypeExtension.GetTypeName(type, false)} {{");
 
             foreach( PropertyInfo pi in type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance) )
             {
-                sbPUML.AppendLine($"    {pi.Name}: {GetTypeName(pi.PropertyType, true)}");
+                sbPUML.AppendLine($"    {pi.Name}: {TypeExtension.GetTypeName(pi.PropertyType, true)}");
             }
 
             sbPUML.AppendLine("}");
@@ -201,7 +161,7 @@ namespace DoofesZeug.Documentation
                     continue;
                 }
 
-                string strPropertyType = GetTypeName(pi.PropertyType, true);
+                string strPropertyType = TypeExtension.GetTypeName(pi.PropertyType, true);
                 if( pi.PropertyType.Namespace.StartsWith("DoofesZeug.") )
                 {
                     string strPath = $"../../{( pi.PropertyType.IsEnum ? "Enumerations" : "Entities" )}/{pi.PropertyType.Namespace}";
@@ -211,7 +171,7 @@ namespace DoofesZeug.Documentation
 
                 object value = pi.Name.Equals(nameof(IdentifiableEntity.Id)) ? "Guid.NewGuid()" : pi.GetValue(instance);
 
-                sb.AppendLine($"|{pi.Name}|{strPropertyType}|{( pi.CanRead ? "&#x2713;" : "&#x2717;" )}|{( pi.CanWrite ? "&#x2713;" : "&#x2717;" )}|{( value != null ? value : "NULL" )}|");
+                sb.AppendLine($"|{pi.Name}|{strPropertyType}|{( pi.CanRead ? "&#x2713;" : "&#x2717;" )}|{( pi.CanWrite ? "&#x2713;" : "&#x2717;" )}|{ value ?? "NULL" }|");
             }
         }
 
@@ -236,7 +196,7 @@ namespace DoofesZeug.Documentation
             sb.AppendLine($"|Namespace|{type.Namespace}|");
             // The generated documentation is not for abstract basetypes avaible, so it make no sense to link them.
             //sb.AppendLine($"|BaseClass|[{GetTypeName(type.BaseType, true)}](../{type.BaseType.Name})|");
-            sb.AppendLine($"|BaseClass|{GetTypeName(type.BaseType, true)}|");
+            sb.AppendLine($"|BaseClass|{TypeExtension.GetTypeName(type.BaseType, true)}|");
             sb.AppendLine($"|SourceCode|[{type.Name}.cs]({strSourceCode})|");
             //sb.AppendLine($"|Example||");
 

@@ -16,6 +16,9 @@ IdentifiableEntity <|-- Species
 abstract class Species {
     DateOfBirth: DateOfBirth
     Gender: Gender?
+    DateOfDeath: DateOfDeath
+    Age: Int32
+    IsAlive: Boolean
 }
 
 Species <|-- Animal

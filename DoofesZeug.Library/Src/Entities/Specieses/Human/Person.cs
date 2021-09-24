@@ -35,24 +35,15 @@ namespace DoofesZeug.Entities.Specieses.Human
         [Range(30, 260)]
         public Centimeter AverageHeight { get; set; }
 
-        [Range(5, 500)]
+        [Range(3, 500)]
         public Kilogram AverageWeight { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public double? BMI
-        {
-            get
-            {
-                if( this.AverageHeight != null && this.AverageWeight != null )
-                {
-                    return (float) this.AverageWeight.Value / (float) Math.Pow(( (float) this.AverageHeight.Value ) / 100, 2);
-                }
-
-                return null;
-            }
-        }
+        public double? BMI => this.AverageHeight != null && this.AverageWeight != null
+                    ? (float) this.AverageWeight.Value / (float) Math.Pow(( (float) this.AverageHeight.Value ) / 100, 2)
+                    : null;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

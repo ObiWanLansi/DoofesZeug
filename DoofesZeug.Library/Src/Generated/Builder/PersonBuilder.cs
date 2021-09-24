@@ -90,5 +90,12 @@ namespace DoofesZeug.Entities.Specieses.Human
             person.Gender = gender;
             return person;
         }
+
+
+        public static Person WithDateOfDeath(this Person person, DoofesZeug.Entities.DateAndTime.DateOfDeath dateofdeath)
+        {
+            person.DateOfDeath = dateofdeath;
+            return person;
+        }
     }
 }

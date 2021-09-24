@@ -108,6 +108,7 @@ namespace DoofesZeug.Tools.Misc
             return tEnum.IsEnum == false ? throw new ArgumentException(nameof(tEnum)) : Enum.GetValues(tEnum).Cast<T>().ToList();
         }
 
+
         /// <summary>
         /// Enums to string list.
         /// </summary>

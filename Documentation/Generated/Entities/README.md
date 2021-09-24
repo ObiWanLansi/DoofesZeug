@@ -6,7 +6,8 @@
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
 |[Date](./DoofesZeug.Entities.DateAndTime/Date.md)|An date entity with day, month and a year (15.12.1948).|Day, Month, Year|
-|[DateOfBirth](./DoofesZeug.Entities.DateAndTime/DateOfBirth.md)|An date of birth for creatures.|Day, Month, Year|
+|[DateOfBirth](./DoofesZeug.Entities.DateAndTime/DateOfBirth.md)|An date of birth (without the time) for creatures.|Day, Month, Year|
+|[DateOfDeath](./DoofesZeug.Entities.DateAndTime/DateOfDeath.md)|An date of death (without the time) for creatures.|Day, Month, Year|
 |[Time](./DoofesZeug.Entities.DateAndTime/Time.md)|An time entity with hours, minutes and the seconds (12:34:56).|Hour, Minute, Second|
 |[UnixTimestamp](./DoofesZeug.Entities.DateAndTime/UnixTimestamp.md)|An unix timestamp (seconds since 01.01.1970).||
 
@@ -68,7 +69,7 @@
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[Animal](./DoofesZeug.Entities.Specieses.Animals/Animal.md)|An simplified animal with an firstname, lastname, birthday and some other optional properties.|AnimalSpecies, Name, DateOfBirth, Gender, Id|
+|[Animal](./DoofesZeug.Entities.Specieses.Animals/Animal.md)|An simplified animal with an firstname, lastname, birthday and some other optional properties.|AnimalSpecies, Name, DateOfBirth, Gender, DateOfDeath, Id|
 
 
 ## `DoofesZeug.Entities.Specieses.Human`
@@ -77,7 +78,7 @@
 |:-----|:----------|:---------|
 |[FirstName](./DoofesZeug.Entities.Specieses.Human/FirstName.md)|An firstname for humans.|Value|
 |[LastName](./DoofesZeug.Entities.Specieses.Human/LastName.md)|An lastname for humans.|Value|
-|[Person](./DoofesZeug.Entities.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, Handedness, BloodGroup, HairColor, Religion, Profession, AverageHeight, AverageWeight, DateOfBirth, Gender, Id|
+|[Person](./DoofesZeug.Entities.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, Handedness, BloodGroup, HairColor, Religion, Profession, AverageHeight, AverageWeight, DateOfBirth, Gender, DateOfDeath, Id|
 
 
 ## `DoofesZeug.Entities.Specieses.Human.Professions`

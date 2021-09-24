@@ -34,6 +34,9 @@
 |:---|:---|:--:|:---:|:-----------|
 |DateOfBirth|[DateOfBirth](../../Entities/DoofesZeug.Entities.DateAndTime/DateOfBirth.md)|&#x2713;|&#x2713;|NULL|
 |Gender|Gender?|&#x2713;|&#x2713;|NULL|
+|DateOfDeath|[DateOfDeath](../../Entities/DoofesZeug.Entities.DateAndTime/DateOfDeath.md)|&#x2713;|&#x2713;|NULL|
+|Age|Int32|&#x2713;|&#x2717;|-1|
+|IsAlive|Boolean|&#x2713;|&#x2717;|False|
 |Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
 ---
@@ -90,7 +93,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
   "HairColor": "Blond",
   "Religion": "Buddhism",
   "Profession": {
-    "Id": "82823671-3845-419e-897d-f4a89ae04970",
+    "Id": "abdfbfee-c82c-4ade-892e-97bc9d74d6a5",
     "WellKnownProfessionType": "FireFighter",
     "Since": "11.11.1942"
   },
@@ -105,9 +108,12 @@ namespace DoofesZeug.UnitTests.Functional.Builder
     "Value": 72.0
   },
   "BMI": 23.781211853027344,
-  "DateOfBirth": "27.09.1974",
+  "DateOfBirth": "11.02.1942",
   "Gender": "Male",
-  "Id": "96e84ca2-8d06-43c6-b6ea-1ba3c4757e95"
+  "DateOfDeath": "22.03.1984",
+  "Age": 42,
+  "IsAlive": false,
+  "Id": "412dd17f-e3be-4b14-a8f3-2b70b7d3ebb6"
 }
 ```
 

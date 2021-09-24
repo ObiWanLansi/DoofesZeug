@@ -1,13 +1,13 @@
-﻿# DateOfBirth
+﻿# DateOfDeath
 
 ## Generally
 
 |Property|Value|
 |:-|:-|
-|Description|An date of birth (without the time) for creatures.|
+|Description|An date of death (without the time) for creatures.|
 |Namespace|DoofesZeug.Entities.DateAndTime|
 |BaseClass|Date|
-|SourceCode|[DateOfBirth.cs](../../../../DoofesZeug.Library/Src/Entities/DateAndTime/DateOfBirth.cs)|
+|SourceCode|[DateOfDeath.cs](../../../../DoofesZeug.Library/Src/Entities/DateAndTime/DateOfDeath.cs)|
 
 ---
 
@@ -36,7 +36,7 @@
 
 ## UML Diagram
 
-![DateOfBirth.png](./DateOfBirth.png "DateOfBirth")
+![DateOfDeath.png](./DateOfDeath.png "DateOfDeath")
 
 ---
 
@@ -51,7 +51,7 @@ An example or code snippet follows soon.
 ## JSON Example
 
 ```json
-"24.12.1948"
+"16.06.1990"
 ```
 
 ---

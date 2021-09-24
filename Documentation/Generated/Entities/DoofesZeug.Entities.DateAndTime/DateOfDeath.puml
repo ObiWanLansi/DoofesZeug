@@ -1,0 +1,21 @@
+﻿@startuml
+skinparam monochrome true
+hide empty members
+
+abstract class Entity {
+}
+
+Entity <|-- Date
+
+class Date {
+    Day: Day
+    Month: Month
+    Year: Year
+}
+
+Date <|-- DateOfDeath
+
+class DateOfDeath {
+}
+
+@enduml

@@ -17,8 +17,13 @@ namespace DoofesZeug.Validation
         /// <param name="bStopAtFirstError">if set to <c>true</c> [b stop at first error].</param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public static StringList Validate( object value, bool bStopAtFirstError = false )
+        public static StringList Validate<T>( T value, bool bStopAtFirstError = false )
         {
+            if( value is IValidate<T> validator )
+            {
+                return validator.Validate(value);
+            }
+
             return null;
         }
     }

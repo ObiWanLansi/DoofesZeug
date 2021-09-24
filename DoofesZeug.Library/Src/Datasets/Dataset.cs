@@ -831,14 +831,26 @@ namespace DoofesZeug.Datasets
 
                 Gender g = r.NextEnum<Gender>();
 
+                p.DateOfBirth = r.NextDateTime(new DateTime(1942, 01, 01), new DateTime(2020, 12, 24));
+                p.Gender = g;
+
                 p.FirstName = r.NextObject(g == Gender.Female ? NAMES_FEMALE : g == Gender.Male ? NAMES_MALE : r.NextBool() ? NAMES_FEMALE : NAMES_MALE);
                 p.LastName = r.NextObject(SURNAMES);
-                p.DateOfBirth = r.NextDateTime(new DateTime(1970, 01, 01), new DateTime(2020, 12, 24));
-                p.Gender = g;
+
                 p.Handedness = r.NextEnum<Handedness>();
                 p.BloodGroup = r.NextEnum<BloodGroup>();
+                p.HairColor = r.NextEnum<WellKnownHairColor>();
+                p.Religion = r.NextEnum<MajorReligion>();
 
                 //TODO: Früher oder später kommt auch noch Profession hinzu, doch immomment haben wir noch kein Profession.GetByWellKnownProfession(WellKnownProfession wkp)
+
+                p.AverageHeight = r.Next(120, 210);
+                p.AverageWeight = (double) p.AverageHeight - 100 + r.Next(-5, +5);
+
+                if( ( (double) p.AverageWeight > 50 && p.Age < 5 ) || ( (double) p.AverageWeight < 50 && p.Age > 40 ) )
+                {
+                    p.DateOfDeath = r.NextDateTime((DateTime) p.DateOfBirth, DateTime.Now);
+                }
 
                 list.Add(p);
             }

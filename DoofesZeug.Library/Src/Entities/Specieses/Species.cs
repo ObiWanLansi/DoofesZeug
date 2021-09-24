@@ -14,6 +14,26 @@ namespace DoofesZeug.Entities.Specieses
 
         public Gender? Gender { get; set; }
 
+        public DateOfDeath DateOfDeath { get; set; }
+
+        //---------------------------------------------------------------------
+
+
+        public int Age
+        {
+            get
+            {
+                if( this.DateOfBirth == null )
+                {
+                    return -1;
+                }
+
+                return this.DateOfDeath == null ? this.DateOfBirth.Years(Date.Now) : this.DateOfBirth.Years(this.DateOfDeath);
+            }
+        }
+
+        public bool IsAlive => this.DateOfBirth != null && this.DateOfDeath == null;
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -33,6 +53,6 @@ namespace DoofesZeug.Entities.Specieses
         /// <returns>
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
         /// </returns>
-        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.DateOfBirth, this.Gender);
+        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.DateOfBirth, this.Gender, this.DateOfDeath);
     }
 }

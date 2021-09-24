@@ -15,9 +15,8 @@ i write down the stuff in the fastest way, mostly in note form.
   - static public void Link(this Uri uri, string strToolTip=null) und dann wenn null WebClient.Download getTitle ?
   - static public void Image(this string strFilename,string alt=null,string placeholder,bool footnote mit alt)?
 - Erstellung und Verlinkung der Beispiele.
-- Ratio Helper
+- RatioHelper
 - Aus world.sqlite die Villages, Cities and Towns extrahieren.
-- Für später: DataTypesColumnAligments als statische klasse mit einer funktion `TextAlign GetAligment(Type t)`
 - DataTable Extension mit
   - `ReAssign` - convert an string column to an enumeration column, or an string colum to an user defined datetime (Func<> as parameter).
   - `ReCode` - convert enumerations to there int values or strings to soundex, methaphone, md5, ...
@@ -32,9 +31,9 @@ i write down the stuff in the fastest way, mostly in note form.
 - Ein kleines GraphModel und erzeugung von diaggraph oder basic yed files ?
 - Flatten JSON / XML ?
 - Support für aufruf gnuplot für kleinere Diagramme zwischendurch ?
-- Feature WizardTSupportool mit fragen / antworten wie bei erstellen dotnet init, oder anderen tools ?
 - MatheStuff, z.b geometrische Figuren Rectangle, Circle, und direkt mit ein paar Meßmethoden?
 - Generic Singelton Pattern?
+- Lazy Load Wrapper?
 - Implement Observer Pattern in base class Entity?
 - VCard support ?
 - HairColor und EyeColor als Enumeration mit Standardfarben
@@ -47,14 +46,16 @@ i write down the stuff in the fastest way, mostly in note form.
 - Countries (aus geonames generiert)
 - Dienstgrade Feuerwehr, Polizei, Militär
 - StandardValidator als Attribute für EMail, Phone, Name, aber auch ein Interface Validate um komplexere zusammenhänge validieren zu können
-- Try to create one big class diagram with PlantUML
-  > Currently with the avaible methods it is not possible because the itereate everytime from bottom to top, so that some classes
-  > we have more than once!
 
 
 ## Done
 
+- ~~Feature WizardSupportool mit fragen / antworten wie bei erstellen dotnet init, oder anderen tools ?~~
+- Für später: DataTypesColumnAligments als statische klasse mit einer funktion `TextAlign GetAligment(Type t)`
 - Anfangen mit Gramm, Meter, ...
+- ~~Try to create one big class diagram with PlantUML.~~
+  > Currently with the avaible methods it is not possible because the itereate everytime from bottom to top, so that some classes
+  > we have more than once!
 - ~~Another BaseType for ValueTypes ?~~
   > I forgotten reason why todo this?
 - Subfolder for the extension `Format`, `Database`, ...

@@ -8,9 +8,9 @@ using Newtonsoft.Json;
 
 namespace DoofesZeug.Converter
 {
-    public sealed class DateOfBirthConverter : JsonConverter
+    public sealed class DateOfDeathConverter : JsonConverter
     {
-        private static readonly Type DATEOFBIRTH = typeof(DateOfBirth);
+        private static readonly Type DATEOFDEATH = typeof(DateOfDeath);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType == DATEOFBIRTH;
+        public override bool CanConvert( Type objectType ) => objectType == DATEOFDEATH;
 
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// The object value.
         /// </returns>
-        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer ) => reader.Value == null ? null : new DateOfBirth(Date.From(Convert.ToString(reader.Value)));
+        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer ) => reader.Value == null ? null : new DateOfDeath(Date.From(Convert.ToString(reader.Value)));
 
 
         /// <summary>

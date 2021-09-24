@@ -7,7 +7,7 @@ using DoofesZeug.Entities.DateAndTime.Part.Date;
 
 namespace DoofesZeug.Entities.DateAndTime
 {
-    [Description("An date of birth for creatures.")]
+    [Description("An date of birth (without the time) for creatures.")]
     public sealed class DateOfBirth : Date
     {
         public DateOfBirth() : base() { }

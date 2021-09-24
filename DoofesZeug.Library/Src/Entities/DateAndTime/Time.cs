@@ -116,6 +116,13 @@ namespace DoofesZeug.Entities.DateAndTime
 
 
         /// <summary>
+        /// Nows this instance.
+        /// </summary>
+        /// <returns></returns>
+        public static Time Now => new(DateTime.Now);
+
+
+        /// <summary>
         /// Froms the specified string content.
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
@@ -156,6 +163,16 @@ namespace DoofesZeug.Entities.DateAndTime
 
 
         /// <summary>
+        /// Performs an implicit conversion from <see cref="System.DateTime"/> to <see cref="DoofesZeug.Entities.DateAndTime.Time"/>.
+        /// </summary>
+        /// <param name="dt">The dt.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static implicit operator Time( DateTime dt ) => new(dt);
+
+
+        /// <summary>
         /// Performs an implicit conversion from <see cref="ValueTuple{Hour, Minute, Second}"/> to <see cref="Time"/>.
         /// </summary>
         /// <param name="value">The value.</param>
@@ -173,6 +190,8 @@ namespace DoofesZeug.Entities.DateAndTime
         /// The result of the conversion.
         /// </returns>
         public static implicit operator Time( string strContent ) => From(strContent);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>

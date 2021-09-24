@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 
+using DoofesZeug.Datasets;
+using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Entities.Specieses.Human;
 using DoofesZeug.Extensions;
 using DoofesZeug.Extensions.Formats;
@@ -79,8 +82,19 @@ namespace DoofesZeug
             Out.WriteLineAsync(p.ToPrettyJson());
             Out.WriteLineAsync(p.ToStringTable());
 
-            var result = Validator.Validate(p);
+            StringList result = Validator.Validate(p);
 
+            if( result != null )
+            {
+                result.ForEach(message => Out.WriteLineAsync(message));
+            }
+
+            //-------------------------------------------------------------------------------------
+
+            List<Person> persons = Dataset.GetPersons(42);
+            Out.WriteLineAsync(persons.ToStringTable());
+
+            //-------------------------------------------------------------------------------------
 
             //Centimeter cm = 174;
             //cm.prefix = UnitPrefixes.Atto;

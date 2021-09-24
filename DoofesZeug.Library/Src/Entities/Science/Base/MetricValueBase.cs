@@ -63,6 +63,7 @@ namespace DoofesZeug.Entities.Science.Base
         ///// The result of the conversion.
         ///// </returns>
         //public static explicit operator T( MetricValueBase<T> mtb ) => mtb.Value;
+        public static explicit operator double( MetricValueBase mvb ) => mvb.Value;
 
 
         /// <summary>

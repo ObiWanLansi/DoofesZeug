@@ -28,10 +28,10 @@ namespace DoofesZeug.Extensions.Formats
 
             new DateTimePartConverter(),
             new DateOfBirthConverter(),
+            new DateOfDeathConverter(),
             new UnixTimestampConverter(),
             new UnitPrefixConverter(),
 
-            //new MetricValueBaseConverter(),
             new GeoConverter()
         };
 

@@ -32,7 +32,7 @@ namespace DoofesZeug.Entities.Specieses.Human.Professions
         /// <returns>
         /// A <see cref="string" /> that represents this instance.
         /// </returns>
-        public override string ToString() => $"{this.WellKnownProfessionType} ({this.Since})";
+        public override string ToString() => this.Since != null ? $"{this.WellKnownProfessionType} ({this.Since})" : this.WellKnownProfessionType.ToString();
 
 
         /// <summary>

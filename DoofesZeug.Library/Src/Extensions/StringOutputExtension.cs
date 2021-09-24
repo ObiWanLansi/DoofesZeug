@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text;
+
+using DoofesZeug.Tools.Enums;
+using DoofesZeug.Tools.Misc;
 
 
 
@@ -69,5 +73,101 @@ namespace DoofesZeug.Extensions
 
             return sb.ToString();
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        public static string ToStringTable<T>( this List<T> lValues, bool bShowColumnType = false )
+        {
+            if( lValues == null || lValues.Count == 0 )
+            {
+                return null;
+            }
+
+            StringBuilder sbOutput = new(8192);
+
+            Dictionary<PropertyInfo, string> sdColumnsWidth = new();
+
+            Type t = typeof(T);
+
+            int iColumnCounter = 0;
+
+            StringBuilder sbBorderTop = new(64);
+            StringBuilder sbBorderMiddle = new(64);
+            StringBuilder sbBorderBottom = new(64);
+            StringBuilder sbHeader = new(64);
+
+            sbBorderTop.Append('┌');
+            sbBorderMiddle.Append('├');
+            sbBorderBottom.Append('└');
+
+            foreach( PropertyInfo pi in t.GetProperties(BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.Instance) )
+            {
+                int iMaxWidth = ( from object oItem in lValues where oItem != null select pi.GetValue(oItem, null) into oValue where oValue != null select oValue.ToString().Length ).Concat(new [] { 0 }).Max();
+
+                string strDisplayName = pi.Name;
+
+                if( bShowColumnType == true )
+                {
+                    strDisplayName += $" ({pi.PropertyType.GetTypeName()})";
+                }
+
+                if( strDisplayName.Length > iMaxWidth )
+                {
+                    iMaxWidth = strDisplayName.Length;
+                }
+
+                string strFormat = DataTypeHelper.GetTextAligment(pi.PropertyType) == TextAlign.Right ? "│ {0," + iMaxWidth + "} " : "│ {0,-" + iMaxWidth + "} ";
+                sdColumnsWidth.Add(pi, strFormat);
+
+                if( iColumnCounter > 0 )
+                {
+                    sbBorderTop.Append('┬');
+                    sbBorderMiddle.Append('┼');
+                    sbBorderBottom.Append('┴');
+                }
+
+                string strLine = new('─', iMaxWidth + 2);
+
+                sbBorderTop.Append(strLine);
+                sbBorderMiddle.Append(strLine);
+                sbBorderBottom.Append(strLine);
+
+                sbHeader.AppendFormat(strFormat, strDisplayName);
+
+                iColumnCounter++;
+            }
+
+            sbHeader.Append("│");
+            sbBorderTop.Append('┐');
+            sbBorderMiddle.Append('┤');
+            sbBorderBottom.Append('┘');
+
+            sbOutput.AppendLine(sbBorderTop.ToString());
+            sbOutput.AppendLine(sbHeader.ToString());
+            sbOutput.AppendLine(sbBorderMiddle.ToString());
+
+            foreach( object o in lValues )
+            {
+                if( o != null )
+                {
+                    foreach( PropertyInfo pi in sdColumnsWidth.Keys )
+                    {
+                        sbOutput.AppendFormat(sdColumnsWidth [pi], pi.GetValue(o, null));
+                    }
+
+                    sbOutput.AppendLine("│");
+                }
+                else
+                {
+                    Console.Out.WriteLine(sbBorderMiddle);
+                }
+            }
+
+            sbOutput.AppendLine(sbBorderBottom.ToString());
+
+            return sbOutput.ToString();
+        }
+
     }
 }
