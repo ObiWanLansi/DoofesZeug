@@ -1,0 +1,20 @@
+﻿@startuml
+skinparam monochrome true
+hide empty members
+
+enum Zodiac {
+    Aries
+    Taurus
+    Gemini
+    Cancer
+    Leo
+    Virgo
+    Libra
+    Scorpio
+    Sagittarius
+    Capricornus
+    Aquarius
+    Pisces
+}
+
+@enduml

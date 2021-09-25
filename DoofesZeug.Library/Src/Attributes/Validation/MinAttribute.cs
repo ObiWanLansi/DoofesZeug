@@ -1,5 +1,7 @@
 ﻿using System;
 
+using DoofesZeug.Datatypes.Container;
+
 
 
 namespace DoofesZeug.Attributes.Validation
@@ -21,5 +23,30 @@ namespace DoofesZeug.Attributes.Validation
         /// </summary>
         /// <param name="min">The minimum.</param>
         public MinAttribute( double min ) => this.Min = min;
+
+
+        /// <summary>
+        /// Validates the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        public override StringList Validate( object value )
+        {
+            try
+            {
+                double d = Convert.ToDouble(value);
+
+                if( d < this.Min )
+                {
+                    return new StringList { $"The current value '{ d }' is less than the minimum value '{ this.Min }'!" };
+                }
+            }
+            catch( Exception ex )
+            {
+                return new StringList { ex.Message };
+            }
+
+            return null;
+        }
     }
 }

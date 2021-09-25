@@ -28,6 +28,7 @@ i write down the stuff in the fastest way, mostly in note form.
   - Fahrenheit
   - Celcius
 - EarthQuakes
+- Zoidac als Enum und in DateTime Extension GetZoidac
 - Ein kleines GraphModel und erzeugung von diaggraph oder basic yed files ?
 - Flatten JSON / XML ?
 - Support für aufruf gnuplot für kleinere Diagramme zwischendurch ?

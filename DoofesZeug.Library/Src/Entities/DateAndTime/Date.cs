@@ -4,6 +4,8 @@ using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Attributes.Pattern;
 using DoofesZeug.Extensions;
 using DoofesZeug.Entities.DateAndTime.Part.Date;
+using DoofesZeug.Validation;
+using DoofesZeug.Datatypes.Container;
 
 
 
@@ -11,7 +13,7 @@ namespace DoofesZeug.Entities.DateAndTime
 {
     [Description("An date entity with day, month and a year (15.12.1948).")]
     [Builder]
-    public class Date : Entity
+    public class Date : Entity, IValidate<Date>
     {
         /// <summary>
         /// Gets the day.
@@ -264,6 +266,11 @@ namespace DoofesZeug.Entities.DateAndTime
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
         /// </returns>
         public override int GetHashCode() => HashCode.Combine(this.Day, this.Month, this.Year);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        public StringList Validate( Date value ) => null;
     }
 }
 

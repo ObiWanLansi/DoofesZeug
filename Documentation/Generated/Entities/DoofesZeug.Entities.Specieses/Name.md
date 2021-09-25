@@ -29,7 +29,7 @@
 ## Attributes
 
 - Description
-- Range
+- Length
 
 ---
 

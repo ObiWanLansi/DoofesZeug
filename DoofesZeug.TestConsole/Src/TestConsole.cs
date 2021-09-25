@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using DoofesZeug.Datasets;
 using DoofesZeug.Datatypes.Container;
+using DoofesZeug.Entities.DateAndTime;
 using DoofesZeug.Entities.Specieses.Human;
 using DoofesZeug.Extensions;
 using DoofesZeug.Extensions.Formats;
@@ -77,22 +78,42 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            Person p = TestDataGenerator.GenerateTestData<Person>();
+            //Date d = (30, 02, 1994);
+            //Validator.Validate(d);
 
-            Out.WriteLineAsync(p.ToPrettyJson());
-            Out.WriteLineAsync(p.ToStringTable());
+            // Ein möglichst invalide Person zum testen.
+            Person p = new()
+            {
+                // Darf nicht null sein.
+                LastName = null,
+                // Muss mehr als ein Zeichen haben.
+                FirstName = "X",
+                // Ungültiges Datum.
+                DateOfBirth = (31, 02, 1942),
+                // Einen 32. gibt es nicht und das Datum liegt vor dem Geburtstag.
+                DateOfDeath = (32, 03, 1941)
+            };
+
+            //Person p = TestDataGenerator.GenerateTestData<Person>();
+
+            //Out.WriteLineAsync(p.ToPrettyJson());
+            //Out.WriteLineAsync(p.ToStringTable());
 
             StringList result = Validator.Validate(p);
 
-            if( result != null )
+            if( result != null && result.Count > 0 )
             {
                 result.ForEach(message => Out.WriteLineAsync(message));
+            }
+            else
+            {
+                Out.WriteLineAsync("No validation problems.");
             }
 
             //-------------------------------------------------------------------------------------
 
-            List<Person> persons = Dataset.GetPersons(42);
-            Out.WriteLineAsync(persons.ToStringTable());
+            //List<Person> persons = Dataset.GetPersons(42);
+            //Out.WriteLineAsync(persons.ToStringTable());
 
             //-------------------------------------------------------------------------------------
 
@@ -121,20 +142,6 @@ namespace DoofesZeug
             //Out.WriteLineAsync($"Size : {size}");
 
             //Out.WriteLineAsync($"Equals: {cm.LogicallyEquals(m)}");
-
-            //-------------------------------------------------------------------------------------
-
-            //MathExtensionExample.GetFibonacciList();
-
-            //-------------------------------------------------------------------------------------
-
-            //List<Person> persons = Dataset.GetPersons(20);
-
-            //int counter = 1;
-            //foreach( Person person in persons )
-            //{
-            //    Out.WriteLineAsync($"{counter++}: {person} ({person.Gender}, {person.Handedness}, {person.BloodGroup})");
-            //}
 
             //-------------------------------------------------------------------------------------
 

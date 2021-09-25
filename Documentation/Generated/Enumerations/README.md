@@ -46,6 +46,7 @@
 |[MajorReligion](./DoofesZeug.Entities.Specieses.Human/MajorReligion.md)|The five big major religions.|Hinduism, Buddhism, Islam, Christianity, Judaism|
 |[WellKnownHairColor](./DoofesZeug.Entities.Specieses.Human/WellKnownHairColor.md)|A small enumeration with the natural hair colors.|White, Gray, Red, Blond, Brown, Black|
 |[WellKnownProfession](./DoofesZeug.Entities.Specieses.Human/WellKnownProfession.md)|A small enumeration of some professions.|FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter, Soldier, BusDriver, TaxiDriver, Pilot|
+|[Zodiac](./DoofesZeug.Entities.Specieses.Human/Zodiac.md)|The twelf western zodicas.|Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricornus, Aquarius, Pisces|
 
 
 ## `DoofesZeug.Tools.Crypt`

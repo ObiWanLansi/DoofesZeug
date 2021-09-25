@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Reflection;
 
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Datatypes.Container;
@@ -19,12 +21,27 @@ namespace DoofesZeug.Validation
         /// <exception cref="NotImplementedException"></exception>
         public static StringList Validate<T>( T value, bool bStopAtFirstError = false )
         {
+            StringList result = new();
+
+            // First check if the vakue implements an validator interface.
             if( value is IValidate<T> validator )
             {
-                return validator.Validate(value);
+                StringList val = validator.Validate(value);
+
+                if( val != null )
+                {
+                    result.AddRange(val);
+                }
             }
 
-            return null;
+            foreach( PropertyInfo pi in from property in typeof(T).GetProperties() where property.CanRead select property )
+            {
+                // Second check if an property of the value have and validation attribute.
+
+                // Third check if the type of an property have and validation attribute.
+            }
+
+            return result;
         }
     }
 }

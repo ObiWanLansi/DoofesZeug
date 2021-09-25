@@ -7,23 +7,23 @@ using DoofesZeug.Datatypes.Container;
 namespace DoofesZeug.Attributes.Validation
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property)]
-    public sealed class RangeAttribute : ValidationAttribute
+    public sealed class LengthAttribute : ValidationAttribute
     {
         /// <summary>
-        /// Determines the minimum of the parameters.
+        /// Determines the minimum of the string.
         /// </summary>
         /// <value>
         /// The minimum.
         /// </value>
-        public double Min { get; private set; }
+        public uint Min { get; private set; }
 
         /// <summary>
-        /// Determines the maximum of the parameters.
+        /// Determines the maximum of the string.
         /// </summary>
         /// <value>
         /// The maximum.
         /// </value>
-        public double Max { get; private set; }
+        public uint Max { get; private set; }
 
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace DoofesZeug.Attributes.Validation
         /// </summary>
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
-        public RangeAttribute( double min, double max )
+        public LengthAttribute( uint min, uint max )
         {
             this.Min = min;
             this.Max = max;
@@ -47,16 +47,16 @@ namespace DoofesZeug.Attributes.Validation
         {
             try
             {
-                double d = Convert.ToDouble(value);
+                uint length = (uint) ( value as string ).Length;
 
-                if( d < this.Min )
+                if( length < this.Min )
                 {
-                    return new StringList { $"The current value '{ d }' is less than the minimum value '{ this.Min }'!" };
+                    return new StringList { $"The current length '{ length }' is less than the minimum length '{ this.Min }'!" };
                 }
 
-                if( d > this.Max )
+                if( length > this.Max )
                 {
-                    return new StringList { $"The current value '{ d }' is greater than the maximum value '{ this.Max }'!" };
+                    return new StringList { $"The current length '{ length }' is greater than the maximum length '{ this.Max }'!" };
                 }
             }
             catch( Exception ex )
