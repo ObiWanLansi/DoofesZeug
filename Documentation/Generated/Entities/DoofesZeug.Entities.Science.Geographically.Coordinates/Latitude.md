@@ -1,13 +1,13 @@
-﻿# UnixTimestamp
+﻿# Latitude
 
 ## Generally
 
 |Property|Value|
 |:-|:-|
-|Description|An unix timestamp (seconds since 01.01.1970).|
-|Namespace|DoofesZeug.Entities.DateAndTime|
+|Description|An simplified latitude (WGS84).|
+|Namespace|DoofesZeug.Entities.Science.Geographically.Coordinates|
 |BaseClass|Entity|
-|SourceCode|[UnixTimestamp.cs](../../../../DoofesZeug.Library/Src/Entities/DateAndTime/UnixTimestamp.cs)|
+|SourceCode|[Latitude.cs](../../../../DoofesZeug.Library/Src/Entities/Science/Geographically/Coordinates/Latitude.cs)|
 
 ---
 
@@ -33,7 +33,7 @@
 
 ## UML Diagram
 
-![UnixTimestamp.png](./UnixTimestamp.png "UnixTimestamp")
+![Latitude.png](./Latitude.png "Latitude")
 
 ---
 
@@ -48,7 +48,7 @@ An example or code snippet follows soon.
 ## JSON Example
 
 ```json
-1632610445
+{}
 ```
 
 ---

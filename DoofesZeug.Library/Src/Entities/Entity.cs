@@ -37,6 +37,46 @@ namespace DoofesZeug.Entities
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        protected static void PropertyValidate<T>( T instance, StringList sl ) where T : Entity
+        {
+            if( instance == null )
+            {
+                sl.Add("The instance is null!");
+                return;
+            }
+
+            // Now from the declared properties
+            foreach( PropertyInfo pi in instance.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly) )
+            {
+                if( pi.CanWrite == false )
+                {
+                    continue;
+                }
+
+                if( pi.PropertyType.IsAssignableTo(typeof(Entity)) )
+                {
+                    Entity e = (Entity) pi.GetValue(instance);
+
+                    if( e != null )
+                    {
+                        sl.AddRange(e.Validate());
+                    }
+                    else
+                    {
+                        sl.Add($"The property {pi.Name} is null!");
+                    }
+                }
+                else
+                {
+                    if( pi.GetValue(instance) == null )
+                    {
+                        sl.Add($"The property {pi.Name} is null!");
+                    }
+                }
+            }
+        }
+
+
         /// <summary>
         /// Equalses the specified one and two.
         /// </summary>

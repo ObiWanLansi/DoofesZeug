@@ -5,17 +5,12 @@ hide empty members
 abstract class Entity {
 }
 
-Entity <|-- IdentifiableEntity
+Entity <|-- GeoPoint3D
 
-abstract class IdentifiableEntity {
-    Id: Guid
-}
-
-IdentifiableEntity <|-- GeoPoint
-
-class GeoPoint {
+class GeoPoint3D {
     Latitude: Latitude
     Longitude: Longitude
+    Altitude: Altitude
 }
 
 @enduml

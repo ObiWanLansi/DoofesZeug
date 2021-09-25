@@ -1,13 +1,13 @@
-﻿# Longitude
+﻿# Altitude
 
 ## Generally
 
 |Property|Value|
 |:-|:-|
-|Description|An simplified longitude (WGS84).|
-|Namespace|DoofesZeug.Entities.Science.Geographically.Base|
+|Description|An simplified altitude in meter over nn.|
+|Namespace|DoofesZeug.Entities.Science.Geographically.Coordinates|
 |BaseClass|Entity|
-|SourceCode|[Longitude.cs](../../../../DoofesZeug.Library/Src/Entities/Science/Geographically/Base/Longitude.cs)|
+|SourceCode|[Altitude.cs](../../../../DoofesZeug.Library/Src/Entities/Science/Geographically/Coordinates/Altitude.cs)|
 
 ---
 
@@ -17,7 +17,6 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Value|Double|&#x2713;|&#x2713;|0|
 
 ### Inherited
 
@@ -34,7 +33,7 @@
 
 ## UML Diagram
 
-![Longitude.png](./Longitude.png "Longitude")
+![Altitude.png](./Altitude.png "Altitude")
 
 ---
 
@@ -49,7 +48,7 @@ An example or code snippet follows soon.
 ## JSON Example
 
 ```json
-"6.644282639342397"
+{}
 ```
 
 ---

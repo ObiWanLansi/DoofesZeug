@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DoofesZeug.Entities.Science.Geographically.Base;
+using DoofesZeug.Entities.Science.Geographically.Coordinates;
 
 using Newtonsoft.Json;
 
@@ -14,7 +14,9 @@ namespace DoofesZeug.Converter
 
         private static readonly Type LONGITUDE = typeof(Longitude);
 
-        private static readonly Type GEOPOINT = typeof(GeoPoint);
+        private static readonly Type GEOPOINT2D = typeof(GeoPoint2D);
+        
+        private static readonly Type GEOPOINT3D = typeof(GeoPoint3D);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -26,7 +28,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType == LATITUDE || objectType == LONGITUDE || objectType == GEOPOINT;
+        public override bool CanConvert( Type objectType ) => objectType == LATITUDE || objectType == LONGITUDE || objectType == GEOPOINT2D;
 
 
         /// <summary>
@@ -51,7 +53,7 @@ namespace DoofesZeug.Converter
                 return new Longitude(Convert.ToString(reader.Value));
             }
 
-            return objectType == GEOPOINT ? new GeoPoint(Convert.ToString(reader.Value)) : null;
+            return objectType == GEOPOINT2D ? new GeoPoint2D(Convert.ToString(reader.Value)) : null;
         }
 
 

@@ -7,9 +7,8 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## ToDo
 
+- GeoConvert für Lat, Lon und Alt
 - Generate class overview for other classes which are not an entity.
-- Alt von Meter ableiten, nee besser doch nicht.
-  > Erst mal schauen ob die in der Fliegerei mit Meter, Feet oder sonst was angegeben werden.
 - Entities: Genre,Artist, Album, Sampler, Movie,Book, EMail, Homepage, Phone, Mobil
 - MarkdownExtension
   - static public void Link(this Uri uri, string strToolTip=null) und dann wenn null WebClient.Download getTitle ?
@@ -28,7 +27,7 @@ i write down the stuff in the fastest way, mostly in note form.
   - Fahrenheit
   - Celcius
 - EarthQuakes
-- Zoidac als Enum und in DateTime Extension GetZoidac
+- ~~Zoidac als Enum und~~ in DateTime Extension GetZoidac
 - Ein kleines GraphModel und erzeugung von diaggraph oder basic yed files ?
 - Flatten JSON / XML ?
 - Support für aufruf gnuplot für kleinere Diagramme zwischendurch ?
@@ -37,7 +36,6 @@ i write down the stuff in the fastest way, mostly in note form.
 - Lazy Load Wrapper?
 - Implement Observer Pattern in base class Entity?
 - VCard support ?
-- HairColor und EyeColor als Enumeration mit Standardfarben
 - List<T> To DataTable
 - DataTable To
   -  ASCIITable
@@ -46,11 +44,12 @@ i write down the stuff in the fastest way, mostly in note form.
   -  Markdown
 - Countries (aus geonames generiert)
 - Dienstgrade Feuerwehr, Polizei, Militär
-- StandardValidator als Attribute für EMail, Phone, Name, aber auch ein Interface Validate um komplexere zusammenhänge validieren zu können
 
 
 ## Done
 
+- ~~StandardValidator als Attribute für EMail, Phone, Name, aber auch ein Interface Validate um komplexere zusammenhänge validieren zu können.~~
+- HairColor und EyeColor als Enumeration mit Standardfarben
 - ~~Feature WizardSupportool mit fragen / antworten wie bei erstellen dotnet init, oder anderen tools ?~~
 - Für später: DataTypesColumnAligments als statische klasse mit einer funktion `TextAlign GetAligment(Type t)`
 - Anfangen mit Gramm, Meter, ...

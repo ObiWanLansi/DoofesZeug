@@ -36,7 +36,6 @@
   <ItemGroup>
     <Folder Include="Src\Entities\Specieses\Human\Communication\" />
     <Folder Include="Src\Extensions\Database\" />
-    <Folder Include="Src\Generated\" />
     <Folder Include="Src\Datasets\" />
   </ItemGroup>
 

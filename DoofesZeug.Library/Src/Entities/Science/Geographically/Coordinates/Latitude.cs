@@ -4,7 +4,9 @@ using System.Globalization;
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Datatypes.Container;
 
-namespace DoofesZeug.Entities.Science.Geographically.Base
+
+
+namespace DoofesZeug.Entities.Science.Geographically.Coordinates
 {
     [Description("An simplified latitude (WGS84).")]
     public class Latitude : Entity
@@ -14,7 +16,7 @@ namespace DoofesZeug.Entities.Science.Geographically.Base
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public double Value { get; set; }
+        private readonly double Value;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

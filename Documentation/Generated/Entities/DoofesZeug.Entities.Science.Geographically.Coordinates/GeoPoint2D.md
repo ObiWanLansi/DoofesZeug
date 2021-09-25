@@ -1,0 +1,60 @@
+﻿# GeoPoint2D
+
+## Generally
+
+|Property|Value|
+|:-|:-|
+|Description|An simplified geo point with lat and lon (WGS84).|
+|Namespace|DoofesZeug.Entities.Science.Geographically.Coordinates|
+|BaseClass|Entity|
+|SourceCode|[GeoPoint2D.cs](../../../../DoofesZeug.Library/Src/Entities/Science/Geographically/Coordinates/GeoPoint2D.cs)|
+
+---
+
+## Properties
+
+### Declared
+
+|Name|Type|Read|Write|DefaultValue|
+|:---|:---|:--:|:---:|:-----------|
+|Latitude|[Latitude](../../Entities/DoofesZeug.Entities.Science.Geographically.Coordinates/Latitude.md)|&#x2713;|&#x2713;|NULL|
+|Longitude|[Longitude](../../Entities/DoofesZeug.Entities.Science.Geographically.Coordinates/Longitude.md)|&#x2713;|&#x2713;|NULL|
+
+### Inherited
+
+|Name|Type|Read|Write|DefaultValue|
+|:---|:---|:--:|:---:|:-----------|
+
+---
+
+## Attributes
+
+- Description
+
+---
+
+## UML Diagram
+
+![GeoPoint2D.png](./GeoPoint2D.png "GeoPoint2D")
+
+---
+
+## Code Example
+
+```cs
+An example or code snippet follows soon.
+```
+
+---
+
+## JSON Example
+
+```json
+{
+  "Latitude": {},
+  "Longitude": {}
+}
+```
+
+---
+

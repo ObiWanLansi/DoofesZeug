@@ -77,7 +77,15 @@ namespace DoofesZeug.Entities.Specieses.Human
         /// Validates this instance.
         /// </summary>
         /// <returns></returns>
-        /// <exception cref="System.NotImplementedException"></exception>
-        public override StringList Validate() => throw new NotImplementedException();
+        public override StringList Validate()
+        {
+            StringList sl = new();
+
+            sl.AddRange(base.Validate());
+
+            PropertyValidate(this, sl);
+
+            return sl;
+        }
     }
 }

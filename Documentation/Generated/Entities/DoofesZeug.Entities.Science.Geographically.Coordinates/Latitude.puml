@@ -8,7 +8,6 @@ abstract class Entity {
 Entity <|-- Latitude
 
 class Latitude {
-    Value: Double
 }
 
 @enduml

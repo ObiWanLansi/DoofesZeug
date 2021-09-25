@@ -301,7 +301,7 @@ namespace DoofesZeug.Documentation
 
                     string strLinkToMarkdown = $"[{entity.Name}](./{entities.Key}/{entity.Name}.md)";
 
-                    StringList properties = new(from property in entity.GetProperties(BindingFlags.Public | BindingFlags.Instance) where property.CanWrite == true select property.Name);
+                    StringList properties = new(from property in entity.GetProperties(BindingFlags.Public | BindingFlags.Instance) where property.CanRead == true select property.Name);
 
                     sb.AppendLine($"|{strLinkToMarkdown}|{da.Description}|{properties.ToFlatString()}|");
                 }

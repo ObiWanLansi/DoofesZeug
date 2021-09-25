@@ -7,7 +7,7 @@ using DoofesZeug.Entities.DateAndTime.Part.Date;
 using DoofesZeug.Entities.DateAndTime.Part.Time;
 using DoofesZeug.Entities.Science.Base.Length;
 using DoofesZeug.Entities.Science.Base.Weight;
-using DoofesZeug.Entities.Science.Geographically.Base;
+using DoofesZeug.Entities.Science.Geographically.Coordinates;
 using DoofesZeug.Entities.Specieses;
 using DoofesZeug.Entities.Specieses.Animals;
 using DoofesZeug.Entities.Specieses.Human;
@@ -47,10 +47,11 @@ namespace DoofesZeug.TestData
 
             GENERATORS.Add(typeof(Animal).FullName, GenerateAnimal);
 
-            //GENERATORS.Add(typeof(Altitude).FullName, GenerateAltitude);
+            GENERATORS.Add(typeof(Altitude).FullName, GenerateAltitude);
             GENERATORS.Add(typeof(Latitude).FullName, GenerateLatitude);
             GENERATORS.Add(typeof(Longitude).FullName, GenerateLongitude);
-            GENERATORS.Add(typeof(GeoPoint).FullName, GenerateGeoPoint);
+            GENERATORS.Add(typeof(GeoPoint2D).FullName, GenerateGeoPoint2D);
+            GENERATORS.Add(typeof(GeoPoint3D).FullName, GenerateGeoPoint3D);
 
             GENERATORS.Add(typeof(Centimeter).FullName, GenerateCentimeter);
             GENERATORS.Add(typeof(Meter).FullName, GenerateMeter);
@@ -65,13 +66,15 @@ namespace DoofesZeug.TestData
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        //private static Altitude GenerateAltitude() => new(42);
+        private static Altitude GenerateAltitude() => new(42);
 
         private static Latitude GenerateLatitude() => new(49.759646524258756);
 
         private static Longitude GenerateLongitude() => new(6.644282639342397);
 
-        private static GeoPoint GenerateGeoPoint() => new(49.759646524258756, 6.644282639342397);
+        private static GeoPoint2D GenerateGeoPoint2D() => new(49.759646524258756, 6.644282639342397);
+
+        private static GeoPoint3D GenerateGeoPoint3D() => new(49.759646524258756, 6.644282639342397, 1234);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DoofesZeug.Datasets;
 using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Entities.DateAndTime;
+using DoofesZeug.Entities.Science.Geographically.Coordinates;
 using DoofesZeug.Entities.Specieses.Human;
 using DoofesZeug.Extensions;
 using DoofesZeug.Extensions.Formats;
@@ -77,48 +78,58 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            {
-                //Date d = (30, 02, 1994);
-                Date d = (30, 02, null);
+            GeoPoint2D p2 = new(49.759646524258756, 6.644282639342397);
+            Out.WriteLineAsync(p2.ToPrettyJson());
+            Out.WriteLineAsync(p2.ToStringTable());
 
-                StringList result = d.Validate();
+            GeoPoint3D p3 = new(49.759646524258756, 6.644282639342397, 1234);
+            Out.WriteLineAsync(p3.ToPrettyJson());
+            Out.WriteLineAsync(p3.ToStringTable());
 
-                if( result != null && result.Count > 0 )
-                {
-                    result.ForEach(message => Out.WriteLineAsync(message));
-                }
-                else
-                {
-                    Out.WriteLineAsync("No validation problems.");
-                }
-            }
+            //-------------------------------------------------------------------------------------
 
-            {
+            //{
+            //    Date d = (30, 02, 1994);
+            //    //Date d = (30, 02, null);
 
-                // Ein möglichst invalide Person zum testen.
-                Person p = new()
-                {
-                    // Darf nicht null sein.
-                    LastName = null,
-                    // Muss mehr als ein Zeichen haben.
-                    FirstName = "X",
-                    // Ungültiges Datum.
-                    DateOfBirth = (31, 02, 1942),
-                    // Einen 32. gibt es nicht und das Datum liegt vor dem Geburtstag.
-                    DateOfDeath = (32, 03, 1941)
-                };
+            //    StringList result = d.Validate();
 
-                //StringList result = p.Validate();
+            //    if( result != null && result.Count > 0 )
+            //    {
+            //        result.ForEach(message => Out.WriteLineAsync(message));
+            //    }
+            //    else
+            //    {
+            //        Out.WriteLineAsync("No validation problems.");
+            //    }
+            //}
 
-                //if( result != null && result.Count > 0 )
-                //{
-                //    result.ForEach(message => Out.WriteLineAsync(message));
-                //}
-                //else
-                //{
-                //    Out.WriteLineAsync("No validation problems.");
-                //}
-            }
+            //{
+            //    // Ein möglichst invalide Person zum testen.
+            //    Person p = new()
+            //    {
+            //        // Darf nicht null sein.
+            //        LastName = null,
+            //        // Muss mehr als ein Zeichen haben.
+            //        FirstName = "X",
+            //        // Ungültiges Datum.
+            //        //DateOfBirth = (31, 02, 1942),
+            //        DateOfBirth = (15, 02, 1942),
+            //        // Einen 32. gibt es nicht und das Datum liegt vor dem Geburtstag.
+            //        DateOfDeath = (15, 03, 1941)
+            //    };
+
+            //    StringList result = p.Validate();
+
+            //    if( result != null && result.Count > 0 )
+            //    {
+            //        result.ForEach(message => Out.WriteLineAsync(message));
+            //    }
+            //    else
+            //    {
+            //        Out.WriteLineAsync("No validation problems.");
+            //    }
+            //}
 
             //-------------------------------------------------------------------------------------
 

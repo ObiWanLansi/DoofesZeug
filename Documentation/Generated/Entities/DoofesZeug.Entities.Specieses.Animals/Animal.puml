@@ -17,7 +17,7 @@ abstract class Species {
     DateOfBirth: DateOfBirth
     Gender: Gender?
     DateOfDeath: DateOfDeath
-    Age: Int32
+    Age: UInt32?
     IsAlive: Boolean
 }
 

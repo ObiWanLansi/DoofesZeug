@@ -53,19 +53,9 @@ namespace DoofesZeug.Entities.Specieses.Animals
         {
             StringList sl = new();
 
-            if( this.Name == null )
-            {
-                sl.Add("The name is null!");
-            }
-            else
-            {
-                sl.AddRange(this.Name.Validate());
-            }
+            sl.AddRange(base.Validate());
 
-            if( this.AnimalSpecies == null )
-            {
-                sl.Add("The animal species is null!");
-            }
+            PropertyValidate(this, sl);
 
             return sl;
         }

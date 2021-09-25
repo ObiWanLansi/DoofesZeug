@@ -49,13 +49,15 @@
 |[Milligram](./DoofesZeug.Entities.Science.Base.Weight/Milligram.md)|This entity represents just a milligram.|Prefix, Unit, Value|
 
 
-## `DoofesZeug.Entities.Science.Geographically.Base`
+## `DoofesZeug.Entities.Science.Geographically.Coordinates`
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[GeoPoint](./DoofesZeug.Entities.Science.Geographically.Base/GeoPoint.md)|An simplified geo point with lat, lon and alt (WGS84).|Latitude, Longitude, Id|
-|[Latitude](./DoofesZeug.Entities.Science.Geographically.Base/Latitude.md)|An simplified latitude (WGS84).|Value|
-|[Longitude](./DoofesZeug.Entities.Science.Geographically.Base/Longitude.md)|An simplified longitude (WGS84).|Value|
+|[Altitude](./DoofesZeug.Entities.Science.Geographically.Coordinates/Altitude.md)|An simplified altitude in meter over nn.||
+|[GeoPoint2D](./DoofesZeug.Entities.Science.Geographically.Coordinates/GeoPoint2D.md)|An simplified geo point with lat and lon (WGS84).|Latitude, Longitude|
+|[GeoPoint3D](./DoofesZeug.Entities.Science.Geographically.Coordinates/GeoPoint3D.md)|An simplified geo point with lat, lon and alt (WGS84).|Latitude, Longitude, Altitude|
+|[Latitude](./DoofesZeug.Entities.Science.Geographically.Coordinates/Latitude.md)|An simplified latitude (WGS84).||
+|[Longitude](./DoofesZeug.Entities.Science.Geographically.Coordinates/Longitude.md)|An simplified longitude (WGS84).||
 
 
 ## `DoofesZeug.Entities.Specieses`
@@ -69,7 +71,7 @@
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[Animal](./DoofesZeug.Entities.Specieses.Animals/Animal.md)|An simplified animal with an name and some other optional properties.|AnimalSpecies, Name, DateOfBirth, Gender, DateOfDeath, Id|
+|[Animal](./DoofesZeug.Entities.Specieses.Animals/Animal.md)|An simplified animal with an name and some other optional properties.|AnimalSpecies, Name, DateOfBirth, Gender, DateOfDeath, Age, IsAlive, Id|
 
 
 ## `DoofesZeug.Entities.Specieses.Human`
@@ -78,4 +80,4 @@
 |:-----|:----------|:---------|
 |[FirstName](./DoofesZeug.Entities.Specieses.Human/FirstName.md)|An firstname for humans.|Value|
 |[LastName](./DoofesZeug.Entities.Specieses.Human/LastName.md)|An lastname for humans.|Value|
-|[Person](./DoofesZeug.Entities.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, Handedness, BloodGroup, HairColor, Religion, Profession, AverageHeight, AverageWeight, DateOfBirth, Gender, DateOfDeath, Id|
+|[Person](./DoofesZeug.Entities.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, Handedness, BloodGroup, HairColor, Religion, Profession, AverageHeight, AverageWeight, BMI, DateOfBirth, Gender, DateOfDeath, Age, IsAlive, Id|

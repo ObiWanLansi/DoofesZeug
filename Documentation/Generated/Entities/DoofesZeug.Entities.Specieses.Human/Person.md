@@ -35,7 +35,7 @@
 |DateOfBirth|[DateOfBirth](../../Entities/DoofesZeug.Entities.DateAndTime/DateOfBirth.md)|&#x2713;|&#x2713;|NULL|
 |Gender|Gender?|&#x2713;|&#x2713;|NULL|
 |DateOfDeath|[DateOfDeath](../../Entities/DoofesZeug.Entities.DateAndTime/DateOfDeath.md)|&#x2713;|&#x2713;|NULL|
-|Age|Int32|&#x2713;|&#x2717;|-1|
+|Age|UInt32?|&#x2713;|&#x2717;|NULL|
 |IsAlive|Boolean|&#x2713;|&#x2717;|False|
 |Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
 
@@ -88,7 +88,7 @@ An example or code snippet follows soon.
   "DateOfDeath": "22.03.1984",
   "Age": 42,
   "IsAlive": false,
-  "Id": "2c41ff4f-dd1d-4cbc-8166-0abb4f52a768"
+  "Id": "ecb633b5-721e-4546-9191-8e646a99e4d9"
 }
 ```
 

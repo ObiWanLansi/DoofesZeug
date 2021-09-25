@@ -203,10 +203,10 @@ namespace DoofesZeug.Entities.DateAndTime
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public int Years( Date later )
+        public uint Years( Date later )
         {
             TimeSpan span = (DateTime) later - (DateTime) this;
-            return new DateTime(span.Ticks).Year - 1;
+            return (uint) ( new DateTime(span.Ticks).Year - 1 );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

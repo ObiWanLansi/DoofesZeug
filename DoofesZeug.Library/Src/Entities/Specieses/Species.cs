@@ -1,6 +1,7 @@
 ﻿using System;
 
 using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Entities.DateAndTime;
 
 
@@ -19,13 +20,13 @@ namespace DoofesZeug.Entities.Specieses
         //---------------------------------------------------------------------
 
 
-        public int Age
+        public uint? Age
         {
             get
             {
                 if( this.DateOfBirth == null )
                 {
-                    return -1;
+                    return null;
                 }
 
                 return this.DateOfDeath == null ? this.DateOfBirth.Years(Date.Now) : this.DateOfBirth.Years(this.DateOfDeath);
@@ -54,5 +55,41 @@ namespace DoofesZeug.Entities.Specieses
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
         /// </returns>
         public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.DateOfBirth, this.Gender, this.DateOfDeath);
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public override StringList Validate()
+        {
+            StringList sl = new();
+
+            if( this.DateOfBirth == null )
+            {
+                sl.Add("The dateofbirth is null!");
+            }
+            else
+            {
+                sl.AddRange(this.DateOfBirth.Validate());
+            }
+
+            if( this.Gender == null )
+            {
+                sl.Add("The gender is null!");
+            }
+
+            if( this.DateOfDeath != null )
+            {
+                sl.AddRange(this.DateOfDeath.Validate());
+
+                if( (DateTime) this.DateOfBirth > (DateTime) this.DateOfDeath )
+                {
+                    sl.Add("The dateofbirth is bigger than the dateofdeath!");
+                }
+            }
+
+            return sl;
+        }
     }
 }
