@@ -1,6 +1,6 @@
 ﻿using DoofesZeug.Attributes.Documentation;
-
-
+using DoofesZeug.Datatypes.Container;
+using DoofesZeug.Extensions;
 
 namespace DoofesZeug.Entities.Specieses
 {
@@ -71,5 +71,35 @@ namespace DoofesZeug.Entities.Specieses
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
         /// </returns>
         public override int GetHashCode() => this.Value.GetHashCode();
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public override StringList Validate()
+        {
+            if( this.Value == null )
+            {
+                return new StringList { "The name is null!" };
+            }
+
+            if( this.Value.Length < 3 )
+            {
+                return new StringList { "The length of the name is less than 3 characters!" };
+            }
+
+            if( this.Value.Length > 32 )
+            {
+                return new StringList { "The length of the name is more than 32 characters!" };
+            }
+
+            if( this.Value.ContainsNonLetterCharacters() )
+            {
+                return new StringList { "The name contains non letter characters!" };
+            }
+
+            return new();
+        }
     }
 }

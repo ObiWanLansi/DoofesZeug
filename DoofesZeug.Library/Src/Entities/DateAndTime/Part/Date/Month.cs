@@ -1,4 +1,5 @@
 ﻿using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Datatypes.Container;
 
 
 
@@ -42,5 +43,12 @@ namespace DoofesZeug.Entities.DateAndTime.Part.Date
         /// The result of the conversion.
         /// </returns>
         public static implicit operator uint( Month value ) => value.Value;
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public override StringList Validate() => this.Value < 1 || this.Value > 12 ? new StringList { $"The value '{this.Value}' for the month is not acceptable!" } : ( new() );
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 
 using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Entities.DateAndTime.Part.Time;
 using DoofesZeug.Extensions;
 
@@ -244,6 +245,47 @@ namespace DoofesZeug.Entities.DateAndTime
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
         /// </returns>
         public override int GetHashCode() => HashCode.Combine(this.Hour, this.Minute, this.Second);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public override StringList Validate()
+        {
+            StringList sl = new();
+
+            if( this.Hour == null )
+            {
+                sl.Add("The hour is null!");
+            }
+            else
+            {
+                sl.AddRange(this.Hour.Validate());
+            }
+
+            if( this.Minute == null )
+            {
+                sl.Add("The minute is null!");
+            }
+            else
+            {
+                sl.AddRange(this.Minute.Validate());
+            }
+
+            if( this.Second == null )
+            {
+                sl.Add("The second is null!");
+            }
+            else
+            {
+                sl.AddRange(this.Second.Validate());
+            }
+
+            return sl;
+        }
     }
 }
 

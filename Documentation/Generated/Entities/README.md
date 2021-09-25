@@ -26,7 +26,7 @@
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[Hour](./DoofesZeug.Entities.DateAndTime.Part.Time/Hour.md)|The hours of an time.|Value|
+|[Hour](./DoofesZeug.Entities.DateAndTime.Part.Time/Hour.md)|The hour (24h) of an time.|Value|
 |[Minute](./DoofesZeug.Entities.DateAndTime.Part.Time/Minute.md)|The minutes of an time.|Value|
 |[Second](./DoofesZeug.Entities.DateAndTime.Part.Time/Second.md)|The seconds of an time.|Value|
 
@@ -69,7 +69,7 @@
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[Animal](./DoofesZeug.Entities.Specieses.Animals/Animal.md)|An simplified animal with an firstname, lastname, birthday and some other optional properties.|AnimalSpecies, Name, DateOfBirth, Gender, DateOfDeath, Id|
+|[Animal](./DoofesZeug.Entities.Specieses.Animals/Animal.md)|An simplified animal with an name and some other optional properties.|AnimalSpecies, Name, DateOfBirth, Gender, DateOfDeath, Id|
 
 
 ## `DoofesZeug.Entities.Specieses.Human`

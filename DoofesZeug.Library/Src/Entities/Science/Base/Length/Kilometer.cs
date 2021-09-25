@@ -1,4 +1,5 @@
 ﻿using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Datatypes.Misc;
 
 
@@ -50,5 +51,14 @@ namespace DoofesZeug.Entities.Science.Base.Length
         /// The result of the conversion.
         /// </returns>
         public static implicit operator Kilometer( Meter value ) => new(value.Value / 1000);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public override StringList Validate() => this.Value < 0 ? new StringList { $"The value '{this.Value}' for the kilometer is not acceptable!" } : ( new() );
     }
 }

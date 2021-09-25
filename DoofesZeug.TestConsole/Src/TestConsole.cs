@@ -8,7 +8,6 @@ using DoofesZeug.Entities.Specieses.Human;
 using DoofesZeug.Extensions;
 using DoofesZeug.Extensions.Formats;
 using DoofesZeug.TestData;
-using DoofesZeug.Validation;
 
 using static System.Console;
 
@@ -78,37 +77,55 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            //Date d = (30, 02, 1994);
-            //Validator.Validate(d);
-
-            // Ein möglichst invalide Person zum testen.
-            Person p = new()
             {
-                // Darf nicht null sein.
-                LastName = null,
-                // Muss mehr als ein Zeichen haben.
-                FirstName = "X",
-                // Ungültiges Datum.
-                DateOfBirth = (31, 02, 1942),
-                // Einen 32. gibt es nicht und das Datum liegt vor dem Geburtstag.
-                DateOfDeath = (32, 03, 1941)
-            };
+                //Date d = (30, 02, 1994);
+                Date d = (30, 02, null);
+
+                StringList result = d.Validate();
+
+                if( result != null && result.Count > 0 )
+                {
+                    result.ForEach(message => Out.WriteLineAsync(message));
+                }
+                else
+                {
+                    Out.WriteLineAsync("No validation problems.");
+                }
+            }
+
+            {
+
+                // Ein möglichst invalide Person zum testen.
+                Person p = new()
+                {
+                    // Darf nicht null sein.
+                    LastName = null,
+                    // Muss mehr als ein Zeichen haben.
+                    FirstName = "X",
+                    // Ungültiges Datum.
+                    DateOfBirth = (31, 02, 1942),
+                    // Einen 32. gibt es nicht und das Datum liegt vor dem Geburtstag.
+                    DateOfDeath = (32, 03, 1941)
+                };
+
+                //StringList result = p.Validate();
+
+                //if( result != null && result.Count > 0 )
+                //{
+                //    result.ForEach(message => Out.WriteLineAsync(message));
+                //}
+                //else
+                //{
+                //    Out.WriteLineAsync("No validation problems.");
+                //}
+            }
+
+            //-------------------------------------------------------------------------------------
 
             //Person p = TestDataGenerator.GenerateTestData<Person>();
 
             //Out.WriteLineAsync(p.ToPrettyJson());
             //Out.WriteLineAsync(p.ToStringTable());
-
-            //StringList result = Validator.Validate(p);
-
-            //if( result != null && result.Count > 0 )
-            //{
-            //    result.ForEach(message => Out.WriteLineAsync(message));
-            //}
-            //else
-            //{
-            //    Out.WriteLineAsync("No validation problems.");
-            //}
 
             //-------------------------------------------------------------------------------------
 

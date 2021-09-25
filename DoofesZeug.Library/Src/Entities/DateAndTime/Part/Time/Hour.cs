@@ -1,10 +1,11 @@
 ﻿using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Datatypes.Container;
 
 
 
 namespace DoofesZeug.Entities.DateAndTime.Part.Time
 {
-    [Description("The hours of an time.")]
+    [Description("The hour (24h) of an time.")]
     public sealed class Hour : DateTimePart
     {
         /// <summary>
@@ -42,5 +43,12 @@ namespace DoofesZeug.Entities.DateAndTime.Part.Time
         /// The result of the conversion.
         /// </returns>
         public static implicit operator uint( Hour value ) => value.Value;
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public override StringList Validate() => this.Value < 0 || this.Value > 23 ? new StringList { $"The value '{this.Value}' for the hour is not acceptable!" } : ( new() );
     }
 }

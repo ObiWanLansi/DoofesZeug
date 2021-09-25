@@ -1,6 +1,7 @@
 ﻿using System;
 
 using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Entities.Science.Base.Length;
 using DoofesZeug.Entities.Science.Base.Weight;
 
@@ -70,5 +71,13 @@ namespace DoofesZeug.Entities.Specieses.Human
             HashCode.Combine(this.Handedness, this.BloodGroup),
             HashCode.Combine(this.HairColor, this.Religion),
             this.Profession, this.AverageHeight, this.AverageWeight);
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public override StringList Validate() => throw new NotImplementedException();
     }
 }

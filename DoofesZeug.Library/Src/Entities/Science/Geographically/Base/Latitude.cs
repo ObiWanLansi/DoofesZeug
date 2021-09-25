@@ -1,8 +1,8 @@
+using System;
 using System.Globalization;
 
 using DoofesZeug.Attributes.Documentation;
-
-
+using DoofesZeug.Datatypes.Container;
 
 namespace DoofesZeug.Entities.Science.Geographically.Base
 {
@@ -99,5 +99,12 @@ namespace DoofesZeug.Entities.Science.Geographically.Base
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
         /// </returns>
         public override int GetHashCode() => this.Value.GetHashCode();
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public override StringList Validate() => throw new NotImplementedException();
     }
 }

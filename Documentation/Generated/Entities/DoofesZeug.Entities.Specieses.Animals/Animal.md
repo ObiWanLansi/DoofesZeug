@@ -4,7 +4,7 @@
 
 |Property|Value|
 |:-|:-|
-|Description|An simplified animal with an firstname, lastname, birthday and some other optional properties.|
+|Description|An simplified animal with an name and some other optional properties.|
 |Namespace|DoofesZeug.Entities.Specieses.Animals|
 |BaseClass|Species|
 |SourceCode|[Animal.cs](../../../../DoofesZeug.Library/Src/Entities/Specieses/Animals/Animal.cs)|
@@ -64,7 +64,7 @@ An example or code snippet follows soon.
   "DateOfDeath": null,
   "Age": 43,
   "IsAlive": true,
-  "Id": "052bbbd8-d28b-4c8e-841c-0d26763959fd"
+  "Id": "d9c86838-2312-4d0a-9d57-19830d485068"
 }
 ```
 

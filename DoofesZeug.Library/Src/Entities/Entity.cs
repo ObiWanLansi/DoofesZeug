@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 
 using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Datatypes.Container;
 
 
 
@@ -25,6 +26,13 @@ namespace DoofesZeug.Entities
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
         /// </returns>
         public override abstract int GetHashCode();
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public abstract StringList Validate();
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

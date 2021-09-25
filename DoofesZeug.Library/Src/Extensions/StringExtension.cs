@@ -176,6 +176,27 @@ namespace DoofesZeug.Extensions
 
 
         /// <summary>
+        /// Determines whether [contains non letter characters].
+        /// </summary>
+        /// <param name="strContent">Content of the string.</param>
+        /// <returns>
+        ///   <c>true</c> if [contains non letter characters] [the specified string content]; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool ContainsNonLetterCharacters( this string strContent )
+        {
+            foreach( char c in strContent )
+            {
+                if( char.IsLetter(c) == false )
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        /// <summary>
         /// Determines whether [contains control characters].
         /// </summary>
         /// <param name="strContent">Content of the string.</param>

@@ -4,7 +4,7 @@
 
 |Property|Value|
 |:-|:-|
-|Description|The hours of an time.|
+|Description|The hour (24h) of an time.|
 |Namespace|DoofesZeug.Entities.DateAndTime.Part.Time|
 |BaseClass|DateTimePart|
 |SourceCode|[Hour.cs](../../../../DoofesZeug.Library/Src/Entities/DateAndTime/Part/Time/Hour.cs)|

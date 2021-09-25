@@ -1,4 +1,5 @@
 ﻿using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Datatypes.Misc;
 
 
@@ -40,5 +41,14 @@ namespace DoofesZeug.Entities.Science.Base.Weight
         /// The result of the conversion.
         /// </returns>
         public static implicit operator Gram( double value ) => new(value);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public override StringList Validate() => this.Value < 0 ? new StringList { $"The value '{this.Value}' for the gram is not acceptable!" } : ( new() );
     }
 }

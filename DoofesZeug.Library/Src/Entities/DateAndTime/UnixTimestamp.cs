@@ -1,6 +1,7 @@
 ﻿using System;
 
 using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Datatypes.Container;
 
 
 
@@ -159,5 +160,12 @@ namespace DoofesZeug.Entities.DateAndTime
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
         /// </returns>
         public override int GetHashCode() => this.lUnixTimestamp.GetHashCode();
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public override StringList Validate() => new();
     }
 }

@@ -4,14 +4,13 @@ using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Entities.DateAndTime.Part.Date;
 using DoofesZeug.Extensions;
-using DoofesZeug.Validation;
 
 
 
 namespace DoofesZeug.Entities.DateAndTime
 {
     [Description("An date entity with day, month and a year (15.12.1948).")]
-    public class Date : Entity, IValidate<Date>
+    public class Date : Entity
     {
         /// <summary>
         /// Gets the day.
@@ -257,6 +256,7 @@ namespace DoofesZeug.Entities.DateAndTime
             return true;
         }
 
+
         /// <summary>
         /// Returns a hash code for this instance.
         /// </summary>
@@ -268,7 +268,55 @@ namespace DoofesZeug.Entities.DateAndTime
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public StringList Validate( Date value ) => null;
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public override StringList Validate()
+        {
+            StringList sl = new();
+
+            if( this.Day == null )
+            {
+                sl.Add("The day is null!");
+            }
+            else
+            {
+                sl.AddRange(this.Day.Validate());
+            }
+
+            if( this.Month == null )
+            {
+                sl.Add("The month is null!");
+            }
+            else
+            {
+                sl.AddRange(this.Month.Validate());
+            }
+
+            if( this.Year == null )
+            {
+                sl.Add("The year is null!");
+            }
+            else
+            {
+                sl.AddRange(this.Year.Validate());
+            }
+
+
+            // Additional check if the date in combination is valid, eg 31.02.1942 never exists ...
+
+            try
+            {
+                DateTime dt = (DateTime) this;
+            }
+            catch( Exception ex )
+            {
+                sl.Add(ex.Message);
+            }
+
+            return sl;
+        }
     }
 }
 

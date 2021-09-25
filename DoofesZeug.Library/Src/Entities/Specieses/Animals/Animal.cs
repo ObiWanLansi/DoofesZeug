@@ -1,12 +1,13 @@
 ﻿using System;
 
 using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Datatypes.Container;
 
 
 
 namespace DoofesZeug.Entities.Specieses.Animals
 {
-    [Description("An simplified animal with an firstname, lastname, birthday and some other optional properties.")]
+    [Description("An simplified animal with an name and some other optional properties.")]
     public class Animal : Species
     {
         public WellKnownAnimal? AnimalSpecies { get; set; }
@@ -42,5 +43,31 @@ namespace DoofesZeug.Entities.Specieses.Animals
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
         /// </returns>
         public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.AnimalSpecies, this.Name);
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public override StringList Validate()
+        {
+            StringList sl = new();
+
+            if( this.Name == null )
+            {
+                sl.Add("The name is null!");
+            }
+            else
+            {
+                sl.AddRange(this.Name.Validate());
+            }
+
+            if( this.AnimalSpecies == null )
+            {
+                sl.Add("The animal species is null!");
+            }
+
+            return sl;
+        }
     }
 }
