@@ -43,9 +43,7 @@
 
 ## Attributes
 
-- Builder
 - Description
-- Example
 
 ---
 
@@ -58,26 +56,7 @@
 ## Code Example
 
 ```cs
-namespace DoofesZeug.UnitTests.Functional.Builder
-{
-    [TestClass]
-    public class TestPersonBuilder
-    {
-        [TestMethod]
-        public void ExecuteTest()
-        {
-            Person person = PersonBuilder.New().
-                WithDateOfBirth((01, 01, 1998)).
-                WithFirstName("John").
-                WithLastName("Doe").
-                WithGender(Gender.Male).
-                WithHandedness(Handedness.Both).
-                WithProfession(WellKnownProfession.PoliceOfficer);
-
-            Assert.IsNotNull(person);
-        }
-    }
-}
+An example or code snippet follows soon.
 ```
 
 ---
@@ -109,7 +88,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
   "DateOfDeath": "22.03.1984",
   "Age": 42,
   "IsAlive": false,
-  "Id": "10b89be2-fd71-4203-9552-c9598cac6f68"
+  "Id": "d5075571-3a64-4816-b9b7-c5ab56aa9e83"
 }
 ```
 

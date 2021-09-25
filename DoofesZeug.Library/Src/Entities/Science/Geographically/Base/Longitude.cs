@@ -1,14 +1,12 @@
 using System.Globalization;
 
 using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Attributes.Validation;
 
 
 
 namespace DoofesZeug.Entities.Science.Geographically.Base
 {
     [Description("An simplified longitude (WGS84).")]
-    [Range(-180,180)]
     public class Longitude : Entity
     {
         protected static readonly CultureInfo CULTUREINFO = new("en-US");

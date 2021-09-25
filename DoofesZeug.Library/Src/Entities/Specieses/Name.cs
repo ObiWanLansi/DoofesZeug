@@ -1,12 +1,10 @@
 ﻿using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Attributes.Validation;
 
 
 
 namespace DoofesZeug.Entities.Specieses
 {
     [Description("An generic name for any species.")]
-    [Length(3, 64)]
     public class Name : Entity
     {
         public string Value { get; set; }

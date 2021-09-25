@@ -1,12 +1,10 @@
 ﻿using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Attributes.Validation;
 
 
 
 namespace DoofesZeug.Entities.DateAndTime.Part.Date
 {
     [Description("The year of an date.")]
-    [Range(0, 9999)]
     public sealed class Year : DateTimePart
     {
         /// <summary>

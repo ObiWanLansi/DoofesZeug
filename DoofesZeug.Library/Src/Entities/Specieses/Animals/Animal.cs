@@ -1,14 +1,12 @@
 ﻿using System;
 
 using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Attributes.Pattern;
 
 
 
 namespace DoofesZeug.Entities.Specieses.Animals
 {
     [Description("An simplified animal with an firstname, lastname, birthday and some other optional properties.")]
-    [Builder]
     public class Animal : Species
     {
         public WellKnownAnimal? AnimalSpecies { get; set; }

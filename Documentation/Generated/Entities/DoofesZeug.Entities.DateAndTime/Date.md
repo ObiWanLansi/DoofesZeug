@@ -31,7 +31,6 @@
 ## Attributes
 
 - Description
-- Builder
 
 ---
 

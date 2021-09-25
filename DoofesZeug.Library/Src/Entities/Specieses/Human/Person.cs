@@ -1,8 +1,6 @@
 ﻿using System;
 
 using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Attributes.Pattern;
-using DoofesZeug.Attributes.Validation;
 using DoofesZeug.Entities.Science.Base.Length;
 using DoofesZeug.Entities.Science.Base.Weight;
 
@@ -10,15 +8,12 @@ using DoofesZeug.Entities.Science.Base.Weight;
 
 namespace DoofesZeug.Entities.Specieses.Human
 {
-    [Builder]
     [Description("An simplified person with an firstname, lastname, birthday and some other optional properties.")]
-    [Example("O:\\DoofesZeug\\DoofesZeug.UnitTests\\Src\\Functional\\Builder\\TestPersonBuilder.cs")]
+    //[Example("O:\\DoofesZeug\\DoofesZeug.UnitTests\\Src\\Functional\\Builder\\TestPersonBuilder.cs")]
     public class Person : Species
     {
-        [NotNull]
         public FirstName FirstName { get; set; }
 
-        [NotNull]
         public LastName LastName { get; set; }
 
         public Handedness? Handedness { get; set; }
@@ -31,10 +26,8 @@ namespace DoofesZeug.Entities.Specieses.Human
 
         public WellKnownProfession? Profession { get; set; }
 
-        [Range(30, 260)]
         public Centimeter AverageHeight { get; set; }
 
-        [Range(3, 500)]
         public Kilogram AverageWeight { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

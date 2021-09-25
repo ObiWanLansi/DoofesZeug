@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Src\Functional\Builder\" />
     <Folder Include="Src\Functional\Tools\" />
   </ItemGroup>
 

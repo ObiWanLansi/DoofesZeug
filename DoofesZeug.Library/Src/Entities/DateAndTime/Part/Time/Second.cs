@@ -1,12 +1,10 @@
 ﻿using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Attributes.Validation;
 
 
 
 namespace DoofesZeug.Entities.DateAndTime.Part.Time
 {
     [Description("The seconds of an time.")]
-    [Range(0, 59)]
     public sealed class Second : DateTimePart
     {
         /// <summary>

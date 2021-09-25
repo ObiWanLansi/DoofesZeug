@@ -36,7 +36,6 @@
 ## Attributes
 
 - Description
-- Builder
 
 ---
 
@@ -65,7 +64,7 @@ An example or code snippet follows soon.
   "DateOfDeath": null,
   "Age": 43,
   "IsAlive": true,
-  "Id": "6f0e6f0d-7c5a-421b-a8c9-c85834d405d3"
+  "Id": "052bbbd8-d28b-4c8e-841c-0d26763959fd"
 }
 ```
 

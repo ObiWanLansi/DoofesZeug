@@ -29,7 +29,6 @@
 ## Attributes
 
 - Description
-- Range
 
 ---
 

@@ -1,12 +1,10 @@
 ﻿using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Attributes.Validation;
 
 
 
 namespace DoofesZeug.Entities.DateAndTime.Part.Date
 {
     [Description("The month of an date.")]
-    [Range(1, 12)]
     public sealed class Month : DateTimePart
     {
         /// <summary>

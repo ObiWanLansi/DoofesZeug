@@ -1,7 +1,6 @@
 ﻿using System;
 
 using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Attributes.Pattern;
 using DoofesZeug.Extensions;
 
 
@@ -9,7 +8,6 @@ using DoofesZeug.Extensions;
 namespace DoofesZeug.Entities.Science.Geographically.Base
 {
     [Description("An simplified geo point with lat, lon and alt (WGS84).")]
-    [Builder]
     public class GeoPoint : IdentifiableEntity
     {
         public Latitude Latitude { get; set; }

@@ -1,12 +1,10 @@
 ﻿using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Attributes.Validation;
 
 
 
 namespace DoofesZeug.Entities.DateAndTime.Part.Date
 {
     [Description("The week of an date in the year.")]
-    [Range(1, 53)]
     public sealed class Week : DateTimePart
     {
         /// <summary>

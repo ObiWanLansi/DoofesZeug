@@ -99,16 +99,16 @@ namespace DoofesZeug
             //Out.WriteLineAsync(p.ToPrettyJson());
             //Out.WriteLineAsync(p.ToStringTable());
 
-            StringList result = Validator.Validate(p);
+            //StringList result = Validator.Validate(p);
 
-            if( result != null && result.Count > 0 )
-            {
-                result.ForEach(message => Out.WriteLineAsync(message));
-            }
-            else
-            {
-                Out.WriteLineAsync("No validation problems.");
-            }
+            //if( result != null && result.Count > 0 )
+            //{
+            //    result.ForEach(message => Out.WriteLineAsync(message));
+            //}
+            //else
+            //{
+            //    Out.WriteLineAsync("No validation problems.");
+            //}
 
             //-------------------------------------------------------------------------------------
 

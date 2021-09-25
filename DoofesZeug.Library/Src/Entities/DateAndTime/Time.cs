@@ -1,16 +1,14 @@
 ﻿using System;
 
 using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Attributes.Pattern;
-using DoofesZeug.Extensions;
 using DoofesZeug.Entities.DateAndTime.Part.Time;
+using DoofesZeug.Extensions;
 
 
 
 namespace DoofesZeug.Entities.DateAndTime
 {
     [Description("An time entity with hours, minutes and the seconds (12:34:56).")]
-    [Builder]
     public class Time : Entity
     {
         /// <summary>

@@ -9,7 +9,6 @@
 - [Overview](#overview)
   - [Entities](#entities)
   - [Enumerations](#enumerations)
-  - [Builder](#builder)
   - [Examples](#examples)
 - [Further Features](#further-features)
 - [Current Status](#current-status)
@@ -54,9 +53,6 @@ All the entities / classes are listet in the generated [Entity Overview](./Docum
 
 All the enumerations are listet in the generated [Enumerations Overview](./Documentation/Generated/Enumerations/README.md).
 
-### Builder
-
-For some entities are builder avaible and listed in [Builder Overview](./Documentation/Generated/Builder/README.md).
 
 ### Examples
 
@@ -66,8 +62,6 @@ There are some [examples](./DoofesZeug.TestConsole/Src/Examples) avaible. At the
 
 ## Further Features
 
-- [Builder Pattern](./Documentation/Features/BuilderPattern.md)
-- [Entity Validation](./Documentation/Features/EntityValidation.md)
 - [Format Extension](./Documentation/Features/FormatExtension.md)
 - [Additional Datatypes](./Documentation/Features/AdditionalDatatypes.md)
 

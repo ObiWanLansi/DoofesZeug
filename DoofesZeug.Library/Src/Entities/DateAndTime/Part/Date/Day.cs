@@ -1,12 +1,10 @@
 ﻿using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Attributes.Validation;
 
 
 
 namespace DoofesZeug.Entities.DateAndTime.Part.Date
 {
     [Description("The day of an date.")]
-    [Range(1, 31)]
     public sealed class Day : DateTimePart
     {
         /// <summary>
