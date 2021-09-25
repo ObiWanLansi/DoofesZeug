@@ -23,7 +23,7 @@
 |BloodGroup|BloodGroup?|&#x2713;|&#x2713;|NULL|
 |HairColor|WellKnownHairColor?|&#x2713;|&#x2713;|NULL|
 |Religion|MajorReligion?|&#x2713;|&#x2713;|NULL|
-|Profession|[Profession](../../Entities/DoofesZeug.Entities.Specieses.Human.Professions/Profession.md)|&#x2713;|&#x2713;|NULL|
+|Profession|WellKnownProfession?|&#x2713;|&#x2713;|NULL|
 |AverageHeight|[Centimeter](../../Entities/DoofesZeug.Entities.Science.Base.Length/Centimeter.md)|&#x2713;|&#x2713;|NULL|
 |AverageWeight|[Kilogram](../../Entities/DoofesZeug.Entities.Science.Base.Weight/Kilogram.md)|&#x2713;|&#x2713;|NULL|
 |BMI|Double?|&#x2713;|&#x2717;|NULL|
@@ -72,7 +72,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
                 WithLastName("Doe").
                 WithGender(Gender.Male).
                 WithHandedness(Handedness.Both).
-                WithProfession(new FireFighter());
+                WithProfession(WellKnownProfession.PoliceOfficer);
 
             Assert.IsNotNull(person);
         }
@@ -92,11 +92,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
   "BloodGroup": "AB",
   "HairColor": "Blond",
   "Religion": "Buddhism",
-  "Profession": {
-    "Id": "abdfbfee-c82c-4ade-892e-97bc9d74d6a5",
-    "WellKnownProfessionType": "FireFighter",
-    "Since": "11.11.1942"
-  },
+  "Profession": "Engineer",
   "AverageHeight": {
     "Prefix": "Centi",
     "Unit": "m",
@@ -113,7 +109,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
   "DateOfDeath": "22.03.1984",
   "Age": 42,
   "IsAlive": false,
-  "Id": "412dd17f-e3be-4b14-a8f3-2b70b7d3ebb6"
+  "Id": "e682d2eb-b4f1-4b1c-a6ba-0deb8f77936f"
 }
 ```
 

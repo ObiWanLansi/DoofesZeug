@@ -24,7 +24,6 @@ namespace DoofesZeug.Extensions.Formats
         {
             new StringEnumConverter(),
             new NameConverter(),
-            new ProfessionConverter(),
 
             new DateTimePartConverter(),
             new DateOfBirthConverter(),

@@ -79,24 +79,3 @@
 |[FirstName](./DoofesZeug.Entities.Specieses.Human/FirstName.md)|An firstname for humans.|Value|
 |[LastName](./DoofesZeug.Entities.Specieses.Human/LastName.md)|An lastname for humans.|Value|
 |[Person](./DoofesZeug.Entities.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, Handedness, BloodGroup, HairColor, Religion, Profession, AverageHeight, AverageWeight, DateOfBirth, Gender, DateOfDeath, Id|
-
-
-## `DoofesZeug.Entities.Specieses.Human.Professions`
-
-|Entity|Description|Properties|
-|:-----|:----------|:---------|
-|[Baker](./DoofesZeug.Entities.Specieses.Human.Professions/Baker.md)|This is an specialized entitiy for an baker.|Since, Id|
-|[BusDriver](./DoofesZeug.Entities.Specieses.Human.Professions/BusDriver.md)|This is an specialized entitiy for an busdriver.|Since, Id|
-|[Carpenter](./DoofesZeug.Entities.Specieses.Human.Professions/Carpenter.md)|This is an specialized entitiy for an carpenter.|Since, Id|
-|[Doctor](./DoofesZeug.Entities.Specieses.Human.Professions/Doctor.md)|This is an specialized entitiy for an doctor.|Since, Id|
-|[Engineer](./DoofesZeug.Entities.Specieses.Human.Professions/Engineer.md)|This is an specialized entitiy for an engineer.|Since, Id|
-|[FireFighter](./DoofesZeug.Entities.Specieses.Human.Professions/FireFighter.md)|This is an specialized entitiy for an firefighter.|Since, Id|
-|[HairDresser](./DoofesZeug.Entities.Specieses.Human.Professions/HairDresser.md)|This is an specialized entitiy for an hairdresser.|Since, Id|
-|[Nurse](./DoofesZeug.Entities.Specieses.Human.Professions/Nurse.md)|This is an specialized entitiy for an nurse.|Since, Id|
-|[Pilot](./DoofesZeug.Entities.Specieses.Human.Professions/Pilot.md)|This is an specialized entitiy for an pilot.|Since, Id|
-|[PoliceOfficer](./DoofesZeug.Entities.Specieses.Human.Professions/PoliceOfficer.md)|This is an specialized entitiy for an policeofficer.|Since, Id|
-|[Soldier](./DoofesZeug.Entities.Specieses.Human.Professions/Soldier.md)|This is an specialized entitiy for an soldier.|Since, Id|
-|[TaxiDriver](./DoofesZeug.Entities.Specieses.Human.Professions/TaxiDriver.md)|This is an specialized entitiy for an taxidriver.|Since, Id|
-|[Teacher](./DoofesZeug.Entities.Specieses.Human.Professions/Teacher.md)|This is an specialized entitiy for an teacher.|Since, Id|
-|[Tiler](./DoofesZeug.Entities.Specieses.Human.Professions/Tiler.md)|This is an specialized entitiy for an tiler.|Since, Id|
-|[Waiter](./DoofesZeug.Entities.Specieses.Human.Professions/Waiter.md)|This is an specialized entitiy for an waiter.|Since, Id|

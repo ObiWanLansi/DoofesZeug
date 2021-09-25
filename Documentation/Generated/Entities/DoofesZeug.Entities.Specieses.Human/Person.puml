@@ -30,7 +30,7 @@ class Person {
     BloodGroup: BloodGroup?
     HairColor: WellKnownHairColor?
     Religion: MajorReligion?
-    Profession: Profession
+    Profession: WellKnownProfession?
     AverageHeight: Centimeter
     AverageWeight: Kilogram
     BMI: Double?

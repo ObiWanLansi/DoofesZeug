@@ -11,7 +11,6 @@ using DoofesZeug.Entities.Science.Geographically.Base;
 using DoofesZeug.Entities.Specieses;
 using DoofesZeug.Entities.Specieses.Animals;
 using DoofesZeug.Entities.Specieses.Human;
-using DoofesZeug.Entities.Specieses.Human.Professions;
 
 
 
@@ -32,22 +31,6 @@ namespace DoofesZeug.TestData
             GENERATORS.Add(typeof(Person).FullName, GeneratePerson);
             GENERATORS.Add(typeof(FirstName).FullName, GenerateFirstName);
             GENERATORS.Add(typeof(LastName).FullName, GenerateLastName);
-
-            GENERATORS.Add(typeof(Baker).FullName, GenerateProfession<Baker>);
-            GENERATORS.Add(typeof(Carpenter).FullName, GenerateProfession<Carpenter>);
-            GENERATORS.Add(typeof(Doctor).FullName, GenerateProfession<Doctor>);
-            GENERATORS.Add(typeof(Engineer).FullName, GenerateProfession<Engineer>);
-            GENERATORS.Add(typeof(FireFighter).FullName, GenerateProfession<FireFighter>);
-            GENERATORS.Add(typeof(HairDresser).FullName, GenerateProfession<HairDresser>);
-            GENERATORS.Add(typeof(Nurse).FullName, GenerateProfession<Nurse>);
-            GENERATORS.Add(typeof(PoliceOfficer).FullName, GenerateProfession<PoliceOfficer>);
-            GENERATORS.Add(typeof(Teacher).FullName, GenerateProfession<Teacher>);
-            GENERATORS.Add(typeof(Tiler).FullName, GenerateProfession<Tiler>);
-            GENERATORS.Add(typeof(Waiter).FullName, GenerateProfession<Waiter>);
-            GENERATORS.Add(typeof(BusDriver).FullName, GenerateProfession<BusDriver>);
-            GENERATORS.Add(typeof(TaxiDriver).FullName, GenerateProfession<TaxiDriver>);
-            GENERATORS.Add(typeof(Soldier).FullName, GenerateProfession<Soldier>);
-            GENERATORS.Add(typeof(Pilot).FullName, GenerateProfession<Pilot>);
 
             GENERATORS.Add(typeof(DateOfBirth).FullName, GenerateDateOfBirth);
             GENERATORS.Add(typeof(DateOfDeath).FullName, GenerateDateOfDeath);
@@ -141,17 +124,10 @@ namespace DoofesZeug.TestData
             BloodGroup = BloodGroup.AB,
             HairColor = WellKnownHairColor.Blond,
             Religion = MajorReligion.Buddhism,
-            Profession = GenerateProfession<FireFighter>(),
+            Profession = WellKnownProfession.Engineer,
             AverageHeight = 174,
             AverageWeight = 72
         };
-
-        private static T GenerateProfession<T>() where T : Profession
-        {
-            Profession p = (Profession) Activator.CreateInstance(typeof(T));
-            p.Since = (11, 11, 1942);
-            return (T) p;
-        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

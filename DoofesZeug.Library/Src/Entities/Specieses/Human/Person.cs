@@ -5,7 +5,6 @@ using DoofesZeug.Attributes.Pattern;
 using DoofesZeug.Attributes.Validation;
 using DoofesZeug.Entities.Science.Base.Length;
 using DoofesZeug.Entities.Science.Base.Weight;
-using DoofesZeug.Entities.Specieses.Human.Professions;
 
 
 
@@ -30,7 +29,7 @@ namespace DoofesZeug.Entities.Specieses.Human
 
         public MajorReligion? Religion { get; set; }
 
-        public Profession Profession { get; set; }
+        public WellKnownProfession? Profession { get; set; }
 
         [Range(30, 260)]
         public Centimeter AverageHeight { get; set; }
@@ -77,6 +76,6 @@ namespace DoofesZeug.Entities.Specieses.Human
             HashCode.Combine(this.FirstName, this.LastName),
             HashCode.Combine(this.Handedness, this.BloodGroup),
             HashCode.Combine(this.HairColor, this.Religion),
-            this.Profession, AverageHeight, AverageWeight);
+            this.Profession, this.AverageHeight, this.AverageWeight);
     }
 }

@@ -45,13 +45,7 @@
 |[Handedness](./DoofesZeug.Entities.Specieses.Human/Handedness.md)|An simple enumeration for the handedness of an human.|Left, Right, Both|
 |[MajorReligion](./DoofesZeug.Entities.Specieses.Human/MajorReligion.md)|The five big major religions.|Hinduism, Buddhism, Islam, Christianity, Judaism|
 |[WellKnownHairColor](./DoofesZeug.Entities.Specieses.Human/WellKnownHairColor.md)|A small enumeration with the natural hair colors.|White, Gray, Red, Blond, Brown, Black|
-
-
-## `DoofesZeug.Entities.Specieses.Human.Professions`
-
-|Enumeration|Description|Values|
-|:----------|:----------|:-----|
-|[WellKnownProfession](./DoofesZeug.Entities.Specieses.Human.Professions/WellKnownProfession.md)|A small enumeration of some professions, for every value an corresponding entity will be created by the generator.|FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter, Soldier, BusDriver, TaxiDriver, Pilot|
+|[WellKnownProfession](./DoofesZeug.Entities.Specieses.Human/WellKnownProfession.md)|A small enumeration of some professions.|FireFighter, PoliceOfficer, Nurse, Engineer, Doctor, HairDresser, Baker, Waiter, Teacher, Tiler, Carpenter, Soldier, BusDriver, TaxiDriver, Pilot|
 
 
 ## `DoofesZeug.Tools.Crypt`

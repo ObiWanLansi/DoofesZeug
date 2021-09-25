@@ -1,6 +1,5 @@
 ﻿using DoofesZeug.Entities.Specieses;
 using DoofesZeug.Entities.Specieses.Human;
-using DoofesZeug.Entities.Specieses.Human.Professions;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -20,7 +19,7 @@ namespace DoofesZeug.UnitTests.Functional.Builder
                 WithLastName("Doe").
                 WithGender(Gender.Male).
                 WithHandedness(Handedness.Both).
-                WithProfession(new FireFighter());
+                WithProfession(WellKnownProfession.PoliceOfficer);
 
             Assert.IsNotNull(person);
         }

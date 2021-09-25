@@ -57,7 +57,7 @@ namespace DoofesZeug.Entities.Specieses.Human
         }
 
 
-        public static Person WithProfession(this Person person, DoofesZeug.Entities.Specieses.Human.Professions.Profession profession)
+        public static Person WithProfession(this Person person, System.Nullable<DoofesZeug.Entities.Specieses.Human.WellKnownProfession> profession)
         {
             person.Profession = profession;
             return person;

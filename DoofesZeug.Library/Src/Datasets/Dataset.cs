@@ -51,6 +51,9 @@ namespace DoofesZeug.Datasets
             "Sylvia",
             "Mathilde",
             "Hanna",
+            "Gabi",
+            "Chantal",
+            "Silvia",
             "Jennifer",
             "Gabriele",
             "Sonja",
@@ -77,6 +80,10 @@ namespace DoofesZeug.Datasets
             "Jörg",
             "Michael",
             "Rolf",
+            "Rüdiger",
+            "Ben",
+            "Jens",
+            "Jack",
             "Franz"
         };
 
@@ -88,7 +95,6 @@ namespace DoofesZeug.Datasets
             "Meier",
             "Müller",
             "Schmidt",
-            "Lanser",
             "Zimmermann",
             "Maier",
             "Hansen",
@@ -100,6 +106,9 @@ namespace DoofesZeug.Datasets
             "Koch",
             "Bauer",
             "Wolf",
+            "Hoffstäder",
+            "Erdmann",
+            "Dent",
             "Schulz"
         };
 
@@ -841,8 +850,7 @@ namespace DoofesZeug.Datasets
                 p.BloodGroup = r.NextEnum<BloodGroup>();
                 p.HairColor = r.NextEnum<WellKnownHairColor>();
                 p.Religion = r.NextEnum<MajorReligion>();
-
-                //TODO: Früher oder später kommt auch noch Profession hinzu, doch immomment haben wir noch kein Profession.GetByWellKnownProfession(WellKnownProfession wkp)
+                p.Profession = r.NextEnum<WellKnownProfession>();
 
                 p.AverageHeight = r.Next(120, 210);
                 p.AverageWeight = (double) p.AverageHeight - 100 + r.Next(-5, +5);

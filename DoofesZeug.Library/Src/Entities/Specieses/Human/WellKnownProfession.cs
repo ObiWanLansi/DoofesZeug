@@ -2,9 +2,9 @@
 
 
 
-namespace DoofesZeug.Entities.Specieses.Human.Professions
+namespace DoofesZeug.Entities.Specieses.Human
 {
-    [Description("A small enumeration of some professions, for every value an corresponding entity will be created by the generator.")]
+    [Description("A small enumeration of some professions.")]
     public enum WellKnownProfession : byte
     {
         // When we not know, what for an profession an human have, the property should be null.

@@ -14,7 +14,6 @@ namespace DoofesZeug
         static void Main( string [] args )
         {
             EntityBuilderPattern.Generate();
-            ProfessionsBuilder.Generate();
 
             GenerateEntityOverview.Generate();
             GenerateEnumerationsOverview.Generate();
