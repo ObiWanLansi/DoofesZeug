@@ -7,7 +7,6 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## ToDo
 
-- GeoConvert für Lat, Lon und Alt
 - Generate class overview for other classes which are not an entity.
 - Entities: Genre,Artist, Album, Sampler, Movie,Book, EMail, Homepage, Phone, Mobil
 - MarkdownExtension
@@ -48,6 +47,7 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## Done
 
+- GeoConvert für Lat, Lon und Alt
 - ~~StandardValidator als Attribute für EMail, Phone, Name, aber auch ein Interface Validate um komplexere zusammenhänge validieren zu können.~~
 - HairColor und EyeColor als Enumeration mit Standardfarben
 - ~~Feature WizardSupportool mit fragen / antworten wie bei erstellen dotnet init, oder anderen tools ?~~
