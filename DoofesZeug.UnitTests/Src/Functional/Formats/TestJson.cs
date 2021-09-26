@@ -14,8 +14,7 @@ namespace DoofesZeug.UnitTests.Functional.Formats
     [TestClass]
     public class TestJson
     {
-        //[TestMethod]
-        //TODO Wenn Lat Lon Alt Convert eingebaut sind wieder aktivieren.
+        [TestMethod]
         public void TestEntityJsonConverter()
         {
             Type tEntityBase = typeof(Entity);

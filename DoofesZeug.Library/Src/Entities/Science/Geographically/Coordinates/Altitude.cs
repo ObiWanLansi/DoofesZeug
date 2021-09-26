@@ -50,6 +50,16 @@ namespace DoofesZeug.Entities.Science.Geographically.Coordinates
         /// </returns>
         public static implicit operator Altitude( ulong value ) => new(value);
 
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="Altitude"/> to <see cref="System.UInt64"/>.
+        /// </summary>
+        /// <param name="v">The v.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static explicit operator ulong( Altitude v ) => v.MeterOverNN;
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

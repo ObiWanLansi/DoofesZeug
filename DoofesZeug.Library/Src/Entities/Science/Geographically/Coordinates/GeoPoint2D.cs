@@ -38,27 +38,27 @@ namespace DoofesZeug.Entities.Science.Geographically.Coordinates
         }
 
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GeoPoint2D"/> class.
-        /// </summary>
-        /// <param name="latlon">The latlon.</param>
-        public GeoPoint2D( string latlon )
-        {
-            if( latlon.IsEmpty() )
-            {
-                throw new ArgumentNullException(nameof(latlon));
-            }
+        ///// <summary>
+        ///// Initializes a new instance of the <see cref="GeoPoint2D"/> class.
+        ///// </summary>
+        ///// <param name="latlon">The latlon.</param>
+        //public GeoPoint2D( string latlon )
+        //{
+        //    if( latlon.IsEmpty() )
+        //    {
+        //        throw new ArgumentNullException(nameof(latlon));
+        //    }
 
-            int index = latlon.IndexOf(',');
+        //    int index = latlon.IndexOf(',');
 
-            if( index < 3 )
-            {
-                throw new ArgumentException("", nameof(latlon));
-            }
+        //    if( index < 3 )
+        //    {
+        //        throw new ArgumentException("", nameof(latlon));
+        //    }
 
-            this.Latitude = new(latlon.Substring(0, index).Trim());
-            this.Longitude = new(latlon.Substring(index + 1, latlon.Length - index - 1).Trim());
-        }
+        //    this.Latitude = new(latlon.Substring(0, index).Trim());
+        //    this.Longitude = new(latlon.Substring(index + 1, latlon.Length - index - 1).Trim());
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

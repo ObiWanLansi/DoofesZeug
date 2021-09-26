@@ -14,9 +14,11 @@ namespace DoofesZeug.Converter
 
         private static readonly Type LONGITUDE = typeof(Longitude);
 
-        private static readonly Type GEOPOINT2D = typeof(GeoPoint2D);
-        
-        private static readonly Type GEOPOINT3D = typeof(GeoPoint3D);
+        private static readonly Type ALTITUDE = typeof(Altitude);
+
+        //private static readonly Type GEOPOINT2D = typeof(GeoPoint2D);
+
+        //private static readonly Type GEOPOINT3D = typeof(GeoPoint3D);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -28,7 +30,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType == LATITUDE || objectType == LONGITUDE || objectType == GEOPOINT2D;
+        public override bool CanConvert( Type objectType ) => objectType == LATITUDE || objectType == LONGITUDE || objectType == ALTITUDE;
 
 
         /// <summary>
@@ -45,15 +47,20 @@ namespace DoofesZeug.Converter
         {
             if( objectType == LATITUDE )
             {
-                return new Latitude(Convert.ToString(reader.Value));
+                return new Latitude(Convert.ToDouble(reader.Value));
             }
 
             if( objectType == LONGITUDE )
             {
-                return new Longitude(Convert.ToString(reader.Value));
+                return new Longitude(Convert.ToDouble(reader.Value));
             }
 
-            return objectType == GEOPOINT2D ? new GeoPoint2D(Convert.ToString(reader.Value)) : null;
+            if( objectType == ALTITUDE )
+            {
+                return new Altitude(Convert.ToUInt64(reader.Value));
+            }
+
+            return null;
         }
 
 
@@ -71,7 +78,25 @@ namespace DoofesZeug.Converter
                 return;
             }
 
-            writer.WriteValue(value.ToString());
+            if( value is Latitude lat )
+            {
+                writer.WriteValue((double) lat);
+                return;
+            }
+
+            if( value is Longitude lon )
+            {
+                writer.WriteValue((double) lon);
+                return;
+            }
+
+            if( value is Altitude alt )
+            {
+                writer.WriteValue((ulong) alt);
+                return;
+            }
+
+            writer.WriteNull();
         }
     }
 }

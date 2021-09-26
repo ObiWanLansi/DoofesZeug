@@ -31,7 +31,7 @@ namespace DoofesZeug.Extensions.Formats
             new UnixTimestampConverter(),
             new UnitPrefixConverter(),
 
-            //new GeoConverter()
+            new GeoConverter()
         };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

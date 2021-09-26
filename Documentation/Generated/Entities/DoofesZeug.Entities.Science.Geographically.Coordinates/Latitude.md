@@ -48,7 +48,7 @@ An example or code snippet follows soon.
 ## JSON Example
 
 ```json
-{}
+49.759646524258756
 ```
 
 ---

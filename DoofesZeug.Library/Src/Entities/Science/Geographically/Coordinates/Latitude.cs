@@ -36,11 +36,11 @@ namespace DoofesZeug.Entities.Science.Geographically.Coordinates
         public Latitude( double value ) => this.Value = value;
 
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Latitude"/> class.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        public Latitude( string value ) => this.Value = double.Parse(value, CULTUREINFO);
+        ///// <summary>
+        ///// Initializes a new instance of the <see cref="Latitude"/> class.
+        ///// </summary>
+        ///// <param name="value">The value.</param>
+        //public Latitude( string value ) => this.Value = double.Parse(value, CULTUREINFO);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -53,6 +53,16 @@ namespace DoofesZeug.Entities.Science.Geographically.Coordinates
         /// The result of the conversion.
         /// </returns>
         public static implicit operator Latitude( double value ) => new(value);
+
+
+        /// <summary>
+        /// Performs an explicit conversion from <see cref="DoofesZeug.Entities.Science.Geographically.Coordinates.Latitude"/> to <see cref="double"/>.
+        /// </summary>
+        /// <param name="v">The v.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static explicit operator double( Latitude v ) => v.Value;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

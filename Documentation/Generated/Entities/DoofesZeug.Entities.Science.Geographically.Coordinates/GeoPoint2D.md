@@ -51,8 +51,8 @@ An example or code snippet follows soon.
 
 ```json
 {
-  "Latitude": {},
-  "Longitude": {}
+  "Latitude": 49.759646524258756,
+  "Longitude": 6.644282639342397
 }
 ```
 

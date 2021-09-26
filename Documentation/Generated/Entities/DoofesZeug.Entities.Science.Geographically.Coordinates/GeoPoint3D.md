@@ -52,9 +52,9 @@ An example or code snippet follows soon.
 
 ```json
 {
-  "Latitude": {},
-  "Longitude": {},
-  "Altitude": {}
+  "Latitude": 49.759646524258756,
+  "Longitude": 6.644282639342397,
+  "Altitude": 1234
 }
 ```
 
