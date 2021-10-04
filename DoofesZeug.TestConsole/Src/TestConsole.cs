@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 
-using DoofesZeug.Datasets;
-using DoofesZeug.Datatypes.Container;
-using DoofesZeug.Entities.DateAndTime;
-using DoofesZeug.Entities.Science.Geographically.Coordinates;
-using DoofesZeug.Entities.Specieses.Human;
-using DoofesZeug.Extensions;
+using DoofesZeug.Entities.ManMade.Communication;
 using DoofesZeug.Extensions.Formats;
-using DoofesZeug.TestData;
 
 using static System.Console;
 
@@ -78,13 +71,18 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            GeoPoint2D p2 = new(49.759646524258756, 6.644282639342397);
-            Out.WriteLineAsync(p2.ToPrettyJson());
-            Out.WriteLineAsync(p2.ToStringTable());
+            Phone p = new();
+            Out.WriteLineAsync(p.ToPrettyJson());
 
-            GeoPoint3D p3 = new(49.759646524258756, 6.644282639342397, 1234);
-            Out.WriteLineAsync(p3.ToPrettyJson());
-            Out.WriteLineAsync(p3.ToStringTable());
+            //-------------------------------------------------------------------------------------
+
+            //GeoPoint2D p2 = new(49.759646524258756, 6.644282639342397);
+            //Out.WriteLineAsync(p2.ToPrettyJson());
+            //Out.WriteLineAsync(p2.ToStringTable());
+
+            //GeoPoint3D p3 = new(49.759646524258756, 6.644282639342397, 1234);
+            //Out.WriteLineAsync(p3.ToPrettyJson());
+            //Out.WriteLineAsync(p3.ToStringTable());
 
             //-------------------------------------------------------------------------------------
 
