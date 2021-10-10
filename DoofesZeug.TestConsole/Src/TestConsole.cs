@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 
+using DoofesZeug.Datasets;
 using DoofesZeug.Entities.ManMade.Communication;
+using DoofesZeug.Entities.Specieses.Human;
+using DoofesZeug.Extensions;
 using DoofesZeug.Extensions.Formats;
 
 using static System.Console;
@@ -144,8 +148,8 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            //List<Person> persons = Dataset.GetPersons(42);
-            //Out.WriteLineAsync(persons.ToStringTable());
+            List<Person> persons = Dataset.GetPersons(42);
+            Out.WriteLineAsync(persons.ToStringTable());
 
             //-------------------------------------------------------------------------------------
 

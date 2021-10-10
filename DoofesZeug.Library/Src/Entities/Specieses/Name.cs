@@ -24,6 +24,9 @@ namespace DoofesZeug.Entities.Specieses
 
         public static implicit operator Name( string value ) => new(value);
 
+
+        public static explicit operator string( Name value ) => value.Value;
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

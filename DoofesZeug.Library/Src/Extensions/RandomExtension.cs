@@ -35,35 +35,35 @@ namespace DoofesZeug.Extensions
         public static bool NextBool( this Random r ) => ( r.Next() % 2 ) != 0;
 
 
-        /// <summary>
-        /// Nexts the enum.
-        /// </summary>
-        /// <param name="r">The r.</param>
-        /// <param name="tEnum">The t enum.</param>
-        /// <returns></returns>
-        public static int NextEnum( this Random r, Type tEnum )
-        {
-            if( tEnum.IsEnum == false )
-            {
-                return 0;
-            }
+        ///// <summary>
+        ///// Nexts the enum.
+        ///// </summary>
+        ///// <param name="r">The r.</param>
+        ///// <param name="tEnum">The t enum.</param>
+        ///// <returns></returns>
+        //public static int NextEnum( this Random r, Type tEnum )
+        //{
+        //    if( tEnum.IsEnum == false )
+        //    {
+        //        return 0;
+        //    }
 
-            Array aValues = Enum.GetValues(tEnum);
+        //    Array aValues = Enum.GetValues(tEnum);
 
-            if( tEnum.GetCustomAttributes(typeof(FlagsAttribute), false).Length > 0 )
-            {
-                int iValue = 0;
+        //    if( tEnum.GetCustomAttributes(typeof(FlagsAttribute), false).Length > 0 )
+        //    {
+        //        int iValue = 0;
 
-                for( int iCounter = 0 ; iCounter < r.Next(aValues.Length) ; iCounter++ )
-                {
-                    iValue |= (int) aValues.GetValue(r.Next(aValues.Length));
-                }
+        //        for( int iCounter = 0 ; iCounter < r.Next(aValues.Length) ; iCounter++ )
+        //        {
+        //            iValue |= (int) aValues.GetValue(r.Next(aValues.Length));
+        //        }
 
-                return (int) Enum.ToObject(tEnum, iValue);
-            }
+        //        return (int) Enum.ToObject(tEnum, iValue);
+        //    }
 
-            return (int) aValues.GetValue(r.Next(aValues.Length));
-        }
+        //    return (int) aValues.GetValue(r.Next(aValues.Length));
+        //}
 
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace DoofesZeug.Extensions
                     iValue |= (int) aValues.GetValue(r.Next(aValues.Length));
                 }
 
-                return (T) Enum.ToObject(tEnum, iValue);
+                return (T) Enum.ToObject(tEnum, iValue > 0 ? iValue : 1);
             }
 
             return (T) aValues.GetValue(r.Next(aValues.Length));

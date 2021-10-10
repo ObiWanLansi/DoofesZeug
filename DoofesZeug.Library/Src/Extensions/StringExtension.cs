@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using System.Web;
@@ -283,6 +284,36 @@ namespace DoofesZeug.Extensions
         /// <param name="strContent">Content of the string.</param>
         /// <returns></returns>
         public static string ReplaceHtml( this string strContent ) => HttpUtility.HtmlEncode(strContent);
+
+
+        private static readonly Dictionary<char, string> UMLAUTS = new Dictionary<char, string>()
+        {
+            { 'ä', "ae" },
+            { 'ö', "oe" },
+            { 'ü', "ue" },
+
+            { 'Ä', "Ae" },
+            { 'Ö', "Oe" },
+            { 'Ü', "Ue" },
+
+            { 'ß', "ss" }
+        };
+
+
+        /// <summary>
+        /// Replaces the german umlauts.
+        /// </summary>
+        /// <param name="strContent">Content of the string.</param>
+        /// <returns></returns>
+        public static string ReplaceGermanUmlauts( this string strContent )
+        {
+            StringBuilder sb = new(32);
+            foreach( char c in strContent )
+            {
+                sb.Append(UMLAUTS.ContainsKey(c) ? UMLAUTS [c] : c);
+            }
+            return sb.ToString();
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -110,11 +110,11 @@ namespace DoofesZeug.TestData
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static Phone GeneratePhone() => "+49 54321 424269";
+        private static Phone GeneratePhone() => new() { Number = "+49 54321 424269", PhoneType = PhoneType.Landline, InformationType = InformationType.Private };
 
-        private static EMailAddress GenerateEMailAddress() => "obiwanlansi@github.com";
+        private static EMailAddress GenerateEMailAddress() => new() { Address = "obiwanlansi@github.com", InformationType = InformationType.Business };
 
-        private static Homepage GenerateHomepage() => "https://github.com/ObiWanLansi";
+        private static Homepage GenerateHomepage() => new() { Url = new("https://github.com/ObiWanLansi"), InformationType = InformationType.Business };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

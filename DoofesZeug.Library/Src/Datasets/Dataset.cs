@@ -823,6 +823,15 @@ namespace DoofesZeug.Datasets
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        private static readonly StringSet DOMAINS = new()
+        {
+            "gmail.com",
+            "gmx.net",
+            "gmx.de",
+            "outlook.de",
+            "outlook.com"
+        };
+
         /// <summary>
         /// Gets the persons.
         /// </summary>
@@ -850,7 +859,12 @@ namespace DoofesZeug.Datasets
                 p.BloodGroup = r.NextEnum<BloodGroup>();
                 p.HairColor = r.NextEnum<WellKnownHairColor>();
                 p.Religion = r.NextEnum<MajorReligion>();
-                p.Profession = r.NextEnum<WellKnownProfession>();
+
+                if( p.Age >= 18 )
+                {
+                    p.Profession = r.NextEnum<WellKnownProfession>();
+                    p.DriverLicense = r.NextEnum<EuropeanDriverLicense>();
+                }
 
                 p.AverageHeight = r.Next(120, 210);
                 p.AverageWeight = (double) p.AverageHeight - 100 + r.Next(-5, +5);
@@ -858,6 +872,17 @@ namespace DoofesZeug.Datasets
                 if( ( (double) p.AverageWeight > 50 && p.Age < 5 ) || ( (double) p.AverageWeight < 50 && p.Age > 40 ) )
                 {
                     p.DateOfDeath = r.NextDateTime((DateTime) p.DateOfBirth, DateTime.Now);
+                }
+
+                string firstname = ( (string) p.FirstName ).ToLower().ReplaceGermanUmlauts();
+                string lastname = ( (string) p.LastName ).ToLower().ReplaceGermanUmlauts();
+
+                p.Phone = $"+{r.Next(10, 99)} {r.Next(10_000, 99_999)} {r.Next(100_000, 999_999)}";
+                p.EMailAddress = $"{ firstname}.{lastname}@{r.NextObject(DOMAINS)}";
+
+                if( r.NextBool() )
+                {
+                    p.Homepage = $"https://free.wordpress.it/{lastname}/{firstname}";
                 }
 
                 list.Add(p);
