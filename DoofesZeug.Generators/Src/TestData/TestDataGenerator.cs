@@ -148,9 +148,9 @@ namespace DoofesZeug.TestData
             AverageHeight = 174,
             AverageWeight = 72,
 
-            Phone = "+49 54321 424269",
-            EMailAddress = "obiwanlansi@github.com",
-            Homepage = "https://github.com/ObiWanLansi"
+            Phone = new() { Number = "+49 54321 424269", PhoneType = PhoneType.Landline, InformationType = InformationType.Private },
+            EMailAddress = new() { Address = "obiwanlansi@github.com", InformationType = InformationType.Business },
+            Homepage = new() { Url = new("https://github.com/ObiWanLansi"), InformationType = InformationType.Business }
         };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

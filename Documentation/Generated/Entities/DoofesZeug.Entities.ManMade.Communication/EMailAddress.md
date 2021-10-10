@@ -53,8 +53,8 @@ An example or code snippet follows soon.
 ```json
 {
   "Address": "obiwanlansi@github.com",
-  "InformationType": null,
-  "Id": "ee1716a1-54b1-4ca2-ad20-75caf0ae7630"
+  "InformationType": "Business",
+  "Id": "176e0e02-7584-4855-a289-b39d1c6275d8"
 }
 ```
 

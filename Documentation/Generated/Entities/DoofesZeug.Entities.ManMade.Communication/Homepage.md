@@ -53,8 +53,8 @@ An example or code snippet follows soon.
 ```json
 {
   "Url": "https://github.com/ObiWanLansi",
-  "InformationType": null,
-  "Id": "74daa1dc-32fa-46c3-be58-d495009a8872"
+  "InformationType": "Business",
+  "Id": "1ce906dc-aac1-46f1-b4ae-4a5696c94537"
 }
 ```
 

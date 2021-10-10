@@ -54,9 +54,9 @@ An example or code snippet follows soon.
 ```json
 {
   "Number": "+49 54321 424269",
-  "PhoneType": null,
-  "InformationType": null,
-  "Id": "bf73a200-77d5-4ab4-bdc1-c7bf4ffcb289"
+  "PhoneType": "Landline",
+  "InformationType": "Private",
+  "Id": "1cd48f4b-c481-4fb4-8a02-327561f14ea2"
 }
 ```
 
