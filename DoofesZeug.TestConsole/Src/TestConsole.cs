@@ -71,8 +71,14 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            Phone p = new();
-            Out.WriteLineAsync(p.ToPrettyJson());
+            Phone phone = "+49 54321 424269";
+            Out.WriteLineAsync(phone.ToPrettyJson());
+
+            EMailAddress mail = "obiwanlansi@github.com";
+            Out.WriteLineAsync(mail.ToPrettyJson());
+
+            Homepage homepage = "https://github.com/ObiWanLansi";
+            Out.WriteLineAsync(homepage.ToPrettyJson());
 
             //-------------------------------------------------------------------------------------
 

@@ -1,0 +1,21 @@
+﻿@startuml
+skinparam monochrome true
+hide empty members
+
+abstract class Entity {
+}
+
+Entity <|-- IdentifiableEntity
+
+abstract class IdentifiableEntity {
+    Id: Guid
+}
+
+IdentifiableEntity <|-- EMailAddress
+
+class EMailAddress {
+    Address: String
+    InformationType: InformationType?
+}
+
+@enduml

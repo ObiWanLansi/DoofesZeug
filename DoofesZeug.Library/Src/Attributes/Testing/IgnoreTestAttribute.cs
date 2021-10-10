@@ -1,9 +1,9 @@
 ﻿
 
 
-namespace DoofesZeug.Attributes.Testing
-{
-    public sealed class IgnoreTestAttribute : BaseAttribute
-    {
-    }
-}
+//namespace DoofesZeug.Attributes.Testing
+//{
+//    public sealed class IgnoreTestAttribute : BaseAttribute
+//    {
+//    }
+//}

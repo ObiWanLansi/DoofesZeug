@@ -9,6 +9,14 @@
 |[Season](./DoofesZeug.Entities.DateAndTime/Season.md)|An enumeration for our seasons.|Winter, Spring, Summer, Autumn|
 
 
+## `DoofesZeug.Entities.ManMade.Communication`
+
+|Enumeration|Description|Values|
+|:----------|:----------|:-----|
+|[InformationType](./DoofesZeug.Entities.ManMade.Communication/InformationType.md)|An little type if the information (email, phone) is private or an business information.|Private, Business|
+|[PhoneType](./DoofesZeug.Entities.ManMade.Communication/PhoneType.md)|Describe if it is it an landline or mobile phone numer.|Landline, Mobil|
+
+
 ## `DoofesZeug.Entities.ManMade.Vehicles`
 
 |Enumeration|Description|Values|
@@ -42,6 +50,7 @@
 
 |Enumeration|Description|Values|
 |:----------|:----------|:-----|
+|[EuropeanDriverLicense](./DoofesZeug.Entities.Specieses.Human/EuropeanDriverLicense.md)|The european driver licenses.|AM, A1, A2, A, B1, B, C1, C, D1, D, BE, C1E, CE, D1E, DE, L, S|
 |[Handedness](./DoofesZeug.Entities.Specieses.Human/Handedness.md)|An simple enumeration for the handedness of an human.|Left, Right, Both|
 |[MajorReligion](./DoofesZeug.Entities.Specieses.Human/MajorReligion.md)|The five big major religions.|Hinduism, Buddhism, Islam, Christianity, Judaism|
 |[WellKnownHairColor](./DoofesZeug.Entities.Specieses.Human/WellKnownHairColor.md)|A small enumeration with the natural hair colors.|White, Gray, Red, Blond, Brown, Black|

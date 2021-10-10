@@ -6,6 +6,7 @@ using DoofesZeug.Attributes.Documentation;
 
 namespace DoofesZeug.Entities.Specieses.Human
 {
+    [Description("The european driver licenses.")]
     [Link("https://de.wikipedia.org/wiki/F%C3%BChrerschein_(EU-Recht)")]
     [Flags]
     public enum EuropeanDriverLicense

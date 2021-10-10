@@ -31,6 +31,15 @@
 |[Second](./DoofesZeug.Entities.DateAndTime.Part.Time/Second.md)|The seconds of an time.|Value|
 
 
+## `DoofesZeug.Entities.ManMade.Communication`
+
+|Entity|Description|Properties|
+|:-----|:----------|:---------|
+|[EMailAddress](./DoofesZeug.Entities.ManMade.Communication/EMailAddress.md)|An simplified emailaddress.|Address, InformationType, Id|
+|[Homepage](./DoofesZeug.Entities.ManMade.Communication/Homepage.md)|An simple link to an homepage.|Url, InformationType, Id|
+|[Phone](./DoofesZeug.Entities.ManMade.Communication/Phone.md)|An simple phonenumber.|Number, PhoneType, InformationType, Id|
+
+
 ## `DoofesZeug.Entities.Science.Base.Length`
 
 |Entity|Description|Properties|
@@ -80,4 +89,4 @@
 |:-----|:----------|:---------|
 |[FirstName](./DoofesZeug.Entities.Specieses.Human/FirstName.md)|An firstname for humans.|Value|
 |[LastName](./DoofesZeug.Entities.Specieses.Human/LastName.md)|An lastname for humans.|Value|
-|[Person](./DoofesZeug.Entities.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, Handedness, BloodGroup, HairColor, Religion, Profession, AverageHeight, AverageWeight, BMI, DateOfBirth, Gender, DateOfDeath, Age, IsAlive, Id|
+|[Person](./DoofesZeug.Entities.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, Handedness, BloodGroup, HairColor, Religion, Profession, DriverLicense, AverageHeight, AverageWeight, Phone, Homepage, EMailAddress, BMI, DateOfBirth, Gender, DateOfDeath, Age, IsAlive, Id|

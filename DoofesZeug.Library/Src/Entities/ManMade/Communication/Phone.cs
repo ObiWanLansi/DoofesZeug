@@ -1,24 +1,25 @@
 ﻿using System;
 
 using DoofesZeug.Attributes.Documentation;
-using DoofesZeug.Attributes.Testing;
 using DoofesZeug.Datatypes.Container;
 
 
 
 namespace DoofesZeug.Entities.ManMade.Communication
 {
-    [Description("")]
-    [IgnoreTest]
+    [Description("An simple phonenumber.")]
     public sealed class Phone : IdentifiableEntity
     {
-        public int CountryCode { get; set; }
-
         public string Number { get; set; }
 
         public PhoneType? PhoneType { get; set; }
 
         public InformationType? InformationType { get; set; }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        public static implicit operator Phone( string number ) => new() { Number = number };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

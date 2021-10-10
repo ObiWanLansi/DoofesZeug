@@ -31,8 +31,12 @@ class Person {
     HairColor: WellKnownHairColor?
     Religion: MajorReligion?
     Profession: WellKnownProfession?
+    DriverLicense: EuropeanDriverLicense?
     AverageHeight: Centimeter
     AverageWeight: Kilogram
+    Phone: Phone
+    Homepage: Homepage
+    EMailAddress: EMailAddress
     BMI: Double?
 }
 

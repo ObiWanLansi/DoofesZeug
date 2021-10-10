@@ -5,6 +5,7 @@ using DoofesZeug.Entities.DateAndTime;
 using DoofesZeug.Entities.DateAndTime.Part;
 using DoofesZeug.Entities.DateAndTime.Part.Date;
 using DoofesZeug.Entities.DateAndTime.Part.Time;
+using DoofesZeug.Entities.ManMade.Communication;
 using DoofesZeug.Entities.Science.Base.Length;
 using DoofesZeug.Entities.Science.Base.Weight;
 using DoofesZeug.Entities.Science.Geographically.Coordinates;
@@ -61,6 +62,9 @@ namespace DoofesZeug.TestData
             GENERATORS.Add(typeof(Gram).FullName, GenerateGram);
             GENERATORS.Add(typeof(Kilogram).FullName, GenerateKilogram);
 
+            GENERATORS.Add(typeof(EMailAddress).FullName, GenerateEMailAddress);
+            GENERATORS.Add(typeof(Phone).FullName, GeneratePhone);
+            GENERATORS.Add(typeof(Homepage).FullName, GenerateHomepage);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -106,11 +110,20 @@ namespace DoofesZeug.TestData
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        private static Phone GeneratePhone() => "+49 54321 424269";
+
+        private static EMailAddress GenerateEMailAddress() => "obiwanlansi@github.com";
+
+        private static Homepage GenerateHomepage() => "https://github.com/ObiWanLansi";
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         private static Name GenerateName() => new("HurzFurz");
 
-        private static LastName GenerateLastName() => "Mustermann";
+        private static LastName GenerateLastName() => new("Mustermann");
 
-        private static FirstName GenerateFirstName() => "Erika";
+        private static FirstName GenerateFirstName() => new("Erika");
 
         private static DateOfBirth GenerateDateOfBirth() => (24, 12, 1948);
 
@@ -121,15 +134,23 @@ namespace DoofesZeug.TestData
             FirstName = "John",
             LastName = "Doe",
             Gender = Gender.Male,
+
             DateOfBirth = (11, 02, 1942),
             DateOfDeath = (22, 03, 1942 + 42),
+
             Handedness = Handedness.Left,
             BloodGroup = BloodGroup.AB,
             HairColor = WellKnownHairColor.Blond,
             Religion = MajorReligion.Buddhism,
             Profession = WellKnownProfession.Engineer,
+            DriverLicense = EuropeanDriverLicense.B | EuropeanDriverLicense.AM,
+
             AverageHeight = 174,
-            AverageWeight = 72
+            AverageWeight = 72,
+
+            Phone = "+49 54321 424269",
+            EMailAddress = "obiwanlansi@github.com",
+            Homepage = "https://github.com/ObiWanLansi"
         };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

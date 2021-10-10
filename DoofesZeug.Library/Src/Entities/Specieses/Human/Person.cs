@@ -2,6 +2,7 @@
 
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Datatypes.Container;
+using DoofesZeug.Entities.ManMade.Communication;
 using DoofesZeug.Entities.Science.Base.Length;
 using DoofesZeug.Entities.Science.Base.Weight;
 
@@ -17,6 +18,7 @@ namespace DoofesZeug.Entities.Specieses.Human
 
         public LastName LastName { get; set; }
 
+
         public Handedness? Handedness { get; set; }
 
         public BloodGroup? BloodGroup { get; set; }
@@ -27,9 +29,19 @@ namespace DoofesZeug.Entities.Specieses.Human
 
         public WellKnownProfession? Profession { get; set; }
 
+        public EuropeanDriverLicense? DriverLicense { get; set; }
+
+
         public Centimeter AverageHeight { get; set; }
 
         public Kilogram AverageWeight { get; set; }
+
+
+        public Phone Phone { get; set; }
+
+        public Homepage Homepage { get; set; }
+
+        public EMailAddress EMailAddress { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -70,7 +82,8 @@ namespace DoofesZeug.Entities.Specieses.Human
             HashCode.Combine(this.FirstName, this.LastName),
             HashCode.Combine(this.Handedness, this.BloodGroup),
             HashCode.Combine(this.HairColor, this.Religion),
-            this.Profession, this.AverageHeight, this.AverageWeight);
+            HashCode.Combine(this.Profession, this.DriverLicense, this.AverageHeight, this.AverageWeight),
+            HashCode.Combine(this.Phone, this.EMailAddress, this.Homepage));
 
 
         /// <summary>

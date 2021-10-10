@@ -8,12 +8,12 @@ i write down the stuff in the fastest way, mostly in note form.
 ## ToDo
 
 - Generate class overview for other classes which are not an entity.
-- Entities: Genre,Artist, Album, Sampler, Movie,Book, EMail, Homepage, Phone, Mobil
+- Entities: Genre, Artist, Album, Sampler, Movie, Book.
 - MarkdownExtension
   - static public void Link(this Uri uri, string strToolTip=null) und dann wenn null WebClient.Download getTitle ?
   - static public void Image(this string strFilename,string alt=null,string placeholder,bool footnote mit alt)?
 - Erstellung und Verlinkung der Beispiele.
-- RatioHelper
+- RatioHelper.
 - Aus world.sqlite die Villages, Cities and Towns extrahieren.
 - DataTable Extension mit
   - `ReAssign` - convert an string column to an enumeration column, or an string colum to an user defined datetime (Func<> as parameter).
@@ -35,6 +35,7 @@ i write down the stuff in the fastest way, mostly in note form.
 - Lazy Load Wrapper?
 - Implement Observer Pattern in base class Entity?
 - VCard support ?
+- Kleiner einfacher Support für PlantUML?
 - List<T> To DataTable
 - DataTable To
   -  ASCIITable
@@ -47,9 +48,10 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## Done
 
-- GeoConvert für Lat, Lon und Alt
+- Entites for EMail, Homepage, Phone.
+- GeoConvert für Lat, Lon und Alt.
 - ~~StandardValidator als Attribute für EMail, Phone, Name, aber auch ein Interface Validate um komplexere zusammenhänge validieren zu können.~~
-- HairColor und EyeColor als Enumeration mit Standardfarben
+- HairColor und EyeColor als Enumeration mit Standardfarben.
 - ~~Feature WizardSupportool mit fragen / antworten wie bei erstellen dotnet init, oder anderen tools ?~~
 - Für später: DataTypesColumnAligments als statische klasse mit einer funktion `TextAlign GetAligment(Type t)`
 - Anfangen mit Gramm, Meter, ...

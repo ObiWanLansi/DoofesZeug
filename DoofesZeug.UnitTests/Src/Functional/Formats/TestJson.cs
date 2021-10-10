@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reflection;
 
-using DoofesZeug.Attributes.Testing;
 using DoofesZeug.Entities;
 using DoofesZeug.Extensions.Formats;
 using DoofesZeug.TestData;
@@ -26,10 +25,10 @@ namespace DoofesZeug.UnitTests.Functional.Formats
             {
                 if( type.IsAssignableTo(tEntityBase) && type.IsAbstract == false )
                 {
-                    if( type.GetCustomAttribute<IgnoreTestAttribute>() != null )
-                    {
-                        continue;
-                    }
+                    //if( type.GetCustomAttribute<IgnoreTestAttribute>() != null )
+                    //{
+                    //    continue;
+                    //}
 
                     Console.Out.WriteLineAsync(type.FullName);
 

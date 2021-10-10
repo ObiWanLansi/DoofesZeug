@@ -1,0 +1,22 @@
+﻿@startuml
+skinparam monochrome true
+hide empty members
+
+abstract class Entity {
+}
+
+Entity <|-- IdentifiableEntity
+
+abstract class IdentifiableEntity {
+    Id: Guid
+}
+
+IdentifiableEntity <|-- Phone
+
+class Phone {
+    Number: String
+    PhoneType: PhoneType?
+    InformationType: InformationType?
+}
+
+@enduml
