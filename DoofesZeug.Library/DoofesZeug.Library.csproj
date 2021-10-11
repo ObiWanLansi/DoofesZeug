@@ -6,7 +6,7 @@
     <ApplicationIcon />
     <StartupObject />
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <PackageProjectUrl>https://github.com/ObiWanLansi/DoofesZeug</PackageProjectUrl>
+    <PackageProjectUrl>https://obiwanlansi.github.io/DoofesZeug</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ObiWanLansi/DoofesZeug</RepositoryUrl>
     <PackageTags>doof, zeug, objects, world</PackageTags>
     <Authors>ObiWanLansi</Authors>
@@ -17,7 +17,9 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RootNamespace>DoofesZeug</RootNamespace>
     <AssemblyName>DoofesZeug</AssemblyName>
-    <Version>0.1</Version>
+    <Version>0.1.1</Version>
+    <RepositoryType>Github</RepositoryType>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>

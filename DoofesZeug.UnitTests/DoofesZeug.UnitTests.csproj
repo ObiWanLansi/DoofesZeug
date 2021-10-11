@@ -5,17 +5,19 @@
 
     <IsPackable>false</IsPackable>
 
-    <Version>0.1</Version>
+    <Version>0.1.1</Version>
 
-    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <AssemblyVersion>0.1.1.0</AssemblyVersion>
 
     <RepositoryUrl>https://github.com/ObiWanLansi/DoofesZeug</RepositoryUrl>
 
     <Authors>ObiWanLansi</Authors>
 
-    <PackageProjectUrl>https://github.com/ObiWanLansi/DoofesZeug</PackageProjectUrl>
+    <PackageProjectUrl>https://obiwanlansi.github.io/DoofesZeug</PackageProjectUrl>
 
     <AssemblyName>DoofesZeug.DoofesZeug.UnitTests</AssemblyName>
+
+    <RepositoryType>Github</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
