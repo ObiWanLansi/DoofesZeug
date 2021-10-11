@@ -19,13 +19,13 @@ namespace DoofesZeug.Entities
         /// </returns>
         public override abstract bool Equals( object obj );
 
-        /// <summary>
-        /// Returns a hash code for this instance.
-        /// </summary>
-        /// <returns>
-        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
-        /// </returns>
-        public override abstract int GetHashCode();
+        ///// <summary>
+        ///// Returns a hash code for this instance.
+        ///// </summary>
+        ///// <returns>
+        ///// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        ///// </returns>
+        //public override abstract int GetHashCode();
 
 
         /// <summary>

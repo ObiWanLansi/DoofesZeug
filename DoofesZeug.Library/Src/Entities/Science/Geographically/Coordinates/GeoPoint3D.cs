@@ -76,13 +76,13 @@ namespace DoofesZeug.Entities.Science.Geographically.Coordinates
         public override bool Equals( object obj ) => Equals(this, obj as GeoPoint3D);
 
 
-        /// <summary>
-        /// Returns a hash code for this instance.
-        /// </summary>
-        /// <returns>
-        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
-        /// </returns>
-        public override int GetHashCode() => HashCode.Combine(this.Latitude, this.Longitude, this.Altitude);
+        ///// <summary>
+        ///// Returns a hash code for this instance.
+        ///// </summary>
+        ///// <returns>
+        ///// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+        ///// </returns>
+        //public override int GetHashCode() => HashCode.Combine(this.Latitude, this.Longitude, this.Altitude);
 
 
         /// <summary>

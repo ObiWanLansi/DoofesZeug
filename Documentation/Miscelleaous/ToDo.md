@@ -7,6 +7,17 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## ToDo
 
+- ToTextTable: bool DeclaredOnly, PropertySortOrder.FromBaseDown / ToBaseUp
+- Europe.Germany.RheinlandPfalz.Trier GAdm Generator
+- DataSourceAttribute zu den entsprechenden Klassen
+- ExampleAttribute weg
+- Geometry Rectangle<T> where T: Kilometer, Millimeter or Meter
+- IExample und dann in DoofesZeug.Generators ein Namespace Example, die Beispiele heißen dann immer XXXXXExample und implementieren
+  Examples, aus der TestConsole alles raus. IExample.Execute(TextWriter out).
+- Dataset Generate Person:
+  - auch ein paar Enumerations leer lassen.
+  - Generate Full or All Features and Basic Features. Action<Person> manipulator.
+- AssemblyStatisticsGenerator (Namespaces,Classes,Interfaces,Enums) Count, ReferencedAssemblies?
 - Generate class overview for other classes which are not an entity.
 - Entities: Genre, Artist, Album, Sampler, Movie, Book.
 - MarkdownExtension
@@ -31,9 +42,6 @@ i write down the stuff in the fastest way, mostly in note form.
 - Flatten JSON / XML ?
 - Support für aufruf gnuplot für kleinere Diagramme zwischendurch ?
 - MatheStuff, z.b geometrische Figuren Rectangle, Circle, und direkt mit ein paar Meßmethoden?
-- Generic Singelton Pattern?
-- Lazy Load Wrapper?
-- Implement Observer Pattern in base class Entity?
 - VCard support ?
 - Kleiner einfacher Support für PlantUML?
 - List<T> To DataTable
@@ -42,12 +50,17 @@ i write down the stuff in the fastest way, mostly in note form.
   -  CSV
   -  SQLite
   -  Markdown
+- Geht sowas mittles Operatorenüberladung : DataTable["HalfWidth"] = DataTable["Width"] >> 1
 - Countries (aus geonames generiert)
 - Dienstgrade Feuerwehr, Polizei, Militär
 
 
 ## Done
 
+- Remove all GetHashCode implementations.
+- ~~Implement Observer Pattern in base class Entity?~~
+- ~~Generic Singelton Pattern?~~
+- ~~Lazy Load Wrapper?~~
 - Entites for EMail, Homepage, Phone.
 - GeoConvert für Lat, Lon und Alt.
 - ~~StandardValidator als Attribute für EMail, Phone, Name, aber auch ein Interface Validate um komplexere zusammenhänge validieren zu können.~~

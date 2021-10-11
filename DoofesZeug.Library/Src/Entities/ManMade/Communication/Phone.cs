@@ -33,13 +33,13 @@ namespace DoofesZeug.Entities.ManMade.Communication
         public override string ToString() => this.Number;
 
 
-        /// <summary>
-        /// Returns a hash code for this instance.
-        /// </summary>
-        /// <returns>
-        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
-        /// </returns>
-        public override int GetHashCode() => HashCode.Combine(this.Number, this.PhoneType, this.InformationType);
+        ///// <summary>
+        ///// Returns a hash code for this instance.
+        ///// </summary>
+        ///// <returns>
+        ///// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        ///// </returns>
+        //public override int GetHashCode() => HashCode.Combine(this.Number, this.PhoneType, this.InformationType);
 
 
         /// <summary>

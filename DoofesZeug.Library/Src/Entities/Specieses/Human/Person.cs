@@ -72,18 +72,18 @@ namespace DoofesZeug.Entities.Specieses.Human
         public override bool Equals( object obj ) => Equals(this, obj as Person);
 
 
-        /// <summary>
-        /// Returns a hash code for this instance.
-        /// </summary>
-        /// <returns>
-        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
-        /// </returns>
-        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(),
-            HashCode.Combine(this.FirstName, this.LastName),
-            HashCode.Combine(this.Handedness, this.BloodGroup),
-            HashCode.Combine(this.HairColor, this.Religion),
-            HashCode.Combine(this.Profession, this.DriverLicense, this.AverageHeight, this.AverageWeight),
-            HashCode.Combine(this.Phone, this.EMailAddress, this.Homepage));
+        ///// <summary>
+        ///// Returns a hash code for this instance.
+        ///// </summary>
+        ///// <returns>
+        ///// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        ///// </returns>
+        //public override int GetHashCode() => HashCode.Combine(base.GetHashCode(),
+        //    HashCode.Combine(this.FirstName, this.LastName),
+        //    HashCode.Combine(this.Handedness, this.BloodGroup),
+        //    HashCode.Combine(this.HairColor, this.Religion),
+        //    HashCode.Combine(this.Profession, this.DriverLicense, this.AverageHeight, this.AverageWeight),
+        //    HashCode.Combine(this.Phone, this.EMailAddress, this.Homepage));
 
 
         /// <summary>

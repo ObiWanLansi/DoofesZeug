@@ -24,12 +24,12 @@ namespace DoofesZeug.Entities
         public override bool Equals( object obj ) => obj is IdentifiableEntity other && this.Id.Equals(other.Id) != false ;
 
 
-        /// <summary>
-        /// Returns a hash code for this instance.
-        /// </summary>
-        /// <returns>
-        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
-        /// </returns>
-        public override int GetHashCode() => this.Id.GetHashCode();
+        ///// <summary>
+        ///// Returns a hash code for this instance.
+        ///// </summary>
+        ///// <returns>
+        ///// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        ///// </returns>
+        //public override int GetHashCode() => this.Id.GetHashCode();
     }
 }

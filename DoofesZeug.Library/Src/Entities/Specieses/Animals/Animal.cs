@@ -36,13 +36,13 @@ namespace DoofesZeug.Entities.Specieses.Animals
         public override bool Equals( object obj ) => Equals(this, obj as Animal);
 
 
-        /// <summary>
-        /// Returns a hash code for this instance.
-        /// </summary>
-        /// <returns>
-        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
-        /// </returns>
-        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.AnimalSpecies, this.Name);
+        ///// <summary>
+        ///// Returns a hash code for this instance.
+        ///// </summary>
+        ///// <returns>
+        ///// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        ///// </returns>
+        //public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), this.AnimalSpecies, this.Name);
 
 
         /// <summary>
