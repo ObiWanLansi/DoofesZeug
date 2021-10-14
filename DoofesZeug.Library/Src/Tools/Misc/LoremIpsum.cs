@@ -9,7 +9,6 @@ using DoofesZeug.Extensions;
 namespace DoofesZeug.Tools.Misc
 {
     [Description("An small class to generate a lorem ipsum text.")]
-    [Example("O:\\DoofesZeug\\DoofesZeug.TestConsole\\Src\\Examples\\Tools\\LoremIpsumExample.cs")]
     public static class LoremIpsum
     {
         private static readonly string LI_START = "Lorem ipsum dolor sit amet,";

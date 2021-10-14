@@ -58,6 +58,7 @@ namespace DoofesZeug.Documentation
             sbPUML.AppendLine("@startuml");
             sbPUML.AppendLine("skinparam monochrome true");
             sbPUML.AppendLine("hide empty members");
+            sbPUML.AppendLine("skinparam backgroundcolor transparent");
 
             //---------------------------------------------
 

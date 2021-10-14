@@ -32,18 +32,18 @@ namespace DoofesZeug.Documentation
         {
             sb.AppendLine();
 
-            ExampleAttribute iea = type.GetCustomAttribute<ExampleAttribute>();
-            if( iea != null )
-            {
-                iea.AppendInlineExample(sb);
-                return;
-            }
+            //    ExampleAttribute iea = type.GetCustomAttribute<ExampleAttribute>();
+            //    if( iea != null )
+            //    {
+            //        iea.AppendInlineExample(sb);
+            //        return;
+            //    }
 
             sb.AppendLine("```cs");
             sb.AppendLine("An example or code snippet follows soon.");
             sb.AppendLine("```");
 
-            //throw new Exception($"{type.FullName} have no valid example source!");
+            //    //throw new Exception($"{type.FullName} have no valid example source!");
         }
 
 
@@ -105,6 +105,7 @@ namespace DoofesZeug.Documentation
             sbPUML.AppendLine("@startuml");
             sbPUML.AppendLine("skinparam monochrome true");
             sbPUML.AppendLine("hide empty members");
+            sbPUML.AppendLine("skinparam backgroundcolor transparent");
 
             //---------------------------------------------
 

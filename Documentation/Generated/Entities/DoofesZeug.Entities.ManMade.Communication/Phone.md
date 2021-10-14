@@ -56,7 +56,7 @@ An example or code snippet follows soon.
   "Number": "+49 54321 424269",
   "PhoneType": "Landline",
   "InformationType": "Private",
-  "Id": "1cd48f4b-c481-4fb4-8a02-327561f14ea2"
+  "Id": "da3f5159-5ec4-4356-a93d-84b8b46a8d2f"
 }
 ```
 

@@ -5,8 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 
-using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Attributes.Documentation;
+using DoofesZeug.Datatypes.Container;
 
 
 
@@ -237,6 +237,34 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <returns></returns>
         public static string GUID() => Guid.NewGuid().ToString();
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        private static readonly ConsoleColor DEFAULT_FOREGROUND = Console.ForegroundColor;
+
+
+        public static void Print( string strContent, ConsoleColor? foreground )
+        {
+            if( foreground.HasValue )
+            {
+                Console.ForegroundColor = foreground.Value;
+                Console.Out.WriteLineAsync(strContent);
+                Console.ForegroundColor = DEFAULT_FOREGROUND;
+                return;
+            }
+
+            Console.Out.WriteLineAsync(strContent);
+        }
+
+
+        public static void PrintError( string strContent )
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Error.WriteLineAsync(strContent);
+            Console.ForegroundColor = DEFAULT_FOREGROUND;
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
