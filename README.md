@@ -79,10 +79,10 @@ But when there is a first version avaible, i'll put it to nuget of course.**
 
 Here are some useful links to helpful articles, some in english, some in german.
 
-- https://de.wikipedia.org/wiki/Entit%C3%A4t_(Informatik)
-- https://www.newtonsoft.com/json
-- https://github.com/aaubry/YamlDotNet
-- https://plantuml.com/en/
+- [Entity](https://de.wikipedia.org/wiki/Entit%C3%A4t_(Informatik))
+- [Json.NET](https://www.newtonsoft.com/json)
+- [Yaml.NET](https://github.com/aaubry/YamlDotNet)
+- [PlantUML](https://plantuml.com/en/)
 
 ---
 
