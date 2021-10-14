@@ -1,6 +1,7 @@
 ﻿@startuml
-skinparam monochrome reverse
 hide empty members
+skinparam monochrome true
+skinparam backgroundcolor transparent
 
 enum Zodiac {
     Aries
