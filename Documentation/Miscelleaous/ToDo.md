@@ -7,13 +7,16 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## ToDo
 
-- ToTextTable: bool DeclaredOnly, PropertySortOrder.FromBaseDown / ToBaseUp
+- IExample und dann in DoofesZeug.Generators ein Namespace Example, die Beispiele heißen dann immer XXXXXExample und implementieren
+  Examples, aus der TestConsole alles raus. IExample.Execute(TextWriter out).
+- ToStringTable: bool DeclaredOnly, PropertySortOrder.FromBaseDown / ToBaseUp
+- ToStringTree: ggf. auch ein GenericTree Klasse in die man so ziemlich alles reinpumpen kann.
+  > Cool wäre natürlich auch analog zo DataTable ein DataTree zu haben.
+  > Wenn wir einen DataTree haben, könnte man ja auch überlegen ein JSON/XML/YAML To DataTree zu machen?
 - Europe.Germany.RheinlandPfalz.Trier GAdm Generator
 - DataSourceAttribute zu den entsprechenden Klassen
 - ExampleAttribute weg
 - Geometry Rectangle<T> where T: Kilometer, Millimeter or Meter
-- IExample und dann in DoofesZeug.Generators ein Namespace Example, die Beispiele heißen dann immer XXXXXExample und implementieren
-  Examples, aus der TestConsole alles raus. IExample.Execute(TextWriter out).
 - Dataset Generate Person:
   - auch ein paar Enumerations leer lassen.
   - Generate Full or All Features and Basic Features. Action<Person> manipulator.
