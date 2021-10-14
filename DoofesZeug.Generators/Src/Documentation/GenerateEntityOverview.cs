@@ -103,9 +103,10 @@ namespace DoofesZeug.Documentation
             StringBuilder sbPUML = new(8192);
 
             sbPUML.AppendLine("@startuml");
-            sbPUML.AppendLine("skinparam monochrome true");
+            //sbPUML.AppendLine("skinparam monochrome true");
+            sbPUML.AppendLine("skinparam monochrome reverse");
             sbPUML.AppendLine("hide empty members");
-            sbPUML.AppendLine("skinparam backgroundcolor transparent");
+            //sbPUML.AppendLine("skinparam backgroundcolor transparent");
 
             //---------------------------------------------
 
@@ -150,6 +151,7 @@ namespace DoofesZeug.Documentation
 
             object instance = Activator.CreateInstance(type);
 
+            int iPropertyCounter = 0;
             foreach( PropertyInfo pi in type.GetProperties(BindingFlags.Public | BindingFlags.Instance) )
             {
                 if( bInherited == true && pi.DeclaringType == type )
@@ -173,6 +175,13 @@ namespace DoofesZeug.Documentation
                 object value = pi.Name.Equals(nameof(IdentifiableEntity.Id)) ? "Guid.NewGuid()" : pi.GetValue(instance);
 
                 sb.AppendLine($"|{pi.Name}|{strPropertyType}|{( pi.CanRead ? "&#x2713;" : "&#x2717;" )}|{( pi.CanWrite ? "&#x2713;" : "&#x2717;" )}|{ value ?? "NULL" }|");
+                iPropertyCounter++;
+            }
+
+            // Wenn kein Property ermittelt wurde müssen wir zumindesten eine leere Zeile ausgeben damit es richtich dargestellt wird.
+            if( iPropertyCounter == 0 )
+            {
+                sb.AppendLine("|    |    |    |     |            |");
             }
         }
 

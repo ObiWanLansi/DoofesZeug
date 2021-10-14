@@ -17,11 +17,13 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
+|    |    |    |     |            |
 
 ### Inherited
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
+|    |    |    |     |            |
 
 ---
 
@@ -48,7 +50,7 @@ An example or code snippet follows soon.
 ## JSON Example
 
 ```json
-1634238888
+1634240494
 ```
 
 ---

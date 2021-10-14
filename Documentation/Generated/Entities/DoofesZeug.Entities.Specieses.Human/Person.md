@@ -91,17 +91,17 @@ An example or code snippet follows soon.
     "Number": "+49 54321 424269",
     "PhoneType": "Landline",
     "InformationType": "Private",
-    "Id": "cf30c5ba-4b3a-4b69-bde3-4877b8a21150"
+    "Id": "ae632fea-17d4-4ccd-8af2-6e3d6080099e"
   },
   "Homepage": {
     "Url": "https://github.com/ObiWanLansi",
     "InformationType": "Business",
-    "Id": "79b2fab6-8645-4f4e-adf1-e08fe548431d"
+    "Id": "8d880fa6-e876-4468-b892-2c2c5b904f37"
   },
   "EMailAddress": {
     "Address": "obiwanlansi@github.com",
     "InformationType": "Business",
-    "Id": "e0425bae-b43b-4de8-84c9-8d208f32b346"
+    "Id": "aac4b5e6-7a2c-4dd6-9751-760b869fa030"
   },
   "BMI": 23.781211853027344,
   "DateOfBirth": "11.02.1942",
@@ -109,7 +109,7 @@ An example or code snippet follows soon.
   "DateOfDeath": "22.03.1984",
   "Age": 42,
   "IsAlive": false,
-  "Id": "1101e5b2-886f-4af8-9a5a-e0daac875673"
+  "Id": "415a1641-0115-452a-979b-fdc8dffd5953"
 }
 ```
 

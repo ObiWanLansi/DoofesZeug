@@ -1,7 +1,6 @@
 ﻿@startuml
-skinparam monochrome true
+skinparam monochrome reverse
 hide empty members
-skinparam backgroundcolor transparent
 
 enum Gender {
     Divers
