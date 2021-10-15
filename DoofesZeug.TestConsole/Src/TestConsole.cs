@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-
-using DoofesZeug.Datasets;
-using DoofesZeug.Entities.ManMade.Communication;
-using DoofesZeug.Entities.Specieses.Human;
-using DoofesZeug.Extensions;
-using DoofesZeug.Extensions.Formats;
 
 using static System.Console;
 
@@ -37,14 +30,21 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            Phone phone = "+49 54321 424269";
-            Out.WriteLineAsync(phone.ToPrettyJson());
+            ////AssemblyInformation ai = AssemblyInformation.GetFromFile(@"C:\Lanser\Tools\LansiTools\GitKeeper\gk.dll");
+            //AssemblyInformation ai = AssemblyInformation.GetFromType(typeof(Entity));
+            //ai.LoadInformation();
+            //Out.WriteLineAsync(ai.ToStringTable());
 
-            EMailAddress mail = "obiwanlansi@github.com";
-            Out.WriteLineAsync(mail.ToPrettyJson());
+            //-------------------------------------------------------------------------------------
 
-            Homepage homepage = "https://github.com/ObiWanLansi";
-            Out.WriteLineAsync(homepage.ToPrettyJson());
+            //Phone phone = "+49 54321 424269";
+            //Out.WriteLineAsync(phone.ToPrettyJson());
+
+            //EMailAddress mail = "obiwanlansi@github.com";
+            //Out.WriteLineAsync(mail.ToPrettyJson());
+
+            //Homepage homepage = "https://github.com/ObiWanLansi";
+            //Out.WriteLineAsync(homepage.ToPrettyJson());
 
             //-------------------------------------------------------------------------------------
 
@@ -110,8 +110,8 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            List<Person> persons = Dataset.GetPersons(42);
-            Out.WriteLineAsync(persons.ToStringTable());
+            //List<Person> persons = Dataset.GetPersons(42);
+            //Out.WriteLineAsync(persons.ToStringTable());
 
             //-------------------------------------------------------------------------------------
 
