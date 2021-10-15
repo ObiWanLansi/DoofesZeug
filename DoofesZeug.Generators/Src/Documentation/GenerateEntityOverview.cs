@@ -23,7 +23,27 @@ namespace DoofesZeug.Documentation
     {
         private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\Documentation\Generated\Entities";
 
+        private static readonly string EXAMPLEDIRECTORY = @"O:\DoofesZeug\DoofesZeug.Generators\Src\Examples";
+
         private static readonly Type ENTITY_BASE = typeof(Entity);
+
+        private static readonly SortedDictionary<string, string> EXAMPLES = new();
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        static GenerateEntityOverview()
+        {
+            foreach( FileInfo fi in new DirectoryInfo(EXAMPLEDIRECTORY).GetFiles("*.cs", SearchOption.AllDirectories) )
+            {
+                if( fi.Name.EndsWith("Example.cs") )
+                {
+                    string type = fi.Name.Substring(0, fi.Name.Length - "Example.cs".Length);
+                    EXAMPLES.Add(type, fi.FullName);
+                }
+            }
+        }
+
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -33,7 +53,16 @@ namespace DoofesZeug.Documentation
             sb.AppendLine();
 
             sb.AppendLine("```cs");
-            sb.AppendLine("An example or code snippet follows soon.");
+
+            if( EXAMPLES.ContainsKey(type.Name) )
+            {
+                sb.Append(File.ReadAllText(EXAMPLES [type.Name]));
+            }
+            else
+            {
+                sb.AppendLine("An example or code snippet follows soon.");
+            }
+
             sb.AppendLine("```");
         }
 
