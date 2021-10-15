@@ -7,4 +7,3 @@ only mean additional work.
 
 - [Entities](./Generated/Entities)
 - [Enumerations](./Generated/Enumerations)
-- [Builder](./Generated/Builder)

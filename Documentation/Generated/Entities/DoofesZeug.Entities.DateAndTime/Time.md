@@ -29,12 +29,6 @@
 
 ---
 
-## Attributes
-
-- Description
-
----
-
 ## UML Diagram
 
 ![Time.png](./Time.png "Time")
@@ -45,6 +39,20 @@
 
 ```cs
 An example or code snippet follows soon.
+```
+
+---
+
+## Console Example
+
+```console
+┌──────────┬───────┐
+│ Property │ Value │
+├──────────┼───────┤
+│ Hour     │ 12    │
+│ Minute   │ 43    │
+│ Second   │ 56    │
+└──────────┴───────┘
 ```
 
 ---
@@ -61,3 +69,17 @@ An example or code snippet follows soon.
 
 ---
 
+## YAML Example
+
+```yaml
+Hour:
+  Value: 12
+Minute:
+  Value: 43
+Second:
+  Value: 56
+```
+
+---
+
+<hr style="background: blue;" />

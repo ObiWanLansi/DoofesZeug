@@ -15,7 +15,7 @@ i write down the stuff in the fastest way, mostly in note form.
   > Wenn wir einen DataTree haben, könnte man ja auch überlegen ein JSON/XML/YAML To DataTree zu machen?
 - Europe.Germany.RheinlandPfalz.Trier GAdm Generator
 - DataSourceAttribute zu den entsprechenden Klassen
-- ExampleAttribute weg
+- Proeprties To Dictionary `public static Dictionary<string, string> FlatPropertiesToDictionary( this object o )`.
 - Geometry Rectangle<T> where T: Kilometer, Millimeter or Meter
 - Dataset Generate Person:
   - auch ein paar Enumerations leer lassen.
@@ -60,6 +60,7 @@ i write down the stuff in the fastest way, mostly in note form.
 
 ## Done
 
+- ExampleAttribute weg
 - Remove all GetHashCode implementations.
 - ~~Implement Observer Pattern in base class Entity?~~
 - ~~Generic Singelton Pattern?~~
@@ -104,3 +105,5 @@ i write down the stuff in the fastest way, mostly in note form.
 - Profession: Add abstract Enumeartion Field, damit wenn als JSON wir auch eine Unterscheidung haben.
 - Enumerations Markdown List Values
 - ~~Jeder Namespace eine README.md wie bei Java die package.html ?~~
+
+<hr style="background: blue;" />

@@ -8,7 +8,7 @@ using DoofesZeug.Datatypes.Container;
 namespace DoofesZeug.Entities.ManMade.Communication
 {
     [Description("An simplified emailaddress.")]
-    public sealed class EMailAddress : IdentifiableEntity
+    public sealed class EMailAddress : Entity
     {
         public string Address { get; set; }
 

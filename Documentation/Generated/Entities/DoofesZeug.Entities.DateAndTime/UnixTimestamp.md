@@ -27,12 +27,6 @@
 
 ---
 
-## Attributes
-
-- Description
-
----
-
 ## UML Diagram
 
 ![UnixTimestamp.png](./UnixTimestamp.png "UnixTimestamp")
@@ -47,11 +41,31 @@ An example or code snippet follows soon.
 
 ---
 
-## JSON Example
+## Console Example
 
-```json
-1634242168
+```console
+┌──────────┬───────┐
+│ Property │ Value │
+├──────────┼───────┤
+└──────────┴───────┘
 ```
 
 ---
 
+## JSON Example
+
+```json
+1634307757
+```
+
+---
+
+## YAML Example
+
+```yaml
+{}
+```
+
+---
+
+<hr style="background: blue;" />

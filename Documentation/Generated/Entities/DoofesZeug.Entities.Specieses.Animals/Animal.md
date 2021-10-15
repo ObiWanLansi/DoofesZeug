@@ -33,12 +33,6 @@
 
 ---
 
-## Attributes
-
-- Description
-
----
-
 ## UML Diagram
 
 ![Animal.png](./Animal.png "Animal")
@@ -49,6 +43,25 @@
 
 ```cs
 An example or code snippet follows soon.
+```
+
+---
+
+## Console Example
+
+```console
+┌───────────────┬──────────────────────────────────────┐
+│ Property      │ Value                                │
+├───────────────┼──────────────────────────────────────┤
+│ AnimalSpecies │ Cat                                  │
+│ Name          │ Garfield                             │
+│ DateOfBirth   │ 10.06.1978                           │
+│ Gender        │ Male                                 │
+│ DateOfDeath   │                                      │
+│ Age           │ 43                                   │
+│ IsAlive       │ True                                 │
+│ Id            │ f187b97d-1ab3-441d-a92b-6acedbbf2ebc │
+└───────────────┴──────────────────────────────────────┘
 ```
 
 ---
@@ -64,9 +77,32 @@ An example or code snippet follows soon.
   "DateOfDeath": null,
   "Age": 43,
   "IsAlive": true,
-  "Id": "487d54f4-2d03-4e49-9dd2-da3382c80aea"
+  "Id": "f187b97d-1ab3-441d-a92b-6acedbbf2ebc"
 }
 ```
 
 ---
 
+## YAML Example
+
+```yaml
+AnimalSpecies: Cat
+Name:
+  Value: Garfield
+DateOfBirth:
+  Day:
+    Value: 10
+  Month:
+    Value: 6
+  Year:
+    Value: 1978
+Gender: Male
+DateOfDeath: 
+Age: 43
+IsAlive: true
+Id: f187b97d-1ab3-441d-a92b-6acedbbf2ebc
+```
+
+---
+
+<hr style="background: blue;" />

@@ -35,9 +35,9 @@
 
 |Entity|Description|Properties|
 |:-----|:----------|:---------|
-|[EMailAddress](./DoofesZeug.Entities.ManMade.Communication/EMailAddress.md)|An simplified emailaddress.|Address, InformationType, Id|
-|[Homepage](./DoofesZeug.Entities.ManMade.Communication/Homepage.md)|An simple link to an homepage.|Url, InformationType, Id|
-|[Phone](./DoofesZeug.Entities.ManMade.Communication/Phone.md)|An simple phonenumber.|Number, PhoneType, InformationType, Id|
+|[EMailAddress](./DoofesZeug.Entities.ManMade.Communication/EMailAddress.md)|An simplified emailaddress.|Address, InformationType|
+|[Homepage](./DoofesZeug.Entities.ManMade.Communication/Homepage.md)|An simple link to an homepage.|Url, InformationType|
+|[Phone](./DoofesZeug.Entities.ManMade.Communication/Phone.md)|An simple phonenumber.|Number, PhoneType, InformationType|
 
 
 ## `DoofesZeug.Entities.Science.Base.Length`
@@ -90,3 +90,4 @@
 |[FirstName](./DoofesZeug.Entities.Specieses.Human/FirstName.md)|An firstname for humans.|Value|
 |[LastName](./DoofesZeug.Entities.Specieses.Human/LastName.md)|An lastname for humans.|Value|
 |[Person](./DoofesZeug.Entities.Specieses.Human/Person.md)|An simplified person with an firstname, lastname, birthday and some other optional properties.|FirstName, LastName, Handedness, BloodGroup, HairColor, Religion, Profession, DriverLicense, AverageHeight, AverageWeight, Phone, Homepage, EMailAddress, BMI, DateOfBirth, Gender, DateOfDeath, Age, IsAlive, Id|
+<hr style="background: blue;" />

@@ -45,12 +45,6 @@
 
 ---
 
-## Attributes
-
-- Description
-
----
-
 ## UML Diagram
 
 ![Person.png](./Person.png "Person")
@@ -61,6 +55,37 @@
 
 ```cs
 An example or code snippet follows soon.
+```
+
+---
+
+## Console Example
+
+```console
+┌───────────────┬──────────────────────────────────────┐
+│ Property      │ Value                                │
+├───────────────┼──────────────────────────────────────┤
+│ FirstName     │ John                                 │
+│ LastName      │ Doe                                  │
+│ Handedness    │ Left                                 │
+│ BloodGroup    │ AB                                   │
+│ HairColor     │ Blond                                │
+│ Religion      │ Buddhism                             │
+│ Profession    │ Engineer                             │
+│ DriverLicense │ AM, B                                │
+│ AverageHeight │ 174 cm                               │
+│ AverageWeight │ 72 kg                                │
+│ Phone         │ +49 54321 424269                     │
+│ Homepage      │ https://github.com/ObiWanLansi       │
+│ EMailAddress  │ obiwanlansi@github.com               │
+│ BMI           │ 23,781211853027344                   │
+│ DateOfBirth   │ 11.02.1942                           │
+│ Gender        │ Male                                 │
+│ DateOfDeath   │ 22.03.1984                           │
+│ Age           │ 42                                   │
+│ IsAlive       │ False                                │
+│ Id            │ e1956b22-9d2d-4e1a-bf3e-a6efe0e2591c │
+└───────────────┴──────────────────────────────────────┘
 ```
 
 ---
@@ -90,18 +115,15 @@ An example or code snippet follows soon.
   "Phone": {
     "Number": "+49 54321 424269",
     "PhoneType": "Landline",
-    "InformationType": "Private",
-    "Id": "a65bb16d-219a-4b53-a4b9-8b257e6b2936"
+    "InformationType": "Private"
   },
   "Homepage": {
     "Url": "https://github.com/ObiWanLansi",
-    "InformationType": "Business",
-    "Id": "fd3e0436-3e6b-42d2-9903-5dc3a8f48115"
+    "InformationType": "Business"
   },
   "EMailAddress": {
     "Address": "obiwanlansi@github.com",
-    "InformationType": "Business",
-    "Id": "d32bf11f-79b6-4623-bb06-0b03e5210825"
+    "InformationType": "Business"
   },
   "BMI": 23.781211853027344,
   "DateOfBirth": "11.02.1942",
@@ -109,9 +131,70 @@ An example or code snippet follows soon.
   "DateOfDeath": "22.03.1984",
   "Age": 42,
   "IsAlive": false,
-  "Id": "f7ec6b4c-4ef4-43f7-be9d-2a260ab7d4b8"
+  "Id": "e1956b22-9d2d-4e1a-bf3e-a6efe0e2591c"
 }
 ```
 
 ---
 
+## YAML Example
+
+```yaml
+FirstName:
+  Value: John
+LastName:
+  Value: Doe
+Handedness: Left
+BloodGroup: AB
+HairColor: Blond
+Religion: Buddhism
+Profession: Engineer
+DriverLicense: AM, B
+AverageHeight:
+  Prefix:
+    Name: Centi
+    Symbol: c
+    Factor: 0.01
+  Unit: m
+  Value: 174
+AverageWeight:
+  Prefix:
+    Name: Kilo
+    Symbol: k
+    Factor: 1000
+  Unit: g
+  Value: 72
+Phone:
+  Number: +49 54321 424269
+  PhoneType: Landline
+  InformationType: Private
+Homepage:
+  Url: https://github.com/ObiWanLansi
+  InformationType: Business
+EMailAddress:
+  Address: obiwanlansi@github.com
+  InformationType: Business
+BMI: 23.781211853027344
+DateOfBirth:
+  Day:
+    Value: 11
+  Month:
+    Value: 2
+  Year:
+    Value: 1942
+Gender: Male
+DateOfDeath:
+  Day:
+    Value: 22
+  Month:
+    Value: 3
+  Year:
+    Value: 1984
+Age: 42
+IsAlive: false
+Id: e1956b22-9d2d-4e1a-bf3e-a6efe0e2591c
+```
+
+---
+
+<hr style="background: blue;" />

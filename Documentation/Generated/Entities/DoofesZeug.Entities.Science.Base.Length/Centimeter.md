@@ -24,16 +24,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Prefix|[UnitPrefix](../../Entities/DoofesZeug.Datatypes.Misc/UnitPrefix.md)|&#x2713;|&#x2713;|DoofesZeug.Datatypes.Misc.UnitPrefix|
+|Prefix|[UnitPrefix](../../Entities/DoofesZeug.Datatypes.Misc/UnitPrefix.md)|&#x2713;|&#x2713;|Centi|
 |Unit|String|&#x2713;|&#x2713;|m|
 |Value|Double|&#x2713;|&#x2713;|0|
-
----
-
-## Attributes
-
-- Description
-- Link
 
 ---
 
@@ -51,6 +44,20 @@ An example or code snippet follows soon.
 
 ---
 
+## Console Example
+
+```console
+┌──────────┬───────┐
+│ Property │ Value │
+├──────────┼───────┤
+│ Prefix   │ Centi │
+│ Unit     │ m     │
+│ Value    │ 142   │
+└──────────┴───────┘
+```
+
+---
+
 ## JSON Example
 
 ```json
@@ -63,3 +70,17 @@ An example or code snippet follows soon.
 
 ---
 
+## YAML Example
+
+```yaml
+Prefix:
+  Name: Centi
+  Symbol: c
+  Factor: 0.01
+Unit: m
+Value: 142
+```
+
+---
+
+<hr style="background: blue;" />

@@ -6,7 +6,7 @@
 |:-|:-|
 |Description|An simplified emailaddress.|
 |Namespace|DoofesZeug.Entities.ManMade.Communication|
-|BaseClass|IdentifiableEntity|
+|BaseClass|Entity|
 |SourceCode|[EMailAddress.cs](../../../../DoofesZeug.Library/Src/Entities/ManMade/Communication/EMailAddress.cs)|
 
 ---
@@ -24,13 +24,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
-
----
-
-## Attributes
-
-- Description
+|    |    |    |     |            |
 
 ---
 
@@ -48,15 +42,37 @@ An example or code snippet follows soon.
 
 ---
 
+## Console Example
+
+```console
+┌─────────────────┬────────────────────────┐
+│ Property        │ Value                  │
+├─────────────────┼────────────────────────┤
+│ Address         │ obiwanlansi@github.com │
+│ InformationType │ Business               │
+└─────────────────┴────────────────────────┘
+```
+
+---
+
 ## JSON Example
 
 ```json
 {
   "Address": "obiwanlansi@github.com",
-  "InformationType": "Business",
-  "Id": "9d9292c8-1885-4003-9ddd-6e1bec057bd7"
+  "InformationType": "Business"
 }
 ```
 
 ---
 
+## YAML Example
+
+```yaml
+Address: obiwanlansi@github.com
+InformationType: Business
+```
+
+---
+
+<hr style="background: blue;" />

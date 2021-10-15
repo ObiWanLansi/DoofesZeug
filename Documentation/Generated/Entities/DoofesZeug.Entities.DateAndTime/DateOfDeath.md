@@ -29,12 +29,6 @@
 
 ---
 
-## Attributes
-
-- Description
-
----
-
 ## UML Diagram
 
 ![DateOfDeath.png](./DateOfDeath.png "DateOfDeath")
@@ -49,6 +43,20 @@ An example or code snippet follows soon.
 
 ---
 
+## Console Example
+
+```console
+┌──────────┬───────┐
+│ Property │ Value │
+├──────────┼───────┤
+│ Day      │ 16    │
+│ Month    │ 6     │
+│ Year     │ 1990  │
+└──────────┴───────┘
+```
+
+---
+
 ## JSON Example
 
 ```json
@@ -57,3 +65,17 @@ An example or code snippet follows soon.
 
 ---
 
+## YAML Example
+
+```yaml
+Day:
+  Value: 16
+Month:
+  Value: 6
+Year:
+  Value: 1990
+```
+
+---
+
+<hr style="background: blue;" />

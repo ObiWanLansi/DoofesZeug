@@ -8,7 +8,7 @@ using DoofesZeug.Datatypes.Container;
 namespace DoofesZeug.Entities.ManMade.Communication
 {
     [Description("An simple phonenumber.")]
-    public sealed class Phone : IdentifiableEntity
+    public sealed class Phone : Entity
     {
         public string Number { get; set; }
 

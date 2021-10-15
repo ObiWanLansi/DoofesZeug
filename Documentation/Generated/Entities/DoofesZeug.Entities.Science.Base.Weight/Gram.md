@@ -24,16 +24,9 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Prefix|[UnitPrefix](../../Entities/DoofesZeug.Datatypes.Misc/UnitPrefix.md)|&#x2713;|&#x2713;|DoofesZeug.Datatypes.Misc.UnitPrefix|
+|Prefix|[UnitPrefix](../../Entities/DoofesZeug.Datatypes.Misc/UnitPrefix.md)|&#x2713;|&#x2713;|Base|
 |Unit|String|&#x2713;|&#x2713;|g|
 |Value|Double|&#x2713;|&#x2713;|0|
-
----
-
-## Attributes
-
-- Description
-- Link
 
 ---
 
@@ -51,6 +44,20 @@ An example or code snippet follows soon.
 
 ---
 
+## Console Example
+
+```console
+┌──────────┬───────┐
+│ Property │ Value │
+├──────────┼───────┤
+│ Prefix   │ Base  │
+│ Unit     │ g     │
+│ Value    │ 42123 │
+└──────────┴───────┘
+```
+
+---
+
 ## JSON Example
 
 ```json
@@ -63,3 +70,17 @@ An example or code snippet follows soon.
 
 ---
 
+## YAML Example
+
+```yaml
+Prefix:
+  Name: Base
+  Symbol: ''
+  Factor: 1
+Unit: g
+Value: 42123
+```
+
+---
+
+<hr style="background: blue;" />

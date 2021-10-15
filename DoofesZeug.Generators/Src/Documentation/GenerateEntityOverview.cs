@@ -47,19 +47,20 @@ namespace DoofesZeug.Documentation
         }
 
 
-        private static void GenerateJsonExample( Type type, StringBuilder sb )
-        {
-            sb.AppendLine();
+        ////private static void GenerateJsonExample( Type type, StringBuilder sb )
+        //private static void GenerateJsonExample( object instance, StringBuilder sb )
+        //{
+        //    sb.AppendLine();
 
-            object oResult = TestDataGenerator.GenerateTestData(type);
+        //    //object oResult = TestDataGenerator.GenerateTestData(type);
 
-            if( oResult != null )
-            {
-                sb.AppendLine("```json");
-                sb.AppendLine(oResult.ToPrettyJson());
-                sb.AppendLine("```");
-            }
-        }
+        //    //if( oResult != null )
+        //    {
+        //        sb.AppendLine("```json");
+        //        sb.AppendLine(instance.ToPrettyJson());
+        //        sb.AppendLine("```");
+        //    }
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -250,11 +251,11 @@ namespace DoofesZeug.Documentation
             sb.AppendLine("---");
             sb.AppendLine();
 
-            sb.AppendLine("## Attributes");
-            AddAttributes(type, sb);
-            sb.AppendLine();
-            sb.AppendLine("---");
-            sb.AppendLine();
+            //sb.AppendLine("## Attributes");
+            //AddAttributes(type, sb);
+            //sb.AppendLine();
+            //sb.AppendLine("---");
+            //sb.AppendLine();
 
             sb.AppendLine("## UML Diagram");
             GenerateUmlDiagramm(type, sb);
@@ -268,13 +269,41 @@ namespace DoofesZeug.Documentation
             sb.AppendLine("---");
             sb.AppendLine();
 
-            sb.AppendLine("## JSON Example");
-            GenerateJsonExample(type, sb);
-            sb.AppendLine();
-            sb.AppendLine("---");
-            sb.AppendLine();
+            object testobject = TestDataGenerator.GenerateTestData(type);
+
+            if( testobject != null )
+            {
+                sb.AppendLine("## Console Example");
+                sb.AppendLine();
+                sb.AppendLine("```console");
+                sb.Append(testobject.ToStringTable());
+                sb.AppendLine("```");
+                sb.AppendLine();
+                sb.AppendLine("---");
+                sb.AppendLine();
+
+                sb.AppendLine("## JSON Example");
+                sb.AppendLine();
+                sb.AppendLine("```json");
+                sb.AppendLine(testobject.ToPrettyJson());
+                sb.AppendLine("```");
+                sb.AppendLine();
+                sb.AppendLine("---");
+                sb.AppendLine();
+
+                sb.AppendLine("## YAML Example");
+                sb.AppendLine();
+                sb.AppendLine("```yaml");
+                sb.Append(testobject.ToPrettyYaml());
+                sb.AppendLine("```");
+                sb.AppendLine();
+                sb.AppendLine("---");
+                sb.AppendLine();
+            }
 
             //---------------------------------------------------------------------------------------------------------
+
+            sb.AppendLine("<hr style=\"background: blue;\" />");
 
             File.WriteAllTextAsync($"{strOutputDirectory}\\{type.Name}.md", sb.ToString(), Encoding.UTF8);
         }
@@ -315,6 +344,8 @@ namespace DoofesZeug.Documentation
                     sb.AppendLine($"|{strLinkToMarkdown}|{da.Description}|{properties.ToFlatString()}|");
                 }
             }
+
+            sb.AppendLine("<hr style=\"background: blue;\" />");
 
             File.WriteAllTextAsync($"{OUTPUTDIRECTORY}\\README.md", sb.ToString(), Encoding.UTF8);
         }

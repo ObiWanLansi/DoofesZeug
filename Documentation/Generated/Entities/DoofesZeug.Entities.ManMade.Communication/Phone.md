@@ -6,7 +6,7 @@
 |:-|:-|
 |Description|An simple phonenumber.|
 |Namespace|DoofesZeug.Entities.ManMade.Communication|
-|BaseClass|IdentifiableEntity|
+|BaseClass|Entity|
 |SourceCode|[Phone.cs](../../../../DoofesZeug.Library/Src/Entities/ManMade/Communication/Phone.cs)|
 
 ---
@@ -25,13 +25,7 @@
 
 |Name|Type|Read|Write|DefaultValue|
 |:---|:---|:--:|:---:|:-----------|
-|Id|Guid|&#x2713;|&#x2713;|Guid.NewGuid()|
-
----
-
-## Attributes
-
-- Description
+|    |    |    |     |            |
 
 ---
 
@@ -49,16 +43,40 @@ An example or code snippet follows soon.
 
 ---
 
+## Console Example
+
+```console
+┌─────────────────┬──────────────────┐
+│ Property        │ Value            │
+├─────────────────┼──────────────────┤
+│ Number          │ +49 54321 424269 │
+│ PhoneType       │ Landline         │
+│ InformationType │ Private          │
+└─────────────────┴──────────────────┘
+```
+
+---
+
 ## JSON Example
 
 ```json
 {
   "Number": "+49 54321 424269",
   "PhoneType": "Landline",
-  "InformationType": "Private",
-  "Id": "0d3d3490-39c1-4f1f-ae8f-e4289bd3ff99"
+  "InformationType": "Private"
 }
 ```
 
 ---
 
+## YAML Example
+
+```yaml
+Number: +49 54321 424269
+PhoneType: Landline
+InformationType: Private
+```
+
+---
+
+<hr style="background: blue;" />

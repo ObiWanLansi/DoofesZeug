@@ -89,3 +89,5 @@ Here are some useful links to helpful articles, some in english, some in german.
 ## Used Data
 
 - [Color Brewer](https://colorbrewer2.org/)
+
+<hr style="background: blue;" />

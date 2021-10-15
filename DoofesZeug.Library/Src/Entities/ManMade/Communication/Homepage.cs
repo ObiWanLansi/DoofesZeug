@@ -8,16 +8,16 @@ using DoofesZeug.Datatypes.Container;
 namespace DoofesZeug.Entities.ManMade.Communication
 {
     [Description("An simple link to an homepage.")]
-    public sealed class Homepage : IdentifiableEntity
+    public sealed class Homepage : Entity
     {
-        public Uri Url { get; set; }
+        public string Url { get; set; }
 
         public InformationType? InformationType { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public static implicit operator Homepage( string url ) => new() { Url = new Uri(url) };
+        public static implicit operator Homepage( string url ) => new() { Url = url };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ namespace DoofesZeug.Entities.ManMade.Communication
         /// <returns>
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
-        public override string ToString() => this.Url.AbsoluteUri;
+        public override string ToString() => this.Url;
 
 
         ///// <summary>

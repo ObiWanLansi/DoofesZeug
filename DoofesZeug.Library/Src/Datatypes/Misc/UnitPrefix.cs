@@ -1,6 +1,4 @@
-﻿using System;
-
-using DoofesZeug.Attributes.Documentation;
+﻿using DoofesZeug.Attributes.Documentation;
 
 
 
@@ -50,6 +48,15 @@ namespace DoofesZeug.Datatypes.Misc
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Converts to string.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString() => this.Name;
 
 
         /// <summary>

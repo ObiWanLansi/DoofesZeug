@@ -6,16 +6,10 @@ skinparam backgroundcolor transparent
 abstract class Entity {
 }
 
-Entity <|-- IdentifiableEntity
-
-abstract class IdentifiableEntity {
-    Id: Guid
-}
-
-IdentifiableEntity <|-- Homepage
+Entity <|-- Homepage
 
 class Homepage {
-    Url: Uri
+    Url: String
     InformationType: InformationType?
 }
 

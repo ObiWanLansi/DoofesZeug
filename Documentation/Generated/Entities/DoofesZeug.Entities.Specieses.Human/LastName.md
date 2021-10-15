@@ -27,12 +27,6 @@
 
 ---
 
-## Attributes
-
-- Description
-
----
-
 ## UML Diagram
 
 ![LastName.png](./LastName.png "LastName")
@@ -47,6 +41,18 @@ An example or code snippet follows soon.
 
 ---
 
+## Console Example
+
+```console
+┌──────────┬────────────┐
+│ Property │ Value      │
+├──────────┼────────────┤
+│ Value    │ Mustermann │
+└──────────┴────────────┘
+```
+
+---
+
 ## JSON Example
 
 ```json
@@ -55,3 +61,12 @@ An example or code snippet follows soon.
 
 ---
 
+## YAML Example
+
+```yaml
+Value: Mustermann
+```
+
+---
+
+<hr style="background: blue;" />

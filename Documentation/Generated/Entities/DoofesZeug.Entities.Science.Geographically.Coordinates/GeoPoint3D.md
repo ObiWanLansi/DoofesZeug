@@ -29,12 +29,6 @@
 
 ---
 
-## Attributes
-
-- Description
-
----
-
 ## UML Diagram
 
 ![GeoPoint3D.png](./GeoPoint3D.png "GeoPoint3D")
@@ -45,6 +39,20 @@
 
 ```cs
 An example or code snippet follows soon.
+```
+
+---
+
+## Console Example
+
+```console
+┌───────────┬────────────────────┐
+│ Property  │ Value              │
+├───────────┼────────────────────┤
+│ Latitude  │ 49.759646524258756 │
+│ Longitude │ 6.644282639342397  │
+│ Altitude  │ 1234               │
+└───────────┴────────────────────┘
 ```
 
 ---
@@ -61,3 +69,14 @@ An example or code snippet follows soon.
 
 ---
 
+## YAML Example
+
+```yaml
+Latitude: {}
+Longitude: {}
+Altitude: {}
+```
+
+---
+
+<hr style="background: blue;" />

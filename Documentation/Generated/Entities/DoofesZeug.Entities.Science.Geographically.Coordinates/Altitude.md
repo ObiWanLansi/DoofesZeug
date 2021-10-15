@@ -27,12 +27,6 @@
 
 ---
 
-## Attributes
-
-- Description
-
----
-
 ## UML Diagram
 
 ![Altitude.png](./Altitude.png "Altitude")
@@ -47,6 +41,17 @@ An example or code snippet follows soon.
 
 ---
 
+## Console Example
+
+```console
+┌──────────┬───────┐
+│ Property │ Value │
+├──────────┼───────┤
+└──────────┴───────┘
+```
+
+---
+
 ## JSON Example
 
 ```json
@@ -55,3 +60,12 @@ An example or code snippet follows soon.
 
 ---
 
+## YAML Example
+
+```yaml
+{}
+```
+
+---
+
+<hr style="background: blue;" />

@@ -6,13 +6,7 @@ skinparam backgroundcolor transparent
 abstract class Entity {
 }
 
-Entity <|-- IdentifiableEntity
-
-abstract class IdentifiableEntity {
-    Id: Guid
-}
-
-IdentifiableEntity <|-- Phone
+Entity <|-- Phone
 
 class Phone {
     Number: String

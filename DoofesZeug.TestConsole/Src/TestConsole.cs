@@ -15,44 +15,6 @@ namespace DoofesZeug
 {
     static class TestConsole
     {
-        //static private readonly string DIV = new('-', 80);
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        //private static string ToXml( object o )
-        //{
-        //    using MemoryStream ms = new();
-
-        //    using( XmlTextWriter xmlwriter = new(ms, Encoding.GetEncoding("ISO-8859-1")) )
-        //    {
-        //        xmlwriter.Formatting = System.Xml.Formatting.Indented;
-        //        xmlwriter.Indentation = 4;
-
-        //        try
-        //        {
-        //            new XmlSerializer(o.GetType()).Serialize(xmlwriter, o);
-        //        }
-        //        finally
-        //        {
-        //            xmlwriter.Close();
-        //            ms.Close();
-        //        }
-        //    }
-
-        //    return Encoding.Default.GetString(ms.GetBuffer());
-        //}
-
-
-        //private static string ToYaml( object o )
-        //{
-        //    //return new SerializerBuilder().WithEventEmitter(nextEmitter => new QuoteSurroundingEventEmitter(nextEmitter)).Build().Serialize(o);
-        //    return new SerializerBuilder().Build().Serialize(o);
-        //}
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
         /// <summary>
         /// Handles the UnhandledException event of the CurrentDomain control.
         /// </summary>

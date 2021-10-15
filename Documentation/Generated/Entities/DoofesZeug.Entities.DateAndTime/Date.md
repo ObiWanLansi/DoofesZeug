@@ -29,12 +29,6 @@
 
 ---
 
-## Attributes
-
-- Description
-
----
-
 ## UML Diagram
 
 ![Date.png](./Date.png "Date")
@@ -45,6 +39,20 @@
 
 ```cs
 An example or code snippet follows soon.
+```
+
+---
+
+## Console Example
+
+```console
+┌──────────┬───────┐
+│ Property │ Value │
+├──────────┼───────┤
+│ Day      │ 11    │
+│ Month    │ 11    │
+│ Year     │ 1942  │
+└──────────┴───────┘
 ```
 
 ---
@@ -61,3 +69,17 @@ An example or code snippet follows soon.
 
 ---
 
+## YAML Example
+
+```yaml
+Day:
+  Value: 11
+Month:
+  Value: 11
+Year:
+  Value: 1942
+```
+
+---
+
+<hr style="background: blue;" />

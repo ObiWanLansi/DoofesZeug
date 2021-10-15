@@ -27,12 +27,6 @@
 
 ---
 
-## Attributes
-
-- Description
-
----
-
 ## UML Diagram
 
 ![Minute.png](./Minute.png "Minute")
@@ -47,6 +41,18 @@ An example or code snippet follows soon.
 
 ---
 
+## Console Example
+
+```console
+┌──────────┬───────┐
+│ Property │ Value │
+├──────────┼───────┤
+│ Value    │ 3     │
+└──────────┴───────┘
+```
+
+---
+
 ## JSON Example
 
 ```json
@@ -55,3 +61,12 @@ An example or code snippet follows soon.
 
 ---
 
+## YAML Example
+
+```yaml
+Value: 3
+```
+
+---
+
+<hr style="background: blue;" />
