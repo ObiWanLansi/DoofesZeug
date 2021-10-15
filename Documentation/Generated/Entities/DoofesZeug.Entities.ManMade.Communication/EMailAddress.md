@@ -73,6 +73,4 @@ Address: obiwanlansi@github.com
 InformationType: Business
 ```
 
----
-
 <hr style="background: blue;" />

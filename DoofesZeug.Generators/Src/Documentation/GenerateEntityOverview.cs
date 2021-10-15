@@ -32,35 +32,10 @@ namespace DoofesZeug.Documentation
         {
             sb.AppendLine();
 
-            //    ExampleAttribute iea = type.GetCustomAttribute<ExampleAttribute>();
-            //    if( iea != null )
-            //    {
-            //        iea.AppendInlineExample(sb);
-            //        return;
-            //    }
-
             sb.AppendLine("```cs");
             sb.AppendLine("An example or code snippet follows soon.");
             sb.AppendLine("```");
-
-            //    //throw new Exception($"{type.FullName} have no valid example source!");
         }
-
-
-        ////private static void GenerateJsonExample( Type type, StringBuilder sb )
-        //private static void GenerateJsonExample( object instance, StringBuilder sb )
-        //{
-        //    sb.AppendLine();
-
-        //    //object oResult = TestDataGenerator.GenerateTestData(type);
-
-        //    //if( oResult != null )
-        //    {
-        //        sb.AppendLine("```json");
-        //        sb.AppendLine(instance.ToPrettyJson());
-        //        sb.AppendLine("```");
-        //    }
-        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -124,21 +99,6 @@ namespace DoofesZeug.Documentation
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        private static void AddAttributes( Type type, StringBuilder sb )
-        {
-            sb.AppendLine();
-            foreach( object attribute in type.GetCustomAttributes(false) )
-            {
-                string strName = attribute.GetType().Name;
-                if( strName.EndsWith("Attribute") )
-                {
-                    strName = strName.Substring(0, strName.Length - 9);
-                }
-                sb.AppendLine($"- {strName}");
-            }
-        }
 
 
         private static void AddProperties( Type type, StringBuilder sb, bool bInherited )
@@ -241,63 +201,55 @@ namespace DoofesZeug.Documentation
             sb.AppendLine("## Generally");
             AddGenerallyInformation(type, sb);
             sb.AppendLine();
+
             sb.AppendLine("---");
             sb.AppendLine();
-
             sb.AppendLine("## Properties");
             AddProperties(type, sb, false);
             AddProperties(type, sb, true);
             sb.AppendLine();
+
             sb.AppendLine("---");
             sb.AppendLine();
-
-            //sb.AppendLine("## Attributes");
-            //AddAttributes(type, sb);
-            //sb.AppendLine();
-            //sb.AppendLine("---");
-            //sb.AppendLine();
-
             sb.AppendLine("## UML Diagram");
             GenerateUmlDiagramm(type, sb);
             sb.AppendLine();
+
             sb.AppendLine("---");
             sb.AppendLine();
-
             sb.AppendLine("## Code Example");
             GenerateCodeExample(type, sb);
-            sb.AppendLine();
-            sb.AppendLine("---");
             sb.AppendLine();
 
             object testobject = TestDataGenerator.GenerateTestData(type);
 
             if( testobject != null )
             {
+                sb.AppendLine("---");
+                sb.AppendLine();
                 sb.AppendLine("## Console Example");
                 sb.AppendLine();
                 sb.AppendLine("```console");
                 sb.Append(testobject.ToStringTable());
                 sb.AppendLine("```");
                 sb.AppendLine();
+
                 sb.AppendLine("---");
                 sb.AppendLine();
-
                 sb.AppendLine("## JSON Example");
                 sb.AppendLine();
                 sb.AppendLine("```json");
                 sb.AppendLine(testobject.ToPrettyJson());
                 sb.AppendLine("```");
                 sb.AppendLine();
+
                 sb.AppendLine("---");
                 sb.AppendLine();
-
                 sb.AppendLine("## YAML Example");
                 sb.AppendLine();
                 sb.AppendLine("```yaml");
                 sb.Append(testobject.ToPrettyYaml());
                 sb.AppendLine("```");
-                sb.AppendLine();
-                sb.AppendLine("---");
                 sb.AppendLine();
             }
 
@@ -345,6 +297,7 @@ namespace DoofesZeug.Documentation
                 }
             }
 
+            sb.AppendLine();
             sb.AppendLine("<hr style=\"background: blue;\" />");
 
             File.WriteAllTextAsync($"{OUTPUTDIRECTORY}\\README.md", sb.ToString(), Encoding.UTF8);

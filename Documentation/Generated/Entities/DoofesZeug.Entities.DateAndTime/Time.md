@@ -80,6 +80,4 @@ Second:
   Value: 56
 ```
 
----
-
 <hr style="background: blue;" />

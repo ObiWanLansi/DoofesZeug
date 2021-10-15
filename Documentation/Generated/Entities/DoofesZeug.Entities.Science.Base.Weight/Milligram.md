@@ -81,6 +81,4 @@ Unit: g
 Value: 123
 ```
 
----
-
 <hr style="background: blue;" />

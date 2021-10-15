@@ -73,6 +73,4 @@ Url: https://github.com/ObiWanLansi
 InformationType: Business
 ```
 
----
-
 <hr style="background: blue;" />

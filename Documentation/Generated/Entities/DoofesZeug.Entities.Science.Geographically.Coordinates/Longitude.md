@@ -66,6 +66,4 @@ An example or code snippet follows soon.
 {}
 ```
 
----
-
 <hr style="background: blue;" />

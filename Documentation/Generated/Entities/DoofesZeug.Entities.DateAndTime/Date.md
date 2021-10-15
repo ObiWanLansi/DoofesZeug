@@ -80,6 +80,4 @@ Year:
   Value: 1942
 ```
 
----
-
 <hr style="background: blue;" />

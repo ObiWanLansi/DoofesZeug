@@ -83,4 +83,5 @@
 |:----------|:----------|:-----|
 |[ColorBrewerScheme](./DoofesZeug.Tools.Misc/ColorBrewerScheme.md)|Our known and implemented color schemes of the color brewer definition.|Spectral, RdYlGn, RdBu, PiYG, PRGn, RdYlBu, BrBG, RdGy, PuOr, Set2, Accent, Set1, Set3, Dark2, Paired, Pastel2, Pastel1, OrRd, PuBu, BuPu, Oranges, BuGn, YlOrBr, YlGn, Reds, RdPu, Greens, YlGnBu, Purples, GnBu, Greys, YlOrRd, PuRd, Blues, PuBuGn|
 |[TypeEnum](./DoofesZeug.Tools.Misc/TypeEnum.md)|An unknown enumeration of the color brewer mechanism.|Div, Qual, Seq|
+
 <hr style="background: blue;" />

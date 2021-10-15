@@ -77,6 +77,4 @@ Longitude: {}
 Altitude: {}
 ```
 
----
-
 <hr style="background: blue;" />

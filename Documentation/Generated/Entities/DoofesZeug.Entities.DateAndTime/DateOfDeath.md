@@ -76,6 +76,4 @@ Year:
   Value: 1990
 ```
 
----
-
 <hr style="background: blue;" />

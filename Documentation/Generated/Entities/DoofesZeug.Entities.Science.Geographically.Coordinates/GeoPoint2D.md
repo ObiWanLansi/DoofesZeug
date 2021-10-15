@@ -73,6 +73,4 @@ Latitude: {}
 Longitude: {}
 ```
 
----
-
 <hr style="background: blue;" />

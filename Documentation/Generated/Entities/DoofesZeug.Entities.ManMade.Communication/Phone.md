@@ -77,6 +77,4 @@ PhoneType: Landline
 InformationType: Private
 ```
 
----
-
 <hr style="background: blue;" />

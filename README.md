@@ -9,7 +9,6 @@
 - [Overview](#overview)
   - [Entities](#entities)
   - [Enumerations](#enumerations)
-  - [Examples](#examples)
 - [Further Features](#further-features)
 - [Current Status](#current-status)
 - [Useful Links](#useful-links)
@@ -20,8 +19,8 @@
 ## The Idea
 
 Doofes Zeug is an collection of some useful models/entities/classes for rapid prototyping in .net core
-and / or creating some tests for development stuff. Doofes Zeug is designed so that it isn't too complicated. 
-It should be easy to use. No expensive security features such as write-protected properties or lists that 
+and / or creating some tests for development stuff. Doofes Zeug is designed so that it isn't too complicated.
+It should be easy to use. No expensive security features such as write-protected properties or lists that
 only mean additional work.
 
 The basic idea was to have an collection of classes and enumerations for simple daily needed stuff like:
@@ -53,11 +52,6 @@ All the entities / classes are listet in the generated [Entity Overview](./Docum
 
 All the enumerations are listet in the generated [Enumerations Overview](./Documentation/Generated/Enumerations/README.md).
 
-
-### Examples
-
-There are some [examples](./DoofesZeug.TestConsole/Src/Examples) avaible. At the moment there are not that many, but of course there are more and more.
-
 ---
 
 ## Further Features
@@ -69,7 +63,7 @@ There are some [examples](./DoofesZeug.TestConsole/Src/Examples) avaible. At the
 
 ## Current Status
 
-**This library is current under development, the first small models/entites are implement 
+**This library is current under development, the first small models/entites are implement
 to gather experience what i need in the future and what make sense to invest time.
 But when there is a first version avaible, i'll put it to nuget of course.**
 

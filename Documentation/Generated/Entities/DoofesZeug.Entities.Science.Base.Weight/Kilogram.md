@@ -81,6 +81,4 @@ Unit: g
 Value: 42
 ```
 
----
-
 <hr style="background: blue;" />

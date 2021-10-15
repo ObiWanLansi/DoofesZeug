@@ -67,6 +67,4 @@ An example or code snippet follows soon.
 Value: Erika
 ```
 
----
-
 <hr style="background: blue;" />

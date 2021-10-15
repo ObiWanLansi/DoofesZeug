@@ -67,6 +67,4 @@ An example or code snippet follows soon.
 Value: 3
 ```
 
----
-
 <hr style="background: blue;" />

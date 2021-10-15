@@ -76,6 +76,4 @@ Year:
   Value: 1948
 ```
 
----
-
 <hr style="background: blue;" />

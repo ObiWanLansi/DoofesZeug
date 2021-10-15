@@ -55,7 +55,7 @@ An example or code snippet follows soon.
 ## JSON Example
 
 ```json
-1634307757
+1634310825
 ```
 
 ---
@@ -65,7 +65,5 @@ An example or code snippet follows soon.
 ```yaml
 {}
 ```
-
----
 
 <hr style="background: blue;" />

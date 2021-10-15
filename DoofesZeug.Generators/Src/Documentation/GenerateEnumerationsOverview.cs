@@ -101,6 +101,7 @@ namespace DoofesZeug.Documentation
 
             //---------------------------------------------------------------------------------------------------------
 
+            sb.AppendLine();
             sb.AppendLine("<hr style=\"background: blue;\" />");
 
             File.WriteAllTextAsync($"{strOutputDirectory}\\{type.Name}.md", sb.ToString(), Encoding.UTF8);
@@ -141,6 +142,7 @@ namespace DoofesZeug.Documentation
                 }
             }
 
+            sb.AppendLine();
             sb.AppendLine("<hr style=\"background: blue;\" />");
 
             File.WriteAllTextAsync($"{OUTPUTDIRECTORY}\\README.md", sb.ToString(), Encoding.UTF8);
