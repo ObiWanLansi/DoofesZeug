@@ -286,7 +286,7 @@ namespace DoofesZeug.Extensions
         public static string ReplaceHtml( this string strContent ) => HttpUtility.HtmlEncode(strContent);
 
 
-        private static readonly Dictionary<char, string> UMLAUTS = new Dictionary<char, string>()
+        private static readonly Dictionary<char, string> UMLAUTS = new()
         {
             { 'ä', "ae" },
             { 'ö', "oe" },
