@@ -14,7 +14,7 @@ i write down the stuff in the fastest way, mostly in note form.
   > Cool wäre natürlich auch analog zo DataTable ein DataTree zu haben.
   > Wenn wir einen DataTree haben, könnte man ja auch überlegen ein JSON/XML/YAML To DataTree zu machen?
 - Europe.Germany.RheinlandPfalz.Trier GAdm Generator
-- DataSourceAttribute zu den entsprechenden Klassen
+- DataSourceAttribute zu den entsprechenden Klassen ?
 - Proeprties To Dictionary `public static Dictionary<string, string> FlatPropertiesToDictionary( this object o )`.
 - Geometry Rectangle<T> where T: Kilometer, Millimeter or Meter
 - Dataset Generate Person:
@@ -39,6 +39,7 @@ i write down the stuff in the fastest way, mostly in note form.
   - Kelivin
   - Fahrenheit
   - Celcius
+- Speed (m/s, km/h).
 - EarthQuakes
 - ~~Zoidac als Enum und~~ in DateTime Extension GetZoidac
 - Ein kleines GraphModel und erzeugung von diaggraph oder basic yed files ?
@@ -53,9 +54,17 @@ i write down the stuff in the fastest way, mostly in note form.
   -  CSV
   -  SQLite
   -  Markdown
-- Geht sowas mittles Operatorenüberladung : DataTable["HalfWidth"] = DataTable["Width"] >> 1
-- Countries (aus geonames generiert)
-- Dienstgrade Feuerwehr, Polizei, Militär
+- Geht sowas mittles Operatorenüberladung : DataTable["HalfWidth"] = DataTable["Width"] >> 1 <br/>
+  > Persons["WeightGram"] = Persons["Weight"] * 1e3
+- Countries (aus geonames oder gadm generiert)
+- Dienstgrade Feuerwehr, Polizei, Militär ?
+- List<T> bei Object mit DateTime:
+    - SortedList<T> GetItems[Day?,Month?,Year?](List<T> list) <br/>
+      > ? bedeutet immer kann null sein, z.B.: GetItems<Person>(null,null,1974), oder GetItems<Person>(null,10,null)
+    - SortedList<T> GetItems[Week?,Year?](List<T> list) <br/>
+      > Entweder ist in T nur ein DateTime, oder Date drinn, oder ich muss das Property als Argument übergeben, oder das Property hat ein Attribut welches gecheckt werden kann
+    - Split by Year: SortedDictionary<Year> SplitByYear(persons);
+    - Split by Month: SortedDictionary<Month> SplitByMonth(persons);
 
 
 ## Done
