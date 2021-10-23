@@ -1,4 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
+
+using DoofesZeug.Datasets;
+using DoofesZeug.Entities.DateAndTime.Part.Date;
+using DoofesZeug.Entities.Specieses.Human;
+using DoofesZeug.Extensions;
+using DoofesZeug.Tools.Misc;
 
 using static System.Console;
 
@@ -110,8 +118,11 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            //List<Person> persons = Dataset.GetPersons(42);
+            List<Person> persons = Dataset.GetPersons(42);
             //Out.WriteLineAsync(persons.ToStringTable());
+
+            SortedDictionary<Year, List<Person>> yearsplit = DateTimeSplitter.SplitByYear(persons, nameof(Person.DateOfBirth));
+            Out.WriteLineAsync(yearsplit?.ToStringTree());
 
             //-------------------------------------------------------------------------------------
 

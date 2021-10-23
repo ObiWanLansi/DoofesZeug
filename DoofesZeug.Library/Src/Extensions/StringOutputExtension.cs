@@ -86,6 +86,8 @@ namespace DoofesZeug.Extensions
 
             StringBuilder sbOutput = new(8192);
 
+            //-------------------------------------------------------------------------------------
+
             Dictionary<PropertyInfo, string> sdColumnsWidth = new();
 
             Type t = typeof(T);
@@ -138,7 +140,7 @@ namespace DoofesZeug.Extensions
                 iColumnCounter++;
             }
 
-            sbHeader.Append("│");
+            sbHeader.Append('│');
             sbBorderTop.Append('┐');
             sbBorderMiddle.Append('┤');
             sbBorderBottom.Append('┘');
@@ -160,14 +162,75 @@ namespace DoofesZeug.Extensions
                 }
                 else
                 {
-                    Console.Out.WriteLine(sbBorderMiddle);
+                    sbOutput.AppendLine(sbBorderMiddle.ToString());
                 }
             }
 
             sbOutput.AppendLine(sbBorderBottom.ToString());
 
+            //-------------------------------------------------------------------------------------
+
             return sbOutput.ToString();
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        public static string ToStringTree<K, V>( this SortedDictionary<K, V> dict )
+        {
+            if( dict == null || dict.Count == 0 )
+            {
+                return null;
+            }
+
+            StringBuilder sbOutput = new(8192);
+
+            //-------------------------------------------------------------------------------------
+
+
+            int count = dict.Count;
+            int counter = 0;
+
+            //K last = dict.Keys.Last;
+            using( IEnumerator<K> key = dict.Keys.GetEnumerator() )
+            {
+                string strKey = $"{key.Current}";
+
+                if( counter < count - 1 )
+                {
+
+                    sbOutput.Append("├───");
+                }
+                else
+                {
+                    sbOutput.Append("└───");
+                }
+
+                while( key.MoveNext() )
+                {
+                    object value = dict [key.Current];
+
+
+
+                    //action(e.Current, dict [e.Current]);
+                }
+                counter++;
+            }
+
+            //foreach( K key in dict.Keys )
+            //{
+            //    string strKey = $"{key}";
+
+            //    foreach( V value in dict [key] )
+            //    {
+
+            //    }
+            //}
+
+
+            //-------------------------------------------------------------------------------------
+
+            return sbOutput.ToString();
+        }
     }
 }

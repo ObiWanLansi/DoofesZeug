@@ -39,7 +39,7 @@ namespace DoofesZeug.Extensions
                     sbGenericName.AppendFormat("T{0}", iCounter + 1);
                 }
 
-                sbGenericName.Append(">");
+                sbGenericName.Append('>');
                 return sbGenericName.ToString();
             }
 

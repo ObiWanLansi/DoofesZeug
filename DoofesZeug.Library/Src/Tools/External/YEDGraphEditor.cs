@@ -1,9 +1,9 @@
 ﻿
 
 
-namespace DoofesZeug.Tools.External
-{
-    public sealed class YEDGraphEditor
-    {
-    }
-}
+//namespace DoofesZeug.Tools.External
+//{
+//    public sealed class YEDGraphEditor
+//    {
+//    }
+//}
