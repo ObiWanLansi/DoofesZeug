@@ -209,7 +209,6 @@ namespace DoofesZeug.Extensions
 
                     sbOutput.AppendLine(strKey);
 
-
                     List<V> list = dict [key.Current];
 
                     int countList = list.Count;

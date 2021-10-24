@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 
 using DoofesZeug.Datasets;
+using DoofesZeug.Entities.DateAndTime;
 using DoofesZeug.Entities.DateAndTime.Part.Date;
 using DoofesZeug.Entities.Specieses.Human;
 using DoofesZeug.Extensions;
@@ -123,14 +124,30 @@ namespace DoofesZeug
             List<Person> persons = Dataset.GetPersons(42);
             //Out.WriteLineAsync(persons.ToStringTable());
 
+            //-----------------------------------------------------------------
+
             uint maxYear = ( from p in persons select p.DateOfBirth.Year ).Max().Value;
             Person pers = TestDataGenerator.GenerateTestData<Person>();
             pers.DateOfBirth.Year = maxYear;
             persons.Add(pers);
 
-            SortedDictionary<Year, List<Person>> yearsplit = DateTimeSplitter.SplitByYear(persons, nameof(Person.DateOfBirth));
+            SortedDictionary<Year, List<Person>> year_split = DateTimeSplitter.SplitByYear(persons, nameof(Person.DateOfBirth));
             Out.WriteLineAsync("DateOfBirth Splitted By Year");
-            Out.WriteLineAsync(yearsplit?.ToStringTree());
+            Out.WriteLineAsync(year_split?.ToStringTree());
+
+            //-----------------------------------------------------------------
+
+            SortedDictionary<(Year, Month), List<Person>> year_and_month_split = DateTimeSplitter.SplitByYearAndMonth(persons, nameof(Person.DateOfBirth));
+            Out.WriteLineAsync("DateOfBirth Splitted By Year And Month");
+            Out.WriteLineAsync(year_and_month_split?.ToStringTree());
+
+            //-----------------------------------------------------------------
+
+            Func<Date, string> keyGen = ( date ) => $"{date.Year}_{( (DateTime) date ).GetQuarterAsInt():D2}";
+
+            SortedDictionary<string, List<Person>> year_and_quarter = DateTimeSplitter.Split(persons, nameof(Person.DateOfBirth), keyGen);
+            Out.WriteLineAsync("DateOfBirth Splitted By Year And Quarter");
+            Out.WriteLineAsync(year_and_quarter?.ToStringTree());
 
             //-------------------------------------------------------------------------------------
 
