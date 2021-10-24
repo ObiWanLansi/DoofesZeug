@@ -10,7 +10,7 @@ using DoofesZeug.Extensions;
 namespace DoofesZeug.Entities.DateAndTime
 {
     [Description("An date entity with day, month and a year (15.12.1948).")]
-    public class Date : Entity
+    public class Date : Entity, IComparable<Date>
     {
         /// <summary>
         /// Gets the day.
@@ -317,6 +317,11 @@ namespace DoofesZeug.Entities.DateAndTime
 
             return sl;
         }
+        
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        public int CompareTo( Date other ) => throw new NotImplementedException();
     }
 }
 

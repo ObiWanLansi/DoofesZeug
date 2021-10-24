@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 using DoofesZeug.Datasets;
 using DoofesZeug.Entities.DateAndTime.Part.Date;
 using DoofesZeug.Entities.Specieses.Human;
 using DoofesZeug.Extensions;
+using DoofesZeug.TestData;
 using DoofesZeug.Tools.Misc;
 
 using static System.Console;
@@ -121,7 +123,13 @@ namespace DoofesZeug
             List<Person> persons = Dataset.GetPersons(42);
             //Out.WriteLineAsync(persons.ToStringTable());
 
+            uint maxYear = ( from p in persons select p.DateOfBirth.Year ).Max().Value;
+            Person pers = TestDataGenerator.GenerateTestData<Person>();
+            pers.DateOfBirth.Year = maxYear;
+            persons.Add(pers);
+
             SortedDictionary<Year, List<Person>> yearsplit = DateTimeSplitter.SplitByYear(persons, nameof(Person.DateOfBirth));
+            Out.WriteLineAsync("DateOfBirth Splitted By Year");
             Out.WriteLineAsync(yearsplit?.ToStringTree());
 
             //-------------------------------------------------------------------------------------

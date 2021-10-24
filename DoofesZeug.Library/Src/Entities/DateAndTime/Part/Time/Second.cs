@@ -1,4 +1,6 @@
-﻿using DoofesZeug.Attributes.Documentation;
+﻿using System;
+
+using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Datatypes.Container;
 
 
@@ -6,7 +8,7 @@ using DoofesZeug.Datatypes.Container;
 namespace DoofesZeug.Entities.DateAndTime.Part.Time
 {
     [Description("The seconds of an time.")]
-    public sealed class Second : DateTimePart
+    public sealed class Second : DateTimePart, IComparable<Second>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Second"/> class.
@@ -50,5 +52,13 @@ namespace DoofesZeug.Entities.DateAndTime.Part.Time
         /// </summary>
         /// <returns></returns>
         public override StringList Validate() => this.Value < 0 || this.Value > 59 ? new StringList { $"The value '{this.Value}' for the second is not acceptable!" } : ( new() );
+
+
+        /// <summary>
+        /// Compares to.
+        /// </summary>
+        /// <param name="other">The other.</param>
+        /// <returns></returns>
+        public int CompareTo( Second other ) => this.Value.CompareTo(other.Value);
     }
 }

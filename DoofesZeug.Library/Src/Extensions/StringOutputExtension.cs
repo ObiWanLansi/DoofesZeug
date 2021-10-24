@@ -175,8 +175,10 @@ namespace DoofesZeug.Extensions
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        // public static string ToStringTree<K, V>( this SortedDictionary<K, V> dict )
 
-        public static string ToStringTree<K, V>( this SortedDictionary<K, V> dict )
+
+        public static string ToStringTree<K, V>( this SortedDictionary<K, List<V>> dict )
         {
             if( dict == null || dict.Count == 0 )
             {
@@ -187,46 +189,64 @@ namespace DoofesZeug.Extensions
 
             //-------------------------------------------------------------------------------------
 
+            int countDict = dict.Count;
+            int counterDict = 0;
 
-            int count = dict.Count;
-            int counter = 0;
-
-            //K last = dict.Keys.Last;
             using( IEnumerator<K> key = dict.Keys.GetEnumerator() )
             {
-                string strKey = $"{key.Current}";
-
-                if( counter < count - 1 )
-                {
-
-                    sbOutput.Append("├───");
-                }
-                else
-                {
-                    sbOutput.Append("└───");
-                }
-
                 while( key.MoveNext() )
                 {
-                    object value = dict [key.Current];
+                    string strKey = $"{key.Current}";
+
+                    if( counterDict < countDict - 1 )
+                    {
+                        sbOutput.Append("├───");
+                    }
+                    else
+                    {
+                        sbOutput.Append("└───");
+                    }
+
+                    sbOutput.AppendLine(strKey);
 
 
+                    List<V> list = dict [key.Current];
 
-                    //action(e.Current, dict [e.Current]);
+                    int countList = list.Count;
+                    int counterList = 0;
+
+                    foreach( V item in list )
+                    {
+                        if( counterList < countList - 1 )
+                        {
+                            if( counterDict < countDict - 1 )
+                            {
+                                sbOutput.Append("│    ├───");
+                            }
+                            else
+                            {
+                                sbOutput.Append("     ├───");
+                            }
+                        }
+                        else
+                        {
+                            if( counterDict < countDict - 1 )
+                            {
+                                sbOutput.Append("│    └───");
+                            }
+                            else
+                            {
+                                sbOutput.Append("     └───");
+                            }
+                        }
+
+                        sbOutput.AppendLine($" {item}");
+                        counterList++;
+                    }
+
+                    counterDict++;
                 }
-                counter++;
             }
-
-            //foreach( K key in dict.Keys )
-            //{
-            //    string strKey = $"{key}";
-
-            //    foreach( V value in dict [key] )
-            //    {
-
-            //    }
-            //}
-
 
             //-------------------------------------------------------------------------------------
 
