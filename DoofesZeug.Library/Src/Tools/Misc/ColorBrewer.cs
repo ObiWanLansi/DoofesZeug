@@ -118,7 +118,7 @@ namespace DoofesZeug.Tools.Misc
         }
 
 
-        static private ColorBrewerCatalog LoadColorBrewerCatalog()
+        private static ColorBrewerCatalog LoadColorBrewerCatalog()
         {
             ColorBrewerCatalog cbc = new();
             ColorBrewer.LoadFromResource().ForEach(( scheme, brewer ) => cbc.Add((ColorBrewerScheme) Enum.Parse(typeof(ColorBrewerScheme), scheme), brewer));

@@ -51,6 +51,6 @@ namespace DoofesZeug.Datatypes.Container
         /// </summary>
         /// <param name="values">The values.</param>
         /// <returns></returns>
-        static public UnsignedLongList From( params ulong [] values ) => new(values);
+        public static UnsignedLongList From( params ulong [] values ) => new(values);
     }
 }

@@ -17,7 +17,7 @@ namespace DoofesZeug.Entities
         /// <returns>
         ///   <c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override abstract bool Equals( object obj );
+        public abstract override bool Equals( object obj );
 
         ///// <summary>
         ///// Returns a hash code for this instance.

@@ -48,7 +48,7 @@ namespace DoofesZeug.Datatypes.Container
         /// </summary>
         /// <param name="values">The values.</param>
         /// <returns></returns>
-        static public IntegerList From( params int [] values ) => new (values);
+        public static IntegerList From( params int [] values ) => new (values);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

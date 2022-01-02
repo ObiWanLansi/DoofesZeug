@@ -70,6 +70,6 @@ namespace DoofesZeug.Datatypes.Container
         /// </summary>
         /// <param name="values">The values.</param>
         /// <returns></returns>
-        static public StringList From( params string [] values ) => new (values);
+        public static StringList From( params string [] values ) => new (values);
     }
 }
