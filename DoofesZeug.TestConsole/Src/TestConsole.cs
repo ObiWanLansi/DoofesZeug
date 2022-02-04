@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 
-using DoofesZeug.Datasets;
-using DoofesZeug.Entities.DateAndTime;
-using DoofesZeug.Entities.DateAndTime.Part.Date;
-using DoofesZeug.Entities.Specieses.Human;
-using DoofesZeug.Extensions;
-using DoofesZeug.TestData;
-using DoofesZeug.Tools.Misc;
+using DoofesZeug.Datatypes.Container;
 
 using static System.Console;
 
@@ -121,33 +112,102 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
-            List<Person> persons = Dataset.GetPersons(42);
+            #region DataTree
+
+            DataTree dt = new()
+            {
+                Data = "Knoppix",
+                Items = new DataTreeItems
+                {
+                    new DataTree{
+                        Data = "Quantian"
+                    },
+
+                    new DataTree{
+                        Data = "Damn Small Linux",
+                        Items = new DataTreeItems
+                        {
+                            new DataTree{
+                                Data = "Hikarunix"
+                            },
+                            new DataTree{
+                                Data = "DSL-N"
+                            },
+                            new DataTree{
+                                Data = "Damn Vulnerable Linux"
+                            }
+                        }
+                    },
+
+                    new DataTree{
+                        Data = "KnoppMyth"
+                    },
+
+                    new DataTree{
+                        Data = "Danix"
+                    },
+
+                    new DataTree{
+                        Data = "Kurumin",
+                        Items = new DataTreeItems
+                        {
+                            new DataTree{
+                                Data = "Kalango"
+                            },
+                            new DataTree{
+                                Data = "Poseidon"
+                            },
+                            new DataTree{
+                                Data = "Dizinha",
+                                Items = new DataTreeItems
+                                {
+                                    new DataTree{
+                                        Data = "Neo Dizinha"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            Out.WriteLineAsync(dt.ToString());
+            #endregion
+
+            //-------------------------------------------------------------------------------------
+
+            //List<Person> persons = Dataset.GetPersons(42);
             //Out.WriteLineAsync(persons.ToStringTable());
 
-            //-----------------------------------------------------------------
+            //-------------------------------------------------------------------------------------
 
-            uint maxYear = ( from p in persons select p.DateOfBirth.Year ).Max().Value;
-            Person pers = TestDataGenerator.GenerateTestData<Person>();
-            pers.DateOfBirth.Year = maxYear;
-            persons.Add(pers);
 
-            SortedDictionary<Year, List<Person>> year_split = DateTimeSplitter.SplitByYear(persons, nameof(Person.DateOfBirth));
-            Out.WriteLineAsync("DateOfBirth Splitted By Year");
-            Out.WriteLineAsync(year_split?.ToStringTree());
+            #region Date Splitter
 
-            //-----------------------------------------------------------------
+            //uint maxYear = ( from p in persons select p.DateOfBirth.Year ).Max().Value;
+            //Person pers = TestDataGenerator.GenerateTestData<Person>();
+            //pers.DateOfBirth.Year = maxYear;
+            //persons.Add(pers);
 
-            SortedDictionary<(Year, Month), List<Person>> year_and_month_split = DateTimeSplitter.SplitByYearAndMonth(persons, nameof(Person.DateOfBirth));
-            Out.WriteLineAsync("DateOfBirth Splitted By Year And Month");
-            Out.WriteLineAsync(year_and_month_split?.ToStringTree());
+            //SortedDictionary<Year, List<Person>> year_split = DateTimeSplitter.SplitByYear(persons, nameof(Person.DateOfBirth));
+            //Out.WriteLineAsync("DateOfBirth Splitted By Year");
+            //Out.WriteLineAsync(year_split?.ToStringTree());
 
-            //-----------------------------------------------------------------
+            ////-----------------------------------------------------------------
 
-            Func<Date, string> keyGen = ( date ) => $"{date.Year}_{( (DateTime) date ).GetQuarterAsInt():D2}";
+            //SortedDictionary<(Year, Month), List<Person>> year_and_month_split = DateTimeSplitter.SplitByYearAndMonth(persons, nameof(Person.DateOfBirth));
+            //Out.WriteLineAsync("DateOfBirth Splitted By Year And Month");
+            //Out.WriteLineAsync(year_and_month_split?.ToStringTree());
 
-            SortedDictionary<string, List<Person>> year_and_quarter = DateTimeSplitter.Split(persons, nameof(Person.DateOfBirth), keyGen);
-            Out.WriteLineAsync("DateOfBirth Splitted By Year And Quarter");
-            Out.WriteLineAsync(year_and_quarter?.ToStringTree());
+            ////-----------------------------------------------------------------
+
+            //Func<Date, string> keyGen = ( date ) => $"{date.Year}_{( (DateTime) date ).GetQuarterAsInt():D2}";
+
+            //SortedDictionary<string, List<Person>> year_and_quarter = DateTimeSplitter.Split(persons, nameof(Person.DateOfBirth), keyGen);
+            //Out.WriteLineAsync("DateOfBirth Splitted By Year And Quarter");
+            //Out.WriteLineAsync(year_and_quarter?.ToStringTree());
+
+            #endregion
 
             //-------------------------------------------------------------------------------------
 
