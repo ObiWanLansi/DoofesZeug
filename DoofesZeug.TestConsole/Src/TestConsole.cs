@@ -1,6 +1,7 @@
 ﻿using System;
 
 using DoofesZeug.Datatypes.Container;
+using DoofesZeug.Extensions;
 
 using static System.Console;
 
@@ -119,51 +120,29 @@ namespace DoofesZeug
                 Data = "Knoppix",
                 Items = new DataTreeItems
                 {
-                    new DataTree{
-                        Data = "Quantian"
-                    },
-
+                    new DataTree{  Data = "Quantian" },
                     new DataTree{
                         Data = "Damn Small Linux",
                         Items = new DataTreeItems
                         {
-                            new DataTree{
-                                Data = "Hikarunix"
-                            },
-                            new DataTree{
-                                Data = "DSL-N"
-                            },
-                            new DataTree{
-                                Data = "Damn Vulnerable Linux"
-                            }
+                            new DataTree{ Data = "Hikarunix" },
+                            new DataTree{ Data = "DSL-N" },
+                            new DataTree{ Data = "Damn Vulnerable Linux" }
                         }
                     },
-
-                    new DataTree{
-                        Data = "KnoppMyth"
-                    },
-
-                    new DataTree{
-                        Data = "Danix"
-                    },
-
+                    new DataTree{ Data = "KnoppMyth" },
+                    new DataTree{ Data = "Danix" },
                     new DataTree{
                         Data = "Kurumin",
                         Items = new DataTreeItems
                         {
-                            new DataTree{
-                                Data = "Kalango"
-                            },
-                            new DataTree{
-                                Data = "Poseidon"
-                            },
+                            new DataTree{ Data = "Kalango" },
+                            new DataTree{ Data = "Poseidon" },
                             new DataTree{
                                 Data = "Dizinha",
                                 Items = new DataTreeItems
                                 {
-                                    new DataTree{
-                                        Data = "Neo Dizinha"
-                                    }
+                                    new DataTree{ Data = "Neo Dizinha" }
                                 }
                             }
                         }
@@ -171,7 +150,7 @@ namespace DoofesZeug
                 }
             };
 
-            Out.WriteLineAsync(dt.ToString());
+            Out.WriteLineAsync(dt.ToStringTree());
             #endregion
 
             //-------------------------------------------------------------------------------------

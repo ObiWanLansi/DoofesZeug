@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 
+using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Tools.Enums;
 using DoofesZeug.Tools.Misc;
 
@@ -176,10 +178,14 @@ namespace DoofesZeug.Extensions
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        public static string ToStringTable( this DataTable dt, bool bShowColumnType = false ) => throw new NotImplementedException();
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        // public static string ToStringTree<K, V>( this SortedDictionary<K, V> dict )
+
+        public static string ToStringTree( this DataTree dt ) => throw new NotImplementedException();
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         public static string ToStringTree<K, V>( this SortedDictionary<K, List<V>> dict )
