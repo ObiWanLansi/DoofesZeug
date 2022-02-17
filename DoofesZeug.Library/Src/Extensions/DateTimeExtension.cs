@@ -260,9 +260,9 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        public static uint WeekOfDate( this DateTime dt )
+        public static int WeekOfDate( this DateTime dt )
         {
-            uint week = (uint) CAL.GetWeekOfYear(dt, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            int week = CAL.GetWeekOfYear(dt, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
 
             return week > 0 && week < 53 ? week : 1;
         }
@@ -390,7 +390,7 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        public static Week GetWeek( this DateTime dt ) => new(dt.WeekOfDate());
+        public static Week GetWeek( this DateTime dt ) => new((uint) dt.WeekOfDate());
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

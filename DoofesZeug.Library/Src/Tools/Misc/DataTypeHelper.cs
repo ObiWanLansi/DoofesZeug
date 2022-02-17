@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
+using DoofesZeug.Datatypes.Misc;
 using DoofesZeug.Entities.DateAndTime;
 using DoofesZeug.Entities.Science.Base.Length;
 using DoofesZeug.Entities.Science.Base.Weight;
@@ -14,23 +16,7 @@ namespace DoofesZeug.Tools.Misc
     {
         public static TextAlign GetTextAligment( Type type ) => TYPETEXTALIGN.ContainsKey(type) ? TYPETEXTALIGN [type] : TextAlign.Left;
 
-
-        //public static bool IsFloatOrDouble( Type type ) => FLOATINGTYPES.Contains(type);
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        //private static readonly List<Type> FLOATINGTYPES = new()
-        //{
-        //    typeof(float),
-        //    typeof(float?),
-
-        //    typeof(double),
-        //    typeof(double?),
-
-        //    typeof(decimal),
-        //    typeof(decimal?)
-        //};
 
 
         private static readonly Dictionary<Type, TextAlign> TYPETEXTALIGN = new()
@@ -67,10 +53,10 @@ namespace DoofesZeug.Tools.Misc
             { typeof(TimeSpan), TextAlign.Center },
             { typeof(TimeSpan?), TextAlign.Center },
 
-            //{ typeof( Color) , TextAlign.Left },
-            //{ typeof( Color? ) , TextAlign.Left},
+            { typeof( Color) , TextAlign.Left },
+            { typeof( Color? ) , TextAlign.Left},
 
-            //{ typeof( FileSize ) , TextAlign.Right },
+            { typeof( FileSize ) , TextAlign.Right },
             //{ typeof( Money ) , TextAlign.Right }
 
             { typeof(Date), TextAlign.Center },
