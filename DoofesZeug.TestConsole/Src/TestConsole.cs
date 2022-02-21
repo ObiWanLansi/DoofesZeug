@@ -120,7 +120,7 @@ namespace DoofesZeug
                 Data = "Knoppix",
                 Items = new DataTreeItems
                 {
-                    new DataTree{  Data = "Quantian" },
+                    new DataTree{ Data = "Quantian" },
                     new DataTree{
                         Data = "Damn Small Linux",
                         Items = new DataTreeItems
