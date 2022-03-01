@@ -30,5 +30,13 @@ namespace DoofesZeug.Extensions
         /// <param name="ts">The ts.</param>
         /// <returns></returns>
         public static string ToDDHHMMSSString( this TimeSpan ts ) => $"{ts.Days:D2}.{ts.Hours:D2}:{ts.Minutes:D2}:{ts.Seconds:D2}";
+
+
+        /// <summary>
+        /// Converts to ddhhmmstring.
+        /// </summary>
+        /// <param name="ts">The ts.</param>
+        /// <returns></returns>
+        public static string ToDDHHMMString( this TimeSpan ts ) => $"{ts.Days:D2}.{ts.Hours:D2}:{ts.Minutes:D2}";
     }
 }
