@@ -6,6 +6,8 @@ using DoofesZeug.Entities.DateAndTime;
 using DoofesZeug.Entities.DateAndTime.Part.Date;
 using DoofesZeug.Extensions;
 
+
+
 namespace DoofesZeug.Tools.Misc
 {
     public static class DateTimeSplitter
@@ -15,6 +17,8 @@ namespace DoofesZeug.Tools.Misc
         private static readonly Type DATE = typeof(Date);
 
         private enum DateType : byte { DateTime, Date }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         private static (PropertyInfo property, DateType? datetype) ContainsDateTimeProperty<T>( string strNameOfDateTimeProperty )
@@ -141,7 +145,7 @@ namespace DoofesZeug.Tools.Misc
         }
 
 
-        public static SortedDictionary<string, List<T>> Split<T,D>( IList<T> list, string strNameOfDateTimeProperty, Func<D, string> keygenerator )
+        public static SortedDictionary<string, List<T>> Split<T, D>( IList<T> list, string strNameOfDateTimeProperty, Func<D, string> keygenerator )
         {
             if( list == null || list.Count == 0 )
             {
