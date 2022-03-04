@@ -211,6 +211,7 @@ namespace DoofesZeug.Tools.Misc
             Console.Out.Write(BORDER_CHARS [ls].Left);
 
             int counter = 0;
+
             foreach( PropertyInfo pi in sdColumnsWidth.Keys )
             {
                 if( counter++ > 0 )
@@ -225,7 +226,7 @@ namespace DoofesZeug.Tools.Misc
         }
 
 
-        public static void WriteTable<T>( this List<T> lValues, ConsoleColor border = ConsoleColor.Cyan, ConsoleColor header = ConsoleColor.Magenta, ConsoleColor content = ConsoleColor.Yellow )
+        public static void WriteTable<T>( this List<T> lValues, ConsoleColor border = ConsoleColor.Cyan, ConsoleColor header = ConsoleColor.Magenta, ConsoleColor content = ConsoleColor.Yellow, Func<T, ConsoleColor> color_resolver = null )
         {
             if( lValues == null || lValues.Count == 0 )
             {
@@ -277,15 +278,18 @@ namespace DoofesZeug.Tools.Misc
                 {
                     Console.ForegroundColor = border;
                     Console.Out.Write("│ ");
+
                     foreach( PropertyInfo pi in sdColumnsFormatter.Keys )
                     {
                         object value = pi.GetValue(o, null);
-                        Console.ForegroundColor = content;
+
+                        Console.ForegroundColor = color_resolver != null ? color_resolver((T) o) : content;
                         Console.Out.Write(string.Format(sdColumnsFormatter [pi], value));
 
                         Console.ForegroundColor = border;
                         Console.Out.Write(" │ ");
                     }
+
                     Console.Out.WriteLine();
                 }
             }
