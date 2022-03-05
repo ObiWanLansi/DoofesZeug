@@ -242,28 +242,54 @@ namespace DoofesZeug.Tools.Misc
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static readonly ConsoleColor DEFAULT_FOREGROUND = Console.ForegroundColor;
+        //private static readonly ConsoleColor DEFAULT_FOREGROUND = Console.ForegroundColor;
 
 
-        public static void Print( string strContent, ConsoleColor? foreground )
+        //public static void Print( string strContent, ConsoleColor? foreground )
+        //{
+        //    if( foreground.HasValue )
+        //    {
+        //        Console.ForegroundColor = foreground.Value;
+        //        Console.Out.WriteLineAsync(strContent);
+        //        Console.ForegroundColor = DEFAULT_FOREGROUND;
+        //        return;
+        //    }
+
+        //    Console.Out.WriteLineAsync(strContent);
+        //}
+
+
+        //public static void PrintError( string strContent )
+        //{
+        //    Console.ForegroundColor = ConsoleColor.Red;
+        //    Console.Error.WriteLineAsync(strContent);
+        //    Console.ForegroundColor = DEFAULT_FOREGROUND;
+        //}
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        public static bool SimpleMatch( string strContent, string strSearchText )
         {
-            if( foreground.HasValue )
+            if( strSearchText.StartsWith("*") && strSearchText.EndsWith("*") )
             {
-                Console.ForegroundColor = foreground.Value;
-                Console.Out.WriteLineAsync(strContent);
-                Console.ForegroundColor = DEFAULT_FOREGROUND;
-                return;
+                strSearchText = strSearchText.Substring(1, strSearchText.Length - 2);
+                return strContent.Contains(strSearchText);
             }
 
-            Console.Out.WriteLineAsync(strContent);
-        }
+            if( strSearchText.StartsWith("*") )
+            {
+                strSearchText = strSearchText.Substring(1, strSearchText.Length - 1);
+                return strContent.EndsWith(strSearchText);
+            }
 
+            if( strSearchText.EndsWith("*") )
+            {
+                strSearchText = strSearchText.Substring(0, strSearchText.Length - 1);
+                return strContent.StartsWith(strSearchText);
+            }
 
-        public static void PrintError( string strContent )
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Error.WriteLineAsync(strContent);
-            Console.ForegroundColor = DEFAULT_FOREGROUND;
+            return strContent.Equals(strSearchText);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
