@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.PortableExecutable;
 using System.Threading;
 
 using DoofesZeug.Extensions;
@@ -205,6 +207,25 @@ namespace DoofesZeug.Tools.Misc
         };
 
 
+        private static void BorderLine( List<int> lColumnsWidth, BorderLineStyle ls, ConsoleColor border )
+        {
+            Console.ForegroundColor = border;
+            Console.Out.Write(BORDER_CHARS [ls].Left);
+
+            for( int i = 0 ; i < lColumnsWidth.Count ; i++ )
+            {
+                if( i > 0 )
+                {
+                    Console.Out.Write(BORDER_CHARS [ls].Middle);
+                }
+
+                Console.Out.Write(new string('─', lColumnsWidth [i] + 2));
+            }
+
+            Console.Out.WriteLine(BORDER_CHARS [ls].Right);
+        }
+
+        [Obsolete]
         private static void BorderLine( Dictionary<PropertyInfo, int> sdColumnsWidth, BorderLineStyle ls, ConsoleColor border )
         {
             Console.ForegroundColor = border;
@@ -226,7 +247,7 @@ namespace DoofesZeug.Tools.Misc
         }
 
 
-        public static void WriteTable<T>( this List<T> lValues, ConsoleColor border = ConsoleColor.Cyan, ConsoleColor header = ConsoleColor.Magenta, ConsoleColor content = ConsoleColor.Yellow, Func<T, ConsoleColor> color_resolver = null )
+        public static void WriteTable<T>( List<T> lValues, ConsoleColor border = ConsoleColor.Cyan, ConsoleColor header = ConsoleColor.Magenta, ConsoleColor content = ConsoleColor.Yellow, Func<T, ConsoleColor> color_resolver = null )
         {
             if( lValues == null || lValues.Count == 0 )
             {
@@ -235,6 +256,8 @@ namespace DoofesZeug.Tools.Misc
 
             ConsoleColor dfc = Console.ForegroundColor;
 
+            //---------------------------------------------------------------------------------------------------------
+
             Type t = typeof(T);
 
             Dictionary<PropertyInfo, int> sdColumnsWidth = new();
@@ -242,13 +265,12 @@ namespace DoofesZeug.Tools.Misc
 
             foreach( PropertyInfo pi in t.GetProperties(BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.Instance) )
             {
-                int iMaxWidth = ( from object oItem in lValues where oItem != null select pi.GetValue(oItem, null) into oValue where oValue != null select oValue.ToString().Length ).Concat(new [] { 0 }).Max();
+                //int iMaxWidth = ( from object oItem in lValues where oItem != null select pi.GetValue(oItem, null) into oValue where oValue != null select oValue.ToString().Length ).Concat(new [] { 0 }).Max();
+                int iMaxWidth = ( from object oItem in lValues where oItem != null select pi.GetValue(oItem, null) into oValue where oValue != null select oValue.ToString().Length ).Max();
 
-                string strDisplayName = pi.Name;
-
-                if( strDisplayName.Length > iMaxWidth )
+                if( pi.Name.Length > iMaxWidth )
                 {
-                    iMaxWidth = strDisplayName.Length;
+                    iMaxWidth = pi.Name.Length;
                 }
 
                 string strFormat = DataTypeHelper.GetTextAligment(pi.PropertyType) == TextAlign.Right ? "{0," + iMaxWidth + "}" : "{0,-" + iMaxWidth + "}";
@@ -296,7 +318,65 @@ namespace DoofesZeug.Tools.Misc
 
             BorderLine(sdColumnsWidth, BorderLineStyle.Bottom, border);
 
+            //---------------------------------------------------------------------------------------------------------
+
             Console.ForegroundColor = dfc;
         }
+
+
+        public static void WriteTable( DataTable dt, ConsoleColor border = ConsoleColor.Cyan, ConsoleColor header = ConsoleColor.Magenta, ConsoleColor content = ConsoleColor.Yellow, Func<DataRow, ConsoleColor> color_resolver = null )
+        {
+            if( dt == null || dt.Columns.Count == 0 || dt.Rows.Count == 0 )
+            {
+                return;
+            }
+
+            ConsoleColor dfc = Console.ForegroundColor;
+
+            //---------------------------------------------------------------------------------------------------------
+
+            //Dictionary<int, int> sdColumnsWidth = new();
+            List<int> columns_sizes = new();
+            Dictionary<int, string> sdColumnsFormatter = new();
+
+            foreach( DataColumn dc in dt.Columns )
+            {
+                int iMaxWidth = dc.ColumnName.Length;
+
+                foreach( DataRow dr in dt.Rows )
+                {
+                    object o = dr [dc.Ordinal];
+                    int iLength = o != DBNull.Value && o != null ? $"{o}".Length : 0;
+
+                    if( iLength > iMaxWidth )
+                    {
+                        iMaxWidth = iLength;
+                    }
+                }
+
+                string strFormat = DataTypeHelper.GetTextAligment(dc.DataType) == TextAlign.Right ? "{0," + iMaxWidth + "}" : "{0,-" + iMaxWidth + "}";
+                //sdColumnsWidth.Add(dc.Ordinal, iMaxWidth);
+                columns_sizes.Add(iMaxWidth);
+                sdColumnsFormatter.Add(dc.Ordinal, strFormat);
+            }
+
+            //---------------------------------------------------------------------------------------------------------
+
+            BorderLine(columns_sizes, BorderLineStyle.Top, border);
+
+            //---------------------------------------------------------------------------------------------------------
+
+            BorderLine(columns_sizes, BorderLineStyle.Middle, border);
+
+            //---------------------------------------------------------------------------------------------------------
+
+            BorderLine(columns_sizes, BorderLineStyle.Bottom, border);
+
+            //---------------------------------------------------------------------------------------------------------
+
+            Console.ForegroundColor = dfc;
+        }
+
+
     }
 }

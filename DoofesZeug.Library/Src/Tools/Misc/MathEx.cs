@@ -25,12 +25,12 @@ namespace DoofesZeug.Tools.Misc
         /// <summary>
         /// The ratio 4:3.
         /// </summary>
-        public const double R4_3 = 4 / 3;
+        public const double R4_3 = 4 / (double) 3;
 
         /// <summary>
         /// The ratio 16:9.
         /// </summary>
-        public const double R16_9 = 16 / 9;
+        public const double R16_9 = 16 / (double) 9;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
