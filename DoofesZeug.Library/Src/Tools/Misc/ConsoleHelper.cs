@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.PortableExecutable;
 using System.Threading;
 
 using DoofesZeug.Extensions;
@@ -15,20 +14,6 @@ namespace DoofesZeug.Tools.Misc
 {
     public static class ConsoleHelper
     {
-        ///// <summary>
-        ///// The default foreground color
-        ///// </summary>
-        //public static readonly ConsoleColor DefaultForegroundColor = Console.ForegroundColor;
-
-        ///// <summary>
-        ///// The default background color
-        ///// </summary>
-        //public static readonly ConsoleColor DefaultBackgroundColor = Console.BackgroundColor;
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
         /// <summary>
         /// Just wait for a key.
         /// </summary>
@@ -91,95 +76,6 @@ namespace DoofesZeug.Tools.Misc
         //-------------------------------------------------------------------------------------------------------------
 
 
-        ///// <summary>
-        ///// Gibt eine Fehlermeldung auf der Konsole aus.
-        ///// </summary>
-        ///// <param name="strMessage">The string message.</param>
-        //public static void OutputError( string strMessage )
-        //{
-        //    Console.ForegroundColor = ConsoleColor.Red;
-        //    Console.Error.WriteLine(strMessage);
-        //    Console.ForegroundColor = DefaultForegroundColor;
-        //}
-
-
-        ///// <summary>
-        ///// Outputs the error.
-        ///// </summary>
-        ///// <param name="strFormat">The STR format.</param>
-        ///// <param name="param">The param.</param>
-        //public static void OutputError( string strFormat, params object [] param )
-        //{
-        //    Console.ForegroundColor = ConsoleColor.Red;
-        //    Console.Error.WriteLine(strFormat, param);
-        //    Console.ForegroundColor = DefaultForegroundColor;
-        //}
-
-
-        ///// <summary>
-        ///// Outputs the specified STR format.
-        ///// </summary>
-        ///// <param name="strFormat">The STR format.</param>
-        ///// <param name="param">The param.</param>
-        //public static void Output( string strFormat, params object [] param )
-        //{
-        //    Console.ForegroundColor = DefaultForegroundColor;
-
-        //    Console.Out.WriteLine(strFormat, param);
-        //}
-
-
-        ///// <summary>
-        ///// Gibt eine Meldung auf der Konsole aus.
-        ///// </summary>
-        ///// <param name="strMessage">The string message.</param>
-        ///// <param name="ccForegroundColor">Color of the cc foreground.</param>
-        ///// <param name="iIndent">The i indent.</param>
-        //public static void Output( string strMessage, ConsoleColor ccForegroundColor, int iIndent )
-        //{
-        //    ConsoleColor dfc = Console.ForegroundColor;
-
-        //    Console.ForegroundColor = ccForegroundColor;
-
-        //    if( iIndent > 0 )
-        //    {
-        //        StringBuilder sb = new StringBuilder();
-
-        //        for( int iCounter = 0 ; iCounter < iIndent ; iCounter++ )
-        //        {
-        //            sb.Append("    ");
-        //        }
-
-        //        Console.Out.Write(sb);
-        //    }
-
-        //    Console.Out.WriteLine(strMessage);
-        //    Console.ForegroundColor = dfc;
-        //}
-
-
-        ///// <summary>
-        ///// Gibt eine Meldung auf der Konsole aus.
-        ///// </summary>
-        ///// <param name="strMessage">The string message.</param>
-        ///// <param name="ccForegroundColor">Color of the cc foreground.</param>
-        //public static void Output( string strMessage, ConsoleColor ccForegroundColor ) => Output(strMessage, ccForegroundColor, 0);
-
-
-        ///// <summary>
-        ///// Gibt eine Meldung auf der Konsole aus.
-        ///// </summary>
-        ///// <param name="strMessage">The string message.</param>
-        //public static void Output( string strMessage )
-        //{
-        //    Console.ForegroundColor = DefaultForegroundColor;
-
-        //    Console.Out.WriteLine(strMessage);
-        //}
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
         private enum BorderLineStyle : byte { Top, Middle, Bottom }
 
 
@@ -206,26 +102,9 @@ namespace DoofesZeug.Tools.Misc
             { BorderLineStyle.Bottom, new BorderChar('└', '┴', '┘') }
         };
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        private static void BorderLine( List<int> lColumnsWidth, BorderLineStyle ls, ConsoleColor border )
-        {
-            Console.ForegroundColor = border;
-            Console.Out.Write(BORDER_CHARS [ls].Left);
 
-            for( int i = 0 ; i < lColumnsWidth.Count ; i++ )
-            {
-                if( i > 0 )
-                {
-                    Console.Out.Write(BORDER_CHARS [ls].Middle);
-                }
-
-                Console.Out.Write(new string('─', lColumnsWidth [i] + 2));
-            }
-
-            Console.Out.WriteLine(BORDER_CHARS [ls].Right);
-        }
-
-        [Obsolete]
         private static void BorderLine( Dictionary<PropertyInfo, int> sdColumnsWidth, BorderLineStyle ls, ConsoleColor border )
         {
             Console.ForegroundColor = border;
@@ -265,7 +144,6 @@ namespace DoofesZeug.Tools.Misc
 
             foreach( PropertyInfo pi in t.GetProperties(BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.Instance) )
             {
-                //int iMaxWidth = ( from object oItem in lValues where oItem != null select pi.GetValue(oItem, null) into oValue where oValue != null select oValue.ToString().Length ).Concat(new [] { 0 }).Max();
                 int iMaxWidth = ( from object oItem in lValues where oItem != null select pi.GetValue(oItem, null) into oValue where oValue != null select oValue.ToString().Length ).Max();
 
                 if( pi.Name.Length > iMaxWidth )
@@ -278,7 +156,13 @@ namespace DoofesZeug.Tools.Misc
                 sdColumnsFormatter.Add(pi, strFormat);
             }
 
+            //---------------------------------------------------------------------------------------------------------
+
             BorderLine(sdColumnsWidth, BorderLineStyle.Top, border);
+
+            //---------------------------------------------------------------------------------------------------------
+
+            // Header
 
             Console.ForegroundColor = border;
             Console.Out.Write("│ ");
@@ -292,7 +176,13 @@ namespace DoofesZeug.Tools.Misc
             }
             Console.Out.WriteLine();
 
+            //---------------------------------------------------------------------------------------------------------
+
             BorderLine(sdColumnsWidth, BorderLineStyle.Middle, border);
+
+            //---------------------------------------------------------------------------------------------------------
+
+            // Data
 
             foreach( object o in lValues )
             {
@@ -316,11 +206,36 @@ namespace DoofesZeug.Tools.Misc
                 }
             }
 
+            //---------------------------------------------------------------------------------------------------------
+
             BorderLine(sdColumnsWidth, BorderLineStyle.Bottom, border);
 
             //---------------------------------------------------------------------------------------------------------
 
             Console.ForegroundColor = dfc;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        private static void BorderLine( Dictionary<DataColumn, int> sdColumnsWidth, BorderLineStyle ls, ConsoleColor border )
+        {
+            Console.ForegroundColor = border;
+            Console.Out.Write(BORDER_CHARS [ls].Left);
+
+            int counter = 0;
+
+            foreach( DataColumn pi in sdColumnsWidth.Keys )
+            {
+                if( counter++ > 0 )
+                {
+                    Console.Out.Write(BORDER_CHARS [ls].Middle);
+                }
+
+                Console.Out.Write(new string('─', sdColumnsWidth [pi] + 2));
+            }
+
+            Console.Out.WriteLine(BORDER_CHARS [ls].Right);
         }
 
 
@@ -335,9 +250,8 @@ namespace DoofesZeug.Tools.Misc
 
             //---------------------------------------------------------------------------------------------------------
 
-            //Dictionary<int, int> sdColumnsWidth = new();
-            List<int> columns_sizes = new();
-            Dictionary<int, string> sdColumnsFormatter = new();
+            Dictionary<DataColumn, int> sdColumnsWidth = new();
+            Dictionary<DataColumn, string> sdColumnsFormatter = new();
 
             foreach( DataColumn dc in dt.Columns )
             {
@@ -355,28 +269,64 @@ namespace DoofesZeug.Tools.Misc
                 }
 
                 string strFormat = DataTypeHelper.GetTextAligment(dc.DataType) == TextAlign.Right ? "{0," + iMaxWidth + "}" : "{0,-" + iMaxWidth + "}";
-                //sdColumnsWidth.Add(dc.Ordinal, iMaxWidth);
-                columns_sizes.Add(iMaxWidth);
-                sdColumnsFormatter.Add(dc.Ordinal, strFormat);
+                sdColumnsWidth.Add(dc, iMaxWidth);
+                sdColumnsFormatter.Add(dc, strFormat);
             }
 
             //---------------------------------------------------------------------------------------------------------
 
-            BorderLine(columns_sizes, BorderLineStyle.Top, border);
+            BorderLine(sdColumnsWidth, BorderLineStyle.Top, border);
 
             //---------------------------------------------------------------------------------------------------------
 
-            BorderLine(columns_sizes, BorderLineStyle.Middle, border);
+            // Header
+
+            Console.ForegroundColor = border;
+            Console.Out.Write("│ ");
+            foreach( DataColumn dc in dt.Columns )
+            {
+                Console.ForegroundColor = header;
+                Console.Out.Write(string.Format(sdColumnsFormatter [dc], dc.ColumnName));
+
+                Console.ForegroundColor = border;
+                Console.Out.Write(" │ ");
+            }
+            Console.Out.WriteLine();
 
             //---------------------------------------------------------------------------------------------------------
 
-            BorderLine(columns_sizes, BorderLineStyle.Bottom, border);
+            BorderLine(sdColumnsWidth, BorderLineStyle.Middle, border);
+
+            //---------------------------------------------------------------------------------------------------------
+
+            // Data
+
+            foreach( DataRow row in dt.Rows )
+            {
+                Console.ForegroundColor = border;
+                Console.Out.Write("│ ");
+
+                foreach( DataColumn dc in sdColumnsFormatter.Keys )
+                {
+                    object value = row [dc];
+
+                    Console.ForegroundColor = color_resolver != null ? color_resolver(row) : content;
+                    Console.Out.Write(string.Format(sdColumnsFormatter [dc], value));
+
+                    Console.ForegroundColor = border;
+                    Console.Out.Write(" │ ");
+                }
+
+                Console.Out.WriteLine();
+            }
+
+            //---------------------------------------------------------------------------------------------------------
+
+            BorderLine(sdColumnsWidth, BorderLineStyle.Bottom, border);
 
             //---------------------------------------------------------------------------------------------------------
 
             Console.ForegroundColor = dfc;
         }
-
-
     }
 }
