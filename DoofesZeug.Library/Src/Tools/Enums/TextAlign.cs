@@ -4,21 +4,21 @@
 
 namespace DoofesZeug.Tools.Enums
 {
-    [Description("An generic TextAlign for console output, or maybe to use in markdown/html generators.")]
+    [Description("An generic text align for console output, or maybe to use in markdown/html generators.")]
     public enum TextAlign : byte
     {
         /// <summary>
-        /// The left
+        /// Left alignment.
         /// </summary>
         Left,
 
         /// <summary>
-        /// The center
+        /// Center alignment.
         /// </summary>
         Center,
 
         /// <summary>
-        /// The right
+        /// Right alignment.
         /// </summary>
         Right
     }

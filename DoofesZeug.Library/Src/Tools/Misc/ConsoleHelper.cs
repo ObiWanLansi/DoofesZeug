@@ -144,7 +144,8 @@ namespace DoofesZeug.Tools.Misc
 
             foreach( PropertyInfo pi in t.GetProperties(BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.Instance) )
             {
-                int iMaxWidth = ( from object oItem in lValues where oItem != null select pi.GetValue(oItem, null) into oValue where oValue != null select oValue.ToString().Length ).Max();
+                IEnumerable<int> widths = ( from object oItem in lValues where oItem != null select pi.GetValue(oItem, null) into oValue where oValue != null select oValue.ToString().Length );
+                int iMaxWidth = widths.Any() ? widths.Max() : 0;
 
                 if( pi.Name.Length > iMaxWidth )
                 {

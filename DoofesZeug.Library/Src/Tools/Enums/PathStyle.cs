@@ -8,13 +8,13 @@ namespace DoofesZeug.Tools.Enums
     public enum PathStyle : byte
     {
         /// <summary>
-        /// The windows
+        /// The windows path style.
         /// </summary>
         Windows,
 
         /// <summary>
-        /// The linux unix
+        /// The linux path style.
         /// </summary>
-        LinuxUnix
+        Linux
     }
 }

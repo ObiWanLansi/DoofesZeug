@@ -4,7 +4,7 @@
 
 namespace DoofesZeug.Tools.Enums
 {
-    [Description("An simple enumeration for methos or parameters which LineEnding should be used.")]
+    [Description("An simple enumeration for methos or parameters which line ending should be used.")]
     public enum LineEnding : byte
     {
         /// <summary>
