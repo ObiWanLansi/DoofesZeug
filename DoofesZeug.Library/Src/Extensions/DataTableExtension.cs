@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
+using System.Data.SQLite;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 using DoofesZeug.Datatypes.Container;
@@ -52,27 +53,25 @@ namespace DoofesZeug.Extensions
 
             //-----------------------------------------------------------------
 
-            using( StreamWriter swCsv = new(new BufferedStream(new FileStream(strOutputFilename, FileMode.Create)), Encoding.UTF8) )
+            using StreamWriter swCsv = new(new BufferedStream(new FileStream(strOutputFilename, FileMode.Create)), Encoding.UTF8);
+            foreach( DataColumn dc in dt.Columns )
             {
-                foreach( DataColumn dc in dt.Columns )
+                swCsv.Write("{0};", dc.ColumnName);
+            }
+
+            swCsv.WriteLine();
+
+            foreach( DataRow dr in dt.Rows )
+            {
+                for( int iColumn = 0 ; iColumn < dr.ItemArray.Length ; iColumn++ )
                 {
-                    swCsv.Write("{0};", dc.ColumnName);
+                    swCsv.Write("{0};", dr.ItemArray [iColumn]);
                 }
 
                 swCsv.WriteLine();
-
-                foreach( DataRow dr in dt.Rows )
-                {
-                    for( int iColumn = 0 ; iColumn < dr.ItemArray.Length ; iColumn++ )
-                    {
-                        swCsv.Write("{0};", dr.ItemArray [iColumn]);
-                    }
-
-                    swCsv.WriteLine();
-                }
-
-                swCsv.Close();
             }
+
+            swCsv.Close();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -328,6 +327,63 @@ namespace DoofesZeug.Extensions
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        public static DataTable LoadFromSQLiteFile( FileInfo fiSQLiteFile, string strTablename = null )
+        {
+            DataTable dtResult = new();
+
+            using( SQLiteConnection dbConnection = new(new SQLiteConnectionStringBuilder { DataSource = fiSQLiteFile.FullName }.ConnectionString) )
+            {
+                try
+                {
+                    dbConnection.Open();
+
+                    if( strTablename == null )
+                    {
+                        strTablename = dbConnection.GetTableNames().First();
+                    }
+
+                    using IDbCommand dbCommand = dbConnection.CreateCommand();
+
+                    dbCommand.CommandText = $"SELECT * FROM {strTablename}";
+                    dbCommand.CommandTimeout = 0;
+
+                    using IDataReader dbResult = dbCommand.ExecuteReader();
+
+                    dtResult = new DataTable(strTablename);
+
+                    for( int iCounter = 0 ; iCounter < dbResult.FieldCount ; iCounter++ )
+                    {
+                        dtResult.Columns.Add(dbResult.GetName(iCounter), dbResult.GetFieldType(iCounter));
+                    }
+
+                    List<object> lData = new();
+
+                    while( dbResult.Read() )
+                    {
+                        lData.Clear();
+
+                        for( int iCounter = 0 ; iCounter < dbResult.FieldCount ; iCounter++ )
+                        {
+                            lData.Add(dbResult [iCounter]);
+                        }
+
+                        dtResult.Rows.Add(lData.ToArray());
+                    }
+
+                    dbResult.Close();
+                }
+                finally
+                {
+                    dbConnection.CloseIfOpen();
+                }
+            }
+
+            return dtResult;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         /// <summary>
         /// Loads from CSV.
         /// </summary>
@@ -347,120 +403,119 @@ namespace DoofesZeug.Extensions
         /// </exception>
         public static DataTable LoadFromCsv( string strContent, bool bDetectDataType = false )
         {
-            using( StringReader sr = new(strContent) )
+            using StringReader sr = new(strContent);
+
+            DataTable dt = new();
+
+            string strFirstLine = sr.ReadLine();
+
+            // Die erste Zeile benötigen wir für die Spaltennamen und Anzahl der Spalten bestimmen zu können ...
+            if( strFirstLine.IsEmpty() )
             {
-                DataTable dt = new();
-
-                string strFirstLine = sr.ReadLine();
-
-                // Die erste Zeile benötigen wir für die Spaltennamen und Anzahl der Spalten bestimmen zu können ...
-                if( strFirstLine.IsEmpty() )
-                {
-                    throw new ParseException("Die erste Zeile zum bestimmen der Spalten konnte nicht ermittelt werden!");
-                }
-                // Die Spalten ermitteln ...
-                if( strFirstLine.EndsWith(";") )
-                {
-                    strFirstLine = strFirstLine.Substring(0, strFirstLine.Length - 1);
-                }
-
-                string [] strSplittedColumns = strFirstLine.Trim().Split(COMMASEPERATEDVALUES_SPLITTER);
-
-                if( strSplittedColumns.Length == 0 )
-                {
-                    throw new ParseException("Die erste Zeile enthält keine Spalten!");
-                }
-
-                foreach( string strColumnName in strSplittedColumns )
-                {
-                    dt.Columns.Add(strColumnName);
-                }
-
-                //-----------------------------------------------------
-
-                // Die Anzahl der Spalten merken wir uns mal für später
-                int iColumnCount = strSplittedColumns.Length;
-
-                //-----------------------------------------------------
-
-                string strSecondLine = sr.ReadLine();
-
-                // Wenn wir nochnicht einmal eine zweite Zeile mit den ersten Daten haben brauchen wir auch nicht weiterzumachen ...
-                if( strSecondLine.IsEmpty() )
-                {
-                    throw new ParseException("Die zweite Spalte enthält bereits keine Daten mehr!");
-                }
-
-                // ReSharper disable once PossibleNullReferenceException
-                if( strSecondLine.EndsWith(";") )
-                {
-                    strSecondLine = strSecondLine.Substring(0, strSecondLine.Length - 1);
-                }
-
-                // Jetzt überprüfen wir ob auch die Anzahl der Spalten übereinstimmt, jetzt dürfen wir allerdings die leeren Spalten nicht ignorieren ...
-                strSplittedColumns = strSecondLine.Trim().Split(COMMASEPERATEDVALUES_SPLITTER);
-
-                if( strSplittedColumns.Length != iColumnCount )
-                {
-                    throw new ParseException("Die zweite Spalte hat bereits eine andere Spaltenanzahl als die erste Zeile!");
-                }
-
-                //-----------------------------------------------------
-
-                int iIndex = 0;
-
-                foreach( string strValue in strSplittedColumns )
-                {
-                    dt.Columns [iIndex++].DataType = bDetectDataType ? GetTypeOfColumn(strValue) : typeof(string);
-                }
-
-                //-----------------------------------------------------
-
-                AddRow(dt, strSplittedColumns);
-
-                //-----------------------------------------------------
-
-                string strLine;
-                ulong iLineCounter = 1; // -> Die erste Zeilen haben wir ja schon, also nicht bei 0 anfangen ...
-
-                do
-                {
-                    iLineCounter++;
-
-                    strLine = sr.ReadLine();
-
-                    if( !string.IsNullOrEmpty(strLine) )
-                    {
-                        // Zeilen die mit # anfangen sind Kommentarzeilen und werden von uns ignoriert !
-                        if( strLine [0] == '#' )
-                        {
-                            continue;
-                        }
-
-                        if( strLine.EndsWith(";") )
-                        {
-                            strLine = strLine.Substring(0, strLine.Length - 1);
-                        }
-
-                        string [] strSplitted = strLine.Trim().Split(COMMASEPERATEDVALUES_SPLITTER);
-
-                        if( strSplitted.Length == iColumnCount )
-                        {
-                            AddRow(dt, strSplitted);
-                        }
-                        else
-                        {
-                            throw new ParseException($"Die Feldlänge der Zeile {iLineCounter} stimmt nicht mit dem Vorgabewert {iColumnCount} überein!");
-                        }
-                    }
-                } while( strLine != null );
-
-                //-----------------------------------------------------
-
-                sr.Close();
-
-                return dt;
+                throw new ParseException("Die erste Zeile zum bestimmen der Spalten konnte nicht ermittelt werden!");
             }
+            // Die Spalten ermitteln ...
+            if( strFirstLine.EndsWith(";") )
+            {
+                strFirstLine = strFirstLine.Substring(0, strFirstLine.Length - 1);
+            }
+
+            string [] strSplittedColumns = strFirstLine.Trim().Split(COMMASEPERATEDVALUES_SPLITTER);
+
+            if( strSplittedColumns.Length == 0 )
+            {
+                throw new ParseException("Die erste Zeile enthält keine Spalten!");
+            }
+
+            foreach( string strColumnName in strSplittedColumns )
+            {
+                dt.Columns.Add(strColumnName);
+            }
+
+            //-----------------------------------------------------
+
+            // Die Anzahl der Spalten merken wir uns mal für später
+            int iColumnCount = strSplittedColumns.Length;
+
+            //-----------------------------------------------------
+
+            string strSecondLine = sr.ReadLine();
+
+            // Wenn wir nochnicht einmal eine zweite Zeile mit den ersten Daten haben brauchen wir auch nicht weiterzumachen ...
+            if( strSecondLine.IsEmpty() )
+            {
+                throw new ParseException("Die zweite Spalte enthält bereits keine Daten mehr!");
+            }
+
+            // ReSharper disable once PossibleNullReferenceException
+            if( strSecondLine.EndsWith(";") )
+            {
+                strSecondLine = strSecondLine.Substring(0, strSecondLine.Length - 1);
+            }
+
+            // Jetzt überprüfen wir ob auch die Anzahl der Spalten übereinstimmt, jetzt dürfen wir allerdings die leeren Spalten nicht ignorieren ...
+            strSplittedColumns = strSecondLine.Trim().Split(COMMASEPERATEDVALUES_SPLITTER);
+
+            if( strSplittedColumns.Length != iColumnCount )
+            {
+                throw new ParseException("Die zweite Spalte hat bereits eine andere Spaltenanzahl als die erste Zeile!");
+            }
+
+            //-----------------------------------------------------
+
+            int iIndex = 0;
+
+            foreach( string strValue in strSplittedColumns )
+            {
+                dt.Columns [iIndex++].DataType = bDetectDataType ? GetTypeOfColumn(strValue) : typeof(string);
+            }
+
+            //-----------------------------------------------------
+
+            AddRow(dt, strSplittedColumns);
+
+            //-----------------------------------------------------
+
+            string strLine;
+            ulong iLineCounter = 1; // -> Die erste Zeilen haben wir ja schon, also nicht bei 0 anfangen ...
+
+            do
+            {
+                iLineCounter++;
+
+                strLine = sr.ReadLine();
+
+                if( !string.IsNullOrEmpty(strLine) )
+                {
+                    // Zeilen die mit # anfangen sind Kommentarzeilen und werden von uns ignoriert !
+                    if( strLine [0] == '#' )
+                    {
+                        continue;
+                    }
+
+                    if( strLine.EndsWith(";") )
+                    {
+                        strLine = strLine.Substring(0, strLine.Length - 1);
+                    }
+
+                    string [] strSplitted = strLine.Trim().Split(COMMASEPERATEDVALUES_SPLITTER);
+
+                    if( strSplitted.Length == iColumnCount )
+                    {
+                        AddRow(dt, strSplitted);
+                    }
+                    else
+                    {
+                        throw new ParseException($"Die Feldlänge der Zeile {iLineCounter} stimmt nicht mit dem Vorgabewert {iColumnCount} überein!");
+                    }
+                }
+            } while( strLine != null );
+
+            //-----------------------------------------------------
+
+            sr.Close();
+
+            return dt;
         }
 
 
