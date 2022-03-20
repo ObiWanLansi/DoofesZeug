@@ -159,9 +159,10 @@ namespace DoofesZeug.Extensions
         /// <param name="dbConnection">The database connection.</param>
         /// <param name="strTablename">The string tablename.</param>
         /// <returns></returns>
-        public static SortedDictionary<string, string> GetSimplifiedColumns( this SQLiteConnection dbConnection, string strTablename )
+        public static Dictionary<string, string> GetSimplifiedColumns( this SQLiteConnection dbConnection, string strTablename )
         {
-            SortedDictionary<string, string> sdColumns = new();
+            // Only use an Dictionary to prefent resorting the columns by name.
+            Dictionary<string, string> sdColumns = new();
 
 #pragma warning disable CA2100 // Review SQL queries for security vulnerabilities
             using( SQLiteCommand dbSelectColumns = new($"PRAGMA TABLE_INFO({strTablename})", dbConnection) )
