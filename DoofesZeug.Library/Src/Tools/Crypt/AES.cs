@@ -17,15 +17,16 @@ namespace DoofesZeug.Tools.Crypt
         /// </summary>
         /// <param name="strPlainText">The string plain text.</param>
         /// <param name="strPassword">The string password.</param>
+        /// <param name="strSalt">The string salt.</param>
         /// <returns></returns>
-        public static string Encrypt( string strPlainText, string strPassword, string Salt )
+        public static string Encrypt( string strPlainText, string strPassword, string strSalt )
         {
             byte [] encryptedBytes;
             byte [] plainBytes = Encoding.Unicode.GetBytes(strPlainText);
 
             using( Aes aes = Aes.Create() )
             {
-                using Rfc2898DeriveBytes pbkdf2 = new(strPassword, Encoding.Unicode.GetBytes(Salt), ITERATIONS);
+                using Rfc2898DeriveBytes pbkdf2 = new(strPassword, Encoding.Unicode.GetBytes(strSalt), ITERATIONS);
                 aes.Key = pbkdf2.GetBytes(32);
                 aes.IV = pbkdf2.GetBytes(16);
 
@@ -46,15 +47,16 @@ namespace DoofesZeug.Tools.Crypt
         /// </summary>
         /// <param name="strCryptedText">The string crypted text.</param>
         /// <param name="strPassword">The string password.</param>
+        /// <param name="strSalt">The string salt.</param>
         /// <returns></returns>
-        public static string Decrypt( string strCryptedText, string strPassword, string Salt )
+        public static string Decrypt( string strCryptedText, string strPassword, string strSalt )
         {
             byte [] plainBytes;
             byte [] cryptoBytes = Convert.FromBase64String(strCryptedText);
 
             using( Aes aes = Aes.Create() )
             {
-                using Rfc2898DeriveBytes pbkdf2 = new(strPassword, Encoding.Unicode.GetBytes(Salt), ITERATIONS);
+                using Rfc2898DeriveBytes pbkdf2 = new(strPassword, Encoding.Unicode.GetBytes(strSalt), ITERATIONS);
                 aes.Key = pbkdf2.GetBytes(32);
                 aes.IV = pbkdf2.GetBytes(16);
 
