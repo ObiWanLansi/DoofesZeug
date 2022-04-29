@@ -1,2 +1,2 @@
 @cls
-@dotnet pack -c Release
+@dotnet pack -c Release .\DoofesZeug.Library\DoofesZeug.Library.csproj
