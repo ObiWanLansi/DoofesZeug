@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO;
 
 using DoofesZeug.Datatypes.Container;
 using DoofesZeug.Extensions;
+using DoofesZeug.Tools.Crypt;
 
 using static System.Console;
 
@@ -16,9 +18,9 @@ namespace DoofesZeug
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="UnhandledExceptionEventArgs"/> instance containing the event data.</param>
-        private static void CurrentDomain_UnhandledException( object sender, UnhandledExceptionEventArgs e )
+        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            if( e.ExceptionObject is Exception ex )
+            if (e.ExceptionObject is Exception ex)
             {
                 Error.WriteLineAsync(ex.Message);
             }
@@ -27,9 +29,19 @@ namespace DoofesZeug
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        static void Main( string [] args )
+        static void Main(string[] args)
         {
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+            //-------------------------------------------------------------------------------------
+
+#pragma warning disable S1075 // URIs should not be hardcoded
+            DateTime start = DateTime.Now;
+            string result = SimpleHash.GetHash(@"C:\Lanser\BigData\SRTM Tiles Germany\Merged.xyz", SupportedHashAlgorithm.MD5);
+            DateTime stop = DateTime.Now;
+            Console.Out.WriteLineAsync((stop - start).ToHHMMSSString());
+#pragma warning restore S1075 // URIs should not be hardcoded
+            Console.Out.WriteLineAsync(result);
 
             //-------------------------------------------------------------------------------------
 
@@ -113,44 +125,45 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
+
             #region DataTree
 
-            DataTree dt = new()
-            {
-                Data = "Knoppix",
-                Items = new DataTreeItems
-                {
-                    new DataTree{ Data = "Quantian" },
-                    new DataTree{
-                        Data = "Damn Small Linux",
-                        Items = new DataTreeItems
-                        {
-                            new DataTree{ Data = "Hikarunix" },
-                            new DataTree{ Data = "DSL-N" },
-                            new DataTree{ Data = "Damn Vulnerable Linux" }
-                        }
-                    },
-                    new DataTree{ Data = "KnoppMyth" },
-                    new DataTree{ Data = "Danix" },
-                    new DataTree{
-                        Data = "Kurumin",
-                        Items = new DataTreeItems
-                        {
-                            new DataTree{ Data = "Kalango" },
-                            new DataTree{ Data = "Poseidon" },
-                            new DataTree{
-                                Data = "Dizinha",
-                                Items = new DataTreeItems
-                                {
-                                    new DataTree{ Data = "Neo Dizinha" }
-                                }
-                            }
-                        }
-                    }
-                }
-            };
+            //DataTree dt = new()
+            //{
+            //    Data = "Knoppix",
+            //    Items = new DataTreeItems
+            //    {
+            //        new DataTree{ Data = "Quantian" },
+            //        new DataTree{
+            //            Data = "Damn Small Linux",
+            //            Items = new DataTreeItems
+            //            {
+            //                new DataTree{ Data = "Hikarunix" },
+            //                new DataTree{ Data = "DSL-N" },
+            //                new DataTree{ Data = "Damn Vulnerable Linux" }
+            //            }
+            //        },
+            //        new DataTree{ Data = "KnoppMyth" },
+            //        new DataTree{ Data = "Danix" },
+            //        new DataTree{
+            //            Data = "Kurumin",
+            //            Items = new DataTreeItems
+            //            {
+            //                new DataTree{ Data = "Kalango" },
+            //                new DataTree{ Data = "Poseidon" },
+            //                new DataTree{
+            //                    Data = "Dizinha",
+            //                    Items = new DataTreeItems
+            //                    {
+            //                        new DataTree{ Data = "Neo Dizinha" }
+            //                    }
+            //                }
+            //            }
+            //        }
+            //    }
+            //};
 
-            Out.WriteLineAsync(dt.ToStringTree());
+            //Out.WriteLineAsync(dt.ToStringTree());
             #endregion
 
             //-------------------------------------------------------------------------------------

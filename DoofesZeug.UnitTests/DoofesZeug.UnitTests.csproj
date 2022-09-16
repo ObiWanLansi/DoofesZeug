@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <IsPackable>false</IsPackable>
-    <Version>0.2.0</Version>
+    <Version>0.2.3</Version>
     <AssemblyVersion>0.2.0.0</AssemblyVersion>
     <RepositoryUrl>https://github.com/ObiWanLansi/DoofesZeug</RepositoryUrl>
     <Authors>ObiWanLansi</Authors>

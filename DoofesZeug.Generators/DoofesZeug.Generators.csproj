@@ -6,7 +6,7 @@
     <AssemblyName>DoofesZeug.Generators</AssemblyName>
     <StartupObject>DoofesZeug.Generators</StartupObject>
     <RootNamespace>DoofesZeug</RootNamespace>
-    <Version>0.2.0</Version>
+    <Version>0.2.3</Version>
     <RepositoryUrl>https://github.com/ObiWanLansi/DoofesZeug</RepositoryUrl>
     <Authors>ObiWanLansi</Authors>
     <Product>DoofesZeug.Generators</Product>
