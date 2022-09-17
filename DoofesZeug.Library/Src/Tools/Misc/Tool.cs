@@ -277,7 +277,6 @@ namespace DoofesZeug.Tools.Misc
                 return true;
             }
 
-
             if (strSearchText.StartsWith("*") && strSearchText.EndsWith("*"))
             {
                 strSearchText = strSearchText.Substring(1, strSearchText.Length - 2);
