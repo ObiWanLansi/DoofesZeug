@@ -48,26 +48,26 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <param name="lSize">Size of the l.</param>
         /// <returns></returns>
-        public static string GetHumanReadableSize( long lSize )
+        public static string GetHumanReadableSize(long lSize)
         {
-            if( lSize >= 1099511627776 )
+            if (lSize >= 1099511627776)
             {
-                return $"{(float) lSize / 1099511627776:F} Tb";
+                return $"{(float)lSize / 1099511627776:F} Tb";
             }
 
-            if( lSize >= 1073741824 )
+            if (lSize >= 1073741824)
             {
-                return $"{(float) lSize / 1073741824:F} Gb";
+                return $"{(float)lSize / 1073741824:F} Gb";
             }
 
-            if( lSize >= 1048576 )
+            if (lSize >= 1048576)
             {
-                return $"{(float) lSize / 1048576:F} Mb";
+                return $"{(float)lSize / 1048576:F} Mb";
             }
 
-            if( lSize >= 1024 )
+            if (lSize >= 1024)
             {
-                return $"{(float) lSize / 1024:F} Kb";
+                return $"{(float)lSize / 1024:F} Kb";
             }
 
             return lSize + " Bytes";
@@ -79,7 +79,7 @@ namespace DoofesZeug.Tools.Misc
         /// <summary>
         /// The datetimeformats
         /// </summary>
-        public static readonly string [] DATETIMEFORMATS =
+        public static readonly string[] DATETIMEFORMATS =
         {
             "dd.MM.yyyy, HH:mm:ss" ,
             "dd.MM.yyyy HH:mm:ss" ,
@@ -116,7 +116,7 @@ namespace DoofesZeug.Tools.Misc
         /// <param name="tEnum">The t enum.</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException">tEnum</exception>
-        public static StringList EnumToStringList( Type tEnum )
+        public static StringList EnumToStringList(Type tEnum)
         {
             return tEnum.IsEnum == false ? throw new ArgumentException($"The type '{tEnum.FullName}' is not an enumeration!", nameof(tEnum)) : new StringList(Enum.GetNames(tEnum));
         }
@@ -131,14 +131,14 @@ namespace DoofesZeug.Tools.Misc
         /// <returns></returns>
         /// <exception cref="ArgumentException">Die Zahl ist zu groß um als römische Zahl darstellen zu können!</exception>
         /// <exception cref="ArgumentException">Die Zahl ist zu groß um als römische Zahl darstellen zu können!</exception>
-        public static string NumberToRoman( ushort uValue )
+        public static string NumberToRoman(ushort uValue)
         {
-            if( uValue > 3999 )
+            if (uValue > 3999)
             {
                 throw new ArgumentException("Die Zahl ist zu groß um als römische Zahl darstellen zu können!");
             }
 
-            if( uValue == 0 )
+            if (uValue == 0)
             {
                 return string.Empty;
             }
@@ -162,9 +162,9 @@ namespace DoofesZeug.Tools.Misc
                 { 1000, "M" },
             };
 
-            foreach( KeyValuePair<ushort, string> kvp in mapping.Reverse() )
+            foreach (KeyValuePair<ushort, string> kvp in mapping.Reverse())
             {
-                while( uValue >= kvp.Key )
+                while (uValue >= kvp.Key)
                 {
                     uValue -= kvp.Key;
                     sb.Append(kvp.Value);
@@ -184,9 +184,9 @@ namespace DoofesZeug.Tools.Misc
         /// <param name="lDefault">The l default.</param>
         /// <returns></returns>
         /// <exception cref="NotSupportedException">Die Einheit Tb wird nicht unterstützt!</exception>
-        public static long GetSize( string strSize, long lDefault )
+        public static long GetSize(string strSize, long lDefault)
         {
-            if( string.IsNullOrEmpty(strSize) )
+            if (string.IsNullOrEmpty(strSize))
             {
                 return lDefault;
             }
@@ -194,15 +194,15 @@ namespace DoofesZeug.Tools.Misc
             StringBuilder sbDigits = new(3);
             StringBuilder sbFactor = new(2);
 
-            foreach( char c in strSize.Trim().ToLower() )
+            foreach (char c in strSize.Trim().ToLower())
             {
-                if( char.IsDigit(c) )
+                if (char.IsDigit(c))
                 {
                     sbDigits.Append(c);
                 }
                 else
                 {
-                    if( char.IsLetter(c) )
+                    if (char.IsLetter(c))
                     {
                         sbFactor.Append(c);
                     }
@@ -270,21 +270,27 @@ namespace DoofesZeug.Tools.Misc
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public static bool SimpleMatch( string strContent, string strSearchText )
+        public static bool SimpleMatch(string strContent, string strSearchText)
         {
-            if( strSearchText.StartsWith("*") && strSearchText.EndsWith("*") )
+            if (strSearchText.Equals("*"))
+            {
+                return true;
+            }
+
+
+            if (strSearchText.StartsWith("*") && strSearchText.EndsWith("*"))
             {
                 strSearchText = strSearchText.Substring(1, strSearchText.Length - 2);
                 return strContent.Contains(strSearchText);
             }
 
-            if( strSearchText.StartsWith("*") )
+            if (strSearchText.StartsWith("*"))
             {
                 strSearchText = strSearchText.Substring(1, strSearchText.Length - 1);
                 return strContent.EndsWith(strSearchText);
             }
 
-            if( strSearchText.EndsWith("*") )
+            if (strSearchText.EndsWith("*"))
             {
                 strSearchText = strSearchText.Substring(0, strSearchText.Length - 1);
                 return strContent.StartsWith(strSearchText);
@@ -297,26 +303,58 @@ namespace DoofesZeug.Tools.Misc
 
 
         /// <summary>
+        /// Gets the block.
+        /// </summary>
+        /// <param name="iValue">The i value.</param>
+        /// <returns></returns>
+        public static (int, int) GetBlock(int iValue)
+        {
+            double dSqrt = Math.Sqrt(iValue);
+
+            int iBlockOne = (int)Math.Round(dSqrt);
+
+            if (dSqrt == iBlockOne)
+            {
+                return ((int)dSqrt, (int)dSqrt);
+            }
+
+            for (int iCounter = iBlockOne; iCounter > 0; iCounter--)
+            {
+                double dResult = (double)iValue / (double)iCounter;
+
+                if (dResult == Math.Round(dResult))
+                {
+                    return (iCounter, (int)dResult);
+                }
+            }
+
+            return (-1, -1);
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
         /// Combines the specified lists.
         /// </summary>
         /// <param name="lists">The lists.</param>
         /// <returns></returns>
-        public static IEnumerable<object []> Combine( params IList [] lists )
+        public static IEnumerable<object[]> Combine(params IList[] lists)
         {
             int iTotalCount = 1;
-            int [] iColumnLength = new int [lists.Length];
-            int [] iColumnChanges = new int [lists.Length];
+            int[] iColumnLength = new int[lists.Length];
+            int[] iColumnChanges = new int[lists.Length];
 
             {
                 int iColumn = 0;
                 int iPreChange = 1;
 
-                foreach( IList list in lists )
+                foreach (IList list in lists)
                 {
                     iPreChange *= list.Count;
 
-                    iColumnChanges [iColumn] = iPreChange;
-                    iColumnLength [iColumn] = list.Count;
+                    iColumnChanges[iColumn] = iPreChange;
+                    iColumnLength[iColumn] = list.Count;
 
                     iTotalCount *= list.Count;
 
@@ -324,20 +362,20 @@ namespace DoofesZeug.Tools.Misc
                 }
             }
 
-            for( int iColumn = 0 ; iColumn < lists.Length ; iColumn++ )
+            for (int iColumn = 0; iColumn < lists.Length; iColumn++)
             {
-                iColumnChanges [iColumn] = iTotalCount / iColumnChanges [iColumn];
+                iColumnChanges[iColumn] = iTotalCount / iColumnChanges[iColumn];
             }
 
-            for( int iRow = 0 ; iRow < iTotalCount ; iRow++ )
+            for (int iRow = 0; iRow < iTotalCount; iRow++)
             {
-                object [] row = new object [lists.Length];
+                object[] row = new object[lists.Length];
 
                 int iColumn = 0;
 
-                foreach( IList list in lists )
+                foreach (IList list in lists)
                 {
-                    row [iColumn] = list [iRow / iColumnChanges [iColumn] % iColumnLength [iColumn]];
+                    row[iColumn] = list[iRow / iColumnChanges[iColumn] % iColumnLength[iColumn]];
                     iColumn++;
                 }
 
