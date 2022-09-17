@@ -270,6 +270,12 @@ namespace DoofesZeug.Tools.Misc
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Simples the match.
+        /// </summary>
+        /// <param name="strContent">Content of the string.</param>
+        /// <param name="strSearchText">The string search text.</param>
+        /// <returns></returns>
         public static bool SimpleMatch(string strContent, string strSearchText)
         {
             if (strSearchText.Equals("*"))
