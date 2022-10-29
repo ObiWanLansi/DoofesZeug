@@ -17,7 +17,7 @@ namespace DoofesZeug.Datatypes.Container
         /// Initializes a new instance of the <see cref="IntegerList"/> class.
         /// </summary>
         /// <param name="iSize">Size of the i.</param>
-        public IntegerList( int iSize ) :
+        public IntegerList(int iSize) :
             base(iSize)
         {
         }
@@ -26,7 +26,7 @@ namespace DoofesZeug.Datatypes.Container
         /// Initializes a new instance of the <see cref="IntegerList"/> class.
         /// </summary>
         /// <param name="iArray">The i array.</param>
-        public IntegerList( int [] iArray )
+        public IntegerList(int[] iArray)
             : base(iArray)
         {
         }
@@ -35,7 +35,7 @@ namespace DoofesZeug.Datatypes.Container
         /// Initializes a new instance of the <see cref="IntegerList"/> class.
         /// </summary>
         /// <param name="collection">The collection whose elements are copied to the new list.</param>
-        public IntegerList( IEnumerable<int> collection ) :
+        public IntegerList(IEnumerable<int> collection) :
             base(collection)
         {
         }
@@ -48,7 +48,7 @@ namespace DoofesZeug.Datatypes.Container
         /// </summary>
         /// <param name="values">The values.</param>
         /// <returns></returns>
-        public static IntegerList From( params int [] values ) => new (values);
+        public static IntegerList From(params int[] values) => new(values);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -61,13 +61,13 @@ namespace DoofesZeug.Datatypes.Container
         /// <returns>
         /// The result of the operator.
         /// </returns>
-        public static IntegerList operator *( IntegerList ilSource, int iMultiplier )
+        public static IntegerList operator *(IntegerList ilSource, int iMultiplier)
         {
             IntegerList ilDestination = new(ilSource);
 
-            for( int i = 0 ; i < ilDestination.Count ; i++ )
+            for (int i = 0; i < ilDestination.Count; i++)
             {
-                ilDestination [i] *= iMultiplier;
+                ilDestination[i] *= iMultiplier;
             }
 
             return ilDestination;

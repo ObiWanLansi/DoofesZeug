@@ -22,7 +22,7 @@ namespace DoofesZeug.Attributes.Documentation
         /// Initializes a new instance of the <see cref="LinkAttribute"/> class.
         /// </summary>
         /// <param name="strDestination">The string destination.</param>
-        public LinkAttribute( string strDestination ) => this.Destination = strDestination;
+        public LinkAttribute(string strDestination) => this.Destination = strDestination;
 
 
         /// <summary>
@@ -34,14 +34,14 @@ namespace DoofesZeug.Attributes.Documentation
         /// or
         /// The destination from {instance.FullName} starts not with 'https://'!
         /// </exception>
-        public void Validate( Type instance )
+        public void Validate(Type instance)
         {
-            if( this.Destination.IsEmpty() )
+            if (this.Destination.IsEmpty())
             {
                 throw new Exception($"The destination from {instance.FullName} is empty!");
             }
 
-            if( this.Destination.StartsWith("https://") == false )
+            if (this.Destination.StartsWith("https://") == false)
             {
                 throw new Exception($"The destination from {instance.FullName} starts not with 'https://'!");
             }

@@ -12,7 +12,7 @@ namespace DoofesZeug.Converter
     public sealed class DateTimePartConverter : JsonConverter
     {
         private static readonly Type DATETIMEPART = typeof(DateTimePart);
-        
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -23,7 +23,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType.BaseType.IsAssignableTo(DATETIMEPART);
+        public override bool CanConvert(Type objectType) => objectType.BaseType.IsAssignableTo(DATETIMEPART);
 
 
         /// <summary>
@@ -37,16 +37,16 @@ namespace DoofesZeug.Converter
         /// The object value.
         /// </returns>
         /// <exception cref="NotImplementedException"></exception>
-        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer )
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            if( reader.Value == null )
+            if (reader.Value == null)
             {
                 return null;
             }
 
-            ConstructorInfo constructor = objectType.GetConstructor(new [] { typeof(uint) });
+            ConstructorInfo constructor = objectType.GetConstructor(new[] { typeof(uint) });
 
-            return constructor?.Invoke(new [] { (object) Convert.ToUInt32(reader.Value) });
+            return constructor?.Invoke(new[] { (object)Convert.ToUInt32(reader.Value) });
         }
 
 
@@ -56,15 +56,15 @@ namespace DoofesZeug.Converter
         /// <param name="writer">The <see cref="T:Newtonsoft.Json.JsonWriter" /> to write to.</param>
         /// <param name="value">The value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson( JsonWriter writer, object value, JsonSerializer serializer )
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            if( value == null )
+            if (value == null)
             {
                 writer.WriteNull();
                 return;
             }
 
-            writer.WriteValue(( (DateTimePart) value ).Value);
+            writer.WriteValue(((DateTimePart)value).Value);
         }
     }
 }

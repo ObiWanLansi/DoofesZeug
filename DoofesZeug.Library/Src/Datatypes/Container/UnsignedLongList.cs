@@ -18,7 +18,7 @@ namespace DoofesZeug.Datatypes.Container
         /// Initializes a new instance of the <see cref="UnsignedLongList"/> class.
         /// </summary>
         /// <param name="iSize">Size of the i.</param>
-        public UnsignedLongList( int iSize ) :
+        public UnsignedLongList(int iSize) :
             base(iSize)
         {
         }
@@ -28,7 +28,7 @@ namespace DoofesZeug.Datatypes.Container
         /// Initializes a new instance of the <see cref="UnsignedLongList"/> class.
         /// </summary>
         /// <param name="iArray">The i array.</param>
-        public UnsignedLongList( ulong [] iArray )
+        public UnsignedLongList(ulong[] iArray)
             : base(iArray)
         {
         }
@@ -38,7 +38,7 @@ namespace DoofesZeug.Datatypes.Container
         /// Initializes a new instance of the <see cref="UnsignedLongList"/> class.
         /// </summary>
         /// <param name="collection">The collection whose elements are copied to the new list.</param>
-        public UnsignedLongList( IEnumerable<ulong> collection ) :
+        public UnsignedLongList(IEnumerable<ulong> collection) :
             base(collection)
         {
         }
@@ -51,6 +51,6 @@ namespace DoofesZeug.Datatypes.Container
         /// </summary>
         /// <param name="values">The values.</param>
         /// <returns></returns>
-        public static UnsignedLongList From( params ulong [] values ) => new(values);
+        public static UnsignedLongList From(params ulong[] values) => new(values);
     }
 }

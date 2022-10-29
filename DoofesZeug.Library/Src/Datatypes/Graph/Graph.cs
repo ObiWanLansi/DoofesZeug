@@ -73,7 +73,7 @@ namespace DoofesZeug.Datatypes.Graph
         /// <value>
         /// The nodes.
         /// </value>
-        public Node [] Nodes => new List<Node>(this.sdNodes.Values).ToArray();
+        public Node[] Nodes => new List<Node>(this.sdNodes.Values).ToArray();
 
 
         /// <summary>
@@ -93,9 +93,9 @@ namespace DoofesZeug.Datatypes.Graph
         /// </summary>
         /// <param name="n">The n.</param>
         /// <returns></returns>
-        public bool AddNode( Node n )
+        public bool AddNode(Node n)
         {
-            if( this.sdNodes.ContainsKey(n.Id) == false )
+            if (this.sdNodes.ContainsKey(n.Id) == false)
             {
                 this.sdNodes.Add(n.Id, n);
                 return true;
@@ -110,14 +110,14 @@ namespace DoofesZeug.Datatypes.Graph
         /// </summary>
         /// <param name="nodes">The nodes.</param>
         /// <returns></returns>
-        public bool AddNodes( params Node [] nodes )
+        public bool AddNodes(params Node[] nodes)
         {
             bool bNoError = true;
 
-            foreach( Node n in nodes )
+            foreach (Node n in nodes)
             {
                 // Wenn ein Knoten nicht hinzugefügt werden kann wird false zurückgeliefert.
-                if( this.sdNodes.ContainsKey(n.Id) == false )
+                if (this.sdNodes.ContainsKey(n.Id) == false)
                 {
                     this.sdNodes.Add(n.Id, n);
                 }
@@ -136,14 +136,14 @@ namespace DoofesZeug.Datatypes.Graph
         /// </summary>
         /// <param name="nodes">The l nodes.</param>
         /// <returns></returns>
-        public bool AddNodes( IEnumerable<Node> nodes )
+        public bool AddNodes(IEnumerable<Node> nodes)
         {
             bool bNoError = true;
 
-            foreach( Node n in nodes )
+            foreach (Node n in nodes)
             {
                 // Wenn ein Knoten nicht hinzugefügt werden kann wird false zurückgeliefert.
-                if( this.sdNodes.ContainsKey(n.Id) == false )
+                if (this.sdNodes.ContainsKey(n.Id) == false)
                 {
                     this.sdNodes.Add(n.Id, n);
                 }
@@ -162,7 +162,7 @@ namespace DoofesZeug.Datatypes.Graph
         /// </summary>
         /// <param name="strNodeId">The string node identifier.</param>
         /// <returns></returns>
-        public bool NodeExists( string strNodeId ) => this.sdNodes.ContainsKey(strNodeId);
+        public bool NodeExists(string strNodeId) => this.sdNodes.ContainsKey(strNodeId);
 
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace DoofesZeug.Datatypes.Graph
         /// </summary>
         /// <param name="n">The n.</param>
         /// <returns></returns>
-        public bool NodeExists( Node n ) => this.sdNodes.ContainsKey(n.Id);
+        public bool NodeExists(Node n) => this.sdNodes.ContainsKey(n.Id);
 
 
         /// <summary>
@@ -178,16 +178,16 @@ namespace DoofesZeug.Datatypes.Graph
         /// </summary>
         /// <param name="strNodeId">The string node identifier.</param>
         /// <returns></returns>
-        public Node GetNode( string strNodeId ) => this.sdNodes [strNodeId];
+        public Node GetNode(string strNodeId) => this.sdNodes[strNodeId];
 
 
         /// <summary>
         /// Removes the node.
         /// </summary>
         /// <param name="n">The n.</param>
-        public bool RemoveNode( Node n )
+        public bool RemoveNode(Node n)
         {
-            if( this.sdNodes.ContainsKey(n.Id) )
+            if (this.sdNodes.ContainsKey(n.Id))
             {
                 this.sdNodes.Remove(n.Id);
                 return true;
@@ -201,9 +201,9 @@ namespace DoofesZeug.Datatypes.Graph
         /// Removes the node.
         /// </summary>
         /// <param name="strNodeId">The string node identifier.</param>
-        public bool RemoveNode( string strNodeId )
+        public bool RemoveNode(string strNodeId)
         {
-            if( this.sdNodes.ContainsKey(strNodeId) )
+            if (this.sdNodes.ContainsKey(strNodeId))
             {
                 this.sdNodes.Remove(strNodeId);
                 return true;
@@ -233,9 +233,9 @@ namespace DoofesZeug.Datatypes.Graph
         /// </summary>
         /// <param name="e">The e.</param>
         /// <returns></returns>
-        public bool AddEdge( Edge e )
+        public bool AddEdge(Edge e)
         {
-            if( this.sdEdges.ContainsKey(e.Id) == false )
+            if (this.sdEdges.ContainsKey(e.Id) == false)
             {
                 this.sdEdges.Add(e.Id, e);
                 return true;
@@ -252,14 +252,14 @@ namespace DoofesZeug.Datatypes.Graph
         /// <param name="nDestination">The n destination.</param>
         /// <param name="d">The d.</param>
         /// <returns></returns>
-        public Edge AddEdge( Node nSource, Node nDestination, Direction d )
+        public Edge AddEdge(Node nSource, Node nDestination, Direction d)
         {
-            if( this.sdNodes.ContainsKey(nSource.Id) == false )
+            if (this.sdNodes.ContainsKey(nSource.Id) == false)
             {
                 this.sdNodes.Add(nSource.Id, nSource);
             }
 
-            if( this.sdNodes.ContainsKey(nDestination.Id) == false )
+            if (this.sdNodes.ContainsKey(nDestination.Id) == false)
             {
                 this.sdNodes.Add(nDestination.Id, nDestination);
             }
@@ -278,7 +278,7 @@ namespace DoofesZeug.Datatypes.Graph
         /// <param name="nSource">The n source.</param>
         /// <param name="nDestination">The n destination.</param>
         /// <returns></returns>
-        public Edge AddEdge( Node nSource, Node nDestination ) => AddEdge(nSource, nDestination, this.DefaultDirection ?? Direction.SourceToDestination);
+        public Edge AddEdge(Node nSource, Node nDestination) => AddEdge(nSource, nDestination, this.DefaultDirection ?? Direction.SourceToDestination);
 
 
         /// <summary>
@@ -287,8 +287,8 @@ namespace DoofesZeug.Datatypes.Graph
         /// <param name="strSourceId">The string source identifier.</param>
         /// <param name="strDestinationId">The string destination identifier.</param>
         /// <returns></returns>
-        public Edge AddEdge( string strSourceId, string strDestinationId ) => this.sdNodes.ContainsKey(strSourceId) && this.sdNodes.ContainsKey(strDestinationId)
-                                                                                ? AddEdge(this.sdNodes [strSourceId], this.sdNodes [strDestinationId])
+        public Edge AddEdge(string strSourceId, string strDestinationId) => this.sdNodes.ContainsKey(strSourceId) && this.sdNodes.ContainsKey(strDestinationId)
+                                                                                ? AddEdge(this.sdNodes[strSourceId], this.sdNodes[strDestinationId])
                                                                                 : null;
 
 
@@ -296,9 +296,9 @@ namespace DoofesZeug.Datatypes.Graph
         /// Removes the edge.
         /// </summary>
         /// <param name="e">The e.</param>
-        public bool RemoveEdge( Edge e )
+        public bool RemoveEdge(Edge e)
         {
-            if( this.sdEdges.ContainsKey(e.Id) )
+            if (this.sdEdges.ContainsKey(e.Id))
             {
                 this.sdEdges.Remove(e.Id);
                 return true;
@@ -316,14 +316,14 @@ namespace DoofesZeug.Datatypes.Graph
         /// Adds the specified n.
         /// </summary>
         /// <param name="n">The n.</param>
-        public void Add( Node n ) => AddNode(n);
+        public void Add(Node n) => AddNode(n);
 
 
         /// <summary>
         /// Adds the specified e.
         /// </summary>
         /// <param name="e">The e.</param>
-        public void Add( Edge e ) => AddEdge(e);
+        public void Add(Edge e) => AddEdge(e);
 
 
         /// <summary>
@@ -333,26 +333,26 @@ namespace DoofesZeug.Datatypes.Graph
         {
             List<string> lNodesToRemove = new();
 
-            foreach( string strNodeId in this.sdNodes.Keys )
+            foreach (string strNodeId in this.sdNodes.Keys)
             {
                 bool bFound = false;
 
-                foreach( Edge e in this.sdEdges.Values )
+                foreach (Edge e in this.sdEdges.Values)
                 {
-                    if( e.Source.Id.Equals(strNodeId) )
+                    if (e.Source.Id.Equals(strNodeId))
                     {
                         bFound = true;
                         break;
                     }
 
-                    if( e.Destination.Id.Equals(strNodeId) )
+                    if (e.Destination.Id.Equals(strNodeId))
                     {
                         bFound = true;
                         break;
                     }
                 }
 
-                if( bFound == false )
+                if (bFound == false)
                 {
                     lNodesToRemove.Add(strNodeId);
                 }
@@ -368,29 +368,29 @@ namespace DoofesZeug.Datatypes.Graph
         /// <param name="nNode">The n node.</param>
         /// <param name="dDirection">The d direction.</param>
         /// <returns></returns>
-        public List<Edge> GetNodeEdges( Node nNode, Direction? dDirection )
+        public List<Edge> GetNodeEdges(Node nNode, Direction? dDirection)
         {
             List<Edge> lEdges = new();
 
-            foreach( Edge e in this.sdEdges.Values )
+            foreach (Edge e in this.sdEdges.Values)
             {
                 Node x = null;
                 Direction? dHelp = dDirection;
 
-                if( e.Source.Id.Equals(nNode.Id) )
+                if (e.Source.Id.Equals(nNode.Id))
                 {
                     x = e.Source;
                 }
                 else
                 {
-                    if( e.Destination.Id.Equals(nNode.Id) )
+                    if (e.Destination.Id.Equals(nNode.Id))
                     {
                         x = e.Destination;
 
                         //Direction auch umdrehen da jetzt andere Sicht
-                        if( dHelp != null )
+                        if (dHelp != null)
                         {
-                            switch( dHelp.Value )
+                            switch (dHelp.Value)
                             {
                                 case Direction.SourceToDestination:
                                     dHelp = Direction.DestiantionToSource;
@@ -404,15 +404,15 @@ namespace DoofesZeug.Datatypes.Graph
                     }
                 }
 
-                if( x != null )
+                if (x != null)
                 {
-                    if( dHelp == null )
+                    if (dHelp == null)
                     {
                         lEdges.Add(e);
                         continue;
                     }
 
-                    if( e.Direction == dHelp )
+                    if (e.Direction == dHelp)
                     {
                         lEdges.Add(e);
                     }
@@ -429,7 +429,7 @@ namespace DoofesZeug.Datatypes.Graph
         /// <param name="nNode">The n node.</param>
         /// <param name="dDirection">The d direction.</param>
         /// <returns></returns>
-        public int GetNodeEdgesCount( Node nNode, Direction? dDirection ) => GetNodeEdges(nNode, dDirection).Count;
+        public int GetNodeEdgesCount(Node nNode, Direction? dDirection) => GetNodeEdges(nNode, dDirection).Count;
 
 
         /// <summary>

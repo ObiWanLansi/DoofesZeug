@@ -18,7 +18,7 @@ namespace DoofesZeug.Datatypes.Container
         /// Initializes a new instance of the <see cref="StringList"/> class.
         /// </summary>
         /// <param name="strArray">The string array.</param>
-        public StringSet( string [] strArray )
+        public StringSet(string[] strArray)
             : base(strArray)
         {
         }
@@ -27,7 +27,7 @@ namespace DoofesZeug.Datatypes.Container
         /// Initializes a new instance of the <see cref="StringList"/> class.
         /// </summary>
         /// <param name="collection">Die Auflistung, deren Elemente in die neue Liste kopiert werden.</param>
-        public StringSet( IEnumerable<string> collection )
+        public StringSet(IEnumerable<string> collection)
             : base(collection)
         {
         }
@@ -40,7 +40,7 @@ namespace DoofesZeug.Datatypes.Container
         /// </summary>
         /// <param name="values">The values.</param>
         /// <returns></returns>
-        public static StringSet From( params string [] values ) => new (values);
+        public static StringSet From(params string[] values) => new(values);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -53,15 +53,15 @@ namespace DoofesZeug.Datatypes.Container
         /// </value>
         /// <param name="iIndex">Index of the i.</param>
         /// <returns></returns>
-        public string this [int iIndex]
+        public string this[int iIndex]
         {
             get
             {
                 int iCounter = 0;
 
-                foreach( string strValue in this )
+                foreach (string strValue in this)
                 {
-                    if( iCounter == iIndex )
+                    if (iCounter == iIndex)
                     {
                         return strValue;
                     }

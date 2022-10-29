@@ -22,7 +22,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType == UNIXTIMESTAMP;
+        public override bool CanConvert(Type objectType) => objectType == UNIXTIMESTAMP;
 
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace DoofesZeug.Converter
         /// The object value.
         /// </returns>
         /// <exception cref="NotImplementedException"></exception>
-        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer ) => reader.Value == null ? null : new UnixTimestamp(Convert.ToUInt64(reader.Value));
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer) => reader.Value == null ? null : new UnixTimestamp(Convert.ToUInt64(reader.Value));
 
 
         /// <summary>
@@ -45,15 +45,15 @@ namespace DoofesZeug.Converter
         /// <param name="writer">The <see cref="T:Newtonsoft.Json.JsonWriter" /> to write to.</param>
         /// <param name="value">The value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson( JsonWriter writer, object value, JsonSerializer serializer )
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            if( value == null )
+            if (value == null)
             {
                 writer.WriteNull();
                 return;
             }
 
-            writer.WriteValue((ulong) (UnixTimestamp) value);
+            writer.WriteValue((ulong)(UnixTimestamp)value);
         }
     }
 }

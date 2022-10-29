@@ -40,7 +40,7 @@ namespace DoofesZeug.Datatypes.Misc
         /// <param name="strName">Name of the string.</param>
         /// <param name="strSymbol">The string symblo.</param>
         /// <param name="dFactor">The d factor.</param>
-        public UnitPrefix( string strName, string strSymbol, double dFactor )
+        public UnitPrefix(string strName, string strSymbol, double dFactor)
         {
             this.Name = strName;
             this.Symbol = strSymbol;
@@ -66,29 +66,29 @@ namespace DoofesZeug.Datatypes.Misc
         /// <returns>
         ///   <c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals( object obj )
+        public override bool Equals(object obj)
         {
-            if( obj == null )
+            if (obj == null)
             {
                 return false;
             }
 
-            if( obj is not UnitPrefix other )
+            if (obj is not UnitPrefix other)
             {
                 return false;
             }
 
-            if( this.Name.Equals(other.Name) == false )
+            if (this.Name.Equals(other.Name) == false)
             {
                 return false;
             }
 
-            if( this.Symbol.Equals(other.Symbol) == false )
+            if (this.Symbol.Equals(other.Symbol) == false)
             {
                 return false;
             }
 
-            if( this.Factor.Equals(other.Factor) == false )
+            if (this.Factor.Equals(other.Factor) == false)
             {
                 return false;
             }

@@ -782,16 +782,16 @@ namespace DoofesZeug.Datasets
         /// <param name="tsDelta">The ts delta.</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException">Das Startdatum darf nicht größe als das Enddatum sein !</exception>
-        public static List<DateTime> GetTimeline( DateTime dtStart, DateTime dtEnd, TimeSpan tsDelta )
+        public static List<DateTime> GetTimeline(DateTime dtStart, DateTime dtEnd, TimeSpan tsDelta)
         {
-            if( dtStart > dtEnd )
+            if (dtStart > dtEnd)
             {
                 throw new ArgumentException("Das Startdatum darf nicht größe als das Enddatum sein !");
             }
 
             List<DateTime> lTimeLine = new(9);
 
-            while( dtStart < dtEnd )
+            while (dtStart < dtEnd)
             {
                 lTimeLine.Add(dtStart);
                 dtStart += tsDelta;
@@ -810,7 +810,7 @@ namespace DoofesZeug.Datasets
         /// <param name="dtStart">The dt start.</param>
         /// <param name="dtEnd">The dt end.</param>
         /// <returns></returns>
-        public static List<DateTime> GetTimeline( DateTime dtStart, DateTime dtEnd ) => GetTimeline(dtStart, dtEnd, new TimeSpan(1, 0, 0, 0));
+        public static List<DateTime> GetTimeline(DateTime dtStart, DateTime dtEnd) => GetTimeline(dtStart, dtEnd, new TimeSpan(1, 0, 0, 0));
 
 
         /// <summary>
@@ -818,7 +818,7 @@ namespace DoofesZeug.Datasets
         /// </summary>
         /// <param name="dtStart">The dt start.</param>
         /// <returns></returns>
-        public static List<DateTime> GetTimeline( DateTime dtStart ) => GetTimeline(dtStart, DateTime.Now, new TimeSpan(1, 0, 0, 0));
+        public static List<DateTime> GetTimeline(DateTime dtStart) => GetTimeline(dtStart, DateTime.Now, new TimeSpan(1, 0, 0, 0));
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -837,13 +837,13 @@ namespace DoofesZeug.Datasets
         /// </summary>
         /// <param name="iCount">The i count.</param>
         /// <returns></returns>
-        public static List<Person> GetPersons( uint iCount )
+        public static List<Person> GetPersons(uint iCount)
         {
-            List<Person> list = new((int) iCount);
+            List<Person> list = new((int)iCount);
 
             Random r = new();
 
-            for( int iCounter = 0 ; iCounter < iCount ; iCounter++ )
+            for (int iCounter = 0; iCounter < iCount; iCounter++)
             {
                 Person p = new();
 
@@ -860,27 +860,27 @@ namespace DoofesZeug.Datasets
                 p.HairColor = r.NextEnum<WellKnownHairColor>();
                 p.Religion = r.NextEnum<MajorReligion>();
 
-                if( p.Age >= 18 )
+                if (p.Age >= 18)
                 {
                     p.Profession = r.NextEnum<WellKnownProfession>();
                     p.DriverLicense = r.NextEnum<EuropeanDriverLicense>();
                 }
 
                 p.AverageHeight = r.Next(120, 210);
-                p.AverageWeight = (double) p.AverageHeight - 100 + r.Next(-5, +5);
+                p.AverageWeight = (double)p.AverageHeight - 100 + r.Next(-5, +5);
 
-                if( ( (double) p.AverageWeight > 50 && p.Age < 5 ) || ( (double) p.AverageWeight < 50 && p.Age > 40 ) )
+                if (((double)p.AverageWeight > 50 && p.Age < 5) || ((double)p.AverageWeight < 50 && p.Age > 40))
                 {
-                    p.DateOfDeath = r.NextDateTime((DateTime) p.DateOfBirth, DateTime.Now);
+                    p.DateOfDeath = r.NextDateTime((DateTime)p.DateOfBirth, DateTime.Now);
                 }
 
-                string firstname = ( (string) p.FirstName ).ToLower().ReplaceGermanUmlauts();
-                string lastname = ( (string) p.LastName ).ToLower().ReplaceGermanUmlauts();
+                string firstname = ((string)p.FirstName).ToLower().ReplaceGermanUmlauts();
+                string lastname = ((string)p.LastName).ToLower().ReplaceGermanUmlauts();
 
                 p.Phone = $"+{r.Next(10, 99)} {r.Next(10_000, 99_999)} {r.Next(100_000, 999_999)}";
-                p.EMailAddress = $"{ firstname}.{lastname}@{r.NextObject(DOMAINS)}";
+                p.EMailAddress = $"{firstname}.{lastname}@{r.NextObject(DOMAINS)}";
 
-                if( r.NextBool() )
+                if (r.NextBool())
                 {
                     p.Homepage = $"https://free.wordpress.it/{lastname}/{firstname}";
                 }

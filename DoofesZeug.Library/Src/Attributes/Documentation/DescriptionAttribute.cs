@@ -22,7 +22,7 @@ namespace DoofesZeug.Attributes.Documentation
         /// Initializes a new instance of the <see cref="DescriptionAttribute"/> class.
         /// </summary>
         /// <param name="strDescription">The string description.</param>
-        public DescriptionAttribute( string strDescription ) => this.Description = strDescription;
+        public DescriptionAttribute(string strDescription) => this.Description = strDescription;
 
 
         /// <summary>
@@ -36,24 +36,24 @@ namespace DoofesZeug.Attributes.Documentation
         /// or
         /// The description from {instance.FullName} ends not with an point!
         /// </exception>
-        public void Validate( Type instance )
+        public void Validate(Type instance)
         {
-            if( this.Description.IsEmpty() )
+            if (this.Description.IsEmpty())
             {
                 throw new Exception($"The description from {instance.FullName} is empty!");
             }
 
-            if( this.Description.Length < 5 )
+            if (this.Description.Length < 5)
             {
                 throw new Exception($"The description from {instance.FullName} is to short!");
             }
 
-            if( this.Description.EndsWith(".") == false )
+            if (this.Description.EndsWith(".") == false)
             {
                 throw new Exception($"The description from {instance.FullName} ends not with an point!");
             }
 
-            if(this.Description.Contains("https://") )
+            if (this.Description.Contains("https://"))
             {
                 throw new Exception($"The description from {instance.FullName} containts an link to a webpage. Please use the LinkAttribute!!");
             }

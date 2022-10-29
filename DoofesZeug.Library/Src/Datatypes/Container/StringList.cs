@@ -18,7 +18,7 @@ namespace DoofesZeug.Datatypes.Container
         /// Initializes a new instance of the <see cref="StringList"/> class.
         /// </summary>
         /// <param name="iSize">Size of the i.</param>
-        public StringList( int iSize )
+        public StringList(int iSize)
             : base(iSize)
         {
         }
@@ -27,7 +27,7 @@ namespace DoofesZeug.Datatypes.Container
         /// Initializes a new instance of the <see cref="StringList"/> class.
         /// </summary>
         /// <param name="strArray">The string array.</param>
-        public StringList( string [] strArray )
+        public StringList(string[] strArray)
             : base(strArray)
         {
         }
@@ -36,7 +36,7 @@ namespace DoofesZeug.Datatypes.Container
         /// Initializes a new instance of the <see cref="StringList"/> class.
         /// </summary>
         /// <param name="collection">Die Auflistung, deren Elemente in die neue Liste kopiert werden.</param>
-        public StringList( IEnumerable<string> collection )
+        public StringList(IEnumerable<string> collection)
             : base(collection)
         {
         }
@@ -51,7 +51,7 @@ namespace DoofesZeug.Datatypes.Container
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        public static implicit operator string []( StringList sl ) => sl.ToArray();
+        public static implicit operator string[](StringList sl) => sl.ToArray();
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -62,7 +62,7 @@ namespace DoofesZeug.Datatypes.Container
         /// <typeparam name="T"></typeparam>
         /// <param name="list">The list.</param>
         /// <returns></returns>
-        public static StringList From<T>( IEnumerable<T> list ) => new(list.Select(item => item?.ToString()));
+        public static StringList From<T>(IEnumerable<T> list) => new(list.Select(item => item?.ToString()));
 
 
         /// <summary>
@@ -70,6 +70,6 @@ namespace DoofesZeug.Datatypes.Container
         /// </summary>
         /// <param name="values">The values.</param>
         /// <returns></returns>
-        public static StringList From( params string [] values ) => new (values);
+        public static StringList From(params string[] values) => new(values);
     }
 }

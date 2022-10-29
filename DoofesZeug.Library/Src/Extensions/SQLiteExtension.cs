@@ -13,7 +13,7 @@ namespace DoofesZeug.Extensions
         /// Analyzes the specified database connection.
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
-        public static void Analyze( this SQLiteConnection dbConnection )
+        public static void Analyze(this SQLiteConnection dbConnection)
         {
             using SQLiteCommand dbCommand = new("ANALYZE", dbConnection);
 
@@ -25,7 +25,7 @@ namespace DoofesZeug.Extensions
         /// Reindexes the specified database connection.
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
-        public static void Reindex( this SQLiteConnection dbConnection )
+        public static void Reindex(this SQLiteConnection dbConnection)
         {
             using SQLiteCommand dbCommand = new("REINDEX", dbConnection);
 
@@ -37,7 +37,7 @@ namespace DoofesZeug.Extensions
         /// Vacuums the specified database connection.
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
-        public static void Vacuum( this SQLiteConnection dbConnection )
+        public static void Vacuum(this SQLiteConnection dbConnection)
         {
             using SQLiteCommand dbCommand = new("VACUUM", dbConnection);
 
@@ -52,7 +52,7 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
         /// <param name="strTablename">The string tablename.</param>
-        public static void DropTable( this SQLiteConnection dbConnection, string strTablename ) => dbConnection.ExecuteNonQuery("DROP TABLE {0}", strTablename);
+        public static void DropTable(this SQLiteConnection dbConnection, string strTablename) => dbConnection.ExecuteNonQuery("DROP TABLE {0}", strTablename);
 
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace DoofesZeug.Extensions
         /// <param name="dbConnection">The db connection.</param>
         /// <param name="strTablename">The STR tablename.</param>
         /// <returns></returns>
-        public static bool TableExists( this SQLiteConnection dbConnection, string strTablename ) => 1 == (long) dbConnection.ExecuteScalar("SELECT COUNT(1) FROM SQLITE_MASTER WHERE TYPE = 'table' AND LOWER(NAME) = '{0}'", strTablename.ToLower());
+        public static bool TableExists(this SQLiteConnection dbConnection, string strTablename) => 1 == (long)dbConnection.ExecuteScalar("SELECT COUNT(1) FROM SQLITE_MASTER WHERE TYPE = 'table' AND LOWER(NAME) = '{0}'", strTablename.ToLower());
 
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
         /// <returns></returns>
-        public static List<string> GetTableNames( this SQLiteConnection dbConnection ) => dbConnection.Select("SELECT NAME FROM SQLITE_MASTER WHERE TYPE='table' AND NAME NOT LIKE 'sqlite_%'").Select(dbResult => dbResult.GetString(0)).ToList();
+        public static List<string> GetTableNames(this SQLiteConnection dbConnection) => dbConnection.Select("SELECT NAME FROM SQLITE_MASTER WHERE TYPE='table' AND NAME NOT LIKE 'sqlite_%'").Select(dbResult => dbResult.GetString(0)).ToList();
 
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
         /// <returns></returns>
-        public static List<string> GetViewNames( this SQLiteConnection dbConnection ) => dbConnection.Select("SELECT NAME FROM SQLITE_MASTER WHERE TYPE='view' AND NAME NOT LIKE 'sqlite_%'").Select(dbResult => dbResult.GetString(0)).ToList();
+        public static List<string> GetViewNames(this SQLiteConnection dbConnection) => dbConnection.Select("SELECT NAME FROM SQLITE_MASTER WHERE TYPE='view' AND NAME NOT LIKE 'sqlite_%'").Select(dbResult => dbResult.GetString(0)).ToList();
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -87,7 +87,7 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
         /// <param name="strTablename">The string tablename.</param>
-        public static void Truncate( this SQLiteConnection dbConnection, string strTablename )
+        public static void Truncate(this SQLiteConnection dbConnection, string strTablename)
         {
             using SQLiteTransaction transaction = dbConnection.BeginTransaction();
 
@@ -107,11 +107,11 @@ namespace DoofesZeug.Extensions
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
         /// <returns></returns>
-        public static long GetLastPrimarykey( this SQLiteConnection dbConnection )
+        public static long GetLastPrimarykey(this SQLiteConnection dbConnection)
         {
             using SQLiteCommand dbCommand = new("SELECT LAST_INSERT_ROWID()", dbConnection);
 
-            return (long) dbCommand.ExecuteScalar();
+            return (long)dbCommand.ExecuteScalar();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -123,11 +123,11 @@ namespace DoofesZeug.Extensions
         /// <param name="dbConnection">The database connection.</param>
         /// <param name="strTablename">The string tablename.</param>
         /// <returns></returns>
-        public static DataTable GetColumnsAsDataTable( this SQLiteConnection dbConnection, string strTablename )
+        public static DataTable GetColumnsAsDataTable(this SQLiteConnection dbConnection, string strTablename)
         {
             DataTable dt = new(strTablename);
 
-            dt.Columns.AddRange(new []
+            dt.Columns.AddRange(new[]
             {
                 new DataColumn { ColumnName = "ColumnName" , DataType = typeof(string) },
                 new DataColumn { ColumnName = "DataType" , DataType = typeof(string) },
@@ -136,14 +136,14 @@ namespace DoofesZeug.Extensions
             });
 
 #pragma warning disable CA2100 // Review SQL queries for security vulnerabilities
-            using( SQLiteCommand dbSelectColumns = new($"PRAGMA TABLE_INFO({strTablename})", dbConnection) )
+            using (SQLiteCommand dbSelectColumns = new($"PRAGMA TABLE_INFO({strTablename})", dbConnection))
 #pragma warning restore CA2100 // Review SQL queries for security vulnerabilities
             {
                 using SQLiteDataReader dbResult = dbSelectColumns.ExecuteReader();
 
-                while( dbResult.Read() )
+                while (dbResult.Read())
                 {
-                    dt.Rows.Add((string) dbResult [1], (string) dbResult [2], ( (long) dbResult [3] ) > 0, ( (long) dbResult [5] ) > 0);
+                    dt.Rows.Add((string)dbResult[1], (string)dbResult[2], ((long)dbResult[3]) > 0, ((long)dbResult[5]) > 0);
                 }
 
                 dbResult.Close();
@@ -159,20 +159,20 @@ namespace DoofesZeug.Extensions
         /// <param name="dbConnection">The database connection.</param>
         /// <param name="strTablename">The string tablename.</param>
         /// <returns></returns>
-        public static Dictionary<string, string> GetSimplifiedColumns( this SQLiteConnection dbConnection, string strTablename )
+        public static Dictionary<string, string> GetSimplifiedColumns(this SQLiteConnection dbConnection, string strTablename)
         {
             // Only use an Dictionary to prefent resorting the columns by name.
             Dictionary<string, string> sdColumns = new();
 
 #pragma warning disable CA2100 // Review SQL queries for security vulnerabilities
-            using( SQLiteCommand dbSelectColumns = new($"PRAGMA TABLE_INFO({strTablename})", dbConnection) )
+            using (SQLiteCommand dbSelectColumns = new($"PRAGMA TABLE_INFO({strTablename})", dbConnection))
 #pragma warning restore CA2100 // Review SQL queries for security vulnerabilities
             {
                 using SQLiteDataReader dbResult = dbSelectColumns.ExecuteReader();
 
-                while( dbResult.Read() )
+                while (dbResult.Read())
                 {
-                    sdColumns.Add((string) dbResult [1], (string) dbResult [2]);
+                    sdColumns.Add((string)dbResult[1], (string)dbResult[2]);
                 }
 
                 dbResult.Close();
@@ -188,21 +188,21 @@ namespace DoofesZeug.Extensions
         /// <param name="dbConnection">The database connection.</param>
         /// <param name="strTablename">The string tablename.</param>
         /// <returns></returns>
-        public static string GetPrimaryKeyColumnName( this SQLiteConnection dbConnection, string strTablename )
+        public static string GetPrimaryKeyColumnName(this SQLiteConnection dbConnection, string strTablename)
         {
             string strPrimaryKeyColumnName = null;
 
 #pragma warning disable CA2100 // Review SQL queries for security vulnerabilities
-            using( SQLiteCommand dbSelectColumns = new($"PRAGMA TABLE_INFO({strTablename})", dbConnection) )
+            using (SQLiteCommand dbSelectColumns = new($"PRAGMA TABLE_INFO({strTablename})", dbConnection))
 #pragma warning restore CA2100 // Review SQL queries for security vulnerabilities
             {
                 using SQLiteDataReader dbResult = dbSelectColumns.ExecuteReader();
 
-                while( dbResult.Read() )
+                while (dbResult.Read())
                 {
-                    if( ( (long) dbResult [5] ) > 0 )
+                    if (((long)dbResult[5]) > 0)
                     {
-                        strPrimaryKeyColumnName = (string) dbResult [1];
+                        strPrimaryKeyColumnName = (string)dbResult[1];
                         break;
                     }
                 }

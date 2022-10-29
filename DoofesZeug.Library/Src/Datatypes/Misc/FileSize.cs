@@ -27,7 +27,7 @@ namespace DoofesZeug.Datatypes.Misc
         /// Initializes a new instance of the <see cref="FileSize" /> class.
         /// </summary>
         /// <param name="lValue">The l value.</param>
-        public FileSize( long lValue ) => this.Value = lValue;
+        public FileSize(long lValue) => this.Value = lValue;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ namespace DoofesZeug.Datatypes.Misc
         /// <returns>
         /// The result of the operator.
         /// </returns>
-        public static bool operator >( FileSize x, FileSize y ) => x.Value > y.Value;
+        public static bool operator >(FileSize x, FileSize y) => x.Value > y.Value;
 
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace DoofesZeug.Datatypes.Misc
         /// <returns>
         /// The result of the operator.
         /// </returns>
-        public static bool operator <( FileSize x, FileSize y ) => x.Value < y.Value;
+        public static bool operator <(FileSize x, FileSize y) => x.Value < y.Value;
 
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace DoofesZeug.Datatypes.Misc
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        public static implicit operator FileSize( long lValue ) => new(lValue);
+        public static implicit operator FileSize(long lValue) => new(lValue);
 
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace DoofesZeug.Datatypes.Misc
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        public static implicit operator long( FileSize x ) => x.Value;
+        public static implicit operator long(FileSize x) => x.Value;
 
 
         /// <summary>

@@ -22,7 +22,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType == DATEOFDEATH;
+        public override bool CanConvert(Type objectType) => objectType == DATEOFDEATH;
 
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// The object value.
         /// </returns>
-        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer ) => reader.Value == null ? null : new DateOfDeath(Date.From(Convert.ToString(reader.Value)));
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer) => reader.Value == null ? null : new DateOfDeath(Date.From(Convert.ToString(reader.Value)));
 
 
         /// <summary>
@@ -44,9 +44,9 @@ namespace DoofesZeug.Converter
         /// <param name="writer">The <see cref="T:Newtonsoft.Json.JsonWriter" /> to write to.</param>
         /// <param name="value">The value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson( JsonWriter writer, object value, JsonSerializer serializer )
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            if( value == null )
+            if (value == null)
             {
                 writer.WriteNull();
                 return;

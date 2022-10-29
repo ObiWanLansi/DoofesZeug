@@ -30,7 +30,7 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// <c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanConvert( Type objectType ) => objectType == LATITUDE || objectType == LONGITUDE || objectType == ALTITUDE;
+        public override bool CanConvert(Type objectType) => objectType == LATITUDE || objectType == LONGITUDE || objectType == ALTITUDE;
 
 
         /// <summary>
@@ -43,19 +43,19 @@ namespace DoofesZeug.Converter
         /// <returns>
         /// The object value.
         /// </returns>
-        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer )
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            if( objectType == LATITUDE )
+            if (objectType == LATITUDE)
             {
                 return new Latitude(Convert.ToDouble(reader.Value));
             }
 
-            if( objectType == LONGITUDE )
+            if (objectType == LONGITUDE)
             {
                 return new Longitude(Convert.ToDouble(reader.Value));
             }
 
-            if( objectType == ALTITUDE )
+            if (objectType == ALTITUDE)
             {
                 return new Altitude(Convert.ToUInt64(reader.Value));
             }
@@ -70,29 +70,29 @@ namespace DoofesZeug.Converter
         /// <param name="writer">The <see cref="T:Newtonsoft.Json.JsonWriter" /> to write to.</param>
         /// <param name="value">The value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson( JsonWriter writer, object value, JsonSerializer serializer )
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            if( value == null )
+            if (value == null)
             {
                 writer.WriteNull();
                 return;
             }
 
-            if( value is Latitude lat )
+            if (value is Latitude lat)
             {
-                writer.WriteValue((double) lat);
+                writer.WriteValue((double)lat);
                 return;
             }
 
-            if( value is Longitude lon )
+            if (value is Longitude lon)
             {
-                writer.WriteValue((double) lon);
+                writer.WriteValue((double)lon);
                 return;
             }
 
-            if( value is Altitude alt )
+            if (value is Altitude alt)
             {
-                writer.WriteValue((ulong) alt);
+                writer.WriteValue((ulong)alt);
                 return;
             }
 
