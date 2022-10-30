@@ -36,7 +36,7 @@ namespace DoofesZeug.Tools.Misc
         /// Gets the embedded resourcen names.
         /// </summary>
         /// <returns></returns>
-        public static string [] GetEmbeddedResourcenNames() => a.GetManifestResourceNames();
+        public static string[] GetEmbeddedResourcenNames() => a.GetManifestResourceNames();
 
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace DoofesZeug.Tools.Misc
         /// <returns>
         ///   <c>true</c> if [contains] [the specified string resource name]; otherwise, <c>false</c>.
         /// </returns>
-        public static bool Contains( string strResourceName ) => a.GetManifestResourceNames().Any(strName => strName.EqualsIgnoreCase(strResourceName) == true);
+        public static bool Contains(string strResourceName) => a.GetManifestResourceNames().Any(strName => strName.EqualsIgnoreCase(strResourceName) == true);
 
 
         /// <summary>
@@ -54,16 +54,16 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <param name="strResourceName">Name of the string resource.</param>
         /// <returns></returns>
-        public static byte [] ReadResourceAsByteArray( string strResourceName )
+        public static byte[] ReadResourceAsByteArray(string strResourceName)
         {
             using Stream s = a.GetManifestResourceStream(strResourceName);
 
-            if( s == null )
+            if (s == null)
             {
                 return null;
             }
 
-            byte [] bBuffer = new byte [s.Length];
+            byte[] bBuffer = new byte[s.Length];
 
             return s.Read(bBuffer, 0, bBuffer.Length) != bBuffer.Length ? null : bBuffer;
         }
@@ -74,7 +74,7 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <param name="strResourceName">Name of the string resource.</param>
         /// <returns></returns>
-        public static XDocument ReadResourceAsXDocument( string strResourceName )
+        public static XDocument ReadResourceAsXDocument(string strResourceName)
         {
             using Stream s = a.GetManifestResourceStream(strResourceName);
             return s == null ? null : XDocument.Load(new XmlTextReader(s));
@@ -86,27 +86,27 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <param name="strResourceName">Name of the string resource.</param>
         /// <returns></returns>
-        public static string ReadResourceAsString( string strResourceName )
+        public static string ReadResourceAsString(string strResourceName)
         {
             using Stream s = a.GetManifestResourceStream(strResourceName);
 
-            if( s == null )
+            if (s == null)
             {
                 return null;
             }
 
-            byte [] bBuffer = new byte [s.Length];
+            byte[] bBuffer = new byte[s.Length];
 
-            if( s.Read(bBuffer, 0, bBuffer.Length) != bBuffer.Length )
+            if (s.Read(bBuffer, 0, bBuffer.Length) != bBuffer.Length)
             {
                 return null;
             }
 
             StringBuilder sb = new(bBuffer.Length);
 
-            foreach( byte t in bBuffer )
+            foreach (byte t in bBuffer)
             {
-                sb.Append((char) t);
+                sb.Append((char)t);
             }
 
             return sb.ToString();

@@ -10,15 +10,15 @@ namespace DoofesZeug.Tools.Io
         public bool Ascending { set; get; } = true;
 
 
-        public int Compare( FileSystemInfo x, FileSystemInfo y )
+        public int Compare(FileSystemInfo x, FileSystemInfo y)
         {
 
-            if( x is DirectoryInfo && y is FileInfo )
+            if (x is DirectoryInfo && y is FileInfo)
             {
                 return -1;
             }
 
-            if( x is FileInfo && y is DirectoryInfo )
+            if (x is FileInfo && y is DirectoryInfo)
             {
                 return 1;
             }

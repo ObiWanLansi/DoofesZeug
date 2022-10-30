@@ -25,12 +25,12 @@ namespace DoofesZeug.Tools.Misc
         /// <summary>
         /// The ratio 4:3.
         /// </summary>
-        public const double R4_3 = 4 / (double) 3;
+        public const double R4_3 = 4 / (double)3;
 
         /// <summary>
         /// The ratio 16:9.
         /// </summary>
-        public const double R16_9 = 16 / (double) 9;
+        public const double R16_9 = 16 / (double)9;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -43,26 +43,26 @@ namespace DoofesZeug.Tools.Misc
         ///   <c>true</c> if the specified i value is prime; otherwise, <c>false</c>.
         /// </returns>
         /// <exception cref="ArgumentException">The parameter is less zero.</exception>
-        public static bool IsPrime( ulong iValue )
+        public static bool IsPrime(ulong iValue)
         {
-            if( iValue < 0 )
+            if (iValue < 0)
             {
                 throw new ArgumentException("The parameter is less zero.");
             }
 
-            if( iValue == 0 || iValue == 1 )
+            if (iValue == 0 || iValue == 1)
             {
                 return false;
             }
 
-            if( iValue % 2 == 0 )
+            if (iValue % 2 == 0)
             {
                 return false;
             }
 
-            for( ulong iCounter = 3 ; iCounter < Math.Sqrt(iValue) + 1 ; iCounter++ )
+            for (ulong iCounter = 3; iCounter < Math.Sqrt(iValue) + 1; iCounter++)
             {
-                if( iValue % iCounter == 0 )
+                if (iValue % iCounter == 0)
                 {
                     return false;
                 }
@@ -77,13 +77,13 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <param name="numbercount">The i number count.</param>
         /// <returns></returns>
-        public static UnsignedLongList GetPrimeNumbers( uint numbercount )
+        public static UnsignedLongList GetPrimeNumbers(uint numbercount)
         {
-            UnsignedLongList lValues = new((int) numbercount);
+            UnsignedLongList lValues = new((int)numbercount);
 
-            for( uint iCounter = 0 ; iCounter < numbercount ; iCounter++ )
+            for (uint iCounter = 0; iCounter < numbercount; iCounter++)
             {
-                if( MathEx.IsPrime(iCounter) )
+                if (MathEx.IsPrime(iCounter))
                 {
                     lValues.Add(iCounter);
                 }
@@ -100,14 +100,14 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <param name="iCount">The count of iterations.</param>
         /// <returns></returns>
-        public static UnsignedLongList GetFibonacciList( uint iCount )
+        public static UnsignedLongList GetFibonacciList(uint iCount)
         {
-            if( iCount == 0 )
+            if (iCount == 0)
             {
                 return new();
             }
 
-            if( iCount == 1 )
+            if (iCount == 1)
             {
                 return UnsignedLongList.From(0, 1);
             }
@@ -115,23 +115,23 @@ namespace DoofesZeug.Tools.Misc
             //-----------------------------------------------------------------
 
             // If we have more than 93 iterations ulong is not big enough !
-            if( iCount > 93 )
+            if (iCount > 93)
             {
                 throw new ArgumentOutOfRangeException(nameof(iCount), "To much counts!");
             }
 
             //-----------------------------------------------------------------
 
-            ulong [] values = new ulong [iCount + 1];
+            ulong[] values = new ulong[iCount + 1];
 
-            values [0] = 0;
-            values [1] = 1;
+            values[0] = 0;
+            values[1] = 1;
 
-            if( iCount > 1 )
+            if (iCount > 1)
             {
-                for( int iCounter = 2 ; iCounter < iCount + 1 ; iCounter++ )
+                for (int iCounter = 2; iCounter < iCount + 1; iCounter++)
                 {
-                    values [iCounter] = values [iCounter - 1] + values [iCounter - 2];
+                    values[iCounter] = values[iCounter - 1] + values[iCounter - 2];
                 }
             }
 
@@ -149,13 +149,13 @@ namespace DoofesZeug.Tools.Misc
         /// <param name="iMinValue">The i minimum value.</param>
         /// <param name="iMaxValue">The i maximum value.</param>
         /// <returns></returns>
-        public static IntegerList GetRandomNumberList( int iNumberCount, int iMinValue, int iMaxValue )
+        public static IntegerList GetRandomNumberList(int iNumberCount, int iMinValue, int iMaxValue)
         {
             Random r = new();
 
             IntegerList lValues = new(iNumberCount);
 
-            for( int iCounter = 0 ; iCounter < iNumberCount ; iCounter++ )
+            for (int iCounter = 0; iCounter < iNumberCount; iCounter++)
             {
                 // Bei uns ist der MaxValue inklusive ...
                 lValues.Add(r.Next(iMinValue, iMaxValue + 1));
@@ -172,11 +172,11 @@ namespace DoofesZeug.Tools.Misc
         /// <param name="stop">The stop.</param>
         /// <param name="step">The step.</param>
         /// <returns></returns>
-        public static List<float> GetNumberList( float start, float stop, float step = 1 )
+        public static List<float> GetNumberList(float start, float stop, float step = 1)
         {
-            List<float> lValues = new((int) ( stop - start ));
+            List<float> lValues = new((int)(stop - start));
 
-            for( float fCounter = start ; fCounter <= stop ; fCounter += step )
+            for (float fCounter = start; fCounter <= stop; fCounter += step)
             {
                 lValues.Add(fCounter);
             }
@@ -192,11 +192,11 @@ namespace DoofesZeug.Tools.Misc
         /// <param name="stop">The stop.</param>
         /// <param name="step">The step.</param>
         /// <returns></returns>
-        public static List<double> GetNumberList( double start, double stop, double step = 1 )
+        public static List<double> GetNumberList(double start, double stop, double step = 1)
         {
-            List<double> lValues = new((int) ( stop - start ));
+            List<double> lValues = new((int)(stop - start));
 
-            for( double fCounter = start ; fCounter <= stop ; fCounter += step )
+            for (double fCounter = start; fCounter <= stop; fCounter += step)
             {
                 lValues.Add(fCounter);
             }
@@ -212,11 +212,11 @@ namespace DoofesZeug.Tools.Misc
         /// <param name="stop">The i stop.</param>
         /// <param name="step">The step.</param>
         /// <returns></returns>
-        public static IntegerList GetNumberList( int start, int stop, int step = 1 )
+        public static IntegerList GetNumberList(int start, int stop, int step = 1)
         {
             IntegerList lValues = new(stop - start);
 
-            for( int iCounter = start ; iCounter <= stop ; iCounter += step )
+            for (int iCounter = start; iCounter <= stop; iCounter += step)
             {
                 lValues.Add(iCounter);
             }
@@ -230,11 +230,11 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <param name="iNumberCount">The i number count.</param>
         /// <returns></returns>
-        public static IntegerList GetNumberList( int iNumberCount )
+        public static IntegerList GetNumberList(int iNumberCount)
         {
             IntegerList lValues = new(iNumberCount);
 
-            for( int iCounter = 0 ; iCounter < iNumberCount ; iCounter++ )
+            for (int iCounter = 0; iCounter < iNumberCount; iCounter++)
             {
                 lValues.Add(iCounter);
             }

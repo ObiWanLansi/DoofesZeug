@@ -14,7 +14,12 @@ namespace DoofesZeug.Tools.Misc
 {
     public static class DataTypeHelper
     {
-        public static TextAlign GetTextAligment( Type type ) => TYPETEXTALIGN.ContainsKey(type) ? TYPETEXTALIGN [type] : TextAlign.Left;
+        /// <summary>
+        /// Gets the text aligment.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns></returns>
+        public static TextAlign GetTextAligment(Type type) => TYPETEXTALIGN.ContainsKey(type) ? TYPETEXTALIGN[type] : TextAlign.Left;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

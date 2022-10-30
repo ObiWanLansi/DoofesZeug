@@ -65,21 +65,21 @@ namespace DoofesZeug.Tools.Misc
         /// <param name="strContent">Content of the string.</param>
         /// <param name="cLetterSplitter">The c letter splitter.</param>
         /// <returns></returns>
-        public static string GetMorse( string strContent, char cLetterSplitter = ' ' )
+        public static string GetMorse(string strContent, char cLetterSplitter = ' ')
         {
             StringBuilder sb = new(8192);
 
             strContent = strContent.ToLower();
 
-            foreach( char c in strContent )
+            foreach (char c in strContent)
             {
                 string strSpell = MORSE.ContainsKey(c) == true
-                    ? MORSE [c]
+                    ? MORSE[c]
                     : c switch
                     {
-                        'ä' => MORSE ['a'] + " " + MORSE ['e'],
-                        'ö' => MORSE ['o'] + " " + MORSE ['e'],
-                        'ü' => MORSE ['u'] + " " + MORSE ['e'],
+                        'ä' => MORSE['a'] + " " + MORSE['e'],
+                        'ö' => MORSE['o'] + " " + MORSE['e'],
+                        'ü' => MORSE['u'] + " " + MORSE['e'],
                         _ => $">{c}<",
                     };
                 sb.Append($"{strSpell}{cLetterSplitter}");
@@ -95,33 +95,33 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
         /// <returns></returns>
-        public static IEnumerable<string> EnumerateMorse( string strContent )
+        public static IEnumerable<string> EnumerateMorse(string strContent)
         {
             strContent = strContent.ToLower();
 
-            foreach( char c in strContent )
+            foreach (char c in strContent)
             {
-                if( MORSE.ContainsKey(c) == true )
+                if (MORSE.ContainsKey(c) == true)
                 {
-                    yield return MORSE [c];
+                    yield return MORSE[c];
                 }
                 else
                 {
-                    switch( c )
+                    switch (c)
                     {
                         case 'ä':
-                            yield return MORSE ['a'];
-                            yield return MORSE ['e'];
+                            yield return MORSE['a'];
+                            yield return MORSE['e'];
                             break;
 
                         case 'ö':
-                            yield return MORSE ['o'];
-                            yield return MORSE ['e'];
+                            yield return MORSE['o'];
+                            yield return MORSE['e'];
                             break;
 
                         case 'ü':
-                            yield return MORSE ['u'];
-                            yield return MORSE ['e'];
+                            yield return MORSE['u'];
+                            yield return MORSE['e'];
                             break;
 
                         default:

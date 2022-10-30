@@ -81,7 +81,7 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <param name="json">The json.</param>
         /// <returns></returns>
-        public static Dictionary<string, ColorBrewer> FromJson( string json ) => JsonConvert.DeserializeObject<Dictionary<string, ColorBrewer>>(json, Converter.Settings);
+        public static Dictionary<string, ColorBrewer> FromJson(string json) => JsonConvert.DeserializeObject<Dictionary<string, ColorBrewer>>(json, Converter.Settings);
 
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace DoofesZeug.Tools.Misc
         {
             get
             {
-                if( instance == null )
+                if (instance == null)
                 {
                     instance = LoadColorBrewerCatalog();
                 }
@@ -121,7 +121,7 @@ namespace DoofesZeug.Tools.Misc
         private static ColorBrewerCatalog LoadColorBrewerCatalog()
         {
             ColorBrewerCatalog cbc = new();
-            ColorBrewer.LoadFromResource().ForEach(( scheme, brewer ) => cbc.Add((ColorBrewerScheme) Enum.Parse(typeof(ColorBrewerScheme), scheme), brewer));
+            ColorBrewer.LoadFromResource().ForEach((scheme, brewer) => cbc.Add((ColorBrewerScheme)Enum.Parse(typeof(ColorBrewerScheme), scheme), brewer));
             return cbc;
         }
     }
@@ -146,11 +146,11 @@ namespace DoofesZeug.Tools.Misc
 
     internal class TypeEnumConverter : JsonConverter
     {
-        public override bool CanConvert( Type t ) => t == typeof(TypeEnum) || t == typeof(TypeEnum?);
+        public override bool CanConvert(Type t) => t == typeof(TypeEnum) || t == typeof(TypeEnum?);
 
-        public override object ReadJson( JsonReader reader, Type t, object existingValue, JsonSerializer serializer )
+        public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
         {
-            if( reader.TokenType == JsonToken.Null )
+            if (reader.TokenType == JsonToken.Null)
             {
                 return null;
             }
@@ -166,7 +166,7 @@ namespace DoofesZeug.Tools.Misc
             };
         }
 
-        public override void WriteJson( JsonWriter writer, object untypedValue, JsonSerializer serializer ) => throw new NotImplementedException();
+        public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer) => throw new NotImplementedException();
 
         public static readonly TypeEnumConverter Singleton = new();
     }

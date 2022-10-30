@@ -22,7 +22,7 @@ namespace DoofesZeug.Tools.Misc
         /// <summary>
         /// The lorem ipsum words
         /// </summary>
-        private static readonly string [] LOREM_IPSUM_WORDS = {
+        private static readonly string[] LOREM_IPSUM_WORDS = {
             "lorem","ipsum","dolor","sit","amet",
             "consectetuer","adipiscing","elit","donec","id",
             "eros","quisque","nisl","lacinia","cursus",
@@ -71,19 +71,19 @@ namespace DoofesZeug.Tools.Misc
         /// <param name="wordsperline">The wordsperline.</param>
         /// <param name="lineending">The lineending.</param>
         /// <returns></returns>
-        public static string GetLoremIpsum( uint lines = 20, uint wordsperline = 20, string lineending = null )
+        public static string GetLoremIpsum(uint lines = 20, uint wordsperline = 20, string lineending = null)
         {
-            if( wordsperline < 10 )
+            if (wordsperline < 10)
             {
                 wordsperline = 10;
             }
 
-            if( lines == 0 )
+            if (lines == 0)
             {
                 lines = 5;
             }
 
-            if( lineending.IsEmpty() == true )
+            if (lineending.IsEmpty() == true)
             {
                 lineending = "\r\n";
             }
@@ -102,19 +102,19 @@ namespace DoofesZeug.Tools.Misc
 
             sb.Append(LI_START);
 
-            while( iLineCounter++ < lines )
+            while (iLineCounter++ < lines)
             {
-                while( iLineWordCounter++ < wordsperline )
+                while (iLineWordCounter++ < wordsperline)
                 {
-                    string strWord = LOREM_IPSUM_WORDS [rand.Next(length)];
+                    string strWord = LOREM_IPSUM_WORDS[rand.Next(length)];
 
-                    if( bSentenceStart == true )
+                    if (bSentenceStart == true)
                     {
                         strWord = strWord.CapitalizeOnlyFirstLetter();
                         bSentenceStart = false;
                     }
 
-                    if( bNewLine == true )
+                    if (bNewLine == true)
                     {
                         sb.Append(strWord);
                         bNewLine = false;
@@ -127,7 +127,7 @@ namespace DoofesZeug.Tools.Misc
 
                     iSentenceWordCounter++;
 
-                    if( iSentenceWordCounter > iPointRand )
+                    if (iSentenceWordCounter > iPointRand)
                     {
                         sb.Append('.');
 
@@ -141,7 +141,7 @@ namespace DoofesZeug.Tools.Misc
 
                 iLineWordCounter = 0;
 
-                if( iLineCounter < lines )
+                if (iLineCounter < lines)
                 {
                     sb.Append(lineending);
                     bNewLine = true;

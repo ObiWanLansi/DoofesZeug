@@ -24,16 +24,16 @@ namespace DoofesZeug.Tools.Misc
         /// Just wait for a specified key.
         /// </summary>
         /// <param name="ck">The ck.</param>
-        public static void Getch( ConsoleKey ck )
+        public static void Getch(ConsoleKey ck)
         {
             do
             {
-                while( Console.KeyAvailable == false )
+                while (Console.KeyAvailable == false)
                 {
                     Thread.Sleep(50);
                 }
             }
-            while( Console.ReadKey(true).Key != ck );
+            while (Console.ReadKey(true).Key != ck);
         }
 
 
@@ -41,9 +41,9 @@ namespace DoofesZeug.Tools.Misc
         /// Display an optional text and wait for any key.
         /// </summary>
         /// <param name="strMessage">The Message to display, can be null.</param>
-        public static void Getch( string strMessage )
+        public static void Getch(string strMessage)
         {
-            if( strMessage.IsNotEmpty() )
+            if (strMessage.IsNotEmpty())
             {
                 Console.Out.WriteLineAsync(strMessage);
             }
@@ -57,9 +57,9 @@ namespace DoofesZeug.Tools.Misc
         /// </summary>
         /// <param name="ck">The ck.</param>
         /// <param name="strMessage">The string message.</param>
-        public static void Getch( ConsoleKey ck, string strMessage )
+        public static void Getch(ConsoleKey ck, string strMessage)
         {
-            if( strMessage.IsNotEmpty() )
+            if (strMessage.IsNotEmpty())
             {
                 Console.Out.WriteLineAsync(strMessage);
             }
@@ -86,7 +86,7 @@ namespace DoofesZeug.Tools.Misc
             public char Right;
 
 
-            public BorderChar( char left, char middle, char right )
+            public BorderChar(char left, char middle, char right)
             {
                 this.Left = left;
                 this.Middle = middle;
@@ -105,30 +105,39 @@ namespace DoofesZeug.Tools.Misc
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static void BorderLine( Dictionary<PropertyInfo, int> sdColumnsWidth, BorderLineStyle ls, ConsoleColor border )
+        private static void BorderLine(Dictionary<PropertyInfo, int> sdColumnsWidth, BorderLineStyle ls, ConsoleColor border)
         {
             Console.ForegroundColor = border;
-            Console.Out.Write(BORDER_CHARS [ls].Left);
+            Console.Out.Write(BORDER_CHARS[ls].Left);
 
             int counter = 0;
 
-            foreach( PropertyInfo pi in sdColumnsWidth.Keys )
+            foreach (PropertyInfo pi in sdColumnsWidth.Keys)
             {
-                if( counter++ > 0 )
+                if (counter++ > 0)
                 {
-                    Console.Out.Write(BORDER_CHARS [ls].Middle);
+                    Console.Out.Write(BORDER_CHARS[ls].Middle);
                 }
 
-                Console.Out.Write(new string('─', sdColumnsWidth [pi] + 2));
+                Console.Out.Write(new string('─', sdColumnsWidth[pi] + 2));
             }
 
-            Console.Out.WriteLine(BORDER_CHARS [ls].Right);
+            Console.Out.WriteLine(BORDER_CHARS[ls].Right);
         }
 
 
-        public static void WriteTable<T>( List<T> lValues, ConsoleColor border = ConsoleColor.Cyan, ConsoleColor header = ConsoleColor.Magenta, ConsoleColor content = ConsoleColor.Yellow, Func<T, ConsoleColor> color_resolver = null )
+        /// <summary>
+        /// Writes the table.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="lValues">The l values.</param>
+        /// <param name="border">The border.</param>
+        /// <param name="header">The header.</param>
+        /// <param name="content">The content.</param>
+        /// <param name="color_resolver">The color resolver.</param>
+        public static void WriteTable<T>(List<T> lValues, ConsoleColor border = ConsoleColor.Cyan, ConsoleColor header = ConsoleColor.Magenta, ConsoleColor content = ConsoleColor.Yellow, Func<T, ConsoleColor> color_resolver = null)
         {
-            if( lValues == null || lValues.Count == 0 )
+            if (lValues == null || lValues.Count == 0)
             {
                 return;
             }
@@ -142,12 +151,12 @@ namespace DoofesZeug.Tools.Misc
             Dictionary<PropertyInfo, int> sdColumnsWidth = new();
             Dictionary<PropertyInfo, string> sdColumnsFormatter = new();
 
-            foreach( PropertyInfo pi in t.GetProperties(BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.Instance) )
+            foreach (PropertyInfo pi in t.GetProperties(BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.Instance))
             {
-                IEnumerable<int> widths = ( from object oItem in lValues where oItem != null select pi.GetValue(oItem, null) into oValue where oValue != null select oValue.ToString().Length );
+                IEnumerable<int> widths = (from object oItem in lValues where oItem != null select pi.GetValue(oItem, null) into oValue where oValue != null select oValue.ToString().Length);
                 int iMaxWidth = widths.Any() ? widths.Max() : 0;
 
-                if( pi.Name.Length > iMaxWidth )
+                if (pi.Name.Length > iMaxWidth)
                 {
                     iMaxWidth = pi.Name.Length;
                 }
@@ -167,10 +176,10 @@ namespace DoofesZeug.Tools.Misc
 
             Console.ForegroundColor = border;
             Console.Out.Write("│ ");
-            foreach( PropertyInfo pi in sdColumnsFormatter.Keys )
+            foreach (PropertyInfo pi in sdColumnsFormatter.Keys)
             {
                 Console.ForegroundColor = header;
-                Console.Out.Write(string.Format(sdColumnsFormatter [pi], pi.Name));
+                Console.Out.Write(string.Format(sdColumnsFormatter[pi], pi.Name));
 
                 Console.ForegroundColor = border;
                 Console.Out.Write(" │ ");
@@ -185,19 +194,19 @@ namespace DoofesZeug.Tools.Misc
 
             // Data
 
-            foreach( object o in lValues )
+            foreach (object o in lValues)
             {
-                if( o != null )
+                if (o != null)
                 {
                     Console.ForegroundColor = border;
                     Console.Out.Write("│ ");
 
-                    foreach( PropertyInfo pi in sdColumnsFormatter.Keys )
+                    foreach (PropertyInfo pi in sdColumnsFormatter.Keys)
                     {
                         object value = pi.GetValue(o, null);
 
-                        Console.ForegroundColor = color_resolver != null ? color_resolver((T) o) : content;
-                        Console.Out.Write(string.Format(sdColumnsFormatter [pi], value));
+                        Console.ForegroundColor = color_resolver != null ? color_resolver((T)o) : content;
+                        Console.Out.Write(string.Format(sdColumnsFormatter[pi], value));
 
                         Console.ForegroundColor = border;
                         Console.Out.Write(" │ ");
@@ -219,30 +228,38 @@ namespace DoofesZeug.Tools.Misc
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        private static void BorderLine( Dictionary<DataColumn, int> sdColumnsWidth, BorderLineStyle ls, ConsoleColor border )
+        private static void BorderLine(Dictionary<DataColumn, int> sdColumnsWidth, BorderLineStyle ls, ConsoleColor border)
         {
             Console.ForegroundColor = border;
-            Console.Out.Write(BORDER_CHARS [ls].Left);
+            Console.Out.Write(BORDER_CHARS[ls].Left);
 
             int counter = 0;
 
-            foreach( DataColumn pi in sdColumnsWidth.Keys )
+            foreach (DataColumn pi in sdColumnsWidth.Keys)
             {
-                if( counter++ > 0 )
+                if (counter++ > 0)
                 {
-                    Console.Out.Write(BORDER_CHARS [ls].Middle);
+                    Console.Out.Write(BORDER_CHARS[ls].Middle);
                 }
 
-                Console.Out.Write(new string('─', sdColumnsWidth [pi] + 2));
+                Console.Out.Write(new string('─', sdColumnsWidth[pi] + 2));
             }
 
-            Console.Out.WriteLine(BORDER_CHARS [ls].Right);
+            Console.Out.WriteLine(BORDER_CHARS[ls].Right);
         }
 
 
-        public static void WriteTable( DataTable dt, ConsoleColor border = ConsoleColor.Cyan, ConsoleColor header = ConsoleColor.Magenta, ConsoleColor content = ConsoleColor.Yellow, Func<DataRow, ConsoleColor> color_resolver = null )
+        /// <summary>
+        /// Writes the table.
+        /// </summary>
+        /// <param name="dt">The dt.</param>
+        /// <param name="border">The border.</param>
+        /// <param name="header">The header.</param>
+        /// <param name="content">The content.</param>
+        /// <param name="color_resolver">The color resolver.</param>
+        public static void WriteTable(DataTable dt, ConsoleColor border = ConsoleColor.Cyan, ConsoleColor header = ConsoleColor.Magenta, ConsoleColor content = ConsoleColor.Yellow, Func<DataRow, ConsoleColor> color_resolver = null)
         {
-            if( dt == null || dt.Columns.Count == 0 || dt.Rows.Count == 0 )
+            if (dt == null || dt.Columns.Count == 0 || dt.Rows.Count == 0)
             {
                 return;
             }
@@ -254,16 +271,16 @@ namespace DoofesZeug.Tools.Misc
             Dictionary<DataColumn, int> sdColumnsWidth = new();
             Dictionary<DataColumn, string> sdColumnsFormatter = new();
 
-            foreach( DataColumn dc in dt.Columns )
+            foreach (DataColumn dc in dt.Columns)
             {
                 int iMaxWidth = dc.ColumnName.Length;
 
-                foreach( DataRow dr in dt.Rows )
+                foreach (DataRow dr in dt.Rows)
                 {
-                    object o = dr [dc.Ordinal];
+                    object o = dr[dc.Ordinal];
                     int iLength = o != DBNull.Value && o != null ? $"{o}".Length : 0;
 
-                    if( iLength > iMaxWidth )
+                    if (iLength > iMaxWidth)
                     {
                         iMaxWidth = iLength;
                     }
@@ -284,10 +301,10 @@ namespace DoofesZeug.Tools.Misc
 
             Console.ForegroundColor = border;
             Console.Out.Write("│ ");
-            foreach( DataColumn dc in dt.Columns )
+            foreach (DataColumn dc in dt.Columns)
             {
                 Console.ForegroundColor = header;
-                Console.Out.Write(string.Format(sdColumnsFormatter [dc], dc.ColumnName));
+                Console.Out.Write(string.Format(sdColumnsFormatter[dc], dc.ColumnName));
 
                 Console.ForegroundColor = border;
                 Console.Out.Write(" │ ");
@@ -302,17 +319,17 @@ namespace DoofesZeug.Tools.Misc
 
             // Data
 
-            foreach( DataRow row in dt.Rows )
+            foreach (DataRow row in dt.Rows)
             {
                 Console.ForegroundColor = border;
                 Console.Out.Write("│ ");
 
-                foreach( DataColumn dc in sdColumnsFormatter.Keys )
+                foreach (DataColumn dc in sdColumnsFormatter.Keys)
                 {
-                    object value = row [dc];
+                    object value = row[dc];
 
                     Console.ForegroundColor = color_resolver != null ? color_resolver(row) : content;
-                    Console.Out.Write(string.Format(sdColumnsFormatter [dc], value));
+                    Console.Out.Write(string.Format(sdColumnsFormatter[dc], value));
 
                     Console.ForegroundColor = border;
                     Console.Out.Write(" │ ");
