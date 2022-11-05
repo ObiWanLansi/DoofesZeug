@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 
 using DoofesZeug.Datatypes.Container;
+using DoofesZeug.Entities.DateAndTime.Part.Date;
 using DoofesZeug.Extensions;
 using DoofesZeug.Tools.Crypt;
 using DoofesZeug.Tools.Misc;
@@ -36,20 +39,38 @@ namespace DoofesZeug
 
             //-------------------------------------------------------------------------------------
 
+            var list = new List<Year> { new Year(2015), new Year(2016), new Year(2017), new Year(2015) };
 
-            Tool.SimpleMatch("ObiWanLansi", "*");
+            SortedDictionary<Year, int> dict = new();
+
+            foreach (var year in list)
+            {
+                if (dict.ContainsKey(year))
+                {
+                    dict[year]++;
+                }
+                else
+                {
+                    dict.Add(year, 1);
+                }
+            }
+
+            //-------------------------------------------------------------------------------------
+
+
+            //Tool.SimpleMatch("ObiWanLansi", "*");
 
             //-------------------------------------------------------------------------------------
 
 
             #region HashTest
-#pragma warning disable S1075 // URIs should not be hardcoded
-            DateTime start = DateTime.Now;
-            string result = SimpleHash.GetHash(@"C:\Lanser\BigData\SRTM Tiles Germany\Merged.xyz", SupportedHashAlgorithm.MD5);
-            DateTime stop = DateTime.Now;
-            Console.Out.WriteLineAsync((stop - start).ToHHMMSSString());
-#pragma warning restore S1075 // URIs should not be hardcoded
-            Console.Out.WriteLineAsync(result);
+//#pragma warning disable S1075 // URIs should not be hardcoded
+//            DateTime start = DateTime.Now;
+//            string result = SimpleHash.GetHash(@"C:\Lanser\BigData\SRTM Tiles Germany\Merged.xyz", SupportedHashAlgorithm.MD5);
+//            DateTime stop = DateTime.Now;
+//            Console.Out.WriteLineAsync((stop - start).ToHHMMSSString());
+//#pragma warning restore S1075 // URIs should not be hardcoded
+//            Console.Out.WriteLineAsync(result);
             #endregion
 
             //-------------------------------------------------------------------------------------
@@ -369,6 +390,13 @@ namespace DoofesZeug
             //{
             //    Error.WriteLineAsync(ex.Message);
             //}
+
+            //-------------------------------------------------------------------------------------
+
+            if (Debugger.IsAttached)
+            {
+                ConsoleHelper.WaitForEscape();
+            }
         }
     }
 }

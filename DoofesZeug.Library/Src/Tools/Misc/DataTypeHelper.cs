@@ -4,8 +4,11 @@ using System.Drawing;
 
 using DoofesZeug.Datatypes.Misc;
 using DoofesZeug.Entities.DateAndTime;
+using DoofesZeug.Entities.DateAndTime.Part.Date;
+using DoofesZeug.Entities.DateAndTime.Part.Time;
 using DoofesZeug.Entities.Science.Base.Length;
 using DoofesZeug.Entities.Science.Base.Weight;
+using DoofesZeug.Entities.Science.Geographically.Coordinates;
 using DoofesZeug.Tools.Enums;
 
 
@@ -64,8 +67,21 @@ namespace DoofesZeug.Tools.Misc
             { typeof( FileSize ) , TextAlign.Right },
             //{ typeof( Money ) , TextAlign.Right }
 
+            { typeof(Season), TextAlign.Center },
+            { typeof(Quarter), TextAlign.Center },
+
+            { typeof(Time), TextAlign.Center },
             { typeof(Date), TextAlign.Center },
             { typeof(DateOfBirth), TextAlign.Center },
+            { typeof(DateOfDeath), TextAlign.Center },
+
+            { typeof(Day), TextAlign.Right },
+            { typeof(Month), TextAlign.Right },
+            { typeof(Year), TextAlign.Right },
+
+            { typeof(Hour), TextAlign.Right },
+            { typeof(Minute), TextAlign.Right },
+            { typeof(Second), TextAlign.Right },
 
             { typeof(Milligram), TextAlign.Right },
             { typeof(Gram), TextAlign.Right },
@@ -74,6 +90,10 @@ namespace DoofesZeug.Tools.Misc
             { typeof(Centimeter), TextAlign.Right },
             { typeof(Meter), TextAlign.Right },
             { typeof(Kilometer), TextAlign.Right },
+
+            { typeof(Latitude), TextAlign.Right },
+            { typeof(Longitude), TextAlign.Right },
+            { typeof(Altitude), TextAlign.Right },
         };
     }
 }
