@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Http;
+using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 using DoofesZeug.Attributes.Documentation;
 using DoofesZeug.Datatypes.Container;
@@ -239,6 +242,36 @@ namespace DoofesZeug.Tools.Misc
         /// <returns></returns>
         public static string GUID() => Guid.NewGuid().ToString();
 
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Determines whether the URL is reachable.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <returns>
+        ///   <c>true</c> if the URL is reachable; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsUrlReachable(string url)
+        {
+            using HttpClientHandler hch = new()
+            {
+                UseProxy = true,
+                Proxy = WebRequest.DefaultWebProxy,
+                DefaultProxyCredentials = CredentialCache.DefaultCredentials,
+                CheckCertificateRevocationList = true,
+            };
+
+            using HttpClient hc = new(hch);
+
+            using Task<HttpResponseMessage> task = hc.GetAsync(url, HttpCompletionOption.ResponseHeadersRead);
+            task.Wait();
+
+            using HttpResponseMessage response = task.Result;
+
+            return response.StatusCode == HttpStatusCode.OK;
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
