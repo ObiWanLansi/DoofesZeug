@@ -11,13 +11,13 @@
     <PackageTags>doof, zeug, objects, world</PackageTags>
     <Authors>ObiWanLansi</Authors>
     <Description>An collection of some usefuel models for rapid prototyping and / or creating test for stuff.</Description>
-    <AssemblyVersion>0.2.3.1</AssemblyVersion>
+    <Version>0.2.4.0</Version>
+    <AssemblyVersion>0.2.4.0</AssemblyVersion>
     <Product>DoofesZeug</Product>
     <PackageId>DoofesZeug</PackageId>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RootNamespace>DoofesZeug</RootNamespace>
     <AssemblyName>DoofesZeug</AssemblyName>
-    <Version>0.2.3.1</Version>
     <RepositoryType>Github</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>

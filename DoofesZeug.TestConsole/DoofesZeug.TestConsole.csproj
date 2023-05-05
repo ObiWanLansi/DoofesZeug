@@ -6,7 +6,8 @@
     <RootNamespace>DoofesZeug</RootNamespace>
     <StartupObject>DoofesZeug.TestConsole</StartupObject>
     <AssemblyName>DoofesZeug.TestConsole</AssemblyName>
-    <Version>0.2.3.1</Version>
+    <Version>0.2.4.0</Version>
+    <AssemblyVersion>0.2.4.0</AssemblyVersion>
     <RepositoryUrl>https://github.com/ObiWanLansi/DoofesZeug</RepositoryUrl>
     <Authors>ObiWanLansi</Authors>
     <Company>ObiWanLansi</Company>
