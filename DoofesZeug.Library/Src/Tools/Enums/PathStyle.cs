@@ -2,19 +2,18 @@
 
 
 
-namespace DoofesZeug.Tools.Enums
-{
-    [Description("The PathStyle for filenames (\\\\ or /).")]
-    public enum PathStyle : byte
-    {
-        /// <summary>
-        /// The windows path style.
-        /// </summary>
-        Windows,
+namespace DoofesZeug.Tools.Enums;
 
-        /// <summary>
-        /// The linux path style.
-        /// </summary>
-        Linux
-    }
+[Description("The PathStyle for filenames (\\\\ or /).")]
+public enum PathStyle : byte
+{
+    /// <summary>
+    /// The windows path style.
+    /// </summary>
+    Windows,
+
+    /// <summary>
+    /// The linux path style.
+    /// </summary>
+    Linux
 }

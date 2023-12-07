@@ -2,16 +2,15 @@
 
 
 
-namespace DoofesZeug.Entities.Specieses.Human
+namespace DoofesZeug.Entities.Specieses.Human;
+
+[Description("The five big major religions.")]
+[Link("https://en.wikipedia.org/wiki/Major_religious_groups")]
+public enum MajorReligion : byte
 {
-    [Description("The five big major religions.")]
-    [Link("https://en.wikipedia.org/wiki/Major_religious_groups")]
-    public enum MajorReligion : byte
-    {
-        Hinduism,
-        Buddhism,
-        Islam,
-        Christianity,
-        Judaism
-    }
+    Hinduism,
+    Buddhism,
+    Islam,
+    Christianity,
+    Judaism
 }

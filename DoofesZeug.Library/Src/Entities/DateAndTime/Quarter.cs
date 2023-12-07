@@ -2,14 +2,13 @@
 
 
 
-namespace DoofesZeug.Entities.DateAndTime
+namespace DoofesZeug.Entities.DateAndTime;
+
+[Description("An enumeration for our calendar quarters.")]
+public enum Quarter : byte
 {
-    [Description("An enumeration for our calendar quarters.")]
-    public enum Quarter : byte
-    {
-        First = 1,
-        Second = 2,
-        Third = 3,
-        Fourth = 4
-    }
+    First = 1,
+    Second = 2,
+    Third = 3,
+    Fourth = 4
 }

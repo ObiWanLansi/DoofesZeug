@@ -2,10 +2,9 @@
 
 
 
-namespace DoofesZeug.Attributes
+namespace DoofesZeug.Attributes;
+
+[AttributeUsage(AttributeTargets.Class)]
+public sealed class GeneratedAttribute : BaseAttribute
 {
-    [AttributeUsage(AttributeTargets.Class)]
-    public sealed class GeneratedAttribute : BaseAttribute
-    {
-    }
 }

@@ -4,24 +4,23 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
 
-namespace DoofesZeug.UnitTests.Functional.Crypt
+namespace DoofesZeug.UnitTests.Functional.Crypt;
+
+[TestClass]
+public class TestROT13
 {
-    [TestClass]
-    public class TestROT13
+    [TestMethod]
+    public void ExecuteRO13Test()
     {
-        [TestMethod]
-        public void ExecuteRO13Test()
-        {
-            string strOriginal = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            string strExcepted = "NOPQRSTUVWXYZABCDEFGHIJKLM";
+        string strOriginal = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        string strExcepted = "NOPQRSTUVWXYZABCDEFGHIJKLM";
 
-            string strRotated = ROT13.Rotate(strOriginal);
+        string strRotated = ROT13.Rotate(strOriginal);
 
-            Assert.IsNotNull(strRotated);
-            Assert.IsTrue(strRotated.Equals(strExcepted));
+        Assert.IsNotNull(strRotated);
+        Assert.IsTrue(strRotated.Equals(strExcepted));
 
-            // And Vice Versa
-            Assert.IsTrue(strOriginal.Equals(ROT13.Rotate(strRotated)));
-        }
+        // And Vice Versa
+        Assert.IsTrue(strOriginal.Equals(ROT13.Rotate(strRotated)));
     }
 }

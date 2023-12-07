@@ -2,17 +2,16 @@
 
 
 
-namespace DoofesZeug.Entities.Science.Geographically
+namespace DoofesZeug.Entities.Science.Geographically;
+
+[Description("Our continents as little enumeration.")]
+public enum Continent : byte
 {
-    [Description("Our continents as little enumeration.")]
-    public enum Continent : byte
-    {
-        Africa,
-        Asia,
-        Europe,
-        NorthAmerica,
-        SouthAmerica,
-        Antarctica,
-        Australia
-    }
+    Africa,
+    Asia,
+    Europe,
+    NorthAmerica,
+    SouthAmerica,
+    Antarctica,
+    Australia
 }

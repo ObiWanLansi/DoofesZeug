@@ -2,18 +2,17 @@
 
 
 
-namespace DoofesZeug.Tools.Crypt
+namespace DoofesZeug.Tools.Crypt;
+
+[Description("All supported HashAlgorithm for the SimpleHash class.")]
+public enum SupportedHashAlgorithm : byte
 {
-    [Description("All supported HashAlgorithm for the SimpleHash class.")]
-    public enum SupportedHashAlgorithm : byte
-    {
-        MD5,
+    MD5,
 
-        SHA1,
+    SHA1,
 
-        SHA256,
+    SHA256,
 
-        SHA512
+    SHA512
 
-    }
 }

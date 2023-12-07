@@ -9,48 +9,47 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
 
-namespace DoofesZeug.UnitTests.Functional.Formats
+namespace DoofesZeug.UnitTests.Functional.Formats;
+
+[TestClass]
+public class TestJson
 {
-    [TestClass]
-    public class TestJson
+    [TestMethod]
+    public void TestEntityJsonConverter()
     {
-        [TestMethod]
-        public void TestEntityJsonConverter()
+        Type tEntityBase = typeof(Entity);
+
+        Assembly assembly = tEntityBase.Assembly;
+
+        foreach( Type type in assembly.ExportedTypes )
         {
-            Type tEntityBase = typeof(Entity);
-
-            Assembly assembly = tEntityBase.Assembly;
-
-            foreach( Type type in assembly.ExportedTypes )
+            if( type.IsAssignableTo(tEntityBase) && type.IsAbstract == false )
             {
-                if( type.IsAssignableTo(tEntityBase) && type.IsAbstract == false )
+                //if( type.GetCustomAttribute<IgnoreTestAttribute>() != null )
+                //{
+                //    continue;
+                //}
+
+                Console.Out.WriteLineAsync(type.FullName);
+
+                object oOriginal = TestDataGenerator.GenerateTestData(type);
+                Assert.IsNotNull(oOriginal);
+
+                string json = oOriginal.ToPrettyJson();
+                Assert.IsNotNull(json);
+                Assert.IsTrue(json.Length > 0);
+
+                object oClone = json.FromJson(type);
+
+                try
                 {
-                    //if( type.GetCustomAttribute<IgnoreTestAttribute>() != null )
-                    //{
-                    //    continue;
-                    //}
-
-                    Console.Out.WriteLineAsync(type.FullName);
-
-                    object oOriginal = TestDataGenerator.GenerateTestData(type);
-                    Assert.IsNotNull(oOriginal);
-
-                    string json = oOriginal.ToPrettyJson();
-                    Assert.IsNotNull(json);
-                    Assert.IsTrue(json.Length > 0);
-
-                    object oClone = json.FromJson(type);
-
-                    try
-                    {
-                        Assert.IsNotNull(oClone);
-                        Assert.AreEqual(oOriginal, oClone);
-                    }
-                    catch( Exception ex )
-                    {
-                        // For debugging purpose we catch the exception so that we can set an breakpoint for debugging.
-                        Assert.Fail(ex.Message);
-                    }
+                    Assert.IsNotNull(oClone);
+                    Assert.AreEqual(oOriginal, oClone);
+                }
+                catch( Exception ex )
+                {
+                    // For debugging purpose we catch the exception so that we can set an breakpoint for debugging.
+                    Assert.Fail(ex.Message);
                 }
             }
         }

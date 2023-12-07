@@ -2,9 +2,8 @@
 
 
 
-namespace DoofesZeug.Attributes
+namespace DoofesZeug.Attributes;
+
+public abstract class BaseAttribute : Attribute
 {
-    public abstract class BaseAttribute : Attribute
-    {
-    }
 }

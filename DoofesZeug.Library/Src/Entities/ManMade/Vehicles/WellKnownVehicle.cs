@@ -2,16 +2,15 @@
 
 
 
-namespace DoofesZeug.Entities.ManMade.Vehicles
+namespace DoofesZeug.Entities.ManMade.Vehicles;
+
+[Description("A small enumeration of some vehicles, mixed with subtypes for faster development.")]
+public enum WellKnownVehicle : byte
 {
-    [Description("A small enumeration of some vehicles, mixed with subtypes for faster development.")]
-    public enum WellKnownVehicle : byte
-    {
-        Bicycle,
-        Car,
-        Bus,
-        Train,
-        Airplane,
-        Motorcycle
-    }
+    Bicycle,
+    Car,
+    Bus,
+    Train,
+    Airplane,
+    Motorcycle
 }

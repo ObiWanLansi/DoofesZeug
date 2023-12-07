@@ -2,14 +2,13 @@
 
 
 
-namespace DoofesZeug.Tools.Enums
+namespace DoofesZeug.Tools.Enums;
+
+[Description("An generic verbosity level for logging output.")]
+public enum VerbosityLevel : byte
 {
-    [Description("An generic verbosity level for logging output.")]
-    public enum VerbosityLevel : byte
-    {
-        None,
-        Low,
-        Normal,
-        High
-    }
+    None,
+    Low,
+    Normal,
+    High
 }

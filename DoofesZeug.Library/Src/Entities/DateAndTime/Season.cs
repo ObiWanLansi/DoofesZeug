@@ -2,14 +2,13 @@
 
 
 
-namespace DoofesZeug.Entities.DateAndTime
+namespace DoofesZeug.Entities.DateAndTime;
+
+[Description("An enumeration for our seasons.")]
+public enum Season : byte
 {
-    [Description("An enumeration for our seasons.")]
-    public enum Season : byte
-    {
-        Winter,
-        Spring,
-        Summer,
-        Autumn
-    }
+    Winter,
+    Spring,
+    Summer,
+    Autumn
 }

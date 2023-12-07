@@ -2,18 +2,17 @@
 
 
 
-namespace DoofesZeug.Entities.Specieses.Human
+namespace DoofesZeug.Entities.Specieses.Human;
+
+[Description("An lastname for humans.")]
+public sealed class LastName : Name
 {
-    [Description("An lastname for humans.")]
-    public sealed class LastName : Name
-    {
-        public LastName() { }
+    public LastName() { }
 
-        public LastName( string value ) : base(value) { }
+    public LastName( string value ) : base(value) { }
 
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public static implicit operator LastName( string value ) => new(value);
-    }
+    public static implicit operator LastName( string value ) => new(value);
 }

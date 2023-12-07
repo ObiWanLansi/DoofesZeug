@@ -2,13 +2,12 @@
 
 
 
-namespace DoofesZeug.Entities.ManMade.Communication
-{
-    [Description("An little type if the information (email, phone) is private or an business information.")]
-    public enum InformationType : byte
-    {
-        Private,
+namespace DoofesZeug.Entities.ManMade.Communication;
 
-        Business
-    }
+[Description("An little type if the information (email, phone) is private or an business information.")]
+public enum InformationType : byte
+{
+    Private,
+
+    Business
 }

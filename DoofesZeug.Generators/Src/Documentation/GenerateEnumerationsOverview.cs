@@ -14,170 +14,169 @@ using static System.Console;
 
 
 
-namespace DoofesZeug.Documentation
+namespace DoofesZeug.Documentation;
+
+public static class GenerateEnumerationsOverview
 {
-    public static class GenerateEnumerationsOverview
+    private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\Documentation\Generated\Enumerations";
+
+    private static readonly Type ENTITY_BASE = typeof(Entity);
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    private static void AppendEnum( Type type, StringBuilder sbPUML )
     {
-        private static readonly string OUTPUTDIRECTORY = @"O:\DoofesZeug\Documentation\Generated\Enumerations";
+        sbPUML.AppendLine();
+        sbPUML.AppendLine($"enum {type.Name} {{");
 
-        private static readonly Type ENTITY_BASE = typeof(Entity);
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        private static void AppendEnum( Type type, StringBuilder sbPUML )
+        foreach( object value in Enum.GetValues(type) )
         {
-            sbPUML.AppendLine();
-            sbPUML.AppendLine($"enum {type.Name} {{");
-
-            foreach( object value in Enum.GetValues(type) )
-            {
-                sbPUML.AppendLine($"    {value}");
-            }
-
-            sbPUML.AppendLine("}");
-            sbPUML.AppendLine();
+            sbPUML.AppendLine($"    {value}");
         }
 
+        sbPUML.AppendLine("}");
+        sbPUML.AppendLine();
+    }
 
-        private static void GenerateUmlDiagramm( Type type, StringBuilder sb )
+
+    private static void GenerateUmlDiagramm( Type type, StringBuilder sb )
+    {
+        string strOutputDirectory = $"{OUTPUTDIRECTORY}\\{type.Namespace}";
+        string strDiagrammFilenamePng = $"{type.Name}.png";
+        string strDiagrammFilenamePuml = $"{type.Name}.puml";
+
+        //---------------------------------------------------------------------------------------------------------
+
+        sb.AppendLine();
+        sb.AppendLine($"![{strDiagrammFilenamePng}](./{strDiagrammFilenamePng} \"{type.Name}\")");
+
+        //---------------------------------------------------------------------------------------------------------
+
+        StringBuilder sbPUML = new(8192);
+
+        sbPUML.AppendLine("@startuml");
+        sbPUML.AppendLine("hide empty members");
+        sbPUML.AppendLine("skinparam monochrome true");
+        sbPUML.AppendLine("skinparam backgroundcolor transparent");
+
+        //---------------------------------------------
+
+        AppendEnum(type, sbPUML);
+
+        //---------------------------------------------
+
+        sbPUML.AppendLine("@enduml");
+
+        //---------------------------------------------------------------------------------------------------------
+
+        string strOutputFilename = $"{strOutputDirectory}\\{strDiagrammFilenamePuml}";
+        File.WriteAllTextAsync(strOutputFilename, sbPUML.ToString(), Encoding.UTF8);
+        GeneratorTool.PlantUml(strOutputFilename);
+    }
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    private static void GenerateEnumerationFile( Type type )
+    {
+        string strOutputDirectory = $"{OUTPUTDIRECTORY}\\{type.Namespace}";
+
+        if( Directory.Exists(strOutputDirectory) == false )
         {
-            string strOutputDirectory = $"{OUTPUTDIRECTORY}\\{type.Namespace}";
-            string strDiagrammFilenamePng = $"{type.Name}.png";
-            string strDiagrammFilenamePuml = $"{type.Name}.puml";
-
-            //---------------------------------------------------------------------------------------------------------
-
-            sb.AppendLine();
-            sb.AppendLine($"![{strDiagrammFilenamePng}](./{strDiagrammFilenamePng} \"{type.Name}\")");
-
-            //---------------------------------------------------------------------------------------------------------
-
-            StringBuilder sbPUML = new(8192);
-
-            sbPUML.AppendLine("@startuml");
-            sbPUML.AppendLine("hide empty members");
-            sbPUML.AppendLine("skinparam monochrome true");
-            sbPUML.AppendLine("skinparam backgroundcolor transparent");
-
-            //---------------------------------------------
-
-            AppendEnum(type, sbPUML);
-
-            //---------------------------------------------
-
-            sbPUML.AppendLine("@enduml");
-
-            //---------------------------------------------------------------------------------------------------------
-
-            string strOutputFilename = $"{strOutputDirectory}\\{strDiagrammFilenamePuml}";
-            File.WriteAllTextAsync(strOutputFilename, sbPUML.ToString(), Encoding.UTF8);
-            GeneratorTool.PlantUml(strOutputFilename);
+            Directory.CreateDirectory(strOutputDirectory);
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------
+
+        Out.WriteLineAsync($"Create markdown for: {type.FullName}");
+
+        StringBuilder sb = new(8192);
+
+        sb.AppendLine($"# {type.Name}");
+        sb.AppendLine();
+
+        sb.AppendLine($"## Diagram");
+        GenerateUmlDiagramm(type, sb);
+
+        //---------------------------------------------------------------------------------------------------------
+
+        sb.AppendLine();
+        sb.AppendLine("<hr style=\"background: blue;\" />");
+
+        File.WriteAllTextAsync($"{strOutputDirectory}\\{type.Name}.md", sb.ToString(), Encoding.UTF8);
+    }
 
 
-        private static void GenerateEnumerationFile( Type type )
+    private static void GenerateEnumerationOverviewFile( List<Type> enumerations )
+    {
+        StringBuilder sb = new(8192);
+        sb.AppendLine("# Enumerations Overview");
+
+        foreach( IGrouping<string, Type> enumerationgroup in from enumeration in enumerations group enumeration by enumeration.Namespace into ng orderby ng.Key select ng )
         {
-            string strOutputDirectory = $"{OUTPUTDIRECTORY}\\{type.Namespace}";
+            sb.AppendLine("");
+            sb.AppendLine("");
+            sb.AppendLine($"## `{enumerationgroup.Key}`");
+            sb.AppendLine("");
 
-            if( Directory.Exists(strOutputDirectory) == false )
+            sb.AppendLine("|Enumeration|Description|Values|");
+            sb.AppendLine("|:----------|:----------|:-----|");
+
+            string strPath = enumerationgroup.Key [11..].Replace('.', '/');
+
+            foreach( Type enumeration in from type in enumerationgroup orderby type.Name select type )
             {
-                Directory.CreateDirectory(strOutputDirectory);
-            }
+                DescriptionAttribute da = (DescriptionAttribute) enumeration.GetCustomAttribute(typeof(DescriptionAttribute));
 
-            //---------------------------------------------------------------------------------------------------------
-
-            Out.WriteLineAsync($"Create markdown for: {type.FullName}");
-
-            StringBuilder sb = new(8192);
-
-            sb.AppendLine($"# {type.Name}");
-            sb.AppendLine();
-
-            sb.AppendLine($"## Diagram");
-            GenerateUmlDiagramm(type, sb);
-
-            //---------------------------------------------------------------------------------------------------------
-
-            sb.AppendLine();
-            sb.AppendLine("<hr style=\"background: blue;\" />");
-
-            File.WriteAllTextAsync($"{strOutputDirectory}\\{type.Name}.md", sb.ToString(), Encoding.UTF8);
-        }
-
-
-        private static void GenerateEnumerationOverviewFile( List<Type> enumerations )
-        {
-            StringBuilder sb = new(8192);
-            sb.AppendLine("# Enumerations Overview");
-
-            foreach( IGrouping<string, Type> enumerationgroup in from enumeration in enumerations group enumeration by enumeration.Namespace into ng orderby ng.Key select ng )
-            {
-                sb.AppendLine("");
-                sb.AppendLine("");
-                sb.AppendLine($"## `{enumerationgroup.Key}`");
-                sb.AppendLine("");
-
-                sb.AppendLine("|Enumeration|Description|Values|");
-                sb.AppendLine("|:----------|:----------|:-----|");
-
-                string strPath = enumerationgroup.Key [11..].Replace('.', '/');
-
-                foreach( Type enumeration in from type in enumerationgroup orderby type.Name select type )
+                if( da == null )
                 {
-                    DescriptionAttribute da = (DescriptionAttribute) enumeration.GetCustomAttribute(typeof(DescriptionAttribute));
-
-                    if( da == null )
-                    {
-                        throw new Exception($"{enumeration.FullName} have no description!");
-                    }
-
-                    da.Validate(enumeration);
-
-                    string strLinkToMarkdown = $"[{enumeration.Name}](./{enumerationgroup.Key}/{enumeration.Name}.md)";
-
-                    sb.AppendLine($"|{strLinkToMarkdown}|{da.Description}|{Enum.GetNames(enumeration).ToFlatString()}|");
+                    throw new Exception($"{enumeration.FullName} have no description!");
                 }
+
+                da.Validate(enumeration);
+
+                string strLinkToMarkdown = $"[{enumeration.Name}](./{enumerationgroup.Key}/{enumeration.Name}.md)";
+
+                sb.AppendLine($"|{strLinkToMarkdown}|{da.Description}|{Enum.GetNames(enumeration).ToFlatString()}|");
             }
-
-            sb.AppendLine();
-            sb.AppendLine("<hr style=\"background: blue;\" />");
-
-            File.WriteAllTextAsync($"{OUTPUTDIRECTORY}\\README.md", sb.ToString(), Encoding.UTF8);
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        sb.AppendLine();
+        sb.AppendLine("<hr style=\"background: blue;\" />");
+
+        File.WriteAllTextAsync($"{OUTPUTDIRECTORY}\\README.md", sb.ToString(), Encoding.UTF8);
+    }
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public static void Generate()
+    public static void Generate()
+    {
+        Assembly assembly = ENTITY_BASE.Assembly;
+
+        Out.WriteLineAsync();
+        Out.WriteLineAsync($"{assembly.FullName}");
+
+        new DirectoryInfo(OUTPUTDIRECTORY).DeleteDirectoryContentRecursiv(ex => Error.WriteLineAsync(ex.Message));
+
+        //---------------------------------------------------------------------------------------------------------
+
+        List<Type> enumerations = new();
+
+        foreach( Type type in assembly.ExportedTypes )
         {
-            Assembly assembly = ENTITY_BASE.Assembly;
-
-            Out.WriteLineAsync();
-            Out.WriteLineAsync($"{assembly.FullName}");
-
-            new DirectoryInfo(OUTPUTDIRECTORY).DeleteDirectoryContentRecursiv(ex => Error.WriteLineAsync(ex.Message));
-
-            //---------------------------------------------------------------------------------------------------------
-
-            List<Type> enumerations = new();
-
-            foreach( Type type in assembly.ExportedTypes )
+            if( type.IsEnum == false )
             {
-                if( type.IsEnum == false )
-                {
-                    continue;
-                }
-                enumerations.Add(type);
+                continue;
             }
-
-            //---------------------------------------------------------------------------------------------------------
-
-            enumerations.ForEach(enumeration => GenerateEnumerationFile(enumeration));
-
-            GenerateEnumerationOverviewFile(enumerations);
+            enumerations.Add(type);
         }
+
+        //---------------------------------------------------------------------------------------------------------
+
+        enumerations.ForEach(enumeration => GenerateEnumerationFile(enumeration));
+
+        GenerateEnumerationOverviewFile(enumerations);
     }
 }

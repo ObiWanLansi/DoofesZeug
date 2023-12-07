@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 
+namespace DoofesZeug.Datatypes.Container;
 
 
-namespace DoofesZeug.Datatypes.Container
+
+public sealed class SimpleProperties : SortedDictionary<string, object>
 {
-    public sealed class SimpleProperties : SortedDictionary<string, object>
-    {
-    }
 }

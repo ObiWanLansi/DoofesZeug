@@ -2,10 +2,9 @@
 
 
 
-namespace DoofesZeug.Extensions.Formats
+namespace DoofesZeug.Extensions.Formats;
+
+public static class YamlExtension
 {
-    public static class YamlExtension
-    {
-        public static string ToPrettyYaml( this object o ) => new SerializerBuilder().Build().Serialize(o);
-    }
+    public static string ToPrettyYaml( this object o ) => new SerializerBuilder().Build().Serialize(o);
 }

@@ -2,24 +2,23 @@
 
 
 
-namespace DoofesZeug.Tools.Enums
+namespace DoofesZeug.Tools.Enums;
+
+[Description("An generic priority for stuff like emails, persons, tasks, appointments.")]
+public enum Priority : byte
 {
-    [Description("An generic priority for stuff like emails, persons, tasks, appointments.")]
-    public enum Priority : byte
-    {
-        /// <summary>
-        /// Low priority.
-        /// </summary>
-        Low,
+    /// <summary>
+    /// Low priority.
+    /// </summary>
+    Low,
 
-        /// <summary>
-        /// Normal priority.
-        /// </summary>
-        Normal,
+    /// <summary>
+    /// Normal priority.
+    /// </summary>
+    Normal,
 
-        /// <summary>
-        /// High priority.
-        /// </summary>
-        High
-    }
+    /// <summary>
+    /// High priority.
+    /// </summary>
+    High
 }
