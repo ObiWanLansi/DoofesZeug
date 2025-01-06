@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 using DoofesZeug.Datatypes.Container;
+using DoofesZeug.Entities.Specieses.Human;
+using DoofesZeug.Extensions;
+using DoofesZeug.Extensions.Formats;
+using DoofesZeug.TestData;
 using DoofesZeug.Tools.Misc;
 
 using static System.Console;
@@ -35,18 +39,18 @@ static class TestConsole
 
         //-------------------------------------------------------------------------------------
 
+
         #region MultiDict Test
 
+        //MultiDict md = new();
 
-        MultiDict md = new();
+        //md.Add("Id", 5);
 
-        md.Add("Id", 5);
+        //Console.Out.WriteLineAsync(md["Id"].ToString());
 
-        Console.Out.WriteLineAsync(md["Id"].ToString());
+        //md.Add("Id", 7);
 
-        md.Add("Id", 7);
-
-        Console.Out.WriteLineAsync(md["Id"].ToString());
+        //Console.Out.WriteLineAsync(md["Id"].ToString());
 
         #endregion
 
@@ -162,10 +166,11 @@ static class TestConsole
 
         //-------------------------------------------------------------------------------------
 
-        //Person p = TestDataGenerator.GenerateTestData<Person>();
+        Person p = TestDataGenerator.GenerateTestData<Person>();
 
-        //Out.WriteLineAsync(p.ToPrettyJson());
-        //Out.WriteLineAsync(p.ToStringTable());
+        Out.WriteLineAsync(p.ToPrettyYaml());
+        Out.WriteLineAsync(p.ToPrettyJson());
+        Out.WriteLineAsync(p.ToStringTable());
 
         //-------------------------------------------------------------------------------------
 
