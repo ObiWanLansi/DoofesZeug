@@ -24,12 +24,12 @@ public static class DataTableExtension
     /// <summary>
     /// The c splitter
     /// </summary>
-    private static readonly char[] COMMASEPERATEDVALUES_SPLITTER = { ';' };
+    private static readonly char[] COMMASEPERATEDVALUES_SPLITTER = [';'];
 
     /// <summary>
     /// The splitter
     /// </summary>
-    private static readonly char[] MARKDOWNTABLE_SPLITTER = { '|' };
+    private static readonly char[] MARKDOWNTABLE_SPLITTER = ['|'];
 
     /// <summary>
     /// The ci
@@ -170,12 +170,12 @@ public static class DataTableExtension
     {
         DataTable dtStructure = new(dt.TableName);
 
-        dtStructure.Columns.AddRange(new[]
-        {
+        dtStructure.Columns.AddRange(
+        [
             new DataColumn ( "Ordinal" , typeof(int) ),
             new DataColumn ( "Name" , typeof(string) ),
             new DataColumn ( "DataType" , typeof(string) )
-        });
+        ]);
 
         foreach (DataColumn dc in dt.Columns)
         {

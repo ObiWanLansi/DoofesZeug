@@ -44,9 +44,9 @@ public sealed class NameConverter : JsonConverter
             return null;
         }
 
-        ConstructorInfo constructor = objectType.GetConstructor(new[] { typeof(string) });
+        ConstructorInfo constructor = objectType.GetConstructor([typeof(string)]);
 
-        return constructor?.Invoke(new[] { (object)Convert.ToString(reader.Value) });
+        return constructor?.Invoke([(object)Convert.ToString(reader.Value)]);
     }
 
 

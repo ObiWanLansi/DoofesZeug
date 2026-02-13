@@ -27,7 +27,7 @@ public static class StringOutputExtension
         }
 
         // |Name|Value|
-        int [] columnWidths = new int [2] { "Property".Length, "Value".Length };
+        int [] columnWidths = ["Property".Length, "Value".Length];
 
         foreach( PropertyInfo pi in properties )
         {

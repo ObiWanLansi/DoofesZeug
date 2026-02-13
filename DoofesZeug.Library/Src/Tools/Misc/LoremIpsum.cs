@@ -22,7 +22,7 @@ public static class LoremIpsum
     /// <summary>
     /// The lorem ipsum words
     /// </summary>
-    private static readonly string[] LOREM_IPSUM_WORDS = {
+    private static readonly string[] LOREM_IPSUM_WORDS = [
         "lorem","ipsum","dolor","sit","amet",
         "consectetuer","adipiscing","elit","donec","id",
         "eros","quisque","nisl","lacinia","cursus",
@@ -58,7 +58,7 @@ public static class LoremIpsum
         "willus","gabrielus","ancus","nasus","wingtsun",
         "i","e","sinus","illuminati","sanktus","spiritus",
         "lancer","nitus","sammy","shari"
-    };
+    ];
     #endregion
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -83,7 +83,7 @@ public static class Tool
     /// The datetimeformats
     /// </summary>
     public static readonly string[] DATETIMEFORMATS =
-    {
+    [
         "dd.MM.yyyy, HH:mm:ss" ,
         "dd.MM.yyyy HH:mm:ss" ,
         "dd.MM.yyyy, HH:mm" ,
@@ -94,7 +94,7 @@ public static class Tool
         "yyyy-MM-dd" ,
         "dd-MM-yyyy",
         "yyyy-MM-dd HH:mm:ss"
-    };
+    ];
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

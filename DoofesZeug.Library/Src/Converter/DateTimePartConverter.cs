@@ -44,9 +44,9 @@ public sealed class DateTimePartConverter : JsonConverter
             return null;
         }
 
-        ConstructorInfo constructor = objectType.GetConstructor(new[] { typeof(uint) });
+        ConstructorInfo constructor = objectType.GetConstructor([typeof(uint)]);
 
-        return constructor?.Invoke(new[] { (object)Convert.ToUInt32(reader.Value) });
+        return constructor?.Invoke([(object)Convert.ToUInt32(reader.Value)]);
     }
 
 

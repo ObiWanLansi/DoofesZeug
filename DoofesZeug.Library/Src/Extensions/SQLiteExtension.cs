@@ -127,13 +127,13 @@ public static class SQLiteExtension
     {
         DataTable dt = new(strTablename);
 
-        dt.Columns.AddRange(new[]
-        {
+        dt.Columns.AddRange(
+        [
             new DataColumn { ColumnName = "ColumnName" , DataType = typeof(string) },
             new DataColumn { ColumnName = "DataType" , DataType = typeof(string) },
             new DataColumn { ColumnName = "NotNull" , DataType = typeof(bool) },
             new DataColumn { ColumnName = "PrimaryKey" , DataType = typeof(bool) }
-        });
+        ]);
 
 #pragma warning disable CA2100 // Review SQL queries for security vulnerabilities
         using (SQLiteCommand dbSelectColumns = new($"PRAGMA TABLE_INFO({strTablename})", dbConnection))
