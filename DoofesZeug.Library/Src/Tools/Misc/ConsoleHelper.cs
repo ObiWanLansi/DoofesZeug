@@ -205,6 +205,11 @@ public static class ConsoleHelper
                 {
                     object value = pi.GetValue(o, null);
 
+                    if (value is DateTime dtValue)
+                    {
+                        value = dtValue.ToString("yyyy-MM-dd HH:mm:ss");
+                    }
+
                     Console.ForegroundColor = color_resolver != null ? color_resolver((T)o) : content;
                     Console.Out.Write(string.Format(sdColumnsFormatter[pi], value));
 
