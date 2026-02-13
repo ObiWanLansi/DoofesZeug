@@ -74,7 +74,7 @@ public static class IDictionaryExtension
 
     public static IDictionary<K, V> Where<K, V>( this IDictionary<K, V> dSource, Predicate<Tuple<K, V>> predicator )
     {
-        Dictionary<K, V> dFiltered = new();
+        Dictionary<K, V> dFiltered = [];
 
         foreach( K key in dSource.Keys )
         {

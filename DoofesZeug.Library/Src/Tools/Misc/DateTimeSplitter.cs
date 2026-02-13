@@ -76,7 +76,7 @@ public static class DateTimeSplitter
 
         //---------------------------------------------------------------------------------------------------------
 
-        SortedDictionary<Year, List<T>> splitted = new();
+        SortedDictionary<Year, List<T>> splitted = [];
 
         foreach (T value in list)
         {
@@ -95,7 +95,7 @@ public static class DateTimeSplitter
             }
             else
             {
-                splitted.Add(year, new List<T> { value });
+                splitted.Add(year, [value]);
             }
         }
 
@@ -131,7 +131,7 @@ public static class DateTimeSplitter
 
         //---------------------------------------------------------------------------------------------------------
 
-        SortedDictionary<(Year, Month), List<T>> splitted = new();
+        SortedDictionary<(Year, Month), List<T>> splitted = [];
 
         foreach (T value in list)
         {
@@ -151,7 +151,7 @@ public static class DateTimeSplitter
             }
             else
             {
-                splitted.Add((year, month), new List<T> { value });
+                splitted.Add((year, month), [value]);
             }
         }
 
@@ -194,7 +194,7 @@ public static class DateTimeSplitter
 
         //---------------------------------------------------------------------------------------------------------
 
-        SortedDictionary<string, List<T>> splitted = new();
+        SortedDictionary<string, List<T>> splitted = [];
 
         foreach (T value in list)
         {
@@ -213,7 +213,7 @@ public static class DateTimeSplitter
             }
             else
             {
-                splitted.Add(strKey, new List<T> { value });
+                splitted.Add(strKey, [value]);
             }
         }
 

@@ -88,7 +88,7 @@ public class GeoPoint2D : Entity
     /// <returns></returns>
     public override StringList Validate()
     {
-        StringList sl = new();
+        StringList sl = [];
 
         PropertyValidate(this, sl);
 

@@ -18,12 +18,12 @@ public class TestNamespaces
 {
     private static readonly string SOURCE = @"..\..\..\..\DoofesZeug.Library\Src";
 
-    private static readonly StringSet IGNORE = new()
-    {
+    private static readonly StringSet IGNORE =
+    [
         "DoofesZeug.Tools.Misc.TypeEnum",
         "DoofesZeug.Tools.Misc.ColorBrewerScheme",
         "DoofesZeug.Tools.Misc.ColorBrewerCatalog",
-    };
+    ];
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

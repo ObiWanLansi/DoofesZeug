@@ -13,10 +13,10 @@ namespace DoofesZeug.UnitTests.Formalities;
 [TestClass]
 public class TestEnumeration
 {
-    private static readonly StringSet IGNORE = new()
-    {
+    private static readonly StringSet IGNORE =
+    [
         "DoofesZeug.Tools.Misc.ColorBrewerScheme"
-    };
+    ];
 
 
     [TestMethod]

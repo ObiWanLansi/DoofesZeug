@@ -51,7 +51,7 @@ public sealed class Month : DateTimePart, IComparable<Month>
     /// Validates this instance.
     /// </summary>
     /// <returns></returns>
-    public override StringList Validate() => this.Value < 1 || this.Value > 12 ? new StringList { $"The value '{this.Value}' for the month is not acceptable!" } : ( new() );
+    public override StringList Validate() => this.Value < 1 || this.Value > 12 ? [$"The value '{this.Value}' for the month is not acceptable!"] : ( [] );
 
 
     /// <summary>

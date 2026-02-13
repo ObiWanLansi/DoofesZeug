@@ -86,24 +86,24 @@ public class Name : Entity
     {
         if( this.Value == null )
         {
-            return new StringList { "The name is null!" };
+            return ["The name is null!"];
         }
 
         if( this.Value.Length < 3 )
         {
-            return new StringList { "The length of the name is less than 3 characters!" };
+            return ["The length of the name is less than 3 characters!"];
         }
 
         if( this.Value.Length > 32 )
         {
-            return new StringList { "The length of the name is more than 32 characters!" };
+            return ["The length of the name is more than 32 characters!"];
         }
 
         if( this.Value.ContainsNonLetterCharacters() )
         {
-            return new StringList { "The name contains non letter characters!" };
+            return ["The name contains non letter characters!"];
         }
 
-        return new();
+        return [];
     }
 }

@@ -63,7 +63,7 @@ public abstract class Species : IdentifiableEntity
     /// <returns></returns>
     public override StringList Validate()
     {
-        StringList sl = new();
+        StringList sl = [];
 
         if( this.DateOfBirth == null )
         {

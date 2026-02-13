@@ -104,7 +104,7 @@ public static class MathEx
     {
         if (iCount == 0)
         {
-            return new();
+            return [];
         }
 
         if (iCount == 1)

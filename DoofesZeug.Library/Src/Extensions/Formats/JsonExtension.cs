@@ -20,8 +20,8 @@ public static class JsonExtension
         Formatting = Formatting.Indented
     };
 
-    private static readonly List<JsonConverter> converter = new()
-    {
+    private static readonly List<JsonConverter> converter =
+    [
         new StringEnumConverter(),
         new NameConverter(),
 
@@ -32,7 +32,7 @@ public static class JsonExtension
         new UnitPrefixConverter(),
 
         new GeoConverter()
-    };
+    ];
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

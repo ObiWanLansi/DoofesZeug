@@ -51,7 +51,7 @@ public sealed class Day : DateTimePart, IComparable<Day>
     /// Validates this instance.
     /// </summary>
     /// <returns></returns>
-    public override StringList Validate() => this.Value < 1 || this.Value > 31 ? new StringList { $"The value '{this.Value}' for the day is not acceptable!" } : ( new() );
+    public override StringList Validate() => this.Value < 1 || this.Value > 31 ? [$"The value '{this.Value}' for the day is not acceptable!"] : ( [] );
 
 
     /// <summary>

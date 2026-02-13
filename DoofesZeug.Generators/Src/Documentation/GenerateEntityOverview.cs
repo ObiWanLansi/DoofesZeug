@@ -27,7 +27,7 @@ public static class GenerateEntityOverview
 
     private static readonly Type ENTITY_BASE = typeof(Entity);
 
-    private static readonly SortedDictionary<string, string> EXAMPLES = new();
+    private static readonly SortedDictionary<string, string> EXAMPLES = [];
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -346,7 +346,7 @@ public static class GenerateEntityOverview
 
         //---------------------------------------------------------------------------------------------------------
 
-        List<Type> models = new();
+        List<Type> models = [];
 
         foreach( Type type in assembly.ExportedTypes )
         {

@@ -362,7 +362,7 @@ public static class DataTableExtension
                     dtResult.Columns.Add(dbResult.GetName(iCounter), dbResult.GetFieldType(iCounter));
                 }
 
-                List<object> lData = new();
+                List<object> lData = [];
 
                 while (dbResult.Read())
                 {

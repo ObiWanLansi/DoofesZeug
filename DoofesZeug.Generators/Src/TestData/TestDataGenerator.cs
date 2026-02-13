@@ -19,7 +19,7 @@ namespace DoofesZeug.TestData;
 
 public static class TestDataGenerator
 {
-    private static readonly SortedDictionary<string, Func<object>> GENERATORS = new();
+    private static readonly SortedDictionary<string, Func<object>> GENERATORS = [];
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

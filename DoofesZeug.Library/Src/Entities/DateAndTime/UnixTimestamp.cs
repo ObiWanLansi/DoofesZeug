@@ -166,5 +166,5 @@ public sealed class UnixTimestamp : Entity
     /// Validates this instance.
     /// </summary>
     /// <returns></returns>
-    public override StringList Validate() => new();
+    public override StringList Validate() => [];
 }

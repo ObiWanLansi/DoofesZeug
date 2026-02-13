@@ -51,7 +51,7 @@ public sealed class Hour : DateTimePart, IComparable<Hour>
     /// Validates this instance.
     /// </summary>
     /// <returns></returns>
-    public override StringList Validate() => this.Value < 0 || this.Value > 23 ? new StringList { $"The value '{this.Value}' for the hour is not acceptable!" } : ( new() );
+    public override StringList Validate() => this.Value < 0 || this.Value > 23 ? [$"The value '{this.Value}' for the hour is not acceptable!"] : ( [] );
 
 
     /// <summary>

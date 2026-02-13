@@ -51,7 +51,7 @@ public sealed class Year : DateTimePart, IComparable<Year>
     /// Validates this instance.
     /// </summary>
     /// <returns></returns>
-    public override StringList Validate() => this.Value < 1 || this.Value > 2042 ? new StringList { $"The value '{this.Value}' for the year is not acceptable!" } : ( new() );
+    public override StringList Validate() => this.Value < 1 || this.Value > 2042 ? [$"The value '{this.Value}' for the year is not acceptable!"] : ( [] );
 
 
     /// <summary>

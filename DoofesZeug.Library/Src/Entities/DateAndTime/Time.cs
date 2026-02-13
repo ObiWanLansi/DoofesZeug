@@ -255,7 +255,7 @@ public class Time : Entity
     /// <returns></returns>
     public override StringList Validate()
     {
-        StringList sl = new();
+        StringList sl = [];
 
         if( this.Hour == null )
         {

@@ -162,7 +162,7 @@ public static class SQLiteExtension
     public static Dictionary<string, string> GetSimplifiedColumns(this SQLiteConnection dbConnection, string strTablename)
     {
         // Only use an Dictionary to prefent resorting the columns by name.
-        Dictionary<string, string> sdColumns = new();
+        Dictionary<string, string> sdColumns = [];
 
 #pragma warning disable CA2100 // Review SQL queries for security vulnerabilities
         using (SQLiteCommand dbSelectColumns = new($"PRAGMA TABLE_INFO({strTablename})", dbConnection))

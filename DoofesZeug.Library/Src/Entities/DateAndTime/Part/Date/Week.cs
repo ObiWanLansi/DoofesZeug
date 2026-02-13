@@ -51,7 +51,7 @@ public sealed class Week : DateTimePart, IComparable<Week>
     /// Validates this instance.
     /// </summary>
     /// <returns></returns>
-    public override StringList Validate() => this.Value < 1 || this.Value > 53 ? new StringList { $"The value '{this.Value}' for the week is not acceptable!" } : ( new() );
+    public override StringList Validate() => this.Value < 1 || this.Value > 53 ? [$"The value '{this.Value}' for the week is not acceptable!"] : ( [] );
 
 
     /// <summary>

@@ -90,7 +90,7 @@ public static class StringOutputExtension
 
         //-------------------------------------------------------------------------------------
 
-        Dictionary<PropertyInfo, string> sdColumnsWidth = new();
+        Dictionary<PropertyInfo, string> sdColumnsWidth = [];
 
         Type t = typeof(T);
 

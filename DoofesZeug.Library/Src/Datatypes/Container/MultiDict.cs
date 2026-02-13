@@ -6,7 +6,7 @@ namespace DoofesZeug.Datatypes.Container;
 
 public sealed class MultiDict
 {
-    private readonly Dictionary<string, object> _dict = new();
+    private readonly Dictionary<string, object> _dict = [];
 
 
     /// <summary>

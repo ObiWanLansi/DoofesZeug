@@ -69,5 +69,5 @@ public class Meter : MetricValueBase
     /// Validates this instance.
     /// </summary>
     /// <returns></returns>
-    public override StringList Validate() => this.Value < 0 ? new StringList { $"The value '{this.Value}' for the meter is not acceptable!" } : ( new() );
+    public override StringList Validate() => this.Value < 0 ? [$"The value '{this.Value}' for the meter is not acceptable!"] : ( [] );
 }

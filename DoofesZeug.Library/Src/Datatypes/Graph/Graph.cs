@@ -27,12 +27,12 @@ public sealed class Graph
     /// <summary>
     /// The sd nodes
     /// </summary>
-    private readonly SortedDictionary<string, Node> sdNodes = new();
+    private readonly SortedDictionary<string, Node> sdNodes = [];
 
     /// <summary>
     /// The sd edges
     /// </summary>
-    private readonly SortedDictionary<string, Edge> sdEdges = new();
+    private readonly SortedDictionary<string, Edge> sdEdges = [];
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -59,7 +59,7 @@ public sealed class Graph
     /// <value>
     /// The properties.
     /// </value>
-    public SimpleProperties Properties { get; set; } = new();
+    public SimpleProperties Properties { get; set; } = [];
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -330,7 +330,7 @@ public sealed class Graph
     /// </summary>
     public void RemoveNodesWithoutEdge()
     {
-        List<string> lNodesToRemove = new();
+        List<string> lNodesToRemove = [];
 
         foreach (string strNodeId in this.sdNodes.Keys)
         {
@@ -369,7 +369,7 @@ public sealed class Graph
     /// <returns></returns>
     public List<Edge> GetNodeEdges(Node nNode, Direction? dDirection)
     {
-        List<Edge> lEdges = new();
+        List<Edge> lEdges = [];
 
         foreach (Edge e in this.sdEdges.Values)
         {

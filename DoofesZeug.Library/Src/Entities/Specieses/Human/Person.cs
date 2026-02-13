@@ -92,9 +92,7 @@ public class Person : Species
     /// <returns></returns>
     public override StringList Validate()
     {
-        StringList sl = new();
-
-        sl.AddRange(base.Validate());
+        StringList sl = [.. base.Validate()];
 
         PropertyValidate(this, sl);
 

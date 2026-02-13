@@ -54,7 +54,7 @@ public sealed class Edge
     /// <value>
     /// The properties.
     /// </value>
-    public SimpleProperties Properties { get; set; } = new();
+    public SimpleProperties Properties { get; set; } = [];
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

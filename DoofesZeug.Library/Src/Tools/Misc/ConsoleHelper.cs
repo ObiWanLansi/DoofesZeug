@@ -148,8 +148,8 @@ public static class ConsoleHelper
 
         Type t = typeof(T);
 
-        Dictionary<PropertyInfo, int> sdColumnsWidth = new();
-        Dictionary<PropertyInfo, string> sdColumnsFormatter = new();
+        Dictionary<PropertyInfo, int> sdColumnsWidth = [];
+        Dictionary<PropertyInfo, string> sdColumnsFormatter = [];
 
         foreach (PropertyInfo pi in t.GetProperties(BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.Instance))
         {
@@ -273,8 +273,8 @@ public static class ConsoleHelper
 
         //---------------------------------------------------------------------------------------------------------
 
-        Dictionary<DataColumn, int> sdColumnsWidth = new();
-        Dictionary<DataColumn, string> sdColumnsFormatter = new();
+        Dictionary<DataColumn, int> sdColumnsWidth = [];
+        Dictionary<DataColumn, string> sdColumnsFormatter = [];
 
         foreach (DataColumn dc in dt.Columns)
         {

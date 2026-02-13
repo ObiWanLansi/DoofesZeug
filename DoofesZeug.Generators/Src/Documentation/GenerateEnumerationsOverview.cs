@@ -162,7 +162,7 @@ public static class GenerateEnumerationsOverview
 
         //---------------------------------------------------------------------------------------------------------
 
-        List<Type> enumerations = new();
+        List<Type> enumerations = [];
 
         foreach( Type type in assembly.ExportedTypes )
         {

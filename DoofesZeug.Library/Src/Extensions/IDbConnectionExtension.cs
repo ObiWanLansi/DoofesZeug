@@ -113,7 +113,7 @@ public static class IDbConnectionExtension
 
         using IDataReader dbResult = dbCommand.ExecuteReader();
 
-        SortedDictionary<T1, T2> sdResult = new();
+        SortedDictionary<T1, T2> sdResult = [];
 
         while( dbResult.Read() )
         {
@@ -134,7 +134,7 @@ public static class IDbConnectionExtension
 
         using IDataReader dbResult = dbCommand.ExecuteReader();
 
-        Dictionary<T1, T2> sdResult = new();
+        Dictionary<T1, T2> sdResult = [];
 
         while( dbResult.Read() )
         {

@@ -18,8 +18,8 @@ public static class Dataset
     /// <summary>
     /// The names female
     /// </summary>
-    public static readonly StringSet NUMBER_SPOKEN = new()
-    {
+    public static readonly StringSet NUMBER_SPOKEN =
+    [
         "Null",
         "Eins",
         "Zwei",
@@ -30,14 +30,14 @@ public static class Dataset
         "Sieben",
         "Acht",
         "Neun"
-    };
+    ];
 
 
     /// <summary>
     /// The names female
     /// </summary>
-    public static readonly StringSet NAMES_FEMALE = new()
-    {
+    public static readonly StringSet NAMES_FEMALE =
+    [
         "Erna",
         "Paula",
         "Monika",
@@ -58,13 +58,13 @@ public static class Dataset
         "Gabriele",
         "Sonja",
         "Frederike"
-    };
+    ];
 
     /// <summary>
     /// The names male
     /// </summary>
-    public static readonly StringSet NAMES_MALE = new()
-    {
+    public static readonly StringSet NAMES_MALE =
+    [
         "Ernst",
         "Paul",
         "Stefan",
@@ -85,13 +85,13 @@ public static class Dataset
         "Jens",
         "Jack",
         "Franz"
-    };
+    ];
 
     /// <summary>
     /// The surname
     /// </summary>
-    public static readonly StringSet SURNAMES = new()
-    {
+    public static readonly StringSet SURNAMES =
+    [
         "Meier",
         "Müller",
         "Schmidt",
@@ -110,7 +110,7 @@ public static class Dataset
         "Erdmann",
         "Dent",
         "Schulz"
-    };
+    ];
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -118,8 +118,8 @@ public static class Dataset
     /// <summary>
     /// The bundeslaender
     /// </summary>
-    public static readonly StringSet BUNDESLAENDER = new()
-    {
+    public static readonly StringSet BUNDESLAENDER =
+    [
         "Baden-Württemberg",
         "Bayern",
         "Berlin",
@@ -136,13 +136,13 @@ public static class Dataset
         "Sachsen-Anhalt",
         "Schleswig-Holstein",
         "Thüringen"
-    };
+    ];
 
     /// <summary>
     /// The regierungsbezirke
     /// </summary>
-    public static readonly StringSet REGIERUNGSBEZIRKE = new()
-    {
+    public static readonly StringSet REGIERUNGSBEZIRKE =
+    [
         "Arnsberg",
         "Berlin",
         "Brandenburg",
@@ -183,13 +183,13 @@ public static class Dataset
         "Tübingen",
         "Unterfranken",
         "Weser-Ems"
-    };
+    ];
 
     /// <summary>
     /// The landkreise
     /// </summary>
-    public static readonly StringSet LANDKREISE = new()
-    {
+    public static readonly StringSet LANDKREISE =
+    [
         "Aachen",
         "Aachen Städte",
         "Ahrweiler",
@@ -624,14 +624,14 @@ public static class Dataset
         "Zweibrücken Städte",
         "Zwickau Städte",
         "Zwickauer Land"
-    };
+    ];
 
 
     /// <summary>
     /// The german cities
     /// </summary>
-    public static readonly StringSet GERMAN_CITIES = new()
-    {
+    public static readonly StringSet GERMAN_CITIES =
+    [
         "Aachen",
         "Augsburg",
         "Bergisch Gladbach",
@@ -714,14 +714,14 @@ public static class Dataset
         "Wolfsburg",
         "Wuppertal",
         "Würzburg"
-    };
+    ];
 
 
     /// <summary>
     /// The europe countries
     /// </summary>
-    public static readonly StringSet EUROPE_COUNTRIES = new()
-    {
+    public static readonly StringSet EUROPE_COUNTRIES =
+    [
         "Albanien",
         "Andorra",
         "Belgien",
@@ -769,7 +769,7 @@ public static class Dataset
         "Vatikanstadt",
         "Vereinigtes Königreich",
         "Weißrussland"
-    };
+    ];
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -823,14 +823,14 @@ public static class Dataset
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-    private static readonly StringSet DOMAINS = new()
-    {
+    private static readonly StringSet DOMAINS =
+    [
         "gmail.com",
         "gmx.net",
         "gmx.de",
         "outlook.de",
         "outlook.com"
-    };
+    ];
 
     /// <summary>
     /// Gets the persons.

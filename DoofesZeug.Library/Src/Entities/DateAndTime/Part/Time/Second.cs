@@ -51,7 +51,7 @@ public sealed class Second : DateTimePart, IComparable<Second>
     /// Validates this instance.
     /// </summary>
     /// <returns></returns>
-    public override StringList Validate() => this.Value < 0 || this.Value > 59 ? new StringList { $"The value '{this.Value}' for the second is not acceptable!" } : ( new() );
+    public override StringList Validate() => this.Value < 0 || this.Value > 59 ? [$"The value '{this.Value}' for the second is not acceptable!"] : ( [] );
 
 
     /// <summary>

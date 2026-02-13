@@ -85,7 +85,7 @@ public sealed class AssemblyInformation
     /// <value>
     /// The references.
     /// </value>
-    public List<AssemblyName> References { get; private set; } = new();
+    public List<AssemblyName> References { get; private set; } = [];
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
