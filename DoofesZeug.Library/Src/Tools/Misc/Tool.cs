@@ -109,7 +109,7 @@ public static class Tool
     {
         Type tEnum = typeof(T);
 
-        return tEnum.IsEnum == false ? throw new ArgumentException(nameof(tEnum)) : Enum.GetValues(tEnum).Cast<T>().ToList();
+        return tEnum.IsEnum == false ? throw new ArgumentException(nameof(tEnum)) : [.. Enum.GetValues(tEnum).Cast<T>()];
     }
 
 
@@ -121,7 +121,33 @@ public static class Tool
     /// <exception cref="ArgumentException">tEnum</exception>
     public static StringList EnumToStringList(Type tEnum)
     {
-        return tEnum.IsEnum == false ? throw new ArgumentException($"The type '{tEnum.FullName}' is not an enumeration!", nameof(tEnum)) : new StringList(Enum.GetNames(tEnum));
+        return tEnum.IsEnum == false ? throw new ArgumentException($"The type '{tEnum.FullName}' is not an enumeration!", nameof(tEnum)) : [.. Enum.GetNames(tEnum)];
+    }
+
+
+    /// <summary>
+    /// Alls this instance.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
+    /// <exception cref="System.ArgumentException">tEnum</exception>
+    public static T All<T>()
+    {
+        Type tEnum = typeof(T);
+
+        if (tEnum.IsEnum == false)
+        {
+            throw new ArgumentException(nameof(tEnum));
+        }
+
+        int iResult = 0;
+
+        foreach (object value in Enum.GetValues(tEnum))
+        {
+            iResult |= Convert.ToInt32(value);
+        }
+
+        return (T)Enum.ToObject(tEnum, iResult);
     }
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
